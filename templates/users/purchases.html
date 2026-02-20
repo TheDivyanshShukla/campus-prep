@@ -35,7 +35,7 @@
                         {{ unlock.parsed_document.title }}
                     </h3>
                     <p class="text-sm text-muted-foreground mb-4">
-                        {{ unlock.parsed_document.subject.code }} - {{ unlock.parsed_document.subject.name }}
+                        {{ unlock.parsed_document.subjects.first.code }} - {{ unlock.parsed_document.subjects.first.name }}
                     </p>
                 </div>
                 
@@ -79,7 +79,7 @@
                         {{ unlock.parsed_document.title }}
                     </h3>
                     <p class="text-sm text-muted-foreground">
-                        {{ unlock.parsed_document.subject.code }} - {{ unlock.parsed_document.subject.name }}
+                        {{ unlock.parsed_document.subjects.first.code }} - {{ unlock.parsed_document.subjects.first.name }}
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-border">
@@ -89,7 +89,7 @@
                             {{ unlock.valid_until|date:"d M Y" }}
                         </span>
                     </div>
-                    <a href="{% url 'subject_dashboard' unlock.parsed_document.subject.id %}" class="w-full block text-center px-4 py-2 bg-muted text-muted-foreground font-semibold rounded-lg hover:bg-border transition-colors">
+                    <a href="{% url 'subject_dashboard' unlock.parsed_document.subjects.first.id %}" class="w-full block text-center px-4 py-2 bg-muted text-muted-foreground font-semibold rounded-lg hover:bg-border transition-colors">
                         Repurchase Required
                     </a>
                 </div>
