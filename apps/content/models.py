@@ -33,7 +33,7 @@ class ParsedDocument(models.Model):
         ('FAILED', 'Parsing Failed'),
     )
 
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='parsed_documents')
+    subjects = models.ManyToManyField(Subject, related_name='parsed_documents', help_text="Select all branch/semester variants this document applies to. E.g. attach to AD's Physics, CSE's Physics, etc.")
     document_type = models.CharField(max_length=20, choices=DOCUMENT_TYPES)
     title = models.CharField(max_length=255, help_text="e.g., '2023 OS Main Exam'")
     year = models.PositiveSmallIntegerField(null=True, blank=True, help_text="For PYQs")
@@ -62,7 +62,8 @@ class ParsedDocument(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"[{self.get_document_type_display()}] {self.title} - {self.subject.code}"
+        subject_codes = ", ".join(set([s.code for s in self.subjects.all()])) if self.pk else "Unsaved"
+        return f"[{self.get_document_type_display()}] {self.title} - {subject_codes}"
 
 class DocumentImage(models.Model):
     document = models.ForeignKey(ParsedDocument, on_delete=models.CASCADE, related_name='images')

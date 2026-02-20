@@ -27,7 +27,7 @@ def subject_dashboard(request, subject_id):
     Displays the catalog of AI-parsed documents for a specific subject.
     """
     subject = get_object_or_404(Subject, pk=subject_id)
-    documents = ParsedDocument.objects.filter(subject=subject, is_published=True).order_by('-year', '-created_at')
+    documents = ParsedDocument.objects.filter(subjects=subject, is_published=True).order_by('-year', '-created_at')
     
     # Evaluate global access for the padlock UI
     has_global_access = False
@@ -87,7 +87,7 @@ def read_document(request, document_id):
     
     # Specific Unlocked Content Check (If they bought just this one PDF)
     has_specific_unlock = user.unlocked_contents.filter(
-        models.Q(product__subject=document.subject, product__category__name__icontains=document.document_type) |
+        models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
         models.Q(parsed_document=document)
     ).filter(
         models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
@@ -95,9 +95,14 @@ def read_document(request, document_id):
     
     if document.is_premium:
         if not (has_global_pass or has_specific_unlock or user.is_staff):
-            # User is locked out, redirect to dashboard
-            return redirect('subject_dashboard', subject_id=document.subject.id)
+            # User is locked out, redirect to dashboard (use the first linked subject as a fallback)
+            fallback_subject = document.subjects.first()
+            if fallback_subject:
+                return redirect('subject_dashboard', subject_id=fallback_subject.id)
+            else:
+                return redirect('home')
 
     return render(request, 'content/document_reader.html', {
-        'document': document
+        'document': document,
+        'current_subject': document.subjects.first()
     })

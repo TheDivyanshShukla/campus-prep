@@ -28,7 +28,7 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(f"Found target subject: {subject.name} ({subject.code})"))
 
         # Clear existing dummy data for this subject to prevent duplicates during re-runs
-        ParsedDocument.objects.filter(subject=subject).delete()
+        ParsedDocument.objects.filter(subjects=subject).delete()
 
         # 1. Create a PYQ Document
         pyq_data = {
@@ -60,14 +60,14 @@ class Command(BaseCommand):
             ]
         }
         
-        ParsedDocument.objects.create(
-            subject=subject,
+        pyq_doc = ParsedDocument.objects.create(
             document_type='PYQ',
             title='2023 End Semester Examination',
             year=2023,
             structured_data=pyq_data,
             is_published=True
         )
+        pyq_doc.subjects.add(subject)
 
         # 2. Create Chapter-wise Detailed Notes (1 for each Unit)
         for unit in range(1, 6):
@@ -75,14 +75,14 @@ class Command(BaseCommand):
                 "title": f"Unit {unit} Detailed Notes",
                 "content": f"These are deeply structured bullet points for Unit {unit}.\n\n- Advanced concept breakdown.\n- Mathematical derivations.\n- Real world applications."
             }
-            ParsedDocument.objects.create(
-                subject=subject,
+            notes_doc = ParsedDocument.objects.create(
                 document_type='NOTES',
                 title=f'Unit {unit}: Comprehensive Theory',
                 year=None,
                 structured_data=notes_data,
                 is_published=True
             )
+            notes_doc.subjects.add(subject)
 
         # 3. Create a Formula Sheet
         formula_data = {
@@ -93,14 +93,14 @@ class Command(BaseCommand):
             ]
         }
 
-        ParsedDocument.objects.create(
-            subject=subject,
+        formula_doc = ParsedDocument.objects.create(
             document_type='FORMULA',
             title='Essential Physics Formulas',
             year=None,
             structured_data=formula_data,
             is_published=True
         )
+        formula_doc.subjects.add(subject)
 
         # 4. Create a Syllabus
         syllabus_data = {
@@ -112,14 +112,14 @@ class Command(BaseCommand):
                 {"unit": 5, "topics": ["Fiber Optics", "Total internal reflection", "Acceptance angle and numerical aperture", "Types of optical fibers", "Attenuation"]}
             ]
         }
-        ParsedDocument.objects.create(
-            subject=subject,
+        syllabus_doc = ParsedDocument.objects.create(
             document_type='SYLLABUS',
             title='RGPV Prescribed Syllabus (Revised)',
             year=None,
             structured_data=syllabus_data,
             is_published=True
         )
+        syllabus_doc.subjects.add(subject)
 
         # 5. Create Chapter-wise Short Notes (1 for each Unit)
         for unit in range(1, 6):
@@ -127,14 +127,14 @@ class Command(BaseCommand):
                 "title": f"Unit {unit} Revision",
                 "content": f"**Key Formulas & Definitions for Unit {unit}:**\n- Core concept 1\n- Core concept 2\n\n*Last minute exam refresher!*"
             }
-            ParsedDocument.objects.create(
-                subject=subject,
+            short_notes_doc = ParsedDocument.objects.create(
                 document_type='SHORT_NOTES',
                 title=f'Unit {unit}: Quick Revision',
                 year=None,
                 structured_data=short_notes_data,
                 is_published=True
             )
+            short_notes_doc.subjects.add(subject)
 
         # 6. Create Important Questions
         imp_q_data = {
