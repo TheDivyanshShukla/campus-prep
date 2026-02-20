@@ -43,13 +43,9 @@ def logout_view(request):
 @login_required
 def onboarding_view(request):
     """
-    Forces the user to select their Branch and Semester if they haven't already.
+    Allows the user to select or change their preferred Branch and Semester.
     """
     user = request.user
-    
-    # If they already have both set, send them straight to dashboard
-    if user.preferred_branch and user.preferred_semester:
-        return redirect('dashboard')
         
     if request.method == 'POST':
         form = UserOnboardingForm(request.POST)
@@ -59,7 +55,13 @@ def onboarding_view(request):
             user.save()
             return redirect('dashboard')
     else:
-        form = UserOnboardingForm()
+        initial_data = {}
+        if user.preferred_branch:
+            initial_data['branch'] = user.preferred_branch
+        if user.preferred_semester:
+            initial_data['semester'] = user.preferred_semester
+            
+        form = UserOnboardingForm(initial=initial_data)
         
     return render(request, 'users/onboarding.html', {'form': form})
 
@@ -90,7 +92,7 @@ def user_purchases(request):
     """
     Displays the user's unlocked premium content and purchase history.
     """
-    all_unlocks = request.user.unlocked_contents.select_related('parsed_document', 'parsed_document__subject').all().order_by('-id')
+    all_unlocks = request.user.unlocked_contents.select_related('parsed_document').prefetch_related('parsed_document__subjects').all().order_by('-id')
     
     active_unlocks = []
     expired_unlocks = []
