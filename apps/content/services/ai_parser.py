@@ -30,6 +30,8 @@ class DocumentParserService:
         # Depending on doc_type, return different Pydantic models to enforce structure
         if doc_type == 'PYQ':
             return self._pyq_schema()
+        elif doc_type == 'UNSOLVED_PYQ':
+            return self._unsolved_pyq_schema()
         elif doc_type == 'SYLLABUS':
             return self._syllabus_schema()
         elif doc_type == 'IMPORTANT_Q':
@@ -43,7 +45,8 @@ class DocumentParserService:
         class PYQQuestion(BaseModel):
             unit: Optional[int] = None
             marks: int
-            question_text: str
+            question_text: str # MUST contain full markdown and LaTeX math formulas.
+            image_recreation_prompt: Optional[str] = None # Complete prompt for generative AI or Canvas to exactly recreate any image/diagram in this question.
             part: Optional[str] = None
             has_or_choice: bool = False
             latex_answer: str
@@ -51,6 +54,19 @@ class DocumentParserService:
         class ParsedPYQPaper(BaseModel):
             questions: List[PYQQuestion]
         return ParsedPYQPaper
+
+    def _unsolved_pyq_schema(self):
+        class UnsolvedPYQQuestion(BaseModel):
+            unit: Optional[int] = None
+            marks: int
+            question_text: str # MUST contain full markdown and LaTeX math formulas.
+            image_recreation_prompt: Optional[str] = None # Complete prompt for generative AI or Canvas to exactly recreate any image/diagram in this question.
+            part: Optional[str] = None
+            has_or_choice: bool = False
+            
+        class ParsedUnsolvedPYQPaper(BaseModel):
+            questions: List[UnsolvedPYQQuestion]
+        return ParsedUnsolvedPYQPaper
 
     def _syllabus_schema(self):
         class SyllabusModule(BaseModel):

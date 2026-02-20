@@ -38,6 +38,10 @@
                 <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 Solved PYQs
             </button>
+            <button onclick="switchTab('tab-unsolved-pyqs')" id="btn-unsolved-pyqs" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
+                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                Unsolved PYQs
+            </button>
             <button onclick="switchTab('tab-notes')" id="btn-notes" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
                 <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                 Detailed Notes
@@ -101,7 +105,7 @@
                     <div class="group relative bg-card text-card-foreground rounded-2xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-primary/5">
                         
                         <!-- Lock Overlay -->
-                        {% if doc.is_premium and not has_global_access %}
+                        {% if doc.is_premium and not has_global_access and doc.id not in unlocked_doc_ids %}
                         <div class="absolute inset-0 z-10 bg-background/60 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
                             <div class="w-12 h-12 bg-white dark:bg-zinc-800 rounded-full flex items-center justify-center shadow-lg border border-border mb-3">
                                 <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
@@ -126,7 +130,7 @@
                             <h3 class="text-lg font-bold mb-2">{{ doc.title }}</h3>
                             <p class="text-sm text-muted-foreground mb-6 line-clamp-2">Complete structured solutions, natively rendered for mobile without zooming.</p>
                             
-                            {% if not doc.is_premium or has_global_access %}
+                            {% if not doc.is_premium or has_global_access or doc.id in unlocked_doc_ids %}
                             <a href="{% url 'read_document' doc.id %}" class="block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg text-sm font-semibold py-2.5 transition-colors">
                                 Read Now
                             </a>
@@ -145,6 +149,59 @@
             </div>
         </div>
 
+        <!-- Unsolved PYQs Section Tab -->
+        <div id="tab-unsolved-pyqs" class="tab-content hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+            <div class="flex items-center mb-6 border-b border-border pb-2">
+                <svg class="w-6 h-6 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <h2 class="text-2xl font-bold">Unsolved PYQs</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for doc in unsolved_pyqs %}
+                    <div class="group relative bg-card text-card-foreground rounded-2xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-primary/5">
+                        
+                        <!-- Lock Overlay -->
+                        {% if doc.is_premium and not has_global_access and doc.id not in unlocked_doc_ids %}
+                        <div class="absolute inset-0 z-10 bg-background/60 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
+                            <div class="w-12 h-12 bg-white dark:bg-zinc-800 rounded-full flex items-center justify-center shadow-lg border border-border mb-3">
+                                <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-foreground">Unlock {{ doc.title }}</h4>
+                            <p class="text-xs text-muted-foreground mt-1 mb-4">Get instant access to this raw question paper PDF.</p>
+                            <a href="{% if doc.price %}{% url 'checkout_document' doc.id %}{% else %}#{% endif %}" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors shadow-sm mb-2 w-full max-w-[200px]">
+                                {% if doc.price %}Buy for ₹{{ doc.price }}{% else %}Unlock Document{% endif %}
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="px-2.5 py-1 bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700">
+                                    {{ doc.year|default:"General" }}
+                                </span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">{{ doc.title }}</h3>
+                            <p class="text-sm text-muted-foreground mb-6 line-clamp-2">Original un-solved university question paper (PDF format).</p>
+                            
+                            {% if not doc.is_premium or has_global_access or doc.id in unlocked_doc_ids %}
+                            <a href="{% url 'read_document' doc.id %}" class="block w-full text-center bg-secondary text-secondary-foreground border border-border hover:bg-muted rounded-lg text-sm font-semibold py-2.5 transition-colors">
+                                View PDF
+                            </a>
+                            {% else %}
+                            <div class="w-full text-center bg-muted text-muted-foreground rounded-lg text-sm font-semibold py-2.5 opacity-50 cursor-not-allowed border border-border">
+                                <span class="text-amber-500 mr-1">🔒</span> Premium
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="col-span-full text-center py-10 bg-muted/20 border border-dashed border-border rounded-2xl">
+                        <p class="text-muted-foreground">No unsolved PYQs available yet.</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
         <!-- Detailed Notes Tab -->
         <div id="tab-notes" class="tab-content hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
             <div class="flex items-center mb-6 border-b border-border pb-2">
@@ -153,9 +210,9 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {% for doc in notes %}
-                        <a href="{% if not doc.is_premium or has_global_access %}{% url 'read_document' doc.id %}{% elif doc.price %}{% url 'checkout_document' doc.id %}{% else %}#{% endif %}" class="relative overflow-hidden flex items-center justify-between p-4 bg-card hover:bg-muted/50 border border-border rounded-xl transition-colors group">
+                        <a href="{% if not doc.is_premium or has_global_access or doc.id in unlocked_doc_ids %}{% url 'read_document' doc.id %}{% elif doc.price %}{% url 'checkout_document' doc.id %}{% else %}#{% endif %}" class="relative overflow-hidden flex items-center justify-between p-4 bg-card hover:bg-muted/50 border border-border rounded-xl transition-colors group">
                             
-                            {% if doc.is_premium and not has_global_access %}
+                            {% if doc.is_premium and not has_global_access and doc.id not in unlocked_doc_ids %}
                             <div class="absolute inset-0 z-10 bg-background/50 backdrop-blur-[1px] flex items-center justify-center">
                                 <span class="bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-400 text-xs font-bold px-3 py-1.5 rounded border border-amber-200 dark:border-amber-800 flex items-center">
                                     <svg class="w-3.5 h-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
@@ -164,7 +221,7 @@
                             </div>
                             {% endif %}
 
-                            <div class="flex items-center {% if doc.is_premium and not has_global_access %}opacity-40{% endif %}">
+                            <div class="flex items-center {% if doc.is_premium and not has_global_access and doc.id not in unlocked_doc_ids %}opacity-40{% endif %}">
                                 <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mr-4">
                                     <span class="font-black font-mono text-sm">{{ forloop.counter }}</span>
                                 </div>
@@ -173,7 +230,7 @@
                                     <p class="text-xs text-muted-foreground">Chapter Study</p>
                                 </div>
                             </div>
-                            <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-2 {% if doc.is_premium and not has_global_access %}opacity-40{% endif %}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-2 {% if doc.is_premium and not has_global_access and doc.id not in unlocked_doc_ids %}opacity-40{% endif %}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
                     {% empty %}
                         <div class="col-span-full py-10 bg-muted/20 border border-dashed border-border rounded-2xl flex items-center justify-center">

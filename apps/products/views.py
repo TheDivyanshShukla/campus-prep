@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from django.utils import timezone
+from datetime import timedelta
 from apps.content.models import ParsedDocument
 from apps.products.models import Purchase, UnlockedContent
+from apps.academics.models import ExamDate
 import razorpay
 
 # Initialize Razorpay Client
@@ -82,11 +85,27 @@ def payment_verify(request):
             purchase.razorpay_payment_id = payment_id
             purchase.save()
 
-            # Unlock the content for the user forever
-            UnlockedContent.objects.get_or_create(
+            # Calculate the validity based on the Exam Date for this branch + semester
+            subject = purchase.parsed_document.subject
+            valid_until_date = None
+            try:
+                exam = ExamDate.objects.get(branch=subject.branch, semester=subject.semester)
+                valid_until_date = exam.date
+            except ExamDate.DoesNotExist:
+                # If no ExamDate configured, default to 6 months from purchase
+                valid_until_date = timezone.now().date() + timedelta(days=180)
+
+            # Unlock the content for the user until the exam date
+            unlocked, created = UnlockedContent.objects.get_or_create(
                 user=purchase.user,
-                parsed_document=purchase.parsed_document
+                parsed_document=purchase.parsed_document,
+                defaults={'valid_until': valid_until_date}
             )
+            
+            # If they already had it (but it was expired), renew the validity
+            if not created:
+                unlocked.valid_until = valid_until_date
+                unlocked.save()
 
             # Route them right into the document reader they just bought
             return redirect('read_document', document_id=purchase.parsed_document.id)

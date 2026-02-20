@@ -11,12 +11,14 @@ Document Type target: {document_type}
 
 Your task is to extract exact information from raw exam papers, syllabi, or notes (provided as text or images) and generate pristine, highly-accurate structured data for them.
 You MUST output valid JSON conforming strictly to the requested schema.
+CRITICAL INSTRUCTION: DO NOT process or transcribe any Hindi text whatsoever. Extract and process ONLY the English versions of the questions.
 For 'latex_answer' or any mathematical fields, use Markdown for normal text and wrap ANY math in KaTeX delimiters ($ for inline, $$ for block formulas)."""
 
 class ParsedDocument(models.Model):
     DOCUMENT_TYPES = (
         ('SYLLABUS', 'Official Syllabus'),
-        ('PYQ', 'Previous Year Question Paper'),
+        ('PYQ', 'Solved Previous Year Question Paper'),
+        ('UNSOLVED_PYQ', 'Unsolved PYQ Paper'),
         ('NOTES', 'Comprehensive Notes'),
         ('SHORT_NOTES', 'Quick Revision Short Notes'),
         ('IMPORTANT_Q', 'Important Questions'),
