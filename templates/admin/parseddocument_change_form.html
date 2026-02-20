@@ -1,0 +1,153 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <!-- Scripts for Live Preview Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <style>
+        /* Smooth out the inline container so it looks like it belongs IN the fieldset */
+        #images-group { 
+            border: none; 
+            box-shadow: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        #images-group h2 { display: none; } /* Hide the duplicate "Document Images" header if it's inside another box */
+    </style>
+    <script>
+        window.onload = function() {
+            if (typeof django !== 'undefined' && django.jQuery) {
+                (function($) {
+                    var imagesInline = $('#images-group');
+                    // Target the exact fieldset containing the 'AI Data Sources' title
+                    var aiDataSourcesFieldset = $('h2:contains("AI Data Sources")').closest('fieldset');
+                    
+                    if (imagesInline.length && aiDataSourcesFieldset.length) {
+                        // Move the entire images upload block INTO the AI Data Sources fieldset
+                        imagesInline.appendTo(aiDataSourcesFieldset);
+                    }
+
+                    // --- LIVE PREVIEW INJECTION ---
+                    // Create the preview box HTML
+                    var previewHtml = `
+                    <div id="admin-live-preview-container" style="margin-top:20px; padding-top:20px; border-top:1px dashed #444; clear:both;">
+                        <h3 style="margin-bottom:15px; color:#10b981; font-weight:bold; text-transform:uppercase; font-size:12px;">✅ Live Render Preview</h3>
+                        <div id="admin-live-preview" style="background:#1e1e24; padding:20px; border-radius:8px; border:1px solid #333; color:#e2e8f0; max-height: 500px; overflow-y:auto; overflow-x:hidden;">
+                            <em>Preview will render here automatically when valid JSON is detected...</em>
+                        </div>
+                    </div>`;
+                    
+                    // Attach it below the structured_data field
+                    $('.field-structured_data').append(previewHtml);
+
+                    function renderAdminPreview() {
+                        try {
+                            const rawJson = $('#id_structured_data').val();
+                            if(!rawJson || rawJson.trim() === 'null') {
+                                $('#admin-live-preview').html('<em>No structured data generated yet.</em>');
+                                return;
+                            }
+                            
+                            const data = JSON.parse(rawJson);
+                            const docType = $('#id_document_type').val();
+                            let html = '';
+                            
+                            if (docType === 'PYQ' && data.questions) {
+                                html += '<div style="display:flex; flex-direction:column; gap:15px;">';
+                                data.questions.forEach((q, i) => {
+                                    html += `<div style="border:1px solid #333; border-radius:6px; padding:15px; background:#2d2d35;">
+                                        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #444; padding-bottom:10px; margin-bottom:10px;">
+                                            <strong style="color:#10b981;">Unit ${q.unit || '?'} ${q.has_or_choice ? '<span style="color:#f59e0b;">(OR Choice)</span>' : ''}</strong>
+                                            <strong style="color:#e2e8f0;">${q.marks} Marks</strong>
+                                        </div>
+                                        <p style="font-size:14px; margin-bottom:15px;"><strong>${q.part ? q.part + ' ' : ''}</strong> ${q.question_text}</p>
+                                        ${q.latex_answer ? `<div style="margin-top:15px; border-top:1px dashed #444; padding-top:15px;" class="math-target">${marked.parse(q.latex_answer)}</div>` : '<div style="color:#64748b; font-size:12px; margin-top:10px;">(No AI solution generated)</div>'}
+                                    </div>`;
+                                });
+                                html += '</div>';
+                            } 
+                            else if ((docType === 'NOTES' || docType === 'SHORT_NOTES') && data.title) {
+                                html += `<div style="padding:15px; background:#2d2d35; border-radius:6px; border:1px solid #333;">
+                                    <h2 style="margin-top:0; color:#818cf8; border-bottom:1px solid #444; padding-bottom:10px;">${data.title}</h2>
+                                    <div class="math-target" style="font-size:14px;">${marked.parse(data.content || '')}</div>
+                                </div>`;
+                            } 
+                            else if (docType === 'FORMULA' && data.formulas) {
+                                html += '<div style="display:flex; flex-wrap:wrap; gap:15px;">';
+                                data.formulas.forEach(f => {
+                                    html += `<div style="border:1px solid #333; padding:15px; border-radius:6px; background:#2d2d35; text-align:center; flex:1; min-width:200px;">
+                                        <h4 style="margin-top:0; color:#6366f1;">${f.name}</h4>
+                                        <div class="math-target" style="font-size:24px;">$$ ${f.latex} $$</div>
+                                    </div>`;
+                                });
+                                html += '</div>';
+                            }
+                            else if (docType === 'SYLLABUS' && data.modules) {
+                                html += '<div style="display:flex; flex-direction:column; gap:15px;">';
+                                data.modules.forEach(m => {
+                                    html += `<div style="border:1px solid #333; border-radius:6px; padding:15px; background:#2d2d35;">
+                                        <strong style="color:#14b8a6; display:block; margin-bottom:10px; font-size:16px;">Unit ${m.unit}</strong>
+                                        <ul style="padding-left:20px; margin:0; font-size:14px;">
+                                            ${m.topics.map(t => `<li style="margin-bottom:5px;">${t}</li>`).join('')}
+                                        </ul>
+                                    </div>`;
+                                });
+                                html += '</div>';
+                            }
+                            else if (docType === 'IMPORTANT_Q' && data.questions) {
+                                html += '<ul style="padding-left:20px; margin:0; font-size:14px;">';
+                                data.questions.forEach(q => {
+                                     html += `<li style="margin-bottom:10px;">
+                                        ${q.text} 
+                                        <div style="display:inline-block; padding:2px 6px; border-radius:4px; font-size:10px; background:#451a03; color:#fcd34d; border:1px solid #78350f; margin-left:10px;">${q.frequency}</div>
+                                     </li>`;
+                                });
+                                html += '</ul>';
+                            } else {
+                                html = `<pre style="font-size:12px; color:#cbd5e1; white-space:pre-wrap;">${JSON.stringify(data, null, 2)}</pre>`;
+                            }
+                            
+                            $('#admin-live-preview').html(html);
+                            
+                            // Render Math
+                            if(window.renderMathInElement) {
+                                renderMathInElement(document.getElementById('admin-live-preview'), {
+                                    delimiters: [
+                                        {left: '$$', right: '$$', display: true},
+                                        {left: '$', right: '$', display: false},
+                                        {left: '\\(', right: '\\)', display: false},
+                                        {left: '\\[', right: '\\]', display: true}
+                                    ],
+                                    throwOnError: false
+                                });
+                            }
+                        } catch(e) {
+                            $('#admin-live-preview').html(`<div style="color:#ef4444; font-size:13px; font-weight:bold;">❌ Invalid JSON detected (Keep typing!):<br/><span style="font-weight:normal; color:#f87171; font-family:monospace; margin-top:5px; display:block;">${e.message}</span></div>`);
+                        }
+                    }
+
+                    // Listeners
+                    $('#id_structured_data').on('input propertychange', renderAdminPreview);
+                    $('#id_document_type').on('change', renderAdminPreview);
+                    
+                    // Initial load
+                    setTimeout(renderAdminPreview, 200);
+
+                })(django.jQuery);
+            }
+        };
+    </script>
+{% endblock %}
+
+{% block submit_buttons_bottom %}
+    <div class="submit-row" style="display: flex; align-items: center; flex-wrap: wrap;">
+        {{ block.super }}
+        {% if original %}
+            <input type="submit" value="✨ Generate Material with AI" name="_parse_ai" class="default" style="background: #10b981; color: white; border-radius: 4px; border: none; padding: 10px 20px; font-weight: bold; margin-left: 15px; cursor: pointer; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">
+        {% endif %}
+    </div>
+{% endblock %}

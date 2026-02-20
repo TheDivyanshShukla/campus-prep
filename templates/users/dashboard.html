@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}My Dashboard | RGPV Live{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    
+    <!-- Sleek Header -->
+    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between border-b border-border pb-6 gap-4">
+        <div>
+            <h1 class="text-3xl font-extrabold tracking-tight mb-2">My Study Vault</h1>
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-400/10 px-2 py-1 text-xs font-semibold text-blue-700 dark:text-blue-400 ring-1 ring-inset ring-blue-700/10 dark:ring-blue-400/30">
+                    {{ user_branch.name }}
+                </span>
+                <span class="inline-flex items-center rounded-md bg-indigo-50 dark:bg-indigo-400/10 px-2 py-1 text-xs font-semibold text-indigo-700 dark:text-indigo-400 ring-1 ring-inset ring-indigo-700/10 dark:ring-indigo-400/30">
+                    Sem {{ user_sem.number }}
+                </span>
+            </div>
+        </div>
+        <div class="text-muted-foreground text-sm font-medium">
+            Your Subjects
+        </div>
+    </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for subject in subjects %}
+            <a href="{% url 'subject_dashboard' subject.id %}" class="group block bg-card text-card-foreground p-6 rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
+                
+                <div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-bl-full pointer-events-none transition-opacity group-hover:opacity-100 opacity-0"></div>
+
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <span class="text-lg font-black text-indigo-600 dark:text-indigo-400 tracking-tight">{{ subject.code }}</span>
+                    <div class="w-8 h-8 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mb-2 text-foreground leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{{ subject.name }}</h3>
+                <p class="text-sm text-muted-foreground mb-4 line-clamp-2">Access AI-parsed PYQs, notes, and formulas for {{ subject.code }}.</p>
+                
+                <div class="flex items-center mt-auto text-xs font-semibold text-muted-foreground">
+                    <svg class="w-4 h-4 mr-1 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    Premium Materials inside
+                </div>
+            </a>
+            {% empty %}
+            <div class="col-span-full text-center py-12 bg-muted/20 border border-dashed border-border rounded-2xl">
+                <p class="text-muted-foreground text-lg mb-2">No subjects found for this scheme yet.</p>
+                <p class="text-sm text-muted-foreground">Our team is actively adding subjects for your branch and semester.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

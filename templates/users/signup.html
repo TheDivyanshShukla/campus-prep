@@ -31,7 +31,7 @@
                                 <li>{{ error }}</li>
                             {% endfor %}
                         {% endfor %}
-                        {% for error in form.non_field_errors() %}
+                        {% for error in form.non_field_errors %}
                             <li>{{ error }}</li>
                         {% endfor %}
                     </ul>
@@ -39,39 +39,6 @@
             </div>
             {% endif %}
 
-            <div class="space-y-4">
-                <div>
-                    <label for="id_username" class="block text-sm font-medium text-foreground mb-1">Username</label>
-                    <input id="id_username" name="username" type="text" required class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="Choose a username">
-                </div>
-                <div>
-                    <label for="id_email" class="block text-sm font-medium text-foreground mb-1">Email <span class="text-muted-foreground font-normal">(Optional)</span></label>
-                    <input id="id_email" name="email" type="email" class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="you@example.com">
-                </div>
-                <div>
-                    <label for="id_password1" class="block text-sm font-medium text-foreground mb-1">Password</label>
-                    <input id="id_password1" name="password" type="password" required class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="Create a strong password">
-                </div>
-                <!-- 
-                Note: Standard UserCreationForm uses dual password fields (password1, password2). 
-                We are using the single strict standard input names mapped to the form.
-                If using the raw UserCreationForm rendering, it auto-generates inputs.
-                Here, we are forcing styling. 
-                -->
-                <div class="hidden">
-                    <!-- We render the form natively hidden just so Django picks up all required fields safely, 
-                         or we construct it properly. For MVP, simply dumping the form fields with Tailwind parsing is safer. -->
-                    {{ form.as_p() }}
-                </div>
-            </div>
-
-            <!-- Proper Form Render to ensure all fields like pwd confirmation are passed cleanly -->
-            <div class="space-y-4 mt-4 hidden" id="native-form-group">
-               <!-- We use JS to sync beautiful inputs with hidden inputs if needed. 
-                    Actually, it's better to render the form fields properly in Jinja. -->
-            </div>
-
-            <!-- Overriding with purely native form loop for absolute structural safety -->
             <div class="space-y-4">
                {% for field in form %}
                <div>
@@ -91,6 +58,8 @@
                </div>
                {% endfor %}
             </div>
+
+
 
             <style>
                 /* Tailwind injection override for Django forms */

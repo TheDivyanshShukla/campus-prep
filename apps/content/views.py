@@ -5,13 +5,21 @@ from django.utils import timezone
 from apps.academics.models import Subject
 from apps.content.models import ParsedDocument
 
+from apps.academics.models import Subject, Branch, Semester
+from apps.content.models import ParsedDocument
+
 def home(request):
-    return render(request, 'home.html')
+    branches = Branch.objects.all()
+    semesters = Semester.objects.all()
+    return render(request, 'content/home.html', {
+        'branches': branches,
+        'semesters': semesters
+    })
 
 @staff_member_required
 def admin_ai_parser(request):
     subjects = Subject.objects.select_related('branch', 'semester').all()
-    return render(request, 'admin_ai_parser.html', {'subjects': subjects})
+    return render(request, 'content/admin_ai_parser.html', {'subjects': subjects})
 
 def subject_dashboard(request, subject_id):
     """
@@ -20,10 +28,33 @@ def subject_dashboard(request, subject_id):
     subject = get_object_or_404(Subject, pk=subject_id)
     documents = ParsedDocument.objects.filter(subject=subject, is_published=True).order_by('-year', '-created_at')
     
-    # We will pass the request.user dynamically to the template to evaluate the padlock
-    return render(request, 'subject_dashboard.html', {
+    # Evaluate global access for the padlock UI
+    has_global_access = False
+    if request.user.is_authenticated:
+        if request.user.is_staff:
+            has_global_access = True
+        elif request.user.active_subscription_valid_until and request.user.active_subscription_valid_until >= timezone.now().date():
+            has_global_access = True
+            
+    pyqs = [doc for doc in documents if doc.document_type == 'PYQ']
+    notes = [doc for doc in documents if doc.document_type == 'NOTES']
+    short_notes = [doc for doc in documents if doc.document_type == 'SHORT_NOTES']
+    imp_qs = [doc for doc in documents if doc.document_type == 'IMPORTANT_Q']
+    formulas = [doc for doc in documents if doc.document_type == 'FORMULA']
+    syllabus = [doc for doc in documents if doc.document_type == 'SYLLABUS']
+    crash_courses = [doc for doc in documents if doc.document_type == 'CRASH_COURSE']
+
+    return render(request, 'content/subject_dashboard.html', {
         'subject': subject,
-        'documents': documents
+        'documents': documents,
+        'pyqs': pyqs,
+        'notes': notes,
+        'short_notes': short_notes,
+        'imp_qs': imp_qs,
+        'formulas': formulas,
+        'syllabus': syllabus,
+        'crash_courses': crash_courses,
+        'has_global_access': has_global_access
     })
 
 @login_required
@@ -51,6 +82,6 @@ def read_document(request, document_id):
         # Note: We can implement messages framework later. For now, redirect to dashboard.
         return redirect('subject_dashboard', subject_id=document.subject.id)
 
-    return render(request, 'document_reader.html', {
+    return render(request, 'content/document_reader.html', {
         'document': document
     })

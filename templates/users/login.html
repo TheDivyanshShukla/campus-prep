@@ -22,24 +22,55 @@
         <form class="mt-8 space-y-6" action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             
-            {% if form.non_field_errors() %}
+            {% if form.non_field_errors %}
             <div class="rounded-md bg-red-50 dark:bg-red-900/30 p-4 border border-red-200 dark:border-red-800">
                 <div class="text-sm text-red-700 dark:text-red-400">
-                    {{ form.non_field_errors()[0] }}
+                    {{ form.non_field_errors.0 }}
                 </div>
             </div>
             {% endif %}
 
             <div class="space-y-4">
-                <div>
-                    <label for="id_username" class="block text-sm font-medium text-foreground mb-1">Username</label>
-                    <input id="id_username" name="username" type="text" required class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="Enter your username">
-                </div>
-                <div>
-                    <label for="id_password" class="block text-sm font-medium text-foreground mb-1">Password</label>
-                    <input id="id_password" name="password" type="password" required class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="••••••••">
-                </div>
+               {% for field in form %}
+               <div>
+                   <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">
+                       {{ field.label }}
+                   </label>
+                   <div class="mt-1 relative">
+                        <div class="appearance-none block w-full [&>input]:w-full [&>input]:px-3 [&>input]:py-2.5 [&>input]:border [&>input]:border-border [&>input]:rounded-lg [&>input]:bg-input/50 [&>input]:placeholder-muted-foreground focus:[&>input]:outline-none focus:[&>input]:ring-2 focus:[&>input]:ring-ring focus:[&>input]:border-ring [&>input]:sm:text-sm [&>input]:transition-colors">
+                            {{ field }}
+                        </div>
+                   </div>
+               </div>
+               {% endfor %}
             </div>
+
+            <style>
+                /* Tailwind injection override for Django forms */
+                form input {
+                    width: 100%;
+                    padding: 0.625rem 0.75rem;
+                    border: 1px solid hsl(var(--border));
+                    border-radius: 0.5rem;
+                    background-color: hsl(var(--input) / 0.5);
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 150ms;
+                }
+                form input:focus {
+                    outline: 2px solid transparent;
+                    outline-offset: 2px;
+                    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+                    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) hsl(var(--ring));
+                    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+                    border-color: hsl(var(--ring));
+                }
+                .dark form input {
+                    color: white;
+                }
+            </style>
 
             <div class="flex items-center justify-between">
                 <div class="flex items-center">

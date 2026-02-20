@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Reader - {{ document.title }} | RGPV Live{% endblock %}
+
+{% block head %}
+<!-- KaTeX for beautiful math equations natively without slow PDFs -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<!-- Marked.js for Markdown parsing -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    
+    <!-- Reader Header -->
+    <div class="mb-8 border-b border-border pb-6">
+        <div class="flex items-center justify-between mb-4">
+            <a href="{% url 'subject_dashboard' document.subject.id %}" class="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                Back to {{ document.subject.code }}
+            </a>
+            <span class="px-2.5 py-1 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800 text-xs font-bold rounded-lg flex items-center">
+                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Native Mode
+            </span>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">{{ document.title }}</h1>
+        <p class="text-muted-foreground text-sm">
+            Powered by Gemini AI • Structured {{ document.get_document_type_display }}
+        </p>
+    </div>
+
+    <!-- The Native Render (Looping through JSON structure) -->
+    <div class="space-y-6">
+        
+        {% if document.document_type == 'PYQ' %}
+            <!-- Strict AI PYQ Format -->
+            {% for question in document.structured_data.questions %}
+            <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border overflow-hidden">
+                <div class="bg-muted/30 px-6 py-4 border-b border-border flex justify-between items-start">
+                    <div>
+                        <span class="inline-block bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded mb-2 shadow-sm">
+                            Unit {{ question.unit|default:"?" }}
+                        </span>
+                        {% if question.has_or_choice %}
+                        <span class="inline-block ml-2 text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 rounded">
+                            OR Choice
+                        </span>
+                        {% endif %}
+                    </div>
+                    <div class="flex-shrink-0 text-right">
+                        <span class="text-xl font-black">{{ question.marks }}</span>
+                        <span class="text-xs text-muted-foreground block font-bold uppercase tracking-wider">Marks</span>
+                    </div>
+                </div>
+                
+                <div class="p-6 prose prose-slate dark:prose-invert max-w-none">
+                    <p class="text-lg leading-relaxed font-medium">
+                        {% if question.part %}<strong>{{ question.part }}</strong> {% endif %}
+                        {{ question.question_text }}
+                    </p>
+                    
+                    {% if question.latex_answer %}
+                    <div class="mt-6 pt-6 border-t border-border">
+                        <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4>
+                        <div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body">
+                            {{ question.latex_answer }}
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="mt-6 pt-6 border-t border-border flex justify-between items-center bg-muted/10 p-4 rounded-lg">
+                        <span class="text-sm text-muted-foreground font-medium">Want the AI generated solution for this specific question?</span>
+                        <button class="bg-indigo-600 text-white hover:bg-indigo-700 text-xs font-bold py-1.5 px-4 rounded-md transition-colors shadow-sm cursor-not-allowed opacity-80">
+                            Available in Video Crash Course
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
+        {% elif document.document_type == 'NOTES' or document.document_type == 'SHORT_NOTES' %}
+            <!-- Markdown & LaTeX Driven Notes -->
+            <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+                <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border">
+                    <h2 class="text-xl font-bold">{{ document.structured_data.title }}</h2>
+                </div>
+                <div class="p-6">
+                    <div class="markdown-body math-render-target prose prose-indigo dark:prose-invert max-w-none leading-relaxed hidden" id="raw-markdown-content">{{ document.structured_data.content|escapejs }}</div>
+                    <div id="rendered-markdown-content" class="prose prose-indigo dark:prose-invert max-w-none leading-relaxed"></div>
+                </div>
+            </div>
+
+        {% elif document.document_type == 'FORMULA' %}
+            <!-- Highlighted Formula Sheet -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {% for formula in document.structured_data.formulas %}
+                <div class="bg-card shadow-sm rounded-xl border border-border p-6 flex flex-col items-center justify-center text-center">
+                    <h3 class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-4">{{ formula.name }}</h3>
+                    <div class="text-2xl font-black math-render-target text-indigo-600 dark:text-indigo-400">
+                        $$ {{ formula.latex }} $$
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        {% elif document.document_type == 'SYLLABUS' %}
+            <!-- Curriculum Modules -->
+            <div class="space-y-6">
+                {% for module in document.structured_data.modules %}
+                <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+                    <div class="bg-teal-50 dark:bg-teal-900/10 px-6 py-4 border-b border-teal-100 dark:border-teal-900/30 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black mr-3">
+                            {{ module.unit }}
+                        </div>
+                        <h2 class="text-lg font-bold">Unit {{ module.unit }} Syllabus</h2>
+                    </div>
+                    <div class="p-6">
+                        <ul class="list-disc list-inside space-y-2 text-foreground/80">
+                            {% for topic in module.topics %}
+                                <li>{{ topic }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        {% elif document.document_type == 'IMPORTANT_Q' %}
+            <!-- Important Questions List -->
+            <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+                <div class="divide-y divide-border">
+                    {% for q in document.structured_data.questions %}
+                    <div class="p-6 flex items-start gap-4 hover:bg-muted/30 transition-colors">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-lg font-medium">{{ q.text }}</p>
+                            <span class="inline-block mt-2 text-xs font-bold px-2 py-1 bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded-md border border-amber-200 dark:border-amber-800">
+                                {{ q.frequency }} Frequency
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% else %}
+            <!-- Generic JSON Fallback -->
+            <div class="bg-card shadow-sm rounded-xl border border-border p-6 font-mono text-sm whitespace-pre-wrap overflow-x-auto">
+                {{ document.structured_data }}
+            </div>
+        {% endif %}
+        
+    </div>
+
+</div>
+</div>
+
+<!-- Markdown and Math Rendering Initialization -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Render Markdown if Notes
+        const rawMd = document.getElementById("raw-markdown-content");
+        const outMd = document.getElementById("rendered-markdown-content");
+        
+        if (rawMd && outMd) {
+            // marked.js is loaded in the head
+            // The content was escapejs so we unescape quotes if necessary, 
+            // but innerHTML helps us get the literal string cleanly
+            const textToParse = rawMd.textContent || rawMd.innerText;
+            outMd.innerHTML = marked.parse(textToParse);
+        }
+
+        // 2. Render KaTeX Math everywhere
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+{% endblock %}

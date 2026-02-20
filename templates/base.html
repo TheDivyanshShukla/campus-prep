@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full {% if request.COOKIES.theme == 'dark' %}dark{% endif %}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -106,6 +106,15 @@
     </style>
     
     {% block head %}{% endblock %}
+
+    <!-- Prevent FOUC (Flash of Unstyled Content) for Dark Mode -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased bg-background text-foreground transition-colors duration-300">
     
@@ -115,16 +124,27 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="/" class="text-xl font-bold tracking-tight">
+                    <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="text-xl font-bold tracking-tight">
                         RGPV<span class="text-blue-600 dark:text-blue-400">Live</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Study Material</a>
+                <nav class="hidden md:flex md:space-x-8 items-center">
+                    <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        Study Material
+                    </a>
+                    {% if user.is_authenticated %}
+                    <a href="/onboarding/" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        Change Program
+                    </a>
+                    {% else %}
                     <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">PYQs</a>
-                    <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Premium Pass</a>
+                    {% endif %}
+                    <a href="#" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Global Pass
+                    </a>
                 </nav>
                 
                 <!-- Auth Buttons -->
@@ -132,9 +152,6 @@
                     {% if user.is_authenticated %}
                         <div class="flex items-center space-x-4">
                             <span class="text-sm font-semibold text-primary/80">Hi, {{ user.username }} 👋</span>
-                            {% if user.is_staff %}
-                            <a href="/admin/ai-parser/" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition-colors">AI Portal</a>
-                            {% endif %}
                             <a href="{% url 'logout' %}" class="bg-muted text-muted-foreground hover:bg-muted/80 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
                                 Log out
                             </a>
@@ -154,13 +171,55 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-muted-foreground hover:text-foreground p-2">
+                <div class="md:hidden flex items-center gap-2">
+                    <!-- Mobile Dark mode toggle -->
+                    <button id="mobileThemeToggle" class="p-2 rounded-full hover:bg-muted transition-colors">
+                        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 hidden dark:block text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <!-- actual menu btn -->
+                    <button id="mobileMenuBtn" class="text-muted-foreground hover:text-foreground p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobileMenu" class="md:hidden hidden bg-background border-t border-border shadow-md absolute w-full left-0 mt-0">
+            <div class="px-4 py-4 space-y-4">
+                <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="block text-base font-medium text-foreground">
+                    Study Material
+                </a>
+                {% if user.is_authenticated %}
+                <a href="/onboarding/" class="block text-base font-medium text-muted-foreground hover:text-foreground">Change Program</a>
+                {% else %}
+                <a href="#" class="block text-base font-medium text-muted-foreground hover:text-foreground">PYQs</a>
+                {% endif %}
+                <a href="#" class="text-base font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Global Pass
+                </a>
+                
+                <hr class="border-border">
+                
+                {% if user.is_authenticated %}
+                    <div class="px-2 py-2">
+                        <span class="text-sm font-semibold text-primary/80 block mb-2">Hi, {{ user.username }} 👋</span>
+                        <a href="{% url 'logout' %}" class="inline-block bg-muted text-muted-foreground hover:bg-muted/80 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm w-full text-center">
+                            Log out
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="flex flex-col space-y-3">
+                        <a href="{% url 'login' %}" class="text-base font-medium hover:text-foreground transition-colors text-center py-2 border border-border rounded-md">Log in</a>
+                        <a href="{% url 'signup' %}" class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-3 rounded-md text-base text-center font-medium transition-colors shadow-sm">
+                            Sign up
+                        </a>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -177,26 +236,36 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle Script -->
+    <!-- Header & Theme Scripts -->
     <script>
-        const themeToggle = document.getElementById('themeToggle');
-        
-        // Check for saved theme preference or use OS preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        themeToggle.addEventListener('click', () => {
+        // --- Theme Toggle Logic ---
+        const toggleTheme = () => {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.theme = 'light';
+                document.cookie = "theme=light; path=/; max-age=31536000";
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.theme = 'dark';
+                document.cookie = "theme=dark; path=/; max-age=31536000";
             }
-        });
+        };
+
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
     
     {% block scripts %}{% endblock %}

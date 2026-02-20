@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
+from apps.academics.models import Subject
+from .forms import CustomUserCreationForm, UserOnboardingForm
 
 def signup_view(request):
     if request.user.is_authenticated:
@@ -12,11 +14,11 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('dashboard')
     else:
         form = CustomUserCreationForm()
         
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'users/signup.html', {'form': form})
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -27,12 +29,56 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')
+            return redirect('dashboard')
     else:
         form = AuthenticationForm()
         
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'users/login.html', {'form': form})
 
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+@login_required
+def onboarding_view(request):
+    """
+    Forces the user to select their Branch and Semester if they haven't already.
+    """
+    user = request.user
+    
+    # If they already have both set, send them straight to dashboard
+    if user.preferred_branch and user.preferred_semester:
+        return redirect('dashboard')
+        
+    if request.method == 'POST':
+        form = UserOnboardingForm(request.POST)
+        if form.is_valid():
+            user.preferred_branch = form.cleaned_data['branch']
+            user.preferred_semester = form.cleaned_data['semester']
+            user.save()
+            return redirect('dashboard')
+    else:
+        form = UserOnboardingForm()
+        
+    return render(request, 'users/onboarding.html', {'form': form})
+
+@login_required
+def user_dashboard(request):
+    """
+    The personalized student dashboard showing subjects for their selected branch and semester.
+    """
+    user = request.user
+    
+    if not user.preferred_branch or not user.preferred_semester:
+        return redirect('onboarding')
+        
+    subjects = Subject.objects.filter(
+        branch=user.preferred_branch,
+        semester=user.preferred_semester
+    ).order_by('code')
+    
+    return render(request, 'users/dashboard.html', {
+        'subjects': subjects,
+        'user_branch': user.preferred_branch,
+        'user_sem': user.preferred_semester
+    })

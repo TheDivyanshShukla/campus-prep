@@ -3,7 +3,7 @@ import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .services import ContentParserService
+from .services.ai_parser import DocumentParserService
 from .models import ParsedDocument
 from apps.academics.models import Subject
 from django.shortcuts import get_object_or_404
@@ -33,7 +33,7 @@ class ParseDocumentAPI(APIView):
                 raw_text = "IMAGE_UPLOAD_PLACEHOLDER - Awaiting Multimodal logic."
             
             # Run LangChain AI Service
-            parser = ContentParserService()
+            parser = DocumentParserService()
             structured_result = parser.parse_pyq_text(raw_text)
 
             return Response({
