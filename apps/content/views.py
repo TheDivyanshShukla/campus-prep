@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.db import models
 from apps.academics.models import Subject
 from apps.content.models import ParsedDocument
 
@@ -30,13 +31,24 @@ def subject_dashboard(request, subject_id):
     
     # Evaluate global access for the padlock UI
     has_global_access = False
+    unlocked_doc_ids = set()
+    
     if request.user.is_authenticated:
         if request.user.is_staff:
             has_global_access = True
         elif request.user.active_subscription_valid_until and request.user.active_subscription_valid_until >= timezone.now().date():
             has_global_access = True
             
+        # Get documents unlocked specifically by purchase that haven't expired
+        valid_unlocked = request.user.unlocked_contents.filter(
+            parsed_document__isnull=False
+        ).filter(
+            models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
+        ).values_list('parsed_document_id', flat=True)
+        unlocked_doc_ids = set(valid_unlocked)
+            
     pyqs = [doc for doc in documents if doc.document_type == 'PYQ']
+    unsolved_pyqs = [doc for doc in documents if doc.document_type == 'UNSOLVED_PYQ']
     notes = [doc for doc in documents if doc.document_type == 'NOTES']
     short_notes = [doc for doc in documents if doc.document_type == 'SHORT_NOTES']
     imp_qs = [doc for doc in documents if doc.document_type == 'IMPORTANT_Q']
@@ -48,13 +60,15 @@ def subject_dashboard(request, subject_id):
         'subject': subject,
         'documents': documents,
         'pyqs': pyqs,
+        'unsolved_pyqs': unsolved_pyqs,
         'notes': notes,
         'short_notes': short_notes,
         'imp_qs': imp_qs,
         'formulas': formulas,
         'syllabus': syllabus,
         'crash_courses': crash_courses,
-        'has_global_access': has_global_access
+        'has_global_access': has_global_access,
+        'unlocked_doc_ids': unlocked_doc_ids
     })
 
 @login_required
@@ -73,8 +87,10 @@ def read_document(request, document_id):
     
     # Specific Unlocked Content Check (If they bought just this one PDF)
     has_specific_unlock = user.unlocked_contents.filter(
-        product__subject=document.subject, 
-        product__category__name__icontains=document.document_type
+        models.Q(product__subject=document.subject, product__category__name__icontains=document.document_type) |
+        models.Q(parsed_document=document)
+    ).filter(
+        models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
     ).exists()
     
     if document.is_premium:

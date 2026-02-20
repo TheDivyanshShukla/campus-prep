@@ -35,7 +35,7 @@
     <!-- The Native Render (Looping through JSON structure) -->
     <div class="space-y-6">
         
-        {% if document.document_type == 'PYQ' %}
+        {% if document.document_type == 'PYQ' or document.document_type == 'UNSOLVED_PYQ' %}
             <!-- Strict AI PYQ Format -->
             {% for question in document.structured_data.questions %}
             <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border overflow-hidden">
@@ -57,10 +57,20 @@
                 </div>
                 
                 <div class="p-6 prose prose-slate dark:prose-invert max-w-none">
-                    <p class="text-lg leading-relaxed font-medium">
+                    <div class="text-lg leading-relaxed font-medium math-render-target whitespace-pre-line markdown-body">
                         {% if question.part %}<strong>{{ question.part }}</strong> {% endif %}
                         {{ question.question_text }}
-                    </p>
+                    </div>
+                    
+                    {% if question.image_recreation_prompt %}
+                    <div class="mt-4 p-4 border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/10 rounded-lg">
+                        <div class="flex items-center text-blue-800 dark:text-blue-300 mb-2">
+                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="font-bold text-sm">Image Reference Detected</span>
+                        </div>
+                        <p class="text-xs font-mono text-blue-700 dark:text-blue-400 bg-white dark:bg-blue-950 p-3 rounded border border-blue-100 dark:border-blue-900 overflow-x-auto">{{ question.image_recreation_prompt }}</p>
+                    </div>
+                    {% endif %}
                     
                     {% if question.latex_answer %}
                     <div class="mt-6 pt-6 border-t border-border">
@@ -147,6 +157,8 @@
                     {% endfor %}
                 </div>
             </div>
+
+
 
         {% else %}
             <!-- Generic JSON Fallback -->

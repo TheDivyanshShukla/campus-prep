@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 from apps.academics.models import Subject
 from .forms import CustomUserCreationForm, UserOnboardingForm
 
@@ -77,8 +78,33 @@ def user_dashboard(request):
         semester=user.preferred_semester
     ).order_by('code')
     
+    
     return render(request, 'users/dashboard.html', {
         'subjects': subjects,
         'user_branch': user.preferred_branch,
         'user_sem': user.preferred_semester
+    })
+
+@login_required
+def user_purchases(request):
+    """
+    Displays the user's unlocked premium content and purchase history.
+    """
+    all_unlocks = request.user.unlocked_contents.select_related('parsed_document', 'parsed_document__subject').all().order_by('-id')
+    
+    active_unlocks = []
+    expired_unlocks = []
+    
+    today = timezone.now().date()
+    
+    for unlock in all_unlocks:
+        if unlock.parsed_document: # Only show document unlocks for now
+            if unlock.valid_until is None or unlock.valid_until >= today:
+                active_unlocks.append(unlock)
+            else:
+                expired_unlocks.append(unlock)
+                
+    return render(request, 'users/purchases.html', {
+        'active_unlocks': active_unlocks,
+        'expired_unlocks': expired_unlocks
     })
