@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from apps.academics.models import Subject
+from apps.content.models import ParsedDocument
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=100, help_text="e.g., PYQ Solutions, Chapter Notes")
@@ -46,6 +47,7 @@ class Purchase(models.Model):
     )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='purchases')
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
+    parsed_document = models.ForeignKey(ParsedDocument, on_delete=models.SET_NULL, null=True, blank=True)
     subscription = models.ForeignKey(SubscriptionPlan, on_delete=models.SET_NULL, null=True, blank=True)
     amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
     razorpay_order_id = models.CharField(max_length=100, blank=True)
@@ -58,11 +60,12 @@ class Purchase(models.Model):
 
 class UnlockedContent(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='unlocked_contents')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
+    parsed_document = models.ForeignKey(ParsedDocument, on_delete=models.CASCADE, null=True, blank=True)
     valid_until = models.DateField(null=True, blank=True, help_text="Null means permanent access until RGPV exam.")
 
     class Meta:
-        unique_together = ('user', 'product')
+        pass # Removing unique_together since product or parsed_document can be null
 
     def __str__(self):
         return f"{self.user.username} - {self.product.name}"

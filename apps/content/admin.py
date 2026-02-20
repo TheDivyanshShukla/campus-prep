@@ -13,14 +13,18 @@ class DocumentImageInline(admin.TabularInline):
 class ParsedDocumentAdmin(admin.ModelAdmin):
     change_form_template = 'admin/parseddocument_change_form.html'
     inlines = [DocumentImageInline]
-    list_display = ('title', 'subject', 'document_type', 'parsing_status', 'is_published', 'updated_at')
-    list_filter = ('parsing_status', 'is_published', 'document_type', 'subject__branch')
+    list_display = ('title', 'subject', 'document_type', 'parsing_status', 'is_premium', 'is_published', 'updated_at')
+    list_filter = ('parsing_status', 'is_published', 'is_premium', 'document_type', 'subject__branch')
     search_fields = ('title', 'subject__code')
     readonly_fields = ('parsing_status',)
     
     fieldsets = (
         ('Basic Information', {
             'fields': ('subject', 'document_type', 'title', 'year', 'is_published')
+        }),
+        ('Pricing & Access', {
+            'fields': ('is_premium', 'price'),
+            'description': 'Configure if this document is free, requires a subscription, or has a specific unlock price.'
         }),
         ('AI Data Sources (Fill at least one)', {
             'fields': ('source_file', 'source_text'),

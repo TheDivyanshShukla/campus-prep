@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - {{ document.title }} | RGPV Live{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto sm:py-12 sm:px-6 lg:px-8 flex items-center justify-center min-h-[calc(100vh-80px)] pb-32 sm:pb-12">
+    <!-- On mobile: full width, no outer border. On sm+: bordered rounded card -->
+    <div class="bg-card w-full sm:border border-border sm:rounded-[2.5rem] p-6 sm:p-12 relative overflow-hidden sm:shadow-2xl flex flex-col md:flex-row gap-8 lg:gap-16">
+        
+        <!-- Ambient glows -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3"></div>
+        
+        <!-- Left Column: Copy & Details -->
+        <div class="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-0 pt-4 sm:pt-0">
+            <span class="inline-block px-3 py-1 bg-amber-500/10 text-amber-500 text-[10px] sm:text-xs font-bold rounded-full mb-3 sm:mb-4 w-max uppercase tracking-wider border border-amber-500/20">Secure Checkout</span>
+            
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-2 sm:mb-4 text-foreground leading-tight">
+                Unlock Premium <br class="hidden lg:block"/>Academic Mastery.
+            </h1>
+            <p class="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-lg leading-relaxed">
+                You are about to gain permanent, unrestrained access to the most accurate, AI-generated solutions natively built for engineering students.
+            </p>
+
+            <div class="space-y-4 text-sm lg:text-base text-muted-foreground">
+                <div class="flex items-start">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mr-3 mt-0.5 shrink-0 border border-emerald-500/20">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p><strong class="text-foreground">100% Verified Accuracy.</strong> Step-by-step rigorous solutions.</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mr-3 mt-0.5 shrink-0 border border-emerald-500/20">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p><strong class="text-foreground">Crystal Clear UI.</strong> Native Markdown and KaTeX math rendering tailored for mobile screens.</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mr-3 mt-0.5 shrink-0 border border-emerald-500/20">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p><strong class="text-foreground">Lifetime Access.</strong> No recurring fees.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Order Summary & Payment -->
+        <div class="relative z-10 w-full md:w-[350px] lg:w-[400px] shrink-0 flex flex-col justify-center mt-4 md:mt-0">
+            <!-- Mobile Sticky Bottom Bar vs Desktop Card -->
+            <div class="bg-card sm:bg-background/60 sm:backdrop-blur-xl border-y sm:border border-border/50 sm:border-border sm:rounded-3xl p-5 lg:p-8 sm:shadow-2xl relative mx-[-1.5rem] sm:mx-0">
+                <h3 class="hidden sm:block text-lg font-bold border-b border-border/50 sm:border-border pb-4 mb-5 px-2 sm:px-0">Order Summary</h3>
+                
+                <div class="flex gap-4 mb-4 sm:mb-6 pt-1 px-4 sm:px-0">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 border border-amber-500/20">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-foreground sm:text-lg leading-tight line-clamp-2 pr-2">{{ document.title }}</h4>
+                        <p class="text-[11px] sm:text-xs text-muted-foreground mt-1 line-clamp-1">{{ document.subject.name }} ({{ document.subject.code }})</p>
+                    </div>
+                </div>
+
+                <!-- Sticky bottom bar on mobile, normal flow on desktop -->
+                <div class="fixed sm:relative bottom-0 left-0 right-0 z-50 bg-card/95 sm:bg-transparent backdrop-blur-2xl sm:backdrop-blur-none border-t border-border sm:border-t-0 p-4 pb-6 sm:p-0 shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.5)] sm:shadow-none flex flex-col justify-end items-stretch gap-3 sm:gap-0">
+                    
+                    <div class="flex flex-row justify-between items-center sm:mb-6 sm:pt-6 sm:border-t sm:border-border sm:border-dashed">
+                        <span class="text-muted-foreground font-medium text-sm">Total Amount</span>
+                        <span class="text-2xl sm:text-4xl font-black text-foreground tracking-tight leading-none">₹{{ document.price }}</span>
+                    </div>
+
+                    <button id="rzp-button1" class="w-full px-6 py-4 bg-[#00b86b] hover:bg-[#00a35f] text-white font-extrabold text-lg rounded-2xl transition-transform active:scale-95 shadow-[0_8px_20px_-8px_rgba(0,184,107,0.6)] flex items-center justify-center sm:mt-2 relative overflow-hidden group">
+                        <!-- Shine effect -->
+                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shine transition-transform"></div>
+                        <svg class="w-6 h-6 mr-2 text-white shrink-0 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        <span class="relative z-10">Pay Securely via Razorpay</span>
+                    </button>
+                    
+                    <p class="hidden sm:flex text-center text-[11px] text-muted-foreground mt-4 items-center justify-center pt-1">
+                        <svg class="w-3.5 h-3.5 mr-1 text-[#00b86b] opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> 
+                        Payments secured by Razorpay
+                    </p>
+                </div>
+                <!-- Small mobile security badge -->
+                <p class="sm:hidden text-center text-[10px] pb-2 text-muted-foreground/60 flex items-center justify-center mt-2 border-t border-border/10 pt-3 mx-4">
+                    <svg class="w-3 h-3 mr-1 text-[#00b86b] opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> 
+                    Payments secured by Razorpay
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Invisible form that Razorpay auto-fills and submits on success -->
+<form action="{% url 'payment_verify' %}" method="POST" id="razorpay-form" class="hidden">
+    <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+    <input type="hidden" name="razorpay_order_id" id="razorpay_order_id">
+    <input type="hidden" name="razorpay_signature" id="razorpay_signature">
+</form>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+        "key": "{{ razorpay_key_id }}",
+        "amount": "{{ amount }}", // Amount is in paise
+        "currency": "INR",
+        "name": "RGPV Live",
+        "description": "Premium Document Unlock",
+        "image": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light", // Replace with our real logo later
+        "order_id": "{{ order_id }}",
+        "handler": function (response){
+            // Write the successful payment ids into our hidden form
+            document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+            document.getElementById('razorpay_order_id').value = response.razorpay_order_id;
+            document.getElementById('razorpay_signature').value = response.razorpay_signature;
+            
+            // Submit the form to our backend view for verification
+            document.getElementById('razorpay-form').submit();
+        },
+        "prefill": {
+            "name": "{{ request.user.username }}",
+            "email": "{{ request.user.email|default:'' }}"
+        },
+        "theme": {
+            "color": "#f59e0b" // Matches our amber-500 premium color
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    
+    // Add fail handler
+    rzp1.on('payment.failed', function (response){
+        alert("Payment Failed: " + response.error.description);
+    });
+
+    // Trigger the popup on button click
+    document.getElementById('rzp-button1').onclick = function(e){
+        rzp1.open();
+        e.preventDefault();
+    }
+</script>
+{% endblock %}

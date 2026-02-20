@@ -1768,6 +1768,18 @@ wheels = [
 ]
 
 [[package]]
+name = "razorpay"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/65/d6/2b8d750c4c7c1b9fdcc997ac5b0b5c4a165948931f82b3ce3fcab049f775/razorpay-2.0.0.tar.gz", hash = "sha256:929aef2f4aec8190dfe12b79ba09e83c39086f6ea0bffa0586b719c5b9054450", size = 197062, upload-time = "2025-09-22T08:23:22.07Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4b/f6/d16cd89374c16cfdce2e30b80e98afd095713ae5fe33fd813b0a89ee1e67/razorpay-2.0.0-py3-none-any.whl", hash = "sha256:524cf1726f673fc72d448f83fd2ea479526d2dd48641ca75ee9a58e25300784a", size = 176858, upload-time = "2025-09-22T08:23:20.689Z" },
+]
+
+[[package]]
 name = "regex"
 version = "2026.2.19"
 source = { registry = "https://pypi.org/simple" }
@@ -1933,6 +1945,7 @@ dependencies = [
     { name = "pydantic" },
     { name = "pymupdf" },
     { name = "python-dotenv" },
+    { name = "razorpay" },
 ]
 
 [package.metadata]
@@ -1949,6 +1962,7 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.12.5" },
     { name = "pymupdf", specifier = ">=1.27.1" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
+    { name = "razorpay", specifier = ">=2.0.0" },
 ]
 
 [[package]]

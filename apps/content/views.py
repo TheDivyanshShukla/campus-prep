@@ -77,10 +77,10 @@ def read_document(request, document_id):
         product__category__name__icontains=document.document_type
     ).exists()
     
-    if not (has_global_pass or has_specific_unlock or user.is_staff):
-        # User is locked out, redirect to a premium pitch page (or back to dashboard with a message)
-        # Note: We can implement messages framework later. For now, redirect to dashboard.
-        return redirect('subject_dashboard', subject_id=document.subject.id)
+    if document.is_premium:
+        if not (has_global_pass or has_specific_unlock or user.is_staff):
+            # User is locked out, redirect to dashboard
+            return redirect('subject_dashboard', subject_id=document.subject.id)
 
     return render(request, 'content/document_reader.html', {
         'document': document

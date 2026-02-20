@@ -51,6 +51,11 @@ class ParsedDocument(models.Model):
     structured_data = models.JSONField(null=True, blank=True, help_text="Stores the exact LangChain parsed output. Auto-filled by AI.")
     
     is_published = models.BooleanField(default=False)
+    
+    # Pricing & Access
+    is_premium = models.BooleanField(default=False, help_text="Check if this content requires a premium subscription or one-time purchase.")
+    price = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True, help_text="Optional: Set a specific price to unlock just this document.")
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

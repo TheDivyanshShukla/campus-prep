@@ -93,7 +93,7 @@
         <div id="tab-pyqs" class="tab-content animate-in fade-in slide-in-from-bottom-4 duration-300">
             <div class="flex items-center mb-6 border-b border-border pb-2">
                 <svg class="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                <h2 class="text-2xl font-bold">Solved PYQs (Structured JSON)</h2>
+                <h2 class="text-2xl font-bold">Solved PYQs</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -101,15 +101,18 @@
                     <div class="group relative bg-card text-card-foreground rounded-2xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-primary/5">
                         
                         <!-- Lock Overlay -->
-                        {% if not has_global_access %}
+                        {% if doc.is_premium and not has_global_access %}
                         <div class="absolute inset-0 z-10 bg-background/60 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
                             <div class="w-12 h-12 bg-white dark:bg-zinc-800 rounded-full flex items-center justify-center shadow-lg border border-border mb-3">
                                 <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                             </div>
-                            <h4 class="font-bold text-foreground">Premium Access</h4>
-                            <p class="text-xs text-muted-foreground mt-1 mb-4">Unlock the Semester Pass to read AI-parsed solutions instantly.</p>
-                            <a href="#" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors shadow-sm">
-                                Get Pass
+                            <h4 class="font-bold text-foreground">Unlock {{ doc.title }}</h4>
+                            <p class="text-xs text-muted-foreground mt-1 mb-4">Get instant access to complete step-by-step solutions for this paper.</p>
+                            <a href="{% if doc.price %}{% url 'checkout_document' doc.id %}{% else %}#{% endif %}" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors shadow-sm mb-2 w-full max-w-[200px]">
+                                {% if doc.price %}Buy for ₹{{ doc.price }}{% else %}Unlock Document{% endif %}
+                            </a>
+                            <a href="#" class="text-xs text-amber-500 hover:text-amber-600 font-semibold underline underline-offset-2">
+                                Or get Semester Pass
                             </a>
                         </div>
                         {% endif %}
@@ -123,20 +126,20 @@
                             <h3 class="text-lg font-bold mb-2">{{ doc.title }}</h3>
                             <p class="text-sm text-muted-foreground mb-6 line-clamp-2">Complete structured solutions, natively rendered for mobile without zooming.</p>
                             
-                            {% if has_global_access %}
+                            {% if not doc.is_premium or has_global_access %}
                             <a href="{% url 'read_document' doc.id %}" class="block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg text-sm font-semibold py-2.5 transition-colors">
                                 Read Now
                             </a>
                             {% else %}
-                            <div class="w-full text-center bg-muted text-muted-foreground rounded-lg text-sm font-semibold py-2.5 opacity-50 cursor-not-allowed">
-                                Locked
+                            <div class="w-full text-center bg-muted text-muted-foreground rounded-lg text-sm font-semibold py-2.5 opacity-50 cursor-not-allowed border border-border">
+                                <span class="text-amber-500 mr-1">🔒</span> Premium
                             </div>
                             {% endif %}
                         </div>
                     </div>
                 {% empty %}
                     <div class="col-span-full text-center py-10 bg-muted/20 border border-dashed border-border rounded-2xl">
-                        <p class="text-muted-foreground">Admin hasn't uploaded AI-parsed PYQs yet.</p>
+                        <p class="text-muted-foreground">No recent PYQs available yet.</p>
                     </div>
                 {% endfor %}
             </div>
@@ -150,8 +153,18 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {% for doc in notes %}
-                        <a href="{% url 'read_document' doc.id %}" class="flex items-center justify-between p-4 bg-card hover:bg-muted/50 border border-border rounded-xl transition-colors group">
-                            <div class="flex items-center">
+                        <a href="{% if not doc.is_premium or has_global_access %}{% url 'read_document' doc.id %}{% elif doc.price %}{% url 'checkout_document' doc.id %}{% else %}#{% endif %}" class="relative overflow-hidden flex items-center justify-between p-4 bg-card hover:bg-muted/50 border border-border rounded-xl transition-colors group">
+                            
+                            {% if doc.is_premium and not has_global_access %}
+                            <div class="absolute inset-0 z-10 bg-background/50 backdrop-blur-[1px] flex items-center justify-center">
+                                <span class="bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-400 text-xs font-bold px-3 py-1.5 rounded border border-amber-200 dark:border-amber-800 flex items-center">
+                                    <svg class="w-3.5 h-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    Premium {% if doc.price %} - ₹{{ doc.price }}{% endif %}
+                                </span>
+                            </div>
+                            {% endif %}
+
+                            <div class="flex items-center {% if doc.is_premium and not has_global_access %}opacity-40{% endif %}">
                                 <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mr-4">
                                     <span class="font-black font-mono text-sm">{{ forloop.counter }}</span>
                                 </div>
@@ -160,7 +173,7 @@
                                     <p class="text-xs text-muted-foreground">Chapter Study</p>
                                 </div>
                             </div>
-                            <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-2 {% if doc.is_premium and not has_global_access %}opacity-40{% endif %}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
                     {% empty %}
                         <div class="col-span-full py-10 bg-muted/20 border border-dashed border-border rounded-2xl flex items-center justify-center">
@@ -185,7 +198,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-foreground group-hover:text-primary transition-colors">{{ doc.title }}</h4>
-                                    <p class="text-xs text-muted-foreground">AI-Generated Revision</p>
+                                    <p class="text-xs text-muted-foreground">Quick Revision</p>
                                 </div>
                             </div>
                             <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
