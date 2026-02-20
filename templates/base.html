@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RGPV Live - Your Ultimate Exam Vault{% endblock %}</title>
+    
+    <!-- Tailwind CSS (CDN per rules) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- HeroUI / shadcn aesthetic config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Base CSS mappings & micro-animations -->
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --background: 0 0% 100%;
+                --foreground: 240 10% 3.9%;
+                --primary: 240 5.9% 10%;
+                --primary-foreground: 0 0% 98%;
+                --secondary: 240 4.8% 95.9%;
+                --secondary-foreground: 240 5.9% 10%;
+                --muted: 240 4.8% 95.9%;
+                --muted-foreground: 240 3.8% 46.1%;
+                --accent: 240 4.8% 95.9%;
+                --accent-foreground: 240 5.9% 10%;
+                --border: 240 5.9% 90%;
+                --input: 240 5.9% 90%;
+                --ring: 240 100% 50%;
+                --radius: 0.5rem;
+            }
+
+            .dark {
+                --background: 240 10% 3.9%;
+                --foreground: 0 0% 98%;
+                --primary: 0 0% 98%;
+                --primary-foreground: 240 5.9% 10%;
+                --secondary: 240 3.7% 15.9%;
+                --secondary-foreground: 0 0% 98%;
+                --muted: 240 3.7% 15.9%;
+                --muted-foreground: 240 5% 64.9%;
+                --accent: 240 3.7% 15.9%;
+                --accent-foreground: 0 0% 98%;
+                --border: 240 3.7% 15.9%;
+                --input: 240 3.7% 15.9%;
+                --ring: 240 4.9% 83.9%;
+            }
+        }
+
+        /* Glassmorphism utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-nav {
+            background: rgba(9, 9, 11, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+    
+    {% block head %}{% endblock %}
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased bg-background text-foreground transition-colors duration-300">
+    
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full glass-nav transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-xl font-bold tracking-tight">
+                        RGPV<span class="text-blue-600 dark:text-blue-400">Live</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Study Material</a>
+                    <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">PYQs</a>
+                    <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Premium Pass</a>
+                </nav>
+                
+                <!-- Auth Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    {% if user.is_authenticated %}
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm font-semibold text-primary/80">Hi, {{ user.username }} 👋</span>
+                            {% if user.is_staff %}
+                            <a href="/admin/ai-parser/" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition-colors">AI Portal</a>
+                            {% endif %}
+                            <a href="{% url 'logout' %}" class="bg-muted text-muted-foreground hover:bg-muted/80 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
+                                Log out
+                            </a>
+                        </div>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="text-sm font-medium hover:text-foreground transition-colors">Log in</a>
+                        <a href="{% url 'signup' %}" class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
+                            Sign up
+                        </a>
+                    {% endif %}
+                    
+                    <!-- Dark mode toggle -->
+                    <button id="themeToggle" class="p-2 rounded-full hover:bg-muted transition-colors">
+                        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 hidden dark:block text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-muted-foreground hover:text-foreground p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="border-t border-border mt-auto py-8">
+        <div class="container mx-auto px-4 text-center text-sm text-muted-foreground">
+            &copy; 2026 RGPV Live. Built for engineers, by engineers.
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Check for saved theme preference or use OS preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+    </script>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

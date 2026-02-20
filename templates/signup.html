@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Sign up - RGPV Live{% endblock %}
+
+{% block content %}
+<div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    
+    <!-- Background Elements -->
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-100/50 via-background to-background dark:from-indigo-900/10 dark:via-background dark:to-background"></div>
+
+    <div class="max-w-md w-full space-y-8 bg-card text-card-foreground p-8 rounded-2xl border border-border shadow-xl shadow-border/50 dark:shadow-none backdrop-blur-sm bg-background/80">
+        
+        <div class="text-center">
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-foreground">
+                Join the Vault
+            </h2>
+            <p class="mt-2 text-sm text-muted-foreground">
+                Already have an account? <a href="{% url 'login' %}" class="font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition-colors">Log in here</a>
+            </p>
+        </div>
+        
+        <form class="mt-8 space-y-6" action="{% url 'signup' %}" method="POST">
+            {% csrf_token %}
+            
+            {% if form.errors %}
+            <div class="rounded-md bg-red-50 dark:bg-red-900/30 p-4 border border-red-200 dark:border-red-800">
+                <div class="text-sm text-red-700 dark:text-red-400">
+                    <ul class="list-disc pl-5 space-y-1">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors() %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="space-y-4">
+                <div>
+                    <label for="id_username" class="block text-sm font-medium text-foreground mb-1">Username</label>
+                    <input id="id_username" name="username" type="text" required class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="Choose a username">
+                </div>
+                <div>
+                    <label for="id_email" class="block text-sm font-medium text-foreground mb-1">Email <span class="text-muted-foreground font-normal">(Optional)</span></label>
+                    <input id="id_email" name="email" type="email" class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="you@example.com">
+                </div>
+                <div>
+                    <label for="id_password1" class="block text-sm font-medium text-foreground mb-1">Password</label>
+                    <input id="id_password1" name="password" type="password" required class="appearance-none block w-full px-3 py-2.5 border border-border rounded-lg bg-input/50 placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring sm:text-sm transition-colors" placeholder="Create a strong password">
+                </div>
+                <!-- 
+                Note: Standard UserCreationForm uses dual password fields (password1, password2). 
+                We are using the single strict standard input names mapped to the form.
+                If using the raw UserCreationForm rendering, it auto-generates inputs.
+                Here, we are forcing styling. 
+                -->
+                <div class="hidden">
+                    <!-- We render the form natively hidden just so Django picks up all required fields safely, 
+                         or we construct it properly. For MVP, simply dumping the form fields with Tailwind parsing is safer. -->
+                    {{ form.as_p() }}
+                </div>
+            </div>
+
+            <!-- Proper Form Render to ensure all fields like pwd confirmation are passed cleanly -->
+            <div class="space-y-4 mt-4 hidden" id="native-form-group">
+               <!-- We use JS to sync beautiful inputs with hidden inputs if needed. 
+                    Actually, it's better to render the form fields properly in Jinja. -->
+            </div>
+
+            <!-- Overriding with purely native form loop for absolute structural safety -->
+            <div class="space-y-4">
+               {% for field in form %}
+               <div>
+                   <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">
+                       {{ field.label }} {% if not field.field.required %}<span class="text-muted-foreground font-normal">(Optional)</span>{% endif %}
+                   </label>
+                   <!-- We use Jinja safely to inject tailwind classes onto the widget -->
+                   <div class="mt-1 relative">
+                        <!-- Standard input rendering, styling will be applied via CSS or we inject class -->
+                        <div class="appearance-none block w-full [&>input]:w-full [&>input]:px-3 [&>input]:py-2.5 [&>input]:border [&>input]:border-border [&>input]:rounded-lg [&>input]:bg-input/50 [&>input]:placeholder-muted-foreground focus:[&>input]:outline-none focus:[&>input]:ring-2 focus:[&>input]:ring-ring focus:[&>input]:border-ring [&>input]:sm:text-sm [&>input]:transition-colors">
+                            {{ field }}
+                        </div>
+                   </div>
+                   {% if field.help_text %}
+                       <p class="mt-1 text-xs text-muted-foreground">{{ field.help_text }}</p>
+                   {% endif %}
+               </div>
+               {% endfor %}
+            </div>
+
+            <style>
+                /* Tailwind injection override for Django forms */
+                form input {
+                    width: 100%;
+                    padding: 0.625rem 0.75rem;
+                    border: 1px solid hsl(var(--border));
+                    border-radius: 0.5rem;
+                    background-color: hsl(var(--input) / 0.5);
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 150ms;
+                }
+                form input:focus {
+                    outline: 2px solid transparent;
+                    outline-offset: 2px;
+                    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+                    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) hsl(var(--ring));
+                    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+                    border-color: hsl(var(--ring));
+                }
+                .dark form input {
+                    color: white;
+                }
+                form ul.errorlist {
+                    display: none;
+                }
+            </style>
+
+            <div>
+                <button type="submit" class="group w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-medium rounded-lg text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring focus:ring-offset-background transition-all shadow-md">
+                    Create Account
+                </button>
+            </div>
+            
+            <p class="text-xs text-center text-muted-foreground mt-4">
+                By signing up, you agree to our Terms of Service and Privacy Policy.
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

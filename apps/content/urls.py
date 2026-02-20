@@ -1,0 +1,17 @@
+from django.urls import path
+from . import views
+from .api import ParseDocumentAPI, PublishParsedDocumentAPI
+
+urlpatterns = [
+    # Public & Student Pages
+    path('', views.home, name='home'),
+    path('subject/<int:subject_id>/', views.subject_dashboard, name='subject_dashboard'),
+    path('read/<int:document_id>/', views.read_document, name='read_document'),
+
+    # Admin UI
+    path('admin/ai-parser/', views.admin_ai_parser, name='admin_ai_parser'),
+    
+    # AI API Endpoints
+    path('api/parse-document/', ParseDocumentAPI.as_view(), name='api_parse_document'),
+    path('api/publish-document/', PublishParsedDocumentAPI.as_view(), name='api_publish_document'),
+]
