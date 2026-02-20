@@ -30,7 +30,7 @@ class Subject(models.Model):
         unique_together = ('branch', 'semester', 'code')
 
     def __str__(self):
-        return f"{self.code} - {self.name}"
+        return f"[{self.branch.code} Sem {self.semester.number}] {self.code} - {self.name}"
 
 class Unit(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='units')
