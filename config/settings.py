@@ -151,3 +151,5 @@ LOGOUT_REDIRECT_URL = '/'
 # Razorpay Settings
 RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID', '')
 RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET', '')
+# AI Parser Settings
+AI_PARSER_RETRIES = int(os.getenv('AI_PARSER_RETRIES', '3'))

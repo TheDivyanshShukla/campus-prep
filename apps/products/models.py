@@ -68,4 +68,13 @@ class UnlockedContent(models.Model):
         pass # Removing unique_together since product or parsed_document can be null
 
     def __str__(self):
-        return f"{self.user.username} - {self.product.name}"
+        target = self.product.name if self.product else self.parsed_document.title
+        return f"{self.user.username} - {self.unlocked_target_name}"
+
+    @property
+    def unlocked_target_name(self):
+        if self.product:
+            return self.product.name
+        elif self.parsed_document:
+            return self.parsed_document.title
+        return "Unknown Content"
