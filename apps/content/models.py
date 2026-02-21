@@ -51,6 +51,10 @@ class ParsedDocument(models.Model):
     parsing_completed_chunks = models.PositiveIntegerField(default=0, help_text="Number of chunks processed so far")
     parsing_total_chunks = models.PositiveIntegerField(default=0, help_text="Total number of chunks to process")
     
+    # Image Recreation Progress
+    recreation_completed_images = models.PositiveIntegerField(default=0, help_text="Number of images recreated so far")
+    recreation_total_images = models.PositiveIntegerField(default=0, help_text="Total number of images to recreate")
+    
     # Store the actual array/object returned from LangChain + OpenAI Structured Outputs
     structured_data = models.JSONField(null=True, blank=True, help_text="Stores the exact LangChain parsed output. Auto-filled by AI.")
     

@@ -34,12 +34,17 @@ def process_document_ai(self, document_id):
         # The parser service handles its own internal chunking and merging
         structured_data = asyncio.run(parser.parse_document(document))
         
+        # Post-Processing: Recreate CANVAS images
+        from .services.image_recreator import ImageRecreationService
+        recreator = ImageRecreationService(doc_obj=document)
+        structured_data = asyncio.run(recreator.process_structured_data(structured_data))
+        
         # Save results and update status
         document.structured_data = structured_data
         document.parsing_status = 'COMPLETED'
         document.save(update_fields=['structured_data', 'parsing_status', 'updated_at'])
         
-        logger.info(f"Successfully parsed document {document_id}")
+        logger.info(f"Successfully parsed and post-processed document {document_id}")
         return {"status": "success", "document_id": document_id}
 
     except Exception as exc:
