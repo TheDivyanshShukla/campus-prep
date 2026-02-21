@@ -188,6 +188,8 @@ def get_parsing_status(request, document_id):
             'status': doc.parsing_status,
             'completed_steps': doc.parsing_completed_chunks,
             'total_steps': doc.parsing_total_chunks,
+            'recreation_completed': doc.recreation_completed_images,
+            'recreation_total': doc.recreation_total_images,
         })
     except ParsedDocument.DoesNotExist:
         return JsonResponse({'status': 'ERROR', 'message': 'Document not found'}, status=404)

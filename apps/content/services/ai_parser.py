@@ -293,7 +293,7 @@ class DocumentParserService:
    - COMPLEX/SIMPLE IMAGES: For ALL diagrams, create an 'image' block and populate the `image_strategy` and `image_details` fields by choosing exactly ONE best strategy:
      1. [SEARCH]: If the diagram is a standard textbook image. Provide keywords + source instructions in 'image_details'.
      2. [GEN_PROMPT]: If it's a unique drawing. Provide a highly technical prompt for Gemini (Imagen Pro) in 'image_details'.
-     3. [CANVAS]: If it's a geometric or mathematical plot or just basic digram that can be easily recreated using code. Provide high-level logical instructions (not raw code) for an LLM to generate JS Canvas code in 'image_details'.
+     3. [CANVAS]: If it's a geometric or mathematical plot or just basic digram that can be easily recreated using code. Provide high-level logical instructions (not raw code) for an LLM to generate JS Canvas code in 'image_details' inclue all the labels you want and where to make exact recreation.
    - The AI must evaluate which of the 3 is the most effective for that specific image.
 6. STRUCTURED SECTIONS & BLOCKS (For Notes):
    - Break notes into logical 'sections' with a descriptive 'section_title'.
