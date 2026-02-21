@@ -111,7 +111,7 @@ class ParsedDocumentAdmin(admin.ModelAdmin):
             'description': 'Select which subject and branches this Document applies to.'
         }),
         ('Basic Information', {
-            'fields': ('document_type', 'title', 'year', 'is_published')
+            'fields': ('document_type', 'title', 'year', 'is_published', 'render_mode')
         }),
         ('Pricing & Access', {
             'fields': ('is_premium', 'price'),

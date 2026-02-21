@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse, HttpResponseForbidden, FileResponse
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -10,6 +11,7 @@ import json
 import os
 import binascii
 import hashlib
+import uuid
 from apps.academics.models import Subject
 from apps.content.models import ParsedDocument
 
@@ -130,14 +132,111 @@ def read_document(request, document_id):
         encoded.append(b ^ key_bytes[i % len(key_bytes)])
         
     encrypted_data = base64.b64encode(encoded).decode('ascii')
+    
+    # Generate One-Time-Use Token for PDF.js (Prevents Network Replay/Scripting)
+    pdf_token = uuid.uuid4().hex
+    request.session[f'pdf_token_{document.id}'] = pdf_token
 
     return render(request, 'content/document_reader.html', {
         'document': document,
         'current_subject': document.subjects.first(),
         'encrypted_data': encrypted_data,
         'tamper_nonce': anti_tamper_nonce,
+        'pdf_token': pdf_token,
         # The key is deliberately NOT sent in the HTML payload
     })
+
+@login_required
+def read_document_fullscreen(request, document_id):
+    """
+    Dedicated full-screen secure PDF renderer using pdf.js, dropping all headers/footers.
+    """
+    document = get_object_or_404(ParsedDocument, pk=document_id, is_published=True)
+    user = request.user
+    
+    # Premium Access Checks
+    has_global_pass = (
+        user.active_subscription_valid_until and 
+        user.active_subscription_valid_until >= timezone.now().date()
+    )
+    
+    has_specific_unlock = user.unlocked_contents.filter(
+        models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
+        models.Q(parsed_document=document)
+    ).filter(
+        models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
+    ).exists()
+    
+    if document.is_premium and document.render_mode == 'DIRECT_PDF':
+        if not (has_global_pass or has_specific_unlock or user.is_staff):
+            fallback_subject = document.subjects.first()
+            if fallback_subject:
+                return redirect('subject_dashboard', subject_id=fallback_subject.id)
+            else:
+                return redirect('home')
+                
+    if document.render_mode != 'DIRECT_PDF' or not document.source_file:
+        return HttpResponseForbidden("This document does not support direct PDF rendering.")
+
+    # Generate One-Time-Use Token for PDF.js (Prevents Network Replay/Scripting)
+    pdf_token = uuid.uuid4().hex
+    request.session[f'pdf_token_{document.id}'] = pdf_token
+
+    return render(request, 'content/document_reader_fullscreen.html', {
+        'document': document,
+        'pdf_token': pdf_token,
+    })
+
+@login_required
+def serve_secure_pdf(request, document_id):
+    """
+    Acts as an authenticated proxy to stream the raw PDF binary.
+    Hides the true URL of the bucket/media folder and prevents unauthenticated downloads via URL sharing.
+    """
+    document = get_object_or_404(ParsedDocument, pk=document_id, is_published=True)
+    user = request.user
+    
+    # Premium Access Checks
+    has_global_pass = (
+        user.active_subscription_valid_until and 
+        user.active_subscription_valid_until >= timezone.now().date()
+    )
+    
+    has_specific_unlock = user.unlocked_contents.filter(
+        models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
+        models.Q(parsed_document=document)
+    ).filter(
+        models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
+    ).exists()
+    
+    if document.is_premium and document.render_mode == 'DIRECT_PDF':
+        if not (has_global_pass or has_specific_unlock or user.is_staff):
+            return HttpResponseForbidden("Unauthorized to view this PDF.")
+            
+    if not document.source_file:
+        return HttpResponseForbidden("Document has no PDF file attached.")
+
+    # BURN ON READ: One-Time Token Check
+    client_token = request.headers.get('X-PDF-Token')
+    session_key = f'pdf_token_{document_id}'
+    server_token = request.session.get(session_key)
+
+    if not client_token or client_token != server_token:
+        # Token is invalid, missing, or already used
+        return HttpResponseForbidden("PDF access token expired or invalid. Reload page to request a new token.")
+        
+    # BURN THE TOKEN IMMEDIATELY so it cannot be copied to cURL or accessed via Network Tab refresh
+    del request.session[session_key]
+
+    try:
+        response = FileResponse(open(document.source_file.path, 'rb'), content_type='application/pdf')
+        # Instruct browser to NEVER cache this file to prevent extraction from disk
+        response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+        response['Pragma'] = 'no-cache'
+        response['Expires'] = '0'
+        return response
+    except Exception as e:
+        return HttpResponseForbidden("Failed to retrieve file.")
 
 @login_required
 @require_POST

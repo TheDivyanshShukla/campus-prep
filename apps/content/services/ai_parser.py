@@ -13,7 +13,6 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from typing import List, Optional, Any, Union, Literal
 from pydantic import BaseModel, Field
 
-# --- Structured Output Schemas (Pydantic for validation & better Gemini compatibility) ---
 
 # --- Structured Output Schemas (Pydantic for validation & better Gemini compatibility) ---
 
@@ -81,7 +80,9 @@ class ParsedImportantQs(BaseModel):
 class DocumentParserService:
     def __init__(self):
         self.llm = ChatOpenAI(
-            model="gemini/gemini-2.5-flash",
+            model="gemini/gemini-3-flash-preview",
+            # model="gemini/gemini-2.5-flash-lite",
+            # model="gemini/gemini-2.5-flash",
             openai_api_base="https://bifrost.naravirtual.in/langchain",
             openai_api_key="dummy-key",
             default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
@@ -320,11 +321,17 @@ class DocumentParserService:
     - Use standard Markdown lists for definitions.
     - ONLY use 'array' for actual matrices or multi-line aligned equations.
     - If a diagram includes text labels, merge those labels into the 'text' block description, do not create separate repetitive LaTeX blocks for them.
-15. LATEX ROBUSTNESS & SYMBOLS:
-    - NEVER use `\boldsymbol`, `\pmboldsymbol`, or `\mathbf` for Greek letters.
-    - Use standard Greek letters directly ($\sigma$, $\mu$, $\rho$, etc.) without bolding.
-    - KaTeX is used for rendering; ensure all commands are standard KaTeX.
-    - DO NOT use complex fancy-fonts or non-standard packages.
+15. LATEX ROBUSTNESS & MATHJAX RENDERING (CRITICAL):
+    - MATHJAX IS NOW USED FOR RENDERING. You are free to use standard `amsmath` environments (e.g., `\begin{align*}`, `\begin{bmatrix}`, `\begin{cases}`).
+    - ESCAPING: Because your output passes through a Markdown parser before MathJax, you MUST use `\\\\` (four backslashes) for newlines inside matrices, arrays, and align blocks to ensure they survive and render correctly in HTML. 
+    - AVOID `\boldsymbol` or `\pmboldsymbol` for Greek letters. Use standard Greek letters directly ($\sigma$, $\mu$).
+    - DO NOT use obscure LaTeX packages. Stick to standard MathJax-supported AMSMath.
+16. READABILITY & VERTICAL SPACING (CRITICAL):
+    - NEVER cram multiple "Given", "Find", or "Solution" steps onto one line.
+    - ALWAYS use `\n\n` (double newline) to force vertical spacing between EVERY step of a derivation or calculation.
+    - Write ONE equation per line. Do not chain multiple distinct equations with "and" or commas on the same line.
+    - Add horizontal spacing in LaTeX (like `\,` or `\quad`) if units and numbers are too close, e.g., $40 \text{ kN}$ instead of $40kN$.
+    - Make the content extremely comfortable to read for a student.
 -------------------------------------------
 """
         base_system_prompt += CONTENT_GUIDELINES
