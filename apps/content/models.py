@@ -19,7 +19,7 @@ class ParsedDocument(models.Model):
         ('SYLLABUS', 'Official Syllabus'),
         ('PYQ', 'Solved Previous Year Question Paper'),
         ('UNSOLVED_PYQ', 'Unsolved PYQ Paper'),
-        ('NOTES', 'Comprehensive Notes'),
+        ('NOTES', 'Notes'),
         ('SHORT_NOTES', 'Quick Revision Short Notes'),
         ('IMPORTANT_Q', 'Important Questions'),
         ('FORMULA', 'Formula Sheet'),
@@ -48,6 +48,8 @@ class ParsedDocument(models.Model):
     source_file = models.FileField(upload_to='raw_docs/', null=True, blank=True, help_text="Upload raw PDF or Image for AI Parsing")
     source_text = models.TextField(null=True, blank=True, help_text="OR paste raw text manually here if you don't have a file.")
     parsing_status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING', help_text="Current state of the AI Parser")
+    parsing_completed_chunks = models.PositiveIntegerField(default=0, help_text="Number of chunks processed so far")
+    parsing_total_chunks = models.PositiveIntegerField(default=0, help_text="Total number of chunks to process")
     
     # Store the actual array/object returned from LangChain + OpenAI Structured Outputs
     structured_data = models.JSONField(null=True, blank=True, help_text="Stores the exact LangChain parsed output. Auto-filled by AI.")

@@ -6,6 +6,7 @@ from apps.academics.models import Subject, Branch
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .services.ai_parser import DocumentParserService
+from .tasks import process_document_ai
 
 class DocumentImageInline(admin.TabularInline):
     model = DocumentImage
@@ -138,15 +139,17 @@ class ParsedDocumentAdmin(admin.ModelAdmin):
 
     def response_change(self, request, obj):
         if "_parse_ai" in request.POST:
-            try:
-                parser = DocumentParserService()
-                data = parser.parse_document(obj)
-                obj.structured_data = data
-                obj.parsing_status = 'COMPLETED'
-                obj.save()
-                self.message_user(request, "Successfully parsed Document with AI!")
+            if obj.parsing_status == 'PROCESSING':
+                self.message_user(request, "This document is already being parsed. Please wait for it to complete.", messages.WARNING)
                 return HttpResponseRedirect(".")
-            except Exception as e:
-                self.message_user(request, f"Parse failed: {e}", level=messages.ERROR)
-                return HttpResponseRedirect(".")
+
+            # Set status to PENDING before starting the task
+            obj.parsing_status = 'PENDING'
+            obj.save(update_fields=['parsing_status'])
+            
+            # Start the background task
+            process_document_ai.delay(obj.id)
+            
+            self.message_user(request, "AI Parsing started in the background. Please refresh in a few minutes to see results.")
+            return HttpResponseRedirect(".")
         return super().response_change(request, obj)

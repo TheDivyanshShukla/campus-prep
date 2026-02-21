@@ -198,6 +198,41 @@
                 container.innerHTML = "";
                 container.className = "space-y-6";
 
+                const renderRecreationBox = (strategy, details) => {
+                    if (!strategy || !details) return '';
+                    let bgColor = "bg-blue-50 dark:bg-blue-900/10";
+                    let borderColor = "border-blue-200 dark:border-blue-900";
+                    let textColor = "text-blue-800 dark:text-blue-300";
+                    let iconColor = "text-blue-500";
+                    let label = "DIAGRAM";
+
+                    if (strategy === 'SEARCH') {
+                        bgColor = "bg-emerald-50 dark:bg-emerald-900/10";
+                        borderColor = "border-emerald-200 dark:border-emerald-900";
+                        textColor = "text-emerald-800 dark:text-emerald-300";
+                        iconColor = "text-emerald-500";
+                        label = "Search Reference";
+                    } else if (strategy === 'CANVAS') {
+                        bgColor = "bg-amber-50 dark:bg-amber-900/10";
+                        borderColor = "border-amber-200 dark:border-amber-900";
+                        textColor = "text-amber-800 dark:text-amber-300";
+                        iconColor = "text-amber-500";
+                        label = "Interactive Logic";
+                    }
+
+                    return `
+                    <div class="mt-4 p-4 border ${borderColor} ${bgColor} rounded-xl group transition-all duration-300 hover:shadow-md">
+                        <div class="flex items-center ${textColor} mb-3">
+                            <svg class="w-5 h-5 mr-2 ${iconColor}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="font-bold text-xs uppercase tracking-widest">${label} Detected</span>
+                        </div>
+                        <div class="text-xs font-mono p-3 leading-relaxed bg-white/50 dark:bg-black/20 rounded-lg border border-white/20 dark:border-black/10 overflow-x-auto whitespace-pre-wrap ${textColor}">${details}</div>
+                        <div class="mt-3 flex justify-end">
+                            <span class="text-[9px] font-black uppercase tracking-tighter opacity-40 group-hover:opacity-100 transition-opacity">AI Reconstruction Strategy: ${strategy}</span>
+                        </div>
+                    </div>`;
+                };
+
                 if (docType === 'PYQ' || docType === 'UNSOLVED_PYQ') {
                     if (structuredData.questions) {
                         structuredData.questions.forEach(q => {
@@ -205,13 +240,7 @@
                             const orChoiceHtml = q.has_or_choice ? `<span class="inline-block ml-2 text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 rounded">OR Choice</span>` : '';
                             const partHtml = q.part ? `<span class="inline-flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded font-bold text-xs mr-2 border border-slate-200 dark:border-slate-700 uppercase">${q.part}</span>` : '';
                             
-                            const imgRecreHtml = q.image_recreation_prompt ? `<div class="mt-4 p-4 border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/10 rounded-lg">
-                                <div class="flex items-center text-blue-800 dark:text-blue-300 mb-2">
-                                    <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                    <span class="font-bold text-sm">Image Reference Detected</span>
-                                </div>
-                                <p class="text-xs font-mono text-blue-700 dark:text-blue-400 bg-white dark:bg-blue-950 p-3 rounded border border-blue-100 dark:border-blue-900 overflow-x-auto">${q.image_recreation_prompt}</p>
-                            </div>` : '';
+                            const imgRecreHtml = renderRecreationBox(q.image_strategy, q.image_details);
 
                             const aiSolutionHtml = q.latex_answer ? `<div class="mt-6 pt-6 border-t border-border">
                                 <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4>
@@ -241,23 +270,42 @@
                         });
                     }
                 } else if (docType === 'NOTES' || docType === 'SHORT_NOTES') {
-                    const html = `
-                    <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
-                        <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border">
-                            <h2 class="text-xl font-bold">${structuredData.title || ''}</h2>
-                        </div>
-                        <div class="p-6">
-                            <div id="rendered-markdown-content" class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body"></div>
-                            <div id="raw-markdown-content" style="display:none;">${(structuredData.content || '').replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
-                        </div>
-                    </div>
-                    `;
-                    container.insertAdjacentHTML('beforeend', html);
-                    
-                    const rawMd = document.getElementById("raw-markdown-content");
-                    const outMd = document.getElementById("rendered-markdown-content");
-                    if (rawMd && outMd) {
-                        outMd.innerHTML = marked.parse(rawMd.textContent || rawMd.innerText);
+                    if (structuredData.sections) {
+                        structuredData.sections.forEach((section, idx) => {
+                            let blocksHtml = '';
+                            if (section.content_blocks) {
+                                section.content_blocks.forEach(block => {
+                                    if (block.type === 'text') {
+                                        blocksHtml += `<div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed markdown-body">
+                                            ${marked.parse(block.content || '')}
+                                        </div>`;
+                                    } else if (block.type === 'image') {
+                                        blocksHtml += renderRecreationBox(block.image_strategy, block.image_details);
+                                    }
+                                });
+                            }
+
+                            const sectionHtml = `
+                            <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden mb-6">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border">
+                                    <h2 class="text-xl font-bold text-indigo-900 dark:text-indigo-200">${section.section_title || `Section ${idx + 1}`}</h2>
+                                </div>
+                                <div class="p-6">
+                                    ${blocksHtml}
+                                </div>
+                            </div>
+                            `;
+                            container.insertAdjacentHTML('beforeend', sectionHtml);
+                        });
+                    }
+ else {
+                        // Fallback for legacy single-block content
+                        const content = structuredData.content || '';
+                        container.insertAdjacentHTML('beforeend', `
+                            <div class="bg-card shadow-sm rounded-xl border border-border p-6 markdown-body math-render-target">
+                                ${marked.parse(content)}
+                            </div>
+                        `);
                     }
                 } else if (docType === 'FORMULA') {
                      if (structuredData.formulas) {
