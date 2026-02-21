@@ -1,8 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.db import models
+from django.http import JsonResponse, HttpResponseForbidden
+import base64
+import json
+import os
+import binascii
+import hashlib
 from apps.academics.models import Subject
 from apps.content.models import ParsedDocument
 
@@ -102,7 +109,69 @@ def read_document(request, document_id):
             else:
                 return redirect('home')
 
+    # Security: Obfuscate the structured json payload so it cannot be scraped via View Source or cURL
+    # We generate a random hex key for every request and store it in the session
+    key_bytes = os.urandom(16)
+    key_hex = binascii.hexlify(key_bytes).decode('ascii')
+    
+    # Generate an anti-tamper nonce to prevent proxy replay extraction
+    anti_tamper_nonce = binascii.hexlify(os.urandom(16)).decode('ascii')
+    
+    # Store the intended decryption key and nonce securely in the user's server-side session
+    request.session[f'doc_key_{document.id}'] = {
+        'key': key_hex,
+        'nonce': anti_tamper_nonce
+    }
+    
+    sd = document.structured_data if document.structured_data else {}
+    json_str = json.dumps(sd).encode('utf-8')
+    encoded = bytearray()
+    for i, b in enumerate(json_str):
+        encoded.append(b ^ key_bytes[i % len(key_bytes)])
+        
+    encrypted_data = base64.b64encode(encoded).decode('ascii')
+
     return render(request, 'content/document_reader.html', {
         'document': document,
-        'current_subject': document.subjects.first()
+        'current_subject': document.subjects.first(),
+        'encrypted_data': encrypted_data,
+        'tamper_nonce': anti_tamper_nonce,
+        # The key is deliberately NOT sent in the HTML payload
     })
+
+@login_required
+@require_POST
+def get_document_key(request, document_id):
+    """
+    Secure Key Delivery endpoint. The client must make an authenticated AJAX request
+    *after* passing all anti-scraping traps. It retrieves the key from the server session
+    and verifies the anti-tamper challenge.
+    """
+    session_key = f'doc_key_{document_id}'
+    session_data = request.session.get(session_key)
+    
+    if not session_data or not isinstance(session_data, dict):
+        return HttpResponseForbidden("Session expired or invalid.")
+        
+    server_key = session_data.get('key')
+    server_nonce = session_data.get('nonce')
+    
+    try:
+        body = json.loads(request.body)
+        client_hash = body.get('challenge_hash')
+    except json.JSONDecodeError:
+        return HttpResponseForbidden("Invalid payload.")
+        
+    # Verify the Anti-Tamper Hash
+    # The client must prove it ran the JS code unmodified by hashing the nonce with a shared secret
+    expected_hash = hashlib.sha256((server_nonce + "RGPV_LIVE_SECURE_PAYLOAD").encode()).hexdigest()
+    
+    if not client_hash or client_hash != expected_hash:
+        # If the hash fails, someone is spoofing the fetch request via Burp Suite
+        del request.session[session_key]
+        return HttpResponseForbidden("Integrity check failed. Session terminated.")
+        
+    # We delete it after one successful read to prevent replay attacks
+    del request.session[session_key]
+    
+    return JsonResponse({'key': server_key})

@@ -14,4 +14,5 @@ urlpatterns = [
     # AI API Endpoints
     path('api/parse-document/', ParseDocumentAPI.as_view(), name='api_parse_document'),
     path('api/publish-document/', PublishParsedDocumentAPI.as_view(), name='api_publish_document'),
+    path('api/document/<int:document_id>/key/', views.get_document_key, name='api_document_key'),
 ]

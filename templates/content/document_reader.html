@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;">
     
     <!-- Reader Header -->
     <div class="mb-8 border-b border-border pb-6">
@@ -33,160 +33,320 @@
     </div>
 
     <!-- The Native Render (Looping through JSON structure) -->
-    <div class="space-y-6">
-        
-        {% if document.document_type == 'PYQ' or document.document_type == 'UNSOLVED_PYQ' %}
-            <!-- Strict AI PYQ Format -->
-            {% for question in document.structured_data.questions %}
-            <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border overflow-hidden">
-                <div class="bg-muted/30 px-4 py-2 border-b border-border flex justify-between items-center">
-                    <div class="flex items-center">
-                        <span class="inline-block bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
-                            Unit {{ question.unit|default:"?" }}
-                        </span>
-                        {% if question.has_or_choice %}
-                        <span class="inline-block ml-2 text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 rounded">
-                            OR Choice
-                        </span>
-                        {% endif %}
-                    </div>
-                    <div class="flex-shrink-0 text-right ml-4">
-                        <span class="text-base font-black">{{ question.marks }}</span>
-                        <span class="text-[9px] text-muted-foreground font-bold uppercase tracking-wider ml-1">Marks</span>
-                    </div>
-                </div>
-                
-                <div class="px-4 py-3">
-                    <div class="text-base leading-relaxed font-medium math-render-target whitespace-pre-line text-foreground/90">{% if question.part %}<span class="inline-flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded font-bold text-xs mr-2 border border-slate-200 dark:border-slate-700 uppercase">{{ question.part }}</span>{% endif %}{{ question.question_text }}</div>
-                    
-                    {% if question.image_recreation_prompt %}
-                    <div class="mt-4 p-4 border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/10 rounded-lg">
-                        <div class="flex items-center text-blue-800 dark:text-blue-300 mb-2">
-                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            <span class="font-bold text-sm">Image Reference Detected</span>
-                        </div>
-                        <p class="text-xs font-mono text-blue-700 dark:text-blue-400 bg-white dark:bg-blue-950 p-3 rounded border border-blue-100 dark:border-blue-900 overflow-x-auto">{{ question.image_recreation_prompt }}</p>
-                    </div>
-                    {% endif %}
-                    
-                    {% if question.latex_answer %}
-                    <div class="mt-6 pt-6 border-t border-border">
-                        <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4>
-                        <div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body">
-                            {{ question.latex_answer }}
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-
-        {% elif document.document_type == 'NOTES' or document.document_type == 'SHORT_NOTES' %}
-            <!-- Markdown & LaTeX Driven Notes -->
-            <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
-                <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border">
-                    <h2 class="text-xl font-bold">{{ document.structured_data.title }}</h2>
-                </div>
-                <div class="p-6">
-                    <div class="markdown-body math-render-target prose prose-indigo dark:prose-invert max-w-none leading-relaxed hidden" id="raw-markdown-content">{{ document.structured_data.content|escapejs }}</div>
-                    <div id="rendered-markdown-content" class="prose prose-indigo dark:prose-invert max-w-none leading-relaxed"></div>
-                </div>
-            </div>
-
-        {% elif document.document_type == 'FORMULA' %}
-            <!-- Highlighted Formula Sheet -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {% for formula in document.structured_data.formulas %}
-                <div class="bg-card shadow-sm rounded-xl border border-border p-6 flex flex-col items-center justify-center text-center">
-                    <h3 class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-4">{{ formula.name }}</h3>
-                    <div class="text-2xl font-black math-render-target text-indigo-600 dark:text-indigo-400">
-                        $$ {{ formula.latex }} $$
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-
-        {% elif document.document_type == 'SYLLABUS' %}
-            <!-- Curriculum Modules -->
-            <div class="space-y-6">
-                {% for module in document.structured_data.modules %}
-                <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
-                    <div class="bg-teal-50 dark:bg-teal-900/10 px-6 py-4 border-b border-teal-100 dark:border-teal-900/30 flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black mr-3">
-                            {{ module.unit }}
-                        </div>
-                        <h2 class="text-lg font-bold">Unit {{ module.unit }} Syllabus</h2>
-                    </div>
-                    <div class="p-6">
-                        <ul class="list-disc list-inside space-y-2 text-foreground/80">
-                            {% for topic in module.topics %}
-                                <li>{{ topic }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-
-        {% elif document.document_type == 'IMPORTANT_Q' %}
-            <!-- Important Questions List -->
-            <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
-                <div class="divide-y divide-border">
-                    {% for q in document.structured_data.questions %}
-                    <div class="p-6 flex items-start gap-4 hover:bg-muted/30 transition-colors">
-                        <div class="flex-shrink-0 mt-1">
-                            <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-lg font-medium">{{ q.text }}</p>
-                            <span class="inline-block mt-2 text-xs font-bold px-2 py-1 bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded-md border border-amber-200 dark:border-amber-800">
-                                {{ q.frequency }} Frequency
-                            </span>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-
-
-        {% else %}
-            <!-- Generic JSON Fallback -->
-            <div class="bg-card shadow-sm rounded-xl border border-border p-6 font-mono text-sm whitespace-pre-wrap overflow-x-auto">
-                {{ document.structured_data }}
-            </div>
-        {% endif %}
-        
+    <!-- Encrypted Content Container -->
+    <div id="secure-content-container" class="w-full min-h-[50vh] flex flex-col items-center justify-center">
+        <div class="animate-pulse flex flex-col items-center">
+            <svg class="w-12 h-12 text-primary mb-4 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+            <p class="text-lg text-muted-foreground font-bold tracking-widest uppercase">Decrypting Secure Content</p>
+            <p class="text-xs text-muted-foreground/60 mt-2 font-mono">This prevents unauthorized scraping.</p>
+        </div>
     </div>
 
 </div>
 </div>
 
-<!-- Markdown and Math Rendering Initialization -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // 1. Render Markdown if Notes
-        const rawMd = document.getElementById("raw-markdown-content");
-        const outMd = document.getElementById("rendered-markdown-content");
-        
-        if (rawMd && outMd) {
-            // marked.js is loaded in the head
-            // The content was escapejs so we unescape quotes if necessary, 
-            // but innerHTML helps us get the literal string cleanly
-            const textToParse = rawMd.textContent || rawMd.innerText;
-            outMd.innerHTML = marked.parse(textToParse);
-        }
+<!-- Superior Anti-Piracy DRM Suite & Secure Decryption Engine -->
+<style>
+  /* Annihilate all text selection capability */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  
+  /* Destroy content entirely if they try to Ctrl+P Print to PDF */
+  @media print {
+    body { display: none !important; }
+  }
+</style>
 
-        // 2. Render KaTeX Math everywhere
-        renderMathInElement(document.body, {
-            delimiters: [
-                {left: '$$', right: '$$', display: true},
-                {left: '$', right: '$', display: false},
-                {left: '\\(', right: '\\)', display: false},
-                {left: '\\[', right: '\\]', display: true}
-            ],
-            throwOnError: false
-        });
+<script>
+    window.__drm_tripped = false;
+
+    // --- 1. ARM SECURITY TRAPS INSTANTLY ---
+    const killSession = function() {
+        if (window.__drm_tripped) return;
+        window.__drm_tripped = true;
+        
+        document.body.innerHTML = `
+            <div style="background-color:#0f172a; color:#ef4444; height:100vh; width:100vw; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:monospace; text-align:center; padding:2rem; position:fixed; top:0; left:0; z-index:99999;">
+                <svg style="width:100px; height:100px; margin-bottom:2rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                <h1 style="font-size:2.5rem; font-weight:900; margin-bottom:1rem; letter-spacing:0.1em;">SECURITY VIOLATION</h1>
+                <p style="font-size:1.25rem; color:#94a3b8; max-w:600px;">Direct DOM Inspection / Developer Tools detected.<br>Session has been terminated to protect premium content.</p>
+                <button onclick="window.location.reload()" style="margin-top:2rem; background:#3b82f6; color:white; border:none; padding:1rem 2rem; font-size:1.1rem; font-weight:bold; border-radius:0.5rem; cursor:pointer;">Refresh Page</button>
+            </div>
+        `;
+        // Hard wipe global variables to prevent console dumping
+        window.encrypted_data = null;
+        window.decryption_key = null;
+    };
+
+    // Nuke Right-Click Context Menu
+    document.addEventListener('contextmenu', event => {
+        event.preventDefault();
+        killSession();
+    });
+
+    // Ironclad Keyboard Shortcut Blocker
+    document.addEventListener('keydown', function(e) {
+        if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+            (e.ctrlKey && (e.key === 'U' || e.key === 'P' || e.key === 'C' || e.key === 'A' || e.key === 'S')) ||
+            (e.metaKey && (e.key === 'U' || e.key === 'P' || e.key === 'C' || e.key === 'A' || e.key === 'S')) // Mac
+        ) {
+            e.preventDefault();
+            e.stopPropagation();
+            killSession();
+            return false;
+        }
+    });
+
+    // Clipboard Poisoning
+    document.addEventListener('copy', function(e) {
+        e.clipboardData.setData('text/plain', 'RGPV Live Premium Content - Unauthorized Copying Prohibited.');
+        e.preventDefault();
+        killSession();
+    });
+
+    // Factor A: Dimension Threshold (Catches docked DevTools on load)
+    const checkDimensions = function() {
+        const threshold = 160;
+        if ((window.outerWidth - window.innerWidth) > threshold || (window.outerHeight - window.innerHeight) > threshold) {
+            killSession();
+        }
+    };
+    setInterval(checkDimensions, 250);
+    checkDimensions(); // Run immediately
+
+    // Factor B: Timing Trap (Catches Undocked DevTools)
+    setInterval(function() {
+        const startTime = performance.now();
+        debugger; 
+        if (performance.now() - startTime > 100) killSession();
+    }, 250);
+
+    // Factor C: Console Object Trap
+    let devtools = new Image();
+    Object.defineProperty(devtools, 'id', {
+        get: function() { killSession(); }
+    });
+    console.log('%c', devtools);
+
+
+    // --- 2. SECURE JS DECRYPTION ENGINE ---
+    document.addEventListener("DOMContentLoaded", function() {
+        // Wait 800ms to allow the Dimension/Debugger traps to sweep the environment
+        setTimeout(async function() {
+            if (window.__drm_tripped) return; // Abort decryption immediately if environment is compromised
+
+            const docType = "{{ document.document_type|escapejs }}";
+            const cipher = "{{ encrypted_data|escapejs }}";
+            const nonce = "{{ tamper_nonce|escapejs }}";
+            
+            let structuredData = null;
+            try {
+                // 1. Calculate the Anti-Tamper Challenge Hash
+                // This prevents proxies like Burp Suite from just replaying the fetch request blindly
+                const encoder = new TextEncoder();
+                const dataToHash = encoder.encode(nonce + "RGPV_LIVE_SECURE_PAYLOAD");
+                const hashBuffer = await crypto.subtle.digest('SHA-256', dataToHash);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const challengeHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+                // 2. Fetch the single-use Decryption Key from the Secure Context API
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]') ? 
+                                    document.querySelector('[name=csrfmiddlewaretoken]').value : 
+                                    '{{ csrf_token }}';
+
+                const response = await fetch("{% url 'api_document_key' document.id %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({ "challenge_hash": challengeHash })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to authenticate session key. Integrity check failed.");
+                }
+
+                const data = await response.json();
+                const hexKey = data.key;
+                
+                // 2. Decrypt the payload natively so nothing sits in the raw HTML Document payload
+                const keyBytes = new Uint8Array(hexKey.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
+                const decodedB64 = atob(cipher);
+                let decryptedBytes = new Uint8Array(decodedB64.length);
+                for (let i = 0; i < decodedB64.length; i++) {
+                    decryptedBytes[i] = decodedB64.charCodeAt(i) ^ keyBytes[i % keyBytes.length];
+                }
+                const jsonStr = new TextDecoder('utf-8').decode(decryptedBytes);
+                structuredData = JSON.parse(jsonStr);
+            } catch (e) {
+                console.error("Decryption failed. Ensure the DOM hasn't been tampered with.");
+                return;
+            }
+
+            const container = document.getElementById("secure-content-container");
+            if (container && structuredData) {
+                container.innerHTML = "";
+                container.className = "space-y-6";
+
+                if (docType === 'PYQ' || docType === 'UNSOLVED_PYQ') {
+                    if (structuredData.questions) {
+                        structuredData.questions.forEach(q => {
+                            const unitHtml = q.unit ? `<span class="inline-block bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Unit ${q.unit}</span>` : '';
+                            const orChoiceHtml = q.has_or_choice ? `<span class="inline-block ml-2 text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 rounded">OR Choice</span>` : '';
+                            const partHtml = q.part ? `<span class="inline-flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded font-bold text-xs mr-2 border border-slate-200 dark:border-slate-700 uppercase">${q.part}</span>` : '';
+                            
+                            const imgRecreHtml = q.image_recreation_prompt ? `<div class="mt-4 p-4 border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/10 rounded-lg">
+                                <div class="flex items-center text-blue-800 dark:text-blue-300 mb-2">
+                                    <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    <span class="font-bold text-sm">Image Reference Detected</span>
+                                </div>
+                                <p class="text-xs font-mono text-blue-700 dark:text-blue-400 bg-white dark:bg-blue-950 p-3 rounded border border-blue-100 dark:border-blue-900 overflow-x-auto">${q.image_recreation_prompt}</p>
+                            </div>` : '';
+
+                            const aiSolutionHtml = q.latex_answer ? `<div class="mt-6 pt-6 border-t border-border">
+                                <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4>
+                                <div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body">${q.latex_answer}</div>
+                            </div>` : '';
+
+                            const html = `
+                            <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border overflow-hidden">
+                                <div class="bg-muted/30 px-4 py-2 border-b border-border flex justify-between items-center">
+                                    <div class="flex items-center">
+                                        ${unitHtml}
+                                        ${orChoiceHtml}
+                                    </div>
+                                    <div class="flex-shrink-0 text-right ml-4">
+                                        <span class="text-base font-black">${q.marks || ''}</span>
+                                        <span class="text-[9px] text-muted-foreground font-bold uppercase tracking-wider ml-1">Marks</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <div class="text-base leading-relaxed font-medium math-render-target whitespace-pre-line text-foreground/90">${partHtml}${q.question_text || ''}</div>
+                                    ${imgRecreHtml}
+                                    ${aiSolutionHtml}
+                                </div>
+                            </div>
+                            `;
+                            container.insertAdjacentHTML('beforeend', html);
+                        });
+                    }
+                } else if (docType === 'NOTES' || docType === 'SHORT_NOTES') {
+                    const html = `
+                    <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+                        <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border">
+                            <h2 class="text-xl font-bold">${structuredData.title || ''}</h2>
+                        </div>
+                        <div class="p-6">
+                            <div id="rendered-markdown-content" class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body"></div>
+                            <div id="raw-markdown-content" style="display:none;">${(structuredData.content || '').replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
+                        </div>
+                    </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                    
+                    const rawMd = document.getElementById("raw-markdown-content");
+                    const outMd = document.getElementById("rendered-markdown-content");
+                    if (rawMd && outMd) {
+                        outMd.innerHTML = marked.parse(rawMd.textContent || rawMd.innerText);
+                    }
+                } else if (docType === 'FORMULA') {
+                     if (structuredData.formulas) {
+                         const formulasHtml = structuredData.formulas.map(f => `
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-muted/20 border border-border rounded-lg hover:border-primary/50 transition-colors">
+                                <span class="font-semibold text-foreground mb-2 sm:mb-0">${f.name || ''}</span>
+                                <div class="bg-white dark:bg-slate-900 border border-border px-4 py-2 rounded-md overflow-x-auto math-render-target">
+                                    $$ ${f.latex || ''} $$
+                                </div>
+                            </div>
+                         `).join('');
+                         const html = `
+                         <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+                            <div class="p-6">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    ${formulasHtml}
+                                </div>
+                            </div>
+                         </div>
+                         `;
+                         container.insertAdjacentHTML('beforeend', html);
+                     }
+                } else if (docType === 'SYLLABUS') {
+                     if (structuredData.modules) {
+                         const html = structuredData.modules.map(mod => `
+                         <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden relative">
+                            <div class="absolute left-0 top-0 bottom-0 w-2 bg-indigo-500"></div>
+                            <div class="p-6 pl-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-black mr-3">
+                                        ${mod.unit || ''}
+                                    </div>
+                                    <h3 class="text-lg font-bold">Unit ${mod.unit || ''} Syllabus</h3>
+                                </div>
+                                <ul class="space-y-3">
+                                    ${(mod.topics || []).map(t => `
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span class="text-foreground/80">${t}</span>
+                                    </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                         </div>
+                         `).join('');
+                         container.insertAdjacentHTML('beforeend', `<div class="space-y-6">${html}</div>`);
+                     }
+                } else if (docType === 'IMPORTANT_Q') {
+                     if (structuredData.questions) {
+                         const html = structuredData.questions.map(q => {
+                             let freqColor = '';
+                             if (q.frequency === 'High') freqColor = 'text-rose-600 bg-rose-100 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800';
+                             else if (q.frequency === 'Medium') freqColor = 'text-amber-600 bg-amber-100 border-amber-200 dark:bg-amber-900/30 dark:border-amber-800';
+                             else freqColor = 'text-blue-600 bg-blue-100 border-blue-200 dark:bg-blue-900/30 dark:border-blue-800';
+                             
+                             return `
+                             <div class="p-6 border-b border-border last:border-0 hover:bg-muted/10 transition-colors flex items-start gap-4">
+                                <div class="shrink-0 mt-1">
+                                    <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-lg font-medium text-foreground/90 leading-relaxed math-render-target">${q.text || ''}</div>
+                                    <span class="inline-block mt-2 text-xs font-bold px-2 py-1 rounded-md border ${freqColor}">
+                                        ${q.frequency || ''} Frequency
+                                    </span>
+                                </div>
+                             </div>
+                             `;
+                         }).join('');
+                         container.insertAdjacentHTML('beforeend', `<div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">${html}</div>`);
+                     }
+                } else {
+                    container.insertAdjacentHTML('beforeend', `<div class="bg-card shadow-sm rounded-xl border border-border p-6 font-mono text-sm whitespace-pre-wrap overflow-x-auto">${JSON.stringify(structuredData, null, 2)}</div>`);
+                }
+            }
+
+            // Render KaTeX Math everywhere
+            if (!window.__drm_tripped) {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });
+            }
+        }, 800); // Wait 800ms to allow DRM sweeps first
     });
 </script>
 {% endblock %}
