@@ -1,0 +1,54 @@
+import logging
+import asyncio
+from celery import shared_task
+from django.utils import timezone
+from .models import ParsedDocument
+from .services.ai_parser import DocumentParserService
+
+logger = logging.getLogger(__name__)
+
+@shared_task(bind=True, max_retries=3)
+def process_document_ai(self, document_id):
+    """
+    Background task to parse a document using AI.
+    """
+    try:
+        document = ParsedDocument.objects.get(id=document_id)
+    except ParsedDocument.DoesNotExist:
+        logger.error(f"Document with id {document_id} not found.")
+        return
+
+    # Guard: prevent multiple concurrent parsing tasks for the same document
+    if document.parsing_status == 'PROCESSING':
+        logger.warning(f"Document {document_id} is already being processed. Skipping.")
+        return {"status": "skipped", "reason": "already_processing"}
+
+    # Update status to PROCESSING and reset chunk counters
+    document.parsing_status = 'PROCESSING'
+    document.parsing_completed_chunks = 0
+    document.parsing_total_chunks = 0
+    document.save(update_fields=['parsing_status', 'parsing_completed_chunks', 'parsing_total_chunks'])
+
+    try:
+        parser = DocumentParserService()
+        # The parser service handles its own internal chunking and merging
+        structured_data = asyncio.run(parser.parse_document(document))
+        
+        # Save results and update status
+        document.structured_data = structured_data
+        document.parsing_status = 'COMPLETED'
+        document.save(update_fields=['structured_data', 'parsing_status', 'updated_at'])
+        
+        logger.info(f"Successfully parsed document {document_id}")
+        return {"status": "success", "document_id": document_id}
+
+    except Exception as exc:
+        logger.error(f"Error parsing document {document_id}: {exc}")
+        
+        # Update status to FAILED
+        document.parsing_status = 'FAILED'
+        document.save(update_fields=['parsing_status', 'updated_at'])
+        
+        # Retry the task with exponential backoff if it's a transient error
+        # (Parser service already has some retries, but this covers higher level failures)
+        raise self.retry(exc=exc, countdown=60 * (2 ** self.request.retries))

@@ -175,3 +175,19 @@ def get_document_key(request, document_id):
     del request.session[session_key]
     
     return JsonResponse({'key': server_key})
+
+@staff_member_required
+def get_parsing_status(request, document_id):
+    """
+    API endpoint to poll for document parsing status and progress.
+    Only accessible by staff (admins).
+    """
+    try:
+        doc = ParsedDocument.objects.get(pk=document_id)
+        return JsonResponse({
+            'status': doc.parsing_status,
+            'completed_steps': doc.parsing_completed_chunks,
+            'total_steps': doc.parsing_total_chunks,
+        })
+    except ParsedDocument.DoesNotExist:
+        return JsonResponse({'status': 'ERROR', 'message': 'Document not found'}, status=404)

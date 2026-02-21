@@ -1,0 +1,2 @@
+uv run celery -A config worker --loglevel=info -P solo
+uv run manage.py runserver
