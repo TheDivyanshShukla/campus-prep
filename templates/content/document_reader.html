@@ -3,12 +3,31 @@
 {% block title %}Reader - {{ document.title }} | RGPV Live{% endblock %}
 
 {% block head %}
-<!-- KaTeX for beautiful math equations natively without slow PDFs -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<!-- MathJax for robust math rendering natively -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <!-- Marked.js for Markdown parsing -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- PDF.js for secure custom rendering -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+<style>
+    /* Prevent the global navbar from sticking and following on this reader page */
+    header.sticky {
+        position: relative !important;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -21,18 +40,145 @@
                 <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 Back to {{ current_subject.code }}
             </a>
+            {% if document.render_mode == 'DIRECT_PDF' %}
+            <div class="flex items-center gap-3">
+                <a href="{% url 'read_document_fullscreen' document.id %}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 bg-neutral-900 hover:bg-black text-white dark:bg-neutral-800 dark:hover:bg-neutral-700 text-xs font-bold rounded-lg flex items-center transition-colors shadow-sm">
+                    <svg class="w-3 h-3 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+                    Full Screen
+                </a>
+                <span class="px-2.5 py-1 bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800 text-xs font-bold rounded-lg flex items-center">
+                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Protected
+                </span>
+            <!-- Floating Back to Top Button -->
+            <button id="backToTopBtn" class="fixed bottom-8 right-8 z-50 p-3 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl rounded-full translate-y-20 opacity-0 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background" aria-label="Back to top">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+            </button>
+            {% else %}
             <span class="px-2.5 py-1 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800 text-xs font-bold rounded-lg flex items-center">
                 <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                 Native Mode
             </span>
+            {% endif %}
         </div>
-        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">{{ document.title }}</h1>
-        <p class="text-muted-foreground text-sm">
-            Powered by Gemini AI • Structured {{ document.get_document_type_display }}
-        </p>
+
     </div>
 
     <!-- The Native Render (Looping through JSON structure) -->
+    {% if document.render_mode == 'DIRECT_PDF' and document.source_file %}
+    <div class="w-full min-h-[80vh] border border-border rounded-xl overflow-hidden shadow-sm bg-neutral-900 relative flex flex-col items-center py-8">
+        <div id="pdf-container" class="w-[90%] md:w-[85%] flex flex-col gap-6 items-center">
+            <!-- Canvas elements will be injected here dynamically -->
+        </div>
+        <div id="pdf-loading-spinner" class="absolute inset-0 flex flex-col items-center justify-center bg-neutral-900/80 backdrop-blur-sm z-10 transition-opacity duration-300">
+            <svg class="w-12 h-12 text-primary mb-4 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+            <p class="text-white font-bold tracking-wider">Rasterizing PDF Image...</p>
+        </div>
+    </div>
+    <div class="pt-4 pb-2">
+        <p class="text-xs text-center text-muted-foreground italic px-4 py-2 bg-muted/50 rounded-lg">Rendered securely via Canvas. Text selection and downloads are disabled.</p>
+    </div>
+
+    <!-- PDF.js Rendering Script -->
+    <script>
+        // 🚨 CANVAS POISONING: Block DevTools Console Extractors 🚨
+        const _toDataURL = HTMLCanvasElement.prototype.toDataURL;
+        HTMLCanvasElement.prototype.toDataURL = function() {
+            console.warn("Security Exception: Image Extraction Disabled.");
+            return "data:image/png;base64,"; 
+        };
+        const _getImageData = CanvasRenderingContext2D.prototype.getImageData;
+        CanvasRenderingContext2D.prototype.getImageData = function(x, y, w, h) {
+            console.warn("Security Exception: Pixel Extraction Disabled.");
+            return new ImageData(1, 1);
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch the PDF binary through the secure authenticated proxy view
+            const url = "{% url 'api_secure_pdf' document.id %}";
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+            const loadingTask = pdfjsLib.getDocument({
+                url: url,
+                httpHeaders: { 'X-PDF-Token': '{{ pdf_token }}' }
+            });
+            
+            loadingTask.promise.then(function(pdf) {
+                const container = document.getElementById('pdf-container');
+                const spinner = document.getElementById('pdf-loading-spinner');
+                const scale = 1.5; // Controls the resolution/zoom level of the canvas
+
+                // Helper to render pages sequentially to keep them in order
+                let currPage = 1;
+                function renderNextPage() {
+                    if (currPage > pdf.numPages) {
+                        // Finished rendering all pages
+                        return;
+                    }
+
+                    pdf.getPage(currPage).then(function(page) {
+                        const viewport = page.getViewport({scale: scale});
+                        const canvas = document.createElement('canvas');
+                        
+                        // Style the canvas to look like a document page block
+                        canvas.className = "w-full bg-white shadow-2xl rounded-sm object-contain pointer-events-none"; // Disables interacting with content inside the canvas
+                        const context = canvas.getContext('2d');
+                        
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        // Ensure background is pure white before rendering the PDF strokes
+                        context.fillStyle = 'white';
+                        context.fillRect(0, 0, canvas.width, canvas.height);
+
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport,
+                            background: 'white'
+                        };
+
+                        // Add it to the DOM
+                        container.appendChild(canvas);
+
+                        // Render the page contents into the canvas
+                        page.render(renderContext).promise.then(function() {
+                            // After the FIRST page successfully renders, fade out the spinner
+                            if (currPage === 1) {
+                                spinner.style.opacity = '0';
+                                setTimeout(() => spinner.remove(), 500);
+                            }
+                        
+                            currPage++;
+                            renderNextPage(); // Recursively load the next one
+                        });
+                    });
+                }
+                
+                // Start rendering process
+                renderNextPage();
+
+            }, function (reason) {
+                console.error("PDF Failed to Load:", reason);
+                document.getElementById('pdf-loading-spinner').innerHTML = `<p class="text-red-500 font-bold p-6 text-center">Document secure decoupling failed:<br><span class="text-sm opacity-75">${reason}</span></p>`;
+            });
+            
+            // Back to Top Logic
+            const topBtn = document.getElementById('backToTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    topBtn.classList.remove('translate-y-20', 'opacity-0');
+                } else {
+                    topBtn.classList.add('translate-y-20', 'opacity-0');
+                }
+            });
+            topBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+    {% else %}
     <!-- Encrypted Content Container -->
     <div id="secure-content-container" class="w-full min-h-[50vh] flex flex-col items-center justify-center">
         <div class="animate-pulse flex flex-col items-center">
@@ -43,6 +189,7 @@
             <p class="text-xs text-muted-foreground/60 mt-2 font-mono">This prevents unauthorized scraping.</p>
         </div>
     </div>
+    {% endif %}
 
 </div>
 </div>
@@ -69,6 +216,12 @@
 
     // --- 1. ARM SECURITY TRAPS INSTANTLY ---
     const killSession = function() {
+        // Bypass DRM penalties entirely during local development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.warn("DRM Warning: Security violation detected, but ignored because environment is localhost.");
+            return;
+        }
+
         if (window.__drm_tripped) return;
         window.__drm_tripped = true;
         
@@ -124,11 +277,11 @@
     checkDimensions(); // Run immediately
 
     // Factor B: Timing Trap (Catches Undocked DevTools)
-    setInterval(function() {
-        const startTime = performance.now();
-        debugger; 
-        if (performance.now() - startTime > 100) killSession();
-    }, 250);
+    // setInterval(function() {
+    //     const startTime = performance.now();
+    //     debugger
+    //     if (performance.now() - startTime > 100) killSession();
+    // }, 250);
 
     // Factor C: Console Object Trap
     let devtools = new Image();
@@ -139,6 +292,7 @@
 
 
     // --- 2. SECURE JS DECRYPTION ENGINE ---
+    {% if document.render_mode != 'DIRECT_PDF' %}
     document.addEventListener("DOMContentLoaded", function() {
         // Wait 800ms to allow the Dimension/Debugger traps to sweep the environment
         setTimeout(async function() {
@@ -390,19 +544,14 @@
                 }
             }
 
-            // Render KaTeX Math everywhere
-            if (!window.__drm_tripped) {
-                renderMathInElement(document.body, {
-                    delimiters: [
-                        {left: '$$', right: '$$', display: true},
-                        {left: '$', right: '$', display: false},
-                        {left: '\\(', right: '\\)', display: false},
-                        {left: '\\[', right: '\\]', display: true}
-                    ],
-                    throwOnError: false
+            // Render MathJax everywhere
+            if (!window.__drm_tripped && window.MathJax) {
+                MathJax.typesetPromise([document.body]).catch(function (err) {
+                    console.error('MathJax typeset failed: ' + err.message);
                 });
             }
         }, 800); // Wait 800ms to allow DRM sweeps first
     });
+    {% endif %}
 </script>
 {% endblock %}

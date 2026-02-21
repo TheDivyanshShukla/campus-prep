@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Reader - {{ document.title }} (Full Screen) | RGPV Live{% endblock %}
+
+{% block head %}
+<!-- PDF.js for secure custom rendering -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+<style>
+    /* Anti-Piracy CSS */
+    * {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        -webkit-touch-callout: none !important;
+    }
+    @media print {
+        body { display: none !important; }
+    }
+    
+    /* Custom Scrollbar for better dark look */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #171717; }
+    ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+    /* Prevent the global navbar from sticking and following on this reader page */
+    header.sticky {
+        position: relative !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="w-full max-w-[1400px] mx-auto py-6 px-4 sm:px-6 lg:px-8 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;">
+    
+    <!-- Reader Header -->
+    <div class="mb-6 border-b border-border pb-4">
+        <div class="flex items-center justify-between mb-4">
+            <a href="{% url 'subject_dashboard' document.subjects.first.id %}" class="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                Close Full Screen
+            </a>
+            <span class="px-2.5 py-1 bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800 text-xs font-bold rounded-lg flex items-center">
+                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Original PDF (Protected)
+            </span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">{{ document.title }}</h1>
+    </div>
+
+    <!-- PDF Container -->
+    <div class="w-full flex flex-col items-center pb-20">
+        <div id="pdf-container" class="w-full md:w-[90%] lg:w-[85%] flex flex-col gap-8 items-center">
+            <!-- Canvas elements automatically injected here -->
+        </div>
+    </div>
+</div>
+
+<!-- Floating Back to Top Button -->
+<button id="backToTopBtn" class="fixed bottom-8 right-8 z-50 p-3 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl rounded-full translate-y-20 opacity-0 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background" aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+</button>
+
+<!-- Centered Loading Overlay -->
+<div id="pdf-loading-spinner" class="fixed inset-0 flex flex-col items-center justify-center bg-background/95 backdrop-blur-sm z-[100] transition-opacity duration-500">
+    <svg class="w-16 h-16 text-primary mb-6 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+    </svg>
+    <div class="space-y-2 text-center">
+        <h2 class="text-xl font-bold tracking-widest uppercase">Decoupling PDF Context</h2>
+        <p class="text-xs font-mono text-muted-foreground">Secure Canvas Rendering Engine. Please wait...</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Basic Security Hooks
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && (e.key === 'U' || e.key === 'P' || e.key === 'S'))) {
+            e.preventDefault(); e.stopPropagation(); return false;
+        }
+    });
+
+    // The Viewer Core
+    document.addEventListener("DOMContentLoaded", function () {
+        // 🚨 CANVAS POISONING: Block DevTools Console Extractors 🚨
+        const _toDataURL = HTMLCanvasElement.prototype.toDataURL;
+        HTMLCanvasElement.prototype.toDataURL = function() {
+            console.warn("Security Exception: Image Extraction Disabled.");
+            return "data:image/png;base64,"; 
+        };
+        const _getImageData = CanvasRenderingContext2D.prototype.getImageData;
+        CanvasRenderingContext2D.prototype.getImageData = function(x, y, w, h) {
+            console.warn("Security Exception: Pixel Extraction Disabled.");
+            return new ImageData(1, 1);
+        };
+
+        const url = "{% url 'api_secure_pdf' document.id %}";
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+        const loadingTask = pdfjsLib.getDocument({
+            url: url,
+            httpHeaders: { 'X-PDF-Token': '{{ pdf_token }}' }
+        });
+        
+        loadingTask.promise.then(function(pdf) {
+            const container = document.getElementById('pdf-container');
+            const spinner = document.getElementById('pdf-loading-spinner');
+            
+            const scale = window.devicePixelRatio > 1 ? 2.5 : 2.0;
+
+            let currPage = 1;
+            function renderNextPage() {
+                if (currPage > pdf.numPages) {
+                    spinner.style.opacity = '0';
+                    setTimeout(() => spinner.remove(), 500);
+                    return;
+                }
+
+                pdf.getPage(currPage).then(function(page) {
+                    const viewport = page.getViewport({scale: scale});
+                    const canvas = document.createElement('canvas');
+                    
+                    canvas.className = "w-full bg-white shadow-2xl rounded-sm object-contain pointer-events-none select-none"; 
+                    const context = canvas.getContext('2d', { alpha: false });
+                    
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    context.fillStyle = 'white';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport,
+                        background: 'white'
+                    };
+
+                    container.appendChild(canvas);
+
+                    page.render(renderContext).promise.then(function() {
+                        // After the FIRST page successfully renders, fade out the spinner
+                        if (currPage === 1) {
+                            spinner.style.opacity = '0';
+                            setTimeout(() => spinner.remove(), 500);
+                        }
+                        
+                        currPage++;
+                        // Auto queue next page rendering
+                        renderNextPage(); 
+                    });
+                });
+            }
+            
+            renderNextPage();
+
+        }, function (reason) {
+            console.error("PDF Failed to Load:", reason);
+            document.getElementById('pdf-loading-spinner').innerHTML = `<p class="text-red-500 font-bold p-6 text-center">Document secure decoupling failed:<br><span class="text-sm opacity-75">${reason}</span></p>`;
+        });
+        
+        // Back to Top Logic
+        const topBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                topBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                topBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+        topBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+{% endblock %}

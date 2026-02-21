@@ -60,6 +60,13 @@ class ParsedDocument(models.Model):
     
     is_published = models.BooleanField(default=False)
     
+    # Display Settings
+    RENDER_MODES = (
+        ('NATIVE', 'Native AI Generated Render (JSON/Markdown)'),
+        ('DIRECT_PDF', 'Direct PDF Render (Raw File Viewer)'),
+    )
+    render_mode = models.CharField(max_length=20, choices=RENDER_MODES, default='NATIVE', help_text="Choose how this document should be displayed to the user.")
+    
     # Pricing & Access
     is_premium = models.BooleanField(default=False, help_text="Check if this content requires a premium subscription or one-time purchase.")
     price = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True, help_text="Optional: Set a specific price to unlock just this document.")
