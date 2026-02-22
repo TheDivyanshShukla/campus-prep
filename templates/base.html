@@ -257,9 +257,9 @@
                     {% else %}
                     <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">PYQs</a>
                     {% endif %}
-                    <a href="#" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
+                    <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        Global Pass
+                        Gold Pass
                     </a>
                 </nav>
                 
@@ -315,9 +315,9 @@
                 {% else %}
                 <a href="#" class="block text-base font-medium text-muted-foreground hover:text-foreground">PYQs</a>
                 {% endif %}
-                <a href="#" class="text-base font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
+                <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="text-base font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    Global Pass
+                    Gold Pass
                 </a>
                 
                 <hr class="border-border">

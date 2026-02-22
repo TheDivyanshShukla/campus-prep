@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Checkout - {{ document.title }} | RGPV Live{% endblock %}
+{% block title %}Checkout - Gold Pass | RGPV Live{% endblock %}
 
 {% block content %}
 <div class="max-w-6xl mx-auto sm:py-12 sm:px-6 lg:px-8 flex items-center justify-center min-h-[calc(100vh-80px)] pb-32 sm:pb-12">
@@ -16,10 +16,10 @@
             <span class="inline-block px-3 py-1 bg-amber-500/10 text-amber-500 text-[10px] sm:text-xs font-bold rounded-full mb-3 sm:mb-4 w-max uppercase tracking-wider border border-amber-500/20">Secure Checkout</span>
             
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-2 sm:mb-4 text-foreground leading-tight">
-                Unlock Premium <br class="hidden lg:block"/>Academic Mastery.
+                Get Your <br class="hidden lg:block"/>Gold Pass.
             </h1>
             <p class="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-lg leading-relaxed">
-                You are about to gain permanent, unrestrained access to the most accurate, AI-generated solutions natively built for engineering students.
+                You are about to unlock all premium documents for {{ branch.name }} Semester {{ semester.number }}. Never pay for individual documents again.
             </p>
 
             <div class="space-y-4 text-sm lg:text-base text-muted-foreground">
@@ -27,19 +27,19 @@
                     <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mr-3 mt-0.5 shrink-0 border border-emerald-500/20">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <p><strong class="text-foreground">100% Verified Accuracy.</strong> Step-by-step rigorous solutions.</p>
+                    <p><strong class="text-foreground">Full Semester Access.</strong> Instantly unlocks PYQs, Detailed Notes, and Short Notes.</p>
                 </div>
                 <div class="flex items-start">
                     <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mr-3 mt-0.5 shrink-0 border border-emerald-500/20">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <p><strong class="text-foreground">Crystal Clear UI.</strong> Native Markdown and KaTeX math rendering tailored for mobile screens.</p>
+                    <p><strong class="text-foreground">Saves Money.</strong> Cheaper than buying 3 individual subjects.</p>
                 </div>
                 <div class="flex items-start">
                     <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mr-3 mt-0.5 shrink-0 border border-emerald-500/20">
                         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <p><strong class="text-foreground">Exam Validity.</strong> Access valid until your RGPV Exam for this subject.</p>
+                    <p><strong class="text-foreground">Exam Validity.</strong> Access valid until the final RGPV Exam for this semester.</p>
                 </div>
             </div>
         </div>
@@ -52,11 +52,11 @@
                 
                 <div class="flex gap-4 mb-4 sm:mb-6 pt-1 px-4 sm:px-0">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 border border-amber-500/20">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                     <div>
-                        <h4 class="font-bold text-foreground sm:text-lg leading-tight line-clamp-2 pr-2">{{ document.title }}</h4>
-                        <p class="text-[11px] sm:text-xs text-muted-foreground mt-1 line-clamp-1">{{ document.subjects.first.name }} ({{ document.subjects.first.code }})</p>
+                        <h4 class="font-bold text-foreground sm:text-lg leading-tight line-clamp-2 pr-2">Gold Pass (Semester)</h4>
+                        <p class="text-[11px] sm:text-xs text-muted-foreground mt-1 line-clamp-1">{{ branch.code }} - Semester {{ semester.number }}</p>
                     </div>
                 </div>
 
@@ -76,8 +76,8 @@
                     <div class="flex flex-row justify-between items-center sm:mb-6 sm:pt-6 sm:border-t sm:border-border sm:border-dashed">
                         <span class="text-muted-foreground font-medium text-sm">Total Amount</span>
                         <div class="text-right">
-                            <span id="original_price_display" class="text-sm text-muted-foreground line-through hidden mr-2">₹{{ document.price }}</span>
-                            <span id="final_price_display" class="text-2xl sm:text-4xl font-black text-foreground tracking-tight leading-none">₹{{ document.price }}</span>
+                            <span id="original_price_display" class="text-sm text-muted-foreground line-through hidden mr-2">₹{{ plan.price }}</span>
+                            <span id="final_price_display" class="text-2xl sm:text-4xl font-black text-foreground tracking-tight leading-none">₹{{ plan.price }}</span>
                         </div>
                     </div>
 
@@ -118,7 +118,7 @@
         "amount": "{{ amount }}", // Amount is in paise
         "currency": "INR",
         "name": "RGPV Live",
-        "description": "Premium Document Unlock",
+        "description": "Gold Pass Update",
         "image": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light", // Replace with our real logo later
         "order_id": "{{ order_id }}",
         "handler": function (response){
@@ -152,8 +152,8 @@
     }
     
     // --- Coupon Logic ---
-    let currentAmountPaise = parseInt("{{ amount }}"); // Dynamic state
-    let basePriceFloat = parseFloat("{{ document.price }}");
+    let currentAmountPaise = parseInt("{{ amount }}"); 
+    let basePriceFloat = parseFloat("{{ plan.price }}");
     let activeCoupon = null;
     
     document.getElementById('apply_coupon_btn').onclick = function(e) {
@@ -163,7 +163,6 @@
         
         if(!code) return;
         
-        // Setup loading
         this.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
         
         fetch("{% url 'validate_coupon' %}", {
@@ -181,35 +180,34 @@
                 msgEl.className = "text-xs mt-2 text-emerald-500 font-medium";
                 msgEl.innerText = "✓ Coupon applied! " + data.discount_percentage + "% off.";
                 
-                // Update specific DOM Elements
                 document.getElementById('original_price_display').classList.remove('hidden');
                 document.getElementById('final_price_display').innerText = "₹" + data.new_price.toFixed(2);
                 
-                // Update Razorpay Instance Amount
                 currentAmountPaise = Math.round(data.new_price * 100);
                 options.amount = currentAmountPaise;
-                rzp1 = new Razorpay(options); // Reinitialize with new amount
+                rzp1 = new Razorpay(options); 
                 rzp1.on('payment.failed', function (response){
                     alert("Payment Failed: " + response.error.description);
                 });
                 
                 // 100% OFF Bypass Check
                 if (currentAmountPaise === 0) {
-                    // Turn Razorpay button into Free Claim button
-                    rzpBtn.innerHTML = '<div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shine transition-transform"></div><svg class="w-6 h-6 mr-2 text-white shrink-0 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="relative z-10">Claim Now for Free</span>';
+                    rzpBtn.innerHTML = '<div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shine transition-transform"></div><svg class="w-6 h-6 mr-2 text-white shrink-0 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="relative z-10">Claim Gold Pass for Free</span>';
                     rzpBtn.classList.remove('bg-[#00b86b]', 'hover:bg-[#00a35f]', 'shadow-[0_8px_20px_-8px_rgba(0,184,107,0.6)]');
                     rzpBtn.classList.add('bg-indigo-500', 'hover:bg-indigo-600', 'shadow-[0_8px_20px_-8px_rgba(99,102,241,0.6)]');
                     
                     rzpBtn.onclick = function(e) {
                         e.preventDefault();
-                        rzpBtn.innerHTML = "Processing...";
+                        rzpBtn.innerHTML = "Activating Pass...";
                         fetch("{% url 'process_free_checkout' %}", {
                             method: "POST",
                             headers: {"Content-Type": "application/json"},
                             body: JSON.stringify({
                                 code: activeCoupon,
-                                item_type: "document",
-                                item_id: {{ document.id }}
+                                item_type: "gold_pass",
+                                item_id: {{ plan.id }},
+                                branch_id: {{ branch.id }},
+                                semester_id: {{ semester.id }}
                             })
                         })
                         .then(res => res.json())
@@ -218,7 +216,7 @@
                                 window.location.href = resp.redirect_url;
                             } else {
                                 alert(resp.message);
-                                rzpBtn.innerHTML = "Claim Now for Free";
+                                rzpBtn.innerHTML = "Claim Gold Pass for Free";
                             }
                         });
                     }

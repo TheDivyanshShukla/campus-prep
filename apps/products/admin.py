@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProductCategory, Product, SubscriptionPlan, Purchase, UnlockedContent
+from .models import ProductCategory, Product, SubscriptionPlan, Purchase, UnlockedContent, Coupon
 
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(admin.ModelAdmin):
@@ -27,3 +27,9 @@ class PurchaseAdmin(admin.ModelAdmin):
 class UnlockedContentAdmin(admin.ModelAdmin):
     list_display = ('user', 'product', 'valid_until')
     search_fields = ('user__username', 'product__name')
+    
+@admin.register(Coupon)
+class CouponAdmin(admin.ModelAdmin):
+    list_display = ('code', 'discount_percentage', 'current_uses', 'max_uses', 'is_active')
+    list_filter = ('is_active', 'discount_percentage')
+    search_fields = ('code',)

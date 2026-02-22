@@ -33,10 +33,37 @@ class SubscriptionPlan(models.Model):
     name = models.CharField(max_length=100)
     plan_type = models.CharField(max_length=20, choices=PLAN_TYPES)
     price = models.DecimalField(max_digits=8, decimal_places=2)
+    
+    # Granular Access Controls
+    includes_notes = models.BooleanField(default=True, help_text="Unlocks structured notes")
+    includes_pyq = models.BooleanField(default=True, help_text="Unlocks solved PYQs")
+    includes_short_notes = models.BooleanField(default=True, help_text="Unlocks short notes")
+    includes_unsolved_pyq = models.BooleanField(default=True, help_text="Unlocks unsolved PYQs")
+    includes_important_q = models.BooleanField(default=True, help_text="Unlocks important questions")
+    includes_formula = models.BooleanField(default=True, help_text="Unlocks formula sheets")
+    includes_crash_course = models.BooleanField(default=True, help_text="Unlocks crash courses")
+    
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.name} ({self.get_plan_type_display()})"
+
+class Coupon(models.Model):
+    code = models.CharField(max_length=50, unique=True, help_text="e.g. TEST100 or SAVE50")
+    discount_percentage = models.PositiveIntegerField(help_text="Between 1 and 100")
+    max_uses = models.PositiveIntegerField(null=True, blank=True, help_text="Leave blank for unlimited")
+    current_uses = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return f"{self.code} - {self.discount_percentage}% OFF"
+        
+    def is_valid(self):
+        if not self.is_active:
+            return False
+        if self.max_uses is not None and self.current_uses >= self.max_uses:
+            return False
+        return True
 
 class Purchase(models.Model):
     STATUS_CHOICES = (
