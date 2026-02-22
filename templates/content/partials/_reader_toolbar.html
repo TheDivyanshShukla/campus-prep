@@ -42,9 +42,18 @@
 
     function applyZoom() {
         document.getElementById('zoomPercentage').innerText = window.currentZoom + '%';
+        
+        // Target PDF canvases
         document.querySelectorAll('#pdf-container canvas').forEach(c => {
             c.style.width = window.currentZoom + '%';
         });
+
+        // Target Native Mode container
+        const nativeContainer = document.getElementById('secure-content-container');
+        if (nativeContainer) {
+            nativeContainer.style.width = window.currentZoom + '%';
+            nativeContainer.style.margin = '0 auto'; // Keep it centered
+        }
     }
 
     function zoomIn() {
