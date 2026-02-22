@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% block title %}Practice | CampusPrep{% endblock %}
+
+{% block head %}
+<style>
+  .subject-card { cursor:pointer; transition: all 0.2s ease; }
+  .subject-card:hover { transform: translateY(-2px); }
+  .subject-card.selected { border-color: #4f46e5; box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1); }
+  .type-btn { transition: all 0.15s; cursor:pointer; user-select:none; }
+  .type-btn.active { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+  .unit-btn { transition: all 0.15s; cursor:pointer; }
+  .unit-btn.active { background:#10b981; color:#fff; border-color:#10b981; }
+  .diff-btn { transition: all 0.15s; cursor:pointer; }
+  .diff-btn.active { background:#f59e0b; color:#fff; border-color:#f59e0b; }
+  #ai-spinner { display:none; }
+  .spinner { width:18px;height:18px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 space-y-10">
+
+  {# ── Header ── #}
+  <div>
+    <h1 class="text-3xl font-extrabold tracking-tight flex items-center gap-3">
+      <span class="text-3xl">🧠</span> Practice Zone
+    </h1>
+    <p class="text-muted-foreground mt-1 text-sm">Select a subject, pick a unit, choose question types, and start practising.</p>
+  </div>
+
+  {# ── Step 1: Subject ── #}
+  <section>
+    <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Step 1 — Choose Subject</h2>
+    {% if subject_data %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="subjectGrid">
+      {% for item in subject_data %}
+      <div class="subject-card border border-border rounded-2xl p-5 bg-card"
+           data-subject-id="{{ item.subject.id }}"
+           data-subject-name="{{ item.subject.name }}"
+           data-units='{% for u in item.units %}{"id":{{ u.id }},"name":"{{ u.name|escapejs }}"}{% if not forloop.last %},{% endif %}{% endfor %}'
+           onclick="selectSubject(this)">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">{{ item.subject.code }}</span>
+            <h3 class="font-bold text-foreground text-sm mt-0.5 leading-snug">{{ item.subject.name }}</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-lg flex-shrink-0">📚</div>
+        </div>
+        <div class="flex gap-3 text-xs text-muted-foreground">
+          <span>{{ item.set_count }} sets</span>
+          <span>·</span>
+          <span>{{ item.question_count }} questions</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="border border-border rounded-2xl p-10 text-center text-muted-foreground bg-card">
+      No subjects found for your program. <a href="{% url 'onboarding' %}" class="text-indigo-500 font-medium">Set your program →</a>
+    </div>
+    {% endif %}
+  </section>
+
+  {# ── Steps 2-4 (hidden until subject selected) ── #}
+  <div id="configSection" class="hidden space-y-8">
+
+    {# ── Step 2: Unit ── #}
+    <section>
+      <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Step 2 — Choose Unit / Chapter</h2>
+      <div class="flex flex-wrap gap-2" id="unitBtns">
+        <button class="unit-btn active border border-border text-sm font-medium px-4 py-2 rounded-xl"
+                data-unit-id="" onclick="selectUnit(this)">All Units</button>
+        {# Filled dynamically by JS #}
+      </div>
+    </section>
+
+    {# ── Step 3: Question Types ── #}
+    <section>
+      <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Step 3 — Question Types <span class="normal-case font-normal text-muted-foreground">(multi-select)</span></h2>
+      <div class="flex flex-wrap gap-2">
+        <button class="type-btn active border border-border text-sm font-medium px-4 py-2 rounded-xl" data-type="MCQ"   onclick="toggleType(this)">📝 MCQ</button>
+        <button class="type-btn active border border-border text-sm font-medium px-4 py-2 rounded-xl" data-type="SHORT" onclick="toggleType(this)">✏️ Short Answer</button>
+        <button class="type-btn        border border-border text-sm font-medium px-4 py-2 rounded-xl" data-type="LONG"  onclick="toggleType(this)">📄 Long Answer</button>
+        <button class="type-btn        border border-border text-sm font-medium px-4 py-2 rounded-xl" data-type="FILL"  onclick="toggleType(this)">🔡 Fill in Blank</button>
+        <button class="type-btn        border border-border text-sm font-medium px-4 py-2 rounded-xl" data-type="TF"    onclick="toggleType(this)">✅ True / False</button>
+      </div>
+    </section>
+
+    {# ── Step 4: Difficulty ── #}
+    <section>
+      <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Step 4 — Difficulty</h2>
+      <div class="flex flex-wrap gap-2">
+        <button class="diff-btn        border border-border text-sm font-medium px-4 py-2 rounded-xl" data-diff="EASY"   onclick="selectDiff(this)">🟢 Easy</button>
+        <button class="diff-btn active border border-border text-sm font-medium px-4 py-2 rounded-xl" data-diff="MEDIUM" onclick="selectDiff(this)">🟡 Medium</button>
+        <button class="diff-btn        border border-border text-sm font-medium px-4 py-2 rounded-xl" data-diff="HARD"   onclick="selectDiff(this)">🔴 Hard</button>
+      </div>
+    </section>
+
+    {# ── CTAs ── #}
+    <section>
+      <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Step 5 — Start</h2>
+      <div class="flex flex-wrap gap-4">
+        {# Use pre-generated — navigates to set list page #}
+        <a id="pregenBtn" href="#"
+           class="flex items-center gap-2 px-6 py-3 rounded-2xl border border-indigo-500/50 bg-indigo-500/10 text-indigo-500 font-bold hover:bg-indigo-500/20 transition-colors">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10"/></svg>
+          Pre-generated Sets
+        </a>
+
+        {# AI Generate #}
+        <button id="aiBtn" onclick="aiGenerate()"
+                class="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-all shadow-lg active:scale-95">
+          <span id="ai-icon">✨</span>
+          <span id="ai-text">Generate with AI</span>
+          <div id="ai-spinner"><div class="spinner"></div></div>
+        </button>
+      </div>
+      <p class="text-xs text-muted-foreground mt-3">AI generation takes ~10-15 seconds. Questions are saved and can be reused.</p>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  let selectedSubjectId = null;
+  let selectedUnitId    = '';
+  let selectedDiff      = 'MEDIUM';
+  const CSRF = '{{ csrf_token }}';
+
+  function selectSubject(el) {
+    document.querySelectorAll('.subject-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedSubjectId = el.dataset.subjectId;
+
+    // Populate units
+    const unitsRaw = el.dataset.units;
+    const unitBtns = document.getElementById('unitBtns');
+    unitBtns.innerHTML = `<button class="unit-btn active border border-border text-sm font-medium px-4 py-2 rounded-xl" data-unit-id="" onclick="selectUnit(this)">All Units</button>`;
+
+    if (unitsRaw) {
+      try {
+        const units = JSON.parse('[' + unitsRaw + ']');
+        units.forEach(u => {
+          unitBtns.innerHTML += `<button class="unit-btn border border-border text-sm font-medium px-4 py-2 rounded-xl" data-unit-id="${u.id}" onclick="selectUnit(this)">${u.name}</button>`;
+        });
+      } catch(e) {}
+    }
+    selectedUnitId = '';
+    updatePregenLink();
+    document.getElementById('configSection').classList.remove('hidden');
+    document.getElementById('configSection').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function selectUnit(el) {
+    document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    selectedUnitId = el.dataset.unitId;
+    updatePregenLink();
+  }
+
+  function toggleType(el) {
+    el.classList.toggle('active');
+  }
+
+  function selectDiff(el) {
+    document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    selectedDiff = el.dataset.diff;
+  }
+
+  function getSelectedTypes() {
+    return [...document.querySelectorAll('.type-btn.active')].map(b => b.dataset.type);
+  }
+
+  function updatePregenLink() {
+    const a = document.getElementById('pregenBtn');
+    let url = `/practice/sets/${selectedSubjectId}/`;
+    if (selectedUnitId) url += `?unit=${selectedUnitId}`;
+    a.href = url;
+  }
+
+  async function aiGenerate() {
+    if (!selectedSubjectId) return alert('Please select a subject first.');
+    const types = getSelectedTypes();
+    if (!types.length) return alert('Select at least one question type.');
+
+    const btn    = document.getElementById('aiBtn');
+    const icon   = document.getElementById('ai-icon');
+    const text   = document.getElementById('ai-text');
+    const spinner = document.getElementById('ai-spinner');
+
+    btn.disabled = true;
+    icon.style.display = 'none';
+    text.textContent = 'Generating…';
+    spinner.style.display = 'block';
+
+    try {
+      const resp = await fetch('/practice/api/generate/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-CSRFToken': CSRF },
+        body: JSON.stringify({
+          subject_id: selectedSubjectId,
+          unit_id: selectedUnitId || null,
+          types,
+          difficulty: selectedDiff,
+          count: 10,
+        })
+      });
+      const data = await resp.json();
+      if (data.success) {
+        window.location.href = `/practice/quiz/${data.set_id}/`;
+      } else {
+        alert('AI generation failed: ' + data.error);
+      }
+    } catch(e) {
+      alert('Network error: ' + e.message);
+    } finally {
+      btn.disabled = false;
+      icon.style.display = '';
+      text.textContent = 'Generate with AI';
+      spinner.style.display = 'none';
+    }
+  }
+</script>
+{% endblock %}

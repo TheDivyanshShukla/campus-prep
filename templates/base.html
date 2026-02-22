@@ -250,6 +250,9 @@
                     <a href="{% url 'dashboard' %}" class="text-sm font-medium {% if request.resolver_match.url_name == 'dashboard' %}text-primary{% else %}text-muted-foreground hover:text-foreground{% endif %} transition-colors">
                         Study Material
                     </a>
+                    <a href="{% url 'practice_index' %}" class="text-sm font-medium {% if 'practice' in request.resolver_match.url_name %}text-indigo-500{% else %}text-muted-foreground hover:text-foreground{% endif %} transition-colors">
+                        🧠 Practice
+                    </a>
 
                     <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -292,6 +295,10 @@
                                 <a href="{% url 'dashboard' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
                                     <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                                     Study Material
+                                </a>
+                                <a href="{% url 'practice_index' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <span class="mr-3 text-base leading-none">🧠</span>
+                                    Practice Zone
                                 </a>
                                 <a href="{% url 'gamification_dashboard' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
                                     <span class="mr-3 text-base leading-none">🔥</span>
@@ -406,6 +413,10 @@
                 <div class="px-4 pt-5">
                     <p class="text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-widest px-1 mb-2">Account</p>
                     <div class="space-y-1">
+                        <a href="{% url 'practice_index' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted transition-colors">
+                            <span class="text-base flex-shrink-0">🧠</span>
+                            Practice Zone
+                        </a>
                         <a href="{% url 'gamification_dashboard' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium {% if request.resolver_match.url_name == 'gamification_dashboard' %}bg-rose-500/10 text-rose-500{% else %}text-foreground hover:bg-muted{% endif %} transition-colors">
                             <span class="text-base flex-shrink-0">🔥</span>
                             Analytics & Streaks

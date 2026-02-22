@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'apps.products.apps.ProductsConfig',
     'apps.content.apps.ContentConfig',
     'apps.gamification.apps.GamificationConfig',
+    'apps.practice.apps.PracticeConfig',
 ]
 
 AUTH_USER_MODEL = 'users.User'

@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% load practice_tags %}
+{% block title %}{{ question_set.title }} | Practice{% endblock %}
+
+{% block head %}
+{# MathJax config — must come before the MathJax script #}
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@14/dist/markdown-it.min.js"></script>
+<style>
+  .q-card { border-left: 4px solid transparent; transition: all 0.2s; }
+  .q-card.MCQ   { border-color: #6366f1; }
+  .q-card.SHORT { border-color: #10b981; }
+  .q-card.LONG  { border-color: #3b82f6; }
+  .q-card.FILL  { border-color: #f59e0b; }
+  .q-card.TF    { border-color: #f43f5e; }
+  .option-label { display:flex; align-items:center; gap:10px; padding:10px 14px;
+    border-radius:12px; border:1.5px solid hsl(var(--border)); cursor:pointer;
+    transition:all 0.15s; font-size:0.875rem; }
+  .option-label:hover { background:hsl(var(--muted)); }
+  input[type=radio]:checked + .option-label,
+  input[type=radio]:checked ~ .option-label {
+    border-color:#6366f1; background:rgba(99,102,241,0.08); font-weight:600;
+  }
+  .option-radio { display:none; }
+  .tf-btn { padding:8px 20px; border-radius:12px; border:1.5px solid hsl(var(--border));
+    font-weight:600; cursor:pointer; transition:all 0.15s; font-size:0.875rem; }
+  .tf-btn.selected-tf { background:#f43f5e; color:#fff; border-color:#f43f5e; }
+  progress-bar-inner { transition: width 0.4s ease; }
+  .diff-badge { font-size:10px;font-weight:700;text-transform:uppercase;
+    padding:2px 8px;border-radius:9999px;display:inline-block; }
+</style>
+{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'practice_submit' question_set.id %}" id="quizForm">
+  {% csrf_token %}
+
+  {# ── Fixed top bar ── #}
+  <div class="sticky top-16 z-40 bg-background/90 backdrop-blur border-b border-border">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div class="min-w-0">
+        <p class="text-xs text-muted-foreground truncate">{{ question_set.subject.code }} — {{ question_set.title }}</p>
+        <div class="flex items-center gap-2 mt-0.5">
+          <div class="flex-1 h-1.5 bg-muted rounded-full overflow-hidden" style="min-width:80px">
+            <div id="progressBar" class="h-full bg-indigo-600 rounded-full transition-all duration-300" style="width:0%"></div>
+          </div>
+          <span id="progressLabel" class="text-xs font-mono text-muted-foreground">0/{{ question_count }}</span>
+        </div>
+      </div>
+      <button type="submit"
+              class="flex-shrink-0 px-6 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-all shadow-sm active:scale-95">
+        Submit Quiz
+      </button>
+    </div>
+  </div>
+
+  {# ── Questions ── #}
+  <div class="max-w-3xl mx-auto py-8 px-4 space-y-8">
+
+    {% for q in questions %}
+    <div class="q-card {{ q.question_type }} bg-card border border-border rounded-2xl p-6 shadow-sm" data-qid="{{ q.id }}">
+
+      {# Header row #}
+      <div class="flex items-center justify-between mb-4 gap-2">
+        <span class="text-xs font-bold text-muted-foreground">Q{{ forloop.counter }} of {{ question_count }}</span>
+        <div class="flex gap-2">
+          <span class="diff-badge
+            {% if q.difficulty == 'EASY' %}bg-green-500/10 text-green-600 dark:text-green-400
+            {% elif q.difficulty == 'HARD' %}bg-red-500/10 text-red-500
+            {% else %}bg-amber-500/10 text-amber-500{% endif %}">
+            {{ q.get_difficulty_display }}
+          </span>
+          <span class="diff-badge bg-indigo-500/10 text-indigo-500">{{ q.get_question_type_display }}</span>
+        </div>
+      </div>
+
+      {# Question body — rendered by markdown-it + MathJax #}
+      <div class="md-content text-foreground leading-relaxed mb-5 font-medium" data-raw="{{ q.body_md }}"></div>
+
+      {# ── MCQ ── #}
+      {% if q.question_type == 'MCQ' %}
+      <div class="space-y-2.5 options-container" onchange="onAnswer()">
+        {# Rendered via JS to avoid TemplateSyntaxErrors #}
+      </div>
+      <script>
+        (function(){
+          const qid = "{{ q.id }}";
+          const card = document.querySelector(`.q-card[data-qid="${qid}"]`);
+          const container = card.querySelector('.options-container');
+          
+          // These were serialized in the view
+          const opts = [
+            { label:'A', text: {{ q.option_a|tojson|safe }} },
+            { label:'B', text: {{ q.option_b|tojson|safe }} },
+            { label:'C', text: {{ q.option_c|tojson|safe }} },
+            { label:'D', text: {{ q.option_d|tojson|safe }} },
+          ];
+
+          opts.forEach(o => {
+            const lbl = document.createElement('label');
+            lbl.className = 'block';
+            lbl.innerHTML = `
+              <input type="radio" name="q_${qid}" value="${o.label}" class="option-radio" onchange="onAnswer()">
+              <span class="option-label">
+                <span class="w-7 h-7 rounded-full border-2 border-current flex items-center justify-center text-xs font-black flex-shrink-0">${o.label}</span>
+                <span>${window._md ? window._md.renderInline(o.text) : o.text}</span>
+              </span>`;
+            container.appendChild(lbl);
+          });
+        })();
+      </script>
+
+      {# ── True / False ── #}
+      {% elif q.question_type == 'TF' %}
+      <input type="hidden" name="q_{{ q.id }}" id="tf_{{ q.id }}" value="">
+      <div class="flex gap-3">
+        <button type="button" class="tf-btn" onclick="setTF(this, 'tf_{{ q.id }}', 'True')">✅ True</button>
+        <button type="button" class="tf-btn" onclick="setTF(this, 'tf_{{ q.id }}', 'False')">❌ False</button>
+      </div>
+
+      {# ── Fill in the Blank ── #}
+      {% elif q.question_type == 'FILL' %}
+      <input type="text" name="q_{{ q.id }}" placeholder="Fill in the blank…"
+             class="w-full border border-border rounded-xl px-4 py-2.5 text-sm bg-background focus:outline-none focus:ring-2 focus:ring-indigo-500/40 transition"
+             onchange="onAnswer()">
+
+      {# ── Short / Long ── #}
+      {% else %}
+      <textarea name="q_{{ q.id }}" rows="{% if q.question_type == 'LONG' %}6{% else %}3{% endif %}"
+                placeholder="Write your answer here…"
+                class="w-full border border-border rounded-xl px-4 py-2.5 text-sm bg-background resize-y focus:outline-none focus:ring-2 focus:ring-indigo-500/40 transition"
+                onchange="onAnswer()"></textarea>
+      {% endif %}
+
+    </div>
+    {% endfor %}
+
+    {# Bottom submit #}
+    <div class="pt-4 pb-8 text-center">
+      <button type="submit" class="px-10 py-4 rounded-2xl bg-indigo-600 text-white font-bold text-base hover:bg-indigo-700 transition-all shadow-lg active:scale-95">
+        Submit Quiz
+      </button>
+    </div>
+  </div>
+</form>
+
+<script>
+  // ── Markdown + MathJax rendering ─────────────────────────────────────────────
+  window._md = window.markdownit({ html: false, linkify: true, typographer: true });
+
+  document.querySelectorAll('.md-content').forEach(el => {
+    el.innerHTML = _md.render(el.dataset.raw || '');
+  });
+
+  // Re-run MathJax after markdown is rendered
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise();
+  }
+
+  // ── Progress tracking ─────────────────────────────────────────────────────────
+  const total = {{ question_count }};
+  const answered = new Set();
+
+  function onAnswer() {
+    const cards = document.querySelectorAll('.q-card');
+    let count = 0;
+    cards.forEach((card, idx) => {
+      const qid = card.dataset.qid;
+      const radios = card.querySelectorAll('input[type=radio]:checked');
+      const texts  = card.querySelectorAll('textarea, input[type=text]');
+      const hidden = card.querySelectorAll('input[type=hidden]');
+
+      let hasAnswer = radios.length > 0;
+      texts.forEach(t => { if (t.value.trim()) hasAnswer = true; });
+      hidden.forEach(h => { if (h.value) hasAnswer = true; });
+
+      if (hasAnswer) count++;
+    });
+    const pct = total ? Math.round((count / total) * 100) : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = count + '/' + total;
+  }
+
+  // ── True / False ─────────────────────────────────────────────────────────────
+  function setTF(btn, fieldId, val) {
+    const parent = btn.closest('.flex');
+    parent.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('selected-tf'));
+    btn.classList.add('selected-tf');
+    document.getElementById(fieldId).value = val;
+    onAnswer();
+  }
+
+  // Initial progress check
+  onAnswer();
+</script>
+{% endblock %}
