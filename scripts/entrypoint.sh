@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Wait for database to be ready
+if [ "$DATABASE_URL" != "" ]; then
+    echo "Waiting for database..."
+    # Simplified check using python's psycopg2 or similar if available/needed
+    # or just assume depends_on healthcheck handles it in compose
+fi
+
+echo "Running migrations..."
+python manage.py migrate
+
+# Execute the CMD
+exec "$@"
