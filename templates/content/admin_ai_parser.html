@@ -28,7 +28,7 @@
                     {% csrf_token %}
                     <div>
                         <label class="block text-sm font-medium mb-1">Target Subject</label>
-                        <select name="subject_id" id="subject_id" required class="w-full bg-input/50 border border-border rounded-lg p-2.5 text-sm focus:ring-ring focus:border-ring">
+                        <select name="subject_id" id="subject_id" required>
                             <option value="">-- Select Subject --</option>
                             {% for subject in subjects %}
                                 <option value="{{ subject.id }}">
@@ -40,7 +40,7 @@
 
                     <div>
                         <label class="block text-sm font-medium mb-1">Document Type</label>
-                        <select name="document_type" id="document_type" required class="w-full bg-input/50 border border-border rounded-lg p-2.5 text-sm focus:ring-ring focus:border-ring">
+                        <select name="document_type" id="document_type" required>
                             <option value="PYQ">PYQ (Previous Year Question)</option>
                             <option value="NOTES">Chapter Notes</option>
                             <option value="FORMULA">Formula Sheet</option>

@@ -3,7 +3,7 @@
 {% block title %}Welcome - Set Up Your Vault{% endblock %}
 
 {% block content %}
-<div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+<div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative">
     
     <!-- Background Elements -->
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-100/50 via-background to-background dark:from-indigo-900/10 dark:via-background dark:to-background"></div>
@@ -37,11 +37,7 @@
                    <label for="{{ form.branch.id_for_label }}" class="block text-sm font-medium text-foreground mb-2">
                        Select Your Branch
                    </label>
-                   <div class="relative">
-                        <div class="appearance-none block w-full [&>select]:w-full [&>select]:px-4 [&>select]:py-3 [&>select]:border [&>select]:border-border [&>select]:rounded-xl [&>select]:bg-input/40 [&>select]:text-foreground [&>select]:cursor-pointer [&>select]:focus:outline-none [&>select]:focus:ring-2 [&>select]:focus:ring-ring [&>select]:transition-colors">
-                            {{ form.branch }}
-                        </div>
-                   </div>
+                   {{ form.branch }}
                    {% if form.branch.errors %}
                        <p class="mt-1 text-xs text-red-500">{{ form.branch.errors.0 }}</p>
                    {% endif %}
@@ -52,11 +48,7 @@
                    <label for="{{ form.semester.id_for_label }}" class="block text-sm font-medium text-foreground mb-2">
                        Select Your Current Semester
                    </label>
-                   <div class="relative">
-                        <div class="appearance-none block w-full [&>select]:w-full [&>select]:px-4 [&>select]:py-3 [&>select]:border [&>select]:border-border [&>select]:rounded-xl [&>select]:bg-input/40 [&>select]:text-foreground [&>select]:cursor-pointer [&>select]:focus:outline-none [&>select]:focus:ring-2 [&>select]:focus:ring-ring [&>select]:transition-colors">
-                            {{ form.semester }}
-                        </div>
-                   </div>
+                   {{ form.semester }}
                    {% if form.semester.errors %}
                        <p class="mt-1 text-xs text-red-500">{{ form.semester.errors.0 }}</p>
                    {% endif %}

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Local Apps
+    'apps.common.apps.CommonConfig',
     'apps.users.apps.UsersConfig',
     'apps.academics.apps.AcademicsConfig',
     'apps.products.apps.ProductsConfig',

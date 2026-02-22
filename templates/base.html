@@ -103,6 +103,119 @@
             background: rgba(9, 9, 11, 0.7);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        /* Custom Dropdown Styling */
+        .custom-select-container {
+            position: relative;
+            width: 100%;
+        }
+        .custom-select-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 3rem; /* Fixed height for consistency */
+            padding: 0 1rem;
+            background: hsl(var(--input) / 0.4);
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.75rem;
+            color: hsl(var(--foreground));
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+        .custom-select-trigger:hover {
+            border-color: hsl(var(--ring) / 0.5);
+            background: hsl(var(--input) / 0.6);
+        }
+        .custom-select-trigger:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: hsl(var(--ring));
+        }
+        .custom-select-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            width: 100%;
+            max-height: 250px;
+            overflow-y: auto;
+            background: hsl(var(--background) / 0.95);
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1), 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            z-index: 9999; /* Higher z-index */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.25rem;
+            backdrop-filter: blur(8px);
+        }
+        .custom-select-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .custom-select-option {
+            padding: 0.625rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-align: left; /* Ensure left alignment */
+        }
+        .custom-select-option:hover {
+            background: hsl(var(--accent));
+            color: hsl(var(--accent-foreground));
+        }
+        .custom-select-option.selected {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+        .dark .custom-select-menu {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Premium Scrollbar Redesign */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: hsl(var(--muted-foreground) / 0.2);
+            border-radius: 10px;
+            border: 3px solid transparent;
+            background-clip: content-box;
+            transition: background 0.2s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--muted-foreground) / 0.4);
+            background-clip: content-box;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: hsl(var(--muted-foreground) / 0.2);
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--muted-foreground) / 0.4);
+        }
+
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: hsl(var(--muted-foreground) / 0.2) transparent;
+        }
     </style>
     
     {% block head %}{% endblock %}
@@ -270,6 +383,102 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // --- Custom Dropdown Logic ---
+        function initCustomDropdowns() {
+            const selects = document.querySelectorAll('select:not(.no-custom)');
+            
+            selects.forEach(select => {
+                if (select.parentElement.classList.contains('custom-select-container')) return;
+
+                const container = document.createElement('div');
+                container.className = 'custom-select-container';
+                
+                const trigger = document.createElement('button');
+                trigger.type = 'button';
+                trigger.className = 'custom-select-trigger';
+                
+                const selectedOption = select.options[select.selectedIndex];
+                const triggerText = document.createElement('span');
+                triggerText.className = 'flex-1 truncate'; // Prevent wrapping, use ellipsis
+                triggerText.textContent = selectedOption ? selectedOption.textContent : 'Select...';
+                
+                const icon = document.createElement('svg');
+                icon.innerHTML = '<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+                icon.className = 'w-4 h-4 ml-2 transition-transform duration-200';
+                icon.setAttribute('fill', 'none');
+                icon.setAttribute('viewBox', '0 0 24 24');
+                
+                trigger.appendChild(triggerText);
+                trigger.appendChild(icon);
+                
+                const menu = document.createElement('div');
+                menu.className = 'custom-select-menu';
+                
+                Array.from(select.options).forEach((option, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'custom-select-option';
+                    if (index === select.selectedIndex) item.classList.add('selected');
+                    item.textContent = option.textContent;
+                    
+                    item.addEventListener('click', () => {
+                        select.selectedIndex = index;
+                        triggerText.textContent = option.textContent;
+                        
+                        // Update selected class
+                        menu.querySelectorAll('.custom-select-option').forEach(opt => opt.classList.remove('selected'));
+                        item.classList.add('selected');
+                        
+                        // Close menu
+                        menu.classList.remove('show');
+                        icon.classList.remove('rotate-180');
+                        
+                        // Trigger change event on native select
+                        select.dispatchEvent(new Event('change'));
+                    });
+                    
+                    menu.appendChild(item);
+                });
+                
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isShowing = menu.classList.contains('show');
+                    
+                    // Close all other menus
+                    document.querySelectorAll('.custom-select-menu.show').forEach(m => {
+                        m.classList.remove('show');
+                        m.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                    });
+                    
+                    if (!isShowing) {
+                        menu.classList.add('show');
+                        icon.classList.add('rotate-180');
+                    }
+                });
+                
+                // Hide native select but keep it for form submission
+                select.style.display = 'none';
+                
+                container.appendChild(trigger);
+                container.appendChild(menu);
+                select.parentNode.insertBefore(container, select);
+                container.appendChild(select);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCustomDropdowns();
+        });
+
+        // Close dropdowns on click outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-select-container')) {
+                document.querySelectorAll('.custom-select-menu.show').forEach(m => {
+                    m.classList.remove('show');
+                    m.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                });
+            }
+        });
     </script>
     
     {% block scripts %}{% endblock %}
