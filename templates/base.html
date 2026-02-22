@@ -671,8 +671,20 @@
         if ('serviceWorker' in navigator && 'PushManager' in window) {
             window.addEventListener('load', () => {
                 // Added ?v=2 to bust browser cache
-                navigator.serviceWorker.register('/sw.js?v=2')
-                    .then(reg => console.log('SW Registered', reg))
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => {
+                        console.log('SW Registered', reg);
+                        
+                        // Auto-prompt logic for logged-in users
+                        {% if request.user.is_authenticated %}
+                        if (Notification.permission === 'default') {
+                            console.log('User logged in and permission not yet asked. Prompting in 2 seconds...');
+                            setTimeout(() => {
+                                subscribeToPush();
+                            }, 2000);
+                        }
+                        {% endif %}
+                    })
                     .catch(err => console.error('SW Registration failed', err));
             });
         }
