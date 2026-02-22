@@ -1,0 +1,113 @@
+{# Partial: _reader_search.html #}
+{# PDF full-text search: toggle bar, execute search across pages, navigate between results (next/prev), keyboard shortcuts (Ctrl+F / Escape). #}
+{# Requires: window.pdfDocGlobal to be set by the PDF viewer. #}
+{# Include AFTER the DOM elements are declared (scripts block). #}
+<script>
+    let searchResults = [];
+    let searchCurrentIdx = 0;
+
+    function toggleSearch() {
+        const bar = document.getElementById('floatingSearchBar');
+        const input = document.getElementById('pdfSearchInput');
+        if (bar.classList.contains('opacity-0')) {
+            bar.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+            bar.classList.add('translate-y-0');
+            setTimeout(() => input.focus(), 100);
+        } else {
+            closeSearch();
+        }
+    }
+
+    function closeSearch() {
+        const bar = document.getElementById('floatingSearchBar');
+        bar.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+        bar.classList.remove('translate-y-0');
+        document.querySelectorAll('canvas').forEach(c => c.style.boxShadow = '');
+    }
+
+    async function executeSearch() {
+        if (!window.pdfDocGlobal) return;
+        const query = document.getElementById('pdfSearchInput').value.toLowerCase().trim();
+        const controls = document.getElementById('searchControls');
+        const searchSpinner = document.getElementById('searchSpinner');
+        const searchIcon = document.getElementById('searchIcon');
+
+        if (!query) {
+            controls.classList.add('hidden');
+            document.querySelectorAll('canvas').forEach(c => c.style.boxShadow = '');
+            return;
+        }
+
+        searchIcon.classList.add('hidden');
+        searchSpinner.classList.remove('hidden');
+        searchResults = [];
+        searchCurrentIdx = 0;
+
+        for (let i = 1; i <= window.pdfDocGlobal.numPages; i++) {
+            try {
+                const page = await window.pdfDocGlobal.getPage(i);
+                const textContent = await page.getTextContent();
+                const pageText = textContent.items.map(item => item.str).join(' ').toLowerCase();
+                if (pageText.includes(query)) searchResults.push(i);
+            } catch (e) {
+                console.error('Search error on page', i, e);
+            }
+        }
+
+        searchSpinner.classList.add('hidden');
+        searchIcon.classList.remove('hidden');
+
+        if (searchResults.length > 0) {
+            controls.classList.remove('hidden');
+            document.getElementById('searchCount').innerText = `1/${searchResults.length}`;
+            scrollToSearchResult(0);
+        } else {
+            controls.classList.add('hidden');
+        }
+    }
+
+    function scrollToSearchResult(idx) {
+        if (searchResults.length === 0) return;
+        searchCurrentIdx = idx;
+        document.getElementById('searchCount').innerText = `${idx + 1}/${searchResults.length}`;
+        const canvas = document.getElementById(`page-canvas-${searchResults[idx]}`);
+        if (canvas) {
+            canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            canvas.style.boxShadow = '0 0 0 8px #eab308';
+            setTimeout(() => { canvas.style.boxShadow = ''; }, 2500);
+        }
+    }
+
+    function nextSearchResult() {
+        scrollToSearchResult(searchCurrentIdx < searchResults.length - 1 ? searchCurrentIdx + 1 : 0);
+    }
+
+    function prevSearchResult() {
+        scrollToSearchResult(searchCurrentIdx > 0 ? searchCurrentIdx - 1 : searchResults.length - 1);
+    }
+
+    // Wire up keyboard listeners once DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('pdfSearchInput');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') { executeSearch(); e.stopPropagation(); }
+        });
+
+        let debounceTimer;
+        searchInput.addEventListener('input', function () {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => executeSearch(), 400);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F')) {
+                e.preventDefault();
+                expandHeader();
+                toggleSearch();
+            }
+            if (e.key === 'Escape') closeSearch();
+        });
+    });
+</script>
