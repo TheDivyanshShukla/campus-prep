@@ -1,0 +1,49 @@
+services:
+  valkey:
+    image: valkey/valkey:7.2-alpine
+    command: valkey-server --appendonly yes
+    volumes:
+      - valkey_data:/data
+    healthcheck:
+      test: [ "CMD", "valkey-cli", "ping" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: .
+    # Note: Using python as the entrypoint handles migrations via the entrypoint.sh script
+    volumes:
+      - .:/app
+      - /app/.venv # Protect the container's environment from host shadowing
+      - media_data:/app/media
+    ports:
+      - "8000:8000"
+    environment:
+      - CELERY_BROKER_URL=redis://valkey:6379/0
+      - CELERY_RESULT_BACKEND=redis://valkey:6379/0
+      - DEBUG=True
+      - SECRET_KEY=dev-secret-key
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      valkey:
+        condition: service_healthy
+
+  worker:
+    build: .
+    command: celery -A config worker --loglevel=info
+    volumes:
+      - .:/app
+      - /app/.venv # Protect the container's environment from host shadowing
+      - media_data:/app/media
+    environment:
+      - CELERY_BROKER_URL=redis://valkey:6379/0
+      - CELERY_RESULT_BACKEND=redis://valkey:6379/0
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      valkey:
+        condition: service_healthy
+
+volumes:
+  valkey_data:
+  media_data:
