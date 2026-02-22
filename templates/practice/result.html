@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% load practice_tags %}
+{% block title %}Results | Practice{% endblock %}
+
+{% block head %}
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@14/dist/markdown-it.min.js"></script>
+<style>
+  .ring-bg { stroke: hsl(var(--muted)); stroke-width:10; fill:none; }
+  .ring-fg { stroke-dasharray: 283; stroke-dashoffset: 283; stroke-width:10; fill:none;
+             stroke-linecap:round; transform:rotate(-90deg); transform-origin:50% 50%;
+             transition: stroke-dashoffset 1s ease; }
+  details > summary { cursor:pointer; list-style:none; }
+  details > summary::-webkit-details-marker { display:none; }
+  details[open] .chevron { transform: rotate(180deg); }
+  .chevron { transition: transform 0.2s; }
+  .correct-row { border-left:4px solid #10b981; }
+  .wrong-row   { border-left:4px solid #f43f5e; }
+  .manual-row  { border-left:4px solid #6366f1; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto py-10 px-4 space-y-8">
+
+  {# ── Score card ── #}
+  <div class="bg-card border border-border rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-8 shadow-sm text-center sm:text-left">
+    {# Ring chart #}
+    <div class="relative flex-shrink-0 w-36 h-36">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <circle cx="50" cy="50" r="45" class="ring-bg"/>
+        <circle id="ringFg" cx="50" cy="50" r="45" class="ring-fg"
+          stroke="{% if attempt.percentage >= 75 %}#10b981{% elif attempt.percentage >= 50 %}#f59e0b{% else %}#f43f5e{% endif %}"/>
+      </svg>
+      <div class="absolute inset-0 flex flex-col items-center justify-center">
+        <span class="text-3xl font-black text-foreground">{{ attempt.percentage }}%</span>
+        <span class="text-xs text-muted-foreground font-medium">score</span>
+      </div>
+    </div>
+    <div class="flex-1">
+      <h1 class="text-2xl font-extrabold tracking-tight">
+        {% if attempt.percentage >= 75 %}🎉 Great job!
+        {% elif attempt.percentage >= 50 %}👍 Good effort!
+        {% else %}💪 Keep practising!
+        {% endif %}
+      </h1>
+      <p class="text-muted-foreground mt-1 text-sm">{{ attempt.question_set.title }}</p>
+      <div class="mt-4 flex flex-wrap gap-4">
+        <div>
+          <p class="text-xs text-muted-foreground uppercase tracking-widest">Score</p>
+          <p class="text-xl font-black text-foreground">{{ attempt.score }} / {{ attempt.max_score }}</p>
+        </div>
+        {% if auto_graded %}
+        <div>
+          <p class="text-xs text-muted-foreground uppercase tracking-widest">Auto-graded</p>
+          <p class="text-xl font-black text-emerald-500">{{ auto_graded|length }}</p>
+        </div>
+        {% endif %}
+        {% if manual_review %}
+        <div>
+          <p class="text-xs text-muted-foreground uppercase tracking-widest">Needs review</p>
+          <p class="text-xl font-black text-indigo-500">{{ manual_review|length }}</p>
+        </div>
+        {% endif %}
+      </div>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="{% url 'practice_quiz' attempt.question_set.id %}"
+           class="px-5 py-2.5 rounded-xl bg-secondary text-secondary-foreground border border-border text-sm font-bold hover:bg-muted transition-colors">🔄 Try Again</a>
+        <a href="{% url 'practice_index' %}"
+           class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-all shadow-sm">← New Practice</a>
+      </div>
+    </div>
+  </div>
+
+  {# ── Per-question review ── #}
+  <div>
+    <h2 class="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">Question Review</h2>
+    <div class="space-y-4">
+      {% for ans in answers %}
+      <details class="bg-card border border-border rounded-2xl overflow-hidden shadow-sm
+        {% if ans.question.question_type in 'SHORT,LONG' %}manual-row
+        {% elif ans.is_correct %}correct-row{% else %}wrong-row{% endif %}">
+        <summary class="flex items-center justify-between px-5 py-4 gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="text-lg flex-shrink-0">
+              {% if ans.question.question_type in 'SHORT,LONG' %}📝
+              {% elif ans.is_correct %}✅{% else %}❌{% endif %}
+            </span>
+            <div class="text-sm font-medium text-foreground truncate" style="max-width:400px">
+              Q{{ forloop.counter }}: <span class="md-preview" data-raw="{{ ans.question.body_md|truncatechars:80 }}"></span>
+            </div>
+          </div>
+          <svg class="chevron w-4 h-4 text-muted-foreground flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+
+        <div class="px-5 pb-5 space-y-4 border-t border-border pt-4">
+          {# Full question #}
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Question</p>
+            <div class="md-rendered text-sm text-foreground leading-relaxed" data-raw="{{ ans.question.body_md }}"></div>
+          </div>
+
+          {# MCQ options #}
+          {% if ans.question.question_type == 'MCQ' %}
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 MCQ-OPTIONS-GRID">
+            {# Rendered via JS #}
+          </div>
+          <script>
+          (function(){
+            const block = document.currentScript.closest('details');
+            const grid  = block.querySelector('.MCQ-OPTIONS-GRID');
+            const opts  = [
+              {label:'A', text: {{ ans.question.option_a|tojson|safe }}},
+              {label:'B', text: {{ ans.question.option_b|tojson|safe }}},
+              {label:'C', text: {{ ans.question.option_c|tojson|safe }}},
+              {label:'D', text: {{ ans.question.option_d|tojson|safe }}},
+            ];
+            const correct = {{ ans.question.correct_answer|tojson|safe }}.toUpperCase();
+            const given   = {{ ans.given_answer|tojson|safe }}.toUpperCase();
+            opts.forEach(o => {
+              const isCorrect = o.label === correct;
+              const isGiven   = o.label === given;
+              const div = document.createElement('div');
+              div.style.cssText = `padding:8px 12px;border-radius:10px;font-size:0.8rem;border:1.5px solid;`;
+              if (isCorrect) { div.style.borderColor='#10b981'; div.style.background='rgba(16,185,129,0.08)'; div.style.fontWeight='700'; }
+              else if (isGiven && !isCorrect) { div.style.borderColor='#f43f5e'; div.style.background='rgba(244,63,94,0.08)'; }
+              else { div.style.borderColor='hsl(var(--border))'; }
+              div.innerHTML = `<span style="font-weight:900;margin-right:8px">${o.label}.</span>${window._md ? window._md.renderInline(o.text) : o.text}${isCorrect?' ✓':''}${isGiven && !isCorrect?' ✗':''}`;
+              grid.appendChild(div);
+            });
+          })();
+          </script>
+          {% endif %}
+
+          {# Your answer #}
+          {% if ans.given_answer %}
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Your Answer</p>
+            <div class="text-sm px-3 py-2 rounded-lg
+              {% if ans.is_correct %}bg-emerald-500/10 text-emerald-700 dark:text-emerald-400
+              {% else %}bg-red-500/10 text-red-600 dark:text-red-400{% endif %}">
+              {{ ans.given_answer }}
+            </div>
+          </div>
+          {% endif %}
+
+          {# Model answer (SHORT/LONG or when wrong) #}
+          {% if not ans.is_correct or ans.question.question_type in 'SHORT,LONG' %}
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">
+              {% if ans.question.question_type in 'SHORT,LONG' %}Model Answer{% else %}Correct Answer{% endif %}
+            </p>
+            <div class="md-rendered text-sm bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 px-3 py-2 rounded-lg leading-relaxed"
+                 data-raw="{{ ans.question.correct_answer }}"></div>
+          </div>
+          {% endif %}
+
+          {# Explanation #}
+          {% if ans.question.explanation_md %}
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Explanation</p>
+            <div class="md-rendered text-sm text-foreground bg-muted/50 rounded-xl px-4 py-3 leading-relaxed"
+                 data-raw="{{ ans.question.explanation_md }}"></div>
+          </div>
+          {% endif %}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  window._md = window.markdownit({ html: false, linkify: true, typographer: true });
+
+  // Render all markdown blocks
+  document.querySelectorAll('.md-rendered, .md-preview').forEach(el => {
+    const raw = el.dataset.raw || '';
+    el.innerHTML = el.classList.contains('md-preview')
+      ? _md.renderInline(raw)
+      : _md.render(raw);
+  });
+
+  // Animate ring chart
+  const pct = {{ attempt.percentage }};
+  const ring = document.getElementById('ringFg');
+  if (ring) {
+    const circumference = 2 * Math.PI * 45; // ≈ 283
+    const offset = circumference * (1 - pct / 100);
+    setTimeout(() => { ring.style.strokeDashoffset = offset; }, 200);
+  }
+
+  // Typeset math
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise();
+  }
+</script>
+{% endblock %}

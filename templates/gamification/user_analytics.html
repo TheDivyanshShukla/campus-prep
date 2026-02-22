@@ -3,162 +3,804 @@
 {% block title %}Study Analytics | CampusPrep{% endblock %}
 
 {% block head %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+  .stat-card {
+    background: hsl(var(--card, var(--background)));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    display: flex; flex-direction: column; gap: 0.25rem;
+  }
+  .chart-card {
+    background: hsl(var(--card, var(--background)));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .heatmap-cell {
+    width: 14px; height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: transform 0.15s;
+    cursor: default;
+  }
+  .heatmap-cell:hover { transform: scale(1.3); }
+  .hour-cell {
+    flex: 1; height: 40px; border-radius: 6px;
+    transition: opacity 0.2s;
+    cursor: default;
+    position: relative;
+  }
+  .hour-cell:hover::after {
+    content: attr(data-tip);
+    position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+    background: hsl(var(--foreground)); color: hsl(var(--background));
+    font-size: 11px; font-weight: 600;
+    padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+    z-index: 20;
+  }
+  .badge {
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 2px 8px; border-radius: 9999px;
+    display: inline-block;
+  }
+</style>
 {% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
-        <div>
-            <h1 class="text-3xl font-extrabold tracking-tight">Study Analytics</h1>
-            <p class="text-muted-foreground mt-1 text-sm md:text-base">Track your exact focus time, build your streak, and earn XP.</p>
+<div class="max-w-7xl mx-auto py-4 sm:py-8 px-3 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
+
+  {# ── Header ── #}
+  <div class="flex flex-col gap-5">
+    <div>
+      <h1 class="text-2xl sm:text-3xl font-black tracking-tight mt-2">Study Analytics</h1>
+      <p class="text-muted-foreground text-xs sm:text-sm">Charts, heatmaps & session logs.</p>
+    </div>
+    
+    {# Top Stats Row #}
+    <div class="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-4">
+      {# Streak #}
+      <div class="flex flex-col sm:flex-row items-center sm:gap-2 p-2 sm:px-4 sm:py-2 bg-muted/30 border border-border rounded-xl sm:rounded-2xl transition-all hover:bg-muted/50">
+        <span class="text-xl sm:text-2xl">🔥</span>
+        <div class="text-center sm:text-left">
+          <p class="hidden sm:block text-[10px] font-bold text-orange-500 uppercase tracking-widest leading-none">Streak</p>
+          <p class="text-sm sm:text-lg font-black leading-tight">{{ profile.current_streak }}d</p>
         </div>
-        <div class="mt-4 md:mt-0 flex gap-4">
-            <!-- Streak Badge -->
-            <div class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/10 to-rose-500/10 border border-orange-500/30 rounded-2xl shadow-sm">
-                <span class="text-2xl drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]">🔥</span>
-                <div>
-                    <p class="text-[10px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest leading-none">Streak</p>
-                    <p class="text-lg font-black text-foreground leading-tight">{{ profile.current_streak }} Days</p>
-                </div>
-            </div>
-            <!-- Total XP Badge -->
-            <div class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 rounded-2xl shadow-sm">
-                <span class="text-2xl drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]">⚡</span>
-                <div>
-                    <p class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest leading-none">Total XP</p>
-                    <p class="text-lg font-black text-foreground leading-tight">{{ profile.total_xp }}</p>
-                </div>
-            </div>
+      </div>
+      {# XP #}
+      <div class="flex flex-col sm:flex-row items-center sm:gap-2 p-2 sm:px-4 sm:py-2 bg-muted/30 border border-border rounded-xl sm:rounded-2xl transition-all hover:bg-muted/50">
+        <span class="text-xl sm:text-2xl">⚡</span>
+        <div class="text-center sm:text-left">
+          <p class="hidden sm:block text-[10px] font-bold text-emerald-500 uppercase tracking-widest leading-none">Total XP</p>
+          <p class="text-sm sm:text-lg font-black leading-tight">{{ profile.total_xp }}</p>
         </div>
+      </div>
+      {# Level #}
+      <div class="flex flex-col sm:flex-row items-center sm:gap-2 p-2 sm:px-4 sm:py-2 bg-muted/30 border border-border rounded-xl sm:rounded-2xl transition-all hover:bg-muted/50">
+        <span class="text-xl sm:text-2xl">🏆</span>
+        <div class="text-center sm:text-left">
+          <p class="hidden sm:block text-[10px] font-bold text-violet-500 uppercase tracking-widest leading-none">Lvl {{ level }}</p>
+          <p class="text-sm sm:text-lg font-black leading-tight">{{ level_name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# ── Tab Switcher ── #}
+  <div class="flex items-center gap-1 p-1 bg-muted/40 rounded-xl sm:rounded-2xl w-full sm:w-fit border border-border">
+    <button onclick="switchTab('study')" id="tab-btn-study" 
+      class="tab-btn active flex-1 sm:flex-none px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all">
+      📚 Study Focus
+    </button>
+    <button onclick="switchTab('practice')" id="tab-btn-practice" 
+      class="tab-btn flex-1 sm:flex-none px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all text-muted-foreground hover:text-foreground">
+      🧠 Practice Zone
+    </button>
+  </div>
+
+  <style>
+    .tab-btn.active { background: hsl(var(--background)); color: hsl(var(--primary)); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .tab-content { display: none; transition: opacity 0.3s ease; opacity: 0; }
+    .tab-content.active { display: block; opacity: 1; }
+  </style>
+
+  <div id="study-tab" class="tab-content active space-y-8">
+
+  {# ── Stat Cards Row ── #}
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+    <div class="stat-card p-4 sm:p-5">
+      <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Total Time</p>
+      <p class="text-xl sm:text-3xl font-black text-indigo-500">{{ total_hours }}<span class="text-xs sm:text-base font-semibold text-muted-foreground ml-1">hrs</span></p>
+    </div>
+    <div class="stat-card p-4 sm:p-5">
+      <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Sessions</p>
+      <p class="text-xl sm:text-3xl font-black text-rose-500">{{ total_sessions }}</p>
+    </div>
+    <div class="stat-card p-4 sm:p-5">
+      <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Today</p>
+      <p class="text-xl sm:text-3xl font-black text-amber-500">{{ today_minutes }}<span class="text-xs sm:text-base font-semibold text-muted-foreground ml-1">min</span></p>
+    </div>
+    <div class="stat-card p-4 sm:p-5">
+      <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Best Streak</p>
+      <p class="text-xl sm:text-3xl font-black text-teal-500">{{ profile.longest_streak }}<span class="text-xs sm:text-base font-semibold text-muted-foreground ml-1">d</span></p>
+    </div>
+  </div>
+
+  {# ── Daily Goal + XP Level ── #}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {# Daily Goal #}
+    <div class="chart-card p-4 sm:p-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-xs sm:text-sm">Daily Goal</h3>
+        <span class="badge bg-indigo-500/10 text-indigo-500">{{ daily_progress }}%</span>
+      </div>
+      <p class="text-[10px] sm:text-xs text-muted-foreground mb-3">Goal: {{ profile.daily_xp_goal }} XP. Today: <span class="font-bold text-foreground">{{ today_minutes }} min</span></p>
+      <div class="relative w-full h-2.5 sm:h-3 bg-muted rounded-full overflow-hidden">
+        <div id="dailyGoalBar" class="absolute top-0 left-0 h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full transition-all duration-1000" style="width: 0%"></div>
+      </div>
+    </div>
+    {# XP Level #}
+    <div class="chart-card p-4 sm:p-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-xs sm:text-sm">XP Progress</h3>
+        <span class="badge bg-violet-500/10 text-violet-500">Lv {{ level }}</span>
+      </div>
+      <p class="text-[10px] sm:text-xs text-muted-foreground mb-3"><span class="font-bold text-foreground">{{ profile.total_xp }} / {{ next_level }} XP</span> to next level</p>
+      <div class="relative w-full h-2.5 sm:h-3 bg-muted rounded-full overflow-hidden">
+        <div id="xpLevelBar" class="absolute top-0 left-0 h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full transition-all duration-1000" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+
+  {# ── Weekly Bar + 12-Week Trend ── #}
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="chart-card lg:col-span-2">
+      <h2 class="font-bold mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Weekly Focus (Minutes)
+      </h2>
+      <div class="h-[250px]"><canvas id="weeklyChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2 class="font-bold mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        12-Week Trend
+      </h2>
+      <div class="h-[250px]"><canvas id="trendChart"></canvas></div>
+    </div>
+  </div>
+
+  {# ── Subject Donut + Hourly Heatmap ── #}
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    {# Subject Donut #}
+    <div class="chart-card">
+      <h2 class="font-bold mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+        Study by Subject
+      </h2>
+      {% if subject_labels != '[]' %}
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <div class="w-48 h-48 flex-shrink-0"><canvas id="subjectChart"></canvas></div>
+        <div id="subjectLegend" class="flex flex-col gap-2 text-sm w-full"></div>
+      </div>
+      {% else %}
+      <div class="flex items-center justify-center h-40 text-muted-foreground text-sm">No subject data yet — start studying! 📚</div>
+      {% endif %}
     </div>
 
+    {# Hourly Heatmap #}
+    <div class="chart-card">
+      <h2 class="font-bold mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Hourly Pattern
+      </h2>
+      <div class="overflow-x-auto pb-2 -mx-1 px-1">
+        <div class="flex gap-1 items-end min-w-[300px]" id="hourlyBar"></div>
+      </div>
+      <div class="flex justify-between text-[10px] text-muted-foreground mt-1">
+        <span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>11pm</span>
+      </div>
+    </div>
+  </div>
+
+  {# ── 30-Day Activity Heatmap ── #}
+  <div class="chart-card">
+    <h2 class="font-bold mb-5 flex items-center gap-2">
+      <svg class="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      30-Day Activity Heatmap
+    </h2>
+    <div id="heatmapGrid" class="flex flex-wrap gap-1.5"></div>
+    <div class="flex items-center gap-2 mt-4 text-xs text-muted-foreground">
+      <span>Less</span>
+      <span class="heatmap-cell bg-muted"></span>
+      <span class="heatmap-cell bg-teal-200 dark:bg-teal-900"></span>
+      <span class="heatmap-cell bg-teal-400 dark:bg-teal-700"></span>
+      <span class="heatmap-cell bg-teal-500 dark:bg-teal-500"></span>
+      <span class="heatmap-cell bg-teal-600 dark:bg-teal-400"></span>
+      <span>More</span>
+    </div>
+  </div>
+
+  {# ── Full Session Log ── #}
+  <div class="chart-card">
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="font-bold flex items-center gap-2">
+        <svg class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Session Log
+      </h2>
+      <span class="badge bg-sky-500/10 text-sky-500">Last 50 sessions</span>
+    </div>
+
+    {% if session_log %}
+    <div class="overflow-x-auto rounded-xl border border-border">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-muted/60 text-muted-foreground text-xs uppercase tracking-wider">
+            <th class="px-4 py-3 text-left font-semibold">Date</th>
+            <th class="px-4 py-3 text-left font-semibold">Time</th>
+            <th class="px-4 py-3 text-left font-semibold">Subject</th>
+            <th class="px-4 py-3 text-left font-semibold hidden md:table-cell">Document</th>
+            <th class="px-4 py-3 text-right font-semibold">Duration</th>
+            <th class="px-4 py-3 text-right font-semibold hidden sm:table-cell">XP</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+          {% for s in session_log %}
+          <tr class="hover:bg-muted/40 transition-colors group">
+            <td class="px-4 py-3 text-xs font-medium text-muted-foreground whitespace-nowrap">{{ s.date }}</td>
+            <td class="px-4 py-3 text-xs font-mono text-muted-foreground whitespace-nowrap">{{ s.time }}</td>
+            <td class="px-4 py-3">
+              {% if s.subject_code %}
+              <span class="badge bg-indigo-500/10 text-indigo-500 mr-1">{{ s.subject_code }}</span>
+              {% endif %}
+              <span class="text-foreground font-medium">{{ s.subject }}</span>
+            </td>
+            <td class="px-4 py-3 text-muted-foreground hidden md:table-cell max-w-[200px] truncate">{{ s.document }}</td>
+            <td class="px-4 py-3 text-right">
+              <span class="font-bold font-mono {% if s.duration_min >= 60 %}text-emerald-500{% elif s.duration_min >= 30 %}text-amber-500{% elif s.duration_min >= 10 %}text-sky-500{% else %}text-muted-foreground{% endif %}">{{ s.duration }}</span>
+            </td>
+            <td class="px-4 py-3 text-right hidden sm:table-cell">
+              <span class="badge bg-yellow-500/10 text-yellow-600 dark:text-yellow-400">+{{ s.xp_earned }} XP</span>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="flex flex-col items-center justify-center py-16 gap-3 text-center">
+      <span class="text-6xl">📖</span>
+      <p class="font-bold text-foreground">No sessions recorded yet</p>
+      <p class="text-muted-foreground text-sm">Open any document and start reading to track your study time automatically.</p>
+    </div>
+    {% endif %}
+  </div> <!-- end study-tab session card -->
+</div> <!-- end study-tab div -->
+
+<div id="practice-tab" class="tab-content space-y-8">
+    {# ── Practice Stat Cards ── #}
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+      <div class="stat-card p-4 sm:p-5">
+        <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Total Qs</p>
+        <p class="text-xl sm:text-3xl font-black text-indigo-500">{{ total_practice_qs }}</p>
+      </div>
+      <div class="stat-card p-4 sm:p-5">
+        <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Avg Accuracy</p>
+        <p class="text-xl sm:text-3xl font-black text-emerald-500">{{ avg_accuracy }}%</p>
+      </div>
+      <div class="stat-card p-4 sm:p-5 col-span-2 sm:col-span-1">
+        <p class="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Sets Done</p>
+        <p class="text-xl sm:text-3xl font-black text-rose-500">{{ practice_history|length }}</p>
+      </div>
+    </div>
+
+    {# ── Weekly Bar + Accuracy Trend ── #}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Main Chart Area -->
-        <div class="lg:col-span-2 bg-card border border-border rounded-3xl p-6 shadow-sm">
-            <h2 class="text-lg font-bold mb-4 flex items-center">
-                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                Weekly Focus Time (Minutes)
-            </h2>
-            <div class="w-full h-[300px]">
-                <canvas id="weeklyChart"></canvas>
-            </div>
-        </div>
-
-        <!-- Sidebar Stats -->
-        <div class="space-y-6">
-            <!-- Daily Goal Card -->
-            <div class="bg-card border border-border rounded-3xl p-6 shadow-sm relative overflow-hidden group">
-                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 pointer-events-none group-hover:opacity-100 opacity-50 transition-opacity"></div>
-                <h3 class="font-bold text-foreground mb-1 relative z-10">Daily Goal</h3>
-                <p class="text-xs text-muted-foreground mb-4 relative z-10">Earn {{ profile.daily_xp_goal }} XP to secure your streak!</p>
-                
-                <div class="relative w-full h-4 bg-muted rounded-full overflow-hidden mb-2 z-10">
-                    <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-1000 ease-out" style="width: {{ daily_progress }}%"></div>
-                </div>
-                <div class="flex justify-between text-[10px] font-bold text-muted-foreground uppercase tracking-widest relative z-10">
-                    <span>Progress</span>
-                    <span>{{ daily_progress }}%</span>
-                </div>
-            </div>
-
-            <!-- Lifetime Stats Card -->
-            <div class="bg-card border border-border rounded-3xl p-6 shadow-sm">
-                <h3 class="font-bold text-foreground mb-4">Lifetime Milestones</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-sm text-muted-foreground">
-                            <svg class="w-4 h-4 mr-2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            Total Time Studied
-                        </div>
-                        <span class="font-bold font-mono text-foreground">{{ total_hours }}h</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-sm text-muted-foreground">
-                            <svg class="w-4 h-4 mr-2 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                            Longest Streak
-                        </div>
-                        <span class="font-bold font-mono text-foreground">{{ profile.longest_streak }} Days</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="chart-card lg:col-span-2">
+        <h2 class="font-bold mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          Weekly Practice (Questions)
+        </h2>
+        <div class="h-[250px]"><canvas id="practiceWeeklyChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h2 class="font-bold mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          Accuracy Trend (%)
+        </h2>
+        <div class="h-[250px]"><canvas id="practiceTrendChart"></canvas></div>
+      </div>
     </div>
-</div>
+
+    {# ── Subject Mastery + Hourly Pattern ── #}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {# Subject Mastery #}
+      <div class="chart-card">
+        <h2 class="font-bold mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+          Practice Mastery by Subject
+        </h2>
+        <div class="h-[300px]"><canvas id="practiceSubjectChart"></canvas></div>
+      </div>
+
+      {# Hourly Pattern #}
+      <div class="chart-card">
+        <h2 class="font-bold mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Practice Pattern (Hourly)
+        </h2>
+        <div class="overflow-x-auto pb-2 -mx-1 px-1">
+          <div class="flex gap-1 items-end min-w-[300px]" id="practiceHourlyBar"></div>
+        </div>
+        <div class="flex justify-between text-[10px] text-muted-foreground mt-1">
+          <span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>11pm</span>
+        </div>
+      </div>
+    </div>
+
+    {# ── Practice Activity Heatmap ── #}
+    <div class="chart-card">
+      <h2 class="font-bold mb-5 flex items-center gap-2">
+        <svg class="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        30-Day Practice Intensity
+      </h2>
+      <div id="practiceHeatmapGrid" class="flex flex-wrap gap-1.5"></div>
+      <div class="flex items-center gap-2 mt-4 text-xs text-muted-foreground">
+        <span>Less</span>
+        <span class="heatmap-cell bg-muted"></span>
+        <span class="heatmap-cell bg-indigo-200 dark:bg-indigo-900"></span>
+        <span class="heatmap-cell bg-indigo-400 dark:bg-indigo-700"></span>
+        <span class="heatmap-cell bg-indigo-500 dark:bg-indigo-500"></span>
+        <span class="heatmap-cell bg-indigo-600 dark:bg-indigo-400"></span>
+        <span>More</span>
+      </div>
+    </div>
+
+    {# ── Practice History Table ── #}
+    <div class="chart-card">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="font-bold flex items-center gap-2">
+          <svg class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Practice History
+        </h2>
+      </div>
+
+      {% if practice_history %}
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-muted/60 text-muted-foreground text-xs uppercase tracking-wider">
+              <th class="px-4 py-3 text-left font-semibold">Date</th>
+              <th class="px-4 py-3 text-left font-semibold">Subject</th>
+              <th class="px-4 py-3 text-left font-semibold">Set</th>
+              <th class="px-4 py-3 text-right font-semibold">Score</th>
+              <th class="px-4 py-3 text-right font-semibold">Accuracy</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {% for h in practice_history %}
+            <tr class="hover:bg-muted/40 transition-colors">
+              <td class="px-4 py-3 text-xs font-medium text-muted-foreground whitespace-nowrap">{{ h.date }}</td>
+              <td class="px-4 py-3">
+                <span class="badge bg-indigo-500/10 text-indigo-500 mr-2">{{ h.subject_code }}</span>
+                <span class="font-medium">{{ h.subject }}</span>
+              </td>
+              <td class="px-4 py-3 text-muted-foreground truncate max-w-[150px]">{{ h.title }}</td>
+              <td class="px-4 py-3 text-right font-bold text-foreground">{{ h.score }}</td>
+              <td class="px-4 py-3 text-right">
+                <span class="badge {% if h.accuracy >= 80 %}bg-emerald-500/10 text-emerald-600{% elif h.accuracy >= 50 %}bg-amber-500/10 text-amber-600{% else %}bg-rose-500/10 text-rose-600{% endif %}">
+                  {{ h.accuracy }}%
+                </span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center py-10 text-muted-foreground italic">No practice sessions found. Go to the <a href="{% url 'practice_index' %}" class="text-indigo-500 font-bold">Practice Zone</a> to start!</div>
+      {% endif %}
+    </div>
+  </div> <!-- end practice-tab body -->
+</div> <!-- end main div wrapper -->
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const labels = {{ chart_labels|safe }};
-        const dataPoints = {{ chart_data|safe }};
-        
-        // Dynamic color scheme based on current theme
-        const isDark = document.documentElement.classList.contains('dark');
-        const gridColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
-        const textColor = isDark ? '#a1a1aa' : '#71717a';
+// ── 1. Practice Tab Switcher (Global Scope) ────────────────────────────────
+window.switchTab = function(tabName) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => {
+    el.classList.remove('active');
+    el.classList.add('text-muted-foreground');
+  });
 
-        const ctx = document.getElementById('weeklyChart').getContext('2d');
-        
-        // Gradient Fill
-        let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(99, 102, 241, 0.5)'); // Indigo-500
-        gradient.addColorStop(1, 'rgba(99, 102, 241, 0.0)'); 
-        
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Minutes Focused',
-                    data: dataPoints,
-                    borderColor: '#6366f1',
-                    borderWidth: 3,
-                    backgroundColor: gradient,
-                    fill: true,
-                    tension: 0.4, // Smooth Spline curve
-                    pointBackgroundColor: '#ffffff',
-                    pointBorderColor: '#6366f1',
-                    pointBorderWidth: 2,
-                    pointRadius: 4,
-                    pointHoverRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: isDark ? '#27272a' : '#ffffff',
-                        titleColor: isDark ? '#ffffff' : '#000000',
-                        bodyColor: isDark ? '#d4d4d8' : '#52525b',
-                        borderColor: isDark ? '#3f3f46' : '#e4e4e7',
-                        borderWidth: 1,
-                        padding: 10,
-                        displayColors: false,
-                        callbacks: {
-                            label: function(context) {
-                                return context.parsed.y + ' minutes';
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: { display: false, drawBorder: false },
-                        ticks: { color: textColor, font: {family: "'Inter', sans-serif"} }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        grid: { color: gridColor, drawBorder: false },
-                        ticks: { color: textColor, font: {family: "'Inter', sans-serif"} }
-                    }
-                },
-                interaction: {
-                    intersect: false,
-                    mode: 'index',
-                },
-            }
-        });
+  const activeTab = document.getElementById(tabName + '-tab');
+  const activeBtn = document.getElementById('tab-btn-' + tabName);
+  
+  if (activeTab) activeTab.classList.add('active');
+  if (activeBtn) {
+     activeBtn.classList.add('active');
+     activeBtn.classList.remove('text-muted-foreground');
+  }
+  
+  // Refresh Charts if needed
+  window.dispatchEvent(new Event('resize'));
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ── Theme helpers ──────────────────────────────────────────────────────────
+  const isDark = () => document.documentElement.classList.contains('dark');
+  const gridColor = () => isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+  const textColor = () => isDark() ? '#a1a1aa' : '#71717a';
+  const tooltipOpts = () => ({
+    backgroundColor: isDark() ? '#1c1c1e' : '#ffffff',
+    titleColor:      isDark() ? '#fff'    : '#000',
+    bodyColor:       isDark() ? '#a1a1aa' : '#52525b',
+    borderColor:     isDark() ? '#3f3f46' : '#e4e4e7',
+    borderWidth: 1, padding: 10, displayColors: false,
+  });
+  const FONT = { family: "'Inter', sans-serif" };
+
+  // ── Animate progress bars ─────────────────────────────────────────────────
+  setTimeout(() => {
+    const goalBar = document.getElementById('dailyGoalBar');
+    const xpBar   = document.getElementById('xpLevelBar');
+    if (goalBar) goalBar.style.width = '{{ daily_progress }}%';
+    if (xpBar)   xpBar.style.width   = '{{ xp_level_pct }}%';
+  }, 200);
+
+  // ── Colour palettes ────────────────────────────────────────────────────────
+  const PALETTE = [
+    '#6366f1','#f43f5e','#10b981','#f59e0b','#3b82f6',
+    '#8b5cf6','#14b8a6','#ef4444','#ec4899','#84cc16'
+  ];
+
+  // ── 1. Weekly Bar Chart ───────────────────────────────────────────────────
+  const weeklyLabels = {{ weekly_labels|safe }};
+  const weeklyData   = {{ weekly_minutes|safe }};
+
+  (function() {
+    const ctx = document.getElementById('weeklyChart');
+    if (!ctx) return;
+    const c = ctx.getContext('2d');
+    const grad = c.createLinearGradient(0, 0, 0, 280);
+    grad.addColorStop(0, 'rgba(99,102,241,0.55)');
+    grad.addColorStop(1, 'rgba(99,102,241,0.0)');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: weeklyLabels,
+        datasets: [{
+          label: 'Minutes',
+          data: weeklyData,
+          backgroundColor: weeklyData.map((v, i) =>
+            i === weeklyData.length - 1 ? '#6366f1' : 'rgba(99,102,241,0.4)'
+          ),
+          borderRadius: 8,
+          borderSkipped: false,
+          hoverBackgroundColor: '#6366f1',
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { ...tooltipOpts(), callbacks: { label: ctx => ctx.parsed.y + ' min' } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: textColor(), font: FONT } },
+          y: { beginAtZero: true, grid: { color: gridColor() }, ticks: { color: textColor(), font: FONT } }
+        }
+      }
     });
+  })();
+
+  // ── 2. 12-Week Trend (Line) ───────────────────────────────────────────────
+  (function() {
+    const ctx = document.getElementById('trendChart');
+    if (!ctx) return;
+    const trendLabels = {{ trend_labels|safe }};
+    const trendData   = {{ trend_minutes|safe }};
+    const c = ctx.getContext('2d');
+    const grad = c.createLinearGradient(0, 0, 0, 280);
+    grad.addColorStop(0, 'rgba(16,185,129,0.35)');
+    grad.addColorStop(1, 'rgba(16,185,129,0.0)');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: trendLabels,
+        datasets: [{
+          label: 'Min / Week',
+          data: trendData,
+          borderColor: '#10b981',
+          borderWidth: 2.5,
+          backgroundColor: grad,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: '#10b981',
+          pointRadius: 3,
+          pointHoverRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { ...tooltipOpts(), callbacks: { label: ctx => ctx.parsed.y + ' min' } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: textColor(), font: FONT } },
+          y: { beginAtZero: true, grid: { color: gridColor() }, ticks: { color: textColor(), font: FONT } }
+        }
+      }
+    });
+  })();
+
+  // ── 3. Subject Donut ─────────────────────────────────────────────────────
+  (function() {
+    const ctx = document.getElementById('subjectChart');
+    if (!ctx) return;
+    const labels  = {{ subject_labels|safe }};
+    const minutes = {{ subject_minutes|safe }};
+    const legend  = document.getElementById('subjectLegend');
+    const total   = minutes.reduce((a,b) => a+b, 0) || 1;
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels,
+        datasets: [{
+          data: minutes,
+          backgroundColor: PALETTE.slice(0, labels.length),
+          borderWidth: 0,
+          hoverOffset: 6,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        cutout: '68%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            ...tooltipOpts(),
+            callbacks: {
+              label: ctx => {
+                const pct = ((ctx.parsed / total) * 100).toFixed(1);
+                return `${ctx.parsed} min (${pct}%)`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Custom legend
+    if (legend) {
+      labels.forEach((lbl, i) => {
+        const min = minutes[i];
+        const pct = ((min / total) * 100).toFixed(1);
+        const div = document.createElement('div');
+        div.className = 'flex items-center justify-between gap-2';
+        div.innerHTML = `
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-3 h-3 rounded-full flex-shrink-0" style="background:${PALETTE[i % PALETTE.length]}"></span>
+            <span class="text-xs text-foreground font-medium truncate">${lbl}</span>
+          </div>
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <span class="text-xs text-muted-foreground">${min} min</span>
+            <span class="text-[10px] font-bold text-muted-foreground">${pct}%</span>
+          </div>
+        `;
+        legend.appendChild(div);
+      });
+    }
+  })();
+
+  // ── 4. Hourly Bar ────────────────────────────────────────────────────────
+  (function() {
+    const container = document.getElementById('hourlyBar');
+    if (!container) return;
+    const hourly = {{ hourly_data|safe }};
+    const maxVal = Math.max(...hourly, 1);
+    const HOUR_COLORS = ['#6366f1','#8b5cf6','#a855f7','#ec4899','#f43f5e',
+                         '#f97316','#f59e0b','#eab308','#84cc16','#22c55e',
+                         '#10b981','#14b8a6','#06b6d4','#3b82f6','#6366f1','#8b5cf6',
+                         '#a855f7','#ec4899','#f43f5e','#f97316','#f59e0b','#eab308','#84cc16','#22c55e'];
+    hourly.forEach((val, h) => {
+      const bar = document.createElement('div');
+      bar.className = 'hour-cell';
+      bar.style.background = HOUR_COLORS[h] || '#6366f1';
+      bar.style.opacity = val === 0 ? '0.12' : (0.25 + 0.75 * (val / maxVal)).toFixed(2);
+      const label = h === 0 ? '12 AM' : h < 12 ? `${h} AM` : h === 12 ? '12 PM' : `${h-12} PM`;
+      bar.setAttribute('data-tip', `${label}: ${val} min`);
+      container.appendChild(bar);
+    });
+  })();
+
+  // ── 5. 30-Day Heatmap ────────────────────────────────────────────────────
+  (function() {
+    const grid = document.getElementById('heatmapGrid');
+    if (!grid) return;
+    const data = {{ heatmap_data|safe }};
+    const maxVal = Math.max(...data.map(d => d.minutes), 1);
+
+    data.forEach(d => {
+      const cell = document.createElement('span');
+      cell.className = 'heatmap-cell';
+      cell.title = `${d.date}: ${d.minutes} min`;
+      const ratio = d.minutes / maxVal;
+      let bg;
+      if (d.minutes === 0)      bg = 'hsl(var(--muted))';
+      else if (ratio < 0.25)   bg = isDark() ? '#134e4a' : '#99f6e4';
+      else if (ratio < 0.5)    bg = isDark() ? '#0f766e' : '#2dd4bf';
+      else if (ratio < 0.75)   bg = '#14b8a6';
+      else                     bg = '#0d9488';
+      cell.style.background = bg;
+      grid.appendChild(cell);
+    });
+  })();
+
+  // ── 6. Practice Subject Bar Chart ──────────────────────────────────────
+  (function() {
+    const ctx = document.getElementById('practiceSubjectChart');
+    if (!ctx) return;
+    const labels = {{ practice_subject_labels|safe }};
+    const scores = {{ practice_subject_scores|safe }};
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Avg Accuracy (%)',
+          data: scores,
+          backgroundColor: '#4f46e5',
+          borderRadius: 8,
+          barThickness: 32,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { ...tooltipOpts(), callbacks: { label: ctx => ctx.parsed.x + '%' } }
+        },
+        scales: {
+          x: { beginAtZero: true, max: 100, grid: { color: gridColor() }, ticks: { color: textColor(), font: FONT } },
+          y: { grid: { display: false }, ticks: { color: textColor(), font: FONT } }
+        }
+      }
+    });
+  })();
+
+  // ── 7. Practice Weekly Bar ──────────────────────────────────────────────
+  (function() {
+    const ctx = document.getElementById('practiceWeeklyChart');
+    if (!ctx) return;
+    const weeklyLabels = {{ practice_weekly_labels|safe }};
+    const weeklyData   = {{ practice_weekly_qs|safe }};
+    const c = ctx.getContext('2d');
+    const grad = c.createLinearGradient(0, 0, 0, 280);
+    grad.addColorStop(0, 'rgba(99,102,241,0.55)');
+    grad.addColorStop(1, 'rgba(99,102,241,0.0)');
+    
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: weeklyLabels,
+        datasets: [{
+          label: 'Questions',
+          data: weeklyData,
+          backgroundColor: weeklyData.map((v, i) =>
+            i === weeklyData.length - 1 ? '#6366f1' : 'rgba(99,102,241,0.4)'
+          ),
+          borderRadius: 8,
+          borderSkipped: false,
+          hoverBackgroundColor: '#6366f1',
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { ...tooltipOpts(), callbacks: { label: ctx => ctx.parsed.y + ' questions' } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: textColor(), font: FONT } },
+          y: { beginAtZero: true, grid: { color: gridColor() }, ticks: { color: textColor(), font: FONT } }
+        }
+      }
+    });
+  })();
+
+  // ── 8. Practice Accuracy Trend ───────────────────────────────────────────
+  (function() {
+    const ctx = document.getElementById('practiceTrendChart');
+    if (!ctx) return;
+    const trendLabels = {{ practice_trend_labels|safe }};
+    const trendData   = {{ practice_trend_scores|safe }};
+    const c = ctx.getContext('2d');
+    const grad = c.createLinearGradient(0, 0, 0, 280);
+    grad.addColorStop(0, 'rgba(16,185,129,0.35)');
+    grad.addColorStop(1, 'rgba(16,185,129,0.0)');
+    
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: trendLabels,
+        datasets: [{
+          label: 'Accuracy %',
+          data: trendData,
+          borderColor: '#10b981',
+          borderWidth: 2.5,
+          backgroundColor: grad,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: '#10b981',
+          pointRadius: 3,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { ...tooltipOpts(), callbacks: { label: ctx => ctx.parsed.y + '%' } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: textColor(), font: FONT } },
+          y: { beginAtZero: true, max: 100, grid: { color: gridColor() }, ticks: { color: textColor(), font: FONT } }
+        }
+      }
+    });
+  })();
+
+  // ── 9. Practice Hourly Bar ──────────────────────────────────────────────
+  (function() {
+    const container = document.getElementById('practiceHourlyBar');
+    if (!container) return;
+    const hourly = {{ practice_hourly_data|safe }};
+    const maxVal = Math.max(...hourly, 1);
+    const COLORS = ['#6366f1','#8b5cf6','#a855f7','#ec4899','#f43f5e',
+                    '#f97316','#f59e0b','#eab308','#84cc16','#22c55e',
+                    '#10b981','#14b8a6','#06b6d4','#3b82f6','#6366f1','#8b5cf6',
+                    '#a855f7','#ec4899','#f43f5e','#f97316','#f59e0b','#eab308','#84cc16','#22c55e'];
+    hourly.forEach((val, h) => {
+      const bar = document.createElement('div');
+      bar.className = 'hour-cell';
+      bar.style.background = COLORS[h] || '#6366f1';
+      bar.style.opacity = val === 0 ? '0.12' : (0.25 + 0.75 * (val / maxVal)).toFixed(2);
+      const label = h === 0 ? '12 AM' : h < 12 ? `${h} AM` : h === 12 ? '12 PM' : `${h-12} PM`;
+      bar.setAttribute('data-tip', `${label}: ${val} answers`);
+      container.appendChild(bar);
+    });
+  })();
+
+  // ── 10. Practice Activity Heatmap ────────────────────────────────────────
+  (function() {
+    const grid = document.getElementById('practiceHeatmapGrid');
+    if (!grid) return;
+    const data = {{ practice_heatmap_data|safe }};
+    const maxVal = Math.max(...data.map(d => d.qs), 1);
+
+    data.forEach(d => {
+      const cell = document.createElement('span');
+      cell.className = 'heatmap-cell';
+      cell.title = `${d.date}: ${d.qs} questions`;
+      const ratio = d.qs / maxVal;
+      let bg;
+      if (d.qs === 0)      bg = 'hsl(var(--muted))';
+      else if (ratio < 0.25)   bg = isDark() ? '#312e81' : '#c7d2fe';
+      else if (ratio < 0.5)    bg = isDark() ? '#3730a3' : '#818cf8';
+      else if (ratio < 0.75)   bg = '#6366f1';
+      else                     bg = '#4f46e5';
+      cell.style.background = bg;
+      grid.appendChild(cell);
+    });
+  })();
+});
 </script>
 {% endblock %}
