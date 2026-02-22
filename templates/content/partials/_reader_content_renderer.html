@@ -166,7 +166,7 @@
             try {
                 // 1. Anti-Tamper Challenge Hash
                 const encoder = new TextEncoder();
-                const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(nonce + 'RGPV_LIVE_SECURE_PAYLOAD'));
+                const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(nonce + 'CAMPUS_PREP_SECURE_PAYLOAD'));
                 const challengeHash = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
 
                 // 2. Fetch single-use decryption key

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Checkout - {{ document.title }} | RGPV Live{% endblock %}
+{% block title %}Checkout - {{ document.title }} | CampusPrep{% endblock %}
 
 {% block content %}
 <div class="max-w-6xl mx-auto sm:py-12 sm:px-6 lg:px-8 flex items-center justify-center min-h-[calc(100vh-80px)] pb-32 sm:pb-12">
@@ -117,7 +117,7 @@
         "key": "{{ razorpay_key_id }}",
         "amount": "{{ amount }}", // Amount is in paise
         "currency": "INR",
-        "name": "RGPV Live",
+        "name": "CampusPrep",
         "description": "Premium Document Unlock",
         "image": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light", // Replace with our real logo later
         "order_id": "{{ order_id }}",
