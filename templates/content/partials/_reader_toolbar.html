@@ -1,0 +1,81 @@
+{# Partial: _reader_toolbar.html #}
+{# Toolbar collapse/expand, zoom controls, page navigation (scrollToPage), and back-to-top button logic. #}
+{# Include AFTER the DOM elements are declared (bottom of body / scripts block). #}
+<script>
+    // ---------- Toolbar Collapse / Expand ----------
+
+    function collapseHeader() {
+        const header = document.getElementById('stickyHeader');
+        const toggleBtn = document.getElementById('headerToggleBtn');
+        header.style.overflow = 'hidden';
+        header.style.height = '0px';
+        header.style.paddingTop = '0px';
+        header.style.paddingBottom = '0px';
+        header.style.marginBottom = '0px';
+        header.style.borderBottomWidth = '0px';
+        header.style.opacity = '0';
+        header.style.pointerEvents = 'none';
+        toggleBtn.style.transform = 'translateY(0)';
+        toggleBtn.style.opacity = '1';
+        toggleBtn.style.pointerEvents = 'auto';
+    }
+
+    function expandHeader() {
+        const header = document.getElementById('stickyHeader');
+        const toggleBtn = document.getElementById('headerToggleBtn');
+        header.style.height = 'auto';
+        header.style.paddingTop = '';
+        header.style.paddingBottom = '';
+        header.style.marginBottom = '';
+        header.style.borderBottomWidth = '';
+        header.style.opacity = '1';
+        header.style.overflow = '';
+        header.style.pointerEvents = '';
+        toggleBtn.style.transform = '';
+        toggleBtn.style.opacity = '0';
+        toggleBtn.style.pointerEvents = 'none';
+    }
+
+    // ---------- Zoom Controls ----------
+
+    window.currentZoom = 100;
+
+    function applyZoom() {
+        document.getElementById('zoomPercentage').innerText = window.currentZoom + '%';
+        document.querySelectorAll('#pdf-container canvas').forEach(c => {
+            c.style.width = window.currentZoom + '%';
+        });
+    }
+
+    function zoomIn() {
+        if (window.currentZoom < 250) { window.currentZoom += 25; applyZoom(); }
+    }
+
+    function zoomOut() {
+        if (window.currentZoom > 50) { window.currentZoom -= 25; applyZoom(); }
+    }
+
+    // ---------- Page Navigation ----------
+
+    function scrollToPage(pageNum) {
+        pageNum = parseInt(pageNum);
+        if (!pageNum || !window.pdfDocGlobal) return;
+        if (pageNum < 1) pageNum = 1;
+        if (pageNum > window.pdfDocGlobal.numPages) pageNum = window.pdfDocGlobal.numPages;
+        const canvas = document.getElementById(`page-canvas-${pageNum}`);
+        if (canvas) {
+            canvas.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('pageNavInput').value = pageNum;
+            document.getElementById('pageNavInput').blur();
+        }
+    }
+
+    // ---------- Back To Top ----------
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const topBtn = document.getElementById('backToTopBtn');
+        if (topBtn) {
+            topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+    });
+</script>

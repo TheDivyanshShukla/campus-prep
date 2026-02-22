@@ -1,0 +1,100 @@
+{# Partial: _reader_pdf_viewer_fullscreen.html #}
+{# PDF.js rendering core for the fullscreen reader. #}
+{# Context variables used: document.id, pdf_token, url 'api_secure_pdf' document.id #}
+{# Requires: pdfjsLib (pdf.js CDN), window.currentZoom, collapseHeader/expandHeader, toggleSearch/closeSearch (from other partials). #}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Stop execution if security is already tripped
+        if (window.__drm_tripped) return;
+
+        const url = "{% url 'api_secure_pdf' document.id %}";
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+        const loadingTask = pdfjsLib.getDocument({
+            url: url,
+            httpHeaders: { 'X-PDF-Token': '{{ pdf_token }}' },
+            disableRange: true,
+            disableStream: true
+        });
+
+        loadingTask.promise.then(function (pdf) {
+            window.pdfDocGlobal = pdf;
+            document.getElementById('pageNavTotal').innerText = '/ ' + pdf.numPages;
+            document.getElementById('pageNavInput').max = pdf.numPages;
+
+            const container = document.getElementById('pdf-container');
+            const spinner   = document.getElementById('pdf-loading-spinner');
+            const scale     = window.devicePixelRatio > 1 ? 2.5 : 2.0;
+
+            const docId = '{{ document.id }}';
+            const savedPageStr = localStorage.getItem('pdf_page_fs_' + docId);
+            let targetPage = savedPageStr ? parseInt(savedPageStr) : 1;
+            if (targetPage > pdf.numPages) targetPage = pdf.numPages;
+            if (targetPage < 1) targetPage = 1;
+
+            let pageScrollTimer;
+            function updateCurrentPage() {
+                const viewportMid = window.innerHeight / 2;
+                const canvases = document.querySelectorAll('#pdf-container canvas[id^="page-canvas-"]');
+                let closestNum = 1, closestDist = Infinity;
+                canvases.forEach(c => {
+                    const rect = c.getBoundingClientRect();
+                    const dist = Math.abs((rect.top + rect.height / 2) - viewportMid);
+                    if (dist < closestDist) { closestDist = dist; closestNum = c.id.split('-')[2]; }
+                });
+                document.getElementById('pageNavInput').value = closestNum;
+                localStorage.setItem('pdf_page_fs_' + docId, closestNum);
+            }
+
+            let currPage = 1;
+            function renderNextPage() {
+                if (currPage > pdf.numPages) {
+                    spinner.style.opacity = '0';
+                    setTimeout(() => spinner.remove(), 500);
+                    if (targetPage > 1) {
+                        const targetCanvas = document.getElementById('page-canvas-' + targetPage);
+                        if (targetCanvas) targetCanvas.scrollIntoView({ behavior: 'auto', block: 'start' });
+                    }
+                    return;
+                }
+                pdf.getPage(currPage).then(function (page) {
+                    const viewport = page.getViewport({ scale: scale });
+                    const canvas   = document.createElement('canvas');
+                    canvas.id        = 'page-canvas-' + currPage;
+                    canvas.className = 'w-full bg-white shadow-2xl rounded-sm object-contain pointer-events-none select-none';
+                    const context = canvas.getContext('2d', { alpha: false });
+                    canvas.height = viewport.height;
+                    canvas.width  = viewport.width;
+                    context.fillStyle = 'white';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+                    container.appendChild(canvas);
+                    if (window.currentZoom && window.currentZoom !== 100) canvas.style.width = window.currentZoom + '%';
+                    page.render({ canvasContext: context, viewport: viewport, background: 'white' }).promise.then(function () {
+                        if (currPage === 1) { spinner.style.opacity = '0'; setTimeout(() => spinner.remove(), 500); }
+                        currPage++;
+                        renderNextPage();
+                    });
+                });
+            }
+
+            renderNextPage();
+
+            // Back-to-top + page tracker on scroll
+            const topBtn = document.getElementById('backToTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    topBtn.classList.remove('translate-y-20', 'opacity-0');
+                } else {
+                    topBtn.classList.add('translate-y-20', 'opacity-0');
+                }
+                clearTimeout(pageScrollTimer);
+                pageScrollTimer = setTimeout(updateCurrentPage, 200);
+            });
+
+        }, function (reason) {
+            console.error('PDF Failed to Load:', reason);
+            document.getElementById('pdf-loading-spinner').innerHTML =
+                `<p class="text-red-500 font-bold p-6 text-center">Document secure decoupling failed:<br><span class="text-sm opacity-75">${reason}</span></p>`;
+        });
+    });
+</script>

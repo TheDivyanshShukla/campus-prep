@@ -1,0 +1,163 @@
+{# Partial: _reader_security.html #}
+{# Anti-Piracy DRM Suite JS: kill switch, keyboard blockers, clipboard poisoning, dimension trap, console object trap, canvas poisoning. #}
+{# NOTE: Anti-piracy CSS (user-select, print media) lives in the head block of each reader template so it fires before first paint, preventing text flicker. #}
+
+<script>
+    window.__drm_tripped = false;
+
+    // ── Kill Switch ────────────────────────────────────────────────────────────
+    const killSession = function() {
+        if (window.__drm_tripped) return;
+        window.__drm_tripped = true;
+
+        document.body.innerHTML = `
+        <div id="drm-wall" style="
+            background: radial-gradient(ellipse at 20% 50%, #0d0221 0%, #0a0a0a 60%, #000 100%);
+            color:#fff; height:100vh; width:100vw;
+            display:flex; flex-direction:column; align-items:center; justify-content:center;
+            font-family:'Segoe UI',system-ui,sans-serif; text-align:center;
+            padding:2rem; position:fixed; top:0; left:0; z-index:99999;
+            overflow:hidden;
+        ">
+            <!-- Ambient glow rings -->
+            <div style="position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+            <div style="position:absolute;width:900px;height:900px;border-radius:50%;border:1px solid rgba(220,38,38,0.08);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+            <div style="position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(220,38,38,0.15);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+
+            <!-- Content -->
+            <div style="position:relative;z-index:2;max-width:560px;">
+                <!-- Shield icon -->
+                <div style="
+                    width:88px;height:88px;border-radius:50%;
+                    background:rgba(220,38,38,0.12);border:2px solid rgba(220,38,38,0.4);
+                    display:flex;align-items:center;justify-content:center;
+                    margin:0 auto 2rem;
+                ">
+                    <svg width="44" height="44" fill="none" stroke="#ef4444" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+                    </svg>
+                </div>
+
+                <!-- Label -->
+                <p style="font-size:0.65rem;letter-spacing:0.3em;color:#ef4444;text-transform:uppercase;font-weight:700;margin-bottom:1rem;opacity:0.9;">
+                    ⬡ &nbsp;RGPV LIVE CONTENT SHIELD&nbsp; ⬡
+                </p>
+
+                <!-- Headline -->
+                <h1 style="font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1.25rem;background:linear-gradient(135deg,#f87171 0%,#fca5a5 50%,#f87171 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                    Access Terminated
+                </h1>
+
+                <!-- Body -->
+                <p style="font-size:0.95rem;color:#94a3b8;line-height:1.7;margin-bottom:0.75rem;">
+                    A security policy violation was detected in your session.
+                </p>
+                <p style="font-size:0.8rem;color:#475569;line-height:1.6;margin-bottom:2rem;">
+                    Developer tools, screen capture utilities, or an automated extraction attempt was identified.
+                    This content is protected under RGPV Live's Anti-Piracy DRM system.
+                </p>
+
+                <!-- Divider -->
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(239,68,68,0.3),transparent);margin-bottom:2rem;"></div>
+
+                <!-- Actions -->
+                <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+                    <button onclick="window.location.reload()" style="
+                        padding:0.75rem 1.75rem;border-radius:0.5rem;border:none;cursor:pointer;font-weight:700;font-size:0.875rem;
+                        background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff;letter-spacing:0.02em;
+                        box-shadow:0 0 20px rgba(220,38,38,0.3);
+                    ">
+                        ↺ &nbsp; Retry Session
+                    </button>
+                    <button onclick="window.location.href='/'" style="
+                        padding:0.75rem 1.75rem;border-radius:0.5rem;cursor:pointer;font-weight:600;font-size:0.875rem;
+                        background:transparent;color:#64748b;border:1px solid rgba(100,116,139,0.3);letter-spacing:0.02em;
+                    ">
+                        ← &nbsp; Go Home
+                    </button>
+                </div>
+
+                <!-- Footer note -->
+                <p style="margin-top:2.5rem;font-size:0.65rem;color:#1e293b;letter-spacing:0.1em;text-transform:uppercase;">
+                    Violation logged &bull; Session ID: <span id="_sid" style="font-family:monospace;"></span>
+                </p>
+            </div>
+        </div>`;
+
+        // Generate a fake session ID for intimidation
+        document.getElementById('_sid').textContent =
+            Math.random().toString(36).slice(2,10).toUpperCase() + '-' +
+            Date.now().toString(36).toUpperCase();
+
+        // Wipe global state
+        window.encrypted_data = null;
+        window.decryption_key = null;
+    };
+
+    // ── Right-Click Block ──────────────────────────────────────────────────────
+    document.addEventListener('contextmenu', e => { e.preventDefault(); killSession(); });
+
+    // ── Keyboard Shortcut Blocker ──────────────────────────────────────────────
+    document.addEventListener('keydown', function(e) {
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+            (e.ctrlKey && (e.key === 'U' || e.key === 'P' || e.key === 'C' || e.key === 'A' || e.key === 'S')) ||
+            (e.metaKey && (e.key === 'U' || e.key === 'P' || e.key === 'C' || e.key === 'A' || e.key === 'S'))
+        ) {
+            e.preventDefault(); e.stopPropagation(); killSession(); return false;
+        }
+    });
+
+    // ── Clipboard Poisoning ────────────────────────────────────────────────────
+    document.addEventListener('copy', function(e) {
+        e.clipboardData.setData('text/plain', 'RGPV Live Premium Content — Unauthorized Copying Prohibited.');
+        e.preventDefault();
+        killSession();
+    });
+
+    // ── Factor A: Dimension Threshold (catches docked DevTools) ────────────────
+    const _checkDimensions = function() {
+        const widthDiff = window.outerWidth - window.innerWidth;
+        const heightDiff = window.outerHeight - window.innerHeight;
+        // Docked DevTools are almost always > 100px. 
+        // We check both axes to catch bottom-docked or side-docked.
+        if (widthDiff > 100 || heightDiff > 100) { 
+            killSession(); 
+        }
+    };
+    
+    // Catch it if they resize the window OR if it's already open on load
+    window.addEventListener('resize', _checkDimensions);
+    setInterval(_checkDimensions, 500);
+    _checkDimensions(); 
+
+    // ── Factor B: The "Debugger" Heartbeat ─────────────────────────────────────
+    // This is the most aggressive check. If DevTools is open, the 'debugger' 
+    // statement will cause a tiny execution delay that we can measure.
+    setInterval(function() {
+        const startTime = Date.now();
+        (function() { debugger; })(); 
+        if (Date.now() - startTime > 100) {
+            killSession();
+        }
+    }, 100);
+
+    // ── Factor C: Console Object Trap ──────────────────────────────────────────
+    let _devtools = new Image();
+    Object.defineProperty(_devtools, 'id', { get: function() { killSession(); } });
+    console.log('%c', _devtools);
+
+    // ── Canvas Poisoning: Block Pixel / Image Extraction ──────────────────────
+    HTMLCanvasElement.prototype.toDataURL = function() {
+        console.warn('Security Exception: Image Extraction Disabled.');
+        return 'data:image/png;base64,';
+    };
+    CanvasRenderingContext2D.prototype.getImageData = function(x, y, w, h) {
+        console.warn('Security Exception: Pixel Extraction Disabled.');
+        return new ImageData(1, 1);
+    };
+
+    // ── FINAL: All traps armed ─────────────────────────────────────────────────
+    // Body reveal was removed (handled at template level). Traps are now live.
+</script>
