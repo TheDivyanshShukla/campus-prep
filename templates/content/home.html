@@ -29,11 +29,12 @@
                 Find your study material
             </h3>
             
-            <form action="{% url 'explore_subjects' %}" method="GET" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <form action="{% url 'onboarding' %}" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% csrf_token %}
                 <!-- Branch Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Branch</label>
-                    <select id="home-branch-select" name="branch">
+                    <select id="home-branch-select" name="branch" class="w-full h-12 px-4 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all">
                         {% for branch in branches %}
                         <option value="{{ branch.id }}">{{ branch.name }}</option>
                         {% endfor %}
@@ -43,7 +44,7 @@
                 <!-- Semester Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Semester</label>
-                    <select id="home-semester-select" name="semester">
+                    <select id="home-semester-select" name="semester" class="w-full h-12 px-4 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all">
                         {% for semester in semesters %}
                         <option value="{{ semester.id }}">Semester {{ semester.number }}</option>
                         {% endfor %}
@@ -54,7 +55,7 @@
                 <div class="flex flex-col">
                     <label class="block text-sm font-medium text-transparent mb-1.5 pointer-events-none select-none">Action</label>
                     <button type="submit" class="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-sm font-bold focus:outline-none focus:ring-4 focus:ring-ring focus:ring-opacity-50 transition-all shadow-md active:scale-[0.98]">
-                        Explore Subjects &rarr;
+                        Find Study Material &rarr;
                     </button>
                 </div>
             </form>

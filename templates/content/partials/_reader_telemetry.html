@@ -1,0 +1,88 @@
+<!-- Gamification Study Telemetry Engine -->
+<script>
+    (function() {
+        // Tracker State
+        let activeSeconds = 0;
+        let idleSeconds = 0;
+        let isTracking = true;
+        const IDLE_TIMEOUT_SECONDS = 180; // Stop tracking after 3 mins of zero interaction
+        const PING_INTERVAL_MS = 60000;   // Ping server every 60 seconds
+        
+        // Document & Context Data
+        const documentId = parseInt("{{ document.id }}");
+        const subjectId = parseInt("{{ current_subject.id }}");
+        
+        // Detect Interactions to reset Idle timer
+        function resetIdle() {
+            idleSeconds = 0;
+            if (!isTracking) {
+                isTracking = true;
+                console.log("[Telemetry] Idle broken. Resuming XP tracking.");
+            }
+        }
+        
+        // Listeners
+        window.addEventListener('mousemove', resetIdle);
+        window.addEventListener('keypress', resetIdle);
+        window.addEventListener('scroll', resetIdle);
+        window.addEventListener('touchstart', resetIdle);
+        window.addEventListener('click', resetIdle);
+
+        // Core Tick (Runs every 1 second)
+        setInterval(() => {
+            if (isTracking) {
+                idleSeconds++;
+                activeSeconds++;
+                
+                if (idleSeconds >= IDLE_TIMEOUT_SECONDS) {
+                    isTracking = false;
+                    console.log("[Telemetry] User AFK. Tracking paused to prevent XP farming.");
+                }
+            }
+        }, 1000);
+
+        // Heartbeat Ping (Runs every 60 seconds to secure XP)
+        setInterval(() => {
+            if (activeSeconds > 0 && isTracking) {
+                const payload = {
+                    document_id: documentId,
+                    subject_id: subjectId,
+                    active_seconds: activeSeconds
+                };
+                
+                fetch("/api/gamification/heartbeat/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": getCookie('csrftoken') // Assuming common CSRF cookie retrieval exists
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.success) {
+                        // Reset local counter once securely banked on server
+                        activeSeconds = 0; 
+                    }
+                })
+                .catch(err => console.error("[Telemetry] Failed to sync study time:", err));
+            }
+        }, PING_INTERVAL_MS);
+        
+        // Helper to grab CSRF token
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    })();
+</script>

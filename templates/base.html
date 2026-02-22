@@ -58,6 +58,9 @@
     <!-- Base CSS mappings & micro-animations -->
     <style type="text/tailwindcss">
         @layer base {
+            html {
+                scrollbar-gutter: stable;
+            }
             :root {
                 --background: 0 0% 100%;
                 --foreground: 240 10% 3.9%;
@@ -244,58 +247,109 @@
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex md:space-x-8 items-center">
-                    <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                    <a href="{% url 'dashboard' %}" class="text-sm font-medium {% if request.resolver_match.url_name == 'dashboard' %}text-primary{% else %}text-muted-foreground hover:text-foreground{% endif %} transition-colors">
                         Study Material
                     </a>
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'user_purchases' %}" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center">
-                        My Purchases
-                    </a>
-                    <a href="{% url 'onboarding' %}" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                        Change Program
-                    </a>
-                    {% else %}
-                    <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">PYQs</a>
-                    {% endif %}
+
                     <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         Gold Pass
                     </a>
                 </nav>
                 
-                <!-- Auth Buttons -->
-                <div class="hidden md:flex items-center space-x-4">
+                <!-- Auth Area -->
+                <div class="hidden md:flex items-center gap-2">
+
                     {% if user.is_authenticated %}
-                        <div class="flex items-center space-x-4">
-                            <span class="text-sm font-semibold text-primary/80">Hi, {{ user.username }} 👋</span>
-                            <a href="{% url 'logout' %}" class="bg-muted text-muted-foreground hover:bg-muted/80 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
-                                Log out
-                            </a>
+                    <!-- User Avatar Dropdown (contains theme toggle) -->
+                    <div class="relative" id="userDropdownContainer">
+                        <button id="userDropdownBtn" class="flex items-center gap-2 rounded-full p-1 pr-2.5 border border-border hover:border-muted-foreground/40 hover:bg-muted/60 transition-all duration-200 focus:outline-none group">
+                            <!-- Avatar circle with initials -->
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-sm">
+                                {{ user.username|slice:":1"|upper }}
+                            </div>
+                            <span class="text-sm font-medium text-foreground/80 group-hover:text-foreground max-w-[80px] truncate transition-colors">{{ user.username }}</span>
+                            <svg class="w-3.5 h-3.5 text-muted-foreground/70 transition-transform duration-200" id="dropdownChevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+
+                        <!-- Dropdown Panel -->
+                        <div id="userDropdownMenu" class="hidden absolute right-0 mt-2 w-64 bg-background border border-border rounded-xl shadow-xl overflow-hidden z-50">
+                            <!-- User Info Header -->
+                            <div class="px-4 py-3.5 border-b border-border bg-muted/40">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold flex-shrink-0">
+                                        {{ user.username|slice:":1"|upper }}
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <p class="text-sm font-semibold text-foreground truncate">{{ user.username }}</p>
+                                        <p class="text-xs text-muted-foreground truncate">{{ user.email }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Items -->
+                            <div class="py-1.5">
+                                <a href="{% url 'dashboard' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                    Study Material
+                                </a>
+                                <a href="{% url 'gamification_dashboard' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <span class="mr-3 text-base leading-none">🔥</span>
+                                    Analytics & Streaks
+                                </a>
+                                <a href="{% url 'user_purchases' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 16H4L5 9z"></path></svg>
+                                    My Purchases
+                                </a>
+                                <a href="{% url 'onboarding' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    Change Program
+                                </a>
+                                <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id %}{% else %}{% url 'login' %}{% endif %}" class="flex items-center px-4 py-2.5 text-sm font-semibold text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors">
+                                    <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    Upgrade to Gold Pass
+                                </a>
+
+                                <!-- Theme Toggle Row -->
+                                <button id="themeToggle" class="w-full flex items-center justify-between px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <div class="flex items-center">
+                                        <svg class="w-4 h-4 mr-3 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                                        <svg class="w-4 h-4 mr-3 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                        <span class="dark:hidden">Light Mode</span>
+                                        <span class="hidden dark:inline">Dark Mode</span>
+                                    </div>
+                                    <!-- Visual pill switch -->
+                                    <div class="relative w-9 h-5 rounded-full bg-muted border border-border transition-colors duration-200" id="themeTogglePill">
+                                        <div class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-muted-foreground/50 dark:bg-primary dark:translate-x-4 transition-all duration-200"></div>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <!-- Logout footer -->
+                            <div class="border-t border-border py-1.5">
+                                <a href="{% url 'logout' %}" class="flex items-center px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+                                    <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                    Sign out
+                                </a>
+                            </div>
                         </div>
+                    </div>
                     {% else %}
-                        <a href="{% url 'login' %}" class="text-sm font-medium hover:text-foreground transition-colors">Log in</a>
-                        <a href="{% url 'signup' %}" class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
-                            Sign up
-                        </a>
+                    <a href="{% url 'login' %}" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Log in</a>
+                    <a href="{% url 'signup' %}" class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">Sign up</a>
                     {% endif %}
-                    
-                    <!-- Dark mode toggle -->
-                    <button id="themeToggle" class="p-2 rounded-full hover:bg-muted transition-colors">
-                        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                        <svg class="w-5 h-5 hidden dark:block text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    </button>
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center gap-2">
-                    <!-- Mobile Dark mode toggle -->
-                    <button id="mobileThemeToggle" class="p-2 rounded-full hover:bg-muted transition-colors">
-                        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                        <svg class="w-5 h-5 hidden dark:block text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <div class="md:hidden flex items-center gap-1.5">
+                    <!-- Mobile Theme Toggle: icon-only pill -->
+                    <button id="mobileThemeToggle" class="p-2 rounded-xl border border-border hover:bg-muted transition-all" title="Toggle theme">
+                        <svg class="w-4 h-4 dark:hidden text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-4 h-4 hidden dark:block text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
-                    <!-- actual menu btn -->
-                    <button id="mobileMenuBtn" class="text-muted-foreground hover:text-foreground p-2">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <!-- Hamburger -->
+                    <button id="mobileMenuBtn" class="p-2 rounded-xl border border-border hover:bg-muted transition-all text-muted-foreground hover:text-foreground">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
@@ -303,39 +357,85 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobileMenu" class="md:hidden hidden bg-background border-t border-border shadow-md absolute w-full left-0 mt-0">
-            <div class="px-4 py-4 space-y-4">
-                <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="block text-base font-medium text-foreground">
-                    Study Material
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobileMenuBackdrop" class="md:hidden hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity"></div>
+
+        <!-- Mobile Menu Sheet -->
+        <div id="mobileMenu" class="md:hidden hidden fixed top-0 left-0 right-0 bg-background z-50 shadow-2xl rounded-b-2xl overflow-hidden">
+            <!-- Sheet Header -->
+            <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+                <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="text-xl font-bold tracking-tight">
+                    RGPV<span class="text-blue-600 dark:text-blue-400">Live</span>
                 </a>
+                <button id="mobileMenuClose" class="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-all">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <div class="overflow-y-auto max-h-[80vh]">
                 {% if user.is_authenticated %}
-                <a href="{% url 'user_purchases' %}" class="block text-base font-medium text-muted-foreground hover:text-foreground">My Purchases</a>
-                <a href="{% url 'onboarding' %}" class="block text-base font-medium text-muted-foreground hover:text-foreground">Change Program</a>
-                {% else %}
-                <a href="#" class="block text-base font-medium text-muted-foreground hover:text-foreground">PYQs</a>
+                <!-- User Profile Card -->
+                <div class="mx-4 mt-4 p-4 rounded-xl bg-muted/50 border border-border flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-lg font-bold flex-shrink-0 shadow">
+                        {{ user.username|slice:":1"|upper }}
+                    </div>
+                    <div class="overflow-hidden flex-1">
+                        <p class="font-semibold text-foreground text-sm truncate">{{ user.username }}</p>
+                        <p class="text-xs text-muted-foreground truncate">{{ user.email }}</p>
+                    </div>
+                </div>
                 {% endif %}
-                <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="text-base font-bold text-amber-500 hover:text-amber-600 transition-colors flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    Gold Pass
-                </a>
-                
-                <hr class="border-border">
-                
+
+                <!-- Navigation Section -->
+                <div class="px-4 pt-4">
+                    <p class="text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-widest px-1 mb-2">Navigation</p>
+                    <div class="space-y-1">
+                        <a href="{% url 'dashboard' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium {% if request.resolver_match.url_name == 'dashboard' %}bg-primary/10 text-primary{% else %}text-foreground hover:bg-muted{% endif %} transition-colors">
+                            <svg class="w-5 h-5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            Study Material
+                        </a>
+                        <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-amber-500 hover:bg-amber-500/10 transition-colors">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Gold Pass
+                        </a>
+                    </div>
+                </div>
+
                 {% if user.is_authenticated %}
-                    <div class="px-2 py-2">
-                        <span class="text-sm font-semibold text-primary/80 block mb-2">Hi, {{ user.username }} 👋</span>
-                        <a href="{% url 'logout' %}" class="inline-block bg-muted text-muted-foreground hover:bg-muted/80 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm w-full text-center">
-                            Log out
+                <!-- Account Section -->
+                <div class="px-4 pt-5">
+                    <p class="text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-widest px-1 mb-2">Account</p>
+                    <div class="space-y-1">
+                        <a href="{% url 'gamification_dashboard' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium {% if request.resolver_match.url_name == 'gamification_dashboard' %}bg-rose-500/10 text-rose-500{% else %}text-foreground hover:bg-muted{% endif %} transition-colors">
+                            <span class="text-base flex-shrink-0">🔥</span>
+                            Analytics & Streaks
                         </a>
+                        <a href="{% url 'user_purchases' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium {% if request.resolver_match.url_name == 'user_purchases' %}bg-primary/10 text-primary{% else %}text-foreground hover:bg-muted{% endif %} transition-colors">
+                            <svg class="w-5 h-5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 16H4L5 9z"></path></svg>
+                            My Purchases
+                        </a>
+                        <a href="{% url 'onboarding' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted transition-colors">
+                            <svg class="w-5 h-5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c-.94 1.543.826 3.31 2.37 2.37a1.724 1.724 0 002.572 1.065c.426 1.756 2.924 1.756 3.35 0a1.724 1.724 0 002.573-1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 00-1.065 2.572c-1.756.426-1.756 2.924 0 3.35a1.724 1.724 0 001.066 2.573c-.94 1.543.826 3.31 2.37 2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Change Program
+                        </a>
+
                     </div>
+                </div>
+
+                <!-- Sign Out -->
+                <div class="px-4 pt-3 pb-6">
+                    <a href="{% url 'logout' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-500/10 transition-colors w-full">
+                        <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        Sign out
+                    </a>
+                </div>
+
                 {% else %}
-                    <div class="flex flex-col space-y-3">
-                        <a href="{% url 'login' %}" class="text-base font-medium hover:text-foreground transition-colors text-center py-2 border border-border rounded-md">Log in</a>
-                        <a href="{% url 'signup' %}" class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-3 rounded-md text-base text-center font-medium transition-colors shadow-sm">
-                            Sign up
-                        </a>
-                    </div>
+                <!-- Auth buttons -->
+                <div class="px-4 pt-4 pb-6 space-y-3">
+                    <a href="{% url 'login' %}" class="flex items-center justify-center w-full py-3 rounded-xl border border-border text-sm font-medium hover:bg-muted transition-colors">Log in</a>
+                    <a href="{% url 'signup' %}" class="flex items-center justify-center w-full py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium transition-colors shadow-sm">Sign up</a>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -377,10 +477,53 @@
         // --- Mobile Menu Toggle Logic ---
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
 
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuBackdrop.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBackdrop.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+        if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+        if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
+        // --- User Account Dropdown ---
+        const userDropdownBtn = document.getElementById('userDropdownBtn');
+        const userDropdownMenu = document.getElementById('userDropdownMenu');
+        const dropdownChevron = document.getElementById('dropdownChevron');
+
+        if (userDropdownBtn && userDropdownMenu) {
+            userDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = userDropdownMenu.classList.contains('hidden');
+                userDropdownMenu.classList.toggle('hidden', !isHidden);
+                if (dropdownChevron) dropdownChevron.style.transform = isHidden ? 'rotate(180deg)' : '';
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!userDropdownBtn.contains(e.target) && !userDropdownMenu.contains(e.target)) {
+                    userDropdownMenu.classList.add('hidden');
+                    if (dropdownChevron) dropdownChevron.style.transform = '';
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    userDropdownMenu.classList.add('hidden');
+                    if (dropdownChevron) dropdownChevron.style.transform = '';
+                }
             });
         }
 

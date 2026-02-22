@@ -69,14 +69,30 @@
     }
 
     /* 🌙 Eye Care Tint: Premium 'Midnight Paper' theme */
-    /* Uses a sophisticated stack to reduce blue light and create a Kindle-like dark experience */
+    /* Smart invert: white pages become soft dark + text stays highly legible */
     body.tint-enabled #pdf-container canvas {
-        filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) sepia(0.15);
-        box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05); /* Subtle depth */
+        filter: invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(0.88);
+        border-radius: 2px;
+        box-shadow:
+            0 0 0 1px rgba(255,255,255,0.04),
+            0 4px 24px rgba(0,0,0,0.6),
+            0 1px 4px rgba(0,0,0,0.4);
     }
-    
+
     #pdf-container canvas {
-        transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
+        transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+    }
+
+    /* Force light bg on toolbar buttons in light mode */
+    #cinemaModeBtn {
+        background-color: rgb(245 245 245) !important;
+        color: rgb(38 38 38) !important;
+        border-color: rgb(212 212 212) !important;
+    }
+    .dark #cinemaModeBtn {
+        background-color: rgb(38 38 38) !important;
+        color: rgb(229 229 229) !important;
+        border-color: rgb(64 64 64) !important;
     }
 </style>
 {% endblock %}
@@ -116,7 +132,7 @@
                     <span class="text-xs font-mono font-bold text-muted-foreground pr-3" id="pageNavTotal">/ 0</span>
                 </div>
 
-                <button onclick="toggleCinemaMode()" class="px-2 py-1.5 bg-neutral-900 hover:bg-black text-white dark:bg-neutral-800 dark:hover:bg-neutral-700 text-xs font-bold rounded-lg flex items-center gap-1 transition-colors shadow-sm border border-neutral-800 dark:border-neutral-700" title="Toggle Full Screen">
+                <button onclick="toggleCinemaMode()" id="cinemaModeBtn" class="px-2 py-1.5 text-xs font-bold rounded-lg flex items-center gap-1 transition-colors shadow-sm border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700" title="Toggle Full Screen">
                     <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                     <span id="fullscreen-text" class="hidden sm:inline">Full Screen</span>
                 </button>
@@ -175,7 +191,7 @@
                         </button>
                     </div>
 
-                    <button onclick="toggleCinemaMode()" class="px-2 py-1.5 bg-neutral-900 hover:bg-black text-white dark:bg-neutral-800 dark:hover:bg-neutral-700 text-xs font-bold rounded-lg flex items-center gap-1 transition-colors shadow-sm border border-neutral-800 dark:border-neutral-700" title="Toggle Full Screen">
+                    <button onclick="toggleCinemaMode()" class="px-2 py-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 text-xs font-bold rounded-lg flex items-center gap-1 transition-colors shadow-sm border border-neutral-300 dark:border-neutral-700" title="Toggle Full Screen">
                         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                         <span id="fullscreen-text" class="hidden sm:inline">Full Screen</span>
                     </button>
@@ -274,4 +290,5 @@
 {% else %}
 {% include "content/partials/_reader_content_renderer.html" %}
 {% endif %}
+{% include "content/partials/_reader_telemetry.html" %}
 {% endblock %}

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Study Analytics | RGPV Live{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+        <div>
+            <h1 class="text-3xl font-extrabold tracking-tight">Study Analytics</h1>
+            <p class="text-muted-foreground mt-1 text-sm md:text-base">Track your exact focus time, build your streak, and earn XP.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex gap-4">
+            <!-- Streak Badge -->
+            <div class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/10 to-rose-500/10 border border-orange-500/30 rounded-2xl shadow-sm">
+                <span class="text-2xl drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]">🔥</span>
+                <div>
+                    <p class="text-[10px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest leading-none">Streak</p>
+                    <p class="text-lg font-black text-foreground leading-tight">{{ profile.current_streak }} Days</p>
+                </div>
+            </div>
+            <!-- Total XP Badge -->
+            <div class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 rounded-2xl shadow-sm">
+                <span class="text-2xl drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]">⚡</span>
+                <div>
+                    <p class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest leading-none">Total XP</p>
+                    <p class="text-lg font-black text-foreground leading-tight">{{ profile.total_xp }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Main Chart Area -->
+        <div class="lg:col-span-2 bg-card border border-border rounded-3xl p-6 shadow-sm">
+            <h2 class="text-lg font-bold mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                Weekly Focus Time (Minutes)
+            </h2>
+            <div class="w-full h-[300px]">
+                <canvas id="weeklyChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Sidebar Stats -->
+        <div class="space-y-6">
+            <!-- Daily Goal Card -->
+            <div class="bg-card border border-border rounded-3xl p-6 shadow-sm relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 pointer-events-none group-hover:opacity-100 opacity-50 transition-opacity"></div>
+                <h3 class="font-bold text-foreground mb-1 relative z-10">Daily Goal</h3>
+                <p class="text-xs text-muted-foreground mb-4 relative z-10">Earn {{ profile.daily_xp_goal }} XP to secure your streak!</p>
+                
+                <div class="relative w-full h-4 bg-muted rounded-full overflow-hidden mb-2 z-10">
+                    <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-1000 ease-out" style="width: {{ daily_progress }}%"></div>
+                </div>
+                <div class="flex justify-between text-[10px] font-bold text-muted-foreground uppercase tracking-widest relative z-10">
+                    <span>Progress</span>
+                    <span>{{ daily_progress }}%</span>
+                </div>
+            </div>
+
+            <!-- Lifetime Stats Card -->
+            <div class="bg-card border border-border rounded-3xl p-6 shadow-sm">
+                <h3 class="font-bold text-foreground mb-4">Lifetime Milestones</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-muted-foreground">
+                            <svg class="w-4 h-4 mr-2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Total Time Studied
+                        </div>
+                        <span class="font-bold font-mono text-foreground">{{ total_hours }}h</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-muted-foreground">
+                            <svg class="w-4 h-4 mr-2 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                            Longest Streak
+                        </div>
+                        <span class="font-bold font-mono text-foreground">{{ profile.longest_streak }} Days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const labels = {{ chart_labels|safe }};
+        const dataPoints = {{ chart_data|safe }};
+        
+        // Dynamic color scheme based on current theme
+        const isDark = document.documentElement.classList.contains('dark');
+        const gridColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+        const textColor = isDark ? '#a1a1aa' : '#71717a';
+
+        const ctx = document.getElementById('weeklyChart').getContext('2d');
+        
+        // Gradient Fill
+        let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(99, 102, 241, 0.5)'); // Indigo-500
+        gradient.addColorStop(1, 'rgba(99, 102, 241, 0.0)'); 
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Minutes Focused',
+                    data: dataPoints,
+                    borderColor: '#6366f1',
+                    borderWidth: 3,
+                    backgroundColor: gradient,
+                    fill: true,
+                    tension: 0.4, // Smooth Spline curve
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#6366f1',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: isDark ? '#27272a' : '#ffffff',
+                        titleColor: isDark ? '#ffffff' : '#000000',
+                        bodyColor: isDark ? '#d4d4d8' : '#52525b',
+                        borderColor: isDark ? '#3f3f46' : '#e4e4e7',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' minutes';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false, drawBorder: false },
+                        ticks: { color: textColor, font: {family: "'Inter', sans-serif"} }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: gridColor, drawBorder: false },
+                        ticks: { color: textColor, font: {family: "'Inter', sans-serif"} }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+            }
+        });
+    });
+</script>
+{% endblock %}

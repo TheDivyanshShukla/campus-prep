@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('apps.content.urls')),
     path('', include('apps.users.urls')),
     path('payments/', include('apps.products.urls')),
+    path('api/gamification/', include('apps.gamification.urls')),
 ]
 
 if settings.DEBUG:
