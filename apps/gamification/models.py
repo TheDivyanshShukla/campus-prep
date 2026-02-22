@@ -16,8 +16,35 @@ class GamerProfile(models.Model):
         return f"{self.user.username}'s Gamer Profile"
         
     def add_xp(self, amount):
+        old_level = self.get_level_info()['level']
         self.total_xp += amount
         self.save(update_fields=['total_xp'])
+        new_level = self.get_level_info()['level']
+        
+        if new_level > old_level:
+            from apps.notifications.services import NotificationService
+            NotificationService.notify(
+                user=self.user,
+                level='success',
+                title="Level Up! 🎉",
+                message=f"Congratulations! You've reached Level {new_level}: {self.get_level_info()['name']}.",
+                link='/dashboard/'
+            )
+
+    def get_level_info(self):
+        xp = self.total_xp
+        if xp < 100:
+            return {'level': 1, 'name': "Novice", 'next_xp': 100}
+        elif xp < 300:
+            return {'level': 2, 'name': "Scholar", 'next_xp': 300}
+        elif xp < 700:
+            return {'level': 3, 'name': "Achiever", 'next_xp': 700}
+        elif xp < 1500:
+            return {'level': 4, 'name': "Expert", 'next_xp': 1500}
+        elif xp < 3000:
+            return {'level': 5, 'name': "Master", 'next_xp': 3000}
+        else:
+            return {'level': 6, 'name': "Legend", 'next_xp': xp}
 
 class StudySession(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='study_sessions')

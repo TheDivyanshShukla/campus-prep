@@ -8,6 +8,14 @@
     <!-- Tailwind CSS (CDN per rules) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- HTMX for dynamic updates -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script>
+        document.addEventListener('htmx:configRequest', (event) => {
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        });
+    </script>
+    
     <!-- HeroUI / shadcn aesthetic config -->
     <script>
         tailwind.config = {
@@ -264,6 +272,18 @@
                 <div class="hidden md:flex items-center gap-2">
 
                     {% if user.is_authenticated %}
+                    <!-- Notifications Bell -->
+                    <a href="{% url 'notifications:list' %}" class="relative p-2 text-muted-foreground hover:text-foreground transition-all duration-200 hover:bg-muted/60 rounded-full" 
+                       id="notificationsBell"
+                       hx-get="{% url 'notifications:unread_count' %}"
+                       hx-trigger="load, every 30s, notifications-updated from:body"
+                       hx-target="#unreadBadge">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                        <div id="unreadBadge" class="absolute -top-1 -right-1"></div>
+                    </a>
+
                     <!-- User Avatar Dropdown (contains theme toggle) -->
                     <div class="relative" id="userDropdownContainer">
                         <button id="userDropdownBtn" class="flex items-center gap-2 rounded-full p-1 pr-2.5 border border-border hover:border-muted-foreground/40 hover:bg-muted/60 transition-all duration-200 focus:outline-none group">
@@ -312,10 +332,16 @@
                                     <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                     Change Program
                                 </a>
-                                <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id %}{% else %}{% url 'login' %}{% endif %}" class="flex items-center px-4 py-2.5 text-sm font-semibold text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors">
+                                <a href="{% if request.user.is_authenticated %}{% url 'checkout_gold_pass' %}?branch={{ request.user.preferred_branch_id }}&semester={{ request.user.preferred_semester_id }}{% else %}{% url 'login' %}{% endif %}" class="flex items-center px-4 py-2.5 text-sm font-semibold text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors">
                                     <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                     Upgrade to Gold Pass
                                 </a>
+
+                                <!-- Enable Push Notifications -->
+                                <button onclick="subscribeToPush()" class="w-full flex items-center px-4 py-2.5 text-sm font-semibold text-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors">
+                                    <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                                    Enable Desktop Alerts
+                                </button>
 
                                 <!-- Theme Toggle Row -->
                                 <button id="themeToggle" class="w-full flex items-center justify-between px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
@@ -413,6 +439,10 @@
                 <div class="px-4 pt-5">
                     <p class="text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-widest px-1 mb-2">Account</p>
                     <div class="space-y-1">
+                        <a href="{% url 'notifications:list' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted transition-colors">
+                            <span class="text-base flex-shrink-0">🔔</span>
+                            Notifications
+                        </a>
                         <a href="{% url 'practice_index' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted transition-colors">
                             <span class="text-base flex-shrink-0">🧠</span>
                             Practice Zone
@@ -634,6 +664,89 @@
             }
         });
     </script>
+    
+    {% if user.is_authenticated %}
+    <script>
+        // Web Push Registration
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            window.addEventListener('load', () => {
+                // Added ?v=2 to bust browser cache
+                navigator.serviceWorker.register('/sw.js?v=2')
+                    .then(reg => console.log('SW Registered', reg))
+                    .catch(err => console.error('SW Registration failed', err));
+            });
+        }
+
+        async function subscribeToPush() {
+            // Check current permission
+            const permission = await Notification.requestPermission();
+            
+            if (permission !== 'granted') {
+                alert('We need permission to show alerts. Please check your browser settings! 🔔');
+                return;
+            }
+
+            try {
+                const registration = await navigator.serviceWorker.ready;
+                let subscription = await registration.pushManager.getSubscription();
+                
+                // If browser thinks it's already subscribed, let's unsubscribe first to ensure a clean re-subscription
+                // this fixes the "already subscribed" but 0 subscriptions in DB state
+                if (subscription) {
+                    console.log('Existing subscription found, clearing it to ensure fresh registration...');
+                    await subscription.unsubscribe();
+                }
+
+                const response = await fetch('/webpush/vapid/');
+                const config = await response.json();
+                
+                const convertedVapidKey = urlBase64ToUint8Array(config.publicKey);
+
+                const newSubscription = await registration.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: convertedVapidKey
+                });
+
+                const responseSave = await fetch('/webpush/save_information', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    body: JSON.stringify({
+                        subscription: newSubscription.toJSON(),
+                        browser: navigator.userAgent.includes("Chrome") ? "Chrome" : "Browser",
+                        user_agent: navigator.userAgent,
+                        group: 'default',
+                        status_type: 'subscribe'
+                    })
+                });
+
+                if (!responseSave.ok) {
+                    const errorText = await responseSave.text();
+                    throw new Error(`Server responded with ${responseSave.status}: ${errorText}`);
+                }
+
+                alert('Notifications enabled! 🔔');
+                location.reload();
+            } catch (error) {
+                console.error('Subscription failed:', error);
+                alert(`Failed to enable alerts: ${error.message} 🛠️`);
+            }
+        }
+
+        function urlBase64ToUint8Array(base64String) {
+            const padding = '='.repeat((4 - base64String.length % 4) % 4);
+            const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+            const rawData = window.atob(base64);
+            const outputArray = new Uint8Array(rawData.length);
+            for (let i = 0; i < rawData.length; ++i) {
+                outputArray[i] = rawData.charCodeAt(i);
+            }
+            return outputArray;
+        }
+    </script>
+    {% endif %}
     
     {% block scripts %}{% endblock %}
 </body>
