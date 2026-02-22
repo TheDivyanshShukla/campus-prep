@@ -93,11 +93,25 @@ def study_heartbeat(request):
                     profile.last_active_date = today
                     profile.save(update_fields=['current_streak', 'longest_streak', 'last_active_date'])
 
+                    # Notify user about streak
+                    from apps.notifications.services import NotificationService
+                    NotificationService.notify(
+                        user=request.user,
+                        level='success',
+                        title="Streak Active! 🔥",
+                        message=f"You're on a {profile.current_streak} day streak! Keep it up.",
+                        link='/dashboard/'
+                    )
+
+            from apps.notifications.services import NotificationService
+            unread_notifications = NotificationService.get_unread_count(request.user)
+
             return JsonResponse({
                 "success": True,
                 "total_session_seconds": session.duration_seconds,
                 "total_xp": profile.total_xp,
                 "current_streak": profile.current_streak,
+                "unread_notifications": unread_notifications,
             })
 
         except Exception as e:

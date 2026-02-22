@@ -129,6 +129,25 @@ def submit_quiz(request, set_id):
     attempt.finished_at = timezone.now()
     attempt.save()
 
+    # Notify user about practice achievement
+    from apps.notifications.services import NotificationService
+    if attempt.percentage >= 80:
+        NotificationService.notify(
+            user=request.user,
+            level='success',
+            title="Great Job! 🏆",
+            message=f"You completed '{question_set.title}' with {attempt.percentage}% accuracy!",
+            link=f"/practice/result/{attempt.id}/"
+        )
+    else:
+        NotificationService.notify(
+            user=request.user,
+            level='info',
+            title="Practice Complete",
+            message=f"You've finished '{question_set.title}'. Keep practicing to improve!",
+            link=f"/practice/result/{attempt.id}/"
+        )
+
     return redirect('practice_result', attempt_id=attempt.id)
 
 

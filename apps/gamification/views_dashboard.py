@@ -206,20 +206,11 @@ def analytics_dashboard(request):
     daily_progress = min(100, int((today_minutes / max(1, profile.daily_xp_goal)) * 100))
 
     # ── 9. XP level tier ─────────────────────────────────────────────────────
-    xp = profile.total_xp
-    if xp < 100:
-        level, level_name, next_level = 1, "Novice", 100
-    elif xp < 300:
-        level, level_name, next_level = 2, "Scholar", 300
-    elif xp < 700:
-        level, level_name, next_level = 3, "Achiever", 700
-    elif xp < 1500:
-        level, level_name, next_level = 4, "Expert", 1500
-    elif xp < 3000:
-        level, level_name, next_level = 5, "Master", 3000
-    else:
-        level, level_name, next_level = 6, "Legend", xp
-    xp_level_pct = min(100, int((xp / max(1, next_level)) * 100))
+    lvl_info = profile.get_level_info()
+    level = lvl_info['level']
+    level_name = lvl_info['name']
+    next_level = lvl_info['next_xp']
+    xp_level_pct = min(100, int((profile.total_xp / max(1, next_level)) * 100))
 
     context = {
         'profile': profile,

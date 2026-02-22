@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'apps.content.apps.ContentConfig',
     'apps.gamification.apps.GamificationConfig',
     'apps.practice.apps.PracticeConfig',
+    'apps.notifications.apps.NotificationsConfig',
+    'webpush',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -171,3 +173,10 @@ CELERY_TIMEZONE = TIME_ZONE
 
 # X-Frame-Options to allow framing PDFs natively
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# Web Push Settings
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY": "BJRuhh12FavXvn8HXPjpUlS66aEuBaMUViZB9dnRP7dpGbdLukdLNK5M1F-yPkcGeLyCZvBY3Y9ZQp1LUH3vzJM",
+    "VAPID_PRIVATE_KEY": "EkZX7mVKA5060KUK6Rj0fkOntfmaPMnrGwftazT0VHE",
+    "VAPID_ADMIN_EMAIL": "admin@rgpv.live"
+}
