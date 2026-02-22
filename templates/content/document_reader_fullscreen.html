@@ -28,25 +28,92 @@
     header.sticky {
         position: relative !important;
     }
+    
+    /* Hide number input arrows for page navigation */
+    input[type="number"]::-webkit-inner-spin-button, 
+    input[type="number"]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="w-full max-w-[1400px] mx-auto py-6 px-4 sm:px-6 lg:px-8 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;">
     
-    <!-- Reader Header -->
-    <div class="mb-6 border-b border-border pb-4">
-        <div class="flex items-center justify-between mb-4">
-            <a href="{% url 'subject_dashboard' document.subjects.first.id %}" class="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+    <!-- Sticky / Collapsible Header Wrapper -->
+    <div id="stickyHeader" class="sticky top-0 z-40 bg-background/95 backdrop-blur-md pt-4 pb-2 mb-6 border-b border-border transition-all duration-300 transform origin-top">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <a href="{% url 'subject_dashboard' document.subjects.first.id %}" class="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-2" title="Close Full Screen">
                 <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                Close Full Screen
+                <span class="hidden sm:inline">Close Full Screen</span>
             </a>
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">{{ document.title }}</h1>
+        </div>
+        
+        <div class="flex items-center gap-3 flex-wrap justify-start md:justify-end">
+            <!-- Zoom Controls -->
+            <div class="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-300 dark:border-neutral-700 overflow-hidden shadow-sm">
+                <button onclick="zoomOut()" class="px-2.5 py-1.5 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-300 transition-colors" title="Zoom Out">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 12H4"></path></svg>
+                </button>
+                <div class="px-2 py-1 text-xs font-mono font-bold text-neutral-700 dark:text-neutral-200 border-x border-neutral-300 dark:border-neutral-700 min-w-[50px] text-center" id="zoomPercentage">
+                    100%
+                </div>
+                <button onclick="zoomIn()" class="px-2.5 py-1.5 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-300 transition-colors" title="Zoom In">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
+                </button>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-300 dark:border-neutral-700 overflow-hidden shadow-sm mr-1" title="Jump to page">
+                <input type="number" id="pageNavInput" value="1" min="1" class="w-10 px-1 py-1 text-xs font-mono font-bold text-center bg-transparent border-none focus:ring-0 text-foreground" style="-moz-appearance: textfield;" onkeydown="if(event.key==='Enter') scrollToPage(this.value)" autocomplete="off">
+                <span class="text-xs font-mono font-bold text-muted-foreground pr-3" id="pageNavTotal">/ 0</span>
+            </div>
+
             <span class="px-2.5 py-1 bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800 text-xs font-bold rounded-lg flex items-center">
                 <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                 Original PDF (Protected)
             </span>
+            
+            <!-- Search Open Button -->
+            <button onclick="toggleSearch()" class="px-2.5 py-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 text-xs font-bold rounded-lg flex items-center shadow-sm transition-colors" title="Ctrl+F to Search">
+                <svg class="w-3 h-3 sm:mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <!-- Search Open Button -->
+                <button onclick="toggleSearch()" class="px-2 py-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 text-xs font-bold rounded-lg flex items-center gap-1 shadow-sm transition-colors" title="Search (Ctrl+F)">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="hidden sm:inline">Search</span>
+                </button>
+                
+                <!-- Collapse Toolbar Button -->
+                <button onclick="collapseHeader()" class="px-2 py-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 text-xs font-bold rounded-lg flex items-center gap-1 shadow-sm transition-colors" title="Hide Toolbar">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+                    <span class="hidden sm:inline">Hide</span>
+                </button>
         </div>
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">{{ document.title }}</h1>
+    </div>
+    
+    <!-- Show Toolbar Tab: Appears top-right when toolbar is hidden -->
+    <button id="headerToggleBtn" onclick="expandHeader()" class="fixed top-0 right-4 z-[45] px-3 py-1.5 bg-background border border-t-0 border-border shadow-md rounded-b-lg text-xs font-bold text-muted-foreground hover:text-foreground hover:bg-muted flex items-center gap-1 transition-all duration-300 -translate-y-full opacity-0 pointer-events-none" aria-label="Show Toolbar">
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+        Show Toolbar
+    </button>
+    
+    <!-- Floating Search Bar (Ctrl+F behavior) -->
+    <div id="floatingSearchBar" class="fixed top-20 left-4 right-4 sm:left-auto sm:right-8 z-[100] flex items-center bg-background border border-border shadow-2xl rounded-lg transition-all duration-300 transform -translate-y-4 opacity-0 pointer-events-none max-w-[calc(100vw-2rem)] sm:max-w-none">
+        <div class="flex items-center pl-3 flex-1 overflow-hidden">
+            <svg id="searchSpinner" class="hidden animate-spin w-4 h-4 text-primary mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+            <svg id="searchIcon" class="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="text" id="pdfSearchInput" placeholder="Find in document..." class="w-full sm:w-64 py-2 sm:py-2.5 bg-transparent border-none focus:outline-none focus:ring-0 text-sm text-foreground min-w-[80px]" autocomplete="off">
+        </div>
+        
+        <div id="searchControls" class="hidden flex items-center border-l border-border h-full flex-shrink-0">
+            <span id="searchCount" class="px-2 sm:px-3 text-[10px] sm:text-xs font-mono text-muted-foreground whitespace-nowrap">0/0</span>
+            <button onclick="prevSearchResult()" class="p-2 sm:p-2.5 hover:bg-muted text-muted-foreground transition-colors border-l border-border"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button>
+            <button onclick="nextSearchResult()" class="p-2 sm:p-2.5 hover:bg-muted text-muted-foreground transition-colors border-l border-border"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        </div>
+        <button onclick="closeSearch()" class="p-2 sm:p-2.5 hover:bg-red-500/10 hover:text-red-500 text-muted-foreground transition-colors border-l border-border rounded-r-lg flex-shrink-0"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
     </div>
 
     <!-- PDF Container -->
@@ -58,8 +125,8 @@
 </div>
 
 <!-- Floating Back to Top Button -->
-<button id="backToTopBtn" class="fixed bottom-8 right-8 z-50 p-3 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl rounded-full translate-y-20 opacity-0 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background" aria-label="Back to top">
-    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+<button id="backToTopBtn" class="fixed bottom-8 right-4 z-50 p-3 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl rounded-full translate-y-20 opacity-0 transition-all duration-300 flex items-center justify-center focus:outline-none" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
 </button>
 
 <!-- Centered Loading Overlay -->
@@ -106,16 +173,31 @@
         });
         
         loadingTask.promise.then(function(pdf) {
+            window.pdfDocGlobal = pdf;
+            document.getElementById('pageNavTotal').innerText = '/ ' + pdf.numPages;
+            document.getElementById('pageNavInput').max = pdf.numPages;
+
             const container = document.getElementById('pdf-container');
             const spinner = document.getElementById('pdf-loading-spinner');
             
             const scale = window.devicePixelRatio > 1 ? 2.5 : 2.0;
 
+            const docId = '{{ document.id }}';
+            const savedPageStr = localStorage.getItem('pdf_page_fs_' + docId);
+            let targetPage = savedPageStr ? parseInt(savedPageStr) : 1;
+            if (targetPage > pdf.numPages) targetPage = pdf.numPages;
+            if (targetPage < 1) targetPage = 1;
+
             let currPage = 1;
             function renderNextPage() {
                 if (currPage > pdf.numPages) {
+                    // All pages rendered - now scroll to saved position
                     spinner.style.opacity = '0';
                     setTimeout(() => spinner.remove(), 500);
+                    if (targetPage > 1) {
+                        const targetCanvas = document.getElementById('page-canvas-' + targetPage);
+                        if (targetCanvas) targetCanvas.scrollIntoView({ behavior: 'auto', block: 'start' });
+                    }
                     return;
                 }
 
@@ -123,7 +205,8 @@
                     const viewport = page.getViewport({scale: scale});
                     const canvas = document.createElement('canvas');
                     
-                    canvas.className = "w-full bg-white shadow-2xl rounded-sm object-contain pointer-events-none select-none"; 
+                    canvas.id = "page-canvas-" + currPage;
+                    canvas.className = "w-full bg-white shadow-2xl rounded-sm object-contain pointer-events-none select-none";
                     const context = canvas.getContext('2d', { alpha: false });
                     
                     canvas.height = viewport.height;
@@ -140,21 +223,40 @@
 
                     container.appendChild(canvas);
 
+                    if (window.currentZoom && window.currentZoom !== 100) {
+                        canvas.style.width = window.currentZoom + '%';
+                    }
+
                     page.render(renderContext).promise.then(function() {
-                        // After the FIRST page successfully renders, fade out the spinner
                         if (currPage === 1) {
                             spinner.style.opacity = '0';
                             setTimeout(() => spinner.remove(), 500);
                         }
-                        
                         currPage++;
-                        // Auto queue next page rendering
-                        renderNextPage(); 
+                        renderNextPage();
                     });
                 });
             }
             
             renderNextPage();
+
+            // Page tracking via debounced scroll - closest canvas center to viewport center
+            let pageScrollTimer;
+            function updateCurrentPage() {
+                const viewportMid = window.innerHeight / 2;
+                const canvases = document.querySelectorAll('#pdf-container canvas[id^="page-canvas-"]');
+                let closestNum = 1, closestDist = Infinity;
+                canvases.forEach(c => {
+                    const rect = c.getBoundingClientRect();
+                    const dist = Math.abs((rect.top + rect.height / 2) - viewportMid);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closestNum = c.id.split('-')[2];
+                    }
+                });
+                document.getElementById('pageNavInput').value = closestNum;
+                localStorage.setItem('pdf_page_fs_' + docId, closestNum);
+            }
 
         }, function (reason) {
             console.error("PDF Failed to Load:", reason);
@@ -163,16 +265,225 @@
         
         // Back to Top Logic
         const topBtn = document.getElementById('backToTopBtn');
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
+            const currentScrollY = window.scrollY;
+            
+            // Back to top button visibility
+            if (currentScrollY > 500) {
                 topBtn.classList.remove('translate-y-20', 'opacity-0');
             } else {
                 topBtn.classList.add('translate-y-20', 'opacity-0');
             }
+
+            // Page tracker - debounced, fires 200ms after scroll stops
+            clearTimeout(pageScrollTimer);
+            pageScrollTimer = setTimeout(updateCurrentPage, 200);
         });
+        
         topBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        
+        // Re-allow Enter key specifically for the search input
+        document.getElementById('pdfSearchInput').addEventListener('keydown', function(e) {
+            if(e.key === 'Enter') {
+                executeSearch();
+                e.stopPropagation(); // prevent global block
+            }
+        });
+        
+        // Allow auto-search while typing (debounce)
+        let debounceTimer;
+        document.getElementById('pdfSearchInput').addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => executeSearch(), 400); // Trigger search gracefully while typing
+        });
+        
+        // Keyboard shortcut for Ctrl+F
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F')) {
+                e.preventDefault();
+                expandHeader(); // Ensure header is visible when searching
+                toggleSearch();
+            }
+            if (e.key === 'Escape') {
+                closeSearch();
+            }
+        });
     });
+
+    // Sticky Header: Manual Toggle Only
+    function collapseHeader() {
+        const header = document.getElementById('stickyHeader');
+        const toggleBtn = document.getElementById('headerToggleBtn');
+        header.style.overflow = 'hidden';
+        header.style.height = '0px';
+        header.style.paddingTop = '0px';
+        header.style.paddingBottom = '0px';
+        header.style.marginBottom = '0px';
+        header.style.borderBottomWidth = '0px';
+        header.style.opacity = '0';
+        header.style.pointerEvents = 'none';
+        // Show the reveal tab
+        toggleBtn.style.transform = 'translateY(0)';
+        toggleBtn.style.opacity = '1';
+        toggleBtn.style.pointerEvents = 'auto';
+    }
+    
+    function expandHeader() {
+        const header = document.getElementById('stickyHeader');
+        const toggleBtn = document.getElementById('headerToggleBtn');
+        header.style.height = 'auto';
+        header.style.paddingTop = '';
+        header.style.paddingBottom = '';
+        header.style.marginBottom = '';
+        header.style.borderBottomWidth = '';
+        header.style.opacity = '1';
+        header.style.overflow = '';
+        header.style.pointerEvents = '';
+        // Hide the reveal tab
+        toggleBtn.style.transform = '';
+        toggleBtn.style.opacity = '0';
+        toggleBtn.style.pointerEvents = 'none';
+    }
+
+    window.currentZoom = 100;
+
+    function applyZoom() {
+        document.getElementById('zoomPercentage').innerText = window.currentZoom + '%';
+        const canvases = document.querySelectorAll('#pdf-container canvas');
+        canvases.forEach(c => {
+            c.style.width = window.currentZoom + '%';
+        });
+    }
+
+    function zoomIn() { 
+        if (window.currentZoom < 250) { 
+            window.currentZoom += 25; 
+            applyZoom(); 
+        } 
+    }
+
+    function zoomOut() { 
+        if (window.currentZoom > 50) { 
+            window.currentZoom -= 25; 
+            applyZoom(); 
+        } 
+    }
+
+    function scrollToPage(pageNum) {
+        pageNum = parseInt(pageNum);
+        if (!pageNum || !window.pdfDocGlobal) return;
+        if (pageNum < 1) pageNum = 1;
+        if (pageNum > window.pdfDocGlobal.numPages) pageNum = window.pdfDocGlobal.numPages;
+        
+        const canvas = document.getElementById(`page-canvas-${pageNum}`);
+        if (canvas) {
+            canvas.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('pageNavInput').value = pageNum;
+            document.getElementById('pageNavInput').blur();
+        }
+    }
+    
+    function toggleSearch() {
+        const bar = document.getElementById('floatingSearchBar');
+        const input = document.getElementById('pdfSearchInput');
+        if (bar.classList.contains('opacity-0')) {
+            bar.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+            bar.classList.add('translate-y-0');
+            setTimeout(() => input.focus(), 100);
+        } else {
+            closeSearch();
+        }
+    }
+
+    function closeSearch() {
+        const bar = document.getElementById('floatingSearchBar');
+        bar.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+        bar.classList.remove('translate-y-0');
+        document.querySelectorAll('canvas').forEach(c => c.style.boxShadow = '');
+    }
+    
+    let searchResults = [];
+    let searchCurrentIdx = 0;
+
+    async function executeSearch() {
+        if (!window.pdfDocGlobal) return;
+        const query = document.getElementById('pdfSearchInput').value.toLowerCase().trim();
+        const controls = document.getElementById('searchControls');
+        const searchSpinner = document.getElementById('searchSpinner');
+        const searchIcon = document.getElementById('searchIcon');
+        
+        if (!query) {
+            controls.classList.add('hidden');
+            // reset any highlighted canvases
+            document.querySelectorAll('canvas').forEach(c => c.style.boxShadow = '');
+            return;
+        }
+
+        searchIcon.classList.add('hidden');
+        searchSpinner.classList.remove('hidden');
+
+        searchResults = [];
+        searchCurrentIdx = 0;
+
+        for (let i = 1; i <= window.pdfDocGlobal.numPages; i++) {
+            try {
+                const page = await window.pdfDocGlobal.getPage(i);
+                const textContent = await page.getTextContent();
+                const pageText = textContent.items.map(item => item.str).join(' ').toLowerCase();
+                if (pageText.includes(query)) {
+                    searchResults.push(i);
+                }
+            } catch (e) {
+                console.error("Search error on page", i, e);
+            }
+        }
+
+        searchSpinner.classList.add('hidden');
+        searchIcon.classList.remove('hidden');
+
+        if (searchResults.length > 0) {
+            controls.classList.remove('hidden');
+            document.getElementById('searchCount').innerText = `1/${searchResults.length}`;
+            scrollToSearchResult(0);
+        } else {
+            controls.classList.add('hidden');
+        }
+    }
+
+    function scrollToSearchResult(idx) {
+        if (searchResults.length === 0) return;
+        searchCurrentIdx = idx;
+        document.getElementById('searchCount').innerText = `${idx + 1}/${searchResults.length}`;
+        
+        const pageNum = searchResults[idx];
+        const canvas = document.getElementById(`page-canvas-${pageNum}`);
+        if (canvas) {
+            canvas.scrollIntoView({behavior: 'smooth', block: 'center'});
+            // Visual bounce/highlight effect without modifying the DOM structure
+            canvas.style.boxShadow = "0 0 0 8px #eab308"; // Tailwind Yellow 500
+            setTimeout(() => {
+                canvas.style.boxShadow = ""; 
+            }, 2500);
+        }
+    }
+
+    function nextSearchResult() {
+        if (searchCurrentIdx < searchResults.length - 1) {
+            scrollToSearchResult(searchCurrentIdx + 1);
+        } else {
+            scrollToSearchResult(0); // loop
+        }
+    }
+
+    function prevSearchResult() {
+        if (searchCurrentIdx > 0) {
+            scrollToSearchResult(searchCurrentIdx - 1);
+        } else {
+            scrollToSearchResult(searchResults.length - 1); // loop
+        }
+    }
 </script>
 {% endblock %}
