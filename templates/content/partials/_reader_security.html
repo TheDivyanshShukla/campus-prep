@@ -1,4 +1,4 @@
-{# Partial: _reader_security.html #}
+{% comment %} {# Partial: _reader_security.html #}
 {# Anti-Piracy DRM Suite JS: kill switch, keyboard blockers, clipboard poisoning, dimension trap, console object trap, canvas poisoning. #}
 {# NOTE: Anti-piracy CSS (user-select, print media) lives in the head block of each reader template so it fires before first paint, preventing text flicker. #}
 
@@ -160,4 +160,4 @@
 
     // ── FINAL: All traps armed ─────────────────────────────────────────────────
     // Body reveal was removed (handled at template level). Traps are now live.
-</script>
+</script> {% endcomment %}

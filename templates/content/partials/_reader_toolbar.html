@@ -93,9 +93,35 @@
         if (typeof applyZoom === 'function') applyZoom();
     }
 
+    // ---------- Eye Care Tint Toggle ----------
+
+    function toggleTint() {
+        const body = document.body;
+        const btn = document.getElementById('tintToggleBtn');
+        body.classList.toggle('tint-enabled');
+        
+        if (body.classList.contains('tint-enabled')) {
+            btn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
+            btn.classList.remove('bg-neutral-100', 'dark:bg-neutral-800');
+        } else {
+            btn.classList.remove('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
+            btn.classList.add('bg-neutral-100', 'dark:bg-neutral-800');
+        }
+    }
+
     // ---------- URL Pseudo-Slug (SEO/UX) ----------
     
     document.addEventListener('DOMContentLoaded', function() {
+        // Auto-enable tint if in dark mode on load
+        if (document.documentElement.classList.contains('dark')) {
+            document.body.classList.add('tint-enabled');
+            const btn = document.getElementById('tintToggleBtn');
+            if (btn) {
+                btn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
+                btn.classList.remove('bg-neutral-100', 'dark:bg-neutral-800');
+            }
+        }
+
         const docTitle = "{{ document.title|escapejs }}";
         if (!docTitle) return;
 
