@@ -10,16 +10,27 @@
         let pageScrollTimer;
 
         function updateCurrentPage() {
-            const viewportMid = window.innerHeight / 2;
-            const canvases    = document.querySelectorAll('#pdf-container canvas[id^="page-canvas-"]');
-            let closestNum = 1, closestDist = Infinity;
-            canvases.forEach(c => {
-                const rect = c.getBoundingClientRect();
-                const dist = Math.abs((rect.top + rect.height / 2) - viewportMid);
-                if (dist < closestDist) { closestDist = dist; closestNum = c.id.split('-')[2]; }
+            const canvases = document.querySelectorAll('#pdf-container canvas[id^="page-canvas-"]');
+            if (!canvases.length) return;
+
+            let closestNum = 1;
+            let minDistance = Infinity;
+            const viewportHalfHeight = window.innerHeight / 2;
+
+            canvases.forEach(canvas => {
+                const rect = canvas.getBoundingClientRect();
+                // We want the page that is taking up the center of the viewport
+                const canvasCenter = rect.top + (rect.height / 2);
+                const distance = Math.abs(viewportHalfHeight - canvasCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestNum = canvas.id.split('-')[2];
+                }
             });
+
             const inp = document.getElementById('pageNavInput');
-            if (inp) {
+            if (inp && inp.value != closestNum) {
                 const docId = inp.dataset.docid;
                 inp.value = closestNum;
                 if (docId) localStorage.setItem('pdf_page_' + docId, closestNum);
@@ -51,12 +62,72 @@
             if (targetPage > pdf.numPages) targetPage = pdf.numPages;
             if (targetPage < 1) targetPage = 1;
 
+            let teleported = false;
+            let teleportCancelled = false;
+            let countdownFinished = false;
+
+            const showTeleportBadge = () => {
+                if (targetPage <= 1) return;
+                const badge = document.getElementById('last-read-badge');
+                const text = document.getElementById('last-read-text');
+                const cancelBtn = document.getElementById('cancel-teleport');
+                
+                if (badge && text && cancelBtn) {
+                    text.innerText = `Teleporting to Page ${targetPage} in 2s...`;
+                    cancelBtn.classList.remove('hidden');
+                    badge.classList.remove('opacity-0', 'translate-y-10');
+                    badge.classList.add('opacity-100', 'translate-y-0');
+
+                    cancelBtn.onclick = () => {
+                        teleportCancelled = true;
+                        text.innerText = "Resume Cancelled";
+                        cancelBtn.classList.add('hidden');
+                        setTimeout(() => {
+                            badge.classList.remove('opacity-100', 'translate-y-0');
+                            badge.classList.add('opacity-0', 'translate-y-10');
+                        }, 2000);
+                    };
+
+                    setTimeout(() => {
+                        countdownFinished = true;
+                        checkAndExecuteTeleport();
+                    }, 2000);
+                }
+            };
+
+            const checkAndExecuteTeleport = () => {
+                if (teleported || teleportCancelled || !countdownFinished) return;
+                
+                const targetCanvas = document.getElementById('page-canvas-' + targetPage);
+                if (targetCanvas) {
+                    teleported = true;
+                    const badge = document.getElementById('last-read-badge');
+                    const text = document.getElementById('last-read-text');
+                    const cancelBtn = document.getElementById('cancel-teleport');
+
+                    if (cancelBtn) cancelBtn.classList.add('hidden');
+                    if (text) text.innerText = "Teleporting...";
+                    
+                    targetCanvas.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    setTimeout(() => {
+                        if (text) text.innerText = "View Restored";
+                        setTimeout(() => {
+                            if (badge) {
+                                badge.classList.remove('opacity-100', 'translate-y-0');
+                                badge.classList.add('opacity-0', 'translate-y-10');
+                            }
+                        }, 2000);
+                    }, 1000);
+                }
+            };
+
             let currPage = 1;
             function renderNextPage() {
                 if (currPage > pdf.numPages) {
-                    if (targetPage > 1) {
-                        const targetCanvas = document.getElementById('page-canvas-' + targetPage);
-                        if (targetCanvas) targetCanvas.scrollIntoView({ behavior: 'auto', block: 'start' });
+                    if (!teleported && targetPage > 1 && !teleportCancelled) {
+                        countdownFinished = true; // Force it if doc is short
+                        checkAndExecuteTeleport();
                     }
                     return;
                 }
@@ -72,11 +143,22 @@
                     context.fillRect(0, 0, canvas.width, canvas.height);
                     container.appendChild(canvas);
                     if (window.currentZoom && window.currentZoom !== 100) canvas.style.width = window.currentZoom + '%';
-                    page.render({ canvasContext: context, viewport: viewport, background: 'white' }).promise.then(function () {
+                    
+                    const renderTask = page.render({ canvasContext: context, viewport: viewport, background: 'white' });
+                    renderTask.promise.then(function () {
                         if (currPage === 1) {
                             spinner.style.opacity = '0';
-                            setTimeout(() => spinner.remove(), 500);
+                            setTimeout(() => {
+                                spinner.remove();
+                                showTeleportBadge();
+                            }, 500);
                         }
+                        
+                        // If we are waiting for this page, try to teleport
+                        if (currPage === targetPage) {
+                            checkAndExecuteTeleport();
+                        }
+
                         currPage++;
                         renderNextPage();
                     });
@@ -87,15 +169,21 @@
 
             // Back-to-top + page tracker on scroll
             const topBtn = document.getElementById('backToTopBtn');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) {
+            const scrollHandler = () => {
+                const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollY > 500) {
                     topBtn.classList.remove('translate-y-20', 'opacity-0');
                 } else {
                     topBtn.classList.add('translate-y-20', 'opacity-0');
                 }
                 clearTimeout(pageScrollTimer);
-                pageScrollTimer = setTimeout(updateCurrentPage, 200);
-            });
+                pageScrollTimer = setTimeout(updateCurrentPage, 50);
+            };
+
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            document.addEventListener('scroll', scrollHandler, { passive: true });
+            // Initial check
+            updateCurrentPage();
 
         }, function (reason) {
             console.error('PDF Failed to Load:', reason);

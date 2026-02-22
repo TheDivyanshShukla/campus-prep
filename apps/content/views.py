@@ -147,47 +147,6 @@ def read_document(request, document_id):
     })
 
 @login_required
-def read_document_fullscreen(request, document_id):
-    """
-    Dedicated full-screen secure PDF renderer using pdf.js, dropping all headers/footers.
-    """
-    document = get_object_or_404(ParsedDocument, pk=document_id, is_published=True)
-    user = request.user
-    
-    # Premium Access Checks
-    has_global_pass = (
-        user.active_subscription_valid_until and 
-        user.active_subscription_valid_until >= timezone.now().date()
-    )
-    
-    has_specific_unlock = user.unlocked_contents.filter(
-        models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
-        models.Q(parsed_document=document)
-    ).filter(
-        models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
-    ).exists()
-    
-    if document.is_premium and document.render_mode == 'DIRECT_PDF':
-        if not (has_global_pass or has_specific_unlock or user.is_staff):
-            fallback_subject = document.subjects.first()
-            if fallback_subject:
-                return redirect('subject_dashboard', subject_id=fallback_subject.id)
-            else:
-                return redirect('home')
-                
-    if document.render_mode != 'DIRECT_PDF' or not document.source_file:
-        return HttpResponseForbidden("This document does not support direct PDF rendering.")
-
-    # Generate One-Time-Use Token for PDF.js (Prevents Network Replay/Scripting)
-    pdf_token = uuid.uuid4().hex
-    request.session[f'pdf_token_{document.id}'] = pdf_token
-
-    return render(request, 'content/document_reader_fullscreen.html', {
-        'document': document,
-        'pdf_token': pdf_token,
-    })
-
-@login_required
 def serve_secure_pdf(request, document_id):
     """
     Acts as an authenticated proxy to stream the raw PDF binary.
