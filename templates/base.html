@@ -103,6 +103,23 @@
             background: rgba(9, 9, 11, 0.7);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
+        /* Custom Premium Dropdown Styles */
+        .premium-dropdown-wrapper {
+            position: relative;
+        }
+        .premium-dropdown-trigger {
+            @apply flex items-center justify-between w-full px-4 py-3 bg-input/40 border border-border rounded-xl text-foreground transition-all duration-200 hover:bg-input/60 focus:outline-none focus:ring-2 focus:ring-ring;
+        }
+        .premium-dropdown-menu {
+            @apply absolute z-[100] w-full mt-2 bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-md bg-background/95 overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top;
+            background-color: hsl(var(--background) / 0.95);
+        }
+        .premium-dropdown-option {
+            @apply px-4 py-3 text-sm cursor-pointer transition-colors hover:bg-accent hover:text-accent-foreground;
+        }
+        .premium-dropdown-option.selected {
+            @apply bg-primary/10 text-primary font-semibold;
+        }
     </style>
     
     {% block head %}{% endblock %}
@@ -253,6 +270,8 @@
                 localStorage.theme = 'dark';
                 document.cookie = "theme=dark; path=/; max-age=31536000";
             }
+            // Emit event so custom dropdowns can react if needed
+            window.dispatchEvent(new Event('theme-changed'));
         };
 
         const themeToggle = document.getElementById('themeToggle');
@@ -270,6 +289,102 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // --- Premium Dropdown Logic ---
+        function initPremiumDropdowns() {
+            const selects = document.querySelectorAll('select[data-premium-select]');
+            
+            selects.forEach(select => {
+                // If already initialized, skip
+                if (select.parentElement.classList.contains('premium-dropdown-wrapper')) return;
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'premium-dropdown-wrapper w-full';
+                
+                // Hide original select
+                select.classList.add('hidden');
+                select.parentNode.insertBefore(wrapper, select);
+                wrapper.appendChild(select);
+
+                // Create Trigger
+                const trigger = document.createElement('button');
+                trigger.type = 'button';
+                trigger.className = 'premium-dropdown-trigger';
+                
+                const selectedOption = select.options[select.selectedIndex];
+                const triggerText = document.createElement('span');
+                triggerText.textContent = selectedOption ? selectedOption.text : 'Select...';
+                
+                const arrow = document.createElement('svg');
+                arrow.className = 'w-4 h-4 ml-2 transition-transform duration-200';
+                arrow.setAttribute('fill', 'none');
+                arrow.setAttribute('viewBox', '0 0 24 24');
+                arrow.setAttribute('stroke', 'currentColor');
+                arrow.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>';
+                
+                trigger.appendChild(triggerText);
+                trigger.appendChild(arrow);
+                wrapper.appendChild(trigger);
+
+                // Create Menu
+                const menu = document.createElement('div');
+                menu.className = 'premium-dropdown-menu hidden';
+                wrapper.appendChild(menu);
+
+                // Populate Options
+                Array.from(select.options).forEach(opt => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'premium-dropdown-option';
+                    if (opt.selected) optionDiv.classList.add('selected');
+                    optionDiv.textContent = opt.text;
+                    optionDiv.dataset.value = opt.value;
+
+                    optionDiv.addEventListener('click', () => {
+                        select.value = opt.value;
+                        triggerText.textContent = opt.text;
+                        
+                        // Update UI
+                        menu.querySelectorAll('.premium-dropdown-option').forEach(o => o.classList.remove('selected'));
+                        optionDiv.classList.add('selected');
+                        
+                        menu.classList.add('hidden');
+                        arrow.classList.remove('rotate-180');
+                        
+                        // Trigger change event on original select
+                        select.dispatchEvent(new Event('change'));
+                    });
+                    
+                    menu.appendChild(optionDiv);
+                });
+
+                // Trigger Toggle
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = !menu.classList.contains('hidden');
+                    
+                    // Close all other premium menus first
+                    document.querySelectorAll('.premium-dropdown-menu').forEach(m => m.classList.add('hidden'));
+                    document.querySelectorAll('.premium-dropdown-trigger svg').forEach(s => s.classList.remove('rotate-180'));
+
+                    if (!isOpen) {
+                        menu.classList.remove('hidden');
+                        arrow.classList.add('rotate-180');
+                    }
+                });
+            });
+        }
+
+        // Close on click outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.premium-dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.premium-dropdown-trigger svg').forEach(s => s.classList.remove('rotate-180'));
+        });
+
+        // Run on load
+        document.addEventListener('DOMContentLoaded', initPremiumDropdowns);
+        
+        // Expose to global for dynamic content if needed
+        window.initPremiumDropdowns = initPremiumDropdowns;
     </script>
     
     {% block scripts %}{% endblock %}
