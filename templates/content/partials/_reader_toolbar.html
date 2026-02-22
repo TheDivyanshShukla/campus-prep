@@ -70,6 +70,29 @@
         }
     }
 
+    // ---------- Cinema Mode (In-page Full Screen) ----------
+    
+    function toggleCinemaMode() {
+        const body = document.body;
+        const mainContainer = document.getElementById('reader-main-container');
+        const fsText = document.getElementById('fullscreen-text');
+        
+        body.classList.toggle('cinema-mode');
+        
+        if (body.classList.contains('cinema-mode')) {
+            mainContainer.classList.remove('max-w-4xl');
+            mainContainer.classList.add('max-w-none');
+            fsText.innerText = 'Exit Full Screen';
+        } else {
+            mainContainer.classList.add('max-w-4xl');
+            mainContainer.classList.remove('max-w-none');
+            fsText.innerText = 'Full Screen';
+        }
+        
+        // Retrigger zoom apply to fix any canvas sizing issues
+        if (typeof applyZoom === 'function') applyZoom();
+    }
+
     // ---------- Back To Top ----------
 
     document.addEventListener('DOMContentLoaded', function () {
