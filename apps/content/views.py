@@ -60,23 +60,22 @@ def subject_dashboard(request, subject_id):
     subject = get_object_or_404(Subject, pk=subject_id)
     documents = ParsedDocument.objects.filter(subjects=subject, is_published=True).order_by('-year', '-created_at')
     
-    # Evaluate global access for the padlock UI
-    has_global_access = False
+    has_gold_pass_general = False # Removed general flag, access is granular now
     unlocked_doc_ids = set()
     
     if request.user.is_authenticated:
-        if request.user.is_staff:
-            has_global_access = True
-        elif request.user.active_subscription_valid_until and request.user.active_subscription_valid_until >= timezone.now().date():
-            has_global_access = True
+        # Check granular Gold Pass unlocks for the exact document type
+        for doc in documents:
+            if doc.is_premium and request.user.has_gold_pass(subject, doc.document_type):
+                unlocked_doc_ids.add(doc.id)
             
-        # Get documents unlocked specifically by purchase that haven't expired
+        # Get documents unlocked specifically by one-off purchase that haven't expired
         valid_unlocked = request.user.unlocked_contents.filter(
             parsed_document__isnull=False
         ).filter(
             models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
         ).values_list('parsed_document_id', flat=True)
-        unlocked_doc_ids = set(valid_unlocked)
+        unlocked_doc_ids.update(valid_unlocked)
             
     pyqs = [doc for doc in documents if doc.document_type == 'PYQ']
     unsolved_pyqs = [doc for doc in documents if doc.document_type == 'UNSOLVED_PYQ']
@@ -98,7 +97,7 @@ def subject_dashboard(request, subject_id):
         'formulas': formulas,
         'syllabus': syllabus,
         'crash_courses': crash_courses,
-        'has_global_access': has_global_access,
+        'has_gold_pass': False, # Deprecated, keeping key for backwards compat if needed temporarily
         'unlocked_doc_ids': unlocked_doc_ids
     })
 
@@ -111,10 +110,7 @@ def read_document(request, document_id, slug=None):
     user = request.user
     
     # Global Subscription Check
-    has_global_pass = (
-        user.active_subscription_valid_until and 
-        user.active_subscription_valid_until >= timezone.now().date()
-    )
+    has_gold_pass = any(user.has_gold_pass(subj, document.document_type) for subj in document.subjects.all())
     
     # Specific Unlocked Content Check (If they bought just this one PDF)
     has_specific_unlock = user.unlocked_contents.filter(
@@ -125,7 +121,7 @@ def read_document(request, document_id, slug=None):
     ).exists()
     
     if document.is_premium:
-        if not (has_global_pass or has_specific_unlock or user.is_staff):
+        if not (has_gold_pass or has_specific_unlock or user.is_staff):
             # User is locked out, redirect to dashboard (use the first linked subject as a fallback)
             fallback_subject = document.subjects.first()
             if fallback_subject:
@@ -178,10 +174,7 @@ def serve_secure_pdf(request, document_id):
     user = request.user
     
     # Premium Access Checks
-    has_global_pass = (
-        user.active_subscription_valid_until and 
-        user.active_subscription_valid_until >= timezone.now().date()
-    )
+    has_gold_pass = any(user.has_gold_pass(subj, document.document_type) for subj in document.subjects.all())
     
     has_specific_unlock = user.unlocked_contents.filter(
         models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
@@ -191,7 +184,7 @@ def serve_secure_pdf(request, document_id):
     ).exists()
     
     if document.is_premium and document.render_mode == 'DIRECT_PDF':
-        if not (has_global_pass or has_specific_unlock or user.is_staff):
+        if not (has_gold_pass or has_specific_unlock or user.is_staff):
             return HttpResponseForbidden("Unauthorized to view this PDF.")
             
     if not document.source_file:
