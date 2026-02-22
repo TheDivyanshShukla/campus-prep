@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'apps.academics.apps.AcademicsConfig',
     'apps.products.apps.ProductsConfig',
     'apps.content.apps.ContentConfig',
+    'apps.gamification.apps.GamificationConfig',
 ]
 
 AUTH_USER_MODEL = 'users.User'
