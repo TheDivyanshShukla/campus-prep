@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}RGPV Live - Your Ultimate Exam Vault{% endblock %}</title>
+    <title>{% block title %}CampusPrep - Your Ultimate Exam Vault{% endblock %}</title>
     
     <!-- Tailwind CSS (CDN per rules) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -241,7 +241,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="text-xl font-bold tracking-tight">
-                        RGPV<span class="text-blue-600 dark:text-blue-400">Live</span>
+                        Campus<span class="text-blue-600 dark:text-blue-400">Prep</span>
                     </a>
                 </div>
                 
@@ -365,7 +365,7 @@
             <!-- Sheet Header -->
             <div class="flex items-center justify-between px-5 py-4 border-b border-border">
                 <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'home' %}{% endif %}" class="text-xl font-bold tracking-tight">
-                    RGPV<span class="text-blue-600 dark:text-blue-400">Live</span>
+                    Campus<span class="text-blue-600 dark:text-blue-400">Prep</span>
                 </a>
                 <button id="mobileMenuClose" class="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-all">
                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -449,7 +449,7 @@
     <!-- Simple Footer -->
     <footer class="border-t border-border mt-auto py-8">
         <div class="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            &copy; 2026 RGPV Live. Built for engineers, by engineers.
+            &copy; 2026 CampusPrep. Built for students, by engineers.
         </div>
     </footer>
 

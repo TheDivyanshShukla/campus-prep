@@ -222,7 +222,7 @@ def get_document_key(request, document_id):
         
     # Verify the Anti-Tamper Hash
     # The client must prove it ran the JS code unmodified by hashing the nonce with a shared secret
-    expected_hash = hashlib.sha256((server_nonce + "RGPV_LIVE_SECURE_PAYLOAD").encode()).hexdigest()
+    expected_hash = hashlib.sha256((server_nonce + "CAMPUS_PREP_SECURE_PAYLOAD").encode()).hexdigest()
     
     if not client_hash or client_hash != expected_hash:
         # If the hash fails, someone is spoofing the fetch request via Burp Suite
