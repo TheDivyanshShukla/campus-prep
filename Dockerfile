@@ -27,11 +27,13 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     uv pip install --system --requirement pyproject.toml
 
+# Install Playwright browsers (into system)
+# We do this BEFORE copying the project files to leverage Docker's layer caching
+# This ensures that browser downloading only happens when pyproject.toml or uv.lock changes
+RUN python -m playwright install --with-deps chromium
+
 # Copy project files
 COPY . .
-
-# Install Playwright browsers (into system)
-RUN python -m playwright install --with-deps chromium
 
 # Prepare static and media dirs
 RUN mkdir -p staticfiles media

@@ -22,7 +22,7 @@
         <form method="GET" action="{% url 'explore_subjects' %}" class="max-w-4xl mx-auto bg-card border border-border rounded-2xl p-4 shadow-sm backdrop-blur-sm bg-background/80 flex flex-col md:flex-row gap-4 items-end">
             <div class="flex-1 w-full">
                 <label class="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Branch</label>
-                <select name="branch" data-premium-select class="w-full bg-input/50 border border-border text-foreground text-sm rounded-xl focus:ring-primary focus:border-primary block p-3 transition-all">
+                <select name="branch" class="w-full bg-input/50 border border-border text-foreground text-sm rounded-xl focus:ring-primary focus:border-primary block p-3 transition-all">
                     {% for b in branches %}
                     <option value="{{ b.id }}" {% if b.id == branch.id %}selected{% endif %}>{{ b.name }}</option>
                     {% endfor %}
@@ -30,7 +30,7 @@
             </div>
             <div class="flex-1 w-full">
                 <label class="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Semester</label>
-                <select name="semester" data-premium-select class="w-full bg-input/50 border border-border text-foreground text-sm rounded-xl focus:ring-primary focus:border-primary block p-3 transition-all">
+                <select name="semester" class="w-full bg-input/50 border border-border text-foreground text-sm rounded-xl focus:ring-primary focus:border-primary block p-3 transition-all">
                     {% for s in semesters %}
                     <option value="{{ s.id }}" {% if s.id == semester.id %}selected{% endif %}>Semester {{ s.number }}</option>
                     {% endfor %}
