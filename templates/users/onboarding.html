@@ -37,9 +37,11 @@
                    <label for="{{ form.branch.id_for_label }}" class="block text-sm font-medium text-foreground mb-2">
                        Select Your Branch
                    </label>
-                        <div class="appearance-none block w-full">
+                   <div class="relative">
+                        <div class="appearance-none block w-full [&>select]:w-full [&>select]:px-4 [&>select]:py-3 [&>select]:border [&>select]:border-border [&>select]:rounded-xl [&>select]:bg-input/40 [&>select]:text-foreground [&>select]:cursor-pointer [&>select]:focus:outline-none [&>select]:focus:ring-2 [&>select]:focus:ring-ring [&>select]:transition-colors">
                             {{ form.branch }}
                         </div>
+                   </div>
                    {% if form.branch.errors %}
                        <p class="mt-1 text-xs text-red-500">{{ form.branch.errors.0 }}</p>
                    {% endif %}
@@ -50,9 +52,11 @@
                    <label for="{{ form.semester.id_for_label }}" class="block text-sm font-medium text-foreground mb-2">
                        Select Your Current Semester
                    </label>
-                        <div class="appearance-none block w-full">
+                   <div class="relative">
+                        <div class="appearance-none block w-full [&>select]:w-full [&>select]:px-4 [&>select]:py-3 [&>select]:border [&>select]:border-border [&>select]:rounded-xl [&>select]:bg-input/40 [&>select]:text-foreground [&>select]:cursor-pointer [&>select]:focus:outline-none [&>select]:focus:ring-2 [&>select]:focus:ring-ring [&>select]:transition-colors">
                             {{ form.semester }}
                         </div>
+                   </div>
                    {% if form.semester.errors %}
                        <p class="mt-1 text-xs text-red-500">{{ form.semester.errors.0 }}</p>
                    {% endif %}

@@ -33,7 +33,7 @@
                 <!-- Branch Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Branch</label>
-                    <select id="home-branch-select" name="branch" data-premium-select class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
+                    <select id="home-branch-select" name="branch" class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
                         {% for branch in branches %}
                         <option value="{{ branch.id }}">{{ branch.name }}</option>
                         {% endfor %}
@@ -43,7 +43,7 @@
                 <!-- Semester Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Semester</label>
-                    <select id="home-semester-select" name="semester" data-premium-select class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
+                    <select id="home-semester-select" name="semester" class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
                         {% for semester in semesters %}
                         <option value="{{ semester.id }}">Semester {{ semester.number }}</option>
                         {% endfor %}
