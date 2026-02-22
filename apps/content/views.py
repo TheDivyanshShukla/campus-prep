@@ -81,7 +81,7 @@ def subject_dashboard(request, subject_id):
     })
 
 @login_required
-def read_document(request, document_id):
+def read_document(request, document_id, slug=None):
     """
     The Zero-PDF native JSON renderer. Includes premium access checks.
     """

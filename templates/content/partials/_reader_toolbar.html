@@ -93,6 +93,31 @@
         if (typeof applyZoom === 'function') applyZoom();
     }
 
+    // ---------- URL Pseudo-Slug (SEO/UX) ----------
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const docTitle = "{{ document.title|escapejs }}";
+        if (!docTitle) return;
+
+        // Sanitize title to URL-friendly slug
+        const slug = docTitle.toLowerCase()
+            .replace(/[^\w\s-]/g, '') // Remove non-word chars
+            .trim()
+            .replace(/[-\s]+/g, '-'); // Replace spaces with -
+
+        const currentPath = window.location.pathname;
+        
+        // Only append if it's not already there
+        if (slug && !currentPath.includes(slug)) {
+            const newUrl = currentPath.endsWith('/') 
+                ? `${currentPath}${slug}` 
+                : `${currentPath}/${slug}`;
+            
+            // pushState updates the URL without reloading the page
+            window.history.replaceState({ path: newUrl }, '', newUrl);
+        }
+    });
+
     // ---------- Back To Top ----------
 
     document.addEventListener('DOMContentLoaded', function () {

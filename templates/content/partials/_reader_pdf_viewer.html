@@ -70,48 +70,41 @@
                 if (targetPage <= 1) return;
                 const badge = document.getElementById('last-read-badge');
                 const text = document.getElementById('last-read-text');
-                const cancelBtn = document.getElementById('cancel-teleport');
+                const restoreBtn = document.getElementById('restore-teleport');
+                const dismissBtn = document.getElementById('dismiss-teleport');
                 
-                if (badge && text && cancelBtn) {
-                    text.innerText = `Teleporting to Page ${targetPage} in 2s...`;
-                    cancelBtn.classList.remove('hidden');
+                if (badge && text && restoreBtn && dismissBtn) {
+                    text.innerText = `RESUME AT PAGE ${targetPage}?`;
                     badge.classList.remove('opacity-0', 'translate-y-10');
                     badge.classList.add('opacity-100', 'translate-y-0');
 
-                    cancelBtn.onclick = () => {
-                        teleportCancelled = true;
-                        text.innerText = "Resume Cancelled";
-                        cancelBtn.classList.add('hidden');
-                        setTimeout(() => {
-                            badge.classList.remove('opacity-100', 'translate-y-0');
-                            badge.classList.add('opacity-0', 'translate-y-10');
-                        }, 2000);
+                    restoreBtn.onclick = () => {
+                        text.innerText = "TELEPORTING...";
+                        restoreBtn.parentElement.classList.add('hidden'); // Hide the button group
+                        checkAndExecuteTeleport(true); // Forced execution
                     };
 
-                    setTimeout(() => {
-                        countdownFinished = true;
-                        checkAndExecuteTeleport();
-                    }, 2000);
+                    dismissBtn.onclick = () => {
+                        badge.classList.remove('opacity-100', 'translate-y-0');
+                        badge.classList.add('opacity-0', 'translate-y-10');
+                        teleportCancelled = true;
+                    };
                 }
             };
 
-            const checkAndExecuteTeleport = () => {
-                if (teleported || teleportCancelled || !countdownFinished) return;
+            const checkAndExecuteTeleport = (manualTrigger = false) => {
+                if (teleported || teleportCancelled) return;
                 
                 const targetCanvas = document.getElementById('page-canvas-' + targetPage);
-                if (targetCanvas) {
+                if (targetCanvas && manualTrigger) {
                     teleported = true;
                     const badge = document.getElementById('last-read-badge');
                     const text = document.getElementById('last-read-text');
-                    const cancelBtn = document.getElementById('cancel-teleport');
-
-                    if (cancelBtn) cancelBtn.classList.add('hidden');
-                    if (text) text.innerText = "Teleporting...";
                     
                     targetCanvas.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
                     setTimeout(() => {
-                        if (text) text.innerText = "View Restored";
+                        if (text) text.innerText = "VIEW RESTORED";
                         setTimeout(() => {
                             if (badge) {
                                 badge.classList.remove('opacity-100', 'translate-y-0');
@@ -124,13 +117,7 @@
 
             let currPage = 1;
             function renderNextPage() {
-                if (currPage > pdf.numPages) {
-                    if (!teleported && targetPage > 1 && !teleportCancelled) {
-                        countdownFinished = true; // Force it if doc is short
-                        checkAndExecuteTeleport();
-                    }
-                    return;
-                }
+                if (currPage > pdf.numPages) return;
                 pdf.getPage(currPage).then(function (page) {
                     const viewport = page.getViewport({ scale: scale });
                     const canvas   = document.createElement('canvas');
