@@ -5,6 +5,7 @@ from .api import ParseDocumentAPI, PublishParsedDocumentAPI
 urlpatterns = [
     # Public & Student Pages
     path('', views.home, name='home'),
+    path('explore/', views.explore_subjects, name='explore_subjects'),
     path('subject/<int:subject_id>/', views.subject_dashboard, name='subject_dashboard'),
     path('read/<int:document_id>/', views.read_document, name='read_document'),
     path('read/<int:document_id>/<path:slug>', views.read_document, name='read_document_slug'),

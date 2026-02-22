@@ -26,6 +26,28 @@ def home(request):
         'semesters': semesters
     })
 
+@login_required
+def explore_subjects(request):
+    branch_id = request.GET.get('branch')
+    semester_id = request.GET.get('semester')
+    
+    branch = get_object_or_404(Branch, id=branch_id) if branch_id else None
+    semester = get_object_or_404(Semester, id=semester_id) if semester_id else None
+    
+    subjects = Subject.objects.filter(is_active=True)
+    if branch:
+        subjects = subjects.filter(branch=branch)
+    if semester:
+        subjects = subjects.filter(semester=semester)
+        
+    return render(request, 'content/explore_subjects.html', {
+        'subjects': subjects,
+        'branch': branch,
+        'semester': semester,
+        'branches': Branch.objects.all(),
+        'semesters': Semester.objects.all()
+    })
+
 @staff_member_required
 def admin_ai_parser(request):
     subjects = Subject.objects.select_related('branch', 'semester').all()

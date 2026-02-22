@@ -29,11 +29,11 @@
                 Find your study material
             </h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <form action="{% url 'explore_subjects' %}" method="GET" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- Branch Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Branch</label>
-                    <select id="home-branch-select" class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
+                    <select id="home-branch-select" name="branch" data-premium-select class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
                         {% for branch in branches %}
                         <option value="{{ branch.id }}">{{ branch.name }}</option>
                         {% endfor %}
@@ -43,7 +43,7 @@
                 <!-- Semester Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Semester</label>
-                    <select id="home-semester-select" class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
+                    <select id="home-semester-select" name="semester" data-premium-select class="w-full bg-input/50 border border-border text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring block p-2.5 transition-colors">
                         {% for semester in semesters %}
                         <option value="{{ semester.id }}">Semester {{ semester.number }}</option>
                         {% endfor %}
@@ -52,11 +52,11 @@
                 
                 <!-- Action Button -->
                 <div class="flex items-end">
-                    <button class="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg text-sm font-medium px-5 py-2.5 focus:outline-none focus:ring-4 focus:ring-ring focus:ring-opacity-50 transition-all shadow-md">
+                    <button type="submit" class="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg text-sm font-medium px-5 py-2.5 focus:outline-none focus:ring-4 focus:ring-ring focus:ring-opacity-50 transition-all shadow-md">
                         Explore Subjects &rarr;
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
         
     </div>

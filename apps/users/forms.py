@@ -17,12 +17,14 @@ class UserOnboardingForm(forms.ModelForm):
     branch = forms.ModelChoiceField(
         queryset=Branch.objects.all(),
         empty_label="Select your Branch",
-        required=True
+        required=True,
+        widget=forms.Select(attrs={'data-premium-select': 'true'})
     )
     semester = forms.ModelChoiceField(
         queryset=Semester.objects.all(),
         empty_label="Select your Semester",
-        required=True
+        required=True,
+        widget=forms.Select(attrs={'data-premium-select': 'true'})
     )
 
     class Meta:
