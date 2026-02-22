@@ -60,28 +60,39 @@
     body.cinema-mode #reader-main-container {
         max-width: 1400px !important;
         width: 100% !important;
-        padding-top: 2rem !important;
+        padding-top: 0 !important;
     }
     
     /* Transition for cinema mode */
     #reader-main-container {
         transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1), width 0.5s ease;
     }
+
+    /* 🌙 Dark Mode Canvas Tint: Subtly inverts the blinding white pages to a soft dark theme */
+    .dark #pdf-container canvas {
+        filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(0.9);
+        transition: filter 0.5s ease;
+    }
+
+    /* Ensure images/emojis in direct renders don't look weird if we use this filter */
+    .dark #pdf-container canvas.no-tint {
+        filter: none !important;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<div id="reader-main-container" class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;">
+<div id="reader-main-container" class="max-w-4xl mx-auto px-0.5 sm:px-6 lg:px-8 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;">
     
     <!-- Sticky / Collapsible Header Wrapper -->
-    <div id="stickyHeader" class="sticky top-0 z-40 bg-background/95 backdrop-blur-md pt-4 pb-2 mb-8 border-b border-border transition-all duration-300 transform origin-top">
+    <div id="stickyHeader" class="sticky top-0 z-40 bg-background/95 backdrop-blur-md pt-4 pb-2 mb-0 transition-all duration-300 transform origin-top">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
             <a href="{% url 'subject_dashboard' current_subject.id %}" class="hidden sm:flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" title="Back to {{ current_subject.code }}">
                 <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 <span>Back to {{ current_subject.code }}</span>
             </a>
             {% if document.render_mode == 'DIRECT_PDF' %}
-            <div class="flex items-center gap-2 flex-wrap justify-end">
+            <div class="flex items-center gap-1 flex-wrap justify-between">
                 <!-- Back arrow: mobile only, first in the controls row -->
                 <a href="{% url 'subject_dashboard' current_subject.id %}" class="sm:hidden p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Back to {{ current_subject.code }}">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -165,8 +176,8 @@
 
     <!-- The Native Render (Looping through JSON structure) -->
     {% if document.render_mode == 'DIRECT_PDF' and document.source_file %}
-    <div class="w-full min-h-[80vh] border border-border rounded-xl overflow-hidden shadow-sm bg-neutral-900 relative flex flex-col items-center py-8">
-        <div id="pdf-container" class="w-[90%] md:w-[85%] flex flex-col gap-6 items-center">
+    <div class="w-full min-h-[80vh] rounded-xl overflow-hidden shadow-sm bg-neutral-900 relative flex flex-col items-center md:py-3">
+        <div id="pdf-container" class="w-[99%] md:w-[97%] flex py-0.5 flex-col gap-6 items-center">
             <!-- Canvas elements will be injected here dynamically -->
         </div>
         <div id="pdf-loading-spinner" class="absolute inset-0 flex flex-col items-center justify-center bg-neutral-900/80 backdrop-blur-sm z-10 transition-opacity duration-300">
@@ -196,10 +207,15 @@
     <!-- Last Read Restore Badge -->
     <!-- Last Read Restore Badge -->
     <div id="last-read-badge" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[60] px-1 py-1 bg-neutral-900/95 backdrop-blur-xl border border-white/10 text-white rounded-full shadow-2xl transition-all duration-700 opacity-0 translate-y-10 flex items-center pointer-events-auto group">
-        <div class="flex items-center gap-3 pl-4 pr-2 py-1.5">
-            <div id="last-read-indicator" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981]"></div>
-            <span id="last-read-text" class="text-[10px] font-bold uppercase tracking-[0.2em] whitespace-nowrap">Teleported to last read position</span>
-            <button id="cancel-teleport" class="hidden ml-2 px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full text-[9px] font-black uppercase tracking-tighter transition-colors">Cancel</button>
+        <div class="flex items-center gap-3 pl-4 pr-2 py-1.5 line-clamp-1">
+            <div id="last-read-indicator" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981] flex-shrink-0"></div>
+            <span id="last-read-text" class="text-[10px] font-bold uppercase tracking-[0.2em] whitespace-nowrap">Go to where you left off?</span>
+            <div class="flex items-center gap-1.5 ml-2">
+                <button id="restore-teleport" class="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/50 rounded-full text-[9px] font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-emerald-900/40">Restore</button>
+                <button id="dismiss-teleport" class="p-1.5 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full text-white transition-colors" title="Dismiss">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
         </div>
     </div>
 </div>

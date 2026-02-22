@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('subject/<int:subject_id>/', views.subject_dashboard, name='subject_dashboard'),
     path('read/<int:document_id>/', views.read_document, name='read_document'),
+    path('read/<int:document_id>/<path:slug>', views.read_document, name='read_document_slug'),
 
     # Admin UI
     path('admin/ai-parser/', views.admin_ai_parser, name='admin_ai_parser'),
