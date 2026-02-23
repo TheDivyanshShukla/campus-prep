@@ -177,11 +177,17 @@ def serve_secure_pdf(request, document_id):
     del request.session[session_key]
 
     try:
-        response = FileResponse(open(document.source_file.path, 'rb'), content_type='application/pdf')
-        # Instruct browser to NEVER cache this file to prevent extraction from disk
+        # Optimization: Redirect to the signed S3/B2 URL directly to offload transfer.
+        # Use a very short expiration (30 seconds) to ensure security.
+        if os.getenv('B2_DIRECT_DELIVERY', 'False') == 'True':
+            storage = document.source_file.storage
+            # Generate a URL that expires in 5 seconds
+            signed_url = storage.url(document.source_file.name, expire=5)
+            return redirect(signed_url)
+            
+        # Fallback/Proxy: Stream through Django if CORS is an issue or direct delivery is disabled.
+        response = FileResponse(document.source_file.open('rb'), content_type='application/pdf')
         response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
-        response['Pragma'] = 'no-cache'
-        response['Expires'] = '0'
         return response
     except Exception as e:
         return HttpResponseForbidden("Failed to retrieve file.")

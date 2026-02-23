@@ -150,6 +150,37 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# Storage Settings (Backblaze B2 S3)
+if not DEBUG or os.getenv('USE_S3', 'False') == 'True':
+    AWS_ACCESS_KEY_ID = os.getenv('B2_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('B2_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('B2_BUCKET_NAME')
+    AWS_S3_REGION_NAME = os.getenv('B2_REGION')
+    AWS_S3_ENDPOINT_URL = os.getenv('B2_ENDPOINT')
+    
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    AWS_S3_SIGNATURE_VERSION = 's3v4'
+    AWS_QUERYSTRING_AUTH = True
+    
+    STORAGES = {
+        "default": {
+            "BACKEND": "storages.backends.s3.S3Storage",
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
+else:
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
