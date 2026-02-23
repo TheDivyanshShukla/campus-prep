@@ -244,7 +244,7 @@
     {% block head %}{% endblock %}
 
     {% if not user.is_authenticated %}
-    <!-- Clerk Configuration -->
+    <!-- Clerk Configuration: Only injected for unauthenticated users -->
     <script>
         window.CLERK_CONFIG = {
             publishableKey: "{{ CLERK_PUBLISHABLE_KEY }}",
@@ -253,6 +253,13 @@
         };
     </script>
     <script src="{% static 'js/clerk_auth.js' %}"></script>
+    {% else %}
+    <!-- Clerk Minimal Config: For authenticated users to allow on-demand logout -->
+    <script>
+        window.CLERK_CONFIG = {
+            djangoAuthenticated: true
+        };
+    </script>
     {% endif %}
 
     <!-- Prevent FOUC (Flash of Unstyled Content) for Dark Mode -->
@@ -376,7 +383,11 @@
 
                             <!-- Logout footer -->
                             <div class="border-t border-border py-1.5">
-                                <a href="{% url 'logout' %}" onclick="handleLogout(event)" class="flex items-center px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+                                <a href="{% url 'logout' %}" 
+                                   onclick="handleLogout(event)"
+                                   data-clerk-pk="{{ CLERK_PUBLISHABLE_KEY }}"
+                                   data-clerk-url="{{ CLERK_JS_URL }}"
+                                   class="flex items-center px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
                                     <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                                     Log out
                                 </a>
@@ -481,7 +492,11 @@
 
                 <!-- Sign Out -->
                 <div class="px-4 pt-3 pb-6">
-                    <a href="{% url 'logout' %}" onclick="handleLogout(event)" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-500/10 transition-colors w-full">
+                    <a href="{% url 'logout' %}" 
+                       onclick="handleLogout(event)"
+                       data-clerk-pk="{{ CLERK_PUBLISHABLE_KEY }}"
+                       data-clerk-url="{{ CLERK_JS_URL }}"
+                       class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-500/10 transition-colors w-full">
                         <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                         Sign out
                     </a>
@@ -517,31 +532,40 @@
             event.preventDefault();
             const logoutUrl = event.currentTarget.href;
             
-            // If Clerk is already loaded (it shouldn't be for authenticated users, but just in case)
+            // Clear local flags
+            sessionStorage.removeItem('_clerkLastSync');
+            
+            // If Clerk is already somehow initialized
             if (window.Clerk && window.Clerk.initialized) {
                 await window.Clerk.signOut();
                 window.location.href = logoutUrl;
                 return;
             }
 
-            // Dynamically load Clerk to sign out without shipping it on every page load
-            const publishableKey = "{{ CLERK_PUBLISHABLE_KEY }}";
-            const jsUrl = "{{ CLERK_JS_URL }}";
-            
-            if (!publishableKey) {
+            // Dynamically load Clerk to sign out without shipping it on every page load.
+            // Keys are provided via data attributes on the link.
+            const pk = event.currentTarget.getAttribute('data-clerk-pk');
+            const url = event.currentTarget.getAttribute('data-clerk-url') || 'clerk.accounts.dev';
+
+            if (!pk) {
+                console.warn("Clerk PK missing, skipping Clerk signout, proceeding with Django logout.");
                 window.location.href = logoutUrl;
                 return;
             }
 
             const script = document.createElement('script');
-            script.setAttribute('data-clerk-publishable-key', publishableKey);
+            script.setAttribute('data-clerk-publishable-key', pk);
             script.async = true;
-            script.src = `https://${jsUrl}/npm/@clerk/clerk-js@latest/dist/clerk.browser.js`;
+            script.src = `https://${url}/npm/@clerk/clerk-js@latest/dist/clerk.browser.js`;
             script.crossOrigin = 'anonymous';
 
             script.onload = async () => {
-                await window.Clerk.load();
-                await window.Clerk.signOut();
+                try {
+                    await window.Clerk.load();
+                    await window.Clerk.signOut();
+                } catch (e) {
+                    console.error("Clerk signout error:", e);
+                }
                 window.location.href = logoutUrl;
             };
 

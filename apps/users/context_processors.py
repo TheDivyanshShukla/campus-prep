@@ -3,15 +3,10 @@ from django.conf import settings
 def clerk_settings(request):
     """
     Exposes Clerk keys to templates.
+    While keys are provided, the SDK is only loaded unauthenticated pages
+    or on-demand during logout for performance.
     """
-    # CLERK_JS_URL is derived from the publishable key for now 
-    # as per standard Clerk frontend setup if not specified.
-    # However, it's safer to just provide the key and let the frontend handle it
-    # or expose the specific URL if needed.
-    
-    # Example PK: pk_test_ZW5hYmxpbmctYmlzb24tMjguY2xlcmsuYWNjb3VudHMuZGV2JA
-    # The URL is enabling-bison-28.clerk.accounts.dev
-    
+
     publishable_key = settings.CLERK_PUBLISHABLE_KEY
     js_url = "clerk.accounts.dev" # Default
     
