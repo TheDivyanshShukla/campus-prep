@@ -5,7 +5,8 @@ const syncClerkSession = async () => {
         if (!window.Clerk || !window.Clerk.session) return;
 
         // If already authenticated by Django, skip background sync unless specifically needed
-        if (CONFIG.djangoAuthenticated && !window._clerkSyncForced) {
+        // This is the core of our optimization: Django session is the source of truth.
+        if (CONFIG.djangoAuthenticated !== false && !window._clerkSyncForced) {
             return;
         }
 
