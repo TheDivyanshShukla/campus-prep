@@ -5,6 +5,7 @@ from django.utils import timezone
 from datetime import timedelta, date
 from django.db.models import Sum, Count, Q, Avg
 from .models import GamerProfile, StudySession
+from .data_services import GamificationDataService
 
 
 @login_required
@@ -13,34 +14,26 @@ def analytics_dashboard(request):
     Renders the Gamification Dashboard with rich XP, Streaks, Subject breakdown,
     hourly heatmap, and complete session log charts.
     """
-    profile, _ = GamerProfile.objects.get_or_create(user=request.user)
+    profile = GamificationDataService.get_user_profile(request.user)
+    analytics = GamificationDataService.get_dashboard_analytics(request.user)
+    
     now = timezone.now()
     today = now.date()
 
-    # ── 1. Lifetime totals ──────────────────────────────────────────────────
-    total_seconds = StudySession.objects.filter(user=request.user).aggregate(
-        total=Sum('duration_seconds')
-    )['total'] or 0
+    # ── 1. Lifetime totals (From cached analytics) ───────────────────────────
+    total_seconds = analytics.get('total_seconds', 0)
     total_hours = round(total_seconds / 3600, 1)
-    total_sessions = StudySession.objects.filter(user=request.user).count()
+    total_sessions = analytics.get('total_sessions', 0)
 
-    # ── 2. Weekly bar chart – last 7 days (minutes per day) ──────────────────
-    weekly_labels = []
-    weekly_minutes = []
-    weekly_xp = []
-
-    for i in range(6, -1, -1):
-        target_date = today - timedelta(days=i)
-        qs = StudySession.objects.filter(user=request.user, start_time__date=target_date)
-        day_seconds = qs.aggregate(total=Sum('duration_seconds'))['total'] or 0
-        weekly_labels.append(target_date.strftime('%a %d'))
-        weekly_minutes.append(round(day_seconds / 60))
-        weekly_xp.append(round(day_seconds / 60))  # 1 XP ≈ 1 min
-
-    today_minutes = weekly_minutes[-1]
+    # ── 2. Weekly bar chart (From cached analytics) ──────────────────────────
+    weekly_labels = analytics.get('weekly_labels', [])
+    weekly_minutes = analytics.get('weekly_minutes', [])
+    weekly_xp = weekly_minutes # 1 XP ≈ 1 min
+    
+    today_minutes = weekly_minutes[-1] if weekly_minutes else 0
 
     # ── 3. Monthly heatmap – contribution-style (last 30 days) ───────────────
-    heatmap_data = []
+    heatmap_data = [] # Heatmap is still calculated here or we could move it to service
     for i in range(29, -1, -1):
         d = today - timedelta(days=i)
         secs = StudySession.objects.filter(
@@ -51,24 +44,9 @@ def analytics_dashboard(request):
             'minutes': round(secs / 60),
         })
 
-    # ── 4. Subject donut chart (all-time) ────────────────────────────────────
-    subject_data = (
-        StudySession.objects
-        .filter(user=request.user, subject__isnull=False)
-        .values('subject__name', 'subject__code')
-        .annotate(total_seconds=Sum('duration_seconds'))
-        .order_by('-total_seconds')[:8]
-    )
-    subject_labels = [row['subject__name'] for row in subject_data]
-    subject_minutes = [round(row['total_seconds'] / 60) for row in subject_data]
-
-    # Sessions with no subject
-    no_subject_secs = StudySession.objects.filter(
-        user=request.user, subject__isnull=True
-    ).aggregate(total=Sum('duration_seconds'))['total'] or 0
-    if no_subject_secs:
-        subject_labels.append('Uncategorised')
-        subject_minutes.append(round(no_subject_secs / 60))
+    # ── 4. Subject donut chart (From cached analytics) ───────────────────────
+    subject_labels = analytics.get('subject_labels', [])
+    subject_minutes = analytics.get('subject_minutes', [])
 
     # ── 5. Hourly heatmap (24h distribution – all-time) ──────────────────────
     hourly_data = [0] * 24

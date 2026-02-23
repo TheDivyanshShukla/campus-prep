@@ -11,7 +11,10 @@ import json
 import os
 import binascii
 import hashlib
+import hashlib
 import uuid
+from apps.content.data_services import ContentDataService
+from apps.users.data_services import UserDataService
 from apps.academics.models import Subject
 from apps.content.models import ParsedDocument
 
@@ -19,11 +22,28 @@ from apps.academics.models import Subject, Branch, Semester
 from apps.content.models import ParsedDocument
 
 def home(request):
-    branches = Branch.objects.all()
-    semesters = Semester.objects.all()
+    branches = ContentDataService.get_all_branches()
+    semesters = ContentDataService.get_all_semesters()
+    
+    user_branch_id = None
+    user_semester_id = None
+    is_onboarded = False
+    
+    if request.user.is_authenticated:
+        if request.user.preferred_branch:
+            user_branch_id = request.user.preferred_branch.id
+        if request.user.preferred_semester:
+            user_semester_id = request.user.preferred_semester.id
+        
+        if user_branch_id and user_semester_id:
+            is_onboarded = True
+
     return render(request, 'content/home.html', {
         'branches': branches,
-        'semesters': semesters
+        'semesters': semesters,
+        'user_branch_id': user_branch_id,
+        'user_semester_id': user_semester_id,
+        'is_onboarded': is_onboarded
     })
 
 @login_required
@@ -35,6 +55,8 @@ def explore_subjects(request):
 
 @staff_member_required
 def admin_ai_parser(request):
+    # This might not need caching as much, but we could add it if needed.
+    # For now, keeping it simple or using a service method.
     subjects = Subject.objects.select_related('branch', 'semester').all()
     return render(request, 'content/admin_ai_parser.html', {'subjects': subjects})
 
@@ -42,25 +64,12 @@ def subject_dashboard(request, subject_id):
     """
     Displays the catalog of AI-parsed documents for a specific subject.
     """
-    subject = get_object_or_404(Subject, pk=subject_id)
-    documents = ParsedDocument.objects.filter(subjects=subject, is_published=True).order_by('-year', '-created_at')
-    
-    has_gold_pass_general = False # Removed general flag, access is granular now
-    unlocked_doc_ids = set()
-    
-    if request.user.is_authenticated:
-        # Check granular Gold Pass unlocks for the exact document type
-        for doc in documents:
-            if doc.is_premium and request.user.has_gold_pass(subject, doc.document_type):
-                unlocked_doc_ids.add(doc.id)
-            
-        # Get documents unlocked specifically by one-off purchase that haven't expired
-        valid_unlocked = request.user.unlocked_contents.filter(
-            parsed_document__isnull=False
-        ).filter(
-            models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
-        ).values_list('parsed_document_id', flat=True)
-        unlocked_doc_ids.update(valid_unlocked)
+    subject = ContentDataService.get_subject_by_id(subject_id)
+    if not subject:
+        return redirect('home')
+        
+    documents = ContentDataService.get_published_documents_for_subject(subject)
+    unlocked_doc_ids = UserDataService.get_unlocked_document_ids(request.user, documents)
             
     pyqs = [doc for doc in documents if doc.document_type == 'PYQ']
     unsolved_pyqs = [doc for doc in documents if doc.document_type == 'UNSOLVED_PYQ']
@@ -82,7 +91,7 @@ def subject_dashboard(request, subject_id):
         'formulas': formulas,
         'syllabus': syllabus,
         'crash_courses': crash_courses,
-        'has_gold_pass': False, # Deprecated, keeping key for backwards compat if needed temporarily
+        'has_gold_pass': False, # Deprecated
         'unlocked_doc_ids': unlocked_doc_ids
     })
 
@@ -91,28 +100,19 @@ def read_document(request, document_id, slug=None):
     """
     The Zero-PDF native JSON renderer. Includes premium access checks.
     """
-    document = get_object_or_404(ParsedDocument, pk=document_id, is_published=True)
+    document = ContentDataService.get_document_by_id(document_id)
+    if not document:
+        return redirect('home')
+        
     user = request.user
     
-    # Global Subscription Check
-    has_gold_pass = any(user.has_gold_pass(subj, document.document_type) for subj in document.subjects.all())
-    
-    # Specific Unlocked Content Check (If they bought just this one PDF)
-    has_specific_unlock = user.unlocked_contents.filter(
-        models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
-        models.Q(parsed_document=document)
-    ).filter(
-        models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
-    ).exists()
-    
-    if document.is_premium:
-        if not (has_gold_pass or has_specific_unlock or user.is_staff):
-            # User is locked out, redirect to dashboard (use the first linked subject as a fallback)
-            fallback_subject = document.subjects.first()
-            if fallback_subject:
-                return redirect('subject_dashboard', subject_id=fallback_subject.id)
-            else:
-                return redirect('home')
+    if not UserDataService.check_premium_access(user, document):
+        # User is locked out, redirect to dashboard
+        fallback_subject = document.subjects.first()
+        if fallback_subject:
+            return redirect('subject_dashboard', subject_id=fallback_subject.id)
+        else:
+            return redirect('home')
 
     # Security: Obfuscate the structured json payload so it cannot be scraped via View Source or cURL
     # We generate a random hex key for every request and store it in the session
@@ -153,24 +153,13 @@ def read_document(request, document_id, slug=None):
 def serve_secure_pdf(request, document_id):
     """
     Acts as an authenticated proxy to stream the raw PDF binary.
-    Hides the true URL of the bucket/media folder and prevents unauthenticated downloads via URL sharing.
     """
-    document = get_object_or_404(ParsedDocument, pk=document_id, is_published=True)
-    user = request.user
-    
-    # Premium Access Checks
-    has_gold_pass = any(user.has_gold_pass(subj, document.document_type) for subj in document.subjects.all())
-    
-    has_specific_unlock = user.unlocked_contents.filter(
-        models.Q(product__subject__in=document.subjects.all(), product__category__name__icontains=document.document_type) |
-        models.Q(parsed_document=document)
-    ).filter(
-        models.Q(valid_until__isnull=True) | models.Q(valid_until__gte=timezone.now().date())
-    ).exists()
-    
-    if document.is_premium and document.render_mode == 'DIRECT_PDF':
-        if not (has_gold_pass or has_specific_unlock or user.is_staff):
-            return HttpResponseForbidden("Unauthorized to view this PDF.")
+    document = ContentDataService.get_document_by_id(document_id)
+    if not document:
+        return HttpResponseForbidden("Document not found.")
+        
+    if not UserDataService.check_premium_access(request.user, document):
+        return HttpResponseForbidden("Unauthorized to view this PDF.")
             
     if not document.source_file:
         return HttpResponseForbidden("Document has no PDF file attached.")

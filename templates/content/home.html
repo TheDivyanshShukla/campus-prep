@@ -29,14 +29,14 @@
                 Find your study material
             </h3>
             
-            <form action="{% url 'onboarding' %}" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <form action="{% if user.is_authenticated and is_onboarded %}{% url 'change_program' %}{% else %}{% url 'onboarding' %}{% endif %}" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {% csrf_token %}
                 <!-- Branch Config -->
                 <div>
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Branch</label>
                     <select id="home-branch-select" name="branch" class="w-full h-12 px-4 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all">
                         {% for branch in branches %}
-                        <option value="{{ branch.id }}">{{ branch.name }}</option>
+                        <option value="{{ branch.id }}" {% if branch.id == user_branch_id %}selected{% endif %}>{{ branch.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -46,7 +46,7 @@
                     <label class="block text-sm font-medium text-muted-foreground mb-1.5 text-left">Semester</label>
                     <select id="home-semester-select" name="semester" class="w-full h-12 px-4 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all">
                         {% for semester in semesters %}
-                        <option value="{{ semester.id }}">Semester {{ semester.number }}</option>
+                        <option value="{{ semester.id }}" {% if semester.id == user_semester_id %}selected{% endif %}>Semester {{ semester.number }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="flex flex-col">
                     <label class="block text-sm font-medium text-transparent mb-1.5 pointer-events-none select-none">Action</label>
                     <button type="submit" class="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-sm font-bold focus:outline-none focus:ring-4 focus:ring-ring focus:ring-opacity-50 transition-all shadow-md active:scale-[0.98]">
-                        Find Study Material &rarr;
+                        {% if is_onboarded %}Go to Dashboard{% else %}Find Study Material{% endif %} &rarr;
                     </button>
                 </div>
             </form>

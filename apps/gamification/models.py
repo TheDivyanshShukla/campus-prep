@@ -21,15 +21,15 @@ class GamerProfile(models.Model):
         self.save(update_fields=['total_xp'])
         new_level = self.get_level_info()['level']
         
-        if new_level > old_level:
-            from apps.notifications.services import NotificationService
-            NotificationService.notify(
-                user=self.user,
-                level='success',
-                title="Level Up! 🎉",
-                message=f"Congratulations! You've reached Level {new_level}: {self.get_level_info()['name']}.",
-                link='/dashboard/'
-            )
+        # if new_level > old_level:
+        #     from apps.notifications.services import NotificationService
+        #     NotificationService.notify(
+        #         user=self.user,
+        #         level='success',
+        #         title="Level Up! 🎉",
+        #         message=f"Congratulations! You've reached Level {new_level}: {self.get_level_info()['name']}.",
+        #         link='/dashboard/'
+        #     )
 
     def get_level_info(self):
         xp = self.total_xp
