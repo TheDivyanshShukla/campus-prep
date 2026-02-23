@@ -280,7 +280,7 @@ class DocumentParserService:
             document_type=doc_context['document_type_display']
         )
 
-        CONTENT_GUIDELINES = """
+        CONTENT_GUIDELINES = r"""
 --- CONTENT FIDELITY & FORMATTING RULES ---
 1. CRITICAL: PRESERVE ORIGINAL CONTENT. Do not paraphrase or summarize. Transcribe exactly.
 2. DO NOT CHANGE DEFINITIONS. Transcribe exactly.
