@@ -8,6 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from apps.academics.models import Subject, Unit
 from .models import Question, QuestionSet, UserAttempt, UserAnswer
+from .data_services import PracticeDataService
+from apps.academics.data_services import AcademicsDataService
 
 
 # ── Index — subject / unit / type picker ──────────────────────────────────────
@@ -15,23 +17,22 @@ from .models import Question, QuestionSet, UserAttempt, UserAnswer
 def index(request):
     user = request.user
     # Show subjects relevant to the user's branch/semester preferences
-    subjects = Subject.objects.select_related('branch', 'semester').filter(is_active=True)
-
-    # Filter by user preferences if they have them
-    if hasattr(user, 'preferred_branch') and user.preferred_branch:
-        subjects = subjects.filter(branch=user.preferred_branch)
-    if hasattr(user, 'preferred_semester') and user.preferred_semester:
-        subjects = subjects.filter(semester=user.preferred_semester)
+    branch = getattr(user, 'preferred_branch', None)
+    semester = getattr(user, 'preferred_semester', None)
+    
+    subjects = AcademicsDataService.get_subjects_by_branch_and_semester(branch, semester)
+    if not subjects:
+        # Fallback if no preferences
+        subjects = Subject.objects.select_related('branch', 'semester').filter(is_active=True)
 
     # Pre-fetch unit counts and set counts per subject for display
     subject_data = []
     for subj in subjects:
-        set_count = QuestionSet.objects.filter(subject=subj, is_published=True).count()
-        q_count   = Question.objects.filter(subject=subj, is_published=True).count()
+        stats = PracticeDataService.get_subject_practice_stats(subj)
         subject_data.append({
             'subject': subj,
-            'set_count': set_count,
-            'question_count': q_count,
+            'set_count': stats['set_count'],
+            'question_count': stats['q_count'],
             'units': list(subj.units.all()),
         })
 
@@ -43,17 +44,19 @@ def index(request):
 # ── Set list for a subject (optionally filtered by unit) ──────────────────────
 @login_required
 def question_set_list(request, subject_id):
-    subject  = get_object_or_404(Subject, id=subject_id, is_active=True)
+    subject  = AcademicsDataService.get_subject_by_id(subject_id)
+    if not subject:
+        return redirect('practice_index')
+        
     unit_id  = request.GET.get('unit')
     unit     = None
-    sets_qs  = QuestionSet.objects.filter(subject=subject, is_published=True).prefetch_related('questions')
-
     if unit_id:
         try:
             unit = Unit.objects.get(id=unit_id, subject=subject)
-            sets_qs = sets_qs.filter(unit=unit)
         except Unit.DoesNotExist:
             pass
+
+    sets_qs = PracticeDataService.get_published_sets_for_subject(subject, unit)
 
     return render(request, 'practice/set_list.html', {
         'subject': subject,
@@ -66,7 +69,9 @@ def question_set_list(request, subject_id):
 # ── Quiz page ─────────────────────────────────────────────────────────────────
 @login_required
 def quiz(request, set_id):
-    question_set = get_object_or_404(QuestionSet, id=set_id, is_published=True)
+    question_set = PracticeDataService.get_question_set_by_id(set_id)
+    if not question_set:
+        return redirect('practice_index')
     questions    = list(question_set.questions.filter(is_published=True))
 
     # Serialize question data to JSON for JavaScript rendering
@@ -128,25 +133,6 @@ def submit_quiz(request, set_id):
     attempt.score      = score
     attempt.finished_at = timezone.now()
     attempt.save()
-
-    # Notify user about practice achievement
-    from apps.notifications.services import NotificationService
-    if attempt.percentage >= 80:
-        NotificationService.notify(
-            user=request.user,
-            level='success',
-            title="Great Job! 🏆",
-            message=f"You completed '{question_set.title}' with {attempt.percentage}% accuracy!",
-            link=f"/practice/result/{attempt.id}/"
-        )
-    else:
-        NotificationService.notify(
-            user=request.user,
-            level='info',
-            title="Practice Complete",
-            message=f"You've finished '{question_set.title}'. Keep practicing to improve!",
-            link=f"/practice/result/{attempt.id}/"
-        )
 
     return redirect('practice_result', attempt_id=attempt.id)
 

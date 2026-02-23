@@ -9,6 +9,7 @@ import json
 from apps.academics.models import Subject
 from .forms import CustomUserCreationForm, UserOnboardingForm, ChangeProgramForm
 from .services import ClerkService
+from apps.content.data_services import ContentDataService
 
 def signup_view(request):
     if request.user.is_authenticated:
@@ -147,10 +148,10 @@ def user_dashboard(request):
     if not (user.first_name and user.last_name and user.phone_number and user.preferred_branch and user.preferred_semester):
         return redirect('onboarding')
         
-    subjects = Subject.objects.filter(
-        branch=user.preferred_branch,
-        semester=user.preferred_semester
-    ).order_by('code')
+    subjects = ContentDataService.get_subjects_by_branch_and_semester(
+        user.preferred_branch,
+        user.preferred_semester
+    )
     
     
     return render(request, 'users/dashboard.html', {

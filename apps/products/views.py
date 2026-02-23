@@ -6,7 +6,10 @@ from django.utils import timezone
 from datetime import timedelta
 from apps.content.models import ParsedDocument
 from apps.products.models import Purchase, UnlockedContent
-from apps.academics.models import ExamDate
+from apps.academics.models import ExamDate, Branch, Semester
+from .data_services import ProductDataService
+from apps.academics.data_services import AcademicsDataService
+from apps.content.data_services import ContentDataService
 import razorpay
 
 # Initialize Razorpay Client
@@ -14,14 +17,16 @@ client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_S
 
 @login_required
 def checkout_document(request, document_id):
-    document = get_object_or_404(ParsedDocument, id=document_id)
+    document = ContentDataService.get_document_by_id(document_id)
+    if not document:
+        return redirect('home')
     
     # Block totally free documents
     if not document.is_premium or not document.price:
-        return redirect('subject_dashboard', subject_id=document.subject.id)
+        return redirect('subject_dashboard', subject_id=document.subjects.first().id)
 
     # Has the user already bought it?
-    if UnlockedContent.objects.filter(user=request.user, parsed_document=document).exists():
+    if ProductDataService.user_has_unlocked_document(request.user, document):
         return redirect('read_document', document_id=document.id)
 
     # Create Razorpay order (amount is in paise)
@@ -68,8 +73,16 @@ def checkout_gold_pass(request):
     if not branch_id or not semester_id:
         return redirect('home')
         
-    branch = get_object_or_404(Branch, id=branch_id)
-    semester = get_object_or_404(Semester, id=semester_id)
+    branch = AcademicsDataService.get_or_set_cache(
+        f'branch_{branch_id}', 
+        lambda: Branch.objects.get(id=branch_id), 
+        timeout=3600
+    )
+    semester = AcademicsDataService.get_or_set_cache(
+        f'semester_{semester_id}',
+        lambda: Semester.objects.get(id=semester_id),
+        timeout=3600
+    )
     
     # Check if a SEMESTER plan exists
     try:
@@ -148,12 +161,14 @@ def payment_verify(request):
 
             # Calculate the validity based on the Exam Date for this branch + semester
             if purchase.parsed_document:
-                subject = purchase.parsed_document.subject
+                subject = purchase.parsed_document.subjects.first()
                 valid_until_date = None
-                try:
-                    exam = ExamDate.objects.get(branch=subject.branch, semester=subject.semester)
-                    valid_until_date = exam.date
-                except ExamDate.DoesNotExist:
+                if subject:
+                    exam = AcademicsDataService.get_exam_date(subject.branch, subject.semester)
+                    if exam:
+                        valid_until_date = exam.date
+                
+                if not valid_until_date:
                     # If no ExamDate configured, default to 6 months from purchase
                     valid_until_date = timezone.now().date() + timedelta(days=180)
 
@@ -187,10 +202,11 @@ def payment_verify(request):
                     purchase.user.active_subscription_plan = purchase.subscription
                     
                     valid_until_date = None
-                    try:
-                        exam = ExamDate.objects.get(branch=branch, semester=semester)
+                    exam = AcademicsDataService.get_exam_date(branch, semester)
+                    if exam:
                         valid_until_date = exam.date
-                    except ExamDate.DoesNotExist:
+                    
+                    if not valid_until_date:
                         valid_until_date = timezone.now().date() + timedelta(days=180)
                         
                     purchase.user.active_subscription_valid_until = valid_until_date
@@ -280,10 +296,11 @@ def process_free_checkout(request):
                 subject = document.subjects.first()
                 valid_until_date = None
                 if subject:
-                    try:
-                        exam = ExamDate.objects.get(branch=subject.branch, semester=subject.semester)
+                    exam = AcademicsDataService.get_exam_date(subject.branch, subject.semester)
+                    if exam:
                         valid_until_date = exam.date
-                    except ExamDate.DoesNotExist:
+                    
+                    if not valid_until_date:
                         valid_until_date = timezone.now().date() + timedelta(days=180)
                 else:
                     valid_until_date = timezone.now().date() + timedelta(days=180)
@@ -316,10 +333,11 @@ def process_free_checkout(request):
                 request.user.active_subscription_plan = plan
                 
                 valid_until_date = None
-                try:
-                    exam = ExamDate.objects.get(branch=branch, semester=semester)
+                exam = AcademicsDataService.get_exam_date(branch, semester)
+                if exam:
                     valid_until_date = exam.date
-                except ExamDate.DoesNotExist:
+                
+                if not valid_until_date:
                     valid_until_date = timezone.now().date() + timedelta(days=180)
                     
                 request.user.active_subscription_valid_until = valid_until_date
