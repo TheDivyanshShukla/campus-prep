@@ -43,4 +43,7 @@ def vapid_config(request):
 def service_worker(request):
     sw_path = os.path.join(settings.BASE_DIR, 'static', 'sw.js')
     response = FileResponse(open(sw_path, 'rb'), content_type='application/javascript')
+    # Use a short cache for the service worker (e.g., 1 hour)
+    # Browsers will still check for updates, but this avoids redundant fetches during a session
+    response['Cache-Control'] = 'public, max-age=3600'
     return response

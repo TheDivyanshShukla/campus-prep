@@ -30,28 +30,38 @@
             </div>
             {% endif %}
 
-            <div class="space-y-6">
+            <div class="space-y-4">
                 
-                <!-- Branch Selection -->
-                <div>
-                   <label for="{{ form.branch.id_for_label }}" class="block text-sm font-medium text-foreground mb-2">
-                       Select Your Branch
-                   </label>
-                   {{ form.branch }}
-                   {% if form.branch.errors %}
-                       <p class="mt-1 text-xs text-red-500">{{ form.branch.errors.0 }}</p>
-                   {% endif %}
+                <!-- Personal Info -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="{{ form.first_name.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">First Name</label>
+                        <input type="text" name="first_name" id="{{ form.first_name.id_for_label }}" value="{{ form.first_name.value|default_if_none:'' }}" class="w-full px-3 py-2 border border-border rounded-lg bg-input/50 focus:ring-2 focus:ring-ring outline-none" required>
+                    </div>
+                    <div>
+                        <label for="{{ form.last_name.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">Last Name</label>
+                        <input type="text" name="last_name" id="{{ form.last_name.id_for_label }}" value="{{ form.last_name.value|default_if_none:'' }}" class="w-full px-3 py-2 border border-border rounded-lg bg-input/50 focus:ring-2 focus:ring-ring outline-none" required>
+                    </div>
                 </div>
 
-                <!-- Semester Selection -->
                 <div>
-                   <label for="{{ form.semester.id_for_label }}" class="block text-sm font-medium text-foreground mb-2">
-                       Select Your Current Semester
-                   </label>
-                   {{ form.semester }}
-                   {% if form.semester.errors %}
-                       <p class="mt-1 text-xs text-red-500">{{ form.semester.errors.0 }}</p>
-                   {% endif %}
+                    <label for="{{ form.phone_number.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">Phone Number</label>
+                    <input type="text" name="phone_number" id="{{ form.phone_number.id_for_label }}" value="{{ form.phone_number.value|default_if_none:'' }}" class="w-full px-3 py-2 border border-border rounded-lg bg-input/50 focus:ring-2 focus:ring-ring outline-none" required>
+                </div>
+
+                <!-- Academic Info -->
+                <div>
+                   <label for="{{ form.branch.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">Select Your Branch</label>
+                   <div class="[&>select]:w-full [&>select]:px-3 [&>select]:py-2 [&>select]:border [&>select]:border-border [&>select]:rounded-lg [&>select]:bg-input/50 focus:[&>select]:ring-2 focus:[&>select]:ring-ring outline-none">
+                       {{ form.branch }}
+                   </div>
+                </div>
+
+                <div>
+                   <label for="{{ form.semester.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">Select Your Current Semester</label>
+                   <div class="[&>select]:w-full [&>select]:px-3 [&>select]:py-2 [&>select]:border [&>select]:border-border [&>select]:rounded-lg [&>select]:bg-input/50 focus:[&>select]:ring-2 focus:[&>select]:ring-ring outline-none">
+                       {{ form.semester }}
+                   </div>
                 </div>
 
             </div>

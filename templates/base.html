@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" class="h-full {% if request.COOKIES.theme == 'dark' %}dark{% endif %}">
 <head>
@@ -227,9 +228,32 @@
             scrollbar-width: thin;
             scrollbar-color: hsl(var(--muted-foreground) / 0.2) transparent;
         }
+        /* Hide Clerk Branding */
+        .cl-internal-ph6ozr, .cl-internal-1pybeun, .cl-footer, [data-clerk-branding], .cl-clerk-branding {
+            display: none !important;
+        }
+
+        /* Adjust backgrounds for better Clerk component blending */
+        .cl-card {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
     </style>
     
     {% block head %}{% endblock %}
+
+    {% if not user.is_authenticated %}
+    <!-- Clerk Configuration -->
+    <script>
+        window.CLERK_CONFIG = {
+            publishableKey: "{{ CLERK_PUBLISHABLE_KEY }}",
+            jsUrl: "{{ CLERK_JS_URL }}",
+            djangoAuthenticated: false
+        };
+    </script>
+    <script src="{% static 'js/clerk_auth.js' %}"></script>
+    {% endif %}
 
     <!-- Prevent FOUC (Flash of Unstyled Content) for Dark Mode -->
     <script>
@@ -270,6 +294,11 @@
                 
                 <!-- Auth Area -->
                 <div class="hidden md:flex items-center gap-2">
+                    <!-- Desktop Theme Toggle -->
+                    <button id="themeToggle" class="p-2 text-muted-foreground hover:text-foreground transition-all duration-200 hover:bg-muted/60 rounded-full" title="Toggle theme">
+                        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
 
                     {% if user.is_authenticated %}
                     <!-- Notifications Bell -->
@@ -328,7 +357,7 @@
                                     <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 16H4L5 9z"></path></svg>
                                     My Purchases
                                 </a>
-                                <a href="{% url 'onboarding' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                <a href="{% url 'change_program' %}" class="flex items-center px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
                                     <svg class="w-4 h-4 mr-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                     Change Program
                                 </a>
@@ -343,26 +372,13 @@
                                     Enable Desktop Alerts
                                 </button>
 
-                                <!-- Theme Toggle Row -->
-                                <button id="themeToggle" class="w-full flex items-center justify-between px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
-                                    <div class="flex items-center">
-                                        <svg class="w-4 h-4 mr-3 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                                        <svg class="w-4 h-4 mr-3 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                                        <span class="dark:hidden">Light Mode</span>
-                                        <span class="hidden dark:inline">Dark Mode</span>
-                                    </div>
-                                    <!-- Visual pill switch -->
-                                    <div class="relative w-9 h-5 rounded-full bg-muted border border-border transition-colors duration-200" id="themeTogglePill">
-                                        <div class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-muted-foreground/50 dark:bg-primary dark:translate-x-4 transition-all duration-200"></div>
-                                    </div>
-                                </button>
                             </div>
 
                             <!-- Logout footer -->
                             <div class="border-t border-border py-1.5">
-                                <a href="{% url 'logout' %}" class="flex items-center px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+                                <a href="{% url 'logout' %}" onclick="handleLogout(event)" class="flex items-center px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
                                     <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                                    Sign out
+                                    Log out
                                 </a>
                             </div>
                         </div>
@@ -455,8 +471,8 @@
                             <svg class="w-5 h-5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 16H4L5 9z"></path></svg>
                             My Purchases
                         </a>
-                        <a href="{% url 'onboarding' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted transition-colors">
-                            <svg class="w-5 h-5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c-.94 1.543.826 3.31 2.37 2.37a1.724 1.724 0 002.572 1.065c.426 1.756 2.924 1.756 3.35 0a1.724 1.724 0 002.573-1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 00-1.065 2.572c-1.756.426-1.756 2.924 0 3.35a1.724 1.724 0 001.066 2.573c-.94 1.543.826 3.31 2.37 2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <a href="{% url 'change_program' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted transition-colors">
+                            <svg class="w-5 h-5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             Change Program
                         </a>
 
@@ -465,7 +481,7 @@
 
                 <!-- Sign Out -->
                 <div class="px-4 pt-3 pb-6">
-                    <a href="{% url 'logout' %}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-500/10 transition-colors w-full">
+                    <a href="{% url 'logout' %}" onclick="handleLogout(event)" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-500/10 transition-colors w-full">
                         <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                         Sign out
                     </a>
@@ -496,6 +512,52 @@
 
     <!-- Header & Theme Scripts -->
     <script>
+        // --- Logout Logic ---
+        async function handleLogout(event) {
+            event.preventDefault();
+            const logoutUrl = event.currentTarget.href;
+            
+            // If Clerk is already loaded (it shouldn't be for authenticated users, but just in case)
+            if (window.Clerk && window.Clerk.initialized) {
+                await window.Clerk.signOut();
+                window.location.href = logoutUrl;
+                return;
+            }
+
+            // Dynamically load Clerk to sign out without shipping it on every page load
+            const publishableKey = "{{ CLERK_PUBLISHABLE_KEY }}";
+            const jsUrl = "{{ CLERK_JS_URL }}";
+            
+            if (!publishableKey) {
+                window.location.href = logoutUrl;
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.setAttribute('data-clerk-publishable-key', publishableKey);
+            script.async = true;
+            script.src = `https://${jsUrl}/npm/@clerk/clerk-js@latest/dist/clerk.browser.js`;
+            script.crossOrigin = 'anonymous';
+
+            script.onload = async () => {
+                await window.Clerk.load();
+                await window.Clerk.signOut();
+                window.location.href = logoutUrl;
+            };
+
+            script.onerror = () => {
+                console.error("Clerk logout failed to load, proceeding with Django logout.");
+                window.location.href = logoutUrl;
+            };
+
+            document.head.appendChild(script);
+
+            // Safety timeout: if Clerk takes too long, just logout from Django
+            setTimeout(() => {
+                window.location.href = logoutUrl;
+            }, 3000);
+        }
+
         // --- Theme Toggle Logic ---
         const toggleTheme = () => {
             if (document.documentElement.classList.contains('dark')) {
