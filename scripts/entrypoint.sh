@@ -13,6 +13,9 @@ fi
 echo "Running migrations..."
 python manage.py migrate
 
+echo "Checking for academic data..."
+python manage.py shell -c "from apps.academics.models import Branch; import os; os.system('python manage.py seed_rgpv') if Branch.objects.count() == 0 else print('Academics data already exists.')"
+
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
