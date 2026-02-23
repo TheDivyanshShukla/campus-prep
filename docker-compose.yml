@@ -22,7 +22,7 @@ services:
     environment:
       - CELERY_BROKER_URL=redis://valkey:6379/0
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
-      - DEBUG=True
+      - DEBUG=False
       - SECRET_KEY=dev-secret-key
       - PYTHONUNBUFFERED=1
     depends_on:
