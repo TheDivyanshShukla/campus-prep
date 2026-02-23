@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 class User(AbstractUser):
+    clerk_id = models.CharField(max_length=100, unique=True, null=True, blank=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     preferred_branch = models.ForeignKey(
         'academics.Branch', 

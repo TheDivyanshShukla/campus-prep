@@ -14,6 +14,10 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('username', 'email', 'phone_number', 'preferred_branch', 'preferred_semester')
 
 class UserOnboardingForm(forms.ModelForm):
+    first_name = forms.CharField(max_length=150, required=True, label="First Name")
+    last_name = forms.CharField(max_length=150, required=True, label="Last Name")
+    phone_number = forms.CharField(max_length=15, required=True, label="Phone Number")
+    
     branch = forms.ModelChoiceField(
         queryset=Branch.objects.all(),
         empty_label="Select your Branch",
@@ -27,4 +31,20 @@ class UserOnboardingForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = [] # We handle these manually in the view for precise assignment
+        fields = ['first_name', 'last_name', 'phone_number']
+
+class ChangeProgramForm(forms.ModelForm):
+    branch = forms.ModelChoiceField(
+        queryset=Branch.objects.all(),
+        empty_label="Select your Branch",
+        required=True
+    )
+    semester = forms.ModelChoiceField(
+        queryset=Semester.objects.all(),
+        empty_label="Select your Semester",
+        required=True
+    )
+
+    class Meta:
+        model = User
+        fields = [] # We handle branch/semester manually to sync with preferred_branch/preferred_semester
