@@ -23,7 +23,10 @@ services:
       - CELERY_BROKER_URL=redis://valkey:6379/0
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
       - DEBUG=False
-      - SECRET_KEY=dev-secret-key
+      - SECRET_KEY=${SECRET_KEY}
+      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
+      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
       - PYTHONUNBUFFERED=1
     depends_on:
       valkey:
