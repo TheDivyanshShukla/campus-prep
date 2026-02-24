@@ -14,10 +14,12 @@ echo "Running migrations..."
 python manage.py migrate
 
 echo "Ensuring superuser exists..."
-if [ "$DJANGO_SUPERUSER_USERNAME" != "" ] && [ "$DJANGO_SUPERUSER_PASSWORD" != "" ]; then
+if [ -n "$DJANGO_SUPERUSER_USERNAME" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ]; then
     python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); import os; User.objects.filter(username=os.getenv('DJANGO_SUPERUSER_USERNAME')).exists() or os.system('python manage.py createsuperuser --noinput')"
 else
-    echo "Superuser credentials not provided, skipping creation."
+    if [ -z "$DJANGO_SUPERUSER_USERNAME" ]; then echo "DEBUG: DJANGO_SUPERUSER_USERNAME is empty"; fi
+    if [ -z "$DJANGO_SUPERUSER_PASSWORD" ]; then echo "DEBUG: DJANGO_SUPERUSER_PASSWORD is empty"; fi
+    echo "Superuser credentials missing or incomplete, skipping creation."
 fi
 
 echo "Checking for academic data..."
