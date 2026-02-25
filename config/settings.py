@@ -13,12 +13,24 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 import sys
 from pathlib import Path
+import urllib.parse as urlparse
 from dotenv import load_dotenv
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file
+env_path = BASE_DIR / '.env'
+loaded = load_dotenv(env_path, override=True)
+if not loaded:
+    print(f"Warning: .env file NOT loaded from {env_path}")
+else:
+    print(f".env file loaded successfully from {env_path}")
+    # Verify if DATABASE_URL is in the environment
+    if 'DATABASE_URL' in os.environ:
+        print("DATABASE_URL found in environment.")
+    else:
+        print("DATABASE_URL NOT found in environment even after loading .env.")
 
 # Add apps/ directory to Python path
 sys.path.insert(0, str(BASE_DIR / 'apps'))
@@ -103,12 +115,30 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Parse DATABASE_URL manually to avoid dj-database-url dependency
+db_url = os.getenv('DATABASE_URL')
+
+if db_url and (db_url.startswith('postgresql://') or db_url.startswith('postgres://')):
+    url = urlparse.urlparse(db_url)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': url.path[1:],
+            'USER': url.username,
+            'PASSWORD': url.password,
+            'HOST': url.hostname,
+            'PORT': url.port,
+        }
     }
-}
+else:
+    if DEBUG:
+        print(f"Warning: DATABASE_URL not set or invalid ({db_url}). Using SQLite.")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation

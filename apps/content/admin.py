@@ -104,6 +104,12 @@ class ParsedDocumentAdmin(admin.ModelAdmin):
     list_filter = ('parsing_status', 'is_published', 'is_premium', 'document_type', 'subjects__branch')
     search_fields = ('title', 'subjects__code')
     readonly_fields = ('parsing_status',)
+    list_per_page = 20
+    show_full_result_count = False
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.prefetch_related('subjects')
     
     fieldsets = (
         ('Target Subject & Branches', {

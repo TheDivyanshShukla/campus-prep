@@ -9,3 +9,6 @@ class CustomUserAdmin(UserAdmin):
     )
     list_display = ('username', 'email', 'phone_number', 'preferred_branch', 'preferred_semester', 'is_staff')
     list_filter = UserAdmin.list_filter + ('preferred_branch', 'preferred_semester')
+    list_select_related = ('preferred_branch', 'preferred_semester')
+    list_per_page = 20
+    show_full_result_count = False
