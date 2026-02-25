@@ -12,6 +12,7 @@ Document Type target: {document_type}
 Your task is to extract exact information from raw exam papers, syllabi, or notes (provided as text or images) and generate pristine, highly-accurate structured data for them.
 You MUST output valid JSON conforming strictly to the requested schema.
 CRITICAL INSTRUCTION: DO NOT process or transcribe any Hindi text whatsoever. Extract and process ONLY the English versions of the questions.
+IMAGE INSTRUCTION: If a question or section does NOT contain an image or diagram in the source, set 'image_strategy' to null and 'image_details' to null. DO NOT invent or assume images exist.
 For 'latex_answer' or any mathematical fields, use Markdown for normal text and wrap ANY math in KaTeX delimiters ($ for inline, $$ for block formulas)."""
 
 class ParsedDocument(models.Model):

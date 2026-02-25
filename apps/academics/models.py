@@ -37,6 +37,7 @@ class Unit(models.Model):
     number = models.PositiveSmallIntegerField(help_text="Unit number (usually 1-5)")
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    topics = models.JSONField(default=list, blank=True, help_text="List of topics for this unit, synced from syllabus.")
 
     class Meta:
         unique_together = ('subject', 'number')

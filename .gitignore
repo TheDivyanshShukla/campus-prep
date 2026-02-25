@@ -10,3 +10,7 @@ wheels/
 .venv
 media
 .db
+m.py
+staticfiles
+db.*
+.me/datamine

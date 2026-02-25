@@ -9,6 +9,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from playwright.async_api import async_playwright
 import httpx
+from typing import Optional
 
 # Shared Async HTTP Client for image recreation connection pooling
 _image_recreator_client = httpx.AsyncClient(timeout=60.0)
@@ -71,12 +72,15 @@ class ImageRecreationService:
         return data
 
     def _collect_tasks(self, data, tasks, semaphore):
-        """Recursively find CANVAS blocks and add them to the task list."""
+        """Recursively find CANVAS and SEARCH blocks and add them to the task list."""
         if isinstance(data, list):
             for item in data:
                 self._collect_tasks(item, tasks, semaphore)
         elif isinstance(data, dict):
-            if data.get('image_strategy') == 'CANVAS' and data.get('image_details'):
+            strategy = data.get('image_strategy')
+            details = data.get('image_details')
+            
+            if strategy in ['CANVAS', 'SEARCH'] and details:
                 # We pass the dict reference so it can be updated in place
                 tasks.append(self._recreate_and_update(data, semaphore))
             
@@ -85,12 +89,21 @@ class ImageRecreationService:
                     self._collect_tasks(v, tasks, semaphore)
 
     async def _recreate_and_update(self, image_block, semaphore):
-        """Worker task that handles one image with a shared browser instance."""
+        """Worker task that handles one image with a shared browser instance or external API."""
         async with semaphore:
-            result = await self.recreate_canvas(image_block.get('image_details', ''))
-            if result:
-                image_block['recreated_image_url'] = result.get('url')
-                image_block['recreated_html_source'] = result.get('html')
+            strategy = image_block.get('image_strategy')
+            details = image_block.get('image_details', '')
+            
+            if strategy == 'CANVAS':
+                result = await self.recreate_canvas(details)
+                if result:
+                    image_block['recreated_image_url'] = result.get('url')
+                    image_block['recreated_html_source'] = result.get('html')
+            
+            elif strategy == 'SEARCH':
+                result_url = await self.search_wikipedia(details)
+                if result_url:
+                    image_block['recreated_image_url'] = result_url
 
     async def recreate_canvas(self, instructions: str):
         if not instructions or not self.browser:
@@ -178,4 +191,63 @@ Output ONLY the HTML/Script code. NO markdown backticks."""
 
         except Exception as e:
             print(f"❌ Canvas Recreation Error: {e}")
+            return None
+
+    async def search_wikipedia(self, query: str) -> Optional[str]:
+        """Search Wikimedia Commons for a diagram and return the URL of the best match."""
+        try:
+            print(f"🔍 Searching Wikipedia for: {query}...")
+            # Use the shared pool for efficiency
+            url = "https://commons.wikimedia.org/w/api.php"
+            headers = {"User-Agent": "rgpv-project/1.0 (divyanshshukla@example.com)"}
+            
+            # Step 1: Search for files
+            search_params = {
+                "action": "query",
+                "list": "search",
+                "srsearch": query,
+                "srnamespace": 6,
+                "srlimit": 3,
+                "format": "json"
+            }
+            
+            resp = await _image_recreator_client.get(url, params=search_params, headers=headers)
+            if resp.status_code != 200:
+                return None
+            
+            data = resp.json()
+            titles = [item["title"] for item in data.get("query", {}).get("search", [])]
+            if not titles:
+                return None
+            
+            # Step 2: Get image URLs
+            image_params = {
+                "action": "query",
+                "titles": "|".join(titles),
+                "prop": "imageinfo",
+                "iiprop": "url",
+                "format": "json"
+            }
+            
+            resp2 = await _image_recreator_client.get(url, params=image_params, headers=headers)
+            if resp2.status_code != 200:
+                return None
+                
+            data2 = resp2.json()
+            pages = data2.get("query", {}).get("pages", {}).values()
+            
+            # Prefer SVG if available, otherwise just first one
+            best_url = None
+            for page in pages:
+                if "imageinfo" in page:
+                    img_url = page["imageinfo"][0]["url"]
+                    if img_url.endswith('.svg'):
+                        return img_url
+                    if not best_url:
+                        best_url = img_url
+            
+            return best_url
+
+        except Exception as e:
+            print(f"❌ Wikipedia Search Error for '{query}': {e}")
             return None
