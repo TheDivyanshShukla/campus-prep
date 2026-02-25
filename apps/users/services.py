@@ -6,6 +6,9 @@ import httpx
 
 User = get_user_model()
 
+# Shared HTTP Client for connection pooling
+_clerk_client = httpx.Client(timeout=10.0)
+
 class ClerkService:
     """
     Service to handle Clerk JWT verification and user synchronization.
@@ -59,8 +62,7 @@ class ClerkService:
             if not clerk_id:
                 return None
                 
-            async_client = httpx.Client()
-            response = async_client.get(
+            response = _clerk_client.get(
                 f"https://api.clerk.com/v1/users/{clerk_id}",
                 headers=headers
             )

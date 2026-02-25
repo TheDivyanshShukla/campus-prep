@@ -88,13 +88,24 @@
         <!-- Right Panel: AI Output & Editing -->
         <div class="lg:col-span-8 flex flex-col h-full space-y-4">
             <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border p-6 flex-grow flex flex-col min-h-[500px]">
-                <div class="flex justify-between items-center mb-4">
+                <div class="flex justify-between items-center mb-2">
                     <h3 class="text-lg font-semibold flex items-center">
                         <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         2. AI Output (Review JSON)
                     </h3>
                     <div id="status-badge" class="px-2.5 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-500 border border-yellow-200 dark:border-yellow-800">
                         Waiting for upload...
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div id="progress-container" class="mb-4 hidden">
+                    <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
+                        <span id="progress-label">Parsing Document...</span>
+                        <span id="progress-percent">0%</span>
+                    </div>
+                    <div class="w-full bg-muted rounded-full h-2 overflow-hidden border border-border">
+                        <div id="progress-bar" class="bg-indigo-500 h-full transition-all duration-500" style="width: 0%"></div>
                     </div>
                 </div>
                 
@@ -135,6 +146,14 @@
         }
     });
 
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercent = document.getElementById('progress-percent');
+    const progressLabel = document.getElementById('progress-label');
+
+    let pollingInterval = null;
+    let currentDocumentId = null;
+
     // Handle extraction
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -147,10 +166,13 @@
         const formData = new FormData(form);
         
         // UI Loading State
-        parseBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> AI is parsing...';
+        parseBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Starting...';
         parseBtn.disabled = true;
         statusBadge.className = 'px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 border border-blue-200 animate-pulse';
-        statusBadge.textContent = 'Extracting via Gemini...';
+        statusBadge.textContent = 'Uploading to Server...';
+        
+        progressContainer.classList.remove('hidden');
+        updateProgress(0, 'Initializing...');
 
         try {
             const response = await fetch('/api/parse-document/', {
@@ -162,25 +184,81 @@
             });
 
             const result = await response.json();
-            
             if (!response.ok) throw new Error(result.error || 'Server error');
 
-            // Success
-            jsonEditor.value = JSON.stringify(result.data, null, 4);
-            publishBtn.disabled = false;
-            
-            statusBadge.className = 'px-2.5 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 border border-green-200';
-            statusBadge.textContent = 'Extraction Complete';
+            currentDocumentId = result.document_id;
+            startPolling(currentDocumentId);
 
         } catch (error) {
             jsonEditor.value = `Error: ${error.message}`;
             statusBadge.className = 'px-2.5 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800 border border-red-200';
-            statusBadge.textContent = 'Extraction Failed';
-        } finally {
-            parseBtn.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428..."></path></svg> Extract & Structure with AI';
+            statusBadge.textContent = 'Failed to start';
             parseBtn.disabled = false;
+            parseBtn.innerHTML = 'Extract & Structure with AI';
         }
     });
+
+    function updateProgress(percent, label) {
+        progressBar.style.width = `${percent}%`;
+        progressPercent.textContent = `${Math.round(percent)}%`;
+        if (label) progressLabel.textContent = label;
+    }
+
+    function startPolling(docId) {
+        if (pollingInterval) clearInterval(pollingInterval);
+        
+        pollingInterval = setInterval(async () => {
+            try {
+                const res = await fetch(`/api/document/${docId}/parsing-status/`);
+                const data = await res.json();
+
+                if (data.status === 'PROCESSING' || data.status === 'PENDING') {
+                    statusBadge.textContent = data.status === 'PENDING' ? 'Queued...' : 'Parsing via Gemini...';
+                    
+                    // Calculate weight-based progress
+                    // Parsing Chunks: 70%, Image Recreation: 30%
+                    let progress = 0;
+                    if (data.total_steps > 0) {
+                        progress += (data.completed_steps / data.total_steps) * 70;
+                    }
+                    if (data.recreation_total > 0) {
+                        progress += (data.recreation_completed / data.recreation_total) * 30;
+                    }
+                    
+                    updateProgress(progress, data.status === 'PENDING' ? 'Waiting for worker...' : `Processing Content... (${data.completed_steps}/${data.total_steps})`);
+                } 
+                else if (data.status === 'COMPLETED') {
+                    stopPolling();
+                    updateProgress(100, 'All tasks finished!');
+                    statusBadge.className = 'px-2.5 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 border border-green-200';
+                    statusBadge.textContent = 'Extraction Complete';
+                    
+                    jsonEditor.value = JSON.stringify(data.structured_data, null, 4);
+                    publishBtn.disabled = false;
+                    parseBtn.disabled = false;
+                    parseBtn.innerHTML = 'Extract & Structure with AI';
+                }
+                else if (data.status === 'FAILED') {
+                    stopPolling();
+                    statusBadge.className = 'px-2.5 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800 border border-red-200';
+                    statusBadge.textContent = 'Parsing Failed';
+                    alert('AI Parsing failed. Please check the document format.');
+                    parseBtn.disabled = false;
+                    parseBtn.innerHTML = 'Extract & Structure with AI';
+                }
+
+            } catch (e) {
+                console.error("Polling error:", e);
+            }
+        }, 2000);
+    }
+
+    function stopPolling() {
+        if (pollingInterval) {
+            clearInterval(pollingInterval);
+            pollingInterval = null;
+        }
+    }
 
     // Handle publishing
     publishBtn.addEventListener('click', async () => {
@@ -193,10 +271,7 @@
             const structuredData = JSON.parse(jsonEditor.value);
             
             const payload = {
-                subject_id: document.getElementById('subject_id').value,
-                document_type: document.getElementById('document_type').value,
-                title: document.getElementById('title').value,
-                year: document.getElementById('year').value,
+                document_id: currentDocumentId,
                 structured_data: structuredData
             };
 

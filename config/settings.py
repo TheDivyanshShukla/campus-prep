@@ -216,6 +216,14 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 
+# Caching Settings (Valkey)
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": os.getenv('CACHE_URL', 'redis://valkey:6379/1'),
+    }
+}
+
 # X-Frame-Options to allow framing PDFs natively
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
