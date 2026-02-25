@@ -23,61 +23,64 @@
             if (typeof django !== 'undefined' && django.jQuery) {
                 (function($) {
                     var imagesInline = $('#images-group');
-                    // Target the exact fieldset containing the 'AI Data Sources' title
                     var aiDataSourcesFieldset = $('h2:contains("AI Data Sources")').closest('fieldset');
                     
                     if (imagesInline.length && aiDataSourcesFieldset.length) {
-                        // Move the entire images upload block INTO the AI Data Sources fieldset
                         imagesInline.appendTo(aiDataSourcesFieldset);
                     }
 
-                    // --- LIVE PREVIEW INJECTION ---
-                    // Create the preview box HTML
+                    // --- UI COMPONENTS ---
                     var previewHtml = `
                     <div id="admin-live-preview-container" style="margin-top:20px; padding-top:20px; border-top:1px dashed #444; clear:both;">
                         <h3 style="margin-bottom:15px; color:#10b981; font-weight:bold; text-transform:uppercase; font-size:12px;">✅ Live Render Preview</h3>
                         <div id="admin-live-preview" style="background:#1e1e24; padding:20px; border-radius:8px; border:1px solid #333; color:#e2e8f0; max-height: 500px; overflow-y:auto; overflow-x:hidden;">
                             <em>Preview will render here automatically when valid JSON is detected...</em>
-                         </div>
-                        <!-- Progress Bar for Background Parsing -->
-                        <div id="ai-parsing-progress-container" style="display:none; margin-top:15px; background:#1e1b4b; border:1px solid #312e81; border-radius:8px; padding:15px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                                <div style="display:flex; align-items:center;">
-                                    <svg class="animate-spin" style="width:16px; height:16px; margin-right:8px; color:#818cf8;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                                    </svg>
-                                    <span style="color:#818cf8; font-weight:bold; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;">AI Parsing in Progress...</span>
-                                </div>
-                                <span id="parsing-progress-steps" style="color:#a5b4fc; font-weight:bold; font-size:14px; font-family:monospace;">0 / 0</span>
-                            </div>
-                            <div style="width:100%; background:#0f172a; height:8px; border-radius:4px; overflow:hidden;">
-                                <div id="parsing-progress-bar" style="width:0%; height:100%; background:linear-gradient(90deg, #4f46e5, #818cf8); transition: width 0.5s ease-in-out;"></div>
-                            </div>
-                            <p style="margin-top:8px; color:#94a3b8; font-size:11px; font-style:italic;">Please wait, extracting structured data from document chunks...</p>
                         </div>
-                        
-                        <!-- Image Recreation Progress -->
-                        <div id="ai-recreation-progress-container" style="display:none; margin-top:15px; background:#1e1b4b; border:1px solid #f59e0b22; border-radius:8px; padding:15px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                                <div style="display:flex; align-items:center;">
-                                    <svg class="animate-spin" style="width:16px; height:16px; margin-right:8px; color:#f59e0b;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span style="color:#f59e0b; font-weight:bold; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;">🎨 Recreating Diagrams...</span>
-                                </div>
-                                <span id="recreation-progress-steps" style="color:#fbbf24; font-weight:bold; font-size:14px; font-family:monospace;">0 / 0</span>
-                            </div>
-                            <div style="width:100%; background:#451a03; height:8px; border-radius:4px; overflow:hidden;">
-                                <div id="recreation-progress-bar" style="width:0%; height:100%; background:linear-gradient(90deg, #d97706, #f59e0b); transition: width 0.5s ease-in-out;"></div>
-                            </div>
-                            <p style="margin-top:8px; color:#94a3b8; font-size:11px; font-style:italic;">Executing JS Canvas generation & headless snapshots...</p>
-                        </div>
-                    </div>
-`;
-                    
-                    // Attach it below the structured_data field as requested
-                    $('.field-structured_data').append(previewHtml);
+                    </div>`;
 
+                    var progressOverlayHtml = `
+                    <div id="ai-global-progress-overlay" style="display:none; position:fixed; top:20px; right:20px; z-index:9999; width:350px; background:#0f172a; border:1px solid #312e81; border-radius:12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); padding:16px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <div style="display:flex; align-items:center;">
+                                <div class="pulse-ring" style="width:10px; height:10px; border-radius:50%; background:#818cf8; margin-right:10px;"></div>
+                                <span style="color:#f8fafc; font-weight:700; font-size:12px; text-transform:uppercase;">AI ENGINE Status</span>
+                            </div>
+                            <button id="close-progress-overlay" style="background:transparent; border:none; color:#94a3b8; cursor:pointer; font-size:18px; line-height:1;">&times;</button>
+                        </div>
+                        <div id="ai-parsing-progress-container">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <span style="color:#94a3b8; font-size:11px;">Extracting Content</span>
+                                <span id="parsing-progress-steps" style="color:#818cf8; font-weight:bold; font-size:11px;">0 / 0</span>
+                            </div>
+                            <div style="width:100%; background:#1e293b; height:6px; border-radius:3px; overflow:hidden;">
+                                <div id="parsing-progress-bar" style="width:0%; height:100%; background:linear-gradient(90deg, #4f46e5, #818cf8); transition: width 0.5s ease;"></div>
+                            </div>
+                        </div>
+                        <div id="ai-recreation-progress-container" style="display:none; margin-top:12px;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <span style="color:#94a3b8; font-size:11px;">Recreating Diagrams</span>
+                                <span id="recreation-progress-steps" style="color:#f59e0b; font-weight:bold; font-size:11px;">0 / 0</span>
+                            </div>
+                            <div style="width:100%; background:#1e293b; height:6px; border-radius:3px; overflow:hidden;">
+                                <div id="recreation-progress-bar" style="width:0%; height:100%; background:linear-gradient(90deg, #d97706, #f59e0b); transition: width 0.5s ease;"></div>
+                            </div>
+                        </div>
+                        <p id="parsing-detail-text" style="margin-top:10px; color:#64748b; font-size:10px; font-style:italic;">Processing document...</p>
+                    </div>
+                    <style>
+                        @keyframes pulse {
+                            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.7); }
+                            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(129, 140, 248, 0); }
+                            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(129, 140, 248, 0); }
+                        }
+                        .pulse-ring { animation: pulse 2s infinite; }
+                    </style>`;
+                    
+                    $('.field-structured_data').append(previewHtml);
+                    $('body').append(progressOverlayHtml);
+                    $('#close-progress-overlay').click(() => $('#ai-global-progress-overlay').fadeOut());
+
+                    // --- PREVIEW RENDERER ---
                     function renderAdminPreview() {
                         try {
                             const rawJson = $('#id_structured_data').val();
@@ -85,191 +88,107 @@
                                 $('#admin-live-preview').html('<em>No structured data generated yet.</em>');
                                 return;
                             }
-                            
                             const data = JSON.parse(rawJson);
                             const docType = $('#id_document_type').val();
                             let html = '';
 
                             const renderRecreationBox = (strategy, details, url) => {
                                 if (!strategy || !details) return '';
-                                let color = "#818cf8";
-                                if (strategy === 'SEARCH') color = "#10b981";
-                                if (strategy === 'CANVAS') color = "#f59e0b";
-                                
-                                let imageHtml = '';
-                                if (url) {
-                                    imageHtml = `<div style="margin-top:10px; border-radius:4px; overflow:hidden; border:1px solid #444; background:white;">
-                                        <img src="${url}" style="width:100%; height:auto; display:block;" alt="Recreated Image">
-                                    </div>`;
-                                }
-
+                                let color = strategy === 'CANVAS' ? "#f59e0b" : "#10b981";
                                 return `
                                 <div style="margin-top:10px; padding:10px; background:#1e1b4b; border-radius:6px; border:1px solid #312e81;">
-                                    <div style="color:${color}; font-size:11px; font-weight:bold; margin-bottom:5px; display:flex; align-items:center; text-transform:uppercase;">
-                                        <svg style="width:14px; height:14px; margin-right:5px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                        ${strategy} RECREATION
-                                    </div>
+                                    <div style="color:${color}; font-size:11px; font-weight:bold; margin-bottom:5px; text-transform:uppercase;">${strategy} RECREATION</div>
                                     <div style="font-family:monospace; font-size:11px; color:#a5b4fc; white-space:pre-wrap;">${details}</div>
-                                    ${imageHtml}
+                                    ${url ? `<div style="margin-top:10px; border-radius:4px; overflow:hidden; background:white;"><img src="${url}" style="width:100%; height:auto; display:block;"></div>` : ''}
                                 </div>`;
                             };
                             
-                            if (docType === 'PYQ' && data.questions) {
+                            if ((docType === 'PYQ' || docType === 'UNSOLVED_PYQ') && data.questions) {
                                 html += '<div style="display:flex; flex-direction:column; gap:15px;">';
-                                data.questions.forEach((q, i) => {
+                                data.questions.forEach(q => {
                                     html += `<div style="border:1px solid #333; border-radius:6px; padding:15px; background:#2d2d35;">
                                         <div style="display:flex; justify-content:space-between; border-bottom:1px solid #444; padding-bottom:10px; margin-bottom:10px;">
-                                            <strong style="color:#10b981;">Unit ${q.unit || '?'} ${q.has_or_choice ? '<span style="color:#f59e0b;">(OR Choice)</span>' : ''}</strong>
+                                            <strong style="color:#10b981;">Unit ${q.unit || '?'}</strong>
                                             <strong style="color:#e2e8f0;">${q.marks} Marks</strong>
                                         </div>
-                                        <p style="font-size:14px; margin-bottom:15px;"><strong>${q.part ? q.part + ' ' : ''}</strong> ${q.question_text}</p>
+                                        <p style="font-size:14px; margin-bottom:15px;">${q.question_text}</p>
                                         ${renderRecreationBox(q.image_strategy, q.image_details, q.recreated_image_url)}
-                                        ${q.latex_answer ? `<div style="margin-top:15px; border-top:1px dashed #444; padding-top:15px;" class="math-target">${marked.parse(q.latex_answer)}</div>` : '<div style="color:#64748b; font-size:12px; margin-top:10px;">(No AI solution generated)</div>'}
+                                        ${q.latex_answer ? `<div class="math-target">${marked.parse(q.latex_answer)}</div>` : ''}
                                     </div>`;
                                 });
                                 html += '</div>';
-                            } 
-                            else if (docType === 'NOTES' || docType === 'SHORT_NOTES') {
-                                if (data.sections) {
-                                    data.sections.forEach((section, idx) => {
-                                        let blocksHtml = '';
-                                        if (section.content_blocks) {
-                                            section.content_blocks.forEach(block => {
-                                                if (block.type === 'text') {
-                                                    blocksHtml += `<div class="math-target" style="font-size:14px; line-height:1.6; margin-bottom:10px;">${marked.parse(block.content || '')}</div>`;
-                                                } else if (block.type === 'image') {
-                                                    blocksHtml += renderRecreationBox(block.image_strategy, block.image_details, block.recreated_image_url);
-                                                }
-                                            });
-                                        }
-
-                                        html += `<div style="padding:15px; background:#2d2d35; border-radius:6px; border:1px solid #333; margin-bottom:15px;">
-                                            <h4 style="margin-top:0; color:#818cf8; border-bottom:1px solid #444; padding-bottom:8px; font-size:15px;">${section.section_title || `Section ${idx+1}`}</h4>
-                                            <div style="margin-top:10px;">${blocksHtml}</div>
-                                        </div>`;
-                                    });
-                                } else if (data.title || data.content) {
-                                    // Fallback for legacy
-                                    html += `<div style="padding:15px; background:#2d2d35; border-radius:6px; border:1px solid #333;">
-                                        <h2 style="margin-top:0; color:#818cf8; border-bottom:1px solid #444; padding-bottom:10px;">${data.title || 'Note'}</h2>
-                                        <div class="math-target" style="font-size:14px;">${marked.parse(data.content || '')}</div>
-                                    </div>`;
-                                }
-                            } 
-                            else if (docType === 'FORMULA' && data.formulas) {
+                            } else if (docType === 'FORMULA' && data.formulas) {
                                 html += '<div style="display:flex; flex-wrap:wrap; gap:15px;">';
                                 data.formulas.forEach(f => {
                                     html += `<div style="border:1px solid #333; padding:15px; border-radius:6px; background:#2d2d35; text-align:center; flex:1; min-width:200px;">
-                                        <h4 style="margin-top:0; color:#6366f1;">${f.name}</h4>
-                                        <div class="math-target" style="font-size:24px;">$$ ${f.latex} $$</div>
+                                        <h4 style="margin:0; color:#6366f1;">${f.name}</h4>
+                                        <div class="math-target">$$ ${f.latex} $$</div>
                                     </div>`;
                                 });
                                 html += '</div>';
-                            }
-                            else if (docType === 'SYLLABUS' && data.modules) {
-                                html += '<div style="display:flex; flex-direction:column; gap:15px;">';
-                                data.modules.forEach(m => {
-                                    html += `<div style="border:1px solid #333; border-radius:6px; padding:15px; background:#2d2d35;">
-                                        <strong style="color:#14b8a6; display:block; margin-bottom:10px; font-size:16px;">Unit ${m.unit}</strong>
-                                        <ul style="padding-left:20px; margin:0; font-size:14px;">
-                                            ${m.topics.map(t => `<li style="margin-bottom:5px;">${t}</li>`).join('')}
-                                        </ul>
+                            } else if (data.sections) {
+                                data.sections.forEach(s => {
+                                    let blocks = '';
+                                    (s.content_blocks || []).forEach(b => {
+                                        if (b.type === 'text') blocks += `<div class="math-target">${marked.parse(b.content || '')}</div>`;
+                                        else blocks += renderRecreationBox(b.image_strategy, b.image_details, b.recreated_image_url);
+                                    });
+                                    html += `<div style="padding:15px; background:#2d2d35; border-radius:6px; border:1px solid #333; margin-bottom:15px;">
+                                        <h4 style="margin:0; color:#818cf8; border-bottom:1px solid #444; padding-bottom:8px;">${s.section_title}</h4>
+                                        <div style="margin-top:10px;">${blocks}</div>
                                     </div>`;
                                 });
-                                html += '</div>';
-                            }
-                            else if (docType === 'IMPORTANT_Q' && data.questions) {
-                                html += '<ul style="padding-left:20px; margin:0; font-size:14px;">';
-                                data.questions.forEach(q => {
-                                     html += `<li style="margin-bottom:10px;">
-                                        ${q.text} 
-                                        <div style="display:inline-block; padding:2px 6px; border-radius:4px; font-size:10px; background:#451a03; color:#fcd34d; border:1px solid #78350f; margin-left:10px;">${q.frequency}</div>
-                                     </li>`;
-                                });
-                                html += '</ul>';
                             } else {
                                 html = `<pre style="font-size:12px; color:#cbd5e1; white-space:pre-wrap;">${JSON.stringify(data, null, 2)}</pre>`;
                             }
                             
                             $('#admin-live-preview').html(html);
-                            
-                            // Render Math
                             if(window.renderMathInElement) {
                                 renderMathInElement(document.getElementById('admin-live-preview'), {
                                     delimiters: [
                                         {left: '$$', right: '$$', display: true},
-                                        {left: '$', right: '$', display: false},
-                                        {left: '\\(', right: '\\)', display: false},
-                                        {left: '\\[', right: '\\]', display: true}
+                                        {left: '$', right: '$', display: false}
                                     ],
                                     throwOnError: false
                                 });
                             }
                         } catch(e) {
-                            $('#admin-live-preview').html(`<div style="color:#ef4444; font-size:13px; font-weight:bold;">❌ Invalid JSON detected (Keep typing!):<br/><span style="font-weight:normal; color:#f87171; font-family:monospace; margin-top:5px; display:block;">${e.message}</span></div>`);
+                            $('#admin-live-preview').html(`<div style="color:#ef4444; font-size:11px;">❌ JSON Error: ${e.message}</div>`);
                         }
                     }
 
-                    // --- PROGRESS POLLING ---
+                    // --- STATUS POLLING ---
                     var docId = "{{ original.id }}";
                     var currentStatus = "{{ original.parsing_status }}";
                     
                     if (docId && (currentStatus === 'PROCESSING' || currentStatus === 'PENDING')) {
-                        $('#ai-parsing-progress-container').show();
-                        // Update initial steps from server-rendered data
-                        const piCompleted = parseInt("{{ original.parsing_completed_chunks }}") || 0;
-                        const piTotal = parseInt("{{ original.parsing_total_chunks }}") || 0;
-                        if (piTotal > 0) {
-                            $('#parsing-progress-steps').text(piCompleted + ' / ' + piTotal);
-                            $('#parsing-progress-bar').css('width', (piCompleted / piTotal * 100) + '%');
-                        }
-
-                        const riCompleted = parseInt("{{ original.recreation_completed_images }}") || 0;
-                        const riTotal = parseInt("{{ original.recreation_total_images }}") || 0;
-                        if (riTotal > 0) {
-                            $('#ai-recreation-progress-container').show();
-                            $('#recreation-progress-steps').text(riCompleted + ' / ' + riTotal);
-                            $('#recreation-progress-bar').css('width', (riCompleted / riTotal * 100) + '%');
-                        }
-                        startStatusPolling(docId);
-                    }
-
-                    function startStatusPolling(id) {
+                        $('#ai-global-progress-overlay').show();
                         var pollInterval = setInterval(function() {
-                            $.getJSON(`/api/document/${id}/parsing-status/`, function(data) {
+                            $.getJSON(`/api/document/${docId}/parsing-status/`, function(data) {
                                 if (data.status === 'PROCESSING' || data.status === 'PENDING') {
-                                    $('#ai-parsing-progress-container').show();
                                     $('#parsing-progress-steps').text(data.completed_steps + ' / ' + data.total_steps);
-                                    var pct = data.total_steps > 0 ? (data.completed_steps / data.total_steps * 100) : 0;
-                                    $('#parsing-progress-bar').css('width', Math.min(99, pct) + '%');
-
+                                    $('#parsing-progress-bar').css('width', (data.total_steps > 0 ? (data.completed_steps / data.total_steps * 100) : 0) + '%');
+                                    $('#parsing-detail-text').text(data.status === 'PENDING' ? 'Waiting for worker...' : 'Parsing via Gemini...');
+                                    
                                     if (data.recreation_total > 0) {
                                         $('#ai-recreation-progress-container').show();
                                         $('#recreation-progress-steps').text(data.recreation_completed + ' / ' + data.recreation_total);
-                                        var rPct = (data.recreation_completed / data.recreation_total * 100);
-                                        $('#recreation-progress-bar').css('width', rPct + '%');
+                                        $('#recreation-progress-bar').css('width', (data.recreation_completed / data.recreation_total * 100) + '%');
                                     }
                                 } else if (data.status === 'COMPLETED') {
-                                    $('#parsing-progress-steps').text(data.total_steps + ' / ' + data.total_steps);
-                                    $('#parsing-progress-bar').css('width', '100%');
                                     clearInterval(pollInterval);
-                                    setTimeout(function() {
-                                        window.location.reload();
-                                    }, 1000);
+                                    window.location.reload();
                                 } else if (data.status === 'FAILED') {
                                     clearInterval(pollInterval);
-                                    alert('AI Parsing failed. Check server logs.');
+                                    alert('AI Parsing failed.');
                                     window.location.reload();
                                 }
                             });
                         }, 3000);
                     }
 
-                    // Listeners
                     $('#id_structured_data').on('input propertychange', renderAdminPreview);
                     $('#id_document_type').on('change', renderAdminPreview);
-                    
-                    // Initial load
                     setTimeout(renderAdminPreview, 200);
 
                 })(django.jQuery);

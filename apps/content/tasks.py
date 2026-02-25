@@ -12,11 +12,18 @@ def process_document_ai(self, document_id):
     """
     Background task to parse a document using AI.
     """
-    try:
-        document = ParsedDocument.objects.get(id=document_id)
-    except ParsedDocument.DoesNotExist:
-        logger.error(f"Document with id {document_id} not found.")
-        return
+    # Wait for document to be available in DB (handles transaction race condition)
+    document = None
+    for i in range(5):
+        try:
+            document = ParsedDocument.objects.get(id=document_id)
+            break
+        except ParsedDocument.DoesNotExist:
+            if i == 4:
+                logger.error(f"Document with id {document_id} not found after 5 retries.")
+                return
+            import time
+            time.sleep(1)
 
     # Guard: prevent multiple concurrent parsing tasks for the same document
     if document.parsing_status == 'PROCESSING':
@@ -43,6 +50,12 @@ def process_document_ai(self, document_id):
         document.structured_data = structured_data
         document.parsing_status = 'COMPLETED'
         document.save(update_fields=['structured_data', 'parsing_status', 'updated_at'])
+
+        # Post-Processing: Sync syllabus units if applicable
+        if document.document_type == 'SYLLABUS':
+            from .services.syllabus_processor import SyllabusProcessor
+            processor = SyllabusProcessor()
+            processor.sync_to_units(document)
         
         logger.info(f"Successfully parsed and post-processed document {document_id}")
         return {"status": "success", "document_id": document_id}

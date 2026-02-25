@@ -150,6 +150,6 @@ class ParsedDocumentAdmin(admin.ModelAdmin):
             # Start the background task
             process_document_ai.delay(obj.id)
             
-            self.message_user(request, "AI Parsing started in the background. Please refresh in a few minutes to see results.")
+            # Message removed to allow the progress bar to be the primary indicator
             return HttpResponseRedirect(".")
         return super().response_change(request, obj)

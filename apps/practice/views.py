@@ -177,12 +177,28 @@ def ai_generate(request):
 
         from .services import PracticeAIService
         service = PracticeAIService()
+        
+        # Prepare syllabus context for richer generation
+        unit_topics = getattr(unit, 'topics', []) if unit else []
+        from apps.content.models import ParsedDocument
+        syllabus_doc = ParsedDocument.objects.filter(
+            subjects=subject, 
+            document_type='SYLLABUS', 
+            parsing_status='COMPLETED'
+        ).first()
+        
+        syllabus_context = None
+        if syllabus_doc and syllabus_doc.structured_data:
+            syllabus_context = json.dumps(syllabus_doc.structured_data, indent=2)
+
         generated = service.generate(
             subject_name=subject.name,
             unit_name=unit.name if unit else None,
             question_types=types,
             difficulty=difficulty,
             count=count,
+            unit_topics=unit_topics,
+            syllabus_context=syllabus_context
         )
 
         # Save to DB

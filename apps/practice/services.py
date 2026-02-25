@@ -67,16 +67,22 @@ class PracticeAIService:
         question_types: List[str],
         difficulty: str,
         count: int = 10,
+        unit_topics: Optional[List[str]] = None,
+        syllabus_context: Optional[str] = None
     ) -> List[PracticeQuestionSchema]:
         """
         Generate `count` practice questions using Gemini via Bifrost.
         Returns a list of PracticeQuestionSchema objects.
         """
         scope = f"Unit: {unit_name}" if unit_name else "entire subject (all units)"
+        if unit_topics:
+            scope += f" (Topics: {', '.join(unit_topics)})"
+        
         types_readable = ", ".join(question_types)
 
         system_prompt = (
             "You are an expert academic question setter for RGPV University Engineering exams. "
+            "Develop questions that reflect RGPV's specific level of depth and terminology. "
             "Generate high-quality, exam-relevant practice questions. "
             "Use proper Markdown formatting. "
             "For any mathematical expressions, ALWAYS use LaTeX: $...$ for inline, $$...$$ for block. "
@@ -90,10 +96,18 @@ class PracticeAIService:
             f"Scope: {scope}\n"
             f"Question types to generate: {types_readable}\n"
             f"Overall difficulty: {difficulty}\n\n"
+        )
+        
+        if syllabus_context:
+            # Escape curly braces for LangChain prompt template
+            safe_syllabus = syllabus_context.replace('{', '{{').replace('}', '}}')
+            user_prompt += f"--- SYLLABUS REFERENCE ---\n{safe_syllabus}\n\n"
+
+        user_prompt += (
             f"Mix the requested question types proportionally. "
             f"Make sure MCQ options are plausible distractors. "
             f"For FILL questions, make the blank clearly indicated with ___. "
-            f"Ensure coverage of important concepts."
+            f"Ensure coverage of important concepts mentioned in the syllabus."
         )
 
         prompt = ChatPromptTemplate.from_messages([
