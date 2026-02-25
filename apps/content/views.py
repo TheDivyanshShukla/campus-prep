@@ -5,19 +5,14 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.db import models
-from django.http import JsonResponse, HttpResponseForbidden
 import base64
-import json
+import orjson
 import os
 import binascii
-import hashlib
 import hashlib
 import uuid
 from apps.content.data_services import ContentDataService
 from apps.users.data_services import UserDataService
-from apps.academics.models import Subject
-from apps.content.models import ParsedDocument
-
 from apps.academics.models import Subject, Branch, Semester
 from apps.content.models import ParsedDocument
 
@@ -129,10 +124,14 @@ def read_document(request, document_id, slug=None):
     }
     
     sd = document.structured_data if document.structured_data else {}
-    json_str = json.dumps(sd).encode('utf-8')
-    encoded = bytearray()
-    for i, b in enumerate(json_str):
-        encoded.append(b ^ key_bytes[i % len(key_bytes)])
+    # Use orjson for significantly faster serialization
+    json_bytes = orjson.dumps(sd)
+    
+    # Optimized XOR Obfuscation
+    encoded = bytearray(json_bytes)
+    key_len = len(key_bytes)
+    for i in range(len(encoded)):
+        encoded[i] ^= key_bytes[i % key_len]
         
     encrypted_data = base64.b64encode(encoded).decode('ascii')
     
@@ -233,16 +232,22 @@ def get_document_key(request, document_id):
 def get_parsing_status(request, document_id):
     """
     API endpoint to poll for document parsing status and progress.
-    Only accessible by staff (admins).
+    Only accessible by staff (admins). Returns results when completed.
     """
     try:
         doc = ParsedDocument.objects.get(pk=document_id)
-        return JsonResponse({
+        response_data = {
             'status': doc.parsing_status,
             'completed_steps': doc.parsing_completed_chunks,
             'total_steps': doc.parsing_total_chunks,
             'recreation_completed': doc.recreation_completed_images,
             'recreation_total': doc.recreation_total_images,
-        })
+        }
+        
+        # Include data if finished so the frontend can populate the editor
+        if doc.parsing_status == 'COMPLETED':
+            response_data['structured_data'] = doc.structured_data
+            
+        return JsonResponse(response_data)
     except ParsedDocument.DoesNotExist:
         return JsonResponse({'status': 'ERROR', 'message': 'Document not found'}, status=404)

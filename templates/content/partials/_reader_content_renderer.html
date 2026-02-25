@@ -213,6 +213,6 @@
             if (!window.__drm_tripped && window.MathJax) {
                 MathJax.typesetPromise([document.body]).catch(err => console.error('MathJax error: ' + err.message));
             }
-        }, 800); // Wait 800ms for DRM sweeps
+        }, 300); // Reduced delay for faster rendering while still allowing DRM sweeps
     });
 </script>

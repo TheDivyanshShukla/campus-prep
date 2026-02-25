@@ -12,6 +12,11 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from typing import List, Optional, Any, Union, Literal
 from pydantic import BaseModel, Field
+from django.core.files.storage import default_storage
+import httpx
+
+# Shared Async HTTP Client for AI parsing connection pooling
+_ai_parser_client = httpx.AsyncClient(timeout=60.0)
 
 
 # --- Structured Output Schemas (Pydantic for validation & better Gemini compatibility) ---
@@ -87,10 +92,11 @@ class DocumentParserService:
             openai_api_key="dummy-key",
             default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
             temperature=0.2,
+            http_async_client=_ai_parser_client,
         )
 
-    def encode_image(self, image_path: str) -> str:
-        with open(image_path, "rb") as image_file:
+    def encode_image(self, image_name: str) -> str:
+        with default_storage.open(image_name, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')
 
     def get_schema_for_type(self, doc_type: str):
@@ -108,16 +114,18 @@ class DocumentParserService:
         else: # NOTES, SHORT_NOTES, CRASH_COURSE
             return ParsedNotes
 
-    def _get_pdf_page_images(self, pdf_path: str) -> List[str]:
-        """Convert PDF pages to base64 images."""
+    def _get_pdf_page_images(self, pdf_name: str) -> List[str]:
+        """Convert PDF pages to base64 images from storage."""
         images = []
         try:
-            doc = fitz.open(pdf_path)
-            for page in doc:
-                pix = page.get_pixmap(matrix=fitz.Matrix(2, 2)) # Higher resolution for better OCR
-                img_bytes = pix.tobytes("jpg")
-                images.append(base64.b64encode(img_bytes).decode('utf-8'))
-            doc.close()
+            with default_storage.open(pdf_name, "rb") as pdf_file:
+                pdf_bytes = pdf_file.read()
+                doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+                for page in doc:
+                    pix = page.get_pixmap(matrix=fitz.Matrix(2, 2)) # Higher resolution for better OCR
+                    img_bytes = pix.tobytes("jpg")
+                    images.append(base64.b64encode(img_bytes).decode('utf-8'))
+                doc.close()
         except Exception as e:
             print(f"Error converting PDF to images: {e}")
         return images
@@ -233,9 +241,8 @@ class DocumentParserService:
                 'subject_name': subject.name,
                 'document_type_display': parsed_document_obj.get_document_type_display(),
                 'source_text': parsed_document_obj.source_text,
-                'source_file_path': parsed_document_obj.source_file.path if parsed_document_obj.source_file else None,
                 'source_file_name': parsed_document_obj.source_file.name if parsed_document_obj.source_file else None,
-                'additional_images': [img.image.path for img in parsed_document_obj.images.all() if img.image]
+                'additional_images': [img.image.name for img in parsed_document_obj.images.all() if img.image]
             }
         
         return await asyncio.to_thread(_get_data)
@@ -341,19 +348,19 @@ class DocumentParserService:
             for txt in self._split_text(doc_context['source_text']):
                 content_blocks.append({"type": "text", "data": txt})
 
-        if doc_context['source_file_path']:
-            fpath = doc_context['source_file_path']
-            if fpath.lower().endswith('.pdf'):
-                pdf_images = await asyncio.to_thread(self._get_pdf_page_images, fpath)
+        if doc_context['source_file_name']:
+            fname = doc_context['source_file_name']
+            if fname.lower().endswith('.pdf'):
+                pdf_images = await asyncio.to_thread(self._get_pdf_page_images, fname)
                 for img_b64 in pdf_images:
                     content_blocks.append({"type": "image", "data": img_b64})
-            elif fpath.lower().endswith(('.png', '.jpg', '.jpeg')):
-                img_data = await asyncio.to_thread(self.encode_image, fpath)
+            elif fname.lower().endswith(('.png', '.jpg', '.jpeg')):
+                img_data = await asyncio.to_thread(self.encode_image, fname)
                 content_blocks.append({"type": "image", "data": img_data})
 
         # Add additional DocumentImages
-        for img_path in doc_context['additional_images']:
-            img_data = await asyncio.to_thread(self.encode_image, img_path)
+        for img_name in doc_context['additional_images']:
+            img_data = await asyncio.to_thread(self.encode_image, img_name)
             content_blocks.append({"type": "image", "data": img_data})
 
         chunk_size = getattr(settings, 'AI_PARSER_CHUNK_SIZE', 5)

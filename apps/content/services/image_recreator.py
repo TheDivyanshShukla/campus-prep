@@ -8,6 +8,10 @@ from django.core.files.base import ContentFile
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from playwright.async_api import async_playwright
+import httpx
+
+# Shared Async HTTP Client for image recreation connection pooling
+_image_recreator_client = httpx.AsyncClient(timeout=60.0)
 
 class ImageRecreationService:
     def __init__(self, doc_obj=None):
@@ -17,7 +21,8 @@ class ImageRecreationService:
             openai_api_base="https://bifrost.naravirtual.in/langchain",
             openai_api_key="dummy-key",
             default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
-            temperature=0.1
+            temperature=0.1,
+            http_async_client=_image_recreator_client
         )
         self.browser = None
         self.playwright = None
@@ -50,7 +55,8 @@ class ImageRecreationService:
             self.browser = await p.chromium.launch(headless=True)
             
             # Use a semaphore to process X images in parallel to avoid overloading Gemini/System
-            semaphore = asyncio.Semaphore(20)
+            # Tuning: Reduced from 20 to 8 for better stability on medium-tier servers
+            semaphore = asyncio.Semaphore(8)
             
             # We need to collect all tasks and run them
             tasks = []
