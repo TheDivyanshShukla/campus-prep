@@ -1,2 +1,3 @@
 uv run celery -A config worker --loglevel=info -P solo
 uv run manage.py runserver
+uv run celery -A config worker --loglevel=info --pool=threads --concurrency=10
