@@ -27,12 +27,9 @@ class BaseDocumentParser:
 5. SELECTIVE IMAGE EXTRACTION (UNIVERSAL):
    - ONLY include 'image' blocks for TRUE visual elements: Diagrams, Figures, Graphs, Charts.
    - NEVER use 'image' blocks for text, titles, or formulas.
-6. AVOID REDUNDANCY:
-   - Zero Repetition Policy: Do not transcribe the same sentence, formula, or concept multiple times within the same section.
-   - Be concise. One high-fidelity transcription is better than three repetitive ones.
-7. MARKDOWN TABLES:
+6. MARKDOWN TABLES:
    - Convert all tabular data into clean, well-formatted Markdown tables.
-8. LATEX ROBUSTNESS & MATHJAX RENDERING:
+7. LATEX ROBUSTNESS & MATHJAX RENDERING:
    - ALWAYS use \\frac{num}{den} instead of slashes (/) for division.
    - Use $$ ... $$ for standalone formulas. Use $ ... $ for inline math.
    - ESCAPING: Use `\\\\` (four backslashes) for newlines inside matrices, arrays, and align blocks to ensure they render correctly. 
@@ -45,13 +42,15 @@ class BaseDocumentParser:
 -------------------------------------------
 """
 
-    def __init__(self):
+    def __init__(self, model_name: Optional[str] = None):
+        if not model_name:
+            model_name = getattr(settings, 'AI_PARSER_DEFAULT_MODEL', 'gemini/gemini-2.5-flash')
+            
         self.llm = ChatOpenAI(
-            model="gemini/gemini-2.5-flash",
+            model=model_name,
             openai_api_base="https://bifrost.naravirtual.in/langchain",
             openai_api_key="dummy-key",
             default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
-            temperature=0.2,
             http_async_client=_ai_parser_client,
         )
 

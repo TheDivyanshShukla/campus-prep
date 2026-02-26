@@ -49,8 +49,18 @@ def process_document_ai(self, document_id):
         # Save results and update status
         document.structured_data = structured_data
         document.parsing_status = 'COMPLETED'
-        document.save(update_fields=['structured_data', 'parsing_status', 'updated_at'])
+        
+        # Clear original source files as requested (Zero-PDF Experience)
+        # Note: We do this AFTER a successful parse
+        if document.source_file:
+            document.source_file.delete(save=False)
+            document.source_file = None
+            
+        document.save(update_fields=['structured_data', 'parsing_status', 'source_file', 'updated_at'])
 
+        # Delete related DocumentImages
+        document.images.all().delete()
+        
         # Post-Processing: Sync syllabus units if applicable
         if document.document_type == 'SYLLABUS':
             from .services.syllabus_processor import SyllabusProcessor

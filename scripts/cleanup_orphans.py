@@ -16,6 +16,25 @@ django.setup()
 from django.apps import apps
 from django.db import models
 
+def _extract_paths(data, paths):
+    """Recursively extract strings that look like file paths from JSON data."""
+    if isinstance(data, dict):
+        for v in data.values():
+            _extract_paths(v, paths)
+    elif isinstance(data, list):
+        for item in data:
+            _extract_paths(item, paths)
+    elif isinstance(data, str):
+        # Specific check for our recreated images or other uploaded docs
+        if "recreated/" in data or "raw_docs/" in data:
+            # Strip query params and protocol/domain if present
+            path = data.split('?')[0]
+            if "://" in path:
+                path = path.split("/", 3)[-1]
+            elif path.startswith("/media/"):
+                path = path.replace("/media/", "", 1)
+            paths.add(path)
+
 def get_db_files():
     """
     Collect all file paths stored in the Django database.
@@ -23,15 +42,25 @@ def get_db_files():
     db_files = set()
     for model in apps.get_models():
         file_fields = [f for f in model._meta.fields if isinstance(f, models.FileField)]
-        if not file_fields:
+        json_fields = [f for f in model._meta.fields if isinstance(f, models.JSONField)]
+        
+        if not file_fields and not json_fields:
             continue
             
-        # Get all non-empty values for these fields
+        # 1. Standard FileFields
         for field in file_fields:
             queryset = model.objects.exclude(**{f"{field.name}": ""}).values_list(field.name, flat=True)
             for path in queryset:
                 if path:
-                    db_files.add(path)
+                    db_files.add(str(path))
+        
+        # 2. JSONFields (Recursive search)
+        for field in json_fields:
+            queryset = model.objects.exclude(**{f"{field.name}": None}).values_list(field.name, flat=True)
+            for data in queryset:
+                if data:
+                    _extract_paths(data, db_files)
+                    
     return db_files
 
 def cleanup_orphans(delete=False):

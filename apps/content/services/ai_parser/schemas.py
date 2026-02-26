@@ -5,20 +5,20 @@ class PYQQuestion(BaseModel):
     """
     Represents a single question extracted from a Previous Year Question (PYQ) paper.
     """
-    unit: Optional[int] = Field(None, description="The unit number (1-5) this question belongs to. If not explicit, derive from SYLLABUS REFERENCE.")
-    marks: int = Field(..., description="The marks assigned to this question as an integer.")
-    question_text: str = Field(..., description="The full text of the question. Preserve original English phrasing and use LaTeX for math.")
+    unit: Optional[int] = Field(None, description="The syllabus unit number (e.g. 1, 2, 3, 4, 5) this question belongs to. Derive from subject context if possible.")
+    marks: int = Field(..., description="The marks assigned to this question (e.g. 7, 10, 14).")
+    question_text: str = Field(..., description="The full English text of the question. MUST use professional LaTeX for ANY mathematical symbols, formulas, or technical notation.")
     image_strategy: Optional[Literal['SEARCH', 'GEN_PROMPT', 'CANVAS']] = Field(
         None, 
-        description="The chosen strategy to recreate a visual element. SET TO NULL IF NO IMAGE EXISTS IN SOURCE."
+        description="Choice of recreation strategy: 'CANVAS' for diagrams/charts, 'SEARCH' for realistic images. SET TO NULL if no visual exists."
     )
     image_details: Optional[str] = Field(
         None, 
-        description="A high-quality search query for 'SEARCH', drawing prompt for 'GEN_PROMPT', or logical instructions for 'CANVAS'."
+        description="For 'CANVAS': extremely detailed technical description for recreation. For 'SEARCH': target keywords."
     )
-    part: Optional[str] = Field(None, description="The specific part of the question (e.g., 'a', 'b', 'c').")
-    has_or_choice: bool = Field(False, description="True if this question is part of an 'OR' choice pair.")
-    latex_answer: str = Field(..., description="A step-by-step detailed solution for the question using professional LaTeX.")
+    part: Optional[str] = Field(None, description="Sub-part identifier like 'a', 'b', or 'i'.")
+    has_or_choice: bool = Field(False, description="True if this specific question is part of an 'OR'/Internal choice pair.")
+    latex_answer: str = Field(..., description="Crystal-clear, step-by-step detailed solution. Use professional LaTeX for ALL math. Use double newlines for vertical spacing.")
 
 class ParsedPYQPaper(BaseModel):
     """
@@ -48,17 +48,17 @@ class SyllabusModule(BaseModel):
     """
     A single unit/module in a subject syllabus.
     """
-    unit: int = Field(..., description="Unit number (usually 1-5).")
-    title: str = Field(..., description="The title or name of the unit. Use LaTeX for math/symbols (e.g., '$\\\\lambda$ of Sodium').")
-    topics: List[str] = Field(..., description="List of topics. Use LaTeX for ALL technical symbols, constants, and formulas.")
+    unit: int = Field(..., description="Unit or Module number (e.g. 1, 2, 3, 4, 5).")
+    title: str = Field(..., description="The unit title. Use LaTeX for math/symbols (e.g. '$\\\\sigma$ notation').")
+    topics: List[str] = Field(..., description="Atomic list of topics. Use professional English and LaTeX for all technical terms.")
 
 class ParsedSyllabus(BaseModel):
     """
     Full structured syllabus for a subject.
     """
     modules: List[SyllabusModule]
-    experiments: Optional[List[str]] = Field(None, description="List of laboratory experiments or practicals if mentioned.")
-    reference_books: Optional[List[str]] = Field(None, description="List of suggested reference books or textbooks.")
+    experiments: List[str] = Field(default_factory=list, description="List of laboratory experiments or practicals listed in the syllabus.")
+    reference_books: List[str] = Field(default_factory=list, description="List of suggested reference books, authors, or textbooks.")
 
 class NoteContentBlock(BaseModel):
     """
