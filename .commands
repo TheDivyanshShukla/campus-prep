@@ -18,3 +18,6 @@ docker run -d `
 uv run manage.py seed_rgpv_data
 
 uv run manage.py flush --no-input
+
+
+uv run manage.py sync_pyq_papers --download                                                        
