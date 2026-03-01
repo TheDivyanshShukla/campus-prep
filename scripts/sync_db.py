@@ -67,7 +67,7 @@ def sync_databases(local_url, remote_url):
         
         if missing_tables:
             print(f"⚠️  {len(missing_tables)} tables are missing on the server.")
-            auto_migrate = input("� Would you like to automatically run Django migrations on the server? (y/N): ")
+            auto_migrate = input("👉 Would you like to automatically run Django migrations on the server? (y/N): ")
             
             if auto_migrate.lower() == 'y':
                 print("\n⚙️  Running 'uv run manage.py migrate' for remote database...")
@@ -85,13 +85,31 @@ def sync_databases(local_url, remote_url):
                         check=True,
                         cwd=str(BASE_DIR)
                     )
-                    print("✅ Migrations completed on server.")
-                    
-                    # Refresh destination cursor to see new tables
-                    dst_cur.execute("SELECT 1;") # Keep connection alive/active
-                except subprocess.CalledProcessError as e:
-                    print(f"❌ Migration failed: {e}")
-                    return
+                except subprocess.CalledProcessError:
+                    print("\n⚠️  Migration failed. This often happens if tables already exist but aren't tracked.")
+                    retry = input("👉 Try again with '--fake-initial'? (y/N): ")
+                    if retry.lower() == 'y':
+                        try:
+                            subprocess.run(
+                                ["uv", "run", "manage.py", "migrate", "--fake-initial"], 
+                                env=env, 
+                                check=True,
+                                cwd=str(BASE_DIR)
+                            )
+                        except subprocess.CalledProcessError as e:
+                            print(f"❌ Migration failed even with --fake-initial: {e}")
+                            return
+                    else:
+                        print("❌ Migration aborted.")
+                        return
+
+                print("✅ Migrations completed on server.")
+                
+                # CRITICAL: Reopen the destination connection to see the new tables
+                # PostgreSQL transactions started before the migration won't see the new tables.
+                dst_conn.close()
+                dst_conn = psycopg2.connect(remote_url)
+                dst_cur = dst_conn.cursor()
             else:
                 print("\n❌ Error: Remote database is not initialized. Please run migrations on the server first.")
                 return
@@ -101,17 +119,29 @@ def sync_databases(local_url, remote_url):
             if not table_exists(dst_cur, table):
                 print(f"⏩ Skipping table {table} (still missing on server after migration check)")
                 continue
-
-            print(f"📦 Syncing table: {table}...", end="", flush=True)
-            dst_cur.execute(f'TRUNCATE TABLE "{table}" CASCADE;')
             
+            # Note: We still use TRUNCATE CASCADE to be safe and clear existing data correctly
+            print(f"🧹 Truncating table: {table}...", end="", flush=True)
+            dst_cur.execute(f'TRUNCATE TABLE "{table}" CASCADE;')
+            print(" ✅")
+
+        print("\n⏳ Disabling constraints on destination for sync...")
+        dst_cur.execute("SET session_replication_role = 'replica';")
+
+        for table in tables:
+            if not table_exists(dst_cur, table):
+                continue
+
+            print(f"📦 Syncing data: {table}...", end="", flush=True)
             buffer = BytesIO()
             src_cur.copy_expert(f'COPY "{table}" TO STDOUT BINARY', buffer)
             buffer.seek(0)
             dst_cur.copy_expert(f'COPY "{table}" FROM STDIN BINARY', buffer)
-            
-            dst_conn.commit()
             print(" ✅")
+
+        print("\n⏳ Re-enabling constraints...")
+        dst_cur.execute("SET session_replication_role = 'origin';")
+        dst_conn.commit()
 
         print("\n✨ Database Synchronization Successful!")
 
