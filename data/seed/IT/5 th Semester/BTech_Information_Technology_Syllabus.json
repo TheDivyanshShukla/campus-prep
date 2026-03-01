@@ -1,0 +1,967 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Operating System",
+      "subject_code": "IT501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Unit I",
+          "topics": [
+            "Introduction to Operating Systems",
+            "Evaluation of OS",
+            "Types of Operating Systems",
+            "System protection",
+            "Operating system services",
+            "Operating system structure",
+            "System calls and system boots",
+            "Operating system design and implementation",
+            "Spooling and buffering"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit II",
+          "topics": [
+            "Basic concepts of CPU scheduling",
+            "Scheduling criteria",
+            "Scheduling algorithms",
+            "Algorithm evaluation",
+            "Multiple processor scheduling",
+            "Process concept",
+            "Operations on processes",
+            "Threads",
+            "Inter‑process communication",
+            "Precedence graphs",
+            "Critical section problem",
+            "Semaphores",
+            "Classical problems of synchronization"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit III",
+          "topics": [
+            "Deadlock problem",
+            "Deadlock characterization",
+            "Deadlock prevention",
+            "Deadlock avoidance",
+            "Deadlock detection",
+            "Recovery from deadlock",
+            "Methods for deadlock handling",
+            "Concepts of memory management",
+            "Logical and physical address space",
+            "Swapping",
+            "Fixed and dynamic partitions",
+            "Best‑Fit allocation",
+            "First‑Fit allocation",
+            "Worst‑Fit allocation",
+            "Paging",
+            "Segmentation",
+            "Paging combined with segmentation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit IV",
+          "topics": [
+            "Concepts of virtual memory",
+            "Cache memory organization",
+            "Demand paging",
+            "Page replacement algorithms",
+            "Allocation of frames",
+            "Thrashing",
+            "Demand segmentation",
+            "Role of operating system in security",
+            "Security breaches",
+            "System protection",
+            "Password management"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit V",
+          "topics": [
+            "Disk scheduling",
+            "File concepts",
+            "File manager",
+            "File organization",
+            "Access methods",
+            "Allocation methods",
+            "Free space management",
+            "Directory systems",
+            "File protection",
+            "File organization & access mechanism",
+            "File sharing implementation issues",
+            "File management in Linux",
+            "Introduction to distributed systems"
+          ]
+        }
+      ],
+      "experiments": [
+        "Program to implement FCFS CPU scheduling algorithm.",
+        "Program to implement SJF CPU scheduling algorithm.",
+        "Program to implement Priority CPU scheduling algorithm.",
+        "Program to implement Round Robin CPU scheduling algorithm.",
+        "Program to implement classical inter process communication problem (producer‑consumer).",
+        "Program to implement classical inter process communication problem (Reader‑Writers).",
+        "Program to implement classical inter process communication problem (Dining Philosophers).",
+        "Program to implement FIFO page replacement algorithm.",
+        "Program to implement LRU page replacement algorithm."
+      ],
+      "reference_books": [
+        "Silberschatz, \"Operating System\", Wiley Publication.",
+        "Tanenbaum, \"Modern Operating System\", PHI Learning.",
+        "Dhamdhere, \"System Programming and Operating System\", TMH.",
+        "Stuart, \"Operating System Principles, Design & Applications\", Cengage Learning.",
+        "Pabitra Pal Choudhury, \"Operating System: Principle and Design\", PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Networks",
+      "subject_code": "IT502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Unit I",
+          "topics": [
+            "Importance of computer networks",
+            "Broadcast and point to point networks",
+            "Local area networks and Wide area networks",
+            "ISO-OSI reference model",
+            "TCP/IP model",
+            "Interfaces and services",
+            "Protocol data unit",
+            "Connection oriented services",
+            "Connectionless services",
+            "Service primitives",
+            "Binding Protocol Address - ARP & RARP",
+            "Packet format",
+            "Encapsulation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit II",
+          "topics": [
+            "Data link layer design issues",
+            "Framing",
+            "Flow & error control",
+            "Physical addressing",
+            "Stop & Wait protocol",
+            "Go back N ARQ",
+            "Selective repeat ARQ",
+            "Piggybacking and pipelining",
+            "HDLC LAN Protocol stack - Logical link control and Media Access Control sublayer",
+            "IEEE 802.2 LLC Frame format",
+            "MAC layer protocols - static and dynamic allocation",
+            "Pure and slotted ALOHA",
+            "Carrier sense multiple access",
+            "Persistent CSMA",
+            "Non‑persistent CSMA",
+            "IEEE 802.3",
+            "IEEE 802.4",
+            "IEEE 802.5",
+            "FDDI"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit III",
+          "topics": [
+            "Logical addressing",
+            "Classful addressing",
+            "Classless addressing",
+            "Packet delivery & forwarding",
+            "Unicast routing protocols",
+            "Multicast routing protocols",
+            "Routing algorithm - Least Cost",
+            "Dijkstra's algorithm",
+            "Bellman‑Ford algorithm",
+            "Introduction to Internet protocol",
+            "IPv4 header",
+            "IPv4 datagrams",
+            "Encapsulation",
+            "Fragmentation and reassembly",
+            "IP routing",
+            "Subnet addressing",
+            "Subnet mask",
+            "Supernetting (special case of IP addresses)",
+            "IPv6 motivation",
+            "IPv6 frame format and addressing",
+            "ICMP introduction",
+            "ICMP header",
+            "ICMP message types"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit IV",
+          "topics": [
+            "TCP introduction",
+            "Transport services",
+            "Process‑to‑process delivery",
+            "TCP congestion control algorithms",
+            "Quality of service",
+            "TCP headers",
+            "Connection establishment and termination",
+            "Timeout of connection establishment",
+            "Maximum segment size",
+            "Port numbers and socket addresses",
+            "TCP timers",
+            "UDP introduction",
+            "UDP header",
+            "UDP checksum",
+            "UDP operations",
+            "Encapsulation & decapsulation",
+            "Queuing",
+            "SCTP services",
+            "SCTP transmission sequence number",
+            "SCTP stream identifier",
+            "SCTP stream sequence number",
+            "SCTP packet format"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit V",
+          "topics": [
+            "BOOTP operation",
+            "BOOTP packet format",
+            "DHCP address allocation",
+            "DHCP configuration",
+            "DHCP packet format",
+            "DNS distribution of name spaces",
+            "DNS in the Internet",
+            "FTP connection",
+            "FTP communication",
+            "FTP command processing",
+            "TFTP",
+            "E‑Mail SMTP",
+            "E‑Mail POP",
+            "E‑Mail IMAP",
+            "SNMP",
+            "Study of internetworking devices and their configuration – switches",
+            "Hubs",
+            "Bridges",
+            "Routers",
+            "Gateways"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Computer Networks – Tanenbaum, PHI Learning",
+        "Data Communication & Networks – Forouzan, TMH",
+        "TCP/IP – Protocol suite – Forouzan, TMH 3rd edition",
+        "Computer Networks and Internets – D.E. Comer, Pearson",
+        "TCP/IP Illustrated – W. Richard Stevens, Volume I, Addison Wesley",
+        "Internetworking with TCP/IP Vol. I, II & III – Comer, PHI Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Theory of Computation",
+      "subject_code": "IT-503 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Finite State Automata",
+          "topics": [
+            "Introduction to the theory of computation",
+            "Description of finite automata",
+            "Properties of transition functions",
+            "Transition graph design",
+            "Designing finite automata (FSM)",
+            "Deterministic Finite Automaton (DFA)",
+            "Nondeterministic Finite Automaton (NFA)",
+            "Two‑way finite automata",
+            "Equivalence of NFA and DFA",
+            "Mealy machines",
+            "Moore machines"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Regular Languages and Expressions",
+          "topics": [
+            "Regular grammars",
+            "Regular expressions",
+            "Regular sets",
+            "Closure properties of regular grammars",
+            "Arden’s theorem",
+            "Myhill‑Nerode theorem",
+            "Pumping lemma for regular languages",
+            "Applications of the pumping lemma",
+            "Applications of finite automata",
+            "Minimization of finite state automata"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Context‑Free Grammars",
+          "topics": [
+            "Introduction to context‑free grammar (CFG)",
+            "Derivation (parse) trees",
+            "Ambiguity in CFGs",
+            "Simplification of CFGs",
+            "Chomsky Normal Form (CNF)",
+            "Greibach Normal Form (GNF)",
+            "Pumping lemma for context‑free languages",
+            "Decision algorithms for CFGs",
+            "Designing CFGs",
+            "Closure properties of CFLs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Pushdown Automata",
+          "topics": [
+            "Introduction to pushdown automata (PDA)",
+            "Formal definition of PDA",
+            "Closure properties of PDA",
+            "Examples of PDA",
+            "Deterministic pushdown automata (DPDA)",
+            "Nondeterministic pushdown automata (NPDA)",
+            "Conversion from PDA to CFG",
+            "Conversion from CFG to PDA"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Turing Machines and Complexity",
+          "topics": [
+            "Basics and formal definition of Turing machines (TM)",
+            "Language acceptability by TM",
+            "Examples of Turing machines",
+            "Multitape Turing machines",
+            "Nondeterministic Turing machines (NDTM)",
+            "Universal Turing machine",
+            "Offline Turing machines",
+            "Equivalence of single‑tape and multitape TMs",
+            "Recursive and recursively enumerable languages",
+            "Decidable and undecidable problems",
+            "Halting problem and reducibility",
+            "Complexity classes: P, NP, NP‑complete, NP‑hard"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Daniel I.A. Cohen, “Introduction to Computer Theory”, Wiley India.",
+        "John E. Hopcroft, Jeffrey D. Ullman and Rajeev Motwani, “Introduction to Automata Theory, Languages and Computation”, Pearson Education.",
+        "K.L.P. Mishra & N. Chandrasekaran, “Theory of Computer Science”, PHI Learning.",
+        "Peter Linz, “Introduction to Automata Theory and Formal Languages”, Narosa Publishing.",
+        "John C. Martin, “Introduction to Languages and the Theory of Computation”, TATA McGraw Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Microprocessor and Interfacing",
+      "subject_code": "IT-503 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Evolution of microprocessor and architecture",
+          "topics": [
+            "Evolution of microprocessor",
+            "Single chip microcomputers",
+            "Microprocessor applications",
+            "Microprocessor architecture",
+            "Addressing modes",
+            "Instruction sets",
+            "Arithmetic and logic instructions",
+            "Program control instructions",
+            "Introduction to 8086 family",
+            "Procedures and macros",
+            "Timing and troubleshooting interrupts",
+            "80286, 8086, 80486 microprocessor system concepts"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Microprocessor cycle, instruction set and assembly programming",
+          "topics": [
+            "Microprocessor cycle",
+            "Address and instruction unit (AIU)",
+            "Timing and control unit",
+            "Register data",
+            "Address bus and pin configuration",
+            "Intel 8086 instruction set, opcode and operands",
+            "Limitations of word size",
+            "Assembly language programming",
+            "Pentium and Pentium Pro features",
+            "Pentium II, III, IV microprocessors and software changes",
+            "Intel 8086 instruction set details",
+            "Instruction formats and data formats",
+            "Addressing modes and status flags",
+            "Symbols and abbreviations in assembly",
+            "High-level language aspects",
+            "Application areas of various languages",
+            "Stacks and subroutine systems",
+            "Software commands in assembly language",
+            "Software development and debugging",
+            "Modular and structured programming",
+            "Top‑down and bottom‑up design",
+            "Macro microprogramming"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Assembly language programming and I/O interfacing",
+          "topics": [
+            "Assembly language programming examples (addition of 8/16‑bit binary numbers)",
+            "Subtraction of 8/16‑bit binary numbers",
+            "Address partitioning and addressing modes",
+            "Memory and I/O interfacing",
+            "Data transfer schemes",
+            "Interfacing devices and I/O ports",
+            "Basic I/O interfacing modules (MDS)",
+            "Microcontrollers and I/O processors",
+            "Co‑processors",
+            "Microcomputer development systems",
+            "Single chip microcomputers (Intel 8748, 8051, 8096, 8049, 2920/2921)",
+            "I/O processors (UPI‑425, UPI‑41, UPI‑42)",
+            "Math co‑processors (8087, 80287, 80387, 80387DX, 803875x)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Bus interfaces, controllers and peripheral buses",
+          "topics": [
+            "Bus interface and I/O port addressing",
+            "Decoding using 8279",
+            "Programmable keyboard/display interface",
+            "8254 internal timer",
+            "16550 programmable communication interface",
+            "A/D converters",
+            "8259A programmable interrupt controller",
+            "8237 DMA controller",
+            "Shared bus operation and disk memory system",
+            "Video display interfaces",
+            "ISA, EISA, and VESA local buses",
+            "PCI bus",
+            "Parallel printer interface (LPT)",
+            "USB and AGP interfaces",
+            "Programmable communication interface 8251",
+            "VSART CRT controller 8275, 6854",
+            "Floppy disk controller 8272",
+            "I/O processor 8089"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Memory technologies and organization",
+          "topics": [
+            "Memory units: RAM, SRAM, DRAM, ROM, PROM, EPROM, EEPROM, non‑volatile RAM",
+            "Semiconductor technology for memory",
+            "Shift registers and magnetic memory",
+            "Tapes, disks, main and secondary memory",
+            "Cache memory, program memory, data memory",
+            "Real and virtual memory",
+            "Memory buses and addressing",
+            "CPU processing speed"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Douglas V Hall, “Microprocessors and interfacing –Programming & Hardware” TMH",
+        "Barry B. Brey, “The intel Microprocessor –8086”, Pearson Education",
+        "Kenneth J. Ayala, ”The 8086 Microproccessor: Programming & Interfacing The PC”, Cengage Learning",
+        "Krishna Kant, “Microprocessors and Microcontrollers”, PHI Learning",
+        "A.K. Ray, KM Bhurchandi, “Advanced Microprocessor and peripherals” McGraw Hill",
+        "R.S. Gaonkar, “Microprocessors and interfacing”, TMH"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Object Oriented Analysis and Design",
+      "subject_code": "IT‑503 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Overview of object‑oriented concepts",
+            "Object orientation",
+            "Object‑oriented software development life‑cycle (OO SDLC)",
+            "Object‑oriented methodology",
+            "OO themes",
+            "Modeling concepts",
+            "Role of analysis and design in software development",
+            "Overview of various OOAD methodologies",
+            "OO approach versus conventional approach",
+            "Unified process of software development",
+            "Unified Modeling Language (UML)",
+            "Goals of UML",
+            "Overview of different UML models"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Static Modeling using Class Diagrams",
+          "topics": [
+            "Object and class concepts",
+            "Link and association",
+            "Multiplicity",
+            "Ternary association",
+            "Recursive association",
+            "Association class",
+            "Generalization and inheritance",
+            "Multiple inheritance",
+            "Aggregation and composition",
+            "Abstract class",
+            "Packages"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Dynamic Modeling using State Diagrams",
+          "topics": [
+            "Events",
+            "States",
+            "Transitions and conditions",
+            "Types of state diagrams",
+            "Continuous life‑cycle state diagrams",
+            "One‑shot life‑cycle state diagrams",
+            "Sub‑states",
+            "Nested state diagrams",
+            "Signal generalization",
+            "Concurrency",
+            "Junction state",
+            "Synchronization state",
+            "Relation of class and state models"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Interaction Modeling",
+          "topics": [
+            "Use‑case models",
+            "Actors and use cases",
+            "Use‑case relationships",
+            "Use of use cases for validation and verification",
+            "Sequence diagrams",
+            "Procedural sequence models",
+            "Activity models",
+            "Swim‑lanes",
+            "Dynamic concurrency",
+            "Decomposing an activity",
+            "Communication diagrams",
+            "Architectural modeling: component diagrams",
+            "Architectural modeling: deployment diagrams"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "System Design and Implementation",
+          "topics": [
+            "System design and class design",
+            "Implementation modeling",
+            "Implementing structure and functionality",
+            "Frameworks",
+            "Design patterns",
+            "Object‑oriented languages and their comparison",
+            "Object‑oriented databases",
+            "Object‑oriented programming style",
+            "Common Object Request Broker Architecture (CORBA)",
+            "Component Object Model (COM)",
+            "Distributed COM (DCOM)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Michael Blaha, *Object‑Oriented Modeling and Design with UML*, PHI",
+        "Mahesh P. Matha, *Object‑Oriented Analysis and Design Using UML*, PHI",
+        "D. Jeya Mala and S. Geetha, *Object‑Oriented Analysis and Design Using UML*, McGraw‑Hill",
+        "Andrew Haigh, *Object‑Oriented Analysis and Design*, TMH",
+        "O’Docherty, *Object‑Oriented Analysis and Design Understanding, System Development with UML 2.0*, Wiley India"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Artificial Intelligence",
+      "subject_code": "IT-504 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Search Techniques",
+          "topics": [
+            "Meaning and definition of artificial intelligence",
+            "Production systems",
+            "Characteristics of production systems",
+            "Breadth‑first search (BFS)",
+            "Depth‑first search (DFS)",
+            "Hill‑climbing search",
+            "Best‑first search",
+            "A* algorithm",
+            "AO* algorithm",
+            "Various control strategies for production systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Knowledge Representation",
+          "topics": [
+            "Knowledge representation",
+            "Problems in representing knowledge",
+            "Propositional logic",
+            "Predicate logic",
+            "Comparison of propositional and predicate logic",
+            "Resolution",
+            "Refutation",
+            "Deduction",
+            "Theorem proving",
+            "Inferencing",
+            "Monotonic reasoning",
+            "Non‑monotonic reasoning"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Probabilistic Reasoning and Fuzzy Logic",
+          "topics": [
+            "Probabilistic reasoning",
+            "Bayes' theorem",
+            "Semantic networks",
+            "Scripts",
+            "Schemas",
+            "Frames",
+            "Conceptual dependency",
+            "Fuzzy logic",
+            "Forward reasoning",
+            "Backward reasoning"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Game Playing, Planning and Natural Language Processing",
+          "topics": [
+            "Game‑playing techniques",
+            "Minimax procedure",
+            "Alpha‑beta pruning",
+            "Planning",
+            "Block‑world problem in robotics",
+            "Introduction to natural language processing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Learning and Neural Networks",
+          "topics": [
+            "Introduction to learning",
+            "Various learning techniques",
+            "Introduction to neural networks",
+            "Applications of neural networks",
+            "Common‑sense reasoning",
+            "Examples of expert systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rich E and Knight K, “Artificial Intelligence”, TMH, New Delhi.",
+        "Nelsson N.J., “Principles of Artificial Intelligence”, Springer Verlag, Berlin."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "E Commerce & Governance",
+      "subject_code": "IT-504 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Definition of Electronic Commerce",
+            "Brief history of Ecommerce",
+            "E‑Commerce: technology and prospects",
+            "Incentives for engaging in electronic commerce",
+            "Needs of E‑Commerce",
+            "Advantages and disadvantages",
+            "Inter‑Organizational E‑Commerce",
+            "Intra‑Organizational E‑Commerce",
+            "Consumer to Business Electronic Commerce",
+            "Architectural framework",
+            "Impact of E‑commerce on business",
+            "E‑Commerce Models"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Network Infrastructure for E‑Commerce",
+          "topics": [
+            "Internet and Intranet based E‑commerce – Issues, problems and prospects",
+            "Network Infrastructure",
+            "Network Access Equipments",
+            "Broadband telecommunication (ATM, ISDN, FRAME RELAY)",
+            "Mobile Commerce – Introduction",
+            "Wireless Application Protocol (WAP) technology",
+            "Mobile Information device",
+            "Emerging client‑server security threats",
+            "Firewalls & network security"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "E‑Marketplaces, e Procurement and e Payment Systems",
+          "topics": [
+            "Definition of e‑Marketplace and description of its functions",
+            "Types of e‑Marketplaces and their features",
+            "Various types of auctions and their characteristics",
+            "Benefits, limitations and impacts of auctions",
+            "E‑Commerce in the wireless environment",
+            "Competition in the digital economy and impact on industry",
+            "Integration and e‑Business suites – ERP, eSCM, CRM",
+            "e‑Procurement definition, processes, methods and benefits",
+            "e‑Payment systems",
+            "Categories and users of smart cards",
+            "Payment methods in B2B e‑Commerce"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Electronic Payment System",
+          "topics": [
+            "Overview of electronic payments",
+            "SET protocol",
+            "Payment gateway",
+            "Digital token‑based electronic payment system",
+            "Magnetic strip cards",
+            "E‑Checks",
+            "Smart cards",
+            "Credit cards",
+            "Debit‑card based EPS",
+            "Emerging financial instruments",
+            "Home banking",
+            "Online banking"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "e‑Government",
+          "topics": [
+            "Definition of e‑Governments",
+            "Theoretical background of e‑governance",
+            "Issues in e‑governance applications",
+            "Evolution of e‑governance",
+            "Implementation of e‑government services",
+            "Challenges and opportunities",
+            "Benefits of e‑government",
+            "e‑governance models – broadcasting, critical flow, comparative analysis, mobilization and lobbying",
+            "Interactive services / G2C2G"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ravi Kalakota, Andrew Winston, “Frontiers of Electronic Commerce”, Addison Wesley.",
+        "Pete Lohsin, John Vacca “Electronic Commerce”, New Age International",
+        "Goel, Ritendra “E‑commerce”, New Age International",
+        "Laudon, “E‑Commerce: Business, Technology, Society”, Pearson Education",
+        "Bajaj and Nag, “E‑Commerce the cutting edge of Business”, TMH",
+        "Turban, “Electronic Commerce 2004: A Managerial Perspective”, Pearson Education",
+        "Denieal Amor, “The E‑Business Revolution”, Addison Wesley",
+        "Diwan, Sharma, “E‑Commerce” Excel",
+        "J. Satyanarayan, “E‑government: The science of the possible”, PHI Learning Private Limited",
+        "C.S.R. Prabhu, “E‑governence: concept and case study”, PHI Learning Private Limited"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Java Programming",
+      "subject_code": "IT-504 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Java Environment and Core OOP Concepts",
+          "topics": [
+            "$\\texttt{JDK}$ and $\\texttt{JVM}$ overview",
+            "Java programming environment (compiler, interpreter, applet viewer, debugger)",
+            "Java Application Programming Interface ($\\texttt{API}$)",
+            "Difference between application and applet",
+            "Object‑oriented concepts: objects, classes, encapsulation, inheritance, software reuse, polymorphism",
+            "Abstract classes and abstract methods",
+            "Defining and implementing interfaces; interface variables; extending interfaces",
+            "Packages, scope and lifetime of identifiers",
+            "Access specifiers",
+            "Constructors and copy constructors",
+            "The \\texttt{this} reference",
+            "The \\texttt{finalize}() method",
+            "Arrays",
+            "Memory allocation and garbage collection"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "AWT, Event Handling, Applets and Swing",
+          "topics": [
+            "Abstract Window Toolkit (AWT) containers and components",
+            "AWT class hierarchy",
+            "Window fundamentals: Component, Container, Panel, Window, Frame, Canvas",
+            "AWT controls and layout managers",
+            "Menus and common controls (Label, Button, Check Box, Radio Button, Choice, TextArea, ScrollList, ScrollBar)",
+            "Layout managers: FlowLayout, GridLayout, BorderLayout, CardLayout",
+            "Java Event Handling Model: event delegation, ignoring, self‑contained, delegating events",
+            "Event class hierarchy and adapter classes",
+            "Key event classes: ActionEvent, AdjustmentEvent, ContainerEvent, FocusEvent, ItemEvent, MouseEvent, TextEvent, WindowEvent",
+            "Applet security restrictions, class hierarchy, lifecycle, HTML tags",
+            "Introduction to Swing: Swing library and building Swing applications"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Multithreading and Exception Handling",
+          "topics": [
+            "Multithreading fundamentals: simple threads and multi‑threaded programming",
+            "Thread synchronization: locks, synchronized methods, synchronized blocks",
+            "Thread scheduling policies",
+            "Producer‑consumer relationship",
+            "Daemon threads",
+            "Exception handling overview: stack‑based execution and propagation",
+            "Exception types and hierarchy",
+            "Try‑catch‑finally construct",
+            "Throw statement and custom exceptions",
+            "Assertions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Input/Output and JDBC",
+          "topics": [
+            "Java I/O overview: directories and stream classes",
+            "Byte streams: InputStream, OutputStream, FileInputStream, FileOutputStream, PrintStream, RandomAccessFile",
+            "Character streams: BufferedReader, BufferedWriter, PrintWriter",
+            "Object serialization and deserialization",
+            "JDBC fundamentals: JDBC‑ODBC bridge, connectivity model, DriverManager",
+            "ResultSet navigation and metadata",
+            "java.sql package and JDBC exception classes",
+            "Connecting to a remote database"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Java Networking and RMI",
+          "topics": [
+            "Java networking basics: java.net package, sockets, client‑server model, reserved sockets, servers, Internet addressing, TCP sockets, UDP sockets",
+            "Remote Method Invocation (RMI): client/server architecture, RMI registry services, steps to create an RMI application and example"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Naughton & Schildt, “The Complete Reference Java”.",
+        "Tata McGraw Hill. 2. Deitel, “Java – How to Program”, Pearson Education, Asia.",
+        "Horstmann & Cornell, “Core Java 2 (Vol I & II)”, Sun Microsystems.",
+        "L. Van Bayross, “Java 2.0”, BPB Publications.",
+        "Ivor Horton, “Beginning Java 2, JDK 5th Ed.”, Wiley India.",
+        "Russell, “Java Programming for the Absolute Beginners”, PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advanced Java Lab",
+      "subject_code": "IT-505",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Java Database Connectivity (JDBC)",
+          "topics": [
+            "JDBC Product",
+            "Types of Drivers",
+            "Two-Tier Client/Server Model",
+            "Three-Tier Client/Server Model",
+            "Basic Steps of JDBC",
+            "Creating and Executing SQL Statement",
+            "The Result Set Object",
+            "Working with Database MetaData Interface"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Java Servlets",
+          "topics": [
+            "Servlet Interaction & Advanced Servlets",
+            "Life cycle of Servlet",
+            "Java Servlet Development Kit",
+            "javax.servlet package",
+            "Reading Servlet Parameters",
+            "Reading Initialization Parameters",
+            "javax.servlet.http Package",
+            "Handling HTTP"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "JavaServer Pages (JSP) and Remote Method Invocation (RMI)",
+          "topics": [
+            "JSP Technologies",
+            "Understanding the Client-Server Model",
+            "Understanding Web server software",
+            "Configuring the JSP Server",
+            "Handling JSP Errors",
+            "JSP Translation Time Errors",
+            "JSP Request Time Errors",
+            "Creating a JSP Error Page",
+            "RMI Architecture",
+            "Designing RMI application",
+            "Executing RMI application"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Enterprise Java Beans (EJB)",
+          "topics": [
+            "Types of Enterprise Java beans",
+            "Session Bean & Entity Bean",
+            "Features of Session Bean",
+            "Life-cycle of Stateful Session Bean",
+            "Features of Entity Bean",
+            "Life-cycle of Entity Bean",
+            "Container-managed Transactions & Bean-managed Transactions",
+            "Implementing a container-managed Entity Bean"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Struts Framework",
+          "topics": [
+            "Introduction to the Apache Struts",
+            "MVC Architecture",
+            "Struts Architecture",
+            "How Struts Works?",
+            "Introduction to the Struts Controller",
+            "Introduction to the Struts Action Class",
+            "Using Struts ActionForm Class",
+            "Using Struts HTML Tags",
+            "Introduction to Struts Validator Framework",
+            "Client Side Address Validation in Struts",
+            "Custom Validators Example",
+            "Developing Application with Struts Tiles"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Java the Complete Reference, ninth edition by Herbert Schild, Publisher: McGraw Hills",
+        "Head First EJB 3.0 by Kathy Sierra, Bert Bates, Publisher: O'Reilly Media",
+        "Head First Servlets and JSP by Bryan Basham, Kathy Sierra & Bert Bates, Publisher: O'Reilly Media",
+        "Just Hibernate, A Lightweight Introduction to the Hibernate Framework by Madhusudhan Konda, Publisher: O'Reilly Media",
+        "Programming Jakarta Struts, 2nd Edition by Chuck Cavaness, Publisher: O'Reilly Media"
+      ],
+      "extra": null
+    }
+  ]
+}

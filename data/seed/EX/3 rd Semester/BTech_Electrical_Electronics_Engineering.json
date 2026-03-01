@@ -1,0 +1,562 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Signals and Systems",
+      "subject_code": "EX302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Classification of signals and systems",
+          "topics": [
+            "Continuous‑time (CT) signals: step, ramp, pulse, impulse, sinusoidal and exponential signals",
+            "Discrete‑time (DT) signals: step, ramp, pulse, impulse, sinusoidal and exponential signals",
+            "Basic operations on signals (addition, scaling, time‑shifting, time‑reversal, etc.)",
+            "Classification of signals: periodic vs. aperiodic, energy vs. power signals, random signals",
+            "CT and DT systems and their basic properties (causality, stability, linearity, time‑invariance)",
+            "Linear time‑invariant (LTI) systems and their fundamental properties"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Analysis of continuous‑time signals",
+          "topics": [
+            "Time‑domain analysis of CT signals",
+            "Frequency‑domain analysis of CT signals",
+            "Fourier series analysis and spectrum of periodic CT signals",
+            "Fourier transform of CT signals",
+            "Laplace transform and region of convergence (ROC)",
+            "Wavelet transform of CT signals"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Linear time‑invariant continuous‑time systems",
+          "topics": [
+            "Differential‑equation representation of LTI CT systems",
+            "Block‑diagram representation of CT systems",
+            "State‑variable representation and matrix form of CT systems",
+            "Impulse response and step response of CT systems",
+            "Frequency response (Bode plot, magnitude‑phase) of CT systems",
+            "Reliability considerations for CT systems",
+            "Design and analysis of analog filters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Analysis of discrete‑time signals",
+          "topics": [
+            "Convolution sum for DT signals and its properties",
+            "Sampling of CT signals, Nyquist criterion and aliasing",
+            "Discrete‑time Fourier transform (DTFT) and its properties",
+            "Z‑transform of DT signals, poles, zeros and ROC",
+            "Inverse Z‑transform techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Linear time‑invariant discrete‑time systems",
+          "topics": [
+            "Difference‑equation representation of LTI DT systems",
+            "Block‑diagram representation of DT systems",
+            "Impulse response of DT systems",
+            "Analysis of DT LTI systems using DTFT and Z‑transform",
+            "State‑variable equations and matrix representation for DT systems",
+            "Design and implementation of digital filters"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Alan V. Oppenheim, Alan S. Willsky, S. Hamid Nawab, ‘Signals and Systems’, 2nd edition, Pearson New International Edition, 2015",
+        "A. Anand Kumar, Signals and Systems, PHI, 3rd edition, 2015",
+        "Mahmood Nahvi, Signals and Systems, McGraw‑Hill",
+        "Simon Haykin and Barry Van Veen, Signals and Systems, Wiley India",
+        "A. Nagoor Kani, Signals and Systems, McGraw‑Hill",
+        "Robert A. Gabel and Richard A. Roberts, Signals & Linear Systems, Wiley",
+        "Rodger E. Ziemer, William H. Tranter, D. Ronald Fannin, Signals & Systems, Pearson Education"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electrical Measurements and Instruments",
+      "subject_code": "EX303",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction, history and overview of measurement system; fundamentals of measurement system; static and dynamic characteristics of measurement systems; systematic characteristics; generalized model; transfer function; techniques for dynamic compensation; accuracy of measurement systems in steady state; measurement error; error probability function; error reduction techniques; reliability; choice and economics of measurement systems; loading effects due to shunt‑connected and series‑connected instruments; calibration curve; testing & calibration of instruments",
+          "topics": [
+            "Introduction, history and overview of measurement systems",
+            "Fundamentals of measurement systems",
+            "Static and dynamic characteristics of measurement systems",
+            "Systematic characteristics and generalized model",
+            "Transfer function and techniques for dynamic compensation",
+            "Accuracy in steady state – measurement error and error probability function",
+            "Error reduction techniques, reliability, choice and economics of measurement systems",
+            "Loading effects caused by shunt‑connected and series‑connected instruments",
+            "Calibration curve and procedures for testing & calibration of instruments"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Galvanometers – theory, principle of operation and construction",
+          "topics": [
+            "Ballistic galvanometer theory and construction",
+            "D’Arsonval galvanometer theory and construction",
+            "Definition and classification of analog and digital instruments",
+            "Operating principles of analog instruments, operating force, types of supports, damping and controlling mechanisms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Different types of ammeters and voltmeters; digital instruments",
+          "topics": [
+            "PMMC, moving iron (MI), electrodynamometer and induction ammeters & voltmeters",
+            "Expression for control and deflection torque, advantages, disadvantages and error sources",
+            "Extension of range using shunt and multiplier techniques",
+            "Digital voltmeter, digital ammeter, multimeter and wattmeter"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Instrument transformers",
+          "topics": [
+            "Potential transformers (PT) and current transformers (CT)",
+            "Ratio and phase‑angle errors; testing procedures for instrument transformers",
+            "Differences between CT and PT; error reduction techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Measurement of power",
+          "topics": [
+            "Power measurement in AC and DC circuits",
+            "Electrodynamometer type wattmeter – construction, theory, operation and errors",
+            "Low power‑factor and UPF wattmeter",
+            "Double‑element and three‑element dynamometer wattmeter",
+            "Three‑phase power measurement – one‑, two‑ and three‑wattmeter methods",
+            "Reactive power measurement by single wattmeter method",
+            "Power measurement using current and potential transformers"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Measurement of energy",
+          "topics": [
+            "Single‑phase and three‑phase digital/electronic energy meters – construction and operation",
+            "Energy flow and power calculations; error analysis",
+            "Testing by phantom loading",
+            "Tri‑vector meter, maximum demand meter and ampere‑hour meter"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Power factor meter",
+          "topics": [
+            "Single‑phase and three‑phase electrodynamometer type power factor meters",
+            "Moving‑iron type power factor meters"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "Frequency meter",
+          "topics": [
+            "Vibrating reed frequency meter",
+            "Resonance type frequency meter",
+            "Weston type frequency meter",
+            "Synchronoscope"
+          ]
+        },
+        {
+          "unit": 9,
+          "title": "Ohmmeter",
+          "topics": [
+            "Series and stunt type ohmmeters",
+            "Megger and ratio meter"
+          ]
+        },
+        {
+          "unit": 10,
+          "title": "Resistance measurement",
+          "topics": [
+            "Classification of low, medium and high resistance",
+            "Voltmeter‑ammeter method",
+            "Wheatstone bridge method",
+            "Kelvin’s double bridge method",
+            "Loss‑of‑charge method for high resistance",
+            "Earth resistance measurement"
+          ]
+        },
+        {
+          "unit": 11,
+          "title": "Magnetic measurement",
+          "topics": [
+            "B‑H curve determination",
+            "Hysteresis loop measurement",
+            "Power loss measurement in sheet metal using Lloyd‑Fischer square"
+          ]
+        }
+      ],
+      "experiments": [
+        "Measurement of low resistance using Kelvin’s double bridge",
+        "Measurement of medium resistance using Wheatstone’s bridge",
+        "Measurement of high resistance by loss of charge method",
+        "Measurement of insulation resistance using Megger",
+        "Measurement of earth resistance by fall of potential method and verification by using earth tester",
+        "Measurement of power in a single‑phase AC circuit by 3‑voltmeter/3‑ammeter method",
+        "Calibration of a dynamometer type wattmeter with respect to a standard/sub‑standard wattmeter",
+        "Calibration of single‑phase digital/electronic type energy meter",
+        "Calibration of a dynamometer type wattmeter by phantom loading method",
+        "Measurements using instrument transformers",
+        "Study of various types of indicating instruments",
+        "Measurement of power in three‑phase circuit by one, two & three wattmeter methods"
+      ],
+      "reference_books": [
+        "A.K. Sawhney; ‘A course in Electrical & Electronic Measurements & Instrumentation’; Dhanpat Rai & Co. (P) Ltd., New Delhi",
+        "G. K. Banerjee; ‘Electrical and Electronic Measurements’. PHI Learning Pvt. Ltd.",
+        "R. B. Northrop; ‘Introduction to Instrumentation and Measurement’; CRC Press, Taylor & Francis",
+        "Vijay Singh; ‘Fundamentals of Electrical & Electronic Measurements’, New Age International"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Network Analysis",
+      "subject_code": "EX304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Circuit Elements and Basic Analysis",
+          "topics": [
+            "Introduction to circuit elements R, L, C and their characteristics (linearity, time dependence)",
+            "Voltage and current sources (controlled and uncontrolled)",
+            "Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) analysis",
+            "Nodal analysis",
+            "Mesh analysis",
+            "Analysis of magnetically coupled circuits"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Transient and Steady‑State Analysis",
+          "topics": [
+            "Transient analysis in RL, RC, and RLC circuits",
+            "Initial conditions and time constants",
+            "Steady‑state analysis using phasors and vectors",
+            "Impedance and admittance",
+            "Series and parallel resonance"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Network Topology and Graph Theory",
+          "topics": [
+            "Network topology concepts",
+            "Network graph, trees, branches and links",
+            "Incidence matrix, cut‑set and tie‑set matrices",
+            "Dual networks and dot convention",
+            "Coupling coefficient and tuned circuits"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Network Theorems",
+          "topics": [
+            "Thevenin and Norton equivalent theorems",
+            "Superposition theorem",
+            "Reciprocity theorem",
+            "Compensation and substitution theorems",
+            "Maximum power transfer theorem",
+            "Millman’s theorem",
+            "Tellegen’s theorem",
+            "Analysis with dependent and independent sources"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Frequency Domain and Laplace Transform",
+          "topics": [
+            "Laplace transform solution of integro‑differential equations",
+            "Transform of step, ramp, gate and sinusoidal waveforms",
+            "Initial and final value theorems",
+            "Network theorems in the transform domain"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Fourier Series and Signal Spectra",
+          "topics": [
+            "Signal spectra and Fourier series coefficients",
+            "Symmetry properties of Fourier coefficients",
+            "Trigonometric form of Fourier series",
+            "Exponential form of Fourier series"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Two‑Port Networks and Network Functions",
+          "topics": [
+            "Complex frequency and network/transfer functions for one‑port and two‑port networks",
+            "Poles and zeros, driving‑point conditions",
+            "Two‑port parameters Z, Y, ABCD, hybrid and image parameters",
+            "Parameter interrelationships",
+            "Interconnection of two‑port networks and terminated two‑port networks"
+          ]
+        }
+      ],
+      "experiments": [
+        "To Verify Thevenin Theorem.",
+        "To Verify Superposition Theorem.",
+        "To Verify Reciprocity Theorem.",
+        "To Verify Maximum Power Transfer Theorem.",
+        "To Verify Millman’s Theorem.",
+        "To Determine Open Circuit parameters of a Two Port Network and to Determine Short Circuit parameters of a Two Port Network.",
+        "To Determine A, B, C, D parameters of a Two Port Network.",
+        "To Determine h parameters of a Two Port Network.",
+        "To Find Frequency Response of RLC Series Circuit.",
+        "To Find Frequency Response of RLC parallel Circuit."
+      ],
+      "reference_books": [
+        "M.E. Van Valkenburg, Network Analysis, Pearson",
+        "William H. Hayt & Jack E. Kemmerly, Steven M. Durbin; Engineering Circuit Analysis; McGraw‑Hill",
+        "Richard C. Dorf, James A. Svoboda, Introduction to Electric Circuits, Wiley India, 2015",
+        "Charles K. Alexander & Matthew N.O. Sadiku: Electrical Circuits; McGraw‑Hill",
+        "J. David Irwin, Robert M. Nelms, Engineering Circuit Analysis, Wiley India, 2015",
+        "Robert L. Boylestad, Introductory Circuit Analysis, Pearson, 2016",
+        "M. S. Sukhija, T. K. Nagsarkar; Circuits and Networks, Oxford University Press, 2015",
+        "Samarajit Ghosh, Network Theory Analysis and Synthesis"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Analog Electronics",
+      "subject_code": "EX305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Semiconductor Diodes",
+          "topics": [
+            "Theory of P‑N junction, temperature dependence and breakdown characteristics",
+            "Junction capacitances",
+            "Zener diode, Varactor diode, Tunnel diode, PIN diode, LED, Photo diode, Schottky diode",
+            "Diode applications: series–parallel configurations, full‑wave and half‑wave rectification, voltage multiplier circuits, diode testing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Transistors",
+          "topics": [
+            "BJT types and configurations, working principle, characteristics, and regions of operation",
+            "Load line analysis and biasing methods",
+            "Small‑signal analysis of transistor (low frequency) using h‑parameters, thermal runaway and thermal stability",
+            "FET and MOSFET characteristics",
+            "Transistor as an amplifier – gain, bandwidth, frequency response"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Feedback Amplifier and Oscillators",
+          "topics": [
+            "Feedback amplifier concepts, negative feedback, voltage‑series, voltage‑shunt, current‑series and current‑shunt feedback",
+            "Sinusoidal oscillators: L‑C (Hartley‑Colpitts) oscillators, RC phase‑shift, Wien bridge, crystal oscillators",
+            "Power amplifiers: class A, class B, class AB, class C, their efficiency and power dissipation",
+            "Push‑pull and complementary symmetry push‑pull amplifier configurations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Wave Shaping Circuits",
+          "topics": [
+            "Switching characteristics of diode and transistor: turn‑ON, turn‑OFF time, reverse recovery time, transistor as switch",
+            "Multivibrators: bistable, monostable, astable",
+            "Clipper and clamper circuits",
+            "Differential amplifier – calculation of differential and common‑mode gain, CMRR using h‑parameters",
+            "Darlington pair, boot‑strapping technique",
+            "Cascade and cascade amplifier"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Operational Amplifier",
+          "topics": [
+            "Operational amplifier fundamentals, practical op‑amp circuits and characteristics",
+            "Slew rate, bandwidth, offset voltage, bias current",
+            "Inverting, non‑inverting, voltage‑follower (buffer) amplifiers",
+            "Summing, averaging, differentiator, integrator, differential, instrumentation, log and antilog amplifiers",
+            "Voltage‑to‑current and current‑to‑voltage converters, comparators, Schmitt trigger",
+            "Active filters, 555 timer and its applications"
+          ]
+        }
+      ],
+      "experiments": [
+        "Design & measure the frequency response of an RC coupled amplifier using discrete components.",
+        "Design a two‑stage RC coupled amplifier and determine the effect of cascading on gain and bandwidth.",
+        "Study the effect of voltage‑series, current‑series, voltage‑shunt and current‑shunt feedback on amplifier using discrete components.",
+        "Design & realize inverting, non‑inverting and buffer amplifier using 741 op‑amp.",
+        "Verify the operation of a differentiator circuit using op‑amp IC 741 and show that it acts as a high‑pass filter.",
+        "Verify the operation of an integrator circuit using op‑amp 741 and show that it acts as a low‑pass filter.",
+        "Design & verify the operation of adder and subtractor circuit using op‑amp 741.",
+        "Plot frequency response of AC coupled amplifier using op‑amp 741 and study the effect of negative feedback on the bandwidth and gain of the amplifier.",
+        "Study of IC 555 as astable and monostable multivibrator.",
+        "Design & realize using op‑amp 741, Wien‑bridge oscillator."
+      ],
+      "reference_books": [
+        "Robert L. Boylestad, Louis Nashelsky; Electronic Devices and Circuits; Pearson.",
+        "Jacob Millman, Cristos C. Halkias, Satyabrata Jit; Electronic Devices and Circuits; McGraw‑Hill.",
+        "Anil K. Maini; Electronic Devices and Circuits; Wiley.",
+        "S. Salivahanan, N. Suresh Kumar; Electronic Devices and Circuits; McGraw‑Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Programming-I (JAVA)",
+      "subject_code": "EX306",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Java Features",
+          "topics": [
+            "C++ Vs JAVA",
+            "JAVA virtual machine",
+            "Constant & Variables",
+            "Data Types",
+            "Class",
+            "Methods",
+            "Objects",
+            "Strings and Arrays",
+            "Type Casting",
+            "Operators",
+            "Precedence relations",
+            "Control Statements",
+            "Exception Handling",
+            "File and Streams",
+            "Visibility",
+            "Constructors",
+            "Operator and Methods Overloading",
+            "Static Members",
+            "Inheritance: Polymorphism",
+            "Abstract methods and Classes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Java Collective Frame Work",
+          "topics": [
+            "Data Structures: Introduction",
+            "Type-Wrapper Classes for Primitive Types",
+            "Dynamic Memory Allocation",
+            "Linked List",
+            "Stack",
+            "Queues",
+            "Trees",
+            "Generics: Introduction",
+            "Overloading Generic Methods",
+            "Generic Classes",
+            "Collections: Interface Collection and Class Collections",
+            "Lists",
+            "Array List and Iterator",
+            "Linked List (Collection)",
+            "Vector",
+            "Collections Algorithms: Algorithm sorts",
+            "Algorithm shuffle",
+            "Algorithms reverse, fill, copy, max and min",
+            "Algorithm binary Search",
+            "Algorithms add All",
+            "Stack Class of Package java.util",
+            "Class Priority Queue and Interface Queue",
+            "Maps",
+            "Properties Class",
+            "Un-modifiable Collections"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Advance Java Features - Multithreading",
+          "topics": [
+            "Thread States",
+            "Priorities and Thread Scheduling",
+            "Life Cycle of a Thread",
+            "Thread Synchronization",
+            "Creating and Executing Threads",
+            "Multithreading with GUI",
+            "Monitors and Monitor Locks"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Advance Java Features - Networking and Database",
+          "topics": [
+            "Manipulating URLs",
+            "Reading a file on a Web Server",
+            "Socket programming",
+            "Security and the Network",
+            "RMI",
+            "Accessing Databases with JDBC",
+            "Relational Database concepts",
+            "SQL",
+            "MySQL",
+            "Oracle"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advance Java Technologies - Servlets and JSP",
+          "topics": [
+            "Servlets: Overview and Architecture",
+            "Setting Up the Apache Tomcat Server",
+            "Handling HTTP GET Requests",
+            "Deploying a Web Application",
+            "Multitier Applications",
+            "Using JDBC from a Servlet",
+            "Java Server Pages (JSP): Overview",
+            "First JSP Example",
+            "Implicit Objects",
+            "Scripting",
+            "Standard Actions",
+            "Directives",
+            "Applets and Application: Loading, Displaying and Scaling Images",
+            "Animating a Series of Images",
+            "Loading and playing Audio clips"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Advance Web/Internet Programming",
+          "topics": [
+            "J2ME",
+            "J2EE",
+            "EJB",
+            "XML"
+          ]
+        }
+      ],
+      "experiments": [
+        "Installation of J2SDK",
+        "Write a program to show Concept of CLASS in JAVA",
+        "Write a program to show Type Casting in JAVA",
+        "Write a program to show How Exception Handling is in JAVA",
+        "Write a Program to show Inheritance and Polymorphism",
+        "Write a program to show Interfacing between two classes",
+        "Write a program to Add a Class to a Package",
+        "Write a program to demonstrate AWT.",
+        "Write a program to Hide a Class",
+        "Write a Program to show Data Base Connectivity Using JAVA",
+        "Write a Program to show “HELLO JAVA ” in Explorer using Applet",
+        "Write a Program to show Connectivity using JDBC",
+        "Write a program to demonstrate multithreading using Java.",
+        "Write a program to demonstrate applet life cycle."
+      ],
+      "reference_books": [
+        "Deitel & Deitel, ”JAVA, How to Program”; PHI, Pearson.",
+        "E. Balaguruswamy, “Programming In Java”; TMH Publications.",
+        "The Complete Reference: Herbert Schildt, TMH.",
+        "Peter Norton, “Peter Norton Guide To Java Programming”, Techmedia.",
+        "Merlin Hughes, et al; Java Network Programming, Manning Publications/Prentice Hall."
+      ],
+      "extra": null
+    }
+  ]
+}

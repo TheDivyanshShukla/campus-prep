@@ -1,0 +1,633 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Hardware Security",
+      "subject_code": "CY-801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Hardware Security Issues and Foundations",
+          "topics": [
+            "Issues of hardware security",
+            "Algebra of finite fields",
+            "Mathematical theory of public‑key cryptography",
+            "Digital design on FPGA",
+            "Classification using Support Vector Machines (SVMs)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Hardware Security Primitives and Physically Unclonable Functions (PUFs)",
+          "topics": [
+            "Cryptographic hardware primitives and implementation",
+            "Optimization of cryptographic hardware on FPGA",
+            "Physically Unclonable Functions (PUFs)",
+            "PUF implementations",
+            "PUF quality evaluation",
+            "Design techniques to increase PUF response quality"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Side‑Channel Attacks on Cryptographic Hardware",
+          "topics": [
+            "Basic idea of side‑channel attacks",
+            "Current‑measurement based side‑channel attacks (Kochers attack on DES)",
+            "Design techniques to prevent side‑channel attacks",
+            "Improved side‑channel attack algorithms (template attack, etc.)",
+            "Cache attacks"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Testability, Fault Tolerance and Verification of Cryptographic Hardware",
+          "topics": [
+            "Fault‑tolerance of cryptographic hardware",
+            "Fault attacks",
+            "Verification of finite‑field arithmetic circuits",
+            "Modern IC design and manufacturing practices and their implications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Hardware IP Piracy, Countermeasures and PUF‑Based Protection",
+          "topics": [
+            "Hardware IP and IC piracy",
+            "Design techniques to prevent IP and IC piracy",
+            "Using PUFs to prevent hardware piracy",
+            "Model building attacks on PUFs (SVM modelling of arbiter PUFs, genetic programming modelling of ring‑oscillator PUF)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Debdeep Mukhopadhyay and Rajat Subhra Chakraborty, \"Hardware Security: Design, Threats, and Safeguards\", CRC Press.",
+        "Ahmad-Reza Sadeghi and David Naccache (eds.): \"Towards Hardware‑intrinsic Security: Theory and Practice\", Springer.",
+        "Ted Huffmire et al., \"Handbook of FPGA Design Security\", Springer.",
+        "Stefan Mangard, Elisabeth Oswald, Thomas Popp: \"Power analysis attacks – revealing the secrets of smart cards\", Springer, 2007.",
+        "Doug Stinson, \"Cryptography Theory and Practice\", CRC Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Database Security",
+      "subject_code": "CY-802(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Databases and information systems",
+            "Example usage context for databases",
+            "Database system concepts and architecture",
+            "Overview of information security",
+            "Database design using the relational model",
+            "Functional dependencies and keys in a relational model",
+            "Concept of functional dependencies",
+            "Normalization based on primary keys",
+            "Boyce‑Codd Normal Form (BCNF)",
+            "Multivalued dependencies and Fourth Normal Form",
+            "Join dependencies and Fifth Normal Form",
+            "Inclusion dependencies and other advanced normal forms"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Database Security Lifecycle",
+          "topics": [
+            "Database security lifecycle",
+            "Data risk assessment",
+            "Analysis of data threats, risks and vulnerabilities",
+            "Need for a database security architecture",
+            "Database security architecture design",
+            "Implementation of feedback mechanisms",
+            "Policy adjustment based on feedback using different security models"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Database Vulnerabilities, Threats and Physical Security",
+          "topics": [
+            "Distinction between data security and database security versus network and perimeter security",
+            "External and internal database threats",
+            "Flaws in perimeter security",
+            "Risks of not securing organizational data",
+            "Typical database security hierarchy",
+            "Analysis of the general security landscape",
+            "Evaluation of security fundamentals",
+            "Importance of staying current with database releases, fixes and security patches",
+            "Management of USB ports and USB‑enabled devices",
+            "Implications of physical placement of database files and their copies"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Security Models",
+          "topics": [
+            "Bell and LaPadula security model",
+            "Biba integrity model",
+            "Dixon security model",
+            "SeaView security model",
+            "Jajodia and Sandhu security model",
+            "Lattice model for flow control",
+            "User identification and authentication mechanisms",
+            "Memory protection mechanisms",
+            "Resource protection mechanisms",
+            "Control flow mechanisms",
+            "Isolation techniques",
+            "Security functionalities in operating systems",
+            "Trusted Computer System Evaluation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Security Management",
+          "topics": [
+            "Security management principles",
+            "Protection of password files",
+            "Access control structures",
+            "Software security considerations",
+            "Elements of information security",
+            "Steps for improving security",
+            "Malicious software mitigation",
+            "System security assurance concepts",
+            "Overall importance of information system security"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Handbook of Database Security: Applications and Trends by Michael Gertz and Sushil Jajodia",
+        "Database Security and Auditing, Hassan A. Afyouni, India Edition, CENGAGE Learning, 2009",
+        "Database Security, Castano, Second edition, Pearson Education",
+        "Database security by Alfred Basta, Melissa Zgola, CENGAGE Learning",
+        "H. F. Korthand A. Silberschatz, Database Concepts, TMH",
+        "Godbole, “Information System Security”, Wiley",
+        "Cole, Krutz & Conley, “Network Security”, Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Deep & Reinforcement Learning",
+      "subject_code": "CY-802(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "History of Deep Learning",
+          "topics": [
+            "History of Deep Learning",
+            "McCulloch-Pitts Neuron",
+            "Thresholding Logic",
+            "Activation functions",
+            "Gradient Descent ($\\mathrm{GD}$)",
+            "Momentum-based GD",
+            "Nesterov Accelerated GD",
+            "Stochastic GD",
+            "AdaGrad",
+            "RMSProp",
+            "Adam",
+            "Eigenvalue Decomposition",
+            "Recurrent Neural Networks",
+            "Back propagation through time (BPTT)",
+            "Vanishing and Exploding Gradients",
+            "Truncated BPTT",
+            "GRU",
+            "LSTMs",
+            "Encoder-Decoder Models",
+            "Attention Mechanism",
+            "Attention over images"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Autoencoders and relation to PCA",
+          "topics": [
+            "Autoencoders and relation to PCA",
+            "Regularization in autoencoders",
+            "Denoising autoencoders",
+            "Sparse autoencoders",
+            "Contractive autoencoders",
+            "Bias-Variance Tradeoff",
+            "$L_{2}$ regularization",
+            "Early stopping",
+            "Dataset augmentation",
+            "Parameter sharing and tying",
+            "Injecting noise at input",
+            "Ensemble methods",
+            "Dropout",
+            "Batch Normalization",
+            "Instance Normalization",
+            "Group Normalization"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Greedy Layer-wise Pre-training",
+          "topics": [
+            "Greedy layer-wise pre-training",
+            "Better activation functions",
+            "Better weight initialization methods",
+            "Learning vectorial representations of words",
+            "Convolutional Neural Networks",
+            "LeNet",
+            "AlexNet",
+            "ZF-Net",
+            "VGGNet",
+            "GoogLeNet",
+            "ResNet",
+            "Visualizing convolutional neural networks",
+            "Guided back propagation",
+            "Deep Dream",
+            "Deep Art",
+            "Recent trends in deep learning architectures"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to Reinforcement Learning (RL)",
+          "topics": [
+            "Introduction to reinforcement learning (RL)",
+            "Bandit algorithms – UCB, PAC, Median Elimination",
+            "Policy Gradient",
+            "Full RL & MDPs",
+            "Bellman Optimality",
+            "Dynamic Programming – Value iteration",
+            "Policy iteration",
+            "Q-learning & Temporal Difference Methods",
+            "Temporal-Difference Learning",
+            "Eligibility Traces",
+            "Function Approximation",
+            "Least Squares Methods"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Q-Learning and RL Architectures",
+          "topics": [
+            "Fitted Q",
+            "Deep Q-Learning",
+            "Advanced Q-learning algorithms",
+            "Learning policies by imitating optimal controllers",
+            "DQN & Policy Gradient",
+            "Policy Gradient algorithms for full RL",
+            "Hierarchical RL",
+            "POMDPs",
+            "Actor-Critic Method",
+            "Inverse reinforcement learning",
+            "Maximum Entropy Deep Inverse Reinforcement Learning",
+            "Generative Adversarial Imitation Learning",
+            "Recent trends in RL architectures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Deep Learning, An MIT Press book, Ian Goodfellow and Yoshua Bengio and Aaron Courville",
+        "Pattern Classification - Richard O. Duda, Peter E. Hart, David G. Stork, John Wiley & Sons Inc.",
+        "Reinforcement Learning: An Introduction, Sutton and Barto, 2nd Edition.",
+        "Reinforcement Learning: State-of-the-Art, Marco Wiering and Martijn van Otterlo, Eds."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Lightweight Cryptography",
+      "subject_code": "CY-802(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Overview",
+          "topics": [
+            "Introduction",
+            "Overview of Lightweight Cryptography",
+            "Security Threats for resource constrained devices",
+            "Design strategies for lightweight cryptography",
+            "Constraints and Compromises of Lightweight Algorithms",
+            "Modes of Operation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Lightweight Cryptographic Primitives and Block Ciphers",
+          "topics": [
+            "Lightweight Cryptographic Primitives",
+            "Lightweight Block Ciphers",
+            "DESL and DESXL",
+            "PRESENT",
+            "CLEFIA",
+            "LED",
+            "SIMON and SPECK",
+            "TWINE",
+            "PRINCE",
+            "MIDORI",
+            "RECTANGLE",
+            "GRANULE",
+            "CRAFT"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Lightweight Stream Ciphers, Hash Functions and MACs",
+          "topics": [
+            "Lightweight Stream Ciphers",
+            "Lightweight HASH functions",
+            "Lightweight Message Authentication Codes",
+            "Key management",
+            "Applications of Lightweight Cryptography"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Key Management and Applications",
+          "topics": [
+            "Challenges in Designing IoT Group Key Management Protocols",
+            "Lightweight Group Key Management Protocols",
+            "Symmetric Key Constructions",
+            "Asymmetric Key Constructions",
+            "Applications: IPsec",
+            "Applications: TLS",
+            "Applications: Cyber Physical Systems",
+            "Applications: IoT devices"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Srinivasan Ramakrishnan, “Lightweight Cryptographic Techniques and Cyber security Approaches”, ISBN: 978-1-80355-733-5, 2022.",
+        "Eisenbarth, “Lightweight Cryptography for Security and Privacy”, Springer, 2015."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mobile and Wireless Security",
+      "subject_code": "CY-803(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Wireless Networking Trends and WiMAX",
+          "topics": [
+            "Wireless Networking Trends",
+            "Key Wireless Physical Layer Concepts",
+            "Wireless Local Area Networks",
+            "Wireless Personal Area Networks",
+            "WiMAX (Physical layer, Media access control, Mobility and Networking)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Mobile IP and Wireless Network Protocols",
+          "topics": [
+            "Mobile IPv4",
+            "Mobile IPv6",
+            "TCP over Wireless Networks",
+            "Ad Hoc Networks - Issues and Routing",
+            "Wireless Sensor Networks",
+            "Wireless Mesh and Multi-Hop Relay Networks"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "3G/4G Networks and RFID",
+          "topics": [
+            "3G and 4G Network",
+            "General Packet Radio Services (GPRS)",
+            "Universal Mobile Telecommunication System (UMTS)",
+            "Radio Frequency Identification (RFID)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "LTE and Security Models",
+          "topics": [
+            "Introduction to LTE",
+            "Security Issues in Wireless Networks",
+            "Security Models: Military and civil security",
+            "Vulnerability and threat models",
+            "End‑end Security",
+            "Link encryption",
+            "Compartmental Privacy",
+            "Authentication",
+            "Denial of service",
+            "Non‑repudiation",
+            "Issues in multi‑level secure systems",
+            "Internet security models: IPv4/IPv6 encapsulation header"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "E‑Commerce and Secure Transactions",
+          "topics": [
+            "E‑Commerce",
+            "M‑Commerce",
+            "Electronic payment systems",
+            "Electronic cards",
+            "Secure Electronic Transactions: Trust",
+            "Encryption",
+            "Authentication",
+            "Confidentiality",
+            "Integrity",
+            "Non‑repudiation"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Stalling W., “Network Security Essentials”, Pearson",
+        "Practical Packet Analysis: Using Wireshark to Solve Real-World Network problems by Chris Sanders",
+        "Jochen Schiller, “Mobile Communications”, PHI.",
+        "Uwe Hansmann, Lothar Merk, Martin S. Nicklons and Thomas Stober, Principles of Mobile Computing, Springer, New York, 2003",
+        "Frank Adelstein, Sandeep K.S. Gupta, Golden Richard, Fundamentals of Mobile and Pervasive Computing, McGraw-Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Financial crime, Motivations and Typologies",
+      "subject_code": "CY-803(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Tracing Illicit Transactions",
+          "topics": [
+            "Identify the common areas of interview questions in tracing financial crime evidence",
+            "State and explain the main sources of income and expenditure of illicit financial crime",
+            "Distinguish between the direct and indirect methods of tracing illicit financial transactions",
+            "Describe the investigation procedures for tax fraud",
+            "Describe the indirect method of tracing financial crime",
+            "Describe the Net Worth Method of investigating financial crime",
+            "Prepare a profile of a financial fraudster",
+            "Determine the net worth of a financial crime suspect"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Anti-Money Laundering Laws",
+          "topics": [
+            "Define Money Laundering and identify the process of money laundering",
+            "Identify the major Money Laundering countries in the world",
+            "Explain Money Laundering and describe the penalty for Money Laundering under the Money Laundering Act",
+            "Describe the composition of the Financial Intelligence Centre",
+            "Define accountable institutions and explain the composition of accountable institutions",
+            "Identify the various international bodies that impose Money Laundering sanctions",
+            "State and explain the various types of Money Laundering sanctions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Insurance and Medical Fraud",
+          "topics": [
+            "Define insurance fraud",
+            "State and explain the types of insurance policies",
+            "State and explain the various schemes of insurance fraud",
+            "Identify the red flags associated with insurance fraud",
+            "State and explain the types of insurance fraud investigation tips",
+            "Define medical fraud",
+            "State and explain the types of medical fraud schemes"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Bankruptcy",
+          "topics": [
+            "Define bankruptcy",
+            "Identify the red flags associated with bankruptcy",
+            "State and explain bankruptcy schemes",
+            "Define planned bustout and state its characteristics",
+            "State and explain the objectives of the World Bank principles on effective insolvency",
+            "State and explain the legal framework for creditor rights and insolvency"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Bribery and Corruption",
+          "topics": [
+            "Define bribery and corruption",
+            "State and explain kickback schemes",
+            "State and explain the methods of making illegal payments",
+            "State and explain the types of procurement fraud schemes",
+            "Identify the red flags associated with bribery"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Expert Fraud Investigation; a step-by-step guide by Tracy L. Coenen.",
+        "A Practitioner’s Guide to the Law and Regulation of Financial Crime by Arun Srivastava and Andrew Keltie, 2010.",
+        "Anti-Money Laundering Act Forensic Criminology by Wayne A. Petherick, Brent E. Turvey, Claire E. Ferguson, 2009.",
+        "Insurance Fraud Casebook, Paying a premium for crime by Joseph T. Wells and Laura Hymes."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Human Computer Interaction",
+      "subject_code": "CY-803(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "HCI Foundations",
+          "topics": [
+            "Input–output channels",
+            "Human memory",
+            "Thinking: reasoning and problem solving",
+            "Emotion",
+            "Individual differences",
+            "Psychology and the design of interactive systems",
+            "Text entry devices",
+            "Positioning, pointing and drawing",
+            "Display devices",
+            "Devices for virtual reality and 3D interaction",
+            "Physical controls, sensors and special devices",
+            "Paper: printing and scanning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Designing Interaction",
+          "topics": [
+            "Overview of Interaction Design Models",
+            "Discovery - Framework",
+            "Collection - Observation",
+            "Elicitation",
+            "Interpretation - Task Analysis",
+            "Storyboarding",
+            "Use Cases",
+            "Primary Stakeholder Profiles",
+            "Project Management Document"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Interaction Design Models",
+          "topics": [
+            "Model Human Processor - Working Memory",
+            "Long-Term Memory",
+            "Processor Timing",
+            "Keyboard Level Model - Operators",
+            "Encoding Methods",
+            "Heuristics for M Operator Placement",
+            "What the Keyboard Level Model Does Not Model",
+            "Application of the Keyboard Level Model",
+            "GOMS - CMN-GOMS Analysis",
+            "Modeling Structure",
+            "State Transition Networks - Three-State Model",
+            "Glimpse Model",
+            "Physical Models",
+            "Fitts’ Law"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Guidelines in HCI",
+          "topics": [
+            "Shneideman's eight golden rules",
+            "Norman's Sever principles",
+            "Norman's model of interaction",
+            "Nielsen's ten heuristics",
+            "Heuristic evaluation",
+            "Contextual evaluation",
+            "Cognitive walk-through",
+            "Collaboration and Communication: Face-to-face Communication",
+            "Conversation",
+            "Text based Communication",
+            "Group working",
+            "Dialog design notations",
+            "Diagrammatic notations",
+            "Textual dialog notations",
+            "Dialog semantics",
+            "Dialog analysis and design"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Human Factors and Security",
+          "topics": [
+            "Groupware",
+            "Meeting and decision support systems",
+            "Shared applications and artifacts",
+            "Frameworks for groupware",
+            "Implementing synchronous groupware",
+            "Mixed, Augmented and Virtual Reality",
+            "Validation: Usability testing",
+            "Interface Testing",
+            "Use Acceptance Testing"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A Dix, Janet Finlay, G D Abowd, R Beale., Human-Computer Interaction, 3rd Edition, Pearson Publishers, 2008.",
+        "Shneiderman, Plaisant, Cohen and Jacobs, Designing the User Interface: Strategies for Effective Human Computer Interaction, 5th Edition, Pearson Publishers, 2010.",
+        "Hans-Jorg Bullinger, “Human-Computer Interaction”, Lawrence Erlbaum Associates, Publishers.",
+        "Jakob Nielsen, “Advances in Human-computer Interaction”, Ablex Publishing Corporation",
+        "Thomas S. Huang, “Real-Time Vision for Human-Computer Interaction”, Springer",
+        "Preece et al, Human-Computer Interaction, Addison-Wesley, 19."
+      ],
+      "extra": null
+    }
+  ]
+}

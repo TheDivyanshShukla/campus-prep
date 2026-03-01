@@ -1,0 +1,517 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Mathematics-III",
+      "subject_code": "BT301",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Numerical Methods – 1",
+          "topics": [
+            "Solution of polynomial equations using the Bisection method",
+            "Solution of transcendental equations using the Newton‑Raphson method",
+            "Solution of equations using the Regula‑Falsi method",
+            "Finite differences and relation between operators",
+            "Interpolation using Newton’s forward difference formula",
+            "Interpolation using Newton’s backward difference formula",
+            "Interpolation with unequal intervals using Newton’s divided difference",
+            "Interpolation using Lagrange’s formula"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Numerical Methods – 2",
+          "topics": [
+            "Numerical differentiation",
+            "Numerical integration using the Trapezoidal rule",
+            "Numerical integration using Simpson’s 1/3 rule",
+            "Numerical integration using Simpson’s 3/8 rule",
+            "Solution of simultaneous linear algebraic equations by Gauss’s elimination",
+            "Solution of simultaneous linear algebraic equations by Gauss‑Jordan method",
+            "Solution of simultaneous linear algebraic equations by Crout’s method",
+            "Solution of simultaneous linear algebraic equations by Jacobi’s method",
+            "Solution of simultaneous linear algebraic equations by Gauss‑Seidel method",
+            "Solution of simultaneous linear algebraic equations by Relaxation method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Numerical Methods – 3",
+          "topics": [
+            "Ordinary differential equations solved by Taylor’s series method",
+            "Ordinary differential equations solved by Euler method",
+            "Ordinary differential equations solved by Modified Euler method",
+            "Runge‑Kutta fourth‑order method for first‑ and second‑order ODEs",
+            "Milne’s predictor‑corrector method for ODEs",
+            "Adam’s predictor‑corrector method for ODEs",
+            "Finite‑difference solution of the two‑dimensional Laplace equation",
+            "Finite‑difference solution of the Poisson equation",
+            "Implicit and explicit methods for the one‑dimensional heat equation (Bender‑Schmidt and Crank‑Nicholson methods)",
+            "Finite‑difference explicit method for the wave equation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transform Calculus",
+          "topics": [
+            "Laplace Transform",
+            "Properties of Laplace Transform",
+            "Laplace Transform of periodic functions",
+            "Inverse Laplace Transform by various methods",
+            "Convolution theorem for Laplace Transforms",
+            "Evaluation of integrals using Laplace Transform",
+            "Solving ordinary differential equations by Laplace Transform method",
+            "Fourier Transform"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Concept of Probability",
+          "topics": [
+            "Probability Mass Function (PMF)",
+            "Probability Density Function (PDF)",
+            "Discrete distributions – Binomial distribution",
+            "Discrete distributions – Poisson distribution",
+            "Continuous distributions – Normal distribution",
+            "Continuous distributions – Exponential distribution"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P. Kandasamy, K. Thilagavathy, K. Gunavathi, Numerical Methods, S. Chand & Company, 2nd Edition, Reprint 2012.",
+        "S.S. Sastry, Introductory methods of numerical analysis, PHI, 4th Edition, 2005.",
+        "Erwin Kreyszig, Advanced Engineering Mathematics, 9th Edition, John Wiley & Sons, 2006.",
+        "B.S. Grewal, Higher Engineering Mathematics, Khanna Publishers, 35th Edition, 2010.",
+        "N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications, Reprint, 2010.",
+        "Veerarajan T., Engineering Mathematics, Tata McGraw-Hill, New Delhi, 2008.",
+        "P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book Stall, 2003 (Reprint).",
+        "S. Ross, A First Course in Probability, 6th Ed., Pearson Education India, 2002.",
+        "W. Feller, An Introduction to Probability Theory and its Applications, Vol. 1, 3rd Ed., Wiley, 1968."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Thermodynamics",
+      "subject_code": "ME302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts & Laws of Thermodynamics",
+          "topics": [
+            "Property",
+            "Equilibrium",
+            "State",
+            "Process",
+            "Cycle",
+            "Zeroth law of thermodynamics",
+            "Heat and work transfer",
+            "First law of thermodynamics",
+            "First law applied to various systems (steady‑flow processes)",
+            "Limitations of the first law",
+            "Second law of thermodynamics",
+            "Heat engine",
+            "Heat reservoir",
+            "Refrigerator",
+            "Heat pump",
+            "Carnot cycle",
+            "Statements of the second law",
+            "Reversible and irreversible processes",
+            "Clausius inequality",
+            "Entropy",
+            "$T$–$S$ diagrams",
+            "Available and unavailable energy",
+            "Availability concept"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Properties of Steam",
+          "topics": [
+            "Pure substance",
+            "Phase and phase transformations",
+            "Formation of steam",
+            "Properties of steam",
+            "Pressure‑Volume‑Temperature (PVT) surface",
+            "Enthalpy–entropy (h–s) diagram",
+            "Temperature–entropy (t–s) diagram",
+            "Pressure–volume (p–v) diagram",
+            "Pressure–enthalpy (p–h) diagram",
+            "Temperature–volume (t–v) diagram",
+            "Vapor processes",
+            "Measurement of dryness fraction",
+            "Use of steam tables",
+            "Mollier chart"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Air Standard Cycles",
+          "topics": [
+            "Carnot cycle",
+            "Otto cycle",
+            "Diesel cycle",
+            "Dual cycle and their comparison",
+            "Brayton cycle",
+            "Non‑reactive gas mixtures",
+            "Pressure–Volume–Temperature (PVT) relationship for mixtures",
+            "Mixture of ideal gases",
+            "Properties of gas mixtures",
+            "Internal energy of mixtures",
+            "Enthalpy of mixtures",
+            "Specific heat of gas mixtures"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Fuels and Combustion",
+          "topics": [
+            "Actual and theoretical combustion processes",
+            "Enthalpy of formation",
+            "Enthalpy of reaction",
+            "First‑law analysis of reacting systems",
+            "Adiabatic flame temperature",
+            "Basic concept of the third law of thermodynamics",
+            "Use of steam tables and Mollier charts for reactive systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P.K. Nag; Engineering Thermodynamics; McGraw‑Hill, Fifth Edition",
+        "Y. Cengel; Thermodynamics; McGraw‑Hill, Eighth Edition",
+        "Kross & Potter; Thermodynamics for Engineers; CENGAGE Learning",
+        "Moran, Shapiro, Boettner; Principles of Engineering Thermodynamics; Wiley, Student Edition",
+        "P. Chattopadhyay; Engineering Thermodynamics; Oxford University Press, Second Edition",
+        "Zemansky; Heat & Thermodynamics; McGraw‑Hill India Education, Eighth Edition",
+        "Achuthan M.; Engineering Thermodynamics; PHI India",
+        "R. Yadav; Applied Thermodynamics; Central Publishing House, Allahabad"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Materials Technology",
+      "subject_code": "ME303",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Materials and Mechanical Properties",
+          "topics": [
+            "Solidification of metals",
+            "Crystallisation",
+            "Crystal and amorphous structures",
+            "Different types of bonds in different metals",
+            "Crystallography",
+            "Stability and metastability of metals",
+            "Different mechanical properties of metals and other engineering materials like strength, hardness, elasticity, plasticity, malleability, ductility, creep, fatigue etc.",
+            "Introduction to industrial metals, steels and prevailing manufacturing methods by manufacturers"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Phase Diagrams and Alloying",
+          "topics": [
+            "Cooling curves",
+            "Isomorphous, eutectic, eutectoid, eutectoid solid solution, peritectic and other phase diagrams",
+            "Alloying and characteristics of alloying elements",
+            "Iron–Carbon phase diagram",
+            "T‑T‑T diagrams",
+            "Types of cast iron",
+            "Types of stainless steels",
+            "Elastic, anelastic and viscoelastic behaviour"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Heat Treatment of Metals",
+          "topics": [
+            "Heat treatment of metals based on phase diagram and T‑T‑T diagram",
+            "Bulk heat treatments",
+            "Surface heat treatments",
+            "Case carburising",
+            "Types of annealing, normalising, spherodising",
+            "Phase transformations such as pearlite, cementite, austenite, troostite, bainite, hard and soft martensite etc.",
+            "Laser hardening, cyniding, boriding, nitriding, flame hardening, ion implantation, etc.",
+            "Heat treatment cycles",
+            "Metallographic studies using optical microscope and electron microscope"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Testing Methods and Material Properties",
+          "topics": [
+            "Destructive and non‑destructive testing methods",
+            "Tensile test",
+            "Compression test",
+            "Shear test",
+            "Bend test",
+            "Various hardness tests",
+            "Impact tests",
+            "Fatigue tests",
+            "Hardenability test",
+            "Fracture analysis and NDT methods",
+            "Properties of steels, aluminium and its alloys, copper and its alloys, manganese and its alloys, chromium and its alloys, nickel and its alloys"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Chemical Analysis of Alloying Elements",
+          "topics": [
+            "Chemical analysis of different alloying elements in commercial metals (C, Fe, Cr, Ni, Mn, Mg, S, P, Co, Mo, etc.)",
+            "Different chemical reagents and equipment",
+            "Volumetric and gravimetric analysis",
+            "Spot test and colorimetric methods",
+            "Optical and spectrophotometric analysis"
+          ]
+        }
+      ],
+      "experiments": [
+        "Metallographic studies – Study of Optical microscope, Optically flat surface preparation, etching reagents, Grain size- ASME no., micro structures, Image analysis, Standard specimen",
+        "Carbon, sulphur, Phosphorus determination, Strauhlin’s apparatus, Eggert’s Method in different samples",
+        "Hardness and Hardenability test, Jeremy Cony test. Soft and hard Martensite",
+        "Different heat treatment cycles using electric furnace [ Programmable preferred ], Annealing, Case carburising, Normalising, etc.",
+        "Gravimetric / Volumetric - chemical analysis of alloying elements like, Cr, Ni, Mn, Si etc.",
+        "Study of different instrumental method of analysis, spectrophotometers, Differential Scanning calorimeter",
+        "Spot test for quick assessment of alloying elements like Mn, Cr, Ni, etc.",
+        "Experiments / study of Non Destructive Methods, Ultrasonic test, Magnetic particle inspection, Dye penetration test, Eddy current test, Radiography test",
+        "Cupping test / formability test for sheet metal"
+      ],
+      "reference_books": [
+        "V. Raghwan, Material Science",
+        "G.E.Dieter, Mechanical Metallurgy",
+        "P Chalmers, Physical Metallurgy",
+        "R. C. Rollason, Metallurgy for mechanical engineers"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Strength of Material",
+      "subject_code": "ME304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Stress and strain",
+          "topics": [
+            "stresses in members of a structure, axial loading, normal stress, shear stress",
+            "analysis of simple structures, stepped rods, members in series and parallel",
+            "stress‑strain diagram",
+            "Hooke’s law",
+            "stress due to temperature",
+            "Poisson’s ratio",
+            "Bulk modulus",
+            "shear strain",
+            "relation among elastic constants",
+            "residual stress",
+            "fiber reinforced composite materials",
+            "strain energy under axial loads and stresses due to impact of falling weights",
+            "transformation of stress and strain",
+            "principal stresses, normal and shear stress",
+            "Mohr’s circle and its application to two‑ and three‑dimensional analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Bending",
+          "topics": [
+            "pure bending",
+            "symmetric member, deformation and stress",
+            "bending of composite sections",
+            "eccentric axial loading",
+            "shear force and bending‑moment (BM) diagram",
+            "relationship among load, shear and BM",
+            "shear stresses in beams",
+            "strain energy in bending",
+            "deflection of beams",
+            "equation of elastic curve",
+            "Macaulay’s method and area‑moment method for deflection of beams"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Torsion in shafts",
+          "topics": [
+            "tensional stresses in shafts",
+            "deformation in circular shaft",
+            "angle of twist",
+            "stepped and hollow transmission shafts"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Theories of failures",
+          "topics": [
+            "maximum normal stress & shear stress theory",
+            "maximum normal and shear strain‑energy theory",
+            "maximum distortion‑energy theory",
+            "application of theories to different materials and loading conditions"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Columns & struts",
+          "topics": [
+            "stability of structures",
+            "Euler’s formula for columns with different end conditions",
+            "Rankine’s formula"
+          ]
+        }
+      ],
+      "experiments": [
+        "Standard tensile test on MS and CI test specimen with the help of UTM",
+        "Direct/ cross shear test on MS and CI specimen",
+        "Transverse bending test on wooden beams to obtain modulus of rupture",
+        "Fatigue test",
+        "Brinell hardness tests",
+        "Vicker hardness test",
+        "Izod/Charpy test",
+        "Rockwell hardness test"
+      ],
+      "reference_books": [
+        "Beer FP, Johnson Mechanics of Materials, Sixth Edition ; Mc Graw Hills",
+        "Debabrata Nag & Abhijet Chanda : Strength of Materials : Wiley",
+        "Rattan; Strength of materials; Second Edition, Mc Graw Hills",
+        "Nash William; Schaum’s Outline Series; forth Edition Strength of Materials; Mc Graw Hills",
+        "Singh Arbind K; Mechanics of Solids; PHI",
+        "Sadhu Singh; Strength of Materials; Khanna Pub.",
+        "R Subramannian, Strength of materials OXFORD University Press, Third Edition .",
+        "S Ramamurthum, Strength of materials, Dhanpat Rai"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Manufacturing Process",
+      "subject_code": "ME305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Casting",
+          "topics": [
+            "Types of casting processes.",
+            "Molding and foundry core sands and their properties.",
+            "Gating, runners, risers.",
+            "Solidification, defects and elimination.",
+            "Molding machines.",
+            "Centrifugal casting.",
+            "Dye casting.",
+            "Shell molding.",
+            "Lost wax molding.",
+            "Continuous casting.",
+            "Cupola description and operation."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Welding",
+          "topics": [
+            "Types of welding.",
+            "Gas welding method and flames.",
+            "Gas cutting.",
+            "Electric arc welding, AC and DC welding machines and their characteristics.",
+            "Flux, electrodes, submerged arc welding.",
+            "TIG & MIG welding.",
+            "Pressure welding.",
+            "Electric resistance welding: spot, seam and butt welding.",
+            "Thermit chemical welding.",
+            "Brazing and soldering.",
+            "Welding defects & remedies.",
+            "Safety precautions."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Pattern Making",
+          "topics": [
+            "Types of patterns.",
+            "Pattern and pattern making.",
+            "Pattern allowances.",
+            "Pattern design considerations.",
+            "Core and core boxes."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Forging",
+          "topics": [
+            "Types of forging operations.",
+            "Theory and application of forging processes.",
+            "Description of drop and horizontal forging machines."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Press Working",
+          "topics": [
+            "Description and operation of press working processes.",
+            "Shearing, punching, piercing, blanking, trimming, perfecting, notching, lancing, embossing, coining, bending, forging and drawing.",
+            "Press, tool dies, auxiliary equipment, safety devices, stock feeders, scrap cutters.",
+            "Forces, pressure and power requirements."
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Rolling",
+          "topics": [
+            "Types of rolling operations.",
+            "General description of rolling machines and processes.",
+            "Rolling of structural sections, plates and sheets.",
+            "Hot and cold rolling techniques."
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Metal Machining",
+          "topics": [
+            "Basics of lathe machines: operations and components.",
+            "Working principle of shaper and planer.",
+            "Introduction to milling, grinding and drilling machines."
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of tools used for various manufacturing processes, study includes application & live demonstration of hand and machine tools.",
+        "Hands on Exercise on Pattern Making.",
+        "Performance on Metal Casting of Simple component.",
+        "Performance on Welding of simple work piece (Example Arc and Resistance Welding).",
+        "Exercise Problems on Welding.",
+        "Exercise problems on Casting.",
+        "Study of forging machine & demonstration of various operations of forging.",
+        "Study of Hydraulic, Pneumatic presses & demonstration of piercing, slitting, deep drawing operations on press machine."
+      ],
+      "reference_books": [
+        "Anderson and Tetro; Shop Theory; Mc Graw Hills",
+        "Kaushish JP; Manufacturing Processes; PHI Learning.",
+        "Kalpakjian Producting Engineering PEARSON Education",
+        "Chapman; Workshop Technology",
+        "Philip F Ostwald ; Manufacturing Process & systems : John Wiley",
+        "Raghuvanshi; Workshop Technology ; Dhanpat Rai.",
+        "Hajra Choudhary; Workshop Technology:, Vol I"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Thermal Engg Lab",
+      "subject_code": "ME306",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "To determine volumetric and isothermal efficiencies of a single stage compressor.",
+        "Study of two stage air compressor with intercooler.",
+        "To determine volumetric and isothermal efficiencies of a two stage compressor.",
+        "Study of different types of boilers and their classifications.",
+        "Study of different types of high pressure boilers.",
+        "To determine the performance of boiler.",
+        "Temperature measurements, Pyrometers and thermography.",
+        "Thermocouples, Temperature sensors, study and calibration.",
+        "Study and experiments on ORSAT apparatus.",
+        "Experiments on calorific value of different fuels and analysis of exhaust gases."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

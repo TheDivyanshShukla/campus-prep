@@ -1,0 +1,447 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Construction Materials",
+      "subject_code": "CE302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Stones, Brick, Mortar and Concrete",
+          "topics": [
+            "Stones – Occurrence, Classification of Rocks, varieties, Characteristics and their testing, uses, quarrying and dressing of stones, Deterioration of Stones, Retardation of Decay of Stones, Preservation of Stones, Artificial Stones.",
+            "Brick – Manufacturing, characteristics, Classification and uses, Improved brick from inferior soils, Hand molding brick table, Clay‑fly ash brick table.",
+            "Concrete – Ingredients, Grades of Concrete, Concrete Production, Special Concrete."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Timber, Glass, Steel and Aluminium",
+          "topics": [
+            "Timber – Important timbers, their engineering properties and uses, defects in timber, seasoning and treatment, need for wood substitutes, Plywood, Particle Board, Fibre Board, Applications of wood and wood products, Plaster Boards, Adhesives, types of Gypsum Board and their uses.",
+            "Glass – What is glass, Nature of glass, Structure of glass, Macro molecular structure, Main oxides in glass, Thermal and optical properties, Effect of coating.",
+            "Steel – Physical properties of structural steel, Grades of steel.",
+            "Aluminium – Properties, Forms, Uses, Advantages."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Flooring, Roofing, Plumbing and Sanitary Material",
+          "topics": [
+            "Flooring and Roofing tiles, Types of flooring – Marble, Kota stone, wood etc., Type of roofing, P.V.C. materials, CI, GI, Asbestos pipe, Stone ware pipes."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Paints, Enamels and Varnishes",
+          "topics": [
+            "Composition of oil paint, characteristic of an ideal paint, preparation of paint, covering power of paints, Painting – Plastered surfaces, painting wood surfaces, painting metal surfaces; Defects, Effect of weather, enamels, distemper, water wash and colour wash, Varnish, French polish, Wax polish."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Miscellaneous Construction Materials",
+          "topics": [
+            "Bitumen, Tar and Asphalt – their characteristics and uses, Ultra Poly Vinyl chloride pipes, Thermal and sound insulating materials, water proofing materials."
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Donald R Askeland, Pradeep P Fulay, Wendelin J Wright, The Science and Engineering of Materials, Cengage Learning.",
+        "S K Duggal, Building Materials, New Age International.",
+        "P C Vaghese, Building Materials, PHI Learning.",
+        "S.C. Rangwala, Engineering Materials, Charotar.",
+        "M S Shetty, Concrete Technology, S. Chand Technical.",
+        "A M Neville, J J Brooks, Concrete Technology, Prentice Hall."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Surveying",
+      "subject_code": "CE303",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Surveying & Levelling",
+          "topics": [
+            "Basic Definitions of Surveying",
+            "Principles of Surveying",
+            "Classification of Surveying",
+            "Methods of Linear Measurement (Ranging)",
+            "Accessories for Linear Measurement",
+            "Chain Surveying",
+            "Compass Surveying",
+            "Plane Table Surveying",
+            "Correction and Errors",
+            "Definition of Levelling",
+            "Types of Levelling Operations",
+            "Principles of Levelling",
+            "Problems in Levelling",
+            "Computation of Area and Volumes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Theodolite Traversing",
+          "topics": [
+            "Types of Theodolite Traversing",
+            "Temporary Adjustment",
+            "Latitude & Departure",
+            "Plotting & Adjustment",
+            "Omitted Measurements (EDM)",
+            "Trigonometric Levelling"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Tacheometry",
+          "topics": [
+            "Tachometric Systems and Principles",
+            "Stadia System",
+            "Uses of Analytic Lens",
+            "Tangential System",
+            "Subtense System",
+            "Instrument Constant",
+            "Field Work Reduction",
+            "Direct‑Reading Tacheometer",
+            "Use of Tacheometry for Traversing and Contouring"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Curves",
+          "topics": [
+            "Classification and Use of Curves",
+            "Elements of Circular Curves",
+            "Calculations for Circular Curves",
+            "Setting Out Curves by Offsets",
+            "Setting Out Curves by Theodolites",
+            "Compound Curves",
+            "Reverse Curves",
+            "Transition Curves",
+            "Vertical Curves",
+            "Setting Out Curves"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Hydrographic Survey",
+          "topics": [
+            "Soundings",
+            "Methods of Observations for Soundings",
+            "Computations and Plotting of Soundings",
+            "Principles of Photographic Surveying",
+            "Aerial Photography",
+            "Tilt and Height Distortions",
+            "Setting Out Works"
+          ]
+        }
+      ],
+      "experiments": [
+        "Theodolite traversing",
+        "Profile leveling, contouring & cross sectioning",
+        "Determination of tachometric constants & uses of tachometer in various field works",
+        "Curve setting by different methods"
+      ],
+      "reference_books": [
+        "B.C Punmia, Surveying Vol-II & III, Laxmi Publication.",
+        "S.K. Duggal, Surveying Vol. II McGraw Hill Publishing Company Ltd.",
+        "Saikia MD, Das BM, Das MM, Surveying, McGraw hill.",
+        "T.P. Kanetkar and S.V. Kulkarini, Surveying and Leveling-Part-I & II, Pune VidyarthiGrihaPrakashan, Pune.",
+        "Gopi A, Satikumar R, Advance surveying, Pearson.",
+        "Remote Sensing and image interpretation by Lillesand T.M. and Kiefer R.W.",
+        "R. Agor, Advance Surveying, Khanna Publisher.",
+        "Chandra AM, Higher Surveying, New Age International, new Dwlhi.",
+        "Bhavikatti SS, Surveying and Levelling Vol. II, I.K International.",
+        "Venkatramaiah, Surveying, University Press, Mumbai.",
+        "Bhatta Basudeb, Remote Sensing and GIS, Oxford, New Delhi.",
+        "Subramanaian, Surveying & levelling, Oxford, New Delhi.",
+        "Joseph George, Fundamentals of Remote Sensing."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Building Planning & Architecture",
+      "subject_code": "CE304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Drawing of Building Elements",
+          "topics": [
+            "Various types of footings (open foundation, raft, grillage, pile, well foundation)",
+            "Frames of doors and windows",
+            "Various types of doors, windows and ventilators",
+            "Lintels and arches",
+            "Stairs and staircases",
+            "Trusses",
+            "Flooring",
+            "Roofs"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Building Planning",
+          "topics": [
+            "Classification of buildings",
+            "National Building Codes and Rules",
+            "Building bye‑laws",
+            "Open area and setbacks",
+            "FAR terminology",
+            "Design and drawing of buildings",
+            "Design concepts and philosophies",
+            "Sketch plans and working drawings for residential, institutional and commercial buildings",
+            "Site plans",
+            "Presentation techniques",
+            "Pictorial drawings",
+            "Perspective and rendering",
+            "Model making",
+            "Introduction to computer‑aided design and drafting (CAD)",
+            "Principles of architectural composition (unity, contrast, etc.)",
+            "Principles of planning",
+            "Orientation in detailed drawings"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Building Services",
+          "topics": [
+            "Water supply systems",
+            "Sewerage and drainage systems",
+            "Sanitary fittings and fixtures",
+            "Plumbing systems",
+            "Internal drainage principles",
+            "External drainage principles",
+            "Electrification of buildings",
+            "Intelligent building systems",
+            "Elevators and escalators – standards and uses",
+            "Air‑conditioning systems",
+            "Fire‑fighting systems",
+            "Building safety and security systems",
+            "Ventilation and lighting",
+            "Staircase safety",
+            "Fire safety measures",
+            "Thermal insulation",
+            "Acoustics of buildings"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Principles of Architectural Design",
+          "topics": [
+            "Definition of architecture and factors influencing architectural development",
+            "Characteristics and features of architectural styles, historic examples, creative principles",
+            "Principles of architectural composition – unity, balance, proportion, scale, rhythm, harmony, accentuation, contrast",
+            "Organising principles – symmetry, hierarchy, axis, linear, concentric, radial, asymmetric grouping, primary and secondary masses, role of colour, texture, shapes/forms",
+            "Architectural space and mass – visual and emotional effects of geometric forms, space activity, tolerance space",
+            "Forms related to materials and structural systems",
+            "Elements of architecture – functions (pragmatic utility, circulatory, symbolic, physiological), structure (physical, perceptual), space (positive, negative), aesthetics (visual perception), protection (climate protection), comfort factors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Perspective Drawing and Town Planning",
+          "topics": [
+            "Elements of perspective drawing – simple problems, one‑point and two‑point perspectives",
+            "Energy‑efficient building design",
+            "Master plan concepts, structure plan, detailed town‑planning scheme, action plan",
+            "Estimating future needs – planning standards for different land uses",
+            "Allocation for commerce, industries, public amenities, open areas",
+            "Planning standards for density distributions and density zones",
+            "Planning standards for traffic network – road and path standards",
+            "Provision for urban growth, growth models, plan implementation",
+            "Town‑planning legislation and municipal acts",
+            "Planning of controlled development schemes",
+            "Urban financing, land acquisition, slum‑clearance schemes",
+            "Pollution control aspects"
+          ]
+        }
+      ],
+      "experiments": [
+        "Sketches of various building components.",
+        "Drawing of various building components containing doors, windows ventilators, lintels and arches stairs foundations etc.",
+        "Drawings for services and interiors of buildings.",
+        "Drawings containing detailed planning of one/two bed room residential building (common to all student)",
+        "Drawing of residential and institutional building (Each student performs a different drawing).",
+        "Use of Auto CAD for preparation of drawings."
+      ],
+      "reference_books": [
+        "Shah, Kale & Patki; Building Design and Drawing; TMH",
+        "Malik & Meo; Building Design and Drawing",
+        "W B Mckay, Orient Blackswan Building Construction Vol 1 -4, Pearson",
+        "Gurucharan Singh and Jagdish Singh, Building Planning, Designing and Scheduling, Standard Publishers Distributors.",
+        "Layal JS, Dongre A, Building Design and Drawing, Satya Prakashan",
+        "Ghose D.N., Civil Engineering Design and Drawing, CBS publisher",
+        "Das B M, Principles of Foundation Engineering, Cengage Learning.",
+        "Agrawal S. C., Architecture and Town Planning, Dhanpat Rai & Co.",
+        "S.C. Rangwala, Town Planning, Charotar Publishing House.",
+        "Lewis Keeble, Principles and Practice of Town and Country Planning.",
+        "Rame Gouda, Principles & Practices of Town Planning, University of Mysore, Manasa Gangotri."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Strength of Materials",
+      "subject_code": "CE305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Simple Stress and Strains",
+          "topics": [
+            "Concept of elastic body stress and strain",
+            "Hooke’s law",
+            "Various types of stress and strains",
+            "Elastic constants",
+            "Stresses in compound bars, composite and tapering bars",
+            "Temperature stresses",
+            "Complex stress and strains – two‑dimensional and three‑dimensional stress system",
+            "Normal and tangential stresses",
+            "Principal planes",
+            "Principal stresses and strains",
+            "Mohr’s circle of stresses"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Bending and Shearing Stresses",
+          "topics": [
+            "Theory of simple bending",
+            "Concept of pure bending and bending stress",
+            "Equation of bending",
+            "Neutral axis",
+            "Section modulus",
+            "Differential equation of the elastic curve",
+            "Determination of bending stresses in simply supported, cantilever and overhanging beams subjected to point load and uniformly distributed load",
+            "Bending stress distribution across beam cross‑section",
+            "Shearing stress distribution across beam cross‑section"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Determination of Slope and Deflection of Beams",
+          "topics": [
+            "Double integration method for slope and deflection",
+            "Macaulay’s method",
+            "Area‑moment method",
+            "Conjugate beam method",
+            "Strain energy method",
+            "Castiglione’s method",
+            "Unit load method"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Columns and Struts",
+          "topics": [
+            "Theory of columns and slenderness ratio",
+            "Direct and bending stresses in short columns",
+            "Kern of a section",
+            "Buckling and stability analysis",
+            "Euler’s buckling load for various end conditions",
+            "Rankine’s formula",
+            "Eccentric loads and secant formula",
+            "Imperfections in columns",
+            "Thin pressure vessels: cylinders and spheres",
+            "Stress due to internal pressure",
+            "Change in diameter and volume of vessels",
+            "Theories of failure for pressure vessels"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Torsion of Shafts",
+          "topics": [
+            "Concept of pure torsion and torsion equation",
+            "Determination of shear stress and angle of twist for solid circular shafts",
+            "Determination of shear stress and angle of twist for hollow circular shafts",
+            "Analysis of combined bending and torsion problems",
+            "Unsymmetrical bending: principal moment of inertia and product of inertia",
+            "Bending of beams not in a plane of symmetry",
+            "Shear center determination",
+            "Pure bending of curved beams (rectangular, circular, trapezoidal sections)",
+            "Stress distribution and neutral axis in curved beams"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of Universal testing machine",
+        "Determine the compressive and tensile strength of materials",
+        "Determine the Brinell hardness of materials",
+        "Determine the Rockwell hardness of materials",
+        "Determine the toughness of the materials",
+        "Determine the stiffness of the spring",
+        "Determine the deflection of beam using a deflection‑beam apparatus"
+      ],
+      "reference_books": [
+        "Punmia B.C., Mechanics of Materials, Laxmi Publications (P) Ltd.",
+        "S.S Bhavikaati, Strength of Materials, Vikas Publisher, New Delhi",
+        "Rajput R. K., Strength of Materials, S. Chand.",
+        "S. Ramamrutham, R. Narayanan, Strength of Materials, DhanpatRai Publications.",
+        "R. Subramaniam, Strength of Materials, Oxford University Press.",
+        "Sadhu Singh, Strength of Material, Khanna Publishers",
+        "Mubeen A, Mechanics of solids, Pearsons",
+        "D.S Prakash Rao, Strength of Material, University Press, Hyderabad",
+        "Debrath Nag, Strength of Material, Wiley",
+        "Jindal, Strength of Material, Pearsons.",
+        "Bansal R.K, Strength of Materials, Laxmi Publisher, New Delhi.",
+        "Nash, W.A., Strength of Materials, Mcgraw hills, New Delhi.",
+        "Chandramouli, Strength of Materials, PHI learning",
+        "Dongre A.P., Strength of Materials, Scitech, Chennai",
+        "Negi L. S, Strength of Materials, McGraw Hill Professional.",
+        "Raj Puroshattam, Strength of Material, Pearsons",
+        "J.M. Gere, J. G. Barry Mechanics of Material, Cengage Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Study of Historical & Ancient Civil Engineering Practices",
+      "subject_code": "CE306",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "General Study of ancient monuments e.g. Forts, Bridges, Buildings and various other civil engineering related structures",
+          "topics": [
+            "Overview of ancient monuments including forts, bridges, buildings and related civil engineering structures"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Environmental practices adopted in construction of historical structure during ancient/medieval period",
+          "topics": [
+            "Study of environmental practices applied in ancient and medieval construction"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Construction techniques and materials used in historical structures",
+          "topics": [
+            "Investigation of construction techniques and materials employed in historical structures"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Various planning aspects adopted in historical structures",
+          "topics": [
+            "Analysis of planning aspects in historical civil engineering works"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Visit of various historical structures and museums to understand history of civil engineering practices",
+          "topics": [
+            "Field visits to historical structures and museums for learning civil engineering history"
+          ]
+        }
+      ],
+      "experiments": [
+        "Detailed study report on various aspects such as environmental practices, construction techniques and materials, planning etc. of one important ancient structure, including relevant sketches/drawings, and presentation before departmental committee."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

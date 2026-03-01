@@ -1,0 +1,910 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Machine Learning",
+      "subject_code": "CY-701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Machine Learning",
+          "topics": [
+            "introduction to machine learning",
+            "scope and limitations of machine learning",
+            "regression",
+            "probability",
+            "statistics",
+            "linear algebra for machine learning",
+            "convex optimization",
+            "data visualization",
+            "hypothesis function and testing",
+            "data distributions",
+            "data preprocessing",
+            "data augmentation",
+            "normalizing data sets",
+            "machine learning models",
+            "supervised learning",
+            "unsupervised learning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Deep Learning Fundamentals",
+          "topics": [
+            "linearity vs non‑linearity",
+            "activation functions (sigmoid, ReLU, etc.)",
+            "weights and bias",
+            "loss function",
+            "gradient descent",
+            "multilayer network",
+            "back‑propagation",
+            "weight initialization",
+            "training and testing of networks",
+            "unstable gradient problem",
+            "auto‑encoders",
+            "batch normalization",
+            "dropout",
+            "L1 regularization",
+            "L2 regularization",
+            "momentum",
+            "tuning hyper‑parameters"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Convolutional Neural Networks",
+          "topics": [
+            "convolutional neural network (CNN)",
+            "flattening",
+            "subsampling",
+            "padding",
+            "stride",
+            "convolution layer",
+            "pooling layer",
+            "loss layer",
+            "1x1 convolution (depthwise) layer",
+            "inception network",
+            "input channels",
+            "transfer learning",
+            "one‑shot learning",
+            "dimension reduction",
+            "implementation of CNN with TensorFlow",
+            "implementation of CNN with Keras"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Recurrent Neural Networks and Reinforcement Learning",
+          "topics": [
+            "recurrent neural network (RNN)",
+            "long short‑term memory (LSTM)",
+            "gated recurrent unit (GRU)",
+            "translation models",
+            "beam search and beam width",
+            "BLEU score",
+            "attention model",
+            "reinforcement learning (RL)",
+            "RL framework",
+            "Markov decision process (MDP)",
+            "Bellman equations",
+            "value iteration",
+            "policy iteration",
+            "actor‑critic model",
+            "Q‑learning",
+            "SARSA"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Support Vector Machines and Applications",
+          "topics": [
+            "support vector machines (SVM)",
+            "Bayesian learning",
+            "application of machine learning in computer vision",
+            "application of machine learning in speech processing",
+            "application of machine learning in natural language processing",
+            "case study: ImageNet competition"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Christopher M. Bishop, “Pattern Recognition and Machine Learning”, Springer-Verlag New York Inc., 2nd Edition, 2011.",
+        "Tom M. Mitchell, “Machine Learning”, McGraw Hill Education, First edition, 2017.",
+        "Ian Goodfellow, Yoshua Bengio and Aaron Courville, “Deep Learning”, MIT Press, 2016.",
+        "Aurelien Geon, “Hands-On Machine Learning with Scikit-Learn and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems”, Shroff/O'Reilly; First edition (2017).",
+        "Francois Chollet, \"Deep Learning with Python\", Manning Publications, 1st edition (10 January 2018).",
+        "Andreas Muller, \"Introduction to Machine Learning with Python: A Guide for Data Scientists\", Shroff/O'Reilly; First edition (2016).",
+        "Russell, S. and Norvig, N. “Artificial Intelligence: A Modern Approach”, Prentice Hall Series in Artificial Intelligence, 2003."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Penetration Testing and Vulnerability Analysis",
+      "subject_code": "CY-702 (A)",
+      "subject_type": "Theory and Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Penetration Testing",
+          "topics": [
+            "Legal and ethical considerations",
+            "Types of penetration testing",
+            "Penetration testing methodologies",
+            "Information gathering and scanning",
+            "Foot printing and reconnaissance techniques",
+            "Network scanning and enumeration",
+            "SINT (Open‑source intelligence) gathering",
+            "Vulnerability scanning tools"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Exploitation and Post‑Exploitation",
+          "topics": [
+            "Exploiting system and network vulnerabilities",
+            "Privilege escalation techniques",
+            "Post‑exploitation activities",
+            "Maintaining access and pivoting",
+            "Web application security",
+            "Common web application vulnerabilities",
+            "Web application penetration testing methodologies",
+            "Web vulnerability scanners and tools"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Wireless Network Security and Social Engineering",
+          "topics": [
+            "Wireless network security concepts",
+            "Wi‑Fi vulnerabilities and attacks",
+            "Wireless penetration testing techniques",
+            "Securing wireless networks",
+            "Introduction to social engineering",
+            "Techniques and tactics of social engineering",
+            "Physical security vulnerabilities and testing",
+            "Mitigating social engineering and physical security risks"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cryptography and Secure Communications",
+          "topics": [
+            "Basics of cryptography",
+            "Cryptographic algorithms and protocols",
+            "Encryption, decryption, and key management",
+            "Secure communication channels",
+            "Documentation and reporting of findings",
+            "Prioritizing and mitigating vulnerabilities",
+            "Engaging stakeholders and communicating recommendations",
+            "Post‑testing activities and continuous improvement"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Topics in Penetration Testing",
+          "topics": [
+            "Mobile application security",
+            "Cloud security and testing (IoT security)",
+            "Red teaming and adversary simulation",
+            "Review of real‑world penetration testing cases",
+            "Practical hands‑on exercises",
+            "Capture the Flag (CTF) competitions",
+            "Final project and presentations"
+          ]
+        }
+      ],
+      "experiments": [
+        "Learn how to use tools like Nmap, Nessus, or OpenVAS to perform network scans and identify open ports, services, and potential vulnerabilities.",
+        "Implement practice scanning a target network and analysing the results to identify potential attack vectors.",
+        "Set up a vulnerable web application (e.g., OWASP Juice Shop or Damn Vulnerable Web Application) and practice identifying and exploiting security flaws.",
+        "Understand wireless network security concepts such as WEP, WPA, and WPA2 encryption.",
+        "Practice writing comprehensive penetration testing reports that highlight identified vulnerabilities, their impact, and recommended remediation steps."
+      ],
+      "reference_books": [
+        "Dafydd Stuttard and Marcus Pinto, \"The Web Application Hacker's Handbook: Finding and Exploiting Security Flaws\", Wiley, 2011 (2nd edition).",
+        "David Kennedy, Jim O'Gorman, Devon Kearns, and Mati Aharoni, “Metasploit: The Penetration Tester's Guide”.",
+        "Patrick Engebretson, “The Basics of Hacking and Penetration Testing: Ethical Hacking and Penetration Testing Made Easy”.",
+        "Michal Zalewski, “The Tangled Web: A Guide to Securing Modern Web Applications”.",
+        "Mark Dowd, John McDonald, and Justin Schuh, “The Art of Software Security Assessment: Identifying and Preventing Software Vulnerabilities”."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Block Chain & Crypto-Currencies",
+      "subject_code": "CY-702(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basics of Blockchain",
+          "topics": [
+            "Introduction",
+            "Concept of Blockchain",
+            "Fundamentals of Blockchain",
+            "Characteristics of Blockchain",
+            "Consensus in Trust‑Building Exercise",
+            "Public, Private, and Hybrid Blockchains",
+            "Distributed Ledger Technologies",
+            "Architecture of Blockchain",
+            "Transactions",
+            "Chaining Blocks",
+            "Value Proposition of Blockchain",
+            "Permissioned Model of Blockchain"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Hash Functions",
+          "topics": [
+            "Hash Functions",
+            "Hashing",
+            "Message Authentication Code (MAC)",
+            "Secure Hash Algorithms (SHA‑1)",
+            "Distributed Hash Tables",
+            "Hashing in Blockchain Mining Consensus",
+            "Consensus Algorithm",
+            "Byzantine Agreement Methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Blockchain Components",
+          "topics": [
+            "Blockchain Components",
+            "Ethereum Virtual Machine (EVM)",
+            "Working of Ethereum",
+            "Ethereum Clients",
+            "Ethereum Transactions",
+            "Ethereum Development Tools",
+            "Introduction to Cryptography",
+            "Cryptography Primitives",
+            "Symmetric Cryptography",
+            "Asymmetric Cryptography",
+            "Architecture of Hyperledger"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Smart Contracts",
+          "topics": [
+            "Smart Contracts",
+            "Absolute and Immutable Contracts",
+            "Contractual Confidentiality",
+            "Supply Chain Management",
+            "Darknet",
+            "Future Bitcoins",
+            "Working of Bitcoin",
+            "Merkle Trees",
+            "Bitcoin Block Structure",
+            "Bitcoin Address",
+            "Bitcoin Transactions",
+            "Bitcoin Payments",
+            "Mining in Blockchain"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Blockchain Vertical Solutions and Use Cases",
+          "topics": [
+            "Blockchain Vertical Solutions and Use Cases",
+            "Blockchain in Insurance",
+            "Blockchain in Asset Management",
+            "Blockchain in Healthcare",
+            "Smart Assets",
+            "Electronic Currency",
+            "Manufacturing Blockchain and Allied Technologies",
+            "Blockchain and Cloud Computing",
+            "Characteristics of Blockchain Cloud"
+          ]
+        }
+      ],
+      "experiments": [
+        "Install and understand Docker container, Node.js, Java and Hyperledger Fabric, Ethereum and perform necessary software installation on local machine/create instance on cloud to run.",
+        "Create and deploy a blockchain network using Hyperledger Fabric SDK for Java; set up and initialize the channel, install and instantiate chain code, and perform invoke and query on your blockchain network.",
+        "Interact with a blockchain network. Execute transactions and requests against a blockchain network by creating an app to test the network and its rules.",
+        "Deploy an asset‑transfer app using blockchain. Learn app development within a Hyperledger Fabric network.",
+        "Use blockchain to track fitness club rewards. Build a web app that uses Hyperledger Fabric to track and trace member rewards."
+      ],
+      "reference_books": [
+        "Daniel Drescher, “Blockchain Basics”, First Edition, Apress, 2017.",
+        "Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. Princeton University Press, 2016.",
+        "Melanie Swan, “Blockchain: Blueprint for a New Economy”, O’Reilly, 2015.",
+        "Ritesh Modi, “Solidity Programming Essentials: A Beginner’s Guide to Build Smart Contracts for Ethereum and Blockchain”, Packt Publishing.",
+        "Handbook of Research on Blockchain Technology published by Elsevier Inc. ISBN: 9780128198162, 2020."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mobile Security and Forensics",
+      "subject_code": "CY-702(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Mobile Forensics",
+          "topics": [
+            "Mobile forensics",
+            "Challenges in mobile forensics",
+            "Mobile phone evidence extraction",
+            "Documenting and reporting phase",
+            "Presentation phase",
+            "Archiving phase",
+            "Overview of mobile operating systems",
+            "Data acquisition methods",
+            "Examination and analysis of evidence stored on mobile phones"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Android Forensics",
+          "topics": [
+            "Understanding Android and Android model",
+            "Android security – secure kernel",
+            "Security‑Enhanced Linux (SELinux)",
+            "Full Disk Encryption",
+            "Trusted Execution Environment (TEE)",
+            "Android file system",
+            "Android forensic setup and pre‑data extraction techniques",
+            "Android data extraction techniques",
+            "Android data analysis and recovery",
+            "Android app analysis",
+            "Android malware analysis",
+            "Reverse engineering of Android applications",
+            "Extracting APK files from Android devices"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "iOS Forensics",
+          "topics": [
+            "iOS application security",
+            "Basics of iOS and application development",
+            "Developing a first iOS app",
+            "Running apps on iDevice",
+            "iOS MVC design pattern",
+            "iOS security model",
+            "iOS secure boot chain",
+            "iOS application signing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Android Security",
+          "topics": [
+            "Sandboxing and Android permission model",
+            "Application signing",
+            "Android startup process",
+            "Setting up the development environment",
+            "Creating an Android virtual device (AVD)",
+            "Useful utilities for Android pentesting",
+            "Android Debug Bridge (ADB)",
+            "Burp Suite for Android traffic analysis",
+            "APKTool for reverse engineering"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Traffic Analysis",
+          "topics": [
+            "Traffic analysis for Android devices",
+            "Android traffic interception",
+            "Passive traffic analysis techniques",
+            "Active traffic analysis techniques",
+            "HTTPS proxy interception"
+          ]
+        }
+      ],
+      "experiments": [
+        "Setup of memory forensic environment and extract various artifacts from memory dump and analyze the memory dump using tools like Volatility, LiME, etc.",
+        "Windows artifact analysis using different forensic tools, including MRU, link files, USB analysis, Prefetch analysis, shell bags, web cache, etc.",
+        "Using APKTool to reverse an Android application and auditing Android applications.",
+        "Perform operations on Android image files: using a custom recovery Android image, extracting contacts, calls, and text messages with AFLogical, dumping application databases manually, logging logcat and using backup to extract application data.",
+        "Developing and running your first iOS app on an iDevice."
+      ],
+      "reference_books": [
+        "Cyber Security by Nina Godbole - John Wiley Publication.",
+        "Digital Forensic by Dr. Nilakshi Jain - John Wiley Publication.",
+        "Aditya Gupta, “Learning Pentesting for Android Devices”, Packt Pub Ltd; Illustrated edition, 2014.",
+        "Swaroop Yermalkar, “Learning iOS Penetration Testing Paperback”, Packt Publishing, 2004.",
+        "Rohit Tamma, Oleg Skulkin, Heather Mahalik, Satish Bommisetty, “Practical Mobile Forensics - Third Edition”, Packt Publishing, 2018.",
+        "Igor Mikhaylov and Oleg Skulkin, “Mobile Forensics Cookbook”, Packt Publishing Limited, 2017."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Multimedia Security & Forensics",
+      "subject_code": "CY-702(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Multimedia Application Areas",
+            "Interdisciplinary Aspects of Multimedia",
+            "Multimedia Data Encoding",
+            "Concept of data compression in multimedia field"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Quality of Service & Operating System",
+          "topics": [
+            "Requirements and Constraints",
+            "Quality of Services Concept",
+            "Resource Management",
+            "Media Server Architecture",
+            "Storage Management",
+            "Services",
+            "Protocols",
+            "Layers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Security in Multimedia Applications",
+          "topics": [
+            "Security attacks",
+            "Multimedia Encryption",
+            "Steganography",
+            "Digital image watermarking",
+            "Multimedia Authentications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Multimedia Evidence Handling",
+          "topics": [
+            "Digital Forensics Laboratories in Operation",
+            "Standards and Best Practices in Digital and Multimedia Forensics",
+            "Digital Evidence Extraction",
+            "Multimedia File Carving"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multimedia Device and Source Forensics",
+          "topics": [
+            "Forensic Camera Model Identification",
+            "Printer and Scanner Forensics",
+            "Microphone Forensics",
+            "Multimedia Content Forensics"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ralf Steinmetz, Klara Nahrstedt. Multimedia Systems, Springer International Edition",
+        "Ho, Anthony TS, and Shujun Li, eds. Handbook of digital forensics of multimedia data and devices. John Wiley & Sons, 2015.",
+        "John. F. Koegel Buford. Multimedia Systems. Pearson Education.",
+        "Digital Watermarking and Steganography by Ingemar Cox, Matthew Miller, Jeffrey Bloom, Jessica."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Ethical Hacking",
+      "subject_code": "CY-703(A)",
+      "subject_type": "Theory/Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Ethical Hacking",
+          "topics": [
+            "Introduction to ethical hacking",
+            "Fundamentals of networking and basic concepts",
+            "Foot‑printing and scanning – information gathering",
+            "Determining the network range",
+            "Identifying active machines",
+            "Finding open ports and access points",
+            "Operating system fingerprinting",
+            "Service enumeration",
+            "Network attack surface mapping",
+            "Google hacking techniques",
+            "Scanning methodologies",
+            "Windows platform hacking",
+            "Linux platform hacking"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "The Business Perspective",
+          "topics": [
+            "Definition of business objectives for security testing",
+            "Development of security policy",
+            "Analysis of previous test results",
+            "Identification of business challenges",
+            "Planning a controlled attack – inherent limitations",
+            "Planning a controlled attack – imposed limitations",
+            "Timing considerations for testing",
+            "Selection of attack type",
+            "Definition of source point",
+            "Required knowledge and skill set",
+            "Design of multi‑phased attacks",
+            "Team organization and attack structure",
+            "Engagement planning procedures",
+            "Role of the security consultant",
+            "Role of the tester",
+            "Logistics and resource allocation",
+            "Use of intermediaries",
+            "Coordination with law‑enforcement agencies"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Preparing for a Hack",
+          "topics": [
+            "Technical preparation for penetration testing",
+            "Management of the testing engagement",
+            "Social engineering techniques for reconnaissance",
+            "Physical security assessment methods",
+            "Internet‑based reconnaissance",
+            "Steganography concepts and applications",
+            "Cryptography fundamentals relevant to hacking",
+            "Wireless network hacking tactics",
+            "Firewall configuration and honeypot deployment",
+            "Intrusion detection and prevention system (IDS/IPS) evasion",
+            "Vulnerability identification strategies",
+            "Complete penetration testing workflow"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Enumeration",
+          "topics": [
+            "Enumeration techniques and methodology",
+            "Definition of soft objectives during enumeration",
+            "Techniques for “looking around” or initial probing",
+            "Core elements of enumeration (hosts, services, users)",
+            "Preparation for exploitation phase",
+            "Intuitive testing approaches",
+            "Evasion tactics against defensive mechanisms",
+            "Threat and threat‑group analysis",
+            "Operating system specific enumeration",
+            "Password cracking strategies",
+            "Rootkit detection and analysis",
+            "Application‑level enumeration",
+            "Wardialing and telephone system probing",
+            "Network service enumeration",
+            "Denial‑of‑service (DoS) attack considerations",
+            "Identification of areas of concern for further testing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Topics",
+          "topics": [
+            "Reverse engineering of binaries and scripts",
+            "Email hacking techniques and countermeasures",
+            "Incident handling and response procedures",
+            "Bluetooth protocol hacking",
+            "Mobile phone hacking methodologies",
+            "Overview of basic ethical hacking tools and their professional usage",
+            "Legal considerations for ethical hacking",
+            "Professional and ethical responsibilities of security testers",
+            "Maintaining professional integrity in security assessments",
+            "Appropriate use of tools and techniques in ethical hacking engagements"
+          ]
+        }
+      ],
+      "experiments": [
+        "List the tools for Ethical Hacking.",
+        "Implement foot‑printing and reconnaissance using appropriate tools.",
+        "Set up a honeypot and monitor its activity on the network.",
+        "Create a phishing‑based social networking login page.",
+        "Write code to demonstrate denial‑of‑service (DoS) attacks.",
+        "Install and analyze various rootkits.",
+        "Study techniques used for web‑based password capturing.",
+        "Perform passive scanning, active scanning, session hijacking, and cookie extraction using Burp Suite."
+      ],
+      "reference_books": [
+        "James S. Tiller, “The Ethical Hack: A Framework for Business Value Penetration Testing”, Auerbach Publications, CRC Press.",
+        "EC‑Council, “Ethical Hacking and Countermeasures Attack Phases”, Cengage Learning.",
+        "Michael Simpson, Kent Backman, James Corley, “Hands‑On Ethical Hacking and Network Defense”, Cengage Learning.",
+        "Kevin Beaver, “Hacking For Dummies”, 6th edition, John Wiley & Sons.",
+        "Dr. Nilakshi Jain, “Digital Forensic”, John Wiley Publication.",
+        "Michael Gregg, “Certified Ethical Hacker, Version 9, Second Edition”, Pearson IT Certification.",
+        "Roger Grimes, “Hacking the Hacker”, Wiley.",
+        "Ankit Fadia, “The Unofficial Guide to Ethical Hacking”, Premier Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cyber Security Policies & Standards",
+      "subject_code": "CY-703(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Cyber Security",
+          "topics": [
+            "Basic Cyber Security Concepts",
+            "Layers of security",
+            "Vulnerability",
+            "Threat",
+            "Harmful acts",
+            "Internet Governance – Challenges and Constraints",
+            "Computer Criminals",
+            "CIA Triad",
+            "Assets and Threat",
+            "Motive of attackers",
+            "Active attacks",
+            "Passive attacks",
+            "Software attacks",
+            "Hardware attacks",
+            "Cyber Threats – Cyber Warfare",
+            "Cyber Crime",
+            "Cyber terrorism",
+            "Cyber Espionage",
+            "Comprehensive Cyber Security Policy"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cyberspace and the Law & Cyber Forensics",
+          "topics": [
+            "Introduction",
+            "Cyber Security Regulations",
+            "Roles of International Law",
+            "The INDIAN Cyberspace",
+            "National Cyber Security Policy",
+            "Historical background of Cyber forensics",
+            "Digital Forensics Science",
+            "The Need for Computer Forensics",
+            "Cyber Forensics and Digital evidence",
+            "Forensics Analysis of Email",
+            "Digital Forensics Lifecycle",
+            "Forensics Investigation",
+            "Challenges in Computer Forensics"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Organizational Implications of Cyber Security",
+          "topics": [
+            "Introduction cost of cybercrimes and IPR issues",
+            "Web threats for organizations",
+            "Security and privacy implications",
+            "Social media marketing: security risks and perils for organizations",
+            "Social computing and the associated challenges for organizations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Privacy Issues",
+          "topics": [
+            "Basic Data Privacy Concepts: Fundamental Concepts",
+            "Data Privacy Attacks",
+            "Datalinking and profiling",
+            "Privacy policies and their specifications",
+            "Privacy policy languages",
+            "Privacy in different domains – medical, financial etc."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to Security Policies and Cyber Laws",
+          "topics": [
+            "Need for an Information Security Policy",
+            "Information Security Standards – ISO",
+            "Introducing Various Security Policies and Their Review Process",
+            "Introduction to Indian Cyber Law",
+            "Objective and Scope of the IT Act, 2000",
+            "Intellectual Property Issues",
+            "Overview of Intellectual Property Related Legislation in India",
+            "Patent",
+            "Copyright",
+            "Law Related to Semiconductor Layout and Design",
+            "Software License"
+          ]
+        }
+      ],
+      "experiments": [
+        "Cybercrime: Examples and Mini-Cases (Case Study)",
+        "Examples: Official Website of Maharashtra Government Hacked, Indian Banks Lose Millions of Rupees, Parliament Attack, Pune City Police Bust Nigerian Racket, e‑mail spoofing instances.",
+        "Mini-Cases: The Indian Case of online Gambling, An Indian Case of Intellectual Property Crime, Financial Frauds in Cyber Domain."
+      ],
+      "reference_books": [
+        "Nina Godbole and Sunit Belpure, Cyber Security Understanding Cyber Crimes, Computer Forensics and Legal Perspectives, Wiley",
+        "B.B. Gupta, D.P. Agrawal, Haoxiang Wang, Computer and Cyber Security: Principles, Algorithm, Applications, and Perspectives, CRC Press, ISBN 9780815371335, 2018",
+        "Dr. Surya Prakash Tripathi, Ritendra Goyal, Praveen Kumar Shukla, KLSI. “Introduction to information security and cyber laws”. Dreamtech Press. ISBN: 9789351194736, 2015",
+        "Cyber Security and Cyber Laws by Dr. Nilakshi Jain - John Wiley Publication",
+        "Digital Forensic by Dr. Nilakshi Jain - John Wiley Publication",
+        "Cyber Security Essentials, James Graham, Richard Howard and Ryan Otson, CRC Press",
+        "Introduction to Cyber Security, Chwan‑Hwa (John) Wu, J. David Irwin, CRC Press T&F Group"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Engineering",
+      "subject_code": "CY-703 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Data Engineering",
+          "topics": [
+            "Definition",
+            "Evolution",
+            "Life Cycle",
+            "Data Engineering skills and activities",
+            "Data Maturity",
+            "Data Lifecycle Versus the Data Engineering Lifecycle",
+            "Security",
+            "Data Management",
+            "DataOps"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Source Systems and Data Ingestion",
+          "topics": [
+            "Types of Data Architecture",
+            "Data Lake",
+            "Data Lakehouses",
+            "Modern Data Stack",
+            "Lambda Architecture",
+            "Kappa Architecture"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Data Platforms",
+          "topics": [
+            "Stream-to-Batch Storage Architecture",
+            "Data Catalog",
+            "Data Sharing",
+            "Data Modeling",
+            "Dimensional Modeling",
+            "Creating Tables",
+            "Schema Migration",
+            "Building the data warehouse"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Data Ingestion",
+          "topics": [
+            "SFTP and SCP",
+            "Webhooks",
+            "Web Interface",
+            "Web Scraping",
+            "Business Intelligence Tools",
+            "Introduction to Superset",
+            "Creating visualizations",
+            "Data Quality",
+            "Data Catalogs",
+            "Data Lineage",
+            "Data Governance"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "ETL and Reverse ETL",
+          "topics": [
+            "ETL",
+            "Reverse ETL",
+            "Security",
+            "Privacy",
+            "Future of Data Engineering",
+            "Patch and Update Systems",
+            "Logging",
+            "Monitoring",
+            "Alerting"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Fundamentals of Data Engineering by Joe Reis, Matt Housley, Released June 2022, Publisher: O'Reilly Media, Inc., ISBN: 9781098108304.",
+        "Data Engineering with Python: Work with Massive Datasets to Design Data Models and Automate Data Pipelines Using Python by Paul Crickard."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cloud Computing",
+      "subject_code": "CY-703 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Grid and Cloud Computing",
+          "topics": [
+            "Grid and Cloud computing concepts",
+            "Characteristics of cloud computing",
+            "Components of cloud computing",
+            "Business and IT perspective of cloud",
+            "Cloud services requirements",
+            "Cloud service models (public, private, hybrid)",
+            "Security in public cloud model",
+            "Public versus private clouds",
+            "Cloud computing platforms: Amazon EC2, Google App Engine, Microsoft Azure",
+            "Utility Computing",
+            "Elastic Computing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cloud Services",
+          "topics": [
+            "Software as a Service (SaaS)",
+            "Platform as a Service (PaaS)",
+            "Infrastructure as a Service (IaaS)",
+            "Cloud design and implementation using Service Oriented Architecture (SOA)",
+            "Conceptual cloud model",
+            "Cloud stack",
+            "Computing on demand",
+            "Information life‑cycle management",
+            "Cloud analytics",
+            "Information security in cloud",
+            "Virtual desktop infrastructure",
+            "Storage cloud"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Virtualization Technology",
+          "topics": [
+            "Definition and benefits of virtualization",
+            "Sensor virtualization",
+            "Hardware‑assisted virtualization (HVM)",
+            "Study of hypervisors",
+            "Logical partitioning (LPAR)",
+            "Storage virtualization",
+            "Storage Area Networks (SAN)",
+            "Network‑attached storage (NAS)",
+            "Cloud server virtualization",
+            "Virtualized data centre"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cloud Security Fundamentals",
+          "topics": [
+            "Vulnerability assessment tools for cloud",
+            "Privacy and security in cloud environments",
+            "Cloud security architecture",
+            "Architectural considerations – general issues",
+            "Trusted cloud computing",
+            "Secure execution environments and communications",
+            "Micro‑architectures",
+            "Identity management",
+            "Access control mechanisms",
+            "Autonomic security",
+            "Virtualization security management",
+            "Virtual machine (VM) security recommendations",
+            "VM‑specific security techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "SOA and Cloud",
+          "topics": [
+            "SOA integration with IaaS",
+            "Cloud infrastructure benchmarks",
+            "Online Analytical Processing (OLAP)",
+            "Business intelligence in cloud",
+            "e‑Business considerations",
+            "Independent Software Vendors (ISV) in cloud",
+            "Cloud performance monitoring commands",
+            "Quality of Service (QoS) issues in cloud",
+            "Mobile cloud computing",
+            "Inter‑cloud issues",
+            "Sky computing",
+            "Cloud computing platforms: Xen, Eucalyptus, OpenNebula, Nimbus, TPlatform, Apache Virtual Computing Lab (VCL)",
+            "Anomaly Elastic Computing Platform"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Dr. Kumar Saurabh, “Cloud Computing”, Wiley India.",
+        "Ronald Krutz and Russell Dean Vines, “Cloud Security”, Wiley-India.",
+        "Judith Hurwitz, R. Bloor, M. Kanfman, F. Halper, “Computing for Dummies”, Wiley India Edition.",
+        "Anthony T. Velte, Toby J. Velte, “Cloud Computing – A Practical Approach”, TMH.",
+        "Barrie Sosinsky, “Cloud Computing Bible”, Wiley India."
+      ],
+      "extra": null
+    }
+  ]
+}

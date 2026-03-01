@@ -1,0 +1,552 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Signals & Systems",
+      "subject_code": "EC402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Signals and Systems",
+          "topics": [
+            "Definition of signal",
+            "Classification of signals and representation (continuous‑time, discrete‑time, even/odd, periodic/aperiodic, random/deterministic, energy/power, one/multidimensional, standard signals)",
+            "Basic operations on signals for continuous‑time / discrete‑time",
+            "Transformation of independent and dependent variables",
+            "Definition of system and its classification (CT/DT, linear/non‑linear, time‑variant/time‑invariant, causal/non‑causal, state/dynamic system)",
+            "Interconnection of systems",
+            "System properties: linearity (additivity, homogeneity), shift‑invariance, causality, stability, realizability"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Linear Time‑Invariant Systems",
+          "topics": [
+            "Introduction to LTI systems",
+            "Impulse response representation for LTI systems",
+            "Convolution",
+            "Properties of the impulse‑response representation for LTI systems",
+            "Difference equation for LTI systems",
+            "Block diagram representations (direct form‑I, direct form‑II, transpose, cascade, parallel)",
+            "Impulse response of DT‑LTI system and its properties"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "z‑Transform",
+          "topics": [
+            "Introduction to the z‑transform",
+            "Region of convergence (ROC) of finite‑duration sequences",
+            "ROC of infinite‑duration sequences",
+            "Relation between discrete‑time Fourier transform and z‑transform",
+            "Properties of the ROC",
+            "Properties of the z‑transform",
+            "Inverse z‑transform",
+            "Analysis of discrete‑time LTI systems using the z‑transform",
+            "Unilateral z‑transform"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Fourier Analysis of Discrete‑Time Signals",
+          "topics": [
+            "Introduction to Fourier analysis of discrete‑time signals",
+            "Properties and applications of discrete‑time Fourier series",
+            "Representation of aperiodic signals",
+            "Fourier transform and its properties",
+            "Convergence of the discrete‑time Fourier transform",
+            "Fourier transform for periodic signals",
+            "Applications of the DTFT"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "State‑Space Analysis and Multi‑Input Multi‑Output Representation",
+          "topics": [
+            "State‑space analysis and multi‑input, multi‑output representation",
+            "State‑transition matrix and its role",
+            "The sampling theorem and its implications",
+            "Spectra of sampled signals",
+            "Signal reconstruction"
+          ]
+        }
+      ],
+      "experiments": [
+        "Introduction to MATLAB Tool.",
+        "To implement delta function, unit step function, ramp function and parabolic function for continuous‑time.",
+        "To implement delta function, unit step function, ramp function and parabolic function for discrete‑time.",
+        "To implement rectangular function, triangular function, sinc function and signum function for continuous‑time.",
+        "To implement rectangular function, triangular function, sinc function and signum function for discrete‑time.",
+        "To explore the communication of even and odd symmetries in a signal with algebraic operations.",
+        "To explore the effect of transformation of signal parameters (amplitude‑scaling, time scaling & shifting).",
+        "To explore the time variance and time invariance property of a given system.",
+        "To explore causality and non‑causality property of a system.",
+        "To demonstrate the convolution of two continuous‑time signals.",
+        "To demonstrate the correlation of two continuous‑time signals.",
+        "To demonstrate the convolution of two discrete‑time signals.",
+        "To demonstrate the correlation of two discrete‑time signals.",
+        "To determine magnitude and phase response of Fourier Transform of given signals."
+      ],
+      "reference_books": [
+        "Simon Haykin, “Signals and Systems”, John Wiley.",
+        "Simon Haykin, “Analog and Digital Communications”, John Willey.",
+        "Bruce Carlson, “Signals and Systems”, TMH.",
+        "Oppenheim & Wilsky, “Signals & Systems”, PHI.",
+        "Taub and Schilling \"Principles of communication signals\", 2nd ed. New York: Mcgraw Hill, 1986."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Analog Communication",
+      "subject_code": "EC403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Frequency domain representation of signal",
+          "topics": [
+            "Fourier transform and its properties",
+            "Condition of existence of Fourier transform",
+            "Fourier transform of impulse",
+            "Fourier transform of step",
+            "Fourier transform of signum",
+            "Fourier transform of cosine",
+            "Fourier transform of sine",
+            "Fourier transform of gate pulse",
+            "Fourier transform of constant",
+            "Properties of impulse function",
+            "Convolution theorem (time & frequency)",
+            "Correlation (auto & cross)",
+            "Energy spectral density",
+            "Power spectral density"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Overview of communication system and amplitude modulation",
+          "topics": [
+            "Overview of communication system",
+            "Communication channels",
+            "Need for modulation",
+            "Baseband signals",
+            "Pass‑band signals",
+            "Amplitude Modulation (AM)",
+            "Double side band with carrier (DSB‑C)",
+            "Double side band without carrier (DSB‑SC)",
+            "Single side band modulation (SSB)",
+            "Generation of AM",
+            "Vestigial side band (VSB)",
+            "Detection of VSB"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Angle modulation and FM communication",
+          "topics": [
+            "Angle modulation",
+            "Narrowband FM",
+            "Wideband FM",
+            "FM frequency spectrum",
+            "Transmission bandwidth of FM",
+            "FM generation methods – direct",
+            "FM generation methods – indirect",
+            "FM detection – balanced discriminator",
+            "FM detection – phase‑shift discriminator",
+            "FM detection – PLL detector",
+            "Pre‑emphasis",
+            "De‑emphasis",
+            "FM transmitter block diagram",
+            "FM receiver block diagram",
+            "Automatic Gain Control (AGC)",
+            "Automatic Volume Control (AVC)",
+            "Automatic Frequency Control (AFC)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "AM transmitter and receiver characteristics",
+          "topics": [
+            "AM transmitter",
+            "AM receiver",
+            "Tuned radio receiver",
+            "Super‑heterodyne receiver",
+            "Limitations of TRF receivers",
+            "Intermediate frequency (IF)",
+            "Image signal rejection",
+            "Selectivity",
+            "Sensitivity",
+            "Fidelity",
+            "Noise in AM",
+            "Noise in FM"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Noise in analog communication",
+          "topics": [
+            "Classification of noise",
+            "Sources of noise",
+            "Noise figure",
+            "Noise temperature",
+            "Noise bandwidth",
+            "Noise figure measurement",
+            "Noise in analog modulation",
+            "Figure of merit for AM",
+            "Figure of merit for FM",
+            "Effect of noise on AM receivers",
+            "Effect of noise on FM receivers"
+          ]
+        }
+      ],
+      "experiments": [
+        "To analyze characteristics of AM modulator & Demodulators.",
+        "To analyze characteristics of FM modulators & Demodulators.",
+        "To analyze characteristics of super heterodyne receivers.",
+        "To analyze characteristics of FM receivers.",
+        "To construct and verify pre‑emphasis and de‑emphasis and plot the waveforms.",
+        "To analyze characteristics of Automatic Volume Control and Automatic Frequency Control.",
+        "To construct frequency multiplier circuit and to observe the waveform.",
+        "To design and analyze characteristics of FM modulator and AM Demodulator using PLL."
+      ],
+      "reference_books": [
+        "Simon Haykins, Communication System, John Willy",
+        "Singh & Sapre, Communication System, TMH",
+        "B.P. Lathi, Modern Digital and analog communication system; TMH",
+        "Singhal, analog and Digital communication, TMH",
+        "Rao, Analog communication, TMH",
+        "P K Ghose, principal of communication of analog and digital, universities press.",
+        "Taub & shilling, Communication System, TMH",
+        "Hsu; Analog and digital communication (Schaum); TMH",
+        "Proakis fundamental of communication system. (Pearson edition)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Control System",
+      "subject_code": "EC404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Control system",
+          "topics": [
+            "Terminology and classification of control system",
+            "Examples of control system",
+            "Mathematical modeling of mechanical and electrical systems",
+            "Differential equations",
+            "Transfer function",
+            "Block diagram representation and reduction",
+            "Signal flow graph techniques",
+            "Feedback characteristics of control systems: open loop and closed loop systems",
+            "Effect of feedback on control system and on external disturbances",
+            "Linearization effect of feedback",
+            "Regenerative feedback"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Time response analysis",
+          "topics": [
+            "Standard test signals",
+            "Time response of 1st order system",
+            "Time response of 2nd order system",
+            "Steady-state errors and error constants",
+            "Effects of addition of poles and zeros to open loop and closed loop system",
+            "Concept of stability of linear systems",
+            "Effects of location of poles on stability",
+            "Necessary conditions for stability",
+            "Routh-Hurwitz stability criteria",
+            "Relative stability analysis",
+            "Root Locus concept",
+            "Guidelines for sketching Root-Locus"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Frequency response analysis",
+          "topics": [
+            "Correlation between time and frequency response",
+            "Polar plots",
+            "Bode plots",
+            "All-pass and minimum-phase systems",
+            "Log-magnitude versus Phase-Plots",
+            "Closed-loop frequency response",
+            "Nyquist stability criterion",
+            "Assessment of relative stability using Nyquist plot and Bode plot (phase margin, gain margin and stability)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Approaches to system design",
+          "topics": [
+            "Design problem",
+            "Compensation techniques",
+            "Design of phase-lag compensator",
+            "Design of phase-lead compensator",
+            "Design of phase lead-lag compensator in time and frequency domain",
+            "Proportional, derivative, integral and composite controllers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "State space representation of systems",
+          "topics": [
+            "State space representation of systems",
+            "Block diagram for state equation",
+            "Transfer function decomposition",
+            "Solution of state equation",
+            "Transfer matrix",
+            "Relationship between state equation and transfer function",
+            "Controllability and observability"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Albert D. Helfrick, William David Cooper, “Modern electronic instrumentation and measurement techniques”, TMH 2008.",
+        "Oliver Cage, “Electronic Measurements and Instrumentation”, TMH, 2009.",
+        "Alan S. Morris, “Measurement and Instrumentation Principles”, Elsevier (Buterworth Heinmann), 2008.",
+        "David A. Bell, “Electronic Instrumentation and Measurements”, 2nd Ed., PHI, New Delhi 2008.",
+        "H.S. Kalsi, “Electronics Instrumentation”, TMH Ed. 2004",
+        "A.K.Sawhney, “A Course in Electrical and Electronic Measurements and Instrumentation”, Dhanpat Rai.",
+        "MMS Anand, “Electronic Instruments & Instrumentation Technology”, PHI Pvt. Ltd., New Delhi Ed. 2005"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Analog Circuits",
+      "subject_code": "EC405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Feedback Amplifier and Oscillators",
+          "topics": [
+            "Concept of feedback and its types",
+            "Amplifier with negative feedback and its advantages",
+            "Feedback topologies"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Oscillators",
+          "topics": [
+            "Concept of positive feedback",
+            "Classification of oscillators",
+            "Barkhausen criterion",
+            "RC oscillator",
+            "RC phase shift oscillator",
+            "Wien bridge oscillator",
+            "LC oscillators: Hartley, Colpitts, Clapp, and crystal oscillator"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Integrated Circuits",
+          "topics": [
+            "Advantages and characteristic parameters of ICs",
+            "Basic building components of ICs",
+            "Reading data sheets"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Operational Amplifier",
+          "topics": [
+            "Differential amplifier analysis",
+            "Dual‑input balanced‑output differential amplifier configuration",
+            "Dual‑input unbalanced‑output differential amplifier configuration",
+            "Single‑input balanced‑output differential amplifier configuration",
+            "Single‑input unbalanced‑output differential amplifier configuration",
+            "Introduction of op‑amp",
+            "Block diagram of op‑amp",
+            "Characteristics and equivalent circuits of an ideal op‑amp",
+            "Power‑supply configurations for op‑amp"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Characteristics of Op‑amp",
+          "topics": [
+            "Ideal and practical op‑amp behavior",
+            "Input offset voltage",
+            "Input offset current",
+            "Input bias current",
+            "Output offset voltage",
+            "Thermal drift",
+            "Effect of power‑supply voltage variation",
+            "Common‑mode rejection ratio (CMRR)",
+            "Slew rate and its effect",
+            "Power‑supply rejection ratio (PSRR) and gain‑bandwidth product",
+            "Frequency limitations and compensation",
+            "Transient response",
+            "Analysis of TL082 datasheet"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Op‑amp Applications",
+          "topics": [
+            "Inverting amplifier configuration",
+            "Non‑inverting amplifier configuration",
+            "Summing amplifier",
+            "Integrator circuit",
+            "Differentiator circuit",
+            "Instrumentation amplifier",
+            "Differential input and differential output amplifier",
+            "Voltage‑series feedback amplifier",
+            "Voltage‑shunt feedback amplifier",
+            "Log/antilog amplifier",
+            "Triangular/rectangular wave generator",
+            "Phase‑shift oscillator",
+            "Wien bridge oscillator",
+            "Analog multiplier (MPY634)",
+            "Voltage‑controlled oscillator (VCO)",
+            "Comparator",
+            "Zero‑crossing detector",
+            "Filter characteristics",
+            "Classification of filters",
+            "Magnitude and frequency response of filters",
+            "Butterworth 1st‑order low‑pass filter",
+            "Butterworth 2nd‑order low‑pass filter",
+            "High‑pass filter",
+            "Band‑pass filter",
+            "Chebyshev filter characteristics",
+            "Band‑reject filter",
+            "Notch filter",
+            "All‑pass filter",
+            "Self‑tuned filters",
+            "Automatic gain control (AGC) using op‑amp",
+            "Automatic volume control (AVC) using op‑amp"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Timer",
+          "topics": [
+            "IC‑555 timer concept",
+            "Block pin configuration of timer",
+            "Monostable multivibrator using 555",
+            "Bistable multivibrator using 555",
+            "Astable multivibrator using 555",
+            "Schmitt trigger",
+            "Voltage limiters",
+            "Clipper circuits",
+            "Clamper circuits",
+            "Absolute‑value output circuit",
+            "Peak detector",
+            "Sample‑and‑hold circuit",
+            "Precision rectifiers",
+            "Voltage‑to‑current converter",
+            "Current‑to‑voltage converter"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "Voltage Regulator",
+          "topics": [
+            "Simple op‑amp voltage regulator",
+            "Fixed voltage regulator",
+            "Adjustable voltage regulator",
+            "Dual power‑supply regulator",
+            "Basic switching regulator",
+            "Characteristics of standard regulator ICs: linear regulator, switching regulator, low‑dropout regulator",
+            "Study of LM317",
+            "Study of TPS40200",
+            "Study of TPS7250"
+          ]
+        }
+      ],
+      "experiments": [
+        "Measure and compare the op‑amp characteristics: offset voltages, bias currents, CMRR, slew rate of OPAMP LM741 and TL082.",
+        "Determine voltage gain and frequency response of inverting and non‑inverting amplifiers using TL082.",
+        "Design an instrumentation amplifier and determine its voltage gain using TL082.",
+        "Design op‑amp integrator (low‑pass filter) and determine its frequency response.",
+        "Design op‑amp differentiator (high‑pass filter) and determine its frequency response.",
+        "Design 2nd‑order Butterworth filter using universal active filter topology with LM741.",
+        "Design astable, monostable and bistable multivibrator using 555 and analyse its characteristics.",
+        "Implement automatic gain control (AGC) and automatic volume control (AVC) using multiplier MPY634.",
+        "Design a PLL using op‑amp with MPY634 and determine the free‑running frequency, capture range, and lock‑in range.",
+        "Design and test a low‑dropout regulator using op‑amps for a given voltage regulation characteristic and compare with TPS7250 IC."
+      ],
+      "reference_books": [
+        "Ramakant A. Gaikwad, “OP‑Amp and Linear Integrated Circuits”, Third edition 2006, Pearson.",
+        "B. Visvesvara Rao, Linear Integrated Circuits, Pearson.",
+        "http://www.nptelvideos.in/2012/11/analog-ics.html",
+        "http://nptel.ac.in/courses/117108107/",
+        "David A. Bell: Operational Amplifiers & Linear ICs, Oxford University Press, 2nd edition, 2010.",
+        "D. Roy Choudhury: Linear Integrated Circuits, New Age Publication.",
+        "B. Somanathan Nair: Linear Integrated Circuits analysis design and application, Wiley India Pvt. Ltd.",
+        "Maheshwary and Anand: Analog Electronics, PHI.",
+        "S. Salivahanan, V. S. Kanchana Bhaaskaran: Linear Integrated Circuits, second edition, McGraw Hill.",
+        "Gray Hurst, Lewis Meyer: Analysis and design of analog Integrated Circuits, fifth edition, Wiley India.",
+        "Robert F. Coughlin, Frederick F. Driscoll: Operational Amplifiers and Linear Integrated Circuits, sixth edition, Pearson.",
+        "Millman and Halkias: Integrated electronics, TMH.",
+        "Boylestad and Nashelsky: Electronic Devices and Circuit Theory, Pearson Education.",
+        "Sedra and Smith: Microelectronics, Oxford Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Simulation Lab",
+      "subject_code": "EC406",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to circuit simulation software",
+          "topics": [
+            "Overview of TINA‑PRO, PSPICE, and Circuit Maker features",
+            "Applications in electronic circuits, instrumentation, and network analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design, optimization and simulation of basic electronic circuits",
+          "topics": [
+            "Simulation of rectifier circuits",
+            "Simulation of clipper circuits",
+            "Simulation of clamper circuits",
+            "Simulation of diode characteristics",
+            "Simulation of transistor characteristics"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Transient and steady‑state analysis of RL/RC/RLC circuits",
+          "topics": [
+            "Transient analysis of RL circuits",
+            "Transient analysis of RC circuits",
+            "Transient analysis of RLC circuits",
+            "Steady‑state analysis of RL circuits",
+            "Steady‑state analysis of RC circuits",
+            "Steady‑state analysis of RLC circuits",
+            "Realization of network theorems using simulation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Use of virtual instruments built in the software",
+          "topics": [
+            "Utilizing virtual oscilloscopes within the simulation environment",
+            "Utilizing virtual function generators within the simulation environment",
+            "Utilizing virtual multimeters within the simulation environment"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to PCB layout software",
+          "topics": [
+            "Overview of PCB layout software tools",
+            "Optimization and design of PCB layouts for simulated circuits",
+            "Fabrication considerations for PCB designs",
+            "Simulation and design of PCB for at least two semester circuits"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

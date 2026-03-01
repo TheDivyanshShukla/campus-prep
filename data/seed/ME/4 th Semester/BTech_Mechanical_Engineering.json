@@ -1,0 +1,400 @@
+{
+  "subjects": [
+    {
+      "subject_name": "INSTRUMENTATION & CONTROL",
+      "subject_code": "ME402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Instrumentation Systems",
+          "topics": [
+            "Introduction to instrument systems",
+            "Classifications",
+            "Functional elements of a measurement system",
+            "Standards and calibration",
+            "Static performance characteristics",
+            "Measurement errors and uncertainties",
+            "Analysis",
+            "Sequential and random test",
+            "Specifications of instrument static characteristics",
+            "Data acquisition",
+            "Reduction",
+            "Data outliner detection"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Dynamic Characteristics of Instruments",
+          "topics": [
+            "Dynamic characteristics of the instruments",
+            "Formulation of system equations",
+            "Dynamic response",
+            "Compensation",
+            "Periodic input",
+            "Harmonic signal non harmonic signal",
+            "Fourier transform",
+            "Response to the transient input",
+            "Response to random signal input",
+            "First and second order system compensation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Measurement Techniques – Temperature, Pressure, Flow",
+          "topics": [
+            "Temperature measurements (thermometry based on thermal expansion, liquid in glass, bimetallic, electric resistance- thermometry, thermocouples, thermistors, detectors)",
+            "Pressure and velocity measurements (barometer, manometer, dead weight tester, pressure gauges and transducers, dynamic measurements)",
+            "Flow measurements (pressure differential meters, orifice meter, venturi meter, rota-meter)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Strain, Motion and Torque Measurements",
+          "topics": [
+            "Strain gauges, strain and stress measurements, electrical circuits, compensations",
+            "Motion force and torque measurements, displacement measurements, potentiometers, linear and rotary variable differential transformers, velocity measurements, electromagnetic technique, stroboscope, load cell, measurement of torque on rotating shaft, power estimation from rotating shaft"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Control Systems",
+          "topics": [
+            "Control systems",
+            "Open loop and close loop control",
+            "Mathematical modeling of dynamic systems – mechanical systems",
+            "Electrical systems",
+            "Fluid systems",
+            "Thermal systems",
+            "Transfer function",
+            "Impulse response function",
+            "Block diagrams of close loop systems",
+            "System modeling using software"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "[1] Nakra B.C.Chaudhary K.K, Instrumentation measurement and analysisTata McGraw Hill, ISBN 0 07 451791 0",
+        "[2] Richard S, Figiola & Donal E. Beasley, John Wiley, Theory and design of mechanical measurements."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "THEORY OF MACHINES",
+      "subject_code": "ME403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Kinematics",
+          "topics": [
+            "Introduction to kinematics and kinetics of machines",
+            "Degree of freedom and types of motion",
+            "Kinematic concepts of links and joints",
+            "Kinematic chains and inversions",
+            "Absolute and relative motions",
+            "Displacement, velocity and acceleration diagrams",
+            "Overview of various mechanisms and applications"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Synthesis and Dynamics",
+          "topics": [
+            "Kinematic synthesis of linkages",
+            "Dynamic motion analysis of mechanisms and machines",
+            "Application of D'Alembert’s principle",
+            "Number synthesis",
+            "Construction of free‑body diagrams",
+            "Relationship between kinematic and dynamic quantities",
+            "Analytical and graphical methods for mechanism analysis"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Cams and Followers",
+          "topics": [
+            "Introduction to cams and followers",
+            "Classification of cams and followers",
+            "Nomenclature of cam geometry",
+            "Analysis of cam‑follower motion",
+            "Analytical cam design with specific contours",
+            "Pressure angle, radius and undercutting considerations",
+            "Motion constraints and programming",
+            "Critical‑path motion and torque on cam shaft"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Power Transmission",
+          "topics": [
+            "Kinematics of belt‑pulley systems",
+            "Flat and V‑belts, rope drives",
+            "Conditions for maximum power transmission",
+            "Efficiency of belt drives",
+            "Friction devices and pivot‑collar mechanisms",
+            "Power screws, plate and cone clutches",
+            "Brake classifications: block, band, internal, external",
+            "Friction circle and friction axis concepts"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Gears and Vibration",
+          "topics": [
+            "Fundamental laws of gearing",
+            "Classification and terminology of gears",
+            "Tooth profile geometry",
+            "Kinematic considerations in gear meshing",
+            "Types of gears: spur, bevel, worm, helical, hypoid",
+            "Gear trains and epicyclic gear sets",
+            "Compound gearing",
+            "Static and dynamic balancing of gears",
+            "Introduction to vibration and single‑degree‑of‑freedom systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "R. L. Norton, *Kinematics & Dynamics of Machinery*, Tata McGraw‑Hill, ISBN‑13: 978‑0‑07‑014480‑4",
+        "A. Ghosh & A. Malik, *Theory of Mechanisms and Machines*, EWP Pvt Ltd, ISBN: 81‑85095‑72‑8"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "FLUID MECHANICS",
+      "subject_code": "ME404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Fluid Mechanics",
+          "topics": [
+            "Introduction, fluid and the continuum",
+            "Fluid properties, surface tension, bulk modulus and thermodynamic properties",
+            "Newton’s laws of viscosity and its coefficients",
+            "Newtonian and non‑Newtonian fluids",
+            "Hydrostatics and buoyancy",
+            "Metacentric height and stability of floating bodies"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Fluid Kinematics",
+          "topics": [
+            "Lagrangian and Eulerian method",
+            "Description of fluid flow, stream line, path line and streak line",
+            "Types of flow and types of motion",
+            "Local and convective acceleration",
+            "Continuity equation",
+            "Potential flow, circulation, velocity potential, stream function",
+            "Laplace equation and flow nets"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Fluid Dynamics",
+          "topics": [
+            "System and control volume analysis",
+            "Reynolds transport theorem",
+            "Euler’s equation",
+            "Bernoulli’s equation",
+            "Momentum and moment of momentum equations and their applications",
+            "Forces on immersed bodies, lift and drag",
+            "Streamlined and bluff bodies, flow around circular cylinder and aerofoils"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Flow Through Pipes",
+          "topics": [
+            "Reynolds number, laminar and turbulent flow",
+            "Viscous flow through parallel plates and pipes",
+            "Navier‑Stokes equation",
+            "Pressure gradient",
+            "Head loss in turbulent flow (Darcy’s equation)",
+            "Friction factor, minor losses",
+            "Hydraulic and energy gradient, pipe networks"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Boundary Layer and Compressible Flow",
+          "topics": [
+            "Introduction to boundary layer theory",
+            "Boundary layer parameters, Von Kármán momentum equation",
+            "Laminar and turbulent boundary conditions",
+            "Boundary layer separation",
+            "Compressible flow, Mach number, isentropic flow",
+            "Stagnation properties, normal and oblique shocks",
+            "Fanno and Rayleigh lines, flow through nozzles"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Massy B.S., Mechanics of Fluid, Routledge Publication",
+        "Shames, Fluid Mechanics, Tata McGraw Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "MANUFACTURING TECHNOLOGY",
+      "subject_code": "ME405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Analysis of Machining Processes",
+          "topics": [
+            "Introduction to machining processes",
+            "Tool geometry",
+            "Tool materials",
+            "Wear characteristics",
+            "Cutting forces",
+            "Cutting fluids",
+            "Failure of cutting tools",
+            "Broaching operation",
+            "Types of broaching machines",
+            "Design of broaching tools",
+            "Centreless grinding",
+            "Thread chaser",
+            "Thread grinding/boring",
+            "Super‑finishing processes such as honing, lapping, electro‑polishing and buffing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Gear Machining",
+          "topics": [
+            "Types of gears",
+            "Elements of gears",
+            "Methods of gear production",
+            "Gear cutting on milling machines",
+            "Gear machining by generation method",
+            "Principles of generation of surfaces – hobbing, shaping and basic rack cutting",
+            "Gear finishing by shaving and gear grinding",
+            "Tooth profile grinding",
+            "Suitable gear treatments"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Plastics",
+          "topics": [
+            "Composition of plastic materials",
+            "Moulding methods – injection moulding, compression moulding, transfer moulding, extrusion moulding, calendaring, blow moulding",
+            "Laminating and reinforcing of plastics",
+            "Welding of plastics"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unconventional Machining Processes",
+          "topics": [
+            "Introduction to unconventional machining processes",
+            "Abrasive jet machining",
+            "Ultrasonic machining",
+            "Electrochemical machining",
+            "Electro discharge machining",
+            "Electron beam machining",
+            "Laser beam machining",
+            "Plasma arc machining",
+            "Non‑destructive testing of machined surfaces and tools"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Extrusion and Numerical Control",
+          "topics": [
+            "Principles of extrusion",
+            "Hot and cold extrusion processes",
+            "Tube extrusion",
+            "Sawing operations – power hacksaw, band saw, circular saw",
+            "Introduction to numerical control (NC) machining",
+            "NC machine tools and tooling",
+            "Part programming",
+            "Functions of NC machines",
+            "Coordinate systems used in NC machining"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ghosh A., Mallik A.K., Manufacturing Science, EWP Pvt Ltd, ISBN 81 85095 85 X",
+        "R.K. Jain, Production Technology, Khanna Publishes, ISBN 81 7409 099 1",
+        "Campbell J.S., Principles of Manufacturing Materials and Processes.",
+        "CMTI Handbook",
+        "Rao P.N., Manufacturing Technology, Tata McGraw Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "SOFTWARE LAB",
+      "subject_code": "ME406",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Role of computers in design and manufacture",
+          "topics": [
+            "Role of computers in design and manufacture",
+            "Drawing software, configuration, function and facilities",
+            "Parametric representation",
+            "Examples of drawings and systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Surface modeling, curves and surface representation",
+          "topics": [
+            "Surface modeling",
+            "Curves and surface representation – composite surfaces",
+            "Case studies in CAD",
+            "Parametric representation of analytic and synthetic curves",
+            "Surface manipulation",
+            "Design and engineering applications"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Current developments in CAD",
+          "topics": [
+            "Current developments in CAD",
+            "Feature based modeling",
+            "Design by feature"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Solid modeling",
+          "topics": [
+            "Solid modeling",
+            "Boundary representation",
+            "Analytic solid modeling",
+            "Constructive solid geometry (CSG)",
+            "Sweep representation",
+            "Design and engineering applications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Strategic plan of CAD system design and development",
+          "topics": [
+            "Strategic plan of CAD system design and development",
+            "Graphic exchange",
+            "Features recovery"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Donald H, Paulin M, Computer graphics, Prentice Hall",
+        "Ibrahim Z., CAD/CAM, Theory and Practice, McGraw Hill",
+        "McMohan C, Browne, CAD/CAM Principles - practice and manufacturing management, Pearson Education Asia Ltd"
+      ],
+      "extra": null
+    }
+  ]
+}

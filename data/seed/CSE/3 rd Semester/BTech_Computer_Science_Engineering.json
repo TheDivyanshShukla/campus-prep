@@ -1,0 +1,367 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Discrete Structure",
+      "subject_code": "CS302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Set Theory, Relations, Functions, and Theorem Proving Techniques",
+          "topics": [
+            "Definition of sets, countable and uncountable sets",
+            "Venn diagrams and proofs of general set identities",
+            "Definition and types of relations, composition of relations, pictorial representation",
+            "Equivalence relations and partial ordering relations; Job‑scheduling problem",
+            "Definition and types of functions, one‑to‑one, onto, into, inverse functions, composition of functions",
+            "Recursively defined functions and the pigeonhole principle",
+            "Mathematical induction and proof by contradiction"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Algebraic Structures",
+          "topics": [
+            "Definition and properties of semigroups and monoids",
+            "Groups, Abelian groups, subgroup, cyclic groups, cosets, factor groups",
+            "Permutation groups, normal subgroups, homomorphism and isomorphism of groups",
+            "Rings and fields: definitions and standard results"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Propositional and First‑Order Logic",
+          "topics": [
+            "Propositions, predicates, and quantifiers (universal and existential)",
+            "Basic logical operations, truth tables, tautologies and contradictions",
+            "Algebra of propositions, logical implications and equivalence",
+            "Normal forms (CNF, DNF) and logical equivalences"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Finite State Machines",
+          "topics": [
+            "Finite state machines as models of physical systems",
+            "Equivalence of finite state machines",
+            "Finite state machines as language recognizers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Graph Theory",
+          "topics": [
+            "Basic terminology of graphs, planar graphs, multigraphs and weighted graphs",
+            "Isomorphic graphs, paths, cycles and connectivity",
+            "Shortest path algorithms in weighted graphs",
+            "Eulerian paths and circuits, Hamiltonian paths and circuits",
+            "Graph coloring, chromatic number",
+            "Isomorphism and homomorphism of graphs"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Posets, Hasse Diagrams and Lattices",
+          "topics": [
+            "Ordered sets and Hasse diagrams",
+            "Isomorphic and well‑ordered sets",
+            "Properties of lattices, bounded and complemented lattices"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Combinatorics",
+          "topics": [
+            "Permutations and combinations",
+            "Binomial theorem and multinomial coefficients"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "Recurrence Relations and Generating Functions",
+          "topics": [
+            "Introduction to recurrence relations and recursive algorithms",
+            "Linear recurrence relations with constant coefficients: homogeneous and particular solutions",
+            "Total solutions of recurrence relations",
+            "Generating functions and solution by the method of generating functions"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "C.L. Liu, “Elements of Discrete Mathematics”, Tata McGraw‑Hill Edition.",
+        "Trembley, J.P. & Manohar, “Discrete Mathematical Structure with Application CS”, McGraw Hill.",
+        "Kenneth H. Rosen, “Discrete Mathematics and its Applications”, McGraw Hill.",
+        "Bisht, “Discrete Mathematics”, Oxford University Press.",
+        "Biswal, “Discrete Mathematics & Graph Theory”, PHI."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Structure",
+      "subject_code": "CS303",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of C and Introduction to Data Structures",
+          "topics": [
+            "Review of C programming language",
+            "Concepts of data and information",
+            "Classification of data structures",
+            "Abstract Data Types (ADTs)",
+            "Memory representation of data structures",
+            "Operations on data structures and cost estimation",
+            "Linear data structures: arrays",
+            "Linear data structures: linked lists – singly, circular, doubly linked",
+            "Representation of linked list in memory",
+            "Applications of linked lists (e.g., polynomial manipulation)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Stacks and Queues",
+          "topics": [
+            "Stacks as Abstract Data Types",
+            "Implementations of stacks (array, linked list, multiple stacks)",
+            "Applications of stacks: infix‑to‑postfix conversion, postfix evaluation, recursion",
+            "Queues as Abstract Data Types",
+            "Implementations of queues (array, linked list, circular queue)",
+            "Dequeue and priority queue concepts",
+            "Queue simulation and practical applications"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Tree Data Structures",
+          "topics": [
+            "Tree definitions – height, depth, order, degree",
+            "Binary Search Tree: operations, traversal, search",
+            "AVL trees",
+            "Heaps",
+            "Forests and multi‑way trees",
+            "B‑tree, B⁺‑tree, B*‑tree",
+            "Red‑black trees",
+            "Comparative analysis of various tree types"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Graphs",
+          "topics": [
+            "Graph fundamentals and classification (directed, undirected)",
+            "Graph representation techniques (adjacency matrix, adjacency list)",
+            "Graph traversal algorithms: Depth‑First Search (DFS), Breadth‑First Search (BFS)",
+            "Minimum Spanning Tree algorithms: Kruskal’s and Prim’s",
+            "Dijkstra’s shortest‑path algorithm",
+            "Comparison of graph algorithms",
+            "Practical applications of graphs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Sorting, Searching and Hashing",
+          "topics": [
+            "Sorting algorithms: bubble sort, quick sort, selection sort, heap sort, insertion sort, shell sort, merge sort, radix sort",
+            "Comparative analysis of sorting techniques",
+            "Searching techniques: sequential search, binary search",
+            "Comparison of searching methods",
+            "Hashing and indexing techniques",
+            "Case studies: application of data structures in operating systems and DBMS"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Aho, Hopcroft, Ullman, “Data Structures and Algorithms”, Pearson Education.",
+        "N. Wirth, “Algorithms + Data Structure = Programs”, Prentice Hall.",
+        "Jean – Paul Trembly, Paul Sorenson, “An Introduction to Structure with application”, TMH.",
+        "Richard, GilbergBehrouz, Forouzan,“Data structure – A Pseudocode Approach with C”, Thomson press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Systems",
+      "subject_code": "CS304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Number systems and Boolean algebra",
+          "topics": [
+            "Review of number systems and number base conversions",
+            "Binary codes",
+            "Boolean algebra",
+            "Boolean functions",
+            "Logic gates",
+            "Simplification of Boolean functions",
+            "Karnaugh map methods",
+            "SOP‑POS simplification",
+            "NAND‑NOR implementation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Combinational Logic",
+          "topics": [
+            "Half adder",
+            "Half subtractor",
+            "Full adder",
+            "Full subtractor",
+            "Look‑ahead carry generator",
+            "BCD adder",
+            "Series and parallel addition",
+            "Multiplexer",
+            "Demultiplexer",
+            "Encoder",
+            "Decoder",
+            "Arithmetic circuits",
+            "Arithmetic Logic Unit (ALU)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sequential Logic and Memories",
+          "topics": [
+            "Flip‑flops (D, T, S‑R, J‑K Master‑Slave)",
+            "Racing condition",
+            "Edge‑triggered and level‑triggered circuits",
+            "Shift registers",
+            "Asynchronous counters",
+            "Synchronous counters and state diagrams",
+            "Semiconductor memories",
+            "Digital ICs 2716, 2732 and address decoding",
+            "Modern semiconductor memories (DRAM, FLASH RAM)",
+            "Designing with ROM and PLA"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Analog‑Digital Conversion and Logic Families",
+          "topics": [
+            "A/D and D/A converters and their types",
+            "Sample‑and‑hold circuits",
+            "Voltage‑to‑Frequency and Frequency‑to‑Voltage conversion",
+            "Multivibrators: bistable, monostable, astable, Schmitt trigger, IC 555 and applications",
+            "TTL, PMOS, CMOS, NMOS logic",
+            "Interfacing between TTL and MOS"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Digital Communication",
+          "topics": [
+            "Nyquist sampling theorem",
+            "Time division multiplexing",
+            "Pulse‑Code Modulation (PCM)",
+            "Quantization error",
+            "BPSK and BFSK modulation schemes",
+            "Shannon’s theorem for channel capacity"
+          ]
+        }
+      ],
+      "experiments": [
+        "To study and verify the truth tables of various Logic gates",
+        "To verify the properties of NAND and NOR gates as Universal Building Blocks.",
+        "Simplification and implementation of a Boolean function",
+        "Implementation of basic Boolean arithmetic logic circuits such as Half‑adder, Half‑subtractor, Full adder and Full subtractor",
+        "Conversion from Binary to Gray and Gray to Binary code",
+        "To construct a binary multiplier using combinational logic and to verify with the truth table",
+        "To verify 2‑bit Magnitude comparator for all possible conditions",
+        "Generation of various logical functions using 8‑to‑1 multiplexer",
+        "Construction of a 4‑bit ripple counter and study of its operation",
+        "Operation of IC‑555 Timer as Monostable, Astable and Bistable multivibrators",
+        "To characterize binary ladder type digital to analog (D/A) and analog to digital (A/D) converter",
+        "Comparison of various Logic families",
+        "Design and implementation of various types of flip‑flops using JK flip‑flop",
+        "To study natural sampling of continuous time waveforms using different sampling rates",
+        "To study Pulse‑Code modulation with Time‑division multiplexing (PCM‑TDM)",
+        "To study generation and detection of BPSK and QPSK waveforms"
+      ],
+      "reference_books": [
+        "Morris Mano, Digital Circuits & Logic Design, PHI",
+        "Gothman, Digital Electronics, PHI",
+        "Tocci, Digital Electronics, PHI",
+        "Mavino & Leach, Digital Principles & Applications, PHI",
+        "Taub and Schilling, Digital Integrated electronics.",
+        "Simon Haykin, Introduction to Analog & Digital Communication, Wiley.",
+        "Lathi B.P., Modern analog & digital communication, Oxford University."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Object Oriented Programming & Methodology",
+      "subject_code": "CS305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Object Oriented Thinking & Programming",
+          "topics": [
+            "Comparison with Procedural Programming",
+            "Features of Object oriented paradigm – merits and demerits",
+            "Object model",
+            "Elements of OOPS",
+            "IO processing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Encapsulation and Data Abstraction",
+          "topics": [
+            "State, behavior and identity of an object",
+            "Identifying classes and class candidates",
+            "Attributes and services",
+            "Access modifiers",
+            "Static members of a class",
+            "Instances and message passing",
+            "Construction and destruction of objects"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Inheritance and Relationships",
+          "topics": [
+            "Purpose of inheritance",
+            "Types of inheritance",
+            "\"is‑a\" relationship",
+            "Association",
+            "Aggregation",
+            "Concept of interfaces",
+            "Abstract classes"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Polymorphism",
+          "topics": [
+            "Method overriding",
+            "Method overloading",
+            "Static polymorphism",
+            "Runtime polymorphism"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Strings, Exception Handling, Multithreading & Collections",
+          "topics": [
+            "Strings",
+            "Exception handling",
+            "Introduction to multithreading",
+            "Data collections",
+            "Case study: ATM system",
+            "Case study: Library management system"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "G. Booch, “Object Oriented Analysis & Design”, Addison Wesley.",
+        "James Martin, “Principles of Object Oriented Analysis and Design”, Prentice Hall/PTR.",
+        "Peter Coad and Edward Yourdon, “Object Oriented Design”, Prentice Hall/PTR.",
+        "Herbert Schildt, “Java 2: The Complete Reference”, McGraw-Hill Osborne Media, 7th Edition."
+      ],
+      "extra": null
+    }
+  ]
+}

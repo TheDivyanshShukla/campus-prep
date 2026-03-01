@@ -1,0 +1,839 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Machine Learning",
+      "subject_code": "CS601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Machine Learning",
+          "topics": [
+            "Introduction to machine learning",
+            "Scope and limitations",
+            "Regression",
+            "Probability",
+            "Statistics and linear algebra for machine learning",
+            "Convex optimization",
+            "Data visualization",
+            "Hypothesis function and testing",
+            "Data distributions",
+            "Data preprocessing",
+            "Data augmentation",
+            "Normalizing data sets",
+            "Machine learning models",
+            "Supervised learning",
+            "Unsupervised learning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Deep Learning Foundations",
+          "topics": [
+            "Linearity vs non linearity",
+            "Activation functions (sigmoid, ReLU, etc.)",
+            "Weights and bias",
+            "Loss function",
+            "Gradient descent",
+            "Multilayer network",
+            "Backpropagation",
+            "Weight initialization",
+            "Training",
+            "Testing",
+            "Unstable gradient problem",
+            "Autoencoders",
+            "Batch normalization",
+            "Dropout",
+            "L1 and L2 regularization",
+            "Momentum",
+            "Tuning hyperparameters"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Convolutional Neural Networks",
+          "topics": [
+            "Convolutional neural network",
+            "Flattening",
+            "Subsampling",
+            "Padding",
+            "Stride",
+            "Convolution layer",
+            "Pooling layer",
+            "Loss layer",
+            "1x1 convolution",
+            "Inception network",
+            "Input channels",
+            "Transfer learning",
+            "One‑shot learning",
+            "Dimension reductions",
+            "Implementation of CNN using TensorFlow, Keras etc."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Recurrent Neural Networks and Reinforcement Learning",
+          "topics": [
+            "Recurrent neural network",
+            "Long short‑term memory (LSTM)",
+            "Gated recurrent unit (GRU)",
+            "Translation",
+            "Beam search and width",
+            "BLEU score",
+            "Attention model",
+            "Reinforcement Learning",
+            "RL framework",
+            "Markov Decision Process (MDP)",
+            "Bellman equations",
+            "Value iteration",
+            "Policy iteration",
+            "Actor‑critic model",
+            "Q‑learning",
+            "SARSA"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Topics and Applications",
+          "topics": [
+            "Support Vector Machines",
+            "Bayesian learning",
+            "Applications in computer vision",
+            "Speech processing",
+            "Natural language processing",
+            "Case Study: ImageNet Competition"
+          ]
+        }
+      ],
+      "experiments": [
+        "Various hands‑on assignments covering machine learning tools and software across ten to twelve lab sessions."
+      ],
+      "reference_books": [
+        "Aurelien Geon, “Hands-On Machine Learning with Scikit-Learn and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems”, Shroff/O'Reilly; First edition (2017).",
+        "Francois Chollet, \"Deep Learning with Python\", Manning Publications, 1 edition (10 January 2018).",
+        "Andreas Muller, \"Introduction to Machine Learning with Python: A Guide for Data Scientists\", Shroff/O'Reilly; First edition (2016).",
+        "Russell, S. and Norvig, N. “Artificial Intelligence: A Modern Approach”, Prentice Hall Series in Artificial Intelligence. 2003."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Networks",
+      "subject_code": "CS602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Computer Network Foundations",
+          "topics": [
+            "Definitions of computer networks",
+            "Goals and components of computer networks",
+            "Network architecture and classifications",
+            "Layered architecture and protocol hierarchy",
+            "Design issues, interfaces and services",
+            "Connection‑oriented and connection‑less services",
+            "Service primitives and their functionality",
+            "ISO/OSI reference model principles and layer descriptions",
+            "Comparison of ISO/OSI model with TCP/IP model",
+            "Physical layer principles: media, bandwidth, data rate, modulation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data Link Layer",
+          "topics": [
+            "Need for a data link layer",
+            "Services provided by the data link layer",
+            "Framing techniques",
+            "Flow control mechanisms",
+            "Error control mechanisms",
+            "Elementary and sliding‑window protocols: 1‑bit, Go‑Back‑N, Selective Repeat, Hybrid ARQ",
+            "Protocol verification using finite‑state‑machine models",
+            "Protocol verification using Petri‑net models",
+            "ARP, RARP, GARP protocols"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "MAC Sub‑layer",
+          "topics": [
+            "MAC addressing schemes",
+            "Binary Exponential Back‑off (BEB) algorithm",
+            "Distributed random access/contention schemes for data services: ALOHA, Slotted ALOHA",
+            "Distributed random access/contention schemes for LANs: CSMA, CSMA/CD, CSMA/CA",
+            "Collision‑free protocols: Basic Bitmap, BRAP, Binary Countdown, MLMA",
+            "Limited contention protocols: Adaptive Tree Walk",
+            "Performance measuring metrics for MAC protocols",
+            "IEEE 802 series standards and their variants"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Network Layer",
+          "topics": [
+            "Need for a network layer",
+            "Services provided by the network layer",
+            "Design issues in network layer",
+            "Routing algorithms: Least‑Cost Routing, Dijkstra's algorithm, Bellman‑Ford algorithm, Hierarchical Routing, Broadcast Routing, Multicast Routing",
+            "IP addressing and header format",
+            "Packet forwarding techniques",
+            "Fragmentation and reassembly processes",
+            "ICMP protocol functions",
+            "Comparative study of IPv4 and IPv6"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Transport and Application Layers",
+          "topics": [
+            "Transport layer design issues",
+            "UDP header format and per‑segment checksum",
+            "UDP support for unicast/multicast real‑time traffic",
+            "TCP connection management",
+            "Reliability mechanisms in TCP",
+            "TCP flow control",
+            "TCP congestion control",
+            "TCP header format and timer management",
+            "Application layer protocols: WWW and HTTP, FTP, SSH",
+            "Email protocols: SMTP, MIME, IMAP",
+            "DNS protocol",
+            "Network management using SNMP"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of Different Type of LAN & Network Equipments.",
+        "Study and Verification of standard Network topologies i.e. Star, Bus, Ring etc.",
+        "LAN installations and Configurations.",
+        "Write a program to implement various types of error correcting techniques.",
+        "Write a program to Implement various types of framing methods.",
+        "Study of Tool Command Language (TCL).",
+        "Study and Installation of Standard Network Simulator: N.S-2, N.S3.OpNet, QualNet etc.",
+        "Study & Installation of ONE (Opportunistic Network Environment) Simulator for High Mobility Networks.",
+        "Configure 802.11 WLAN.",
+        "Implement & Simulate various types of routing algorithm.",
+        "Study & Simulation of MAC Protocols like Aloha, CSMA, CSMA/CD and CSMA/CA using Standard Network Simulators.",
+        "Study of Application layer protocols - DNS, HTTP, HTTPS, FTP and TelNet."
+      ],
+      "reference_books": [
+        "Andrew S. Tanenbaum, David J. Wetherall, “Computer Networks”, Pearson Education.",
+        "Douglas E. Comer, “Internetworking With TCP/IP: Principles, Protocols, And Architecture - Volume I”, 6th Edition, Pearson Education.",
+        "Dimitri Bertsekas, Robert Gallager, “Data Networks”, PHI Publication, Second Edition.",
+        "Kaveh Pahlavan, Prashant Krishnamurthy, “Networking Fundamentals”, Wiley Publication.",
+        "Ulysses Black, “Computer Networks”, PHI Publication, Second Edition.",
+        "Ying-Dar Lin, Ren-Hung Hwang, Fred Baker, “Computer Networks: An Open Source Approach”, McGraw Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advanced Computer Architecture (ACA)",
+      "subject_code": "CS603",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Parallel Architectures",
+          "topics": [
+            "Flynn’s Classification",
+            "System Attributes to Performance",
+            "Parallel computer models",
+            "Multiprocessors and multicomputers",
+            "Multivector and SIMD Computers",
+            "Data and resource dependences",
+            "Hardware and software parallelism",
+            "Program partitioning and scheduling",
+            "Grain size and latency",
+            "Control flow, data flow and demand driven mechanisms",
+            "Static interconnection networks",
+            "Dynamic interconnection networks: Bus Systems, Crossbar Switch, Multiport Memory, Multistage and Combining Networks"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Instruction Set and Memory Hierarchy",
+          "topics": [
+            "Instruction set architecture",
+            "CISC scalar processors",
+            "RISC scalar processors",
+            "VLIW architecture",
+            "Memory hierarchy, inclusion, coherence and locality",
+            "Memory capacity planning",
+            "Interleaved memory organization (memory interleaving)",
+            "Pipelined memory access",
+            "Bandwidth and fault tolerance",
+            "Backplane bus system specification",
+            "Addressing and timing protocols",
+            "Arbitration transaction and interrupt"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Pipelined and Superscalar Processors",
+          "topics": [
+            "Linear pipeline processor",
+            "Nonlinear pipeline processor",
+            "Instruction pipeline design",
+            "Mechanisms for instruction pipelining",
+            "Pipeline hazards",
+            "Dynamic instruction scheduling – scoreboarding and Tomasulo’s algorithm",
+            "Branch handling techniques",
+            "Arithmetic pipeline design",
+            "Static arithmetic pipeline",
+            "Multifunctional arithmetic pipelines",
+            "Superscalar pipeline design",
+            "Super pipeline processor design"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cache Coherence, Vector Processing and Multithreading",
+          "topics": [
+            "Cache coherence",
+            "Snoopy protocols",
+            "Directory based protocols",
+            "Message routing schemes in multicomputer network",
+            "Deadlock and virtual channel",
+            "Vector processing principles",
+            "Vector instruction types",
+            "Vector-access memory schemes",
+            "Vector supercomputer architecture",
+            "SIMD organization: distributed memory model and shared memory model",
+            "Principles of multithreading",
+            "Multithreading issues and solutions",
+            "Multiple-context processors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Parallel Programming Paradigms and Tools",
+          "topics": [
+            "Parallel programming models",
+            "Shared-variable model",
+            "Message-passing model",
+            "Data-parallel model",
+            "Object-oriented model",
+            "Functional and logic models",
+            "Parallel languages and compilers",
+            "Language features for parallelism",
+            "Parallel programming environment",
+            "Software tools and environments"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Kai Hwang, “Advanced computer architecture”, TMH.",
+        "J.P. Hayes, “Computer Architecture and Organization”, MGH.",
+        "V. Rajaranam & C.S.R. Murthy, “Parallel Computer”, PHI Learning.",
+        "Kain, “Advance Computer Architecture: A System Design Approach”, PHI Learning.",
+        "M.J. Flynn, “Computer Architecture, Pipelined and Parallel Processor Design”, Narosa Publishing.",
+        "Hwang and Briggs, “Computer Architecture and Parallel Processing”, MGH.",
+        "David E. Callav & Jaswinder Pal Singh Marge Kaufmann, “Advance Computer Architecture”, EIS India.",
+        "Sajjan G. Shiva, Taylar & Francis, “Advance Computer Architecture”"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Graphics & Visualization",
+      "subject_code": "CS603",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Raster‑scan Displays, Line and Polygon Drawing Algorithms",
+          "topics": [
+            "Introduction to raster‑scan displays",
+            "Pixels and frame buffer concepts",
+            "Vector and character generation techniques",
+            "Random‑scan (vector) display systems",
+            "Display device fundamentals",
+            "Scan‑conversion techniques",
+            "Line drawing algorithms – simple DDA",
+            "Line drawing algorithms – Bresenham’s algorithm",
+            "Circle drawing algorithms – midpoint circle method",
+            "Circle drawing algorithms – Bresenham’s circle algorithm",
+            "Polygon‑fill algorithms – boundary‑fill method",
+            "Polygon‑fill algorithms – flood‑fill method"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Two‑Dimensional Transformations and Clipping",
+          "topics": [
+            "2‑D transformations – translation, rotation, scaling, shearing and reflection",
+            "Inverse transformations",
+            "Homogeneous coordinate system",
+            "Matrix representation of transformations",
+            "Composite transformations",
+            "Windowing and clipping fundamentals",
+            "World coordinate system",
+            "Screen coordinate system",
+            "Viewing transformation",
+            "Line clipping algorithms",
+            "Polygon clipping algorithms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "3‑D Transformations, Projection and Illumination",
+          "topics": [
+            "3‑D transformations – translation, rotation and scaling",
+            "Parallel projection types",
+            "Perspective projection types",
+            "Hidden‑surface elimination – depth comparison",
+            "Back‑face detection algorithm",
+            "Painter’s algorithm",
+            "Z‑buffer algorithm",
+            "Curve generation – Bézier curves",
+            "Curve generation – B‑spline curves",
+            "Basic illumination model – diffuse reflection",
+            "Basic illumination model – specular reflection",
+            "Phong shading model",
+            "Gouraud shading model",
+            "Ray‑tracing fundamentals",
+            "Color models – RGB, YIQ, CMY, HSV"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Advanced Visualization Techniques",
+          "topics": [
+            "Visualization of 2‑D/3‑D scalar fields – colour mapping and iso‑surface extraction",
+            "Direct volume rendering – ray‑casting",
+            "Direct volume rendering – transfer functions",
+            "Segmentation techniques for volume data",
+            "Visualization of vector fields and flow data",
+            "Visualization of time‑varying data",
+            "High‑dimensional data visualization – dimensionality reduction",
+            "High‑dimensional data visualization – parallel coordinates",
+            "Non‑spatial data visualization – multivariate plots, tree/graph structures, text",
+            "Perceptual and cognitive foundations of visualization",
+            "Evaluation of visualization methods",
+            "Application domains of visualization",
+            "Basic animation techniques – traditional key‑framing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multimedia and Animation",
+          "topics": [
+            "Fundamentals of multimedia – definitions and applications",
+            "Text types and Unicode standard",
+            "Text compression techniques and file formats",
+            "Audio components – digital audio, audio processing, sound cards",
+            "Audio file formats and processing software",
+            "Video fundamentals – colour spaces, digital video, video processing and file formats",
+            "Animation – uses, principles, computer‑based animation, 3‑D animation",
+            "Animation file formats and animation software",
+            "Special effects in animation and story‑boarding",
+            "Compression – lossless and lossy techniques for image, audio and video",
+            "MPEG standards and multimedia architecture",
+            "Multimedia databases"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Donald Hearn and M.P. Becker, \"Computer Graphics\", Pearson Pub.",
+        "Foley, Van Dam, Feiner, Hughes, \"Computer Graphics: Principles and Practice\", Addison‑Wesley.",
+        "Rogers, \"Procedural Elements of Computer Graphics\", Tata McGraw‑Hill.",
+        "Parekh, \"Principles of Multimedia\", Tata McGraw‑Hill.",
+        "Maurya, \"Computer Graphics with Virtual Reality System\", Wiley India.",
+        "Pakhira, \"Computer Graphics, Multimedia & Animation\", PHI Learning.",
+        "Andleigh, Thakral, \"Multimedia System Design\", PHI Learning.",
+        "Khalid Sayood, \"Introduction to Data Compression\", Morgan Kaufmann."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Compiler Design",
+      "subject_code": "CS603",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to compiling & Lexical Analysis",
+          "topics": [
+            "Introduction of Compiler",
+            "Major data structures in compiler",
+            "Types of Compiler",
+            "Front-end and Back-end of compiler",
+            "Compiler structure: analysis-synthesis model of compilation",
+            "Various phases of a compiler",
+            "Lexical analysis: Input buffering",
+            "Specification & Recognition of Tokens",
+            "Design of a Lexical Analyzer Generator",
+            "LEX"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Syntax Analysis & Syntax Directed Translation",
+          "topics": [
+            "Syntax analysis: Context-Free Grammars (CFGs)",
+            "Top-down parsing",
+            "Brute force approach",
+            "Recursive descent parsing",
+            "Transformation on the grammars",
+            "Predictive parsing",
+            "Bottom-up parsing",
+            "Operator precedence parsing",
+            "LR parsers (SLR, LALR, LR)",
+            "Parser generation",
+            "Syntax directed definitions: construction of syntax trees",
+            "Bottom-up evaluation of S-attributed definitions",
+            "L-attributed definitions",
+            "Top-down translation",
+            "Bottom-up evaluation of inherited attributes",
+            "Recursive evaluation",
+            "Analysis of syntax directed definitions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Type Checking & Run Time Environment",
+          "topics": [
+            "Type checking: type system",
+            "Specification of a simple type checker",
+            "Equivalence of expressions",
+            "Types and type conversion",
+            "Overloading of functions and operations",
+            "Polymorphic functions",
+            "Run-time environment: storage organization",
+            "Storage allocation strategies",
+            "Parameter passing",
+            "Dynamic storage allocation",
+            "Symbol table",
+            "Error detection & recovery",
+            "Ad-hoc and systematic methods"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Code Generation",
+          "topics": [
+            "Intermediate code generation: declarations",
+            "Assignment statements",
+            "Boolean expressions",
+            "Case statements",
+            "Backpatching",
+            "Procedure calls",
+            "Code generation issues in design of code generator",
+            "Basic blocks and flow graphs",
+            "Register allocation and assignment",
+            "DAG representation of basic blocks",
+            "Peephole optimization",
+            "Generating code from DAG"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Code Optimization",
+          "topics": [
+            "Introduction to code optimization",
+            "Sources of optimization of basic blocks",
+            "Loops in flow graphs",
+            "Dead code elimination",
+            "Loop optimization",
+            "Introduction to global data flow analysis",
+            "Code improving transformations",
+            "Data flow analysis of structured flow graph",
+            "Symbolic debugging of optimized code"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A. V. Aho, R. Sethi, and J. D. Ullman. Compilers: Principles, Techniques and Tools, Pearson Education",
+        "Raghavan, Compiler Design, TMH Pub.",
+        "Louden. Compiler Construction: Principles and Practice, Cengage Learning",
+        "A. C. Holub. Compiler Design in C, Prentice-Hall Inc., 1993.",
+        "Mak, writing compiler & Interpreters, Willey Pub."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Knowledge Management",
+      "subject_code": "CS604",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "INTRODUCTION",
+          "topics": [
+            "Introduction to Knowledge Management",
+            "Foundations of Knowledge Management (cultural issues, technology applications, organizational concepts and processes, management aspects, decision support systems)",
+            "Evolution of Knowledge Management: From Information Management to Knowledge Management",
+            "Key Challenges Facing the Evolution of Knowledge Management",
+            "Ethics for Knowledge Management"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "CREATING THE CULTURE OF LEARNING AND KNOWLEDGE SHARING",
+          "topics": [
+            "Organization and Knowledge Management: Building the Learning Organization",
+            "Knowledge Markets: Cooperation among Distributed Technical Specialists",
+            "Tacit Knowledge and Quality Assurance"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "KNOWLEDGE MANAGEMENT-THE TOOLS",
+          "topics": [
+            "Telecommunications and Networks in Knowledge Management",
+            "Internet Search Engines and Knowledge Management",
+            "Information Technology in Support of Knowledge Management",
+            "Knowledge Management and Vocabulary Control",
+            "Information Mapping in Information Retrieval",
+            "Information Coding in the Internet Environment",
+            "Repackaging Information"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "KNOWLEDGE MANAGEMENT-APPLICATION",
+          "topics": [
+            "Components of a Knowledge Strategy",
+            "Case Studies: From Library to Knowledge Center",
+            "Knowledge Management in the Health Sciences",
+            "Knowledge Management in Developing Countries"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "FUTURE TRENDS AND CASE STUDIES",
+          "topics": [
+            "Advanced topics and case studies in Knowledge Management",
+            "Development of a Knowledge Management map/plan integrated with an organization’s strategic and business plan",
+            "Case study on Corporate Memories supporting various aspects in process life‑cycles of an organization"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Srikantaiah, T.K., Koenig, M., \"Knowledge Management for the Information Professional\", Information Today, Inc., 2000.",
+        "Nonaka, I., Takeuchi, H., \"The Knowledge-Creating Company: How Japanese Companies Create the Dynamics of Innovation\", Oxford University Press, 1995."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Project Management",
+      "subject_code": "CS604",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Conventional Software Management",
+          "topics": [
+            "Evolution of software economics",
+            "Improving software economics: reducing product size, software processes, team effectiveness, automation through software environments",
+            "Principles of modern software management"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Software Management Process",
+          "topics": [
+            "Framework: life cycle phases – inception, elaboration, construction and training phase",
+            "Artifacts of the process – artifact sets, management artifacts, engineering artifacts, pragmatics artifacts",
+            "Model based software architectures",
+            "Workflows of the process",
+            "Checkpoints of the process"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Software Management Disciplines",
+          "topics": [
+            "Iterative process planning",
+            "Project organisations and responsibilities",
+            "Process automation",
+            "Project control and process instrumentation – core metrics, management indicators, life cycle expectations",
+            "Process discriminants"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Software Project Management, Walker Royce, Addison Wesley, 1998.",
+        "Project Management 2/e, Maylor.",
+        "Managing the Software Process, Humphrey.",
+        "Managing Global Software Projects, Ramesh, TMH, 2001."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Rural Technology & Community Development",
+      "subject_code": "CS604",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Rural Management",
+          "topics": [
+            "Principles and Practices of Rural Management",
+            "Introduction to Management and Theory of Management",
+            "Planning, Organisation Structure and Design",
+            "Motivation and Leadership",
+            "Management Control and Managerial Decision Making"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Human Resource Management for Rural India",
+          "topics": [
+            "Nature and Scope of Human Resource Management",
+            "Human Resource Planning, Recruitment and Selection",
+            "Training and Development",
+            "Performance Appraisal",
+            "Welfare programmes and Fringe Benefits",
+            "Wage and Salary Administration",
+            "Morale and Productivity",
+            "Industrial Relations and Industrial Disputes"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Management of Rural Financing",
+          "topics": [
+            "Rural Credit System and its Role in Rural Development",
+            "Evolution and Growth of Rural Credit System in India",
+            "Agricultural Credit and Agricultural Credit Review Committee",
+            "Reports of Various Committees and Commissions, Problems and Prospects",
+            "Rural Credit to Non‑farm Sector and Credit for Small and Marginal Entrepreneurs",
+            "Role of Government Institutions in Facilitating Rural Credit",
+            "Role of Non‑Government / Semi‑Government / Quasi‑Government Institutions",
+            "Growth and Present Trend of Rural Financing towards Small‑scale and Cottage Industries"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Research Methodology",
+          "topics": [
+            "Concept of Social Research",
+            "Traditional Research, Action Research and Participatory Research",
+            "Qualitative Data Construction and Methods of Data Collection",
+            "Techniques of Interview",
+            "Qualitative Methods: Sociometry, Case Studies, Observation, Coding and Content Analysis"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Research Methodology – Data Analysis",
+          "topics": [
+            "Collection, Tabulation and Presentation of Data",
+            "Measures of Central Tendency and Dispersion",
+            "Moments, Skewness and Kurtosis",
+            "Correlation and Regression",
+            "Sampling Theory and Test of Significance"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Analytics Lab",
+      "subject_code": "CS605",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basics of data analytic framework and preprocessing",
+          "topics": [
+            "Data analytic framework",
+            "Data preprocessing",
+            "Statistics",
+            "Probability",
+            "Probability distribution",
+            "Bayes’ theorem",
+            "Central limit theorem",
+            "Data exploration and preparation",
+            "Correlation",
+            "Regression",
+            "Covariance",
+            "Outliers",
+            "Data visualization"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to R as a data analytics tool",
+          "topics": [
+            "Introduction to R as a data analytics tool"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to MATLAB as a data analytics tool",
+          "topics": [
+            "Introduction to MATLAB as a data analytics tool"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to Python as a data analytics tool",
+          "topics": [
+            "Introduction to Python as a data analytics tool"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Case studies",
+          "topics": [
+            "Case studies"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Skill Development Lab",
+      "subject_code": "CS606",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Software product life cycle",
+          "topics": [
+            "Software product life cycle"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Software product development standards",
+          "topics": [
+            "Software product development standards"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design patterns – 1",
+          "topics": [
+            "Design patterns – 1"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design Patterns – II",
+          "topics": [
+            "Design Patterns – II"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Case Study",
+          "topics": [
+            "Case Study"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

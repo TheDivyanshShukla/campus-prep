@@ -1,0 +1,789 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Software Architectures",
+      "subject_code": "CS701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview and Introduction",
+          "topics": [
+            "Overview of software development methodology and software quality model, different models of software development and their issues.",
+            "Introduction to software architecture, evolution of software architecture, software components and connectors, common software architecture frameworks, architecture business cycle – architectural patterns – reference model."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Architecture Models and Styles",
+          "topics": [
+            "Software architecture models: structural models, framework models, dynamic models, process models.",
+            "Architectural styles: dataflow architecture, pipes and filters architecture, call‑and‑return architecture, data‑centered architecture, layered architecture, agent‑based architecture, micro‑services architecture, reactive architecture, representational state transfer (REST) architecture, etc."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Implementation Technologies",
+          "topics": [
+            "Software Architecture Description Languages (ADLs), Struts, Hibernate, Node.js, AngularJS, J2EE – JSP, Servlets, EJBs; middleware: JDBC, JNDI, JMS, RMI and CORBA, etc.",
+            "Role of UML in software architecture."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Analysis, Design, and Evaluation",
+          "topics": [
+            "Requirements for architecture and the life‑cycle view of architecture design and analysis methods.",
+            "Architecture‑based economic analysis: Cost Benefit Analysis Method (CBAM), Architecture Tradeoff Analysis Method (ATAM).",
+            "Active Reviews for Intermediate Design (ARID), Attribute‑Driven Design (ADD), architecture reuse, domain‑specific software architecture."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Documentation",
+          "topics": [
+            "Principles of sound documentation, refinement, context diagrams, variability, software interfaces.",
+            "Documenting the behavior of software elements and software systems, documentation package using a seven‑part template."
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Bennett, Douglas, “Designing Hard Software: The Essential Tasks”, Prentice-Hall, 1997.",
+        "Clements, Paul, R. Kazman, M. Klein, “Evaluating Software Architectures: Methods and Case Studies”, Addison Wesley, 2001.",
+        "Albin, S. “The Art of Software Architecture _”_, Indiana: Wiley, 2003.",
+        "Robert Mee, and Randy Stafford, “Patterns of Enterprise Application Architecture”, Addison-Wesley, 2002.",
+        "Witt, B., T. Baker and E. Meritt, “Software Architecture and Design: Principles, Models and Methods”, Nostrand Reinhold, 1994."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computational Intelligence",
+      "subject_code": "CS702 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Computational Intelligence",
+          "topics": [
+            "Types of Computational Intelligence",
+            "Components of Computational Intelligence",
+            "Concept of Learning/Training model",
+            "Parametric Models",
+            "Non‑parametric Models",
+            "Multilayer Networks – Feed‑forward network",
+            "Multilayer Networks – Feedback network"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Fuzzy Systems",
+          "topics": [
+            "Fuzzy set theory – fuzzy sets and operations",
+            "Membership functions",
+            "Fuzzy relations and their composition",
+            "Fuzzy measures",
+            "Fuzzy logic – fuzzy rules and inferencing",
+            "Fuzzy control – selection of membership functions",
+            "Fuzzification",
+            "Rule‑based design & inferencing",
+            "Defuzzification"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Genetic Algorithms",
+          "topics": [
+            "Basic genetics and concepts",
+            "Working principle of genetic algorithms",
+            "Creation of offsprings",
+            "Encoding schemes",
+            "Fitness function design",
+            "Selection functions",
+            "Genetic operators – reproduction, crossover, mutation",
+            "Genetic modeling",
+            "Benefits of genetic algorithms"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Rough Set Theory and Related Models",
+          "topics": [
+            "Introduction to rough set theory",
+            "Fundamental concepts of rough sets",
+            "Set approximation",
+            "Rough membership",
+            "Attributes and optimization in rough sets",
+            "Hidden Markov Models",
+            "Decision tree model"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Swarm Intelligence",
+          "topics": [
+            "Introduction to swarm intelligence",
+            "Ant Colony Optimization",
+            "Particle Swarm Optimization",
+            "Bee Colony Optimization",
+            "Other swarm‑intelligence techniques",
+            "Applications of computational intelligence"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Russell C. Eberhart and Yuhui Shi, Computational Intelligence: Concepts to Implementations, Morgan Kaufmann Publishers.",
+        "Andries P. Engelbrecht, Computational Intelligence: An Introduction, Wiley Publishing.",
+        "Simon Haykin, Neural Networks: A Comprehensive Foundation, Prentice Hall.",
+        "David E. Goldberg, Genetic Algorithm in Search Optimization and Machine Learning, Pearson Education.",
+        "Jagdish Chand Bansal, Pramod Kumar Singh, Nikhil R. Pal, Evolutionary and Swarm Intelligence Algorithms, Springer Publishing, 2019.",
+        "S. Rajeskaran, G.A. VijaylakshmiPai, “Neural Networks, Fuzzy Logic, Genetic Algorithms Synthesis and Applications”.",
+        "J.S. Roger Jang, C.T. Sun, E. Mizutani, “Neuro-Fuzzy and Soft Computing: A Computational Approach to Learning & Machine Intelligence”, PHI, 2002."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Deep & Reinforcement Learning",
+      "subject_code": "CS702 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Foundations of Deep Learning",
+          "topics": [
+            "History of Deep Learning",
+            "McCulloch‑Pitts neuron",
+            "Thresholding Logic",
+            "Activation functions",
+            "Gradient Descent (GD)",
+            "Momentum based GD",
+            "Nesterov accelerated GD",
+            "Stochastic GD",
+            "AdaGrad",
+            "RMSProp",
+            "Adam",
+            "Eigenvalue Decomposition",
+            "Recurrent Neural Networks",
+            "Backpropagation through time (BPTT)",
+            "Vanishing and exploding gradients",
+            "Truncated BPTT",
+            "Gated Recurrent Unit (GRU)",
+            "Long Short‑Term Memory (LSTM)",
+            "Encoder‑Decoder models",
+            "Attention Mechanism",
+            "Attention over images"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Autoencoders and Regularization",
+          "topics": [
+            "Autoencoders and their relation to PCA",
+            "Regularization in autoencoders",
+            "Denoising autoencoders",
+            "Sparse autoencoders",
+            "Contractive autoencoders",
+            "Bias–Variance trade‑off",
+            "L2 regularization",
+            "Early stopping",
+            "Dataset augmentation",
+            "Parameter sharing and tying",
+            "Injecting noise at input",
+            "Ensemble methods",
+            "Dropout",
+            "Batch Normalization",
+            "Instance Normalization",
+            "Group Normalization"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Convolutional Architectures and Pre‑training",
+          "topics": [
+            "Greedy layerwise pre‑training",
+            "Advanced activation functions",
+            "Weight initialization methods",
+            "Learning vector representations of words",
+            "Convolutional Neural Networks (CNNs)",
+            "LeNet",
+            "AlexNet",
+            "ZF‑Net",
+            "VGGNet",
+            "GoogLeNet",
+            "ResNet",
+            "Visualizing CNNs",
+            "Guided backpropagation",
+            "Deep Dream",
+            "Deep Art",
+            "Recent trends in deep learning architectures"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Fundamentals of Reinforcement Learning",
+          "topics": [
+            "Introduction to Reinforcement Learning (RL)",
+            "Bandit algorithms – UCB, PAC, Median Elimination",
+            "Policy Gradient methods",
+            "Full RL & Markov Decision Processes (MDPs)",
+            "Bellman optimality principle",
+            "Dynamic programming – value iteration, policy iteration",
+            "Q‑learning",
+            "Temporal‑Difference (TD) methods",
+            "Eligibility traces",
+            "Function approximation",
+            "Least‑squares methods"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced RL Techniques",
+          "topics": [
+            "Fitted Q",
+            "Deep Q‑Learning (DQN)",
+            "Advanced Q‑learning algorithms",
+            "Learning policies by imitating optimal controllers",
+            "Policy Gradient algorithms for full RL",
+            "Hierarchical RL",
+            "Partially Observable MDPs (POMDPs)",
+            "Actor‑Critic methods",
+            "Inverse Reinforcement Learning",
+            "Maximum entropy deep inverse RL",
+            "Generative Adversarial Imitation Learning",
+            "Recent trends in RL architectures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Goodfellow, I., Bengio, Y., Courville, A. – Deep Learning (MIT Press)",
+        "Duda, R. O., Hart, P. E., Stork, D. G. – Pattern Classification (Wiley)",
+        "Sutton, R. S., Barto, A. G. – Reinforcement Learning: An Introduction (2nd Edition)",
+        "Wiering, M., van Otterlo, M. (Eds.) – Reinforcement Learning: State‑of‑the‑Art"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Wireless & Mobile Computing",
+      "subject_code": "CS702 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of Traditional Networks",
+          "topics": [
+            "Traditional networks: LAN, MAN, WAN, Intranet, Internet",
+            "Interconnectivity devices: bridges, routers",
+            "TCP/IP protocol architecture: ARP/RARP, IP addressing, IP datagram format, routing table format, ICMP messages, subnetting, supernetting, CIDR, DNS",
+            "Network Address Translation (NAT): private addressing, SNAT, DNAT, NAT firewalls",
+            "VLANs: concepts, comparison with LANs, VLAN types, tagging",
+            "IPv6: address structure, address space, header format"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Traditional Routing and Transport",
+          "topics": [
+            "Routing protocols – BGP: hidden networks, autonomous system concept, BGP messages",
+            "Interior Gateway Protocols – RIP, OSPF",
+            "Transport multiplexing and port concepts",
+            "TCP segment format, sockets, synchronization, three‑way handshake, variable window size, flow control, timeout and retransmission algorithms, connection control, silly window syndrome",
+            "TCP variants – Tahoe, Reno, SACK",
+            "UDP message encapsulation, format, pseudo‑header"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Wireless LAN, Mobile IP and Ad Hoc Routing",
+          "topics": [
+            "Wireless LAN transmission media and MAC problems (hidden/exposed terminals, near/far terminals)",
+            "Infrastructure vs ad‑hoc WLANs",
+            "IEEE 802.11 system architecture, protocol architecture, physical layer, spread‑spectrum concepts, MAC management, power management, security mechanisms",
+            "Mobile IP: limitations of traditional IP, goals, terminology, agent advertisement/discovery, registration, tunneling techniques",
+            "Ad‑hoc network routing vs traditional IP routing, routing protocol categories, examples OLSR, DSDV, DSR, ZRP"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Mobile Transport Layer and Cellular Networks",
+          "topics": [
+            "Limitations of traditional TCP for mobile environments",
+            "Mobile‑specific transport protocols: I‑TCP, S‑TCP, M‑TCP",
+            "Cellular network fundamentals and comparison with WLANs",
+            "GSM services, system architecture, localization, call handling, handover, roaming"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Mobile Operating Systems, SDKs and M‑Commerce",
+          "topics": [
+            "Mobile device operating systems: special constraints, requirements, commercial OS examples",
+            "Software Development Kits (SDKs): iOS, Android",
+            "M‑Commerce structure, advantages and disadvantages, mobile payment systems, security concerns"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "W. Richard Stevens, “TCP/IP Illustrated Vol‑I”, Addison‑Wesley.",
+        "C.K. Toh, “AdHoc Mobile Wireless Networks”, First Edition, Pearson Education.",
+        "Uwe Hansmann, Lothar Merk, Martin S. Nicklons and Thomas Stober, “Principles of Mobile Computing”, Springer.",
+        "Android Developers : http://developer.android.com/index.html",
+        "Apple Developer : https://developer.apple.com/",
+        "Windows Phone Dev Center : http://developer.windowsphone.com/",
+        "BlackBerry Developer : http://developer.blackberry.com/."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Big Data",
+      "subject_code": "CS702 (D)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Introduction to Big Data",
+            "Big data characteristics",
+            "Types of big data",
+            "Traditional versus Big data",
+            "Evolution of Big data",
+            "Challenges with Big Data",
+            "Technologies available for Big Data",
+            "Infrastructure for Big data",
+            "Use of Data Analytics",
+            "Desired properties of Big Data system"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Hadoop Ecosystem and Processing",
+          "topics": [
+            "Introduction to Hadoop",
+            "Core Hadoop components",
+            "Hadoop Eco system",
+            "Hive Physical Architecture",
+            "Hadoop limitations",
+            "RDBMS Versus Hadoop",
+            "Hadoop Distributed File system",
+            "Processing Data with Hadoop",
+            "Managing Resources and Application with Hadoop YARN",
+            "MapReduce programming"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Hive and Pig for Data Processing",
+          "topics": [
+            "Introduction to Hive",
+            "Hive Architecture",
+            "Hive Data types",
+            "Hive Query Language",
+            "Introduction to Pig",
+            "Anatomy of Pig",
+            "Pig on Hadoop",
+            "Use Case for Pig",
+            "ETL Processing",
+            "Data types in Pig",
+            "Running Pig",
+            "Execution model of Pig",
+            "Operators, functions, and data types of Pig"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "NoSQL Databases",
+          "topics": [
+            "Introduction to NoSQL",
+            "NoSQL Business Drivers",
+            "NoSQL Data architectural patterns",
+            "Variations of NoSQL architectural patterns using NoSQL to Manage Big Data",
+            "Introduction to MangoDB"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Social Network Graph Mining",
+          "topics": [
+            "Mining social Network Graphs",
+            "Applications of social Network mining",
+            "Social Networks as a Graph",
+            "Types of social Networks",
+            "Clustering of social Graphs",
+            "Direct Discovery of communities in a social graph",
+            "Introduction to recommender system"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "KaiHwang, Geoffrey C., Fox. Jack, J. Dongarra, “Distributed and Cloud Computing”, Elsevier, Firstedition",
+        "Michael Minelli, Michele Chambers, AmbigaDhiraj, “Big Data Big Analytics”, Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cryptography & Information Security",
+      "subject_code": "CS703 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Mathematical Background for Cryptography",
+          "topics": [
+            "Abstract Algebra",
+            "Number Theory",
+            "Modular Inverse",
+            "Extended Euclid Algorithm",
+            "Fermat's Little Theorem",
+            "Euler Phi‑Function",
+            "Euler's theorem",
+            "Principles of Cryptography",
+            "Classical Cryptosystem",
+            "Cryptanalysis on Substitution Cipher (Frequency Analysis)",
+            "Play Fair Cipher",
+            "Block Cipher",
+            "Data Encryption Standard (DES)",
+            "Triple DES",
+            "Modes of Operation",
+            "Stream Cipher"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Advanced Encryption Standard and Public‑Key Cryptosystem",
+          "topics": [
+            "Advanced Encryption Standard (AES)",
+            "Introduction to Public Key Cryptosystem",
+            "Discrete Logarithmic Problem",
+            "Diffie‑Hellman Key Exchange",
+            "Computational & Decisional Diffie‑Hellman Problem",
+            "RSA Assumptions & RSA Cryptosystem",
+            "RSA Signatures & Schnorr Identification Schemes",
+            "Primality Testing",
+            "Elliptic Curve over the Reals",
+            "Elliptic Curve modulo a Prime",
+            "Chinese Remainder Theorem"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Message Authentication, Digital Signatures, Key Management and Hash Functions",
+          "topics": [
+            "Message Authentication",
+            "Digital Signature",
+            "Key Management",
+            "Key Exchange",
+            "Hash Function",
+            "Universal Hashing",
+            "Cryptographic Hash Function",
+            "MD (Message Digest)",
+            "Secure Hash Algorithm (SHA)",
+            "Digital Signature Standard (DSS)",
+            "Cryptanalysis: Time‑Memory Trade‑off Attack",
+            "Differential Cryptanalysis",
+            "Secure channel and authentication system (Kerberos)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Information Security and Network Security",
+          "topics": [
+            "Threats in Networks",
+            "Network Security Controls – Architecture",
+            "Wireless Security",
+            "Honeypots",
+            "Traffic Flow Security",
+            "Firewalls – Design and Types of Firewalls",
+            "Personal Firewalls",
+            "Intrusion Detection Systems (IDS)",
+            "Email Security – Services and attacks through emails",
+            "Privacy‑Authentication of source message",
+            "Pretty Good Privacy (PGP)",
+            "S‑MIME",
+            "IP Security – Overview of IPSec",
+            "IPv6 Authentication",
+            "Encapsulation Security Payload (ESP)",
+            "Internet Key Exchange (IKE)",
+            "Web Security – SSL/TLS and basic security protocols",
+            "Secure Electronic Transaction (SET) encoding"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Cryptography and Information Security Tools",
+          "topics": [
+            "Spoofing tools (e.g., Arping, etc.)",
+            "Footprinting tools (nslookup, dig, Whois, etc.)",
+            "Vulnerability scanning tools (Angry IP, HPing2, IP Scanner, Global Network Inventory Scanner, Net Tools Suite Pack)",
+            "NetBIOS enumeration using NetView tool",
+            "Steganography tools (STools, Steghide, Steganos, Stegdetect, StegSpy)",
+            "Trojan detection tools (Netstat, fPort, TCPView, CurrPorts, Process Viewer)",
+            "LAN scanner tools (look@LAN, Wireshark, Tcpdump)",
+            "DoS attack understanding tools (Jolt2, Bubonic.c, Land and LaTierra, Targa, Nemesy Blast, Panther2, Crazy Pinger, Some Trouble, UDP Flood, FSMax)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Cryptography and Network Security Principles and Practice, Fourth Edition, William Stallings, Pearson Education.",
+        "Network Security Essentials: Applications and Standards, by William Stallings, Prentice Hall.",
+        "Behrouz A. Ferouzan, “Cryptography and Network Security”, Tata McGraw‑Hill, 2007.",
+        "Charles P. Pfleeger, Shari Lawrence Pfleeger, “Security in Computing”, 4th Edition, Prentice Hall of India, 2006.",
+        "Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell, Chapman and Hall/CRC."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Mining and Warehousing",
+      "subject_code": "CS703 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Warehousing",
+          "topics": [
+            "Introduction",
+            "Delivery Process",
+            "Data Warehouse Architecture",
+            "Data Cleaning",
+            "Data Integration and Transformation",
+            "Data Reduction",
+            "Data Warehouse Schema",
+            "Partitioning Strategy",
+            "Data Warehouse Implementation",
+            "Data Marts",
+            "Meta Data",
+            "Multidimensional Data Model",
+            "Pattern Warehousing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "OLAP Systems",
+          "topics": [
+            "Basic concepts of OLAP",
+            "OLAP queries",
+            "Types of OLAP servers",
+            "OLAP operations",
+            "Data Warehouse Hardware Design",
+            "Security",
+            "Backup and Recovery"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Data & Data Mining",
+          "topics": [
+            "Data Types",
+            "Data Quality",
+            "Data Preprocessing",
+            "Similarity Measures",
+            "Summary Statistics",
+            "Data Distributions",
+            "Basic Data Mining Tasks",
+            "Data Mining vs Knowledge Discovery in Databases",
+            "Issues in Data Mining",
+            "Fuzzy Sets",
+            "Fuzzy Logic"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Supervised Learning",
+          "topics": [
+            "Classification – Statistical‑based algorithms",
+            "Classification – Distance‑based algorithms",
+            "Classification – Decision‑tree‑based algorithms",
+            "Classification – Neural‑network‑based algorithms",
+            "Classification – Rule‑based algorithms",
+            "Probabilistic Classifiers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Clustering & Association Rule Mining",
+          "topics": [
+            "Hierarchical Clustering Algorithms",
+            "Partitional Clustering Algorithms",
+            "Clustering large databases – BIRCH",
+            "Clustering large databases – DBSCAN",
+            "Clustering large databases – CURE",
+            "Association Rules – Apriori algorithm",
+            "Association Rules – FP‑growth algorithm"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Margaret H. Dunham, “Data Mining : Introductory and Advanced topics”, Pearson Edu., 2009.",
+        "Anahory & Murray, “Data Warehousing in the Real World”, Pearson Edu., 2009."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Agile Software Development",
+      "subject_code": "CS703 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Agile Process",
+          "topics": [
+            "Introduction and background",
+            "Agile Manifesto and Principles",
+            "Stakeholders and Challenges",
+            "Overview of Agile Development Models: Scrum, Extreme Programming, Feature Driven Development, Crystal, Kanban, Lean Software Development"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Agile Projects",
+          "topics": [
+            "Planning for Agile Teams: Scrum Teams, XP Teams, General Agile Teams, Team Distribution",
+            "Agile Project Lifecycles: Typical Agile Project Lifecycles, Phase Activities, Product Vision",
+            "Release Planning: Creating the Product Backlog, User Stories, Prioritizing and Estimating, Creating the Release Plan",
+            "Monitoring and Adapting: Managing Risks and Issues, Retrospectives"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Scrum",
+          "topics": [
+            "Agile Scrum Framework",
+            "Scrum Artifacts",
+            "Scrum Meetings, Activities and Roles",
+            "Scrum Team Simulation",
+            "Scrum Planning Principles",
+            "Product and Release Planning",
+            "Sprinting: Planning, Execution, Review and Retrospective",
+            "User story definition and Characteristics",
+            "Acceptance tests and Verifying stories",
+            "Burn down chart",
+            "Daily scrum",
+            "Scrum Case Study"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to Extreme Programming (XP)",
+          "topics": [
+            "XP Lifecycle",
+            "The XP Team",
+            "XP Concepts: Refactoring, Technical Debt, Timeboxing, Stories, Velocity",
+            "Adopting XP: Pre-requisites, Challenges",
+            "Applying XP: Pair Programming, Collaborating, Release, Planning, Development",
+            "XP Case Study"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Agile Software Design and Development",
+          "topics": [
+            "Agile design practices",
+            "Role of design Principles",
+            "Need and significance of Refactoring",
+            "Refactoring Techniques",
+            "Continuous Integration",
+            "Automated build tools",
+            "Version control",
+            "Agility and Quality Assurance: Agile Interaction Design",
+            "Agile approach to Quality Assurance",
+            "Test Driven Development",
+            "Pair programming: Issues and Challenges"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Robert C. Martin, Agile Software Development- Principles, Patterns and Practices, Prentice Hall, 2013.",
+        "Kenneth S. Rubin, Essential Scrum: A Practical Guide to the Most Popular Agile Process, Addison Wesley, 2012.",
+        "James Shore and Shane Warden, The Art of Agile Development, O’Reilly Media, 2007.",
+        "Craig Larman, Agile and Iterative Development: A manager’s Guide, Addison-Wesley, 2004.",
+        "Ken Schawber, Mike Beedle, Agile Software Development with Scrum, Pearson, 2001.",
+        "Mike Cohn, Agile Estimating and Planning, Pearson Education, 2006.",
+        "Mike Cohn, User Stories Applied: For Agile Software Development, Addison Wesley, 2004."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Disaster Management",
+      "subject_code": "CS703 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "INTRODUCTION TO DISASTERS",
+          "topics": [
+            "Definition of Disaster, Hazard, Vulnerability, Resilience, Risks",
+            "Types of disasters: Earthquake, Landslide, Flood, Drought, Fire, etc.",
+            "Classification, Causes, and Impacts (social, economic, political, environmental, health, psychosocial)",
+            "Differential impacts based on caste, class, gender, age, location, disability",
+            "Global trends in disasters: urban disasters, pandemics, complex emergencies, climate change",
+            "Dos and Don'ts during various types of disasters"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "APPROACHES TO DISASTER RISK REDUCTION",
+          "topics": [
+            "Disaster cycle phases",
+            "Culture of safety, prevention, mitigation, and preparedness",
+            "Community‑based Disaster Risk Reduction (DRR)",
+            "Structural and non‑structural measures",
+            "Roles and responsibilities of community, PRIs/ULBs, States, Centre, and other stakeholders",
+            "Institutional processes and frameworks at state and central levels",
+            "State Disaster Management Authority (SDMA)",
+            "Early warning systems and advisories from appropriate agencies"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "INTER‑RELATIONSHIP BETWEEN DISASTERS AND DEVELOPMENT",
+          "topics": [
+            "Factors affecting vulnerabilities and differential impacts",
+            "Impact of development projects (dams, embankments, land‑use changes)",
+            "Climate change adaptation and IPCC scenarios in the Indian context",
+            "Relevance of indigenous knowledge, appropriate technology, and local resources"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "DISASTER RISK MANAGEMENT IN INDIA",
+          "topics": [
+            "Hazard and vulnerability profile of India",
+            "Components of disaster relief: water, food, sanitation, shelter, health, waste management",
+            "Institutional arrangements for mitigation, response, and preparedness",
+            "Disaster Management Act, related policies, plans, programmes, and legislation",
+            "Role of GIS and Information Technology in preparedness, risk assessment, response, and recovery",
+            "Disaster damage assessment"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "DISASTER MANAGEMENT: APPLICATIONS AND CASE STUDIES AND FIELD WORKS",
+          "topics": [
+            "Landslide hazard zonation case studies",
+            "Earthquake vulnerability assessment of buildings and infrastructure case studies",
+            "Drought assessment case studies",
+            "Coastal flooding and storm surge assessment case studies",
+            "Fluvial and pluvial flooding case studies",
+            "Forest fire case studies",
+            "Man‑made disaster case studies",
+            "Space‑based inputs for disaster mitigation and management",
+            "Field works related to disaster management"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Singhal J.P, Disaster Management, Laxmi Publications.",
+        "Tushar Bhattacharya, Disaster Science and Management, McGraw Hill India.",
+        "Govt. of India, Disaster Management, Government of India."
+      ],
+      "extra": null
+    }
+  ]
+}

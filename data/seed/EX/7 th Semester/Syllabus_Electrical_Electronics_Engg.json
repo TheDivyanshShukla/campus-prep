@@ -1,0 +1,614 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Power System Protection",
+      "subject_code": "EX-701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fault Analysis",
+          "topics": [
+            "Faults in power systems",
+            "Single line diagram",
+            "Equivalent impedance diagram",
+            "Per unit reactances",
+            "Analysis of power systems by symmetrical components under three‑phase short circuit",
+            "Line‑to‑line fault analysis",
+            "Line‑to‑ground fault analysis",
+            "Double line‑to‑ground fault analysis",
+            "Sequence networks and their inter‑connections for different types of faults",
+            "Effects of fault impedance",
+            "Current limiting reactors – applications, types, construction and location",
+            "Short‑circuit calculation using reactors"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Relays",
+          "topics": [
+            "General considerations and sensing of faults",
+            "Construction of electromagnetic attraction‑type relays",
+            "Construction of electromagnetic induction‑type relays",
+            "Buchholz relay and negative‑sequence relay",
+            "Concept of reset, pick‑up, inverse‑time and definite‑time characteristics",
+            "Over‑current, over‑voltage, directional, differential and distance relays on R‑X diagram",
+            "Static relays – introduction, advantages and limitations",
+            "Static over‑current relay",
+            "Static directional relay",
+            "Static distance relay",
+            "Static differential relay"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Protection",
+          "topics": [
+            "Types and detection of faults and their effects",
+            "Alternator protection scheme (stator, rotor, reverse‑power protection, etc.)",
+            "Power transformer protection – external and internal faults",
+            "Generator‑transformer unit protection scheme",
+            "Bus‑bar protection",
+            "Transmission line protection – current/time grading and distance protection",
+            "Pilot relaying schemes",
+            "Power‑line carrier protection"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Switchgear",
+          "topics": [
+            "Theory of current interruption – energy‑balance and recovery‑rate theory",
+            "Arc quenching, recovery and restriking voltages",
+            "Types of circuit breakers: bulk oil, minimum oil, air‑break, air‑blast, SF\\(_6\\), vacuum",
+            "Rating selection and testing of circuit breakers and operating mechanisms",
+            "Low‑tension (LT) switchgear",
+            "HRC fuses – types, construction and applications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Modern Trends In Protection",
+          "topics": [
+            "Electronic relays",
+            "Static‑relay functional circuits: comparators, level detectors, logic and timing circuits",
+            "Microprocessor‑ and computer‑based protection schemes",
+            "Software development for protection",
+            "Security and reliability of protection systems"
+          ]
+        }
+      ],
+      "experiments": [
+        "Determination of drop‑out factor of an instantaneous over‑current relay.",
+        "Determination of operating characteristic of IDMT relay.",
+        "Determination of operating characteristic of differential relay.",
+        "Study and operation of gas‑actuated protective relay.",
+        "Study and operation of static over‑current relay.",
+        "Determination of transmission line parameters using MATLAB.",
+        "Analysis of power system faults (symmetrical & asymmetrical) using MATLAB.",
+        "Study of SF\\(_6\\) circuit breaker.",
+        "Protection simulation study of generator, transformer, feeder & motor protection."
+      ],
+      "reference_books": [
+        "Van A. R & Warrington C., “Protective Relays: Their Theory and Practice”, Vol 1 & 2, Chapman and Hall.",
+        "Paithankar Y. O., “Transmission Network Protection: Theory and Practice”, Marcel Decker, Inc.",
+        "GEC Measurements, “Protective Relays: Application Guide”, GEC Measurements.",
+        "Masson R.J., Art & Science of Protective Relaying.",
+        "J & P Switchgear handbook – Ravindra Nath B. and Chandar M., Power Systems Protection and Switchgear.",
+        "Rao Sunil S., Switchgear and Protection.",
+        "Crane P.H.C., Switchgear Principle.",
+        "The Elementary Council, “Power System Protection”, Vol. 1, 2 & 3, Peter Peregrinus Ltd.",
+        "Badriram & Vishwakarma, Power System Protection.",
+        "Ravindranath & Chander, Power System Protection & Switchgear."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Power Electronics Application to Power System",
+      "subject_code": "EX-702 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Steady state and dynamic problems in AC systems",
+          "topics": [
+            "Flexible AC transmission systems (FACTS)",
+            "Principles of series and shunt compensation",
+            "Description of static var compensators (SVC)",
+            "Thyristor Controlled series compensators (TCSC)",
+            "Static phase shifters (SPS)",
+            "Static condenser (STATCON)",
+            "Static synchronous series compensator (SSSC)",
+            "Unified power flow controller (UPFC)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Modelling and Analysis of FACTS controllers",
+          "topics": [
+            "Control strategies to improve system stability",
+            "Power Quality problems in distribution systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Harmonics",
+          "topics": [
+            "Harmonics creating loads",
+            "Modelling of harmonic sources",
+            "Harmonic propagation",
+            "Series and parallel resonances",
+            "Harmonic power flow",
+            "Mitigation of harmonics",
+            "Passive filters",
+            "Active filters",
+            "Shunt hybrid filters",
+            "Series hybrid filters",
+            "Voltage sags & swells",
+            "Voltage flicker",
+            "Mitigation of power quality problems using power electronic conditioners",
+            "IEEE standards",
+            "HVDC converters and their characteristics",
+            "Control of the converters (CC and CEA)",
+            "Parallel operation of converters",
+            "Series operation of converters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Active Power Controllers",
+          "topics": [
+            "Dynamic static synchronous controllers",
+            "D‑STATCOM",
+            "Dynamic static synchronous series controllers",
+            "Dynamic voltage restorer",
+            "AC/AC voltage regulators"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Energy Storage Systems",
+          "topics": [
+            "Introduction",
+            "Structure of power storage devices",
+            "Pumped‑storage hydroelectricity",
+            "Compressed air energy storage system",
+            "Flywheels",
+            "Battery storage",
+            "Hydrogen storage",
+            "Superconducting magnetic energy storage",
+            "Super capacitors",
+            "Applications of energy storage devices"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "N.G. Hingorani & Laszlo Gyugyi, Understanding FACTS, IEEE Press, 2000.",
+        "E. F. Fuchs & Mohammad A.S. Masoum, Power Quality in Power Systems and Electrical Machines, Elsevier Academic Press 2008.",
+        "K.R. Padiyar, FACTS controllers in power transmission and distribution, New Age International publishers, New Delhi, 2007.",
+        "K.R. Padiyar, HVDC Power Transmission Systems, New Age International publishers, New Delhi, 1999."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "HVDC & FACTS",
+      "subject_code": "EX-702 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of FACTS and Reactive Power Control",
+          "topics": [
+            "Reactive power control in electrical power transmission",
+            "Principles of conventional reactive power compensators",
+            "Introduction to FACTS",
+            "Power flow in AC parallel paths and meshed systems",
+            "Basic types and definitions of FACTS controllers",
+            "Brief description of FACTS controllers"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Static Shunt and Series Compensators",
+          "topics": [
+            "Objectives of shunt compensation",
+            "Methods of controllable VAR generation",
+            "Static VAR compensators (SVC, STATCOM) and comparison",
+            "Objectives of series compensation",
+            "Thyristor switched series capacitors (TCSC)",
+            "Static series synchronous compensator (SSSC)",
+            "Power angle characteristics and basic operating control schemes"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Combined Compensators and Active Power Filtering",
+          "topics": [
+            "Unified Power Flow Controller (UPFC) – introduction and operating principle",
+            "Independent real and reactive power flow control in UPFC",
+            "Control structure of UPFC",
+            "Interline Power Flow Controller (IPFC)",
+            "Introduction to active power filtering",
+            "Reactive power compensation using active power filters",
+            "Harmonic current compensation using active power filters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "HVDC Transmission Systems – Overview",
+          "topics": [
+            "Introduction to HVDC transmission system",
+            "Comparison of AC and DC transmission",
+            "Applications of DC transmission",
+            "Types of DC links",
+            "Layout of HVDC transmission system"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "HVDC Converters, Control and Multiterminal Systems",
+          "topics": [
+            "HVDC converter station layout and equipment",
+            "Analysis of bridge converters with and without overlap",
+            "Inverter operation and equivalent circuit representations",
+            "Principles of HVDC system control",
+            "Desired features of control and converter control characteristics",
+            "Power reversal, ignition angle control, current and extinction angle control",
+            "Harmonics in HVDC, AC and DC filters",
+            "Introduction to multiterminal DC systems and applications",
+            "Comparison of series and parallel MTDC systems",
+            "Voltage Source Converter based HVDC systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Song, Y.H. and Allan T. Johns, ‘Flexible AC Transmission Systems (FACTS)’, Institution of Electrical Engineers Press, London, 1999.",
+        "Mohan Mathur R. and Rajiv K.Varma, ‘Thyristor – based FACTS controllers for Electrical Transmission systems’, IEEE press, Wiley Inter science, 2002.",
+        "Padiyar K.R., ‘FACTS controllers for Transmission and Distribution systems’ New Age International Publishers, 1st Edition, 2007.",
+        "Enrique Acha, Claudio R.Fuerte-Esqivel, Hugo Ambriz-Perez, Cesar AngelesCamacho ‘FACTS – Modeling and simulation in Power Networks’ John Wiley & Sons, 2002.",
+        "Jos Arrillaga, ‘High voltage Direct Current Transmission’ IET Power and Energy Series 29"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "High Voltage Engineering",
+      "subject_code": "EX-702 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction to $HV$ technology",
+            "Advantages of transmitting electrical power at high voltages",
+            "Need for generating high voltages in laboratory",
+            "Important applications of high voltage"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Breakdown phenomena",
+          "topics": [
+            "Classification of $HV$ insulating media",
+            "Properties of important $HV$ insulating media",
+            "Gaseous dielectrics: primary and secondary ionization processes",
+            "Breakdown criteria for gaseous insulation based on Townsend’s theory",
+            "Limitations of Townsend’s theory",
+            "Streamer theory breakdown in non‑uniform fields",
+            "Corona discharges",
+            "Paschen’s law and its significance",
+            "Time lags of breakdown",
+            "Breakdown in solid dielectrics: intrinsic, avalanche, thermal, and electro‑mechanical breakdown",
+            "Breakdown of liquid dielectrics: suspended‑particle theory, electronic breakdown, cavity (bubble) breakdown, electro‑convection breakdown"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Generation of $HV$ AC, DC and impulse voltage and current",
+          "topics": [
+            "$HV$ AC transformer and cascade connection of transformer units",
+            "Series resonant circuit principle of operation and advantages",
+            "Tesla coil",
+            "$HV$ DC voltage doubler circuit",
+            "Cockcroft‑Walton type high‑voltage $DC$ set",
+            "Standard lightning and switching impulse voltages",
+            "Analysis of single‑stage impulse generator and output voltage expression",
+            "Components of multistage impulse generator",
+            "Three‑electrode gap triggering of impulse generators",
+            "Triggering gap and oscillograph time‑sweep circuits",
+            "Generation of switching impulse voltage",
+            "Generation of high‑impulse current"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Measurement of high voltages",
+          "topics": [
+            "Electrostatic voltmeter: principle, construction and limitations",
+            "Generating voltmeter: principle and construction",
+            "Series‑resistance micro‑ammeter for $HV$ $DC$ measurements",
+            "Standard sphere‑gap measurements for $HV$ $AC$, $HV$ $DC$ and impulse voltages and influencing factors",
+            "Potential dividers: resistance, capacitance and mixed $RC$ types",
+            "Surge current measurement techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "High voltage tests on electrical apparatus",
+          "topics": [
+            "Definitions of high‑voltage testing technologies",
+            "Tests on isolators",
+            "Tests on circuit breakers",
+            "Tests on cables and insulators",
+            "Tests on transformers"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "E. Kuffel and W.S. Zaengl, “High voltage engineering fundamentals”, 2nd edition, Elsevier, press, 2005.",
+        "M.S. Naidu and Kamaraju, “High Voltage Engineering”, 3rd edition, THM, 2007.",
+        "L. L. Alston, “High Voltage technology”, BSB Publication, 2007."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Hybrid &Electrical Vehicles",
+      "subject_code": "EX-703 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Conventional Vehicles: basics of vehicle performance, vehicle power‑source characterization, transmission characteristics, mathematical models to describe vehicle performance",
+            "Hybrid Electric Vehicles: history, social and environmental importance, impact of modern drivetrains on energy supplies"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Hybrid and Electric Drive‑trains",
+          "topics": [
+            "Hybrid traction: basic concept of hybrid traction and hybrid drive‑train topologies",
+            "Power‑flow control in hybrid drive‑train topologies",
+            "Fuel‑efficiency analysis for hybrid drive‑trains",
+            "Electric traction: basic concept of electric traction and electric drive‑train topologies",
+            "Power‑flow control in electric drive‑train topologies",
+            "Fuel‑efficiency analysis for electric drive‑trains",
+            "Electric components used in hybrid and electric vehicles",
+            "Configuration and control of DC‑motor drives",
+            "Configuration and control of induction‑motor drives",
+            "Configuration and control of permanent‑magnet motor drives",
+            "Configuration and control of switched‑reluctance motor drives",
+            "Drive‑system efficiency, drivetrain topologies, and related fuel‑efficiency considerations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Energy Storage and Drive‑System Sizing",
+          "topics": [
+            "Energy‑storage requirements in hybrid and electric vehicles",
+            "Battery‑based energy storage and its analysis",
+            "Fuel‑cell based energy storage and its analysis",
+            "Super‑capacitor based energy storage and its analysis",
+            "Flywheel‑based energy storage and its analysis",
+            "Hybridisation of different energy‑storage devices",
+            "Matching the electric machine with the internal‑combustion engine (ICE)",
+            "Sizing the propulsion motor",
+            "Sizing the power‑electronics",
+            "Selection of the appropriate energy‑storage technology",
+            "Communications and supporting subsystems for the drive system"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Energy Management Strategies and Case Studies",
+          "topics": [
+            "Introduction to energy‑management strategies used in hybrid and electric vehicles",
+            "Classification of different energy‑management strategies",
+            "Comparison of different energy‑management strategies",
+            "Implementation issues of energy‑management strategies",
+            "Case study: design of a Hybrid Electric Vehicle (HEV)",
+            "Case study: design of a Battery Electric Vehicle (BEV)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "C. Mi, M. A. Masrur and D. W. Gao, “Hybrid Electric Vehicles: Principles and Applications with Practical Perspectives”, John Wiley & Sons, 2011.",
+        "S. Onori, L. Serrao and G. Rizzoni, “Hybrid Electric Vehicles: Energy Management Strategies”, Springer, 2015.",
+        "M. Ehsani, Y. Gao, S. E. Gay and A. Emadi, “Modern Electric, Hybrid Electric, and Fuel Cell Vehicles: Fundamentals, Theory, and Design”, CRC Press, 2004.",
+        "T. Denton, “Electric and Hybrid Vehicles”, Routledge, 2016."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Energy Audit & Management",
+      "subject_code": "EX-703 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Energy \\& Power Scenario",
+          "topics": [
+            "Introduction to energy \\& power scenario of world",
+            "National energy consumption data",
+            "Environmental aspects associated with energy utilization",
+            "Energy auditing – need, types, methodology and barriers",
+            "Role of energy managers",
+            "Instruments of energy auditing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Components of EB Billing and Energy Efficiency",
+          "topics": [
+            "Components of EB billing, HT and LT supply, transformers, cable sizing",
+            "Concept of capacitors, power factor improvement, harmonics",
+            "Electric motors – motor efficiency computation, energy efficient motors",
+            "Illumination – lux, lumens, types of lighting, efficacy, LED lighting and scope of energy conservation in lighting"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Thermal Systems and Energy Conservation",
+          "topics": [
+            "Thermal systems, boilers, furnaces and thermic fluid heaters – efficiency computation and energy conservation measures",
+            "Steam distribution and usage, steam traps, condensate recovery, flash steam utilization",
+            "Insulation \\& refractories"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Energy Conservation in Major Utilities",
+          "topics": [
+            "Energy conservation in major utilities – pumps, fans, blowers, compressed air systems",
+            "Refrigeration \\& air‑conditioning systems, cooling towers, DG sets"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Energy Economics and ESCO",
+          "topics": [
+            "Energy economics – discount period, payback period, internal rate of return, net present value",
+            "Life‑cycle costing",
+            "ESCO concept"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Witte L.C., Schmidt P.S. and Brown D.R., Industrial Energy Management and Utilization, Hemisphere Publ., Washington, 1988.",
+        "Callaghn P.W., Design and Management for Energy Conservation, Pergamon Press, Oxford, 1981.",
+        "Murphy W.R. and McKay G., Energy Management, Butterworths, London, 1987.",
+        "Energy Manager Training Manual, Bureau of Energy Efficiency (BEE) under Ministry of Power, GOI, 2004."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Signal Processin",
+      "subject_code": "EX-703 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Discrete-time signals and systems",
+          "topics": [
+            "Sequences",
+            "Representation of signals on orthogonal basis",
+            "Representation of discrete systems using difference equations",
+            "Sampling and reconstruction of signals – aliasing",
+            "Sampling theorem and Nyquist rate"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Z-transform",
+          "topics": [
+            "z-Transform",
+            "Region of Convergence",
+            "Analysis of Linear Shift Invariant systems using z-transform",
+            "Properties of Z-transform for causal signals",
+            "Interpretation of stability in z-domain",
+            "Inverse z-transforms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Discrete Fourier Transform",
+          "topics": [
+            "Frequency Domain Analysis",
+            "Discrete Fourier Transform (DFT)",
+            "Properties of DFT",
+            "Convolution of signals",
+            "Fast Fourier Transform Algorithm",
+            "Parseval’s Identity",
+            "Implementation of Discrete Time Systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design of Digital filters",
+          "topics": [
+            "Design of FIR Digital filters: Window method",
+            "Design of FIR Digital filters: Park-McClellan's method",
+            "Design of IIR Digital Filters: Butterworth, Chebyshev and Elliptic Approximations",
+            "Design of Low-pass, Band-pass, Band-stop and High-pass filters",
+            "Effect of finite register length in FIR filter design",
+            "Parametric and non-parametric spectral estimation",
+            "Introduction to multi-rate signal processing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Applications of Digital Signal Processing",
+          "topics": [
+            "Correlation Functions and Power Spectra",
+            "Stationary Processes",
+            "Optimal filtering using ARMA Model",
+            "Linear Mean-Square Estimation",
+            "Wiener Filter"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "S. K. Mitra, “Digital Signal Processing: A computer based approach”, McGraw Hill, 2011.",
+        "A.V. Oppenheim and R. W. Schafer, “Discrete Time Signal Processing”, Prentice Hall, 1989.",
+        "J. G. Proakis and D.G. Manolakis, “Digital Signal Processing: Principles, Algorithms And Applications”, Prentice Hall, 1997.",
+        "L. R. Rabiner and B. Gold, “Theory and Application of Digital Signal Processing”, Prentice Hall, 1992.",
+        "J. R. Johnson, “Introduction to Digital Signal Processing”, Prentice Hall, 1992.",
+        "D. J. DeFatta, J. G. Lucas and W. S. Hodgkiss, “Digital Signal Processing”, John Wiley & Sons, 1988."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electrical CAD Lab",
+      "subject_code": "EX-704",
+      "subject_type": "Laboratory",
+      "modules": [],
+      "experiments": [
+        "Computer Program for Optimal Design of dc machine.",
+        "Computer Program in for Complete Design of core type power Transformer.",
+        "Computer Program for Complete Design of salient pole Alternator.",
+        "Computer Program for Optimal Design of cage rotor.",
+        "Computer Program for Optimal Design of slip ring induction motor."
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Energy Audit Lab",
+      "subject_code": "EX-705",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "To study the need of energy conservation and audit.",
+        "To study the uses and technical specification of all relevant energy auditing instruments.",
+        "To perform experiment to collect data of all energy auditing instruments with respect to their inputs and also analyze the collected data.",
+        "To perform experiment for comparative analysis of all luminaries (Incandescent lamp, Florescent lamp(FL), Compact FL and LED) using energy auditing instruments.",
+        "To study of different lighting systems, such as commercial, factory, flood and decorative etc.",
+        "To study applications of solar energy with respect to photovoltaic and thermal.",
+        "To study performance assessment of motors for energy conservation using auditing.",
+        "To study the different techniques for power factor improvement and its benefits.",
+        "To study the criteria and types of energy efficient motors.",
+        "To study the comparative analysis between standard and energy efficient motors.",
+        "Case study of net metering as a future technique to optimize electrical energy utilization.",
+        "Case study of energy audit of your departmental building."
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Major Project-I",
+      "subject_code": "EX-706",
+      "subject_type": "Project",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

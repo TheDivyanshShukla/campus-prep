@@ -1,0 +1,792 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Information Security",
+      "subject_code": "IT 801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction: Fundamental Principles of Information Security",
+          "topics": [
+            "Fundamental Principles of Information Security",
+            "Confidentiality",
+            "Availability",
+            "Integrity",
+            "Non Repudiation",
+            "The OSI Security Architecture",
+            "Security Attacks",
+            "Security Services",
+            "Security Mechanisms",
+            "Model for Network Security",
+            "Classical Encryption Techniques: Symmetric Cipher Model",
+            "Substitution Techniques",
+            "Transposition Techniques",
+            "Steganography"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Block Ciphers and Data Encryption Algorithm",
+          "topics": [
+            "Block Cipher Principles",
+            "The Data Encryption Standard",
+            "The Strength of DES",
+            "Differential and linear cryptanalysis",
+            "Block Cipher Design Principles",
+            "Evaluation criteria of AES",
+            "The AES Cipher",
+            "Multiple Encryption and Triple DES",
+            "Block Cipher modes of operation",
+            "Stream Ciphers",
+            "Confidentiality using Symmetric Encryption"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Public Key Encryption and Message Authentication",
+          "topics": [
+            "Principles of Public Key Cryptosystems",
+            "The RSA algorithm",
+            "Key Management",
+            "Diffie-Hellman Key Exchange",
+            "Elliptic curve cryptography",
+            "Authentication requirements",
+            "Authentication Functions",
+            "Message Authentication Codes",
+            "Hash Functions",
+            "Security of Hash Functions and MACs",
+            "Secure Hash Algorithm",
+            "HMAC",
+            "Digital Signatures and Authentication Protocols",
+            "Digital Signature Standard"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Authentication Applications and Web Security",
+          "topics": [
+            "Authentication Applications",
+            "Kerberos",
+            "X.509 Authentication Service",
+            "Public key infrastructure",
+            "Pretty Good Privacy",
+            "IP Security Overview",
+            "IP Security Architecture",
+            "Authentication header",
+            "Encapsulating security payload",
+            "IP Security Key management",
+            "Web security considerations",
+            "Secure Socket Layer",
+            "Transport layer Security",
+            "Secure Electronic Transaction"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "System Security and Malicious Software",
+          "topics": [
+            "Intruders",
+            "Intrusion Detection",
+            "Password management",
+            "Different type of malicious software",
+            "Viruses and related threats",
+            "Virus Countermeasures",
+            "Threats and attacks on Information Security",
+            "DoS and DDoS Attacks",
+            "Security controls required for Information Security",
+            "Firewall design principles",
+            "Trusted Systems",
+            "Common criteria for information technology security evaluation"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "William Stallings, \"Cryptography and Network Security\", Fourth edition, PHI",
+        "Atul Kahate, “Cryptography and Network Security”, McGraw Hill.",
+        "V.K. Pachghare, “Cryptography and Information Security”, PHI Learning",
+        "Nina Godbole, “Information System Security”, Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Machine Learning",
+      "subject_code": "IT 802 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction",
+            "Examples of various Learning Paradigms",
+            "Perspectives and Issues",
+            "Concept Learning",
+            "Version Spaces",
+            "Finite and Infinite Hypothesis Spaces",
+            "PAC Learning",
+            "VC Dimension"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Supervised Learning Algorithms",
+          "topics": [
+            "Learning a Class from Examples",
+            "Linear, Non‑linear, Multi‑class and Multi‑label classification",
+            "Decision Trees: ID3, Classification and Regression Trees (CART)",
+            "Regression: Linear Regression, Multiple Linear Regression, Logistic Regression",
+            "Neural Networks: Introduction, Perceptron, Multilayer Perceptron",
+            "Support vector machines: Linear and NonLinear, Kernel Functions",
+            "K‑Nearest Neighbors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Ensemble Learning",
+          "topics": [
+            "Ensemble Learning Model Combination Schemes",
+            "Voting",
+            "Error‑Correcting Output Codes",
+            "Bagging: Random Forest Trees",
+            "Boosting: Adaboost",
+            "Stacking"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unsupervised Learning",
+          "topics": [
+            "Introduction to clustering",
+            "Hierarchical: AGNES, DIANA",
+            "Partitional: K‑means clustering, KMode Clustering",
+            "Self‑Organizing Map",
+            "Expectation Maximization",
+            "Gaussian Mixture Models",
+            "Principal Component Analysis (PCA)",
+            "Locally Linear Embedding (LLE)",
+            "Factor Analysis"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Probabilistic Learning",
+          "topics": [
+            "Bayesian Learning",
+            "Bayes Optimal Classifier",
+            "Naïve Bayes Classifier",
+            "Bayesian Belief Networks",
+            "Mining Frequent Patterns"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ethem Alpaydin, \"Introduction to Machine Learning”, MIT Press, Prentice Hall of India, Third Edition 2014.",
+        "Mehryar Mohri, Afshin Rostamizadeh, Ameet Talwalkar \"Foundations of Machine Learning”, MIT Press, 2012.",
+        "Tom Mitchell, “Machine Learning”, McGraw Hill, 3rd Edition,1997.",
+        "Charu C. Aggarwal, “Data Classification Algorithms and Applications”, CRC Press, 2014.",
+        "Stephen Marsland, “Machine Learning – An Algorithmic Perspective”, 2nd Edition, CRC Press, 2015.",
+        "Kevin P. Murphy \"Machine Learning: A Probabilistic Perspective\", The MIT Press, 2012",
+        "Jiawei Han and Micheline Kambers and Jian Pei, “Data Mining –Concept and Techniques”, 3rd Edition, Morgan Kaufman Publications, 2012.",
+        "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong, “Mathematics for Machine Learning”, Cambridge University Press, 2019."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Natural Language Processing",
+      "subject_code": "IT 802 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Levels of natural language processing",
+            "Sources of ambiguity and computational challenges",
+            "Real‑life NLP applications such as spell checking, grammar checking, information extraction, question answering, and machine translation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Text Processing Foundations",
+          "topics": [
+            "Character encoding standards (e.g., UTF‑8, Unicode)",
+            "Word segmentation techniques",
+            "Sentence segmentation techniques",
+            "Corpus creation and description",
+            "Corpus analysis methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Morphology and POS Tagging",
+          "topics": [
+            "Inflectional and derivational morphology",
+            "Morphological analysis and generation using finite‑state transducers",
+            "Word‑class (POS) categories",
+            "Part‑of‑speech tagging",
+            "Maximum Entropy models for POS tagging",
+            "Multi‑word expressions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Language Modeling and Shallow Parsing",
+          "topics": [
+            "Language models and their role in NLP",
+            "Simple N‑gram models",
+            "Parameter estimation and smoothing techniques",
+            "Evaluation of language models",
+            "Phrase, clause and sentence structure",
+            "Shallow parsing and chunking",
+            "Conditional Random Fields (CRF) for shallow parsing",
+            "Lexical semantics",
+            "Word Sense Disambiguation (WSD)",
+            "WordNet lexical database",
+            "Thematic role identification",
+            "Semantic role labeling with CRFs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced NLP Applications",
+          "topics": [
+            "Natural language interfaces",
+            "Text summarization techniques",
+            "Sentiment analysis methods",
+            "Machine translation approaches",
+            "Question answering systems",
+            "Recent trends in NLP research"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Jurafsky, D. and Martin, J.H., *Speech and Language Processing*, 2nd Edition, Prentice Hall, 2014.",
+        "Schütze, H. and Manning, C.D., *Foundations of Statistical Natural Language Processing*, MIT Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Robotics",
+      "subject_code": "IT 802 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Robotics",
+          "topics": [
+            "Types and components of a robot",
+            "Classification of robots",
+            "Closed-loop and open-loop control systems",
+            "Kinematics systems: definition of mechanisms and manipulators",
+            "Social issues and safety"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Robot Kinematics and Dynamics",
+          "topics": [
+            "Kinematic modelling: translation and rotation representation",
+            "Coordinate transformation",
+            "Denavit–Hartenberg ($\\mathrm{DH}$) parameters",
+            "Jacobian matrix",
+            "Singularity analysis",
+            "Statics of manipulators",
+            "Dynamic modelling: equations of motion via Euler–Lagrange formulation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sensors and Vision System",
+          "topics": [
+            "Sensors: contact, proximity, position, velocity, force, tactile",
+            "Camera fundamentals and calibration",
+            "Geometry of image formation",
+            "Euclidean, similarity, affine, and projective transformations",
+            "Vision applications in robotics"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Robot Control",
+          "topics": [
+            "Control basics: transfer functions",
+            "Control laws: P, PD, PID, nonlinear and advanced controls",
+            "Robot actuation systems: electric, hydraulic, pneumatic actuators",
+            "Transmission mechanisms: gears, timing belts, bearings",
+            "Parameters for actuator selection"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Control Hardware and Interfacing",
+          "topics": [
+            "Embedded systems architecture",
+            "Integration with sensors and actuators",
+            "Programming for robot applications"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Saha, S.K., “Introduction to Robotics, 2nd Edition, McGraw-Hill Higher Education, New Delhi, 2014.",
+        "Ghosal, A., “Robotics”, Oxford, New Delhi, 2006.",
+        "Niku Saeed B., “Introduction to Robotics: Analysis, Systems, Applications”, PHI, New Delhi.",
+        "Mittal R.K. and Nagrath I.J., “Robotics and Control”, Tata McGraw Hill.",
+        "Mukherjee S., “Robotics and Automation”, Khanna Publishing House, Delhi.",
+        "Craig, J.J., “Introduction to Robotics: Mechanics and Control”, Pearson, New Delhi, 2009.",
+        "Mark W. Spong, Seth Hutchinson, and M. Vidyasagar, “Robot Modelling and Control”, John Wiley and Sons Inc, 2005.",
+        "Steve Heath, “Embedded System Design”, 2nd Edition, Newnes, Burlington, 2003.",
+        "Merzouki R., Samantaray A.K., Phathak P.M. and Bouamama B. Ould, “Intelligent Mechatronic System: Modeling, Control and Diagnosis”, Springer."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Quantum Computing",
+      "subject_code": "IT 802 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Motivation and Overview of Quantum Computing",
+          "topics": [
+            "Motivation for studying Quantum Computing",
+            "Major players in the industry (IBM, Microsoft, Rigetti, D‑Wave, etc.)",
+            "Origin of Quantum Computing",
+            "Overview of major concepts in Quantum Computing: Qubits and multi‑qubit states, Bra‑ket notation, Bloch sphere representation, Quantum superposition, Quantum entanglement"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Mathematical Foundations for Quantum Computing",
+          "topics": [
+            "Matrix algebra: basis vectors and orthogonality",
+            "Inner product and Hilbert spaces",
+            "Matrices and tensors",
+            "Unitary operators and projectors",
+            "Dirac notation",
+            "Eigenvalues and eigenvectors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Building Blocks for Quantum Programs",
+          "topics": [
+            "Architecture of a quantum computing platform",
+            "Details of qubit information representation: Bloch sphere, multi‑qubit states, valid and invalid superpositions, quantum entanglement",
+            "Useful states from a quantum‑algorithm perspective (e.g., Bell state)",
+            "Operations on qubits: measurement and transformation using gates",
+            "Quantum logic gates and circuits: Pauli, Hadamard, phase‑shift, controlled gates, Ising, Deutsch, SWAP, etc."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Programming Model for Quantum Computing",
+          "topics": [
+            "Steps performed on a classical computer",
+            "Steps performed on a quantum computer",
+            "Moving data between classical bits and qubits",
+            "Basic techniques exploited by quantum algorithms: amplitude amplification, quantum Fourier transform, phase kick‑back, quantum phase estimation, quantum walks"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Major Algorithms and Toolkits",
+          "topics": [
+            "Shor’s algorithm",
+            "Grover’s algorithm",
+            "Deutsch’s algorithm",
+            "Deutsch‑Jozsa algorithm",
+            "Open‑source toolkits for implementing quantum programs: IBM Quantum Experience, Microsoft Q, Rigetti PyQuil (QPU/QVM)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Michael A. Nielsen, “Quantum Computation and Quantum Information”, Cambridge University Press.",
+        "David McMahon, “Quantum Computing Explained”, Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Blockchain Technology",
+      "subject_code": "IT 803 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Overview of blockchain",
+            "Public ledgers",
+            "Bitcoin",
+            "Smart contracts",
+            "Block structure in a blockchain",
+            "Transactions",
+            "Distributed consensus",
+            "Public vs private blockchain",
+            "Cryptocurrency fundamentals",
+            "Permissioned blockchain model",
+            "Security aspects of blockchain",
+            "Cryptographic hash functions and their properties",
+            "Hash pointers and Merkle trees",
+            "Digital signatures",
+            "Public key cryptography",
+            "Basic cryptocurrency concepts"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Understanding Blockchain with Cryptocurrency",
+          "topics": [
+            "Creation of coins in Bitcoin and blockchain",
+            "Payments and double spending prevention",
+            "Bitcoin scripts",
+            "Bitcoin peer‑to‑peer network",
+            "Transactions in the Bitcoin network",
+            "Block mining process",
+            "Block propagation and relay mechanisms",
+            "Distributed consensus in open environments",
+            "Proof of Work (PoW) basics",
+            "HashCash PoW",
+            "Attacks on Bitcoin PoW and monopoly problem",
+            "Proof of Stake consensus",
+            "Proof of Burn mechanism",
+            "Proof of Elapsed Time mechanism",
+            "Lifecycle of a Bitcoin miner",
+            "Mining difficulty adjustment",
+            "Mining pools"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Understanding Blockchain for Enterprises",
+          "topics": [
+            "Permissioned blockchain models and use cases",
+            "Design issues for permissioned blockchains",
+            "Executing smart contracts on permissioned ledgers",
+            "State‑machine replication",
+            "Consensus models for permissioned blockchains",
+            "Paxos consensus algorithm",
+            "RAFT consensus algorithm",
+            "Byzantine Generals problem",
+            "Byzantine fault‑tolerant systems",
+            "Lamport‑Shostak‑Pease BFT algorithm",
+            "BFT operation in asynchronous systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Enterprise Application of Blockchain",
+          "topics": [
+            "Cross‑border payments",
+            "Know Your Customer (KYC) processes",
+            "Food security applications",
+            "Mortgage management on blockchain",
+            "Blockchain‑enabled trade platforms",
+            "We Trade – trade finance network",
+            "Supply‑chain financing",
+            "Digital identity management on blockchain"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Blockchain Application Development",
+          "topics": [
+            "Hyperledger Fabric architecture",
+            "Identities and policies in Hyperledger Fabric",
+            "Membership and access control",
+            "Channel configuration",
+            "Transaction validation flow",
+            "Writing smart contracts using Hyperledger Fabric",
+            "Writing smart contracts using Ethereum",
+            "Overview of Ripple platform",
+            "Overview of Corda platform"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Melanie Swan, Block Chain: Blueprint for a New Economy, O’Reilly, 2015",
+        "Josh Thompsons, Block Chain: The Block Chain for Beginners - Guide to Block Chain Technology and Leveraging Block Chain Programming",
+        "Daniel Drescher, Block Chain Basics, Apress, 1st edition, 2017",
+        "Anshul Kaushik, Block Chain and Crypto Currencies, Khanna Publishing House, Delhi",
+        "Imran Bashir, Mastering Block Chain: Distributed Ledger Technology, Decentralization and Smart Contracts Explained, Packt Publishing",
+        "Ritesh Modi, Solidity Programming Essentials: A Beginner’s Guide to Build Smart Contracts for Ethereum and Block Chain, Packt Publishing",
+        "Salman Baset, Luc Desrosiers, Nitin Gaur, Petr Novotny, Anthony O’Dowd, Venkatraman Ramakrishna, Hands‑On Block Chain with Hyperledger: Building Decentralized Applications with Hyperledger Fabric and Composer, Import, 2018"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Human Computer Interaction",
+      "subject_code": "IT 803 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "HCI Foundations",
+          "topics": [
+            "Input–output channels",
+            "Human memory",
+            "Thinking: reasoning and problem solving",
+            "Emotion",
+            "Individual differences",
+            "Psychology and the design of interactive systems",
+            "Text entry devices",
+            "Positioning, pointing and drawing",
+            "Display devices",
+            "Devices for virtual reality and 3D interaction",
+            "Physical controls, sensors and special devices",
+            "Paper: printing and scanning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Designing Interaction",
+          "topics": [
+            "Overview of Interaction Design Models",
+            "Discovery - Framework",
+            "Collection - Observation",
+            "Elicitation",
+            "Interpretation - Task Analysis",
+            "Storyboarding",
+            "Use Cases",
+            "Primary Stakeholder Profiles",
+            "Project Management Document"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Interaction Design Models",
+          "topics": [
+            "Model Human Processor - Working Memory",
+            "Long-Term Memory",
+            "Processor Timing",
+            "Keyboard Level Model - Operators",
+            "Encoding Methods",
+            "Heuristics for M Operator Placement",
+            "What the Keyboard Level Model Does Not Model",
+            "Application of the Keyboard Level Model",
+            "GOMS CMN-GOMS Analysis",
+            "Modeling Structure",
+            "State Transition Networks - Three-State Model",
+            "Glimpse Model",
+            "Physical Models",
+            "Fitts’ Law"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Guidelines in HCI",
+          "topics": [
+            "Shneideman's eight golden rules",
+            "Norman's Sever principles",
+            "Norman's model of interaction",
+            "Nielsen's ten heuristics",
+            "Heuristic evaluation",
+            "Contextual evaluation",
+            "Cognitive walk-through",
+            "Collaboration and Communication: Face-to-face Communication",
+            "Conversation",
+            "Text-based Communication",
+            "Group working",
+            "Dialog design notations",
+            "Diagrammatic notations",
+            "Textual dialog notations",
+            "Dialog semantics",
+            "Dialog analysis and design"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Human Factors and Security",
+          "topics": [
+            "Groupware",
+            "Meeting and decision support systems",
+            "Shared applications and artifacts",
+            "Frameworks for groupware Implementing synchronous groupware",
+            "Mixed, Augmented and Virtual Reality",
+            "Validation: Usability testing",
+            "Interface Testing",
+            "User Acceptance Testing"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A Dix, Janet Finlay, G D Abowd, R Beale., Human-Computer Interaction, 3rd Edition, Pearson Publishers,2008",
+        "Shneiderman, Plaisant, Cohen and Jacobs, Designing the User Interface: Strategies for Effective Human Computer Interaction, 5th Edition, Pearson Publishers, 2010.",
+        "Hans-Jorg Bullinger, Human-Computer Interaction, Lawrence Erlbaum Associates, Publishers",
+        "Jakob Nielsen, Advances in Human-computer Interaction, Ablex Publishing Corporation",
+        "Thomas S. Huang, Real-Time Vision for Human-Computer Interaction, Springer",
+        "Preece et al, Human-Computer Interaction, Addison-Wesley, 1994"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Printing and Design",
+      "subject_code": "IT 803 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "3D Printing (Additive Manufacturing)",
+          "topics": [
+            "Introduction to 3D printing and additive manufacturing",
+            "Process classification and advantages of additive manufacturing",
+            "Additive vs. conventional manufacturing processes",
+            "Applications of additive manufacturing",
+            "CAD for additive manufacturing: data formats, data translation, data loss, STL format"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Additive Manufacturing Techniques",
+          "topics": [
+            "Additive manufacturing techniques: Stereo‑Lithography, LOM, FDM, SLS, SLM, Binder Jet technology",
+            "Process parameters and selection for various applications",
+            "Application domains of additive manufacturing: aerospace, electronics, health‑care, defence, automotive, construction, food processing, machine tools"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Materials",
+          "topics": [
+            "Materials for additive manufacturing: polymers, metals, non‑metals, ceramics",
+            "Forms of raw material: liquid, solid, wire, powder; powder preparation and desired properties",
+            "Properties of polymers and support materials"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Additive Manufacturing Equipment",
+          "topics": [
+            "Additive manufacturing equipment: design and process parameters",
+            "Governing bonding mechanisms",
+            "Common faults and troubleshooting",
+            "Process design considerations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Post Processing",
+          "topics": [
+            "Post‑processing requirements and techniques",
+            "Product quality: inspection and testing",
+            "Defects and their causes"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Lan Gibson, David W. Rosen and Brent Stucker, “Additive Manufacturing Technologies: Rapid Prototyping to Direct Digital Manufacturing”, Springer, 2010.",
+        "Andreas Gebhardt, “Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling, Rapid Manufacturing”, Hanser Publisher, 2011.",
+        "Khanna Editorial, “3D Printing and Design”, Khanna Publishing House, Delhi.",
+        "CK Chua, Kah Fai Leong, “3D Printing and Rapid Prototyping- Principles and Applications”, World Scientific, 2017.",
+        "J.D. Majumdar and I. Manna, “Laser‑Assisted Fabrication of Materials”, Springer Series in Material Science, 2013.",
+        "L. Lu, J. Fuh and Y.S. Wong, “Laser‑Induced Materials and Processes for Rapid Prototyping”, Kulwer Academic Press, 2001.",
+        "Zhiqiang Fan and Frank Liou, “Numerical Modelling of the Additive Manufacturing (AM) Processes of Titanium Alloy”, InTech, 2012."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Parallel Computing",
+      "subject_code": "IT 803 (D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "The need for parallelism",
+            "Forms of parallelism (SISD, SIMD, MISD, MIMD)",
+            "Moore's Law and multi‑core processors",
+            "Fundamentals of parallel computers",
+            "Communication architectures",
+            "Message‑passing architecture",
+            "Data‑parallel architecture",
+            "Dataflow architecture",
+            "Systolic architecture",
+            "Performance issues in parallel systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Large Cache Design",
+          "topics": [
+            "Shared versus private caches",
+            "Centralized versus distributed shared caches",
+            "Snooping‑based cache‑coherence protocols",
+            "Directory‑based cache‑coherence protocols",
+            "Uniform Cache Access (UCA)",
+            "Non‑Uniform Cache Access (NUCA)",
+            "Distributed NUCA (D‑NUCA) and static NUCA (S‑NUCA)",
+            "Cache inclusion and exclusion policies",
+            "Difference between transactional memory and traditional memory models",
+            "Software Transactional Memory (STM)",
+            "Hardware Transactional Memory (HTM)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Graphics Processing Unit",
+          "topics": [
+            "GPUs as parallel computers",
+            "Architecture of modern GPUs",
+            "Evolution of graphics pipelines",
+            "General‑purpose GPUs (GPGPUs)",
+            "Scalable GPU designs",
+            "Architectural characteristics of future GPU systems",
+            "Implications of GPU technology for users",
+            "Vector addition on GPUs",
+            "Application domains of GPUs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to Parallel Programming",
+          "topics": [
+            "Parallel programming strategies and mechanisms",
+            "Performance theory for parallel programs",
+            "Parallel programming patterns",
+            "Nesting pattern",
+            "Parallel control pattern",
+            "Parallel data‑management pattern",
+            "Map pattern (scaled vector, Mandelbrot set)",
+            "Reduce pattern and fused map‑reduce",
+            "Scan pattern and fused map‑scan",
+            "Data‑recognition patterns (gather, scatter, pack)",
+            "Stencil and recurrence patterns",
+            "Fork‑join pattern",
+            "Pipeline pattern"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Parallel Programming Languages",
+          "topics": [
+            "Distributed memory programming with MPI: trapezoidal rule, I/O handling, derived datatypes, collective communication",
+            "Shared memory programming with Pthreads: conditional variables, read‑write locks, cache handling",
+            "Shared memory programming with OpenMP: parallel for directives, loop scheduling, thread safety",
+            "CUDA programming: CUDA C kernels, thread management, constant memory, events, graphics interoperability, atomics, streams"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "D. E. Culler, J. P. Singh, and A. Gupta, “Parallel Computer Architecture”, Morgan Kaufmann, 2004",
+        "Rajeev Balasubramonian, Norman P. Jouppi, and Naveen Muralimanohar, “Multi-Core Cache Hierarchies”, Morgan & Claypool Publishers, 2011",
+        "Peter and Pach Eco, “An Introduction to Parallel Programming”, Elsevier, 2011",
+        "James R. Larus and Ravi Rajwar, “Transactional Memory”, Morgan & Claypool Publishers, 2007",
+        "David B. Kirk, Wen-mei W. Hwu, “Programming Massively Parallel Processors: A Hands-on Approach”, 2010",
+        "Barbara Chapman, F. Desprez, Gerhard L. Joubert, Alain Lichnewsky, Frans Peters, “Parallel Computing: From Multicores and GPUs to Petascale”, 2010",
+        "Michael McCool, James Reinders, Arch Robison, “Structured Parallel Programming: Patterns for Efficient Computation”, 2012",
+        "Jason Sanders, Edward Kandrot, “CUDA by Example: An Introduction to General-Purpose GPU Programming”, 2011"
+      ],
+      "extra": null
+    }
+  ]
+}

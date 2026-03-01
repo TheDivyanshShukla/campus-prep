@@ -1,0 +1,549 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Discrete Structure",
+      "subject_code": "IT302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Set Theory, Relation, Function, Theorem Proving Techniques",
+          "topics": [
+            "Definition of sets, countable and uncountable sets, Venn diagrams, proofs of general identities on sets",
+            "Definition of relations, types of relation, composition of relations, pictorial representation, equivalence relation, partial ordering relation, job scheduling problem",
+            "Definition of functions, types of functions, one‑to‑one, into and onto functions, inverse function, composition of functions, recursively defined functions, pigeonhole principle",
+            "Theorem‑proving techniques: mathematical induction and proof by contradiction"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Algebraic Structures",
+          "topics": [
+            "Definition, properties and types: semigroups, monoid, groups, abelian groups, subgroup, cyclic groups, normal subgroup, homomorphism and isomorphism of groups; examples and standard results",
+            "Rings and fields: definition and standard results"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Propositional Logic",
+          "topics": [
+            "Proposition, first‑order logic, basic logical operations, truth tables, tautologies, contradictions, algebra of propositions, logical implications, logical equivalence, predicates, normal forms, universal and existential quantifiers",
+            "Introduction to finite‑state machines: FSMs as models of physical‑system equivalence machines and as language recognizers"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Graph Theory",
+          "topics": [
+            "Introduction and basic terminology of graphs, planar graphs, multigraphs and weighted graphs, isomorphic graphs",
+            "Paths, cycles and connectivity, shortest path in weighted graphs",
+            "Eulerian paths and circuits, Hamiltonian paths and circuits",
+            "Graph colouring, chromatic number, isomorphism and homomorphism of graphs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Posets, Hasse Diagram and Lattices",
+          "topics": [
+            "Ordered sets, Hasse diagrams of partially ordered sets, isomorphic ordered sets, well‑ordered sets, properties of lattices, bounded and complemented lattices",
+            "Combinatorics: introduction, permutations and combinations, binomial theorem",
+            "Recurrence relations and generating functions: introduction to recurrence relations, linear recurrence relations with constant coefficients, homogeneous solutions, particular solutions, total solutions, generating functions, solving by the method of generating functions"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "C.L. Liu, \"Elements of Discrete Mathematics\", TMH.",
+        "Lipschutz, \"Discrete Mathematics (Schaum)\", TMH.",
+        "U.S. Gupta, \"Discrete Mathematical Structures\", Pearson.",
+        "S. Santha, \"Discrete Mathematics with Combinatorics and Graph Theory\", Cengage Learning.",
+        "Dr. Sukhendu Dey, \"Graph Theory With Applications\", Shroff Publishers."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Structure",
+      "subject_code": "IT303",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Data and data types",
+            "Data objects",
+            "Primitive and non‑primitive data structures",
+            "Linear and non‑linear data structures",
+            "Traversing operations on data structures",
+            "Searching operations on data structures",
+            "Insertion operations on data structures",
+            "Deletion operations on data structures",
+            "Complexity analysis (worst case, best case, average case)",
+            "Time‑space trade‑off",
+            "Algorithm efficiency",
+            "Asymptotic notations (big‑O, \\Omega, \\Theta)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Arrays & Structure",
+          "topics": [
+            "Declaration of arrays",
+            "Insertion, deletion and merging of arrays",
+            "One‑dimensional and two‑dimensional arrays",
+            "Row‑major and column‑major representation",
+            "Address calculation in arrays",
+            "Storing values in arrays",
+            "Polynomial evaluation using arrays",
+            "Introduction to searching and sorting",
+            "Sequential search",
+            "Binary search",
+            "Fibonacci search",
+            "Indexed sequential search",
+            "Hashed search",
+            "Bubble sort",
+            "Heap sort",
+            "Insertion sort",
+            "Selection sort",
+            "Quick sort",
+            "Shell sort",
+            "Bucket sort",
+            "Radix sort",
+            "Merge sort"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Stacks & Queues",
+          "topics": [
+            "Basic concepts of stacks and queues",
+            "Array representation of stacks",
+            "Stack operations: push, pop, create, getTop, empty",
+            "Linked representation of stacks",
+            "Multiple stacks",
+            "Applications of stacks: infix, prefix, postfix conversion and arithmetic expression evaluation",
+            "Linked representation of queues",
+            "Queue operations: insertion, deletion",
+            "Types of queues: circular, dequeue, priority queue",
+            "Applications of queues: job scheduling, Josephus problem"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Linked List",
+          "topics": [
+            "Basic terminology of linked lists",
+            "Memory allocation and deallocation for linked lists",
+            "Variants: head pointer, head node",
+            "Linear and circular linked lists",
+            "Doubly linked list creation, deletion, insertion, traversal",
+            "Singly circular linked list",
+            "Circular linked list with header node",
+            "Doubly circular linked list",
+            "Applications: polynomial representation, garbage collection"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Trees and Graphs",
+          "topics": [
+            "General tree terminology and representation",
+            "Types of trees",
+            "Binary tree realization and properties",
+            "Binary tree traversals: inorder, preorder, postorder",
+            "Applications of trees",
+            "Graph basic terminology and representations",
+            "Graph search and traversal algorithms"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program to search an element in the array using Linear and Binary Search.",
+        "Write a program to perform matrix operations: addition, subtraction, multiplication, transpose.",
+        "Write a program to perform string operations: addition, copying, reverse, length of string.",
+        "Implement sorting methods (Quick sort, Selection sort, Insertion sort, Merge sort) to arrange a list of integers in ascending order.",
+        "Write a program that uses stack operations to convert a given infix expression into its postfix equivalent.",
+        "Write a program to merge two sorted arrays into one sorted array.",
+        "Write a program to implement stack using array and linked list.",
+        "Write a program to implement queue and circular queue using array.",
+        "Write a program to insert an element at the beginning and end of a singly linked list.",
+        "Write a program to insert an element at any position in singly and doubly linked list.",
+        "Insert and delete a node at any position in doubly linked list.",
+        "Write a program for the Tower of Hanoi problem.",
+        "Write a program that uses functions to create a binary search tree of integers and traverse it non‑recursively in‑order."
+      ],
+      "reference_books": [
+        "Varsha H. Patil – “Data Structure Using C++”, Oxford.",
+        "Rajesh K. Shukla – “Data Structures Using C & C++”, Wiley India.",
+        "Reema Thareja – “Data Structure Using C”, Oxford.",
+        "D. S. Malik – “Data Structure Using C++”, Second Edition, Cengage.",
+        "Kushwaha and Mishra – “Data Structure: A programming Approach with C”, PHI Learning.",
+        "A. K. Sharma – “Data Structure Using C”, Pearson.",
+        "Ellis Horowitz, Sartaj Sahni – “Fundamentals of Data Structures”, Computer Science Press"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Object Oriented Programming & Methodology",
+      "subject_code": "IT304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Object oriented programming",
+            "Introduction",
+            "Application",
+            "Characteristics",
+            "Difference between object oriented and procedure programming",
+            "Comparison of C and C++",
+            "Cout, Cin",
+            "Data type",
+            "Type conversion",
+            "Control statements",
+            "Loops",
+            "Arrays and string arrays fundamentals",
+            "Functions",
+            "Returning values from functions",
+            "Reference arguments",
+            "Overloaded function",
+            "Inline function",
+            "Default arguments",
+            "Returning by reference"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Object and Classes",
+          "topics": [
+            "Implementation of class and object in C++",
+            "Access modifiers",
+            "Object as data type",
+            "Constructor",
+            "Destructor",
+            "Object as function arguments",
+            "Default copy constructor",
+            "Parameterized constructor",
+            "Returning object from function",
+            "Structures and classes",
+            "Classes, objects and memory",
+            "Static class data",
+            "Arrays of objects",
+            "Arrays as class member data",
+            "Standard C++ string class",
+            "Run‑time and compile‑time polymorphism"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Operator Overloading and Inheritance",
+          "topics": [
+            "Overloading unary operators",
+            "Overloading binary operators",
+            "Data conversion",
+            "Pitfalls of operator overloading",
+            "Concept of inheritance",
+            "Derived class and base class",
+            "Access modifiers in inheritance",
+            "Types of inheritance",
+            "Derived class constructors",
+            "Member functions in derived classes",
+            "Public and private inheritance"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Pointer and Virtual Function",
+          "topics": [
+            "Addresses and pointers",
+            "Address‑of operator and pointers to arrays",
+            "Pointer and function pointer",
+            "Memory management: new and delete",
+            "Pointers to objects",
+            "Debugging pointers",
+            "Virtual functions",
+            "Friend function",
+            "Static function",
+            "Friend class",
+            "Assignment and copy initialization",
+            "this pointer",
+            "Dynamic type information"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Streams and Files",
+          "topics": [
+            "Stream classes",
+            "Stream errors",
+            "Disk file I/O with streams",
+            "File pointers",
+            "Error handling in file I/O with member functions",
+            "Overloading extraction and insertion operators",
+            "Memory as a stream object",
+            "Command‑line arguments",
+            "Printer output",
+            "Function templates",
+            "Class templates",
+            "Exceptions",
+            "Containers",
+            "Exception handling"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program to find out the largest number using function.",
+        "Write a program to find the area of circle, rectangle and triangle using function overloading.",
+        "Write a program to implement complex numbers using operator overloading and type conversion.",
+        "Write a program using class and object to print bio‑data of the students.",
+        "Write a program which defines a class with constructor and destructor which will count number of objects created and destroyed.",
+        "Write a program to implement single and multiple inheritances taking student as the sample base class.",
+        "Write a program to add two private data members using friend function.",
+        "Write a program using dynamic memory allocation to perform 2×2 matrix addition and subtraction.",
+        "Write a program to create a stack using virtual function.",
+        "Write a program that stores five student records in a file.",
+        "Write a program to get IP address of the system.",
+        "Write a program to shutdown the system on Windows operating system."
+      ],
+      "reference_books": [
+        "E. Balaguruswami, \"Object Oriented Programming in C++\", TMH.",
+        "Robert Lafore, \"Object Oriented Programming in C++\", Pearson.",
+        "M.T. Somashekare, D.S. Guru, \"Object‑Oriented Programming with C++\", PHI.",
+        "Herbert Schildt, \"The Complete Reference C++\", Tata McGraw‑Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Circuits and Systems",
+      "subject_code": "IT305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Number systems and logic gates",
+          "topics": [
+            "Decimal, Binary, Octal, Hexadecimal number systems and radix conversion",
+            "BCD, Excess‑3, Gray, ASCII codes",
+            "Boolean algebra theorems and properties",
+            "Boolean functions",
+            "Canonical and standard forms",
+            "De Morgan's theorem",
+            "Digital logic gates",
+            "Karnaugh maps"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Combinational circuits",
+          "topics": [
+            "Introduction to combinational circuits",
+            "Multilevel NAND implementation",
+            "Multilevel NOR implementation",
+            "Design of binary adders",
+            "Design of binary subtractors",
+            "Decoder circuits",
+            "Encoder circuits",
+            "Multiplexer circuits",
+            "Demultiplexer circuits"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sequential circuits",
+          "topics": [
+            "Introduction to sequential circuits",
+            "Flip‑flops: RS, D, T, JK, Master/Slave JK flip‑flops",
+            "Truth tables of flip‑flops",
+            "Excitation tables and characteristic equations",
+            "Clocked and edge‑triggered flip‑flops",
+            "Registers: definition, serial registers, parallel registers, shift left/right registers",
+            "Johnson counter",
+            "Asynchronous counters",
+            "Synchronous counters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Digital logic families",
+          "topics": [
+            "Bipolar and unipolar logic families",
+            "Digital IC specifications",
+            "RTL (Resistor‑Transistor Logic)",
+            "DTL (Diode‑Transistor Logic)",
+            "TTL (Transistor‑Transistor Logic) types",
+            "ECL (Emitter‑Coupled Logic)",
+            "IIL (Integrated Injection Logic)",
+            "PMOS logic",
+            "NMOS logic",
+            "CMOS logic"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Clocks and timing circuits",
+          "topics": [
+            "Bistable multivibrator",
+            "Monostable multivibrator",
+            "Astable multivibrator",
+            "Schmitt trigger circuit",
+            "Introduction to analog‑to‑digital converters (ADC)",
+            "Introduction to digital‑to‑analog converters (DAC)",
+            "Display devices: 7‑segment LED display",
+            "Display devices: 16‑segment LED display",
+            "LCD display"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study and verify the operation of AND, OR, NOT, NOR and NAND logic gates.",
+        "Design all basic logic gates using NOR universal gate.",
+        "Design all basic logic gates using NAND universal gate.",
+        "Verification of De Morgan’s theorem.",
+        "Construction and verification of half adder and full adder circuits.",
+        "Construction and verification of half subtractor and full subtractor circuits.",
+        "Design of Binary to Grey & Grey to Binary code converters.",
+        "Design of BCD to excess‑3 code converter.",
+        "Design and verification of Multiplexer circuit.",
+        "Design and verification of De‑multiplexer circuit."
+      ],
+      "reference_books": [
+        "M. Morris Mono, “Digital logic design”, Pearson Education Pvt. Ltd.",
+        "A Anand Kumar, “Fundamentals of digital circuits“, PHI Learning Pvt Ltd.",
+        "A K Maini, “Digital Electronics Principles and Integrated Circuits, Wiley India Pvt Ltd.",
+        "R P Jain, “Modern Digital Electronics”, Tata McGraw‑Hill publishing company Ltd.",
+        "D P Kothari and J S Dhillon, \"Digital Circuits and Design\", Pearson Education Pvt. Ltd."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Java Programming Lab",
+      "subject_code": "IT306",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Java, Installation, First Simple Program, Compilation process, Java Keywords, Identifiers, Literals, Comments, Data Types, Variables, Dynamic initialization, type conversion and casting, Operators, Control Statements.",
+          "topics": [
+            "Overview of Java",
+            "Installation",
+            "First Simple Program",
+            "Compilation process",
+            "Java Keywords",
+            "Identifiers",
+            "Literals",
+            "Comments",
+            "Data Types",
+            "Variables",
+            "Dynamic initialization",
+            "type conversion and casting",
+            "Operators",
+            "Control Statements"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Declaring Objects, Introducing Methods, Constructors, this Keyword, Garbage Collection, finalize Method, Overloading Methods, Overloading Constructors, Using Objects as Parameters, Inheritance, Creating a Multilevel Hierarchy, Packages and Interfaces, Exception Handling, Multithreaded",
+          "topics": [
+            "Declaring Objects",
+            "Introducing Methods",
+            "Constructors",
+            "this Keyword",
+            "Garbage Collection",
+            "finalize Method",
+            "Overloading Methods",
+            "Overloading Constructors",
+            "Using Objects as Parameters",
+            "Inheritance",
+            "Creating a Multilevel Hierarchy",
+            "Packages and Interfaces",
+            "Exception Handling",
+            "Multithreaded"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "The Applet Class: Applet Basics, The Applet Class, Applet Architecture, Applet Initialization and Termination, Simple Applet Display Methods, Simple Banner Applet, Using the Status Window, The HTML APPLET Tag, Passing Parameters to Applets, Improving the Banner Applet.",
+          "topics": [
+            "Applet Basics",
+            "The Applet Class",
+            "Applet Architecture",
+            "Applet Initialization and Termination",
+            "Simple Applet Display Methods",
+            "Simple Banner Applet",
+            "Using the Status Window",
+            "The HTML APPLET Tag",
+            "Passing Parameters to Applets",
+            "Improving the Banner Applet"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introducing the AWT: Working with Windows, Graphics, and Text, AWT Classes, Window Fundamentals, Component, Container, Panel, Frame, Handling Events in a Frame Window, AWT Controls, Layout Managers, Menus, Adding and Removing Controls, Grid Layout, Border Layout, introduction to swing and servlet.",
+          "topics": [
+            "Working with Windows",
+            "Graphics",
+            "Text",
+            "AWT Classes",
+            "Window Fundamentals",
+            "Component",
+            "Container",
+            "Panel",
+            "Frame",
+            "Handling Events in a Frame Window",
+            "AWT Controls",
+            "Layout Managers",
+            "Menus",
+            "Adding and Removing Controls",
+            "Grid Layout",
+            "Border Layout",
+            "introduction to swing and servlet"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Event Handling, Two Event Handling Mechanisms, The Delegation Event Model, Events, Event Sources, Event Listeners, Event Classes, The Mouse Event Class and others, JDBC: JDBCODBC bridge, the connectivity model, the driver manager, navigating the result set object contents, the JDBC exceptional classes, connecting to remote database.",
+          "topics": [
+            "Event Handling",
+            "Two Event Handling Mechanisms",
+            "The Delegation Event Model",
+            "Events",
+            "Event Sources",
+            "Event Listeners",
+            "Event Classes",
+            "The Mouse Event Class and others",
+            "JDBC: JDBCODBC bridge",
+            "the connectivity model",
+            "the driver manager",
+            "navigating the result set object contents",
+            "the JDBC exceptional classes",
+            "connecting to remote database"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program that accepts two numbers from the user and print their sum.",
+        "Write a program to calculate addition of two number using prototyping of methods.",
+        "Program to demonstrate function overloading for calculation of average.",
+        "Program to demonstrating overloaded constructor for calculating box volume.",
+        "Program to show the detail of students using concept of inheritance.",
+        "Program to demonstrate package concept.",
+        "Program to demonstrate implementation of an interface which contains two methods declaration square and cube.",
+        "Program to demonstrate exception handling in case of division by zero error.",
+        "Program to demonstrate multithreading.",
+        "Program to demonstrate JDBC concept using create a GUI based application for student information.",
+        "Program to display “Hello World” in web browser using applet.",
+        "Program to add user controls to applets.",
+        "Write a program to create an application using concept of swing.",
+        "Program to demonstrate student registration functionality using servlets with session management."
+      ],
+      "reference_books": [
+        "E. Balagurusamy, “Programming with java A Primer”, McGrawHill.",
+        "Sharanam Shah, “ Core Java 8 for Beginners”, Shroff Publisher.",
+        "Naughton & Schildt, “The Complete Reference Java 2”, Tata McGraw Hill.",
+        "Horstmann & Cornell, “Core Java 2” (Vol I & II ), Pearson."
+      ],
+      "extra": null
+    }
+  ]
+}

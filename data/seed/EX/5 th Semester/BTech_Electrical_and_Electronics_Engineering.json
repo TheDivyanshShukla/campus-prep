@@ -1,0 +1,876 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Electrical Machine-II",
+      "subject_code": "EX501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "D.C. Machine-I",
+          "topics": [
+            "Basic construction of DC machines",
+            "Types of DC machines and method of excitation",
+            "Lap and wave windings",
+            "EMF equation",
+            "Armature reaction and methods of limiting armature reaction",
+            "Commutation process and methods for improving commutation",
+            "Basic performance of DC generators and their performance characteristics",
+            "Metadyne and Amplidyne",
+            "Permanent magnet DC motors",
+            "Brushless dc motors"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "D.C. Machine-II",
+          "topics": [
+            "Basic operation of DC motors",
+            "Torque equation",
+            "Operating characteristics of DC motors",
+            "Starting of DC motors – 2 point, 3 point and 4 point starters",
+            "Speed control of DC motors",
+            "Losses and efficiency of DC machines",
+            "Testing of DC machines, direct testing, Swinburne’s test and Hopkinson’s test",
+            "Application of DC machines"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Synchronous Machine-I",
+          "topics": [
+            "Construction",
+            "Types of prime movers",
+            "Excitation system including brushless excitation",
+            "Polyphase distributive winding, integral slot and fractional slot windings",
+            "EMF equation",
+            "Generation of harmonics and their elimination",
+            "Armature reaction",
+            "Synchronous reactance and impedance",
+            "Equivalent circuit of alternator",
+            "Relation between generated voltage and terminal voltage",
+            "Voltage regulation of alternators using synchronous impedance, mmf, zpf and new A.S.A method"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Synchronous Machine-II",
+          "topics": [
+            "Salient pole machines",
+            "Two reaction theory equivalent circuit model and phasor diagram",
+            "Determination of Xd and Xq by slip test",
+            "SCR and its significance",
+            "Regulation of salient pole alternator",
+            "Power angle equation and characteristics",
+            "Synchronizing of alternator with infinite busbar",
+            "Parallel operation and load sharing",
+            "Synchronizing current, synchronizing power and synchronising torque coefficient",
+            "Synchro scopes and phase sequence indicator",
+            "Effect of varying excitation and mechanical torque"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Synchronous machine-III",
+          "topics": [
+            "Synchronous motor operation, starting and stopping of synchronous motor",
+            "Pull in torque",
+            "Motor under load power and torque",
+            "Reluctance torque",
+            "Effect of excitation",
+            "Effect of armature reaction",
+            "Power factor adjustment, V curves, inverted V curves",
+            "Synchronous motors as power factor correcting device",
+            "Super synchronous and sub synchronous motors",
+            "Hunting and damper winding efficiency and losses",
+            "Analysis of short circuit oscillogram",
+            "Determination of various transient, sub transient and steady reactances and time constants",
+            "Expression of transient and sub transient reactances in terms of self and mutual inductances of various winding",
+            "Short circuit current, equivalent circuit",
+            "Single phase synchronous motors – hysteresis motor, reluctance motor",
+            "Repulsion motor, stepper motor, switched reluctance"
+          ]
+        }
+      ],
+      "experiments": [
+        "To plot magnetisation characteristic of a separately excited DC generator",
+        "To perform load test on DC generators.",
+        "To perform load test on DC series and shunt motor",
+        "To perform Swinburn’s test on a DC machine and find out its efficiency under full load condition.",
+        "To conduct Hopkinson’s test on a pair of DC shunt machine.",
+        "To perform OCC and SCC test on an alternator and determine its regulation.",
+        "To determine regulation of alternator using mmf and zpf methods.",
+        "To synchronise alternator with infinite bus bar.",
+        "To plot V and inverted V curves for a synchronous motor",
+        "To find Xd and Xq of salient pole synchronous machine by slip test.",
+        "To Determine negative sequence and zero sequence reactance of an alternator.",
+        "To determine subtransient direct axis and quadrature axis synchronous reactances of salient pole machine."
+      ],
+      "reference_books": [
+        "M.G. Say, Performance & design of AC machines, CBS publishers & distributors, Delhi, 3rd edition",
+        "A.E. Clayton & N.N. Nancock, The Performance & design of DC machines CBS publications & distributors, Delhi, 3rd edition",
+        "P.S. Bhimbra, Electrical Machinery, Khanna Pub.",
+        "P.S. Bhimbra, Generalized theory of Electrical Machines, Khanna publishers, Delhi,",
+        "Ashfaq Husain, Electric Machines, Dhanpat Rai, New Delhi",
+        "I.J. Nagrath& D.P. Kothari, Electric Machines, Tata McGraw Hill, New Delhi,",
+        "Syed A. Nasar, Electric Machines & Power Systems, Volume I, Tata McGraw Hill, New Delhi",
+        "M.G. Say, Performance & design of AC machines, CBS publishers & distributors, Delhi, 3rd edition",
+        "M.G. Say, Performance & design of AC machines, CBS publishers & distributors, Delhi, 3rd edition",
+        "A.E. Clayton & N.N. Nancock, The Performance & design of DC machines CBS publications & distributors, Delhi, 3rd edition",
+        "P.S. Bhimbra, Electrical Machinery, Khanna Pub.",
+        "P.S. Bhimbra, Generalized theory of Electrical Machines, Khanna publishers, Delhi,",
+        "Ashfaq Husain, Electric Machines, Dhanpat Rai, New Delhi",
+        "I.J. Nagrath& D.P. Kothari, Electric Machines, Tata McGraw Hill, New Delhi,",
+        "Syed A. Nasar, Electric Machines & Power Systems, Volume I, Tata McGraw Hill, New Delhi",
+        "A.E. Fitzerald, C. Kingsley & S.D. Umans, Electric Machinery Tata McGraw Hill, New Delhi,5 [th] edition"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Power Electronics",
+      "subject_code": "EX502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Advantages and application of power electronic devices; Power diode, power transistor, GTO, Triac, Diac, Power MOSFET, IGBT, LASCR, Fast recovery diode, Schottky diode, MCTs; SCR operation, characteristics and commutation techniques",
+          "topics": [
+            "Advantages and applications of power electronic devices",
+            "Characteristics, symbols and applications of power diodes",
+            "Characteristics, symbols and applications of power transistors",
+            "Characteristics, symbols and applications of GTOs",
+            "Characteristics, symbols and applications of Triacs",
+            "Characteristics, symbols and applications of Diacs",
+            "Characteristics, symbols and applications of Power MOSFETs",
+            "Characteristics, symbols and applications of IGBTs",
+            "Characteristics, symbols and applications of LASCRs",
+            "Characteristics, symbols and applications of fast‑recovery diodes",
+            "Characteristics, symbols and applications of Schottky diodes",
+            "Characteristics, symbols and applications of MCTs",
+            "Principle of operation of SCRs",
+            "Two‑transistor analogy for SCRs",
+            "Construction features of SCRs",
+            "Static characteristics of SCRs",
+            "Turn‑on and turn‑off conditions of SCRs",
+            "Gate characteristics of SCRs",
+            "Methods for turning on SCRs",
+            "Turn‑off methods for SCRs",
+            "Commutation techniques (Class A, B, C, D, E, F)",
+            "Firing of SCRs in three‑phase circuits",
+            "Resistance firing circuit and RC firing circuit",
+            "UJT firing circuit and ramp triggering",
+            "Design of snubber circuits and gate protection",
+            "SCR rating, over‑voltage and over‑current protection",
+            "Series and parallel operation of SCRs, string efficiency and associated problems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Operation and analysis of rectifier circuits",
+          "topics": [
+            "Single‑phase half‑wave uncontrolled rectifier with resistive load",
+            "Single‑phase full‑wave uncontrolled rectifier with resistive load",
+            "Three‑phase uncontrolled rectifier with resistive load",
+            "Single‑phase half‑wave controlled rectifier with resistive load",
+            "Single‑phase full‑wave controlled rectifier with resistive load",
+            "Three‑phase controlled rectifier with resistive load",
+            "Operation with resistive‑inductive (R‑L‑E) loads – continuous and discontinuous conduction",
+            "Effect of freewheeling diode on rectifier performance",
+            "Influence of source inductance on rectifier characteristics",
+            "Estimation of average load voltage and load current for each configuration",
+            "Active and reactive power input calculations for each rectifier type",
+            "Comparison between midpoint and bridge rectifier circuits"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Inverter topologies and control",
+          "topics": [
+            "Series and parallel inverter configurations",
+            "Voltage‑source and current‑source inverter principles",
+            "Single‑phase bridge inverter",
+            "Three‑phase bridge inverter",
+            "Self‑commutated inverters",
+            "McMurray and MC‑Murray‑Beddford inverter topologies",
+            "Voltage control techniques for single‑phase bridge inverter",
+            "Voltage control techniques for three‑phase bridge inverter",
+            "Harmonic generation in inverters",
+            "Harmonic reduction techniques"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Chopper circuits and control strategies",
+          "topics": [
+            "Principle of operation of choppers",
+            "Various control strategies for choppers",
+            "Step‑up (boost) chopper configuration",
+            "Step‑down (buck) chopper configuration",
+            "Step‑up/step‑down (buck‑boost) chopper configuration",
+            "Chopper types A, B, C, D, and E",
+            "Steady‑state analysis of chopper circuits",
+            "Current commutation in chopper circuits",
+            "Voltage commutation in chopper circuits",
+            "Jones & Morgen’s chopper analysis"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Cycloconverters, AC voltage controllers and SMVRs",
+          "topics": [
+            "Single‑phase midpoint and bridge cycloconverter configurations",
+            "Three‑phase cycloconverter configuration and operation principles",
+            "AC voltage controllers using SCRs and TRIACs for single‑phase full‑wave control with R and RL loads",
+            "Estimation of RMS load voltage and RMS load current for AC voltage controllers",
+            "Input power factor calculation for AC voltage controllers",
+            "Three‑phase AC voltage controller (conceptual analysis)",
+            "Dual converter operation",
+            "Switched‑mode voltage regulators: buck, boost, buck‑boost, and C‑k regulators"
+          ]
+        }
+      ],
+      "experiments": [
+        "VI Characteristics Of SCR",
+        "VI Characteristics Of DIAC",
+        "VI Characteristics Of BJT",
+        "Characteristics Of TRIAC",
+        "VI Characteristics Of MOSFET",
+        "Transfer Characteristics Of MOSFET",
+        "Output Characteristics Of IGBT",
+        "Transfer Characteristics Of IGBT",
+        "Single Phase SCR Half Controlled Converter With R Load",
+        "1φ Scr Fully Controlled Converter With R-Load",
+        "Study Of 3φ SCR Half Controlled Converter",
+        "Study Of 3φ SCR Fully Controlled Converter",
+        "Study Of Classes Of Commutation A,B,C,D,E,F"
+      ],
+      "reference_books": [
+        "M.H. Rashid, Power Electronics Circuits, Devices and Applications, Pearson Education, Singapore, 1993.",
+        "M Ramsmoorthy, An Introduction to transistor and their application, Affiliated East West Press.",
+        "P.C. Sen, Power Electonics, TMH.",
+        "M.D. Singh, K.B. Khanchandani, Power Electronics, TMH, Delhi, 2001.",
+        "Chakravarti A., Fundamental of Power Electronics and Drives, Dhanpat Ray & Co.",
+        "Dr. P.S. Bhimbhra, Power Electonics, Khanna Pub.",
+        "Vedam Subramanyam, Power Electronics New Age International Revised II ed. 2006."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electrical Power Generation & Economy",
+      "subject_code": "EX503(A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Hydro‑Electric Power Plants",
+          "topics": [
+            "Energy sources and their availability",
+            "Principal types of power plants, their special features, applications, present status and future trends",
+            "Hydro‑electric power plants: essentials, classifications, hydro‑electric survey, rainfall‑run‑off, hydrograph, flow‑duration curve, mass curve, storage capacity, site selection, plant layout, components",
+            "Types of turbines, governor and speed regulation, pumped storage, small‑scale hydro plants (mini and micro)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Thermal Power Plant",
+          "topics": [
+            "General developing trends and essentials of thermal power plants",
+            "Plant layout and major components",
+            "Coal handling: storage, preparation, handling, feeding and combustion",
+            "Cooling towers, ash handling, water‑treatment plant",
+            "High‑pressure boilers and steam turbines"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Non‑Conventional Power Generation",
+          "topics": [
+            "Geothermal power plants",
+            "Electricity from biomass",
+            "Direct energy conversion systems: solar and wind",
+            "Thermo‑electric conversion systems",
+            "Fuel cells",
+            "Magneto‑hydro‑dynamic systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Gas Turbine and Nuclear Power Plants",
+          "topics": [
+            "Gas turbine power plants: field of use, components, plant layout, comparison with steam power plants, combined steam‑gas cycles",
+            "Nuclear power plants: nuclear fuels, nuclear energy, main components, reactor types and applications, radiation shielding, radioactive waste disposal and safety aspects"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Power Plant Economics",
+          "topics": [
+            "Cost of electrical energy",
+            "Selection of generation type and equipment",
+            "Performance and operating characteristics of power plants",
+            "Economic scheduling principles and load curves",
+            "Effect of load on power‑plant design, load forecasting",
+            "Electric tariffs and peak‑load pricing"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Deshpande, M.V., Power Plant Engineering, Tata McGraw Hill (2004).",
+        "Gupta, B.R., Generation of Electrical Energy, S. Chand (1998).",
+        "Deshpande, M.V., Electrical Power System Design, McGraw Hill (2004).",
+        "Wood, A.J. and Wollenberg, B.F., Power Generation and Control, John Wiley (2004)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Wind & Solar Energy",
+      "subject_code": "EX503(B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Solar Energy - Basic Concepts",
+          "topics": [
+            "Introduction",
+            "The Sun as source of energy",
+            "The Earth, Sun, Earth radiation spectrum",
+            "Extra‑terrestrial and terrestrial radiations",
+            "Spectral power distribution of solar radiation",
+            "Depletion of solar radiation",
+            "Measurement of solar radiation",
+            "Solar radiation data",
+            "Solar time",
+            "Solar radiation geometry",
+            "Solar day length",
+            "Extra‑terrestrial radiation on horizontal surface",
+            "Empirical equations for estimating terrestrial solar radiation on horizontal surface",
+            "Solar radiation on inclined plane surface"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Solar Thermal Systems",
+          "topics": [
+            "Introduction",
+            "Solar collectors",
+            "Solar water heater",
+            "Solar passive space heating and cooling systems",
+            "Solar industrial heating systems",
+            "Solar refrigeration and air conditioning systems",
+            "Solar cookers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Solar Photovoltaic Systems",
+          "topics": [
+            "Introduction",
+            "Solar cell fundamentals",
+            "Solar cell characteristics",
+            "Solar cell classification",
+            "Solar cell technologies",
+            "Solar cell, module, and array construction",
+            "Maximizing the solar PV output and load matching",
+            "Maximum Power Point Tracker",
+            "Balance of system components",
+            "Solar PV systems",
+            "Solar PV applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Wind Energy",
+          "topics": [
+            "Introduction",
+            "Basic principles of wind energy conversion",
+            "History of wind energy",
+            "Wind energy scenario – world and India",
+            "The nature of the wind",
+            "The power in the wind",
+            "Forces on the blades",
+            "Wind energy conversion",
+            "Wind data and energy estimation",
+            "Site selection considerations",
+            "Environment and economics of wind energy systems",
+            "Environmental benefits and problems of wind energy",
+            "Economics of wind energy"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Basic Components of a Wind Energy Conversion (WEC) System",
+          "topics": [
+            "Classification of WEC systems",
+            "Advantages and disadvantages of WECS",
+            "Types of wind machines (wind energy collectors)",
+            "Analysis of aerodynamic forces acting on the blade",
+            "Performance of wind machines",
+            "Generating systems",
+            "Energy storage",
+            "Applications of wind energy",
+            "Environmental aspects"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Wind Energy Comes of Age by Paul Gipe, John Wiley & Sons Inc.",
+        "Wind power project & development by Joshua Earnest",
+        "Solar Engineering and Thermal Processes, J. A. Duffie and W.A. Beckman, 2nd Edition John Wiley and sons.",
+        "Solar Energy, G. N. Tiwari, Narosa Publishing House"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Renewable Power Generation",
+      "subject_code": "EX503(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "World Energy Use – Reserves of Energy Resources – Environmental Aspects of Energy Utilisation – Renewable Energy Scenario in Tamil nadu, India and around the World – Potentials – Achievements / Applications – Economics of renewable energy systems",
+          "topics": [
+            "World Energy Use",
+            "Reserves of Energy Resources",
+            "Environmental Aspects of Energy Utilisation",
+            "Renewable Energy Scenario in Tamil Nadu, India and around the World",
+            "Potentials",
+            "Achievements / Applications",
+            "Economics of renewable energy systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Solar Radiation – Measurements of Solar Radiation – Flat Plate and Concentrating Collectors – Solar direct Thermal Applications – Solar thermal Power Generation – Fundamentals of Solar Photo Voltaic Conversion – Solar Cells – Solar PV Power Generation – Solar PV Applications",
+          "topics": [
+            "Solar Radiation",
+            "Measurements of Solar Radiation",
+            "Flat Plate and Concentrating Collectors",
+            "Solar direct Thermal Applications",
+            "Solar thermal Power Generation",
+            "Fundamentals of Solar Photo Voltaic Conversion",
+            "Solar Cells",
+            "Solar PV Power Generation",
+            "Solar PV Applications"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Wind Data and Energy Estimation – Types of Wind Energy Systems – Performance – Site Selection – Details of Wind Turbine Generator – Safety and Environmental Aspects",
+          "topics": [
+            "Wind Data and Energy Estimation",
+            "Types of Wind Energy Systems",
+            "Performance",
+            "Site Selection",
+            "Details of Wind Turbine Generator",
+            "Safety and Environmental Aspects"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Biomass direct combustion – Biomass gasifiers – Biogas plants – Digesters – Ethanol production – Bio diesel – Cogeneration – Biomass Applications",
+          "topics": [
+            "Biomass direct combustion",
+            "Biomass gasifiers",
+            "Biogas plants",
+            "Digesters",
+            "Ethanol production",
+            "Bio diesel",
+            "Cogeneration",
+            "Biomass Applications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Tidal energy – Wave Energy – Open and Closed OTEC Cycles – Small Hydro-Geothermal Energy – Hydrogen and Storage – Fuel Cell Systems – Hybrid Systems",
+          "topics": [
+            "Tidal energy",
+            "Wave Energy",
+            "Open and Closed OTEC Cycles",
+            "Small Hydro-Geothermal Energy",
+            "Hydrogen and Storage",
+            "Fuel Cell Systems",
+            "Hybrid Systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rai. G.D., “Non Conventional Energy Sources”, Khanna Publishers, New Delhi, 2011.",
+        "Twidell, J.W. & Weir, A., “Renewable Energy Sources”, EFN Spon Ltd., UK, 2006.",
+        "Gupta, B.R., Generation of Electrical Energy, S. Chand (1998).",
+        "Solar Energy, G. N. Tiwari, Narosa Publishing House"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Industrial Electronics",
+      "subject_code": "EX504(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Power Supply and Rectifiers",
+          "topics": [
+            "Power supply basics",
+            "Half‑wave and full‑wave rectifiers",
+            "Performance parameters of power supplies",
+            "Filters: capacitor, inductor, LC, and π configurations",
+            "Bleeder resistor",
+            "Voltage multipliers",
+            "Regulated power supplies: series and shunt voltage regulators, fixed and adjustable voltage regulators, current regulator",
+            "Switched regulator (SMPS)",
+            "Comparison of linear and switched power supplies",
+            "Switch‑mode converters: flyback, buck, boost, buck‑boost, Cuk converters"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Silicon Controlled Rectifiers (SCR) and Line‑Commutated Converters",
+          "topics": [
+            "Constructional features of SCRs",
+            "Principle of operation of SCRs",
+            "SCR terminology",
+            "Turn‑on methods for SCRs",
+            "Turn‑off methods for SCRs",
+            "Triggering methods of SCR circuits",
+            "Types of commutation in SCRs",
+            "Comparison of thyristors and transistors",
+            "Thermal characteristics of SCRs",
+            "Causes of damage to SCRs",
+            "SCR over‑voltage protection circuits",
+            "Line‑commutated converters: half‑wave rectifier with inductive and resistive load, single‑phase and three‑phase full‑wave rectifiers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "SCR Family Devices and Power Semiconductor Devices",
+          "topics": [
+            "Triacs, Diacs and Quadracs (members of the SCR family)",
+            "Recovery characteristics of SCR‑family devices",
+            "Fast‑recovery diodes",
+            "Power diodes",
+            "Power transistors",
+            "Power MOSFETs",
+            "Insulated‑gate bipolar transistors (IGBTs)",
+            "Loss mechanisms in semiconductor devices",
+            "Comparison between power MOSFETs, power transistors and power IGBTs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Operational Amplifier Applications",
+          "topics": [
+            "Basics of operational amplifiers (OP‑AMP)",
+            "Relaxation oscillator using OP‑AMP",
+            "Window comparator circuits",
+            "OP‑AMP as rectangular‑to‑triangular pulse converter and vice versa",
+            "Wien‑bridge oscillator",
+            "Function generator circuits",
+            "Frequency response of OP‑AMPs",
+            "Simplified OP‑AMP circuit diagrams",
+            "Power supply designs using OP‑AMPs",
+            "Filters implemented with OP‑AMPs: low‑pass and high‑pass configurations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Programmable Logic Controllers (PLC)",
+          "topics": [
+            "Functions and applications of PLCs",
+            "Advantages and disadvantages of PLCs over conventional relay controllers",
+            "Comparison of PLCs with process‑control computer systems",
+            "Factors to consider when selecting a PLC",
+            "Functional block diagram of a PLC",
+            "Microprocessor architecture in PLCs",
+            "Memory organization in PLCs",
+            "Input and output modules (interface cards)",
+            "Sequence of operations in a PLC",
+            "PLC status monitoring",
+            "Event‑driven device handling",
+            "Ladder logic programming language",
+            "Simple process‑control applications of PLCs",
+            "Programming examples for PLCs"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Bishwanath Paul: Industrial Electronics and control, PHI Learning.",
+        "Rashid: Power Electronics- Circuits, devices and applications, Pearson Education.",
+        "Singh and Khanchandani: Power Electronics, TMH.",
+        "Bhimbra: Power Electronics, Khanna Publishers.",
+        "Moorthi: Power Electronics, Oxford University Press.",
+        "Webb: Programmable Logic Controllers- Principles and Applications, PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electromagnetic Theory",
+      "subject_code": "EX504(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Coordinate Systems, Vector Calculus and Electrostatic Fields",
+          "topics": [
+            "Cartesian, cylindrical & spherical co-ordinate systems",
+            "Scalar & vector fields",
+            "Gradient, divergence & curl of a vector field",
+            "Divergence theorem & Stokes’s theorem",
+            "Concept of vectors",
+            "Electrostatic Fields – Coulomb’s law",
+            "Electric field intensity due to different charge distributions (line charge, sheet charge)",
+            "Field due to continuous volume – electric potential",
+            "Properties of potential function, potential gradient, equipotential surfaces, line of force",
+            "Gauss law, applications of Gauss law, Gauss law in point form, method of images"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Potential Theory, Capacitors and Continuity",
+          "topics": [
+            "Laplace’s & Poisson’s equations",
+            "Solution of Laplace’s equation",
+            "Electric dipole and dipole moment",
+            "Potential & electric field intensity due to dipole",
+            "Behavior of conductors in an electric field",
+            "Conductor & insulator, electric field inside a dielectric, polarization",
+            "Boundary value conditions for electric field",
+            "Capacitance & capacitances of various types of capacitors",
+            "Energy stored and energy density in static electric field",
+            "Current density, conduction & convection current density",
+            "Ohm’s law in point form, equation of continuity"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Static Magnetic Fields and Forces",
+          "topics": [
+            "Static Magnetic Field, Biot‑Savart’s law",
+            "Magnetic field intensity due to straight current‑carrying filament, circular, square and solenoidal conductors",
+            "Relationship between magnetic flux, flux density & magnetic field intensity",
+            "Ampere’s circuital law and its applications",
+            "Magnetic field intensity due to infinite sheet and other configurations",
+            "Ampere’s circuital law in point form",
+            "Magnetic force; moving charge in a magnetic field",
+            "Lorentz force on straight and long current‑carrying conductors",
+            "Force between two long parallel current‑carrying conductors",
+            "Magnetic dipole & dipole moment, differential current loop as dipole",
+            "Torque on a current‑carrying loop in magnetic field",
+            "Magnetic boundary conditions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Magnetic Potentials, Inductance and Maxwell’s Equations",
+          "topics": [
+            "Scalar magnetic potential and its limitations",
+            "Vector magnetic potential and its properties",
+            "Vector magnetic potential due to different simple configurations",
+            "Self and mutual inductances; determination of self & mutual inductances",
+            "Self inductance of solenoid and toroid coils",
+            "Mutual inductance between a straight long wire & a square loop",
+            "Energy stored in magnetic field & energy density",
+            "Faraday’s law, transformer & motional EMFs",
+            "Displacement current",
+            "Maxwell’s equations as generalization of circuit equations",
+            "Maxwell’s equations in free space",
+            "Maxwell’s equations for harmonically varying fields, static and steady fields",
+            "Maxwell’s equations in differential & integral form"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Electromagnetic Waves and Propagation",
+          "topics": [
+            "Uniform plane wave in time domain in free space",
+            "Sinusoidally time‑varying uniform plane wave in free space",
+            "Wave equation and solution for material medium",
+            "Uniform plane wave in dielectrics and conductors",
+            "Poynting vector theorem; instantaneous, average and complex Poynting vector",
+            "Power loss in a plane conductor; energy storage",
+            "Polarization of waves",
+            "Reflection by conductors and dielectrics – normal & oblique incidence",
+            "Reflection at surface of a conducting medium; surface impedance",
+            "Transmission line analogy"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Mathew N.O Sadiku; Elements of Electromagnetic; Oxford.",
+        "P.V. Gupta; Electromagnetic Fields; Dhanpat Rai.",
+        "N.N. Rao; Element of Engineering Electromagnetic; PHI.",
+        "William H. Hayt; Engineering Electromagnetic; TMH.",
+        "John D. Kraus; Electromagnetic; TMH.",
+        "Jordan Balmian; Electromagnetic wave & Radiating System; PHI.",
+        "David K. Cheng; Fields and Wave Electromagnetic; Addison Wesley.",
+        "S.P. Seth; Electromagnetic Field ;Dhanpat Rai & Sons"
+      ],
+      "extra": "Note: Field plotting of electromagnetic systems on a PC using standard softwares. Application for low and high frequency devices. Suggested softwares, GEMINI(Infolytica), ANSYS, ANSOFT, NISA."
+    },
+    {
+      "subject_name": "Electrical and Electronic Materials",
+      "subject_code": "EX504(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Crystal Structure and Engineering Materials",
+          "topics": [
+            "Crystal structure of materials; crystal systems; unit cells, space lattices and lattice defects",
+            "Classes of engineering materials – metals and alloys, ferrous and non‑ferrous alloys",
+            "Low‑alloy steels, aluminium alloys, copper alloys, stainless steels and cast iron",
+            "Ceramics, organic polymers and composite materials",
+            "Classification of solids from an electrical‑engineering point of view",
+            "Conducting materials – properties of conductors and characteristics of good conductors",
+            "Commonly used conducting materials for overhead lines, underground cables and electrical machines",
+            "Types of conductors and conductor configurations",
+            "Resistor materials, types of resistors and materials for bus‑bars"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Dielectric Materials and Insulators",
+          "topics": [
+            "Dielectric materials – dielectric strength, factors affecting dielectric strength, dielectric loss and dissipation factor",
+            "Permittivity, polarization and charging/discharging of dielectrics",
+            "Conduction mechanisms through dielectrics",
+            "Applications of dielectrics in different types of capacitors and the materials used for them",
+            "Insulating materials – thermal, chemical, mechanical and electrical properties",
+            "Common insulating materials such as ceramic, mica, glass, rubber, resins, wax‑varnishes and classification of insulators",
+            "Transformer oils and their testing procedures",
+            "Piezoelectricity and ferroelectricity"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Energy‑Band Theory and Semiconductor Applications",
+          "topics": [
+            "Energy‑band diagram concepts for conductors, semiconductors and insulators",
+            "Types of semiconductor materials and their working principles",
+            "Temperature‑sensitive semiconductor elements and photoconductive devices",
+            "Photovoltaic cells, varistors, Hall‑effect generators, LCDs, light‑dependent resistors and LEDs",
+            "Piezo‑electric semiconductor materials, semiconductor lasers and their characteristics",
+            "Photo‑conductors, photodiodes, avalanche photodiodes and photo‑transistors"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Magnetic Materials",
+          "topics": [
+            "Classification of magnetic materials – diamagnetism, paramagnetism, ferromagnetism",
+            "Magnetisation curves, hysteresis loops and magnetostriction",
+            "Factors influencing permeability and hysteresis",
+            "Anti‑ferromagnetism and ferromagnetism, magnetic resonance",
+            "$B\\!\\!-$H curves for different magnetic materials, magnetic losses and impurity effects",
+            "Soft and hard magnetic materials, ferrites"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Superconductivity and Advanced Functional Materials",
+          "topics": [
+            "Superconductivity and its applications",
+            "Materials for MHD generators and thermoelectric generators",
+            "Thermionic conductors and physical/electrical properties of SF\\(_6\\)",
+            "Specification of SF\\(_6\\) gas for GIS applications and its advantages",
+            "Nanomaterials, ultralight materials and metallic foams"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A.J. Dekker; Electrical Engineering Materials; PHI.",
+        "William F. Smith, Javad Hashemi, Ravi Prakash; ‘Material Science and Engineering’; McGraw‑Hill.",
+        "James F. Shackelford, Madanapalli K. Muralidhara; ‘Introduction to Materials Science for Engineers’; Pearson.",
+        "Ian P. Jones; ‘Materials Science for Electrical and Electronics Engineers’; Oxford University Press.",
+        "C. S. Indulkar and S. Thruvengadem; Electrical Engineering Materials; S. Chand.",
+        "TTTI Madras; Electrical Engineering Materials; TMH.",
+        "John Allison; Electrical Engineering Materials & Devices; TMH.",
+        "Kasap; Electronic Materials and Devices; TMH.",
+        "V. Raghvan; Material Science & Engineering; PHI.",
+        "S. P. Seth & P. V. Gupta; Electrical Engineering Materials; Dhanpat Rai."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "MATLAB",
+      "subject_code": "EX506",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Simulation Mechanism and Simulation Tools",
+          "topics": [
+            "Starting and Ending MATLAB",
+            "MATLAB Desktop",
+            "Help Browser",
+            "Types of Files",
+            "Command Input Assistance",
+            "Operators and Special Characters",
+            "Variables and Arrays",
+            "Handling Arrays",
+            "Useful Built-in Functions",
+            "Control Structures",
+            "Input/Output Commands",
+            "File Handling"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Plotting",
+          "topics": [
+            "The plot command",
+            "Formatting and labeling a plot",
+            "Multiple plots",
+            "Adding legend",
+            "Sub‑plots",
+            "Plotting complex data",
+            "2‑D and 3‑D plots",
+            "Plotting a function",
+            "Plot editor",
+            "Interactive plotting using the plotting tool"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Programming in MATLAB",
+          "topics": [
+            "MATLAB Editor",
+            "MATLAB programming",
+            "Debugging MATLAB programs",
+            "MATLAB debugger",
+            "Functions and function files",
+            "Differential equation solver",
+            "Symbolic mathematics",
+            "Programming examples"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Basic Electrical and Networks Applications",
+          "topics": [
+            "Analysis of electrical networks – experiments based on solution of series‑parallel circuits",
+            "Solution of systems with linear equations – experiments based on mesh and nodal analysis",
+            "Experiments for validation of network theorems",
+            "Solution of network problems"
+          ]
+        }
+      ],
+      "experiments": [
+        "Experiments based on solution of series‑parallel circuits",
+        "Experiments based on mesh and nodal analysis",
+        "Experiments for validation of network theorems",
+        "Solution of network problems"
+      ],
+      "reference_books": [
+        "Shailendra Jain, “Modelling And Simulation Using Matlab‑Simulink”, Wiley India, 2011.",
+        "Rudra Prasad, “Matlab Programming”."
+      ],
+      "extra": null
+    }
+  ]
+}

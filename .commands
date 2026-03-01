@@ -1,3 +1,19 @@
 uv run celery -A config worker --loglevel=info -P solo
 uv run manage.py runserver
 uv run celery -A config worker --loglevel=info --pool=threads --concurrency=10
+
+
+
+docker run -d `
+  --name pg-local `
+  -e POSTGRES_USER=postgres `
+  -e POSTGRES_PASSWORD=postgres `
+  -e POSTGRES_DB=mydb `
+  -p 5432:5432 `
+  -v ${PWD}/data/pg:/var/lib/postgresql `
+  --restart=always `
+  postgres:18
+
+
+uv run manage.py seed_rgpv_data
+

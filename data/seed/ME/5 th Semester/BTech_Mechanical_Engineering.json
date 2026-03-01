@@ -1,0 +1,773 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Internal Combustion Engines",
+      "subject_code": "ME501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of IC Engine",
+          "topics": [
+            "S.I. and C.I. engines of two and four stroke cycles",
+            "Real cycle analysis of SI and CI engines",
+            "Determination of engine dimensions, speed, fuel consumption, output, mean effective pressure and efficiency",
+            "Factors affecting volumetric efficiency",
+            "Heat balance of internal combustion engines",
+            "Performance characteristics of SI and CI engines",
+            "Cylinder arrangement and firing order",
+            "Power balance for multi‑cylinder engines"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Combustion in SI engines",
+          "topics": [
+            "Flame development and propagation",
+            "Pressure–crank angle diagram",
+            "Stages of combustion and ignition lag",
+            "Effect of air density, temperature, engine speed, turbulence and ignition timing on combustion",
+            "Physical and chemical aspects of combustion",
+            "Abnormal combustion phenomena",
+            "Effect of engine and fuel variables on abnormal combustion",
+            "Pre‑ignition: causes and remedies",
+            "Salient features of various types of combustion chambers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Combustion in CI Engines",
+          "topics": [
+            "Various stages of combustion in CI engines",
+            "Delay period in CI combustion",
+            "Diesel knock and knock inhibitors",
+            "Salient features of various types of combustion chambers",
+            "Fuel injection in CI engine",
+            "Working principle of fuel pump and fuel injectors",
+            "Types of fuel injector nozzles",
+            "Fuel injection in SI engine (MPFI, TBI, CRDI)",
+            "Theory of carburetion",
+            "Solex carburetor",
+            "Simple problems on carburetion",
+            "Fuel metering in CI engines"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Fuel",
+          "topics": [
+            "Classification of internal combustion engine fuels",
+            "Desirable characteristics of SI and CI engine fuels",
+            "Rating of SI and CI engine fuels",
+            "Alternative fuels for SI and CI engines (liquid, gaseous, hydrogen, LPG, CNG, biogas, etc.)",
+            "Air‑fuel requirement",
+            "Analysis of combustion products",
+            "Higher heating value (HHV) and lower heating value (LHV) of fuels"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Supercharging & Turbo charging",
+          "topics": [
+            "Methods of supercharging and turbocharging",
+            "Effects of supercharging and turbocharging on engine performance",
+            "Engine modifications for supercharging",
+            "Supercharging of two‑stroke engines",
+            "Microprocessor‑controlled supercharging",
+            "Cooling and lubrication of SI and CI engines"
+          ]
+        }
+      ],
+      "experiments": [
+        "Determination of valve timing diagram",
+        "Load test on petrol engine",
+        "Heat balance of SI engine",
+        "Heat balance of CI engine",
+        "Study of battery ignition system and electronic ignition system",
+        "Study of diesel fuel pump",
+        "Study of diesel fuel injectors",
+        "Study of carburetors",
+        "Study of fuel injection system in SI engine",
+        "Study of lubricating system in CI engine"
+      ],
+      "reference_books": [
+        "J.B. Heywood. Internal combustion Engines, Wiley",
+        "Ganeshan V; Internal Combustion engines; TMH",
+        "Mathur M L & Sharma RP; A. Course in IC engines; DhanpatRai",
+        "R Yadav, Internal Combustion Engines",
+        "Halderman JD and Mitchell CD; Automotive Engines theory and servicing; Pearson",
+        "DomKundwar; Internal Combustion Engines; Dhanpat Rai Publications",
+        "Taylor GF; Internal Combustion Engines Theory & Practice; MIT Press",
+        "Richard Stone; Introduction to IC Engines; Society of Automotive Engr (Palgrave Mc Millan)"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mechanical Vibrations",
+      "subject_code": "ME502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamental Aspects of Vibrations",
+          "topics": [
+            "Vibration, its main causes, advantages and disadvantages",
+            "Engineering applications of vibration and noise",
+            "Vector method of representing harmonic motion",
+            "Characteristics of vibration, harmonic analysis and beats phenomenon, work done by harmonic forces on harmonic motion",
+            "Periodic and non‑harmonic functions – Fourier series analysis and evaluation of Fourier coefficients",
+            "Elements of vibratory system; lumped and distributed parameter systems",
+            "Undamped free vibrations – derivation of differential equation of motion using energy method, Newton’s second law, and Rayleigh’s method",
+            "Solution of differential equation of motion – natural frequency of vibration",
+            "Systems involving angular oscillations such as the compound pendulum"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Damped Free Vibrations",
+          "topics": [
+            "Viscous damping: damping coefficient and damping ratio",
+            "Under‑damped, over‑damped and critically damped systems",
+            "Logarithmic decrement",
+            "Frequency of damped free vibration",
+            "Coulomb (dry‑friction) damping and comparison with viscous damping (frequency, decay rate)",
+            "Solid and structural damping",
+            "Slip or interfacial damping"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Harmonically Excited Vibration",
+          "topics": [
+            "One‑degree‑of‑freedom forced harmonic vibration",
+            "Vector representation of forces",
+            "Excitation due to rotating and reciprocating unbalance",
+            "Vibration isolation, force and motion transmissibility",
+            "Absolute and relative motion of mass (seismic instruments)",
+            "Whirling motion and critical speed – definitions, significance and calculation for a vertical light flexible shaft with single rotor (with and without damping)",
+            "Critical speed of a shaft carrying multiple discs (without damping) and secondary critical speed"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Systems With Two Degrees of Freedom",
+          "topics": [
+            "Un‑damped free vibration of 2‑DOF systems and principal modes of vibration",
+            "Torsion vibrations",
+            "Forced un‑damped vibrations with harmonic excitation",
+            "Coordinate coupling",
+            "Dynamic vibration absorber",
+            "Torsion vibration absorber",
+            "Pendulum‑type dynamic vibration absorber"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Noise Engineering – Subjective Response of Sound",
+          "topics": [
+            "Frequency‑dependent human response to sound and the decibel scale",
+            "Relationship among sound pressure level (SPL), sound power level and sound intensity level",
+            "Addition, subtraction, averaging of sound levels; sound spectra and octave‑band analysis",
+            "Loudness, weighting networks, equivalent sound level, auditory effects of noise",
+            "Hazardous noise, exposure from machines/equipment, hearing conservation, damage‑risk criteria and daily noise dose",
+            "Noise sources, isolation and control – road and industrial sources, construction equipment, industrial noise control strategies at source, along the path and at the receiver",
+            "Control measures: sound enclosures, acoustic barriers, ear defenders, earplugs, semi‑insert protectors"
+          ]
+        }
+      ],
+      "experiments": [
+        "To find out effect of load on natural frequency of vibrations of a lever pin supported at one end carrying adjustable load on a vertical screwed bar and spring supported at some intermediate point (i) when the dead weight of rods is neglected and (ii) when their dead weight is taken into account.",
+        "To find out frequency of damped free vibration and rate of decay of vibration‑amplitude in the system.",
+        "To find out natural frequency and damped free frequency of a torsion pendulum and, hence, to determine the coefficient of damping of the oil.",
+        "To observe the phenomenon of ‘whirl’ in a horizontal light shaft and to determine the critical speed of the shaft.",
+        "To observe the mode shapes of a spring‑connected double pendulum and hence to demonstrate the phenomenon of beats.",
+        "To demonstrate the principle of a tuned undamped dynamic vibration absorber and to determine the effect of mass‑ratio (main and auxiliary mass) on the spread of the resulting natural frequencies.",
+        "To take measurements of sound pressure level (SPL) and to carry out octave‑band analysis of a machine using a noise level meter."
+      ],
+      "reference_books": [
+        "Ambekar A.G., ‘Mechanical Vibrations and Noise Engineering’; PHI",
+        "Meirovitch Leonard; Element of Vibration Analysis; TMH",
+        "Dukikipati R.V., Srinivas J. Textbook of Mechanical Vibrations; PHI",
+        "Kelly S.G. and Kudari S.K.; Mechanical Vibrations; Schaum Series; TMH",
+        "Thomson W.T., Theory of Vibration with Applications; C.B.S. Publications & Distributors",
+        "Singiresu Rao, ‘Mechanical Vibrations’; Pearson Education",
+        "G.K. Grover, ‘Mechanical Vibration’; Nem Chand and Bross, Roorkee"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mechatronics",
+      "subject_code": "ME503(A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Definition of Mechatronics",
+            "Multi-disciplinary scenario and origins",
+            "Evaluation of Mechatronics and overview of mechatronics",
+            "Design of mechatronics system",
+            "Measurement system and functions of main elements of measurement systems",
+            "Need for mechatronics in industries",
+            "Objectives, advantages and disadvantages of mechatronics",
+            "Microprocessor based controllers",
+            "Principle of working of engine management system",
+            "Automatic washing machine"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Review of Transducers and Sensors",
+          "topics": [
+            "Definition and classification of transducers",
+            "Definition and classification of sensors",
+            "Working principle and applications of light sensors",
+            "Working principle and applications of proximity sensors",
+            "Working principle and applications of Hall effect sensors",
+            "Introduction to microprocessors",
+            "Microprocessor based digital control",
+            "Binary and hexadecimal number systems",
+            "Logic functions",
+            "Data word representation",
+            "Basic elements of control systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Microprocessor Architecture",
+          "topics": [
+            "8085A processor architecture",
+            "CPU, memory and address terminology",
+            "ALU, assembler, data registers",
+            "Fetch cycle and write cycle",
+            "State and bus interrupts",
+            "Differences between microprocessors and microcontrollers",
+            "Requirements for control and implementation in microcontrollers",
+            "Classification of microcontrollers"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Electrical and Hydraulic Actuators",
+          "topics": [
+            "Actuator systems and classifications with examples",
+            "Mechanical switches and concept of bouncing",
+            "Methods of preventing bouncing of mechanical switches",
+            "Solenoids and relays",
+            "Solid state switches: diodes, thyristors, triacs, transistors, Darlington pair",
+            "Principle, construction and working of AC motors, DC motors, stepper motors, permanent magnet motors, servomotors, servo systems and control",
+            "Valves and classifications",
+            "Pressure control valves: pressure relief valves, pressure regulating/reducing valves, pressure sequence valve",
+            "Flow control valves: principle, needle valve, globe valve",
+            "Direction control valves: sliding spool valve, solenoid operated valve"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Signal Conditioning",
+          "topics": [
+            "Concept and necessity of signal conditioning",
+            "Operational amplifiers, protection and filtering",
+            "Wheatstone bridge",
+            "Digital signals and multiplexers",
+            "Data acquisition",
+            "Introduction to digital signal processing and its concepts and methods"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Mechatronics - Principles, Concepts and applications – Nitaigour and Premchand, Mahilik – Tata McGraw Hill -2003",
+        "Mechatronics - W. Bolton, Pearson Education Asia - 2nd Edition, 2001",
+        "Introduction to mechatronics and measurement systems – David G. Alciatore & Michel BiHistand – Tata McGraw Hill –2000",
+        "Mechatronics - H.D. Ramachandra – Sudha Publication -2003; Mechatronics by HMT Ltd. – Tata McGrawHill -2000",
+        "Mechatronics System design by Devadas Shetty and Richard A. Kark – Thomas Learning -1997",
+        "Mechatronics an Introduction by Robert H Bishop – CRC",
+        "Mechatronics systems Fundamentals by Rolf Isermann – Springer"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Dynamics of Machine",
+      "subject_code": "ME503(B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Dynamics of Engine Mechanisms",
+          "topics": [
+            "Displacement, velocity and acceleration of piston",
+            "Turning moment on crankshaft and turning moment diagram",
+            "Fluctuation of crankshaft speed",
+            "Analysis of flywheel"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Governor Mechanisms",
+          "topics": [
+            "Types of governors",
+            "Characteristics of centrifugal governors",
+            "Gravity‑controlled centrifugal governors",
+            "Spring‑controlled centrifugal governors",
+            "Hunting of centrifugal governors",
+            "Inertia governors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Balancing of Inertia Forces and Moments in Machines",
+          "topics": [
+            "Balancing of rotating masses",
+            "Two‑plane balancing",
+            "Determination of balancing masses (graphical and analytical methods)",
+            "Balancing of rotors",
+            "Balancing of internal combustion engines (single‑cylinder, in‑line, V‑twin, radial engines)",
+            "Lanchester technique of engine balancing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Friction",
+          "topics": [
+            "Frictional torque in pivots and collars (uniform pressure and uniform wear rate criteria)",
+            "Boundary and fluid‑film lubrication",
+            "Friction in journal and thrust bearings",
+            "Concept of friction circle and axis",
+            "Rolling friction",
+            "Clutches: single‑plate, multi‑plate, and cone clutches"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Brakes",
+          "topics": [
+            "Band brake",
+            "Block brakes",
+            "Internal and external shoe brakes",
+            "Braking of vehicles",
+            "Dynamometer: different types and their applications",
+            "Dynamic analysis of cams – response of un‑damped cam mechanism (analytical method)",
+            "Follower response analysis by phase‑plane method",
+            "Jump and cross‑over shock"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of various models of governors.",
+        "Study of gyroscopic motion and calculation of value of gyroscopic couple.",
+        "Study of various types of Cams and followers and drawing the cam profile with the help of test kit.",
+        "Study of various first order vibration systems.",
+        "To study working of friction clutches using models."
+      ],
+      "reference_books": [
+        "Ambekar, A.G.; Mechanism and Machine Theory; PHI.",
+        "Rattan, S.S.; Theory of Machines; TMH.",
+        "Sharma and Purohit; Design of Machine Elements; PHI.",
+        "Bevan; Theory of Machines.",
+        "Ghosh and Mallik; Theory of Mechanisms and Machines; Affiliated East‑West Press, Delhi.",
+        "Norton, R.L.; Kinematics and Dynamics of Machinery; TMH.",
+        "Grover; Mechanical Vibrations.",
+        "Balaney; Theory of Machines.",
+        "Theory of Vibrations by Thomson."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Alternate Automotive Fuels & Emissions",
+      "subject_code": "ME503(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction Automobile Fuels",
+          "topics": [
+            "Classification of automobile alternative fuels (liquid, gaseous, hydrogen, LPG, CNG, biogas, etc.)",
+            "Desirable characteristics of SI & CI engine alternative fuels",
+            "Rating of SI & CI engine fuels",
+            "Introduction to alternate energy sources (EV, hybrid, fuel cell, solar cars)",
+            "Merits and demerits of various alternate fuels"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Liquid alternative fuels",
+          "topics": [
+            "Vegetable oils as liquid alternative fuels for automobile engines",
+            "Esterification processes for vegetable oils",
+            "Performance and emission characteristics of vegetable‑oil fuels",
+            "Biodiesel properties and characteristics",
+            "Alcohols as liquid alternative fuels",
+            "Properties of alcohols as engine fuel",
+            "Alcohol–gasoline blends and their performance in automobile engines",
+            "Methanol–gasoline blends"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Gaseous Fuels",
+          "topics": [
+            "Introduction to biogas systems and gas‑formation process",
+            "Factors affecting biogas formation",
+            "Use of biogas in SI and CI engines",
+            "Properties of natural gas as engine fuel",
+            "Properties of hydrogen gas as engine fuel",
+            "Properties of LPG and CNG as engine fuels",
+            "Storage and handling of gaseous fuels",
+            "Performance and safety aspects of gaseous fuels",
+            "Fuel‑metering systems for gaseous fuels"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Automobile emissions",
+          "topics": [
+            "Types of automobile emissions",
+            "Emission characteristics and formation mechanisms",
+            "Mechanism of HC, CO and NO formation in SI engines",
+            "Exhaust emissions and influencing factors",
+            "Evaporative emissions",
+            "Crankcase emissions",
+            "Lead emissions",
+            "Smoke formation in CI engines and influencing factors",
+            "Unburned hydrocarbons, carbon monoxide, nitrogen oxides in CI engines",
+            "Smog formation",
+            "Comparison of diesel and petrol emissions"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Emissions Norms & Measurement",
+          "topics": [
+            "Emission norms according to Bharat Standard up to BS‑IV",
+            "Procedures for emission confirmation in production",
+            "Environmental impacts of automobile emissions",
+            "Types of catalytic converters",
+            "Measurement techniques for emissions (NDIR, FID, chemiluminescent analyzers, gas chromatography, smoke meters)",
+            "Emission standards and test procedures"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of alternative fuel for automobile.",
+        "Study of esterification of alternative fuels.",
+        "Study of blending different types of bio‑diesel.",
+        "Measurement of smoke from automobile.",
+        "Study of different types of emissions.",
+        "Study of various techniques for NOx reduction."
+      ],
+      "reference_books": [
+        "J.B. Heywood. Internal combustion Engines, Wiley",
+        "Ganeshan V; Internal Combustion engines; TMH",
+        "Mathur M L & Sharma RP; A. Course in IC engines; DhanpatRai",
+        "R Yadav, Internal Combustion Engines",
+        "Halderman JD and Mitchell CD; Automotive Engines theory and servicing; Pearson",
+        "DomKundwar; Internal Combustion Engines; Dhanpat Rai Publications",
+        "Taylor GF; Internal Combustion Engines Theory & Practice; MIT Press",
+        "Richard Stone; Introduction to IC Engines; Society of Automotive Engr (Palgrave Mc Millan)"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Industrial Engineering & Ergonomics",
+      "subject_code": "ME504(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Method study",
+          "topics": [
+            "Purpose of work study, its objectives, procedure and applications",
+            "Method study definition and basic procedure",
+            "Selection of job",
+            "Recording techniques: outline process charts, flow process charts, man‑machine charts, two‑handed process charts, string diagram, flow diagram, multiple activity chart, SIMO, cyclographs and chrono‑cyclographs",
+            "Critical examination, development, installation and maintenance of improved method",
+            "Principles of motion economy and their application in work design",
+            "Micro‑motion study, memo‑motion study and their use in methods study"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Work measurement",
+          "topics": [
+            "Introduction, definition, objectives and basic procedure of work measurement",
+            "Application of work measurement in industries",
+            "Time study: basic procedure, equipment needed, methods of measuring time, selection of jobs, breaking a job into elements, number of cycles to be timed, rating and methods of rating, allowances, calculation of standard time",
+            "Work sampling: basic procedure, design of work‑sampling study, conducting work‑sampling study and establishment of standard time"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Job evaluation and incentive schemes",
+          "topics": [
+            "Starlight line, Tailor, Merrick and Gantt incentive plans",
+            "Standard data system: elemental and non‑elemental predetermined motion systems, work‑factors system",
+            "Methods‑Time‑Measurement (MTM) and MOST"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Human factor engineering",
+          "topics": [
+            "Definition and history of development of human factors engineering",
+            "Types and characteristics of man‑machine‑system; relative capabilities of humans and machines",
+            "Development and use of human factor data",
+            "Information input and processing: introduction to information theory, factors affecting information reception and processing, coding and selection of sensory inputs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Display systems and anthropometric data",
+          "topics": [
+            "Display – types of visual display, visual indicators and warning signals",
+            "Factorial and graphic display",
+            "General principles of auditory and tactile display, characteristics and selection"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "ILO; work‑study; International Labour Organization",
+        "Khan M.I.; Industrial Ergonomics; PHI Learning",
+        "Barrnes R.M.; Motion and Time Study; Wiley pub",
+        "Megaw E.D.; Contemporary ergonomics; Taylor & Francis",
+        "Sandera M. and Mc Cormick E.; Human Factors in Engg and design; MGHill",
+        "Currie R.M.; Work study; BIM publications",
+        "Mynard; Handbook of Industrial Engineering"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "TQM and SQC",
+      "subject_code": "ME504(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Evolution",
+          "topics": [
+            "Evolution of total quality management and historical perspective",
+            "Teamwork and TQM with ISO 9000",
+            "Information technology and Business Process Re-engineering (BPR)",
+            "Total Productive Maintenance (TPM) and quality awards",
+            "Aids and barriers to quality management",
+            "Creating vision and initiating transformation",
+            "Establishing programs for education and self‑coordination",
+            "Policy setting and review, flowchart of policy management and its relation with daily management",
+            "Improvements and measurement of key indicators",
+            "Quality management leadership and cross‑functional team coordination"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Process",
+          "topics": [
+            "Definition of process, variation and feedback",
+            "Funnel–marble experiment, rules of adjustment and its effects",
+            "Quality definition, goalpost and Kaizen view",
+            "Quality of design, conformance and performance",
+            "Taguchi loss function and cost of quality",
+            "Chain action of improving quality to productivity, motivation and low cost",
+            "Deming’s theory of management, fourteen points and variance reduction",
+            "Attributes enumerative and variables analytic studies"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "SQC‑Control charts",
+          "topics": [
+            "Basic discrete and continuous distributions",
+            "Measures of central tendency, variability and shape",
+            "Sampling, sample size and central limit theorem",
+            "Control chart structure, process plotting and stability",
+            "Study of out‑of‑control evidence, defect detection and prevention",
+            "Use of control charts in evaluating past, present and future trends",
+            "Attribute control charts: count and classification charts",
+            "Construction and interpretation of p, np, c and u charts",
+            "PDSA cycle (plan, do, study, act)",
+            "R charts and s charts",
+            "Individual and moving‑range chart",
+            "Trial control limits and out‑of‑control points"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Process diagnostics",
+          "topics": [
+            "Between‑group and within‑group variations",
+            "Periodic and persistent disturbances",
+            "Control chart patterns: natural, level‑shift, cycle, wild, multi‑universe, relationship and other out‑of‑control patterns",
+            "Diagnosing a process using brainstorming",
+            "Cause‑effect (Ishikawa) diagrams, interrelationship, systematic and matrix diagrams",
+            "Change concepts and waste elimination"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Process improvement",
+          "topics": [
+            "Performance and technical specifications",
+            "Attribute‑process and variable‑process capability studies",
+            "Unstable and stable process capability studies with examples",
+            "Attribute and variable improvement studies",
+            "Inspection: acceptance sampling (AS) – lot formation, single, double and multiple/sequential sampling plans",
+            "Operating characteristic (OC) curve, producer and consumer risk",
+            "Theoretical validation of AS and kp rule for stable and chaotic processes"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Gitlow HS, Oppenheim et al; Quality Management; TMH",
+        "Gryna FM; Juran’s Quality Planning and Analysis; TMH",
+        "Crosby Philips; Quality is still free; New Amer Library",
+        "Kulkarni VA and Bewoor AK; Quality Control; Wiley",
+        "Jankiraman B and Gopal RK; Total Quality Management- Text and Cases; PHI Learning",
+        "Sugandhi L and Samual A; Total Quality Management; PHI Learning",
+        "Subburaj R; Total Qality Management; TMH",
+        "Naidu Babu and Rajendran; TQM; New age International pub",
+        "Chase Richard B et al; Operations management; SIE‑TMH",
+        "Chary SN; Production and Operations Management; TMH"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Finite Element Method",
+      "subject_code": "ME-504(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Structural analysis, objectives, static, dynamic and kinematics analyses",
+            "Skeletal and continuum structures",
+            "Modeling of infinite degree‑of‑freedom system into finite degree‑of‑freedom system",
+            "Basic steps in finite element problem formulation",
+            "General applicability of the method"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Element Types and Characteristics",
+          "topics": [
+            "Discretization of the domain",
+            "Basic element shapes",
+            "Aspect ratio",
+            "Shape functions",
+            "Generalized co‑ordinates and nodal shape functions",
+            "ID spar and beam elements",
+            "2D rectangular and triangular elements",
+            "Axisymmetric elements"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Assembly of Elements and Matrices",
+          "topics": [
+            "Concept of element assembly",
+            "Global and local co‑ordinate systems",
+            "Band width and its effects",
+            "Banded and skyline assembly",
+            "Boundary conditions",
+            "Solution of simultaneous equations",
+            "Gaussian elimination and Cholesky decomposition methods",
+            "Numerical integration",
+            "One‑ and 2D applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Higher Order and Isoparametric Elements",
+          "topics": [
+            "One‑dimensional quadratic and cubic elements",
+            "Use of natural co‑ordinate system",
+            "Area co‑ordinate system continuity and convergence requirements",
+            "2D rectangular and triangular requirements"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Static & Dynamic Analysis",
+          "topics": [
+            "Analysis of trusses and frames",
+            "Analysis of machine subassemblies",
+            "Use of commercial software packages",
+            "Advantages and limitations",
+            "Hamilton's principle",
+            "Derivation of equilibrium",
+            "Consistent and lumped mass matrices",
+            "Derivation of mass matrices for ID elements",
+            "Determination of natural frequencies and mode shapes"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rao, S.S., The Finite Element Method in Engineering, 2nd ed., Pergamon Press, Oxford.",
+        "Cook, R.D., Malkins, D.S., and Plesha, M.E., Concepts and Applications of Finite Element Analysis, 3rd ed., John Wiley.",
+        "Chandrupatla, T.R. and Belegundu, A.D., Introduction to Finite Elements in Engineering, Prentice Hall of India Pvt. Ltd.",
+        "Zienkiewicz, O.C., The Finite Element Method, 3rd ed., Tata McGraw Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "FEM/CFD Lab",
+      "subject_code": "ME505",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "To study fundamentals of Computational Fluid Dynamics (CFD)",
+        "To perform CFD analysis of lid driven cavity in Open-Foam",
+        "To perform CFD analysis of square tube in Open-Foam",
+        "To perform CFD analysis of a 2D-plate in Open-Foam",
+        "To perform CFD analysis of bifurcated blood vessel in FEM",
+        "To study fundamentals of Finite element method and FEA",
+        "To perform FEM analysis of deep drawing process in FEM",
+        "To study fundamentals of Sci-Lab",
+        "To perform matrix operations in Sci-lab",
+        "To plot 2D & 3D graphs in Sci-lab"
+      ],
+      "reference_books": [
+        "Versteeg H; An introduction to Computational Fluid Dynamics (The Finite Volume Method); Pearson",
+        "Jiyuan Tu; Computational Fluid Dynamics: A Practical Approach; Butterworth Heinemann.",
+        "Gokhale NS; Practical Finite Element Analysis; Finite to Infinite",
+        "Seshu P; Finite element analysis; PHI.",
+        "Reddy JN; Introduction to the Finite Element Method; McGraw Hill Inc.",
+        "Das VV; Programming in Scilab 4.1; New Age International Publishers.",
+        "Verma A K; Scilab : A Beginner’s Approach; Cengage publishers."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Python",
+      "subject_code": "ME506",
+      "subject_type": "Theory",
+      "modules": [],
+      "experiments": [
+        "To write a Python program to find GCD of two numbers.",
+        "To write a Python Program to find the square root of a number by Newton’s Method.",
+        "To write a Python program to find the exponentiation of a number.",
+        "To write a Python Program to find the maximum from a list of numbers.",
+        "To write a Python Program to perform Linear Search",
+        "To write a Python Program to perform binary search.",
+        "To write a Python Program to perform selection sort.",
+        "To write a Python Program to perform insertion sort.",
+        "To write a Python Program to perform Merge sort.",
+        "To write a Python program to find first n prime numbers.",
+        "To write a Python program to multiply matrices.",
+        "To write a Python program for command line arguments.",
+        "To write a Python program to find the most frequent words in a text read from a file.",
+        "To write a Python program to simulate elliptical orbits in Pygame.",
+        "To write a Python program to bouncing ball in Pygame."
+      ],
+      "reference_books": [
+        "Timothy A. Budd: Exploring python, McGraw-Hill Education.",
+        "R.Nageshwar Rao, \"Python Programming\", Wiley India",
+        "Allen B. Downey; Think Python, O'Reilly Media, Inc."
+      ],
+      "extra": null
+    }
+  ]
+}

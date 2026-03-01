@@ -1,0 +1,726 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Operating Systems",
+      "subject_code": "AL-501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Operating Systems",
+          "topics": [
+            "Function, Evolution, Different types of Operating Systems, Desirable Characteristics and features of an OS",
+            "Operating Systems Services – Types of Services, Different ways of providing these services (Commands, System Calls)",
+            "Need of System Calls, Low‑level implementation of System Calls, Portability issues",
+            "Operating System Structures"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "File Systems (Secondary Storage Management)",
+          "topics": [
+            "File concept and the view of users versus system programmers",
+            "Hard‑disk organization, disk formatting and file‑system creation",
+            "Modules of a file system",
+            "Disk‑space allocation methods: contiguous, linked, indexed",
+            "Disk partitioning and mounting; directory structures; file protection",
+            "Virtual and remote file systems",
+            "Case studies of file systems used in Unix/Linux and Windows",
+            "System calls used for file management"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Process Management",
+          "topics": [
+            "Concept of a process and the process‑state diagram",
+            "Different types of schedulers and CPU‑scheduling algorithms; evaluation of scheduling algorithms",
+            "Threads – user‑level and kernel‑level, thread scheduling, multiprocessor/multicore scheduling",
+            "Case studies of process management in Unix/Linux and Windows; related system calls",
+            "Concurrency and synchronization – real/virtual concurrency, mutual exclusion, critical‑section problem, mutex locks, monitors, semaphores, WAIT/SIGNAL operations, classic synchronization problems, inter‑process communication",
+            "Deadlocks – characterization, prevention, avoidance, recovery"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Memory Management",
+          "topics": [
+            "Memory‑management techniques – contiguous allocation; non‑contiguous allocation (paging, segmentation, paged segmentation); comparative analysis",
+            "Virtual memory – concept, overlay, dynamic linking and loading, implementation by demand paging",
+            "Memory management approaches in Unix/Linux and Windows"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Input/Output Management",
+          "topics": [
+            "Mass‑storage structures and disk scheduling",
+            "I/O system models – program‑controlled, interrupt‑driven, concurrent I/O; synchronous/asynchronous and blocking/non‑blocking operations; I/O buffering; application I/O interface; kernel I/O subsystem; translation of I/O requests to hardware operations",
+            "Protection and security issues and mechanisms",
+            "Introduction to multiprocessor, real‑time, embedded and mobile operating systems",
+            "Overview of virtualization"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Andrew S. Tanenbaum, “Modern Operating Systems”, Prentice Hall.",
+        "Robert Love, “Linux Kernel Development”, Pearson.",
+        "Maurice J. Bach, “The Design of Unix Operating System”, Pearson.",
+        "Bovet & Cesati, “Understanding the Linux Kernel”, O'Reilly."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Database Management Systems",
+      "subject_code": "AL-502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "DBMS Concepts and Architecture",
+          "topics": [
+            "Introduction to DBMS concepts and architecture",
+            "Database approach vs. traditional file accessing approach",
+            "Advantages of database systems",
+            "Data models, schemas and instances",
+            "Data independence",
+            "Database languages and interfaces",
+            "Overall database structure",
+            "Functions of DBA and designer",
+            "Entity‑Relationship (ER) data model: entities, attributes, entity types",
+            "Defining the ER diagram",
+            "Generalization, aggregation and specialization in ER modeling",
+            "Transforming ER diagram into relational tables",
+            "Other data models: object‑oriented, network, relational",
+            "Comparison of data‑model types",
+            "Storage structures: secondary storage devices",
+            "Hashing and indexing structures: single‑level and multilevel indices"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Relational Data Models",
+          "topics": [
+            "Relational data model fundamentals: domains, tuples, attributes, relations",
+            "Characteristics of relations and keys (primary, candidate, foreign)",
+            "Relational database schemas and integrity constraints",
+            "Referential integrity, intension and extension",
+            "SQL Data Definition Language (DDL) and Data Manipulation Language (DML)",
+            "Integrity constraints in SQL",
+            "Complex SQL queries and various join operations",
+            "Indexing and triggers in relational databases",
+            "Assertions in SQL",
+            "Relational algebra operations: select, project, join, division, outer union",
+            "Relational calculus: tuple‑oriented and domain‑oriented forms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Database Design and Query Optimization",
+          "topics": [
+            "Normalization theory and techniques",
+            "Normal forms: 1NF, 2NF, 3NF, BCNF",
+            "Functional dependencies and decomposition",
+            "Dependency preservation and lossless‑join decomposition",
+            "Handling null‑valued and dangling tuples",
+            "Multivalued dependencies",
+            "Introduction to query optimization",
+            "Steps of query optimization",
+            "Algorithms for implementing select, project, and join operations",
+            "Heuristic‑based and cost‑estimation‑based optimization methods"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transaction Processing and Concurrency Control",
+          "topics": [
+            "Transaction concepts and transaction system",
+            "Serializability testing: conflict‑serializable and view‑serializable schedules",
+            "Recoverability and recovery from transaction failures",
+            "Log‑based recovery, checkpoints, deadlock handling",
+            "Concurrency control techniques: locking protocols, timestamp protocols, validation protocols",
+            "Multiple‑granularity locking and multiversion concurrency control",
+            "Recovery in concurrent transaction environments",
+            "Introduction to distributed databases",
+            "Data mining and data warehousing basics",
+            "Object‑oriented databases vs. traditional DBMS",
+            "Comparative study of OODBMS and DBMS",
+            "Temporal, deductive, multimedia, web and mobile databases"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Case Study of Relational DBMS (Oracle/PostgreSQL/MySQL)",
+          "topics": [
+            "Architecture of major RDBMS (Oracle, PostgreSQL, MySQL)",
+            "Physical file organization and memory structures",
+            "Background processes in RDBMS",
+            "Data dictionary and dynamic performance views",
+            "Security, role management, privilege management, profiles",
+            "Invoker‑defined security model",
+            "Advanced SQL queries: hierarchical, inline, flashback",
+            "ANSI SQL standards and extensions",
+            "Cursor management: nested and parameterized cursors",
+            "Stored procedures and usage of parameters",
+            "User‑defined functions and their limitations",
+            "Triggers, mutating table errors, instead‑of triggers"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rob, “Database System: Design Implementation & Management”, Cengage Learning.",
+        "Atul Kahate, “Introduction to Database Management System”, Pearson Education.",
+        "Oracle 9i Database Administration Fundamental-I, Volume I, Oracle Press, TMH.",
+        "Paneerselvam, “Database Management System”, PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Information Retrieval",
+      "subject_code": "AL503 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "History of IR",
+            "Components of IR",
+            "Issues in IR",
+            "Open‑source search‑engine frameworks",
+            "Impact of the Web on IR",
+            "Role of artificial intelligence (AI) in IR",
+            "IR versus Web search",
+            "Components of a search engine",
+            "Characterizing the Web"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Boolean and Vector Space Retrieval Models",
+          "topics": [
+            "Boolean and vector‑space retrieval models",
+            "Term weighting",
+            "TF‑IDF weighting",
+            "Cosine similarity",
+            "Pre‑processing",
+            "Inverted indices",
+            "Efficient processing with sparse vectors",
+            "Language‑model based IR",
+            "Probabilistic IR",
+            "Latent semantic indexing (LSI)",
+            "Relevance feedback and query expansion"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Web Search Overview",
+          "topics": [
+            "Web search overview",
+            "Web structure and user‑paid placement search‑engine optimization",
+            "Web‑search architectures",
+            "Crawling",
+            "Meta‑crawlers",
+            "Focused crawling",
+            "Web indexes",
+            "Near‑duplicate detection",
+            "Index compression",
+            "XML retrieval"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Link Analysis",
+          "topics": [
+            "Link analysis",
+            "Hubs and authorities",
+            "PageRank and HITS algorithms",
+            "Searching and ranking",
+            "Relevance scoring and ranking for the Web",
+            "Similarity measures",
+            "Hadoop & MapReduce evaluation",
+            "Personalized search",
+            "Collaborative filtering and content‑based recommendation of documents and products",
+            "Handling the invisible Web",
+            "Snippet generation and summarization",
+            "Question answering",
+            "Cross‑lingual retrieval"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Information Filtering",
+          "topics": [
+            "Information filtering: organization and relevance feedback",
+            "Text mining",
+            "Text classification and clustering",
+            "Categorization algorithms: naive Bayes, decision trees, nearest‑neighbor",
+            "Clustering algorithms: agglomerative clustering, k‑means, expectation‑maximization (EM)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "C. Manning, P. Raghvan and H. Schütze: Introduction to Information Retrieval, Cambridge University Press.",
+        "Ricardo Baeza‑Yates and Berthier Ribeiro‑Neto, Modern Information Retrieval: The Concepts and Technology behind Search, ACM Press Books.",
+        "Bruce Croft, Donald Metzler and Trevor Strohman, Search Engines: Information Retrieval in Practice, Addison‑Wesley.",
+        "Mark Levene, An Introduction to Search Engines and Web Navigation, Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Deep Learning",
+      "subject_code": "AL503 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction and History of Deep Learning",
+            "McCulloch–Pitts neuron model",
+            "Multilayer Perceptrons (MLPs)",
+            "Representation power of MLPs",
+            "Sigmoid neurons",
+            "Feed‑forward neural networks",
+            "Back‑propagation algorithm",
+            "Weight initialization methods",
+            "Batch normalization",
+            "Representation learning",
+            "GPU implementation of neural networks",
+            "Dimensionality reduction – Principal Component Analysis (PCA) and Singular Value Decomposition (SVD)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Deep Feed‑Forward Networks and Optimization",
+          "topics": [
+            "Deep feed‑forward neural networks",
+            "Gradient Descent (GD)",
+            "Momentum‑based GD",
+            "Nesterov accelerated GD",
+            "Stochastic GD",
+            "AdaGrad optimizer",
+            "Adam optimizer",
+            "RMSProp optimizer",
+            "Auto‑encoders",
+            "Regularization in auto‑encoders",
+            "Denoising auto‑encoders",
+            "Sparse auto‑encoders",
+            "Contractive auto‑encoders",
+            "Variational auto‑encoder (VAE)",
+            "Relationship between auto‑encoders and PCA/SVD",
+            "Dataset augmentation techniques"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Convolutional Neural Networks",
+          "topics": [
+            "Introduction to Convolutional Neural Networks (CNN) and architectures",
+            "Convolutional terminology – ReLU activation, stride, padding, pooling, convolution operations",
+            "Convolutional kernels",
+            "Layer types – convolutional, pooling, fully‑connected",
+            "Visualization of CNNs",
+            "Canonical CNN models – LeNet, AlexNet, ZF‑Net, VGGNet, GoogLeNet, ResNet, R‑CNN",
+            "Deep Dream and Deep Art applications",
+            "Regularization techniques – dropout, drop‑connect, unit pruning, stochastic pooling, artificial data injection, early stopping, weight decay, limiting the number of parameters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Recurrent Neural Networks",
+          "topics": [
+            "Introduction to deep Recurrent Neural Networks (RNN) and architectures",
+            "Back‑Propagation Through Time (BPTT)",
+            "Vanishing and exploding gradient problems",
+            "Truncated BPTT",
+            "Gated Recurrent Units (GRUs)",
+            "Long Short‑Term Memory (LSTM) networks",
+            "Mitigating vanishing gradients with LSTMs",
+            "Encoder–decoder frameworks for RNNs",
+            "Attention mechanisms – standard attention, visual attention, hierarchical attention",
+            "Directed graphical models",
+            "Applications of deep RNNs in image processing, natural language processing, speech recognition, and video analytics"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Generative Models",
+          "topics": [
+            "Introduction to deep generative models",
+            "Restricted Boltzmann Machines (RBMs) and Gibbs sampling",
+            "Deep belief networks",
+            "Markov networks and Markov chains",
+            "Autoregressive models – NADE, MADE, PixelRNN",
+            "Generative Adversarial Networks (GANs)",
+            "Applications of deep generative models in object detection, speech and image recognition, video analysis, NLP, and medical science"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Aurelien Geon, “Hands‑On Machine Learning with Scikit‑Learn and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems”, O'Reilly.",
+        "Andreas Müller, \"Introduction to Machine Learning with Python: A Guide for Data Scientists\", O'Reilly.",
+        "Adam Gibson and Josh Patterson, \"Deep Learning: A Practitioner's Approach\", O'Reilly."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Optimization Techniques in Machine Leaning",
+      "subject_code": "AL503(C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "What is optimization",
+            "Formulation of LPP",
+            "Solution of LPP: Simplex method",
+            "Basic Calculus for optimization: Limits and multivariate functions",
+            "Derivatives and linear approximations: Single‑variate functions and multivariate functions"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Machine Learning Strategy",
+          "topics": [
+            "ML readiness",
+            "Risk mitigation",
+            "Experimental mindset",
+            "Build / buy / partner",
+            "Setting up a team",
+            "Understanding and communicating change"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Responsible Machine Learning",
+          "topics": [
+            "AI for good and all",
+            "Positive feedback loops and negative feedback loops",
+            "Metric design and observing behaviours",
+            "Secondary effects of optimization",
+            "Regulatory concerns"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Machine Learning in Production and Planning",
+          "topics": [
+            "Integrating information systems",
+            "Users break things",
+            "Time and space complexity in production",
+            "When to retain the model? Logging ML model versioning",
+            "Knowledge transfer",
+            "Reporting performance to stakeholders"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Care and Feeding of Your Machine Learning Model",
+          "topics": [
+            "MLPL recap",
+            "Post‑deployment challenges",
+            "QUAM monitoring and logging",
+            "QUAM testing",
+            "QUAM maintenance",
+            "QUAM updating",
+            "Separating datastack from production",
+            "Dashboard essentials and metrics monitoring"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Jeeva Jose, Introduction to Machine Learning, Khanna Book Publishing, 2020.",
+        "Rajiv Chopra, Machine Learning, Khanna Book Publishing, 2021.",
+        "Optimization for Machine Learning, Suvrit Sra, Sebastian Nowozin and Stephen J. Wright, MIT Press, 2011.",
+        "Optimization in Machine Learning and Applications, Suresh Chandra Satapathy, Anand J. Kulkarni, Springer, 2019."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "AI in Health Care",
+      "subject_code": "AL504 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Disease detection with computer vision",
+          "topics": [
+            "Medical image diagnosis",
+            "Eye disease diagnosis",
+            "Cancer diagnosis using imaging",
+            "Building and training a model for medical diagnosis",
+            "Training, prediction, and loss functions",
+            "Image classification and class imbalance handling",
+            "Generating additional samples for training (data augmentation)",
+            "Model testing and validation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Evaluating models",
+          "topics": [
+            "Sensitivity and specificity as evaluation metrics",
+            "Accuracy expressed as conditional probability",
+            "Confusion matrix construction and interpretation",
+            "Receiver operating characteristic (ROC) curve analysis",
+            "Threshold selection for classification decisions",
+            "Image segmentation on MRI images",
+            "Medical image segmentation techniques",
+            "MRI data acquisition and image registration",
+            "Segmentation algorithms",
+            "2D U‑Net architecture",
+            "3D U‑Net architecture",
+            "Data augmentation strategies for segmentation",
+            "Loss functions specific to segmentation tasks",
+            "Assessment across different populations and diagnostic technologies",
+            "External validation of segmentation models"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Linear prognostic models",
+          "topics": [
+            "Medical prognosis fundamentals",
+            "Atrial fibrillation risk modeling",
+            "Liver disease mortality prediction",
+            "Risk assessment for heart disease",
+            "Evaluation of prognostic models",
+            "Concordant pair analysis",
+            "Risk tie handling",
+            "Permissible pair identification",
+            "Tree‑based prognostic modeling",
+            "Decision trees applied to prognosis",
+            "Techniques to mitigate overfitting in trees",
+            "Modeling with different statistical distributions",
+            "Missing data handling in prognostic datasets",
+            "Imputation methods for missing values"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Survival Models and Time",
+          "topics": [
+            "Survival analysis concepts",
+            "Survival function definition",
+            "Collection of time‑to‑event data",
+            "Estimation of the survival function",
+            "Risk modeling using linear models",
+            "Risk modeling using tree‑based models",
+            "Hazard function formulation",
+            "Relative risk estimation",
+            "Individual versus baseline hazard comparison",
+            "Survival trees methodology",
+            "Nelson‑Aalen estimator for cumulative hazard"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Medical Treatment Effect Estimation",
+          "topics": [
+            "Analysis of randomized controlled trial data",
+            "Average treatment effect (ATE) estimation",
+            "Conditional average treatment effect (CATE) estimation",
+            "T‑Learner methodology",
+            "S‑Learner methodology",
+            "C‑for‑benefit approach"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "https://www.coursera.org/learn/ai-for-medical-diagnosis",
+        "https://www.coursera.org/learn/ai-for-medicalprognosis#syllabus",
+        "https://www.coursera.org/learn/ai-for-medical-treatment#syllabus",
+        "Deep Medicine: How Artificial Intelligence Can Make Healthcare Human Again, Eric Topol, Basic Books, 1st edition 2019.",
+        "Machine Learning and AI for Healthcare: Big Data for Improved Health Outcomes, Arjun Panesar, Apress, 1st ed. Edition, 2019.",
+        "Artificial Intelligence in Healthcare, 2020, ISBN 978-012-818438-7, Elsevier Inc"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Natural Language Processing",
+      "subject_code": "AL504 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Origins and challenges of NLP",
+            "Language Modeling: Grammar‑based LM, Statistical LM",
+            "Regular Expressions and Finite‑State Automata",
+            "English Morphology",
+            "Transducers for lexicon and rules",
+            "Tokenization",
+            "Detecting and correcting spelling errors",
+            "Minimum edit distance"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Word Level Analysis",
+          "topics": [
+            "Unsmoothed N‑grams",
+            "Evaluating N‑grams",
+            "Smoothing, interpolation and backoff",
+            "Word classes",
+            "Part‑of‑speech tagging (rule‑based, stochastic, transformation‑based)",
+            "Issues in PoS tagging",
+            "Hidden Markov and maximum‑entropy models",
+            "Viterbi algorithm and EM training"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Syntactic Analysis",
+          "topics": [
+            "Context‑Free Grammars",
+            "Grammar rules for English",
+            "Treebanks",
+            "Normal forms for grammar",
+            "Dependency Grammar",
+            "Syntactic parsing",
+            "Ambiguity handling",
+            "Dynamic‑programming parsing",
+            "Shallow parsing",
+            "Probabilistic CFG",
+            "Probabilistic CYK algorithm",
+            "Probabilistic lexicalized CFGs",
+            "Feature structures",
+            "Unification of feature structures"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Semantics and Pragmatics",
+          "topics": [
+            "Requirements for representation",
+            "First‑order logic",
+            "Description logics",
+            "Syntax‑driven semantic analysis",
+            "Semantic attachments",
+            "Word senses and relations between senses",
+            "Thematic roles and selectional restrictions",
+            "Word‑sense disambiguation (supervised, dictionary & thesaurus, bootstrapping methods)",
+            "Word similarity using thesaurus and distributional methods",
+            "Compositional semantics"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Application of NLP",
+          "topics": [
+            "Intelligent work processors: machine translation",
+            "User interfaces and man‑machine interfaces",
+            "Natural language querying",
+            "Tutoring and authoring systems",
+            "Speech recognition",
+            "Commercial use of NLP"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Breck Baldwin, Language Processing with Java and LingPipe Cookbook, Atlantic Publisher",
+        "Richard M Reese, Natural Language Processing with Java, O'Reilly Media",
+        "Nitin Indurkhya and Fred J. Damerau, Handbook of Natural Language Processing, Chapman and Hall/CRC Press",
+        "Tanveer Siddiqui, U.S. Tiwary, Natural Language Processing and Information Retrieval, Oxford University Press"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computational Intelligence",
+      "subject_code": "AL504 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Computational Intelligence (CI)",
+          "topics": [
+            "Basics of Computational Intelligence (CI)",
+            "History of CI",
+            "Adaptation and Learning",
+            "Self‑Organization",
+            "State‑space search and Evolution",
+            "CI and Soft Computing",
+            "CI techniques and applications",
+            "Decision Trees: introduction, evaluation, splitting criteria, implementation",
+            "Neural Networks: introduction, types, issues, implementation, applications"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Fuzzy Set Theory",
+          "topics": [
+            "Fuzzy Sets and characteristics",
+            "Definitions and terminology of fuzzy sets",
+            "Fuzzy operators and relations/composition",
+            "Membership function formulation",
+            "Fuzzy rules and reasoning",
+            "Fuzzy inference systems and input‑space partitioning",
+            "Defuzzification methods",
+            "Fuzzy controllers",
+            "Mamdani, Sugeno, Tsukamoto fuzzy models",
+            "Neuro‑fuzzy modeling and neuro‑fuzzy control"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Rough Set Theory",
+          "topics": [
+            "Rough set fundamentals and knowledge representation",
+            "Set approximations, accuracy, vagueness, and uncertainty",
+            "Rough membership function",
+            "Attribute dependency and reduction",
+            "Applications of rough sets",
+            "Hidden Markov Models (HMM)",
+            "Graphical models, variable elimination, belief propagation",
+            "Markov Decision Processes"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Evolutionary Computation",
+          "topics": [
+            "Genetic Algorithms: basic genetics, concepts, working principle",
+            "Chromosome encoding, fitness functions, selection methods",
+            "Genetic operators: reproduction, crossover, mutation",
+            "Genetic modeling and problem solving",
+            "Genetic programming, evolutionary programming, evolutionary strategies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Swarm Intelligence",
+          "topics": [
+            "Swarm Intelligence fundamentals",
+            "Ant Colony Optimization (ACO): overview and algorithm",
+            "Particle Swarm Optimization (PSO): basics, social network structure, parameters, algorithm",
+            "Grey Wolf Optimization (GWO)",
+            "Bee Colony Optimization",
+            "Hybrid CI techniques and applications",
+            "CI tools"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Russell C. Eberhart and Yuhui Shi, Computational Intelligence: Concepts to Implementations, Morgan Kaufmann Publishers.",
+        "Andries P. Engelbrecht, Computational Intelligence: An Introduction, Wiley Publishing.",
+        "David E. Goldberg, Genetic Algorithm in Search Optimization and Machine Learning, Pearson Education.",
+        "Jagdish Chand Bansal, Pramod Kumar Singh, Nikhil R. Pal, Evolutionary and Swarm Intelligence Algorithms, Springer Publishing.",
+        "S. Rajasekaran, G.A. Vijayalakshmi Pai, “Neural Networks, Fuzzy Logic, Genetic Algorithms Synthesis and Applications”, PHI.",
+        "Timothy J. Ross, Fuzzy Logic with Engineering Applications, McGraw‑Hill.",
+        "Simon Haykin, Neural Networks: A Comprehensive Foundation, Prentice Hall."
+      ],
+      "extra": null
+    }
+  ]
+}

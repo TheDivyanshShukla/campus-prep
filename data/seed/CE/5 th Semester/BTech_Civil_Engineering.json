@@ -1,0 +1,899 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Fluid Mechanics-I",
+      "subject_code": "CE501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of Fluid Properties",
+          "topics": [
+            "Engineering units of measurement",
+            "mass",
+            "density",
+            "specific weight",
+            "specific volume",
+            "specific gravity",
+            "surface tension",
+            "capillarity",
+            "viscosity",
+            "bulk modulus of elasticity",
+            "pressure and vapor pressure",
+            "Fluid Statics: Pressure at a point",
+            "pressure variation in static fluid",
+            "Absolute and gauge pressure",
+            "manometers",
+            "Forces on plane and curved surfaces (Problems on gravity dams and Tainter gates)",
+            "buoyant force",
+            "Stability of floating and submerged bodies",
+            "Relative equilibrium"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Kinematics of Flow",
+          "topics": [
+            "Types of flow - ideal & real, steady & unsteady, uniform & non uniform, one, two and three dimensional flow",
+            "path lines, streamlines, stream tubes",
+            "continuity equation for one and three dimensional flow",
+            "rotational & irrotational flow",
+            "circulation",
+            "stagnation point",
+            "separation of flow",
+            "sources & sinks",
+            "velocity potential",
+            "stream function",
+            "flow nets – their utility & method of drawing flow nets"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Dynamics of Flow",
+          "topics": [
+            "Euler’s equation of motion along a streamline and derivation of Bernoulli’s equation",
+            "application of Bernoulli’s equation",
+            "energy correction factor",
+            "linear momentum equation for steady flow",
+            "momentum correction factor",
+            "moment of momentum equation",
+            "forces on fixed and moving vanes and other applications",
+            "Fluid Measurements: Velocity measurement (Pitot tube, Prandtl tube, current meters etc.)",
+            "flow measurement (orifices, nozzles, mouth pieces, orifice meter, nozzle meter, venturimeter, weirs and notches)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Laminar Flow",
+          "topics": [
+            "Introduction to laminar flow",
+            "Reynolds experiment & Reynolds number",
+            "relation between shear & pressure gradient",
+            "laminar flow through circular pipes",
+            "laminar flow between parallel plates",
+            "laminar flow through porous media",
+            "Stokes law"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Dimensional Analysis and Turbulent Flow",
+          "topics": [
+            "Dimensional Analysis and use of Buckingham‑π theorem",
+            "Introduction to Turbulent flow – Prandtl mixing length hypothesis",
+            "Flow over smooth & rough surface",
+            "Darcy–Weisbach resistance equation",
+            "variation of friction factor & Moody’s diagram",
+            "pipe flow problem"
+          ]
+        }
+      ],
+      "experiments": [
+        "To determine the local point pressure with the help of pitot tube.",
+        "To find out the terminal velocity of a spherical body in water.",
+        "Calibration of Venturimeter",
+        "Determination of Cc, Cv, Cd of Orifices",
+        "Calibration of Orifice Meter",
+        "Calibration of Nozzle meter and Mouth Piece",
+        "Reynolds experiment for demonstration of stream lines & turbulent flow",
+        "Determination of metacentric height",
+        "Determination of Friction Factor of a pipe",
+        "To study the characteristics of a centrifugal pump.",
+        "Verification of Impulse momentum principle"
+      ],
+      "reference_books": [
+        "Modi & Seth; Fluid Mechanics; Standard Book House, Delhi",
+        "Som and Biswas; Fluid Mechnics and machinery; TMH",
+        "Engg fluid mech. – By Grade & Miraj gaonkar, Nem Chand & Bros. Prakashan",
+        "White ; Fluid Mechanics ; TMH",
+        "Essential of Engg Hyd. By JNIK DAKE; Afrikan Network & Sc Instt. (ANSTI)",
+        "A Text Book of fluid Mech. for Engg. Student by Franiss JRD",
+        "R Mohanty; Fluid Mechanics By; PHI",
+        "Fluid Mechanics; Gupta Pearson."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Transportation Engineering- II",
+      "subject_code": "CE502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Highway Planning, Alignment & Geometric Design",
+          "topics": [
+            "Principles of highway planning",
+            "Road planning in India and financing of roads",
+            "Classification patterns",
+            "Requirements and engineering surveys for highway location",
+            "Cross‑sectional elements – width, camber, superelevation, sight distances",
+            "Extra widening at curves",
+            "Horizontal and vertical curves",
+            "Numerical problems related to alignment and geometry"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Bituminous & Cement Concrete Pavements",
+          "topics": [
+            "Design of flexible (bituminous) pavements",
+            "Design of mixes and stability (WBM, WMM, BM, IBM)",
+            "Surface dressing and interfacial treatments – seal coat, tack coat, prime coat, wearing coats",
+            "Grouted macadam and bituminous concrete specifications",
+            "Construction and maintenance of flexible pavements",
+            "Advantages and disadvantages of rigid (cement concrete) pavements",
+            "General principles of rigid pavement design, types, construction, maintenance and joints",
+            "Dowel bars and tie bars in rigid pavements",
+            "Recent developments in cement concrete pavement design, fatigue and reliability"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Low Cost Roads, Drainage, Traffic Engineering & Transportation Planning",
+          "topics": [
+            "Principles of stabilization and mechanical stabilization of low‑cost roads",
+            "Requirements, advantages, disadvantages and uses of stabilization techniques",
+            "Quality control of stabilization works",
+            "Macadam roads – types, specifications, construction, maintenance and causes of failure",
+            "Surface and sub‑surface drainage of roads",
+            "Highway materials – properties and testing",
+            "Channelised and unchannelised intersections, at‑grade and grade‑separated intersections",
+            "Rotary‑type intersection design, marking, signs, signals and street lighting",
+            "Principles of transportation planning – inventories, trip generation, trip distribution, model split, traffic assignment and plan preparation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Airport Planning, Runway & Taxiway",
+          "topics": [
+            "Airport site selection and classification of airports",
+            "Aircraft characteristics and their effects on runway alignment",
+            "Wind‑rose diagrams and basic runway length calculations with corrections",
+            "Geometrical elements of taxiways and runways",
+            "Runway capacity patterns"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Airport Obstructions, Lightning & Traffic Control",
+          "topics": [
+            "Zoning regulations and approach areas",
+            "Approach surface types – imaginary, conical and horizontal",
+            "Runway and taxiway lighting, rotating beacon, boundary lights and approach lights",
+            "Instrument landing system, precision approach radar and VOR en‑route traffic control"
+          ]
+        }
+      ],
+      "experiments": [
+        "Aggregate Crushing Value Test",
+        "Determination of aggregate impact value",
+        "Determination of Los Angeles Abrasion value",
+        "Determination of California Bearing Ratio values",
+        "Determination of penetration value of Bitumen",
+        "Determination of Viscosity of Bituminous Material",
+        "Determination of softening point of bituminous material",
+        "Determination of ductility of the bitumen",
+        "Determination of flash point and fire point of bituminous material",
+        "Determination of Bitumen content by centrifuge extractor",
+        "Determination of stripping value of road aggregate",
+        "Determination of Marshall stability value for Bituminous mix",
+        "Determination of shape tests on aggregate"
+      ],
+      "reference_books": [
+        "Highway Engineering by Gurucharan Singh",
+        "Principles of Pavement Design by E.J. Yoder & M.W. Witzech",
+        "Highway Engineering by O’Fleherty",
+        "Highway Engineering by S.K. Khanna & C.E.G. Justo",
+        "Airport Planning & Design by S.K. Khanna & M. G. Arora",
+        "Foresch, Charles “Airport Planning”",
+        "Horonjeff Robert “The Planning & Design of Airports”",
+        "Sharma & Sharma, Principles and Practice of Highway Engg.",
+        "Haung, Analysis and Design of Pavements",
+        "Relevant IRC & IS codes",
+        "Laboratory Manual by Dr. S.K. Khanna",
+        "Highway Engg. By Hews & Oglesby",
+        "Highway Material by Walker"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Structural analysis-II",
+      "subject_code": "CE-503 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Moment Distribution and Frame Analysis",
+          "topics": [
+            "Moment distribution method in analysis of frames with sway",
+            "Analysis of box frames",
+            "Analysis of portals with inclined members",
+            "Analysis of beams and frames by Kani’s method"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Plastic Analysis of Frames",
+          "topics": [
+            "Plastic analysis of beams",
+            "Plastic analysis of frames"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Tall Frames and Lateral Load Analysis",
+          "topics": [
+            "Analysis of tall frames",
+            "Wind and earthquake loads on frames",
+            "Codal provisions for lateral loads",
+            "Approximate analysis of multistory frames for vertical loads",
+            "Approximate analysis of multistory frames for lateral loads"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Matrix Methods of Structural Analysis",
+          "topics": [
+            "Force method of matrix structural analysis",
+            "Displacement method of matrix structural analysis"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Influence Lines",
+          "topics": [
+            "Influence lines for intermediate structures",
+            "Muller‑Breslau principle"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Wang C.K. Intermediate structural analysis, McGraw Hill, New York.",
+        "Kinney Streling J. Indeterminate structural Analysis, Addison Wesley.",
+        "Reddy C.S., Basic Stgructural Analysis, Tata McGraw Hill Publishing Company, New Delhi.",
+        "Norris C.H., Wilbur J.B. and Utkys. Elementary Structural Analysis, McGraw Hill International, Tokyo.",
+        "Weaver W & Gere JM, Matrix Methods of Framed Structures, CBS Publishers & Distributors, Delhi"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Construction Planning & Management",
+      "subject_code": "CE- 503 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Preliminary and detailed investigation methods",
+          "topics": [
+            "Preliminary and detailed investigation methods",
+            "Methods of construction, form work and centering",
+            "Schedule of construction, job layout",
+            "Principles of construction management",
+            "Modern management techniques like CPM/PERT with network analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Construction equipments",
+          "topics": [
+            "Factors affecting selection of construction equipment",
+            "Investment and operating cost of equipment",
+            "Output of various construction equipments",
+            "Equipment required for earth work",
+            "Equipment required for dredging",
+            "Equipment required for conveyance",
+            "Equipment required for concreting",
+            "Equipment required for hoisting",
+            "Equipment required for pile driving",
+            "Equipment required for compaction and grouting"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Contracts",
+          "topics": [
+            "Different types of contract controls",
+            "Notice Inviting Tenders (NIT)",
+            "Contract documents",
+            "Departmental method of construction",
+            "Rate list preparation",
+            "Security deposit and earnest money requirements",
+            "Conditions of contract",
+            "Arbitration procedures",
+            "Administrative approval processes",
+            "Technical sanction procedures"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Specifications & Public Works Accounts",
+          "topics": [
+            "Importance of specifications and public works accounts",
+            "Types of specifications",
+            "Specifications for various trades of engineering works",
+            "Various forms used in construction works",
+            "Measurement book maintenance",
+            "Cash book maintenance",
+            "Materials at site account",
+            "Imprest account handling",
+            "Tools and plants accounting",
+            "Various types of running bills",
+            "Secured advance procedures",
+            "Final bill preparation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Site Organization & Systems Approach to Planning",
+          "topics": [
+            "Accommodation of site staff and contractor’s staff",
+            "Organization charts and manuals for construction sites",
+            "Personnel management in construction",
+            "Welfare facilities for site workers",
+            "Labour laws and human relations",
+            "Safety engineering on site",
+            "Equipment management problems",
+            "Assignment model for equipment allocation",
+            "Transportation model for construction logistics",
+            "Waiting line models with applications in construction",
+            "Shovel‑truck performance analysis using waiting line method"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Construction Equipment by Peurify",
+        "CPM by L.S. Srinath",
+        "Construction Management by S. Seetharaman",
+        "CPM & PERT by Weist & Levy",
+        "Construction, Management & Accounts by Harpal Singh",
+        "Tendering & Contracts by T.A. Talpasai"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Quantity surveying & Costing",
+      "subject_code": "CE- 503 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Purpose and importance of estimates",
+            "Principles of estimating",
+            "Methods of taking out quantities of items of work",
+            "Mode of measurement",
+            "Measurement sheet and abstract sheet",
+            "Bill of quantities",
+            "Types of estimate",
+            "Plinth area rate",
+            "Cubical content rate",
+            "Preliminary estimate",
+            "Original estimate",
+            "Revised estimate",
+            "Supplementary estimate for different projects"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Rate Analysis",
+          "topics": [
+            "Task for average artisan",
+            "Factors involved in the rate of an item",
+            "Material and labour requirement for various trades",
+            "Preparation of rates of important items of work",
+            "Current schedule of rates (C.S.R.)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Detailed Estimates",
+          "topics": [
+            "Preparing detailed estimates of various types of buildings",
+            "Detailed estimates for R.C.C. works",
+            "Earth work calculations for roads",
+            "Estimating of culverts",
+            "Estimating services for building such as water supply, drainage and electrification"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cost of Works",
+          "topics": [
+            "Factors affecting cost of work",
+            "Overhead charges",
+            "Contingencies",
+            "Work charge establishment",
+            "Various percentages for different services in building",
+            "Preparation of DPR (Detailed Project Report)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Valuation",
+          "topics": [
+            "Purposes of valuation",
+            "Depreciation",
+            "Sinking fund",
+            "Scrap value",
+            "Year’s purchase",
+            "Gross and net income",
+            "Dual rate interest",
+            "Methods of valuation",
+            "Rent fixation of buildings"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Quantity Surveying & Costing – B.N. Datta",
+        "Estimating & Costing for Civil Engg. – G.S. Birdi",
+        "Quantity surveying & costing – Chakraborty",
+        "Estimating & Costing – S.C. Rangawala"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Marine Construction",
+      "subject_code": "CE- 503 (D)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "History of water transportation",
+          "topics": [
+            "History of water transportation at world level and at national level development and policy",
+            "Classification of harbours, natural and artificial",
+            "Major ports in India",
+            "Administrative set up"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Harbour Planning",
+          "topics": [
+            "Harbour components, ship characteristics, characteristics of good harbour and principles of harbour planning",
+            "Size of harbour, site selection criteria and layout of harbours",
+            "Surveys to be carried out for harbor planning"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Natural Phenomena",
+          "topics": [
+            "Wind, waves, tides formation and currents phenomena, their generation characteristics and effects on marine structures",
+            "Silting, erosion and littoral drift"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Marine Structures",
+          "topics": [
+            "General design aspects, breakwaters – function, types, general design principles",
+            "Wharves, quays, jetties, piers, pier heads, dolphin, fenders, mooring accessories – function, types, suitability, design and construction features"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Docks and Locks",
+          "topics": [
+            "Tidal basin, wet docks – purpose, design consideration, operation of lock gates and passage",
+            "Repair docks – graving docks, floating docks"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A course in docs and harbours: S. P. BINDRA",
+        "Harbour docs and tunneliing: R. SRINIVASAN",
+        "Doc and harbour engineering: OZA"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Urban & Town Planning",
+      "subject_code": "CE- 504 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Definition and classification of urban areas",
+          "topics": [
+            "Definition and classification of urban areas",
+            "Trend of urbanization",
+            "Planning process",
+            "Various stages of the planning process",
+            "Surveys in planning",
+            "Plans and delineation of planning areas",
+            "Utility of spaces and future growth",
+            "Role of the Urban Planner in spatial organization, utility, demand and supply"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Plan implementation and sustainable urban development",
+          "topics": [
+            "Plan implementation",
+            "Urban planning agencies and their functions",
+            "Financing (public, private, NGOs)",
+            "Public participation in planning",
+            "Development control regulations",
+            "Sustainability and rationality in planning",
+            "Components of sustainable urban and regional development",
+            "Emerging concepts: Global City, Inclusive City, Safe City",
+            "City of the future and future of the city"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Town and country planning regulations and urban renewal",
+          "topics": [
+            "Town and Country Planning Act",
+            "Building bye‑laws",
+            "Elements of city planning",
+            "Zoning and land use",
+            "Housing",
+            "Introduction to landscaping – importance, objectives, principles, elements",
+            "Urban planning standards",
+            "Urban renewal for quality of life and livability"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transportation systems, legal issues and development plan preparation",
+          "topics": [
+            "Traffic transportation systems: urban roads and hierarchy",
+            "Traffic management",
+            "Intelligent Transport Systems (ITS)",
+            "Legal issues in planning and professional practice",
+            "Property rights in planning",
+            "Concept of arbitration",
+            "State and central government roles in town and country planning",
+            "Mechanism for preparation of development plan – Land Acquisition Rehabilitation and Resettlement Act 2013"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Development plans and planning agencies",
+          "topics": [
+            "Types of development plans: Master Plan, City Development Plan, Structure Plan, housing, land use, water supply & sanitation",
+            "Planning agencies for various levels of planning and their organization and purpose (CIDCO, MHADA, MIDC, MMRDA, PMRDA, etc.)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Adib Kanafani (1983). Transportation Demand Analysis. McGraw‑Hill Series in Transportation, Berkeley.",
+        "Hutchinson, B.G. (1974). Principles of Urban Transport Systems Planning. McGraw‑Hill Book Company, New York.",
+        "John W. Dickey (1975). Metropolitan Transportation Planning. McGraw‑Hill Book Company, New York.",
+        "Papacostas, C.S., and Prevedouros, P.D. (2002). Transportation Engineering and Planning. 3rd Edition, Prentice‑Hall of India Pvt Ltd., 318‑436.",
+        "Khisty, C.J. (2002). Transportation Engineering – An Introduction. Prentice Hall, India.",
+        "Yoder and Witczak. Principles of Pavement Design. John Wiley & Sons.",
+        "Yang, H. Huang. Pavement Analysis and Design. Second Edition, Prentice Hall Inc.",
+        "Rajib B. Mallick and Tahar El‑Korchi. Pavement Engineering – Principles and Practice. CRC Press (Taylor & Francis Group).",
+        "W. Ronald Hudson, Ralph Haas and Zeniswki. Modern Pavement Management. McGraw‑Hill and Co, Academic Session 2016‑17.",
+        "Relevant IRC Codes",
+        "Bruton, M.J. (1981). Introduction to Transportation Planning. Hutchinson of London.",
+        "Dickey, J.W. (1980). Metropolitan Transportation Planning. Tata McGraw‑Hill.",
+        "Principles of Transportation Engineering: P. Chakraborty and A. Das.",
+        "Fundamentals of Transportation Engineering: C.S. Papacostas.",
+        "Traffic Engineering and Transport Planning: L.R. Kadyal."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Remote Sensing & GIS",
+      "subject_code": "CE- 504 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Remote Sensing",
+          "topics": [
+            "Basic concepts of remote sensing",
+            "Data and information in remote sensing",
+            "Remote sensing data collection methods",
+            "Advantages and limitations of remote sensing",
+            "Remote sensing process",
+            "Electromagnetic spectrum",
+            "Energy interactions with atmosphere and earth surface features (soil, water, vegetation)",
+            "Image resolution",
+            "Image registration",
+            "False‑color composite imaging",
+            "Elements of visual interpretation techniques"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Remote Sensing Platforms and Sensors",
+          "topics": [
+            "Characteristics of Indian satellites and sensors",
+            "Overview of remote sensing platforms",
+            "Sensors and properties of digital data",
+            "Data formats and introduction",
+            "Major sensors/platforms: IRS, Landsat, SPOT, Cartosat, IKONOS, Envisat",
+            "Sensor resolutions: spatial, spectral, radiometric, temporal",
+            "Basics of digital image processing",
+            "Systematic errors in digital imagery (scan skew, mirror‑scan velocity, panoramic distortion, platform velocity, earth rotation)",
+            "Non‑systematic (random) errors (altitude, attitude)",
+            "Image enhancement techniques: gray‑level thresholding, level slicing, contrast stretching",
+            "Image filtering methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Geographic Information System",
+          "topics": [
+            "Introduction to geographic information systems (GIS)",
+            "Components of a GIS",
+            "Geographically referenced data",
+            "Spatial and attribute data and their integration",
+            "GIS operations: spatial data input and attribute data management",
+            "Geographic coordinate systems and datums",
+            "Map projections and types of map projections",
+            "Projected coordinate systems",
+            "Universal Transverse Mercator (UTM) zones"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Data Models",
+          "topics": [
+            "Vector data model and representation of simple features",
+            "Topology and its importance in vector data",
+            "Coverage and its data structure; shapefile format",
+            "Relational database concepts for GIS",
+            "Raster data model elements",
+            "Types of raster data",
+            "Raster data structure and data conversion"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Integrated Applications of Remote Sensing and GIS",
+          "topics": [
+            "Land‑use and land‑cover analysis using remote sensing and GIS",
+            "Change detection techniques",
+            "Water resources management applications",
+            "Urban planning applications",
+            "Environmental planning applications",
+            "Natural resource management applications",
+            "Traffic management applications",
+            "Location‑based services and their applications"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Remote Sensing and GIS – Lillesand and Kiefer, John Wiley, 2008.",
+        "Remote Sensing and GIS – B. Bhatta, Oxford Publishers, 2015.",
+        "Introduction to Geographic Information System – Kang‑Tsung Chang, McGraw‑Hill, 2015.",
+        "Concepts & Techniques of GIS – C. P. Lo, Albert K. W. Yonng, Prentice Hall (India) Publications.",
+        "Principles of Geophysical Information Systems – Peter A. Burragh and Rachael A. McDonnell, Oxford Publishers, 2004.",
+        "Basics of Remote Sensing & GIS – S. Kumar, Laxmi Publications."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Renewable Energy Sources",
+      "subject_code": "CE-504 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Renewable Energy Systems",
+          "topics": [
+            "Energy sources: conventional vs non‑conventional, renewable vs non‑renewable",
+            "Global and Indian statistics of energy resources",
+            "Significance and exploitation of renewable sources",
+            "Energy planning, efficiency and management"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Wind Energy System",
+          "topics": [
+            "Wind energy fundamentals and windmills",
+            "Grid‑connected wind systems: configuration and operating principles",
+            "Effects of wind speed and grid conditions",
+            "Off‑grid wind‑battery, wind‑diesel, wind‑hydro systems",
+            "Wind‑operated pumps and energy‑balance controllers",
+            "Small hydro systems: grid‑connected configurations, principles, and limitations",
+            "Generator types for stand‑alone systems: synchronous versus induction",
+            "Use of electronic load controllers and self‑excited induction generators",
+            "Wave energy systems: grid‑connected and hybrid configurations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Solar Radiation",
+          "topics": [
+            "Extraterrestrial and terrestrial solar radiation",
+            "Solar thermal conversion principles",
+            "Photovoltaic (PV) cells: materials, efficiency, and characteristics",
+            "PV panel performance under varying insolation",
+            "PV‑powered lighting and water pumps; characteristics of motors and pumps connected to PV panels",
+            "Biomass energy systems: configurations, biomass‑engine generators, load feeding in stand‑alone and hybrid modes",
+            "Characteristics of biomass as an energy source"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Energy from Oceans",
+          "topics": [
+            "Ocean temperature difference and OTEC (Ocean Thermal Energy Conversion) principles and plant operation",
+            "Geothermal energy and electric generation from gaseous cells",
+            "Magnetohydrodynamic (MHD) energy generation",
+            "Non‑hazardous energy extraction from nuclear waste",
+            "Possibilities of other modern non‑conventional energy sources"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Electric Energy Conservation",
+          "topics": [
+            "Energy‑efficient motors and other equipment",
+            "Energy saving in power‑electronic controlled drives",
+            "Electricity conservation in pumps, air‑conditioning, power plants, process industries, and illumination",
+            "Methods of energy audit and measurement systems",
+            "Efficiency measurement techniques and typical case studies",
+            "Analog and digital measuring devices, including thyristors"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "John Twidell & Toney Weir, Renewable Energy Resources, E & F N Spon.",
+        "El-Wakil, Power Plant Technology, McGraw Hill.",
+        "Rai G D, Non-conventional Energy Resources, Khanna.",
+        "F Howard E. Jordan, \"Energy-Efficient Electric Motor & their Application-II\", Plenum Press, New York USA",
+        "Anna Mani, \"Wind Energy Resource Survey in India-Ill\", Allied Publishers Ltd., New Delhi",
+        "S.P. Sukhatme: Solar Energy, TMH- 4e",
+        "Dr. A. Ramachandran, Prof B.V Sreekantan & M F.C. Kohli etc, \"TERI Energy Data Directory & Year book 1994-95\", Teri Tata Energy Research Institute, New Delhi",
+        "Solanki –Renewable Energy Technologies – PHI Learning",
+        "Sawhnew –Non Conventional Energy Resources – PHI Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Entrepreneurship Development & Management",
+      "subject_code": "CE- 504 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Entrepreneurship",
+          "topics": [
+            "Types of Entrepreneurs",
+            "Difference between Entrepreneur and Intrapreneur",
+            "Entrepreneurship in Economic Growth",
+            "Factors Affecting Entrepreneurial Growth"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Motivation",
+          "topics": [
+            "Major Motives Influencing an Entrepreneur",
+            "Achievement Motivation Training",
+            "Self Rating",
+            "Business Games",
+            "Thematic Apperception Test – Stress Management",
+            "Entrepreneurship Development Programs – Need and Objectives"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Business",
+          "topics": [
+            "Definition and Classification of Small Enterprises",
+            "Characteristics and Ownership Structures of Small Enterprises",
+            "Project Formulation and Steps for Setting up a Business",
+            "Identifying and Selecting a Good Business Opportunity",
+            "Market Survey and Research",
+            "Techno Economic Feasibility Assessment",
+            "Preparation of Preliminary Project Reports",
+            "Project Appraisal",
+            "Sources of Information",
+            "Classification of Needs and Agencies"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Financing And Accounting",
+          "topics": [
+            "Sources of Finance and Need",
+            "Term Loans",
+            "Capital Structure",
+            "Financial Institutions",
+            "Management of Working Capital",
+            "Costing",
+            "Break Even Analysis",
+            "Taxation – Income Tax",
+            "Excise Duty",
+            "Sales Tax"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Support To Entrepreneurs",
+          "topics": [
+            "Sickness in Small Business – Concept, Magnitude, Causes and Consequences, Corrective Measures",
+            "Business Incubators",
+            "Government Policy for Small Scale Enterprises",
+            "Growth Strategies in Small Industry – Expansion",
+            "Diversification",
+            "Joint Venture",
+            "Merger and Sub Contracting"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Khanka. S.S., “Entrepreneurial Development” S.Chand & Co. Ltd.,Ram Nagar, New Delhi, 2013.",
+        "Donald F Kuratko, “Entreprenuership – Theory, Process and Practice”, 9th Edition, Cengage Learning 2014.",
+        "Hisrich R D, Peters M P, “Entrepreneurship” 8th Edition, Tata McGraw-Hill, 2013.",
+        "Mathew J Manimala, “Enterprenuership theory at cross roads: paradigms and praxis” 2nd Edition Dream tech, 2005.",
+        "Rajeev Roy, ‘Entrepreneurship’ 2nd Edition, Oxford University Press, 2011.",
+        "EDII “Faulty and External Experts – A Hand Book for New Entrepreneurs Publishers: Entrepreneurship Development”, Institute of India, Ahmadabad, 1986"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Quantity Surveying & Costing (Lab)",
+      "subject_code": "CE505",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Preparation of detailed estimate.",
+        "Detailed estimate for services of plumbing and water supply or Electrification work.",
+        "Detailed estimate for earth work for the road construction or arched culvert.",
+        "Rate analysis for at least 8 items of construction.",
+        "Preparation of DPR of Civil Engineering Project."
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Material Testing Lab",
+      "subject_code": "CE506",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "To determine the normal consistency of cement.",
+        "To determine the initial and final setting time of cement.",
+        "To determine compressive strength of cement.",
+        "To determine the soundness of cement.",
+        "To determine the fineness modulus of fine aggregate & coarse aggregate.",
+        "Mix design of concrete by IS code method.",
+        "Slump test for determining workability of concrete.",
+        "Compressing strength of concrete cube.",
+        "To determine the flexure strength of concrete."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

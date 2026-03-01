@@ -1,0 +1,606 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Big Data",
+      "subject_code": "AD-801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Introduction to Big data",
+            "Big data characteristics",
+            "Types of big data",
+            "Traditional versus Big data",
+            "Evolution of Big data",
+            "Challenges with Big Data",
+            "Technologies available for Big Data",
+            "Infrastructure for Big data",
+            "Use of Data Analytics",
+            "Desired properties of Big Data system"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Hadoop",
+          "topics": [
+            "Core Hadoop components",
+            "Hadoop Eco system",
+            "Hive Physical Architecture",
+            "Hadoop limitations",
+            "RDBMS Versus Hadoop",
+            "Hadoop Distributed File system",
+            "Processing Data with Hadoop",
+            "Managing Resources and Application with Hadoop YARN",
+            "MapReduce programming"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Hive and Pig",
+          "topics": [
+            "Hive Architecture",
+            "Hive Data types",
+            "Hive Query Language",
+            "Introduction to Pig",
+            "Anatomy of Pig",
+            "Pig on Hadoop",
+            "Use Case for Pig",
+            "ETL Processing",
+            "Data types in Pig",
+            "Running Pig",
+            "Execution model of Pig",
+            "Operators",
+            "Functions",
+            "Data types of Pig"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to NoSQL",
+          "topics": [
+            "NoSQL Business Drivers",
+            "NoSQL Data architectural patterns",
+            "Variations of NoSQL architectural patterns using NoSQL to Manage Big Data",
+            "Introduction to MongoDB"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Mining Social Network Graphs",
+          "topics": [
+            "Applications of social Network mining",
+            "Social Networks as a Graph",
+            "Types of social Networks",
+            "Clustering of social Graphs",
+            "Direct Discovery of communities in a social graph",
+            "Introduction to recommender system"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Kai Hwang, Geoffrey C., Fox. Jack, J. Dongarra, “Distributed and Cloud Computing”, Elsevier, First Edition",
+        "Michael Minelli, Michele Chambers, Ambiga Dhiraj, “Big Data Big Analytics”, Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Natural Language Processing",
+      "subject_code": "AD-802 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Natural Language Processing (NLP): Definition and scope",
+            "Applications in various domains",
+            "Challenges and limitations",
+            "NLP tasks in syntax, semantics, and pragmatics",
+            "Different Data Models such as Boolean Model, Vector model, Probabilistic Model",
+            "Comparison of classical NLP models: Rule‑based model, Statistical model, Information retrieval model, Rule‑based machine translation model, Probabilistic Graphical model"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Linguistics and Morphology",
+          "topics": [
+            "Linguistic essentials: Phonetics and Phonology",
+            "Morphology: Morphens, Syntax, Semantics, Pragmatics, Semiotics, Discourse Analysis, Psycholinguistics, Corpus Linguistics",
+            "Word Formation Processes",
+            "Morphological analysis",
+            "Morphological Finite State Transducers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Word Level Analysis",
+          "topics": [
+            "Tokenization",
+            "Part‑of‑Speech Tagging (POS Tagging)",
+            "Lemmatization",
+            "Stemming",
+            "Named Entity Recognition (NER)",
+            "Word Sense Disambiguation (WSD)",
+            "Word Embedding",
+            "Types of POS Tagging: Rule‑based, Stochastic, Transformation‑based, Lexical",
+            "Hidden Markov Model and Maximum Entropy model",
+            "n‑grams",
+            "Collocations",
+            "Applications of NER"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Syntax Analysis",
+          "topics": [
+            "Grammatical Formalisms: Context Free Grammars (CFG)",
+            "Grammar rules for English",
+            "Syntactic parsing: Grammar formalisms and treebanks",
+            "Efficient parsing for context‑free grammars (CFGs)",
+            "Statistical parsing and probabilistic CFGs (PCFGs)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Semantic Analysis",
+          "topics": [
+            "Requirements for representation",
+            "First‑Order Logic",
+            "Description Logics",
+            "Syntax‑Driven Semantic analysis",
+            "Semantic attachments",
+            "Word senses, relations between senses, thematic roles, selectional restrictions",
+            "Word‑sense disambiguation (WSD) using supervised, dictionary and thesaurus methods",
+            "Applications of WSD"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Dipanjan Sarkar – Text Analytics with Python. Apress/Springer, 2016",
+        "Rothman, Denis, and Antonio Gulli – Transformers for Natural Language Processing: Build, train, and fine‑tune deep neural network architectures for NLP with Python, PyTorch, TensorFlow, BERT, and GPT‑3. Packt Publishing Ltd, 2022.",
+        "Tanveer Siddiqui, U.S. Tiwary – Natural Language Processing and Information Retrieval, Oxford University Press, 2008"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Reinforcement Learning",
+      "subject_code": "AD-802 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Reinforcement Learning",
+          "topics": [
+            "Definition of reinforcement learning framework and Markov Decision Process ($MDP$)",
+            "Policies",
+            "Value functions and Bellman equations",
+            "Exploration vs. exploitation strategies",
+            "Components and architecture of an RL agent",
+            "Common challenges and problems in reinforcement learning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Bandit Algorithms and Dynamic Programming",
+          "topics": [
+            "Multi‑armed bandit algorithms: Upper Confidence Bound (UCB), Probably Approximately Correct (PAC), Median Elimination",
+            "Policy gradient methods for bandits",
+            "Full reinforcement learning and $MDP$ formulation",
+            "Bellman optimality principle",
+            "Dynamic programming techniques: value iteration, policy iteration, and policy evaluation",
+            "Extensions of DP and convergence analysis using contraction mapping",
+            "Monte‑Carlo (MC) learning",
+            "Temporal‑Difference (TD) learning",
+            "TD‑$\\lambda$ and eligibility traces"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Q‑Learning, Function Approximation and Deep Q‑Networks",
+          "topics": [
+            "Q‑learning algorithm and its relation to temporal‑difference methods",
+            "Eligibility traces in Q‑learning",
+            "Function approximation for value functions: linear, non‑linear, and least‑squares methods",
+            "Incremental vs. batch update methods",
+            "Deep Q‑Learning analysis and stability considerations",
+            "Deep Q‑Network (DQN) architecture",
+            "Experience replay mechanisms"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Advanced Q‑Learning, Policy Gradient, Hierarchical and POMDPs",
+          "topics": [
+            "Fitted Q‑iteration and its applications",
+            "Advanced Q‑learning variants and handling deep Q‑learning problems",
+            "Imitation learning from optimal controllers",
+            "Integration of DQN with policy‑gradient approaches",
+            "Policy‑gradient algorithms for full reinforcement learning",
+            "Hierarchical reinforcement learning concepts",
+            "Partially observable Markov decision processes (POMDPs)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Actor‑Critic, Inverse RL and Current Trends",
+          "topics": [
+            "Actor‑Critic methods and their variants",
+            "Inverse reinforcement learning (IRL)",
+            "Maximum entropy deep inverse reinforcement learning",
+            "Generative adversarial imitation learning (GAIL)",
+            "Recent trends in reinforcement learning architectures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Goodfellow, I., Bengio, Y., & Courville, A. – Deep Learning, MIT Press",
+        "Duda, R. O., Hart, P. E., & Stork, D. G. – Pattern Classification, Wiley",
+        "Sutton, R. S., & Barto, A. G. – Reinforcement Learning: An Introduction, 2nd Edition",
+        "Wiering, M., & van Otterlo, M. (Eds.) – Reinforcement Learning: State‑of‑the‑Art"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Robotic Process Automation",
+      "subject_code": "AD-802 (C)",
+      "subject_type": "Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to RPA",
+          "topics": [
+            "Scope and techniques of automation",
+            "Robotic process automation overview",
+            "Benefits of RPA",
+            "Components of RPA",
+            "RPA platforms",
+            "Future of automation",
+            "History of automation",
+            "Comparison of RPA vs Automation",
+            "Processes and flowcharts",
+            "Programming constructs in RPA",
+            "Types of bots",
+            "RPA development methodologies",
+            "Robotic control‑flow architecture",
+            "RPA business case",
+            "Industries best suited for RPA",
+            "Risks and challenges with RPA",
+            "Emerging RPA ecosystem"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "RPA Tool Introduction and Basics",
+          "topics": [
+            "Introduction to RPA tool",
+            "User interface overview",
+            "Variables in RPA",
+            "Managing variables",
+            "Managing arguments",
+            "Arguments panel",
+            "Imported namespaces",
+            "Control flow: If‑Else statements",
+            "Loops in RPA",
+            "Advanced control flow constructs",
+            "Data manipulation: scalar variables",
+            "Data manipulation: collections and tables",
+            "Text manipulation",
+            "Data gathering and assembling"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Advanced Automation Concepts & Techniques",
+          "topics": [
+            "Basic and desktop recording",
+            "Web recording",
+            "Input‑output methods",
+            "Screen scraping",
+            "Data scraping techniques",
+            "Selectors: definition and assessment",
+            "Selector customization",
+            "Debugging selectors",
+            "Dynamic selectors",
+            "Partial selectors",
+            "Image, text and advanced Citrix automation challenges",
+            "Excel data tables and PDF handling",
+            "Data tables in RPA",
+            "Excel and data table basics",
+            "Data manipulation in Excel",
+            "Extracting data from PDF",
+            "Extracting single data items",
+            "Anchors in PDF",
+            "Using anchors in PDF"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Handling User Events & Assistant Bots",
+          "topics": [
+            "Assistant bots overview",
+            "Monitoring system event triggers",
+            "Hotkey trigger handling",
+            "Mouse trigger handling",
+            "System trigger handling",
+            "Monitoring image and element triggers",
+            "Launching an assistant bot via keyboard event",
+            "Exception handling and debugging",
+            "Debugging tools for RPA",
+            "Strategies for solving issues",
+            "Error catching techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Deploying and Maintaining Bot",
+          "topics": [
+            "Publishing bots using publish utility",
+            "Creating an RPA server",
+            "Controlling bots via server",
+            "Provisioning a robot from server",
+            "Connecting robot to server",
+            "Deploying robot to server",
+            "Publishing and managing updates",
+            "Managing packages",
+            "Uploading packages",
+            "Deleting packages"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Alok Mani Tripathi, “Learning Robotic Process Automation”, Packt Publishing, 2018.",
+        "Frank Casale, Rebecca Dilla, Heidi Jaynes, Lauren Livingston, “Introduction to Robotic Process Automation: a Primer”, Institute of Robotic Process Automation, 1st Edition, 2015.",
+        "Richard Murdoch, Robotic Process Automation: Guide To Building Software Robots, Automate Repetitive Tasks & Become An RPA Consultant, Independently Published, 1st Edition, 2018.",
+        "Srikanth Merianda, “Robotic Process Automation Tools, Process Automation and their benefits: Understanding RPA and Intelligent Automation”, Consulting Opportunity Holdings LLC, 1st Edition, 2018.",
+        "Lim Mei Ying, “Robotic Process Automation with Blue Prism Quick Start Guide: Create software robots and automate business processes”, Packt Publishing, 1st Edition, 2018."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "AI for Remote Sensing",
+      "subject_code": "AD-803 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Remote Sensing and AI",
+          "topics": [
+            "Definition of Remote sensing",
+            "Principles of Remote Sensing",
+            "Introduction to Artificial Intelligence",
+            "Integration of AI in Remote Sensing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Types of Remote Sensing Platforms and Sensors",
+          "topics": [
+            "Types and classification of sensors",
+            "Types of platforms (ground, airborne, space‑borne)",
+            "Data acquisition techniques and image resolution",
+            "Data pre‑processing and feature extraction techniques",
+            "Radiometric and geometric corrections",
+            "Data fusion and enhancement methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "AI for Remote Sensing",
+          "topics": [
+            "Supervised learning for remote sensing analysis",
+            "Unsupervised learning for remote sensing analysis",
+            "Deep learning for remote sensing analysis",
+            "Image classification techniques in remote sensing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "AI‑Assisted Image Interpretation and Feature Extraction",
+          "topics": [
+            "Object detection and tracking in remote sensing imagery",
+            "Change detection and time‑series analysis",
+            "Hyperspectral and LiDAR data analysis",
+            "Fusion of multi‑modal remote sensing data"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Applications of AI in Remote Sensing",
+          "topics": [
+            "Land cover and land use mapping",
+            "Environmental monitoring and assessment",
+            "Disaster management and response",
+            "Precision agriculture and crop monitoring"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rémi Cresson, “Deep Learning for Remote Sensing Images with Open Source Software”, CRC Press, 1st edition, 2020.",
+        "Moulay A Akhloufi, Mozhdeh Shahbazi, “Deep Learning Methods for Remote Sensing”, MDPI AG, 2022.",
+        "Alka Rani, Nirmal Kumar, S. K. Singh, N. K. Sinha, R. K. Jena, Himesh Patra, “Remote Sensing Data Analysis Using R”, CRC Press, Taylor & Francis Group, 2021.",
+        "Tammy E. Parece, John A. McGee, James B. Campbell, “Remote Sensing with ArcGIS Pro”, 2019."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Augmented & Virtual Reality",
+      "subject_code": "AD-803 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Virtual Reality",
+          "topics": [
+            "Introduction to Virtual Reality",
+            "VR Basics",
+            "History of VR",
+            "VR paradigms",
+            "Collaboration",
+            "Virtual reality systems",
+            "Representation",
+            "User interaction",
+            "Geometry of Virtual Worlds",
+            "Geometric Models",
+            "Changing Position and Orientation",
+            "Axis",
+            "Angle Representations of Rotation",
+            "Viewing Transformations",
+            "Chaining the Transformations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Motion in Real and Virtual Worlds",
+          "topics": [
+            "Motion in Real and Virtual Worlds",
+            "Velocities and Accelerations",
+            "The Vestibular System",
+            "Physics in the Virtual World",
+            "Mismatched Motion and Vection"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Applying Virtual Reality",
+          "topics": [
+            "Applying Virtual Reality",
+            "Virtual reality: the medium",
+            "Form and genre",
+            "What makes an application a good candidate for VR",
+            "Promising application fields",
+            "Demonstrated benefits of virtual reality",
+            "More recent trends in virtual reality application development",
+            "A framework for VR application development"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Augmented Reality Foundations",
+          "topics": [
+            "Augmented Reality",
+            "Terminology",
+            "Simple augmented reality",
+            "Augmented reality as an emerging technology",
+            "Augmented reality applications",
+            "Marker detection",
+            "Marker pose",
+            "Marker types and identification",
+            "Template markers",
+            "2D bar‑code markers",
+            "Image markers",
+            "Infrared markers",
+            "Miniature markers",
+            "Discussion on marker use",
+            "General marker detection application"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "AR Development & Applications",
+          "topics": [
+            "AR Development & Applications",
+            "User interfaces",
+            "Avoiding physical contacts",
+            "Practical experiences with head‑mounted displays",
+            "Authoring and dynamic content",
+            "AR applications and future visions",
+            "Designing an AR application",
+            "Technology adoption and acceptance",
+            "Where to use augmented reality"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Virtual Reality, Steven M. LaValle, Cambridge University Press, 2016",
+        "Understanding Virtual Reality: Interface, Application and Design, William R. Sherman and Alan B. Craig, Morgan Kaufmann Publishers, 2002",
+        "Developing Virtual Reality Applications: Foundations of Effective Design, Alan B. Craig, William R. Sherman and Jeffrey D. Will, Morgan Kaufmann, 2009",
+        "Theory and applications of marker‑based augmented reality, Sanni Siltanen",
+        "Virtual & Augmented Reality For Dummies, Paul Mealy, John Wiley Publication"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Managing Innovation and Entrepreneurship",
+      "subject_code": "AD-803 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Innovation definition and classification",
+          "topics": [
+            "Basic definition and classification of innovation",
+            "Relationship between innovation and entrepreneurship",
+            "Creation of competitive advantage through innovation",
+            "Innovative models",
+            "Product innovation",
+            "Process innovation",
+            "Organizational innovation",
+            "Marketing innovation",
+            "Role of innovation in business development"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Sources and creative methods in innovation",
+          "topics": [
+            "Sources of innovation (push, pull, analogies)",
+            "Technology transfer",
+            "Creative methods and approaches in innovation management",
+            "Agile management",
+            "Six Thinking Hats technique",
+            "NUF test"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Project approaches and Open Innovation",
+          "topics": [
+            "Project approach to innovation management",
+            "Stage‑Gate method and its essence",
+            "Adapting access to selected business models",
+            "In‑house business development of the innovation process",
+            "Open Innovation concept",
+            "Limits and benefits of Open Innovation for business development"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Human‑centered innovation and strategies",
+          "topics": [
+            "Human‑centered innovations",
+            "Role of co‑creation in the innovation process",
+            "Innovation process strategies",
+            "Types of innovation strategies",
+            "Selection of appropriate strategies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Measurement, barriers, and workshops",
+          "topics": [
+            "Measurement and evaluation of innovation benefits (financial and non‑financial metrics)",
+            "Combination and selection of metrics",
+            "Barriers to innovation in business",
+            "Causes of innovation failure",
+            "Post‑audit of innovative projects",
+            "Organization and facilitation of innovation workshops"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Clark, T., Osterwalder, A., & Pigneur, Y. *Business model generation: a Handbook for visionaries, game changers, and challengers*. Wiley Publications.",
+        "Bessant, J. R., & Tidd, J. *Managing innovation: integrating technological, market and organizational change*. Wiley Publications."
+      ],
+      "extra": null
+    }
+  ]
+}

@@ -1,0 +1,868 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Structural Design & Drawing (RCC-I)",
+      "subject_code": "CE601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Principles of Structural Design",
+          "topics": [
+            "Assumptions",
+            "Mechanism of load transfer",
+            "Properties of concrete and reinforcing steel",
+            "Working stress method",
+            "Limit state methods of design",
+            "Partial safety factor for load and material",
+            "Calculation of various loads for structural design of singly reinforced beam",
+            "Partial load factors"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design of Beams",
+          "topics": [
+            "Doubly reinforced rectangular beams",
+            "Flanged beams",
+            "Lintels",
+            "Cantilever beams",
+            "Simply supported beams",
+            "Continuous beams",
+            "Beams with compression reinforcement",
+            "Redistribution of moments in continuous beams",
+            "Circular girders",
+            "Deep beams",
+            "Design of beam for shear",
+            "Design of beam for bond"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design of Slabs",
+          "topics": [
+            "Slabs spanning in one direction",
+            "Cantilever slabs",
+            "Simply supported slabs",
+            "Continuous slabs",
+            "Slabs spanning in two directions",
+            "Circular slabs",
+            "Waffle slabs",
+            "Flat slabs",
+            "Yield line theory"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Columns & Footings",
+          "topics": [
+            "Effective length of columns",
+            "Short columns",
+            "Long columns",
+            "Square columns",
+            "Rectangular columns",
+            "Circular columns",
+            "Isolated footings",
+            "Combined footings",
+            "Strap footings",
+            "Columns subjected to axial loads and bending moments (no tension sections)",
+            "Raft foundations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Staircases",
+          "topics": [
+            "Staircases with waist slab having equal flights",
+            "Staircases with waist slab having unequal flights",
+            "Staircases with different support conditions",
+            "Slabless tread‑riser staircase"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Plain & Reinforced Concrete Vol. I & II – O.P. Jain & Jay Krishna",
+        "Limit State Design by P.C.Varghese ; Prentice Hall of India, New Delhi",
+        "Design of Reinforced Concrete Elements by Purushothman; Tata McGraw Hill, New Delhi",
+        "Reinforced Cement Concrete by Gupta & Mallick, Oxford and IBH",
+        "Reinforced Cement Concrete by P. Dayaratnam, Oxford and IBH",
+        "Plain & reinforced concrete - Rammuttham",
+        "Plain & reinforced concrete – B.C. Punnia",
+        "Structural Design & Drawing by N.K.Raju."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Environmental Engineering-I",
+      "subject_code": "CE602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Estimation of water resources",
+          "topics": [
+            "Estimation of ground and surface water resources",
+            "Quality of water from different sources",
+            "Demand & quantity of water",
+            "Fire demand",
+            "Water requirement for various uses",
+            "Fluctuations in demand",
+            "Forecast of population"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Water quality and supply systems",
+          "topics": [
+            "Impurities of water and their significance",
+            "Water-borne diseases",
+            "Physical, chemical and bacteriological analysis of water",
+            "Water standards for different uses",
+            "Intake structure",
+            "Conveyance of water",
+            "Pipe materials",
+            "Pumps – operation & pumping stations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Water Treatment Methods",
+          "topics": [
+            "Theory and design of sedimentation",
+            "Coagulation",
+            "Filtration",
+            "Disinfection",
+            "Aeration & water softening",
+            "Modern trends in sedimentation & filtration",
+            "Miscellaneous methods of treatment"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Sewerage and storm water",
+          "topics": [
+            "Sewerage schemes and their importance",
+            "Collection & conveyance of sewage",
+            "Storm water quantity",
+            "Fluctuation in sewage flow",
+            "Flow through sewer",
+            "Design of sewer",
+            "Construction & maintenance of sewer",
+            "Sewer appurtenances",
+            "Pumps & pumping stations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Wastewater characteristics and disposal",
+          "topics": [
+            "Characteristics and analysis of waste water",
+            "Recycles of decomposition, physical, chemical & biological parameters",
+            "Oxygen demand (BOD & COD)",
+            "TOC, TOD, Th OD, Relative Stability, population equivalent",
+            "Instrumentation involved in analysis",
+            "Natural methods of waste water disposal by land treatment & dilution",
+            "Self purification capacity of stream",
+            "Oxygen sag analysis"
+          ]
+        }
+      ],
+      "experiments": [
+        "To study the various standards for water",
+        "To study of sampling techniques for water",
+        "Measurement of turbidity",
+        "To determine the coagulant dose required to treat the given turbid water sample",
+        "To determine the conc. of chlorides in a given water samples",
+        "Determination of hardness of the given sample",
+        "Determination of residual chlorine by “Chloroscope”",
+        "Determination of Alkalinity in a water samples",
+        "Determination of Acidity in a water samples",
+        "Determination of Dissolved Oxygen (DO) in the water sample."
+      ],
+      "reference_books": [
+        "Water Supply Engineering by B.C. Punmia - Laxmi Publications (P) Ltd. New Delhi",
+        "Water Supply & Sanitary Engg. by G.S. Birdi - Laxmi Publications (P) Ltd. New Delhi",
+        "Water & Waste Water Technology by Mark J.Hammer - Prentice - Hall of India, New Delhi",
+        "Environmental Engineering - H.S. Peavy & D.R.Rowe-Mc Graw Hill Book Company, New Delhi",
+        "Water Supply & Sanitary Engg. by S.K. Husain",
+        "Water & Waste Water Technology - G.M. Fair & J.C. Geyer",
+        "Relevant IS"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Water Resource Engineering",
+      "subject_code": "CE603(A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Irrigation water requirement and Soil-Water-Crop relationship",
+          "topics": [
+            "Irrigation definition, necessity, advantages and disadvantages",
+            "Types and methods of irrigation",
+            "Irrigation development",
+            "Soil types, occurrence and suitability for irrigation",
+            "Wilting coefficient and field capacity of soils",
+            "Optimum water supply and consumptive use determination",
+            "Irrigation methods: surface, subsurface, sprinkler and drip",
+            "Duty of water, factors affecting duty and methods to improve duty",
+            "Suitability of water for irrigation",
+            "Crops and crop seasons",
+            "Principal crops and their water requirements",
+            "Crop ratio and crop rotation",
+            "Intensity of irrigation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Ground Water and Well irrigation",
+          "topics": [
+            "Confined and unconfined aquifers",
+            "Aquifer properties",
+            "Hydraulics of wells under steady flow conditions",
+            "Infiltration galleries",
+            "Ground water recharge – necessity and methods of improving storage",
+            "Water logging – causes, effects and prevention",
+            "Salt efflorescence – causes and effects",
+            "Reclamation of water‑logged and salt‑affected lands",
+            "Types of wells",
+            "Well construction",
+            "Yield tests, specific capacity and specific yield",
+            "Advantages and disadvantages of well irrigation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Hydrology",
+          "topics": [
+            "Hydrological cycle",
+            "Precipitation and its measurement",
+            "Recording and non‑recording rain gauges",
+            "Estimating missing rainfall data",
+            "Rain gauge networks",
+            "Mean depth of precipitation over a drainage area",
+            "Mass rainfall curves",
+            "Intensity‑duration curves",
+            "Depth‑area‑duration curves",
+            "Infiltration and infiltration indices",
+            "Evaporation stream gauging",
+            "Run‑off estimation",
+            "Hydrograph analysis",
+            "Unit hydrograph derivation from isolated and complex storms",
+            "S‑curve hydrograph",
+            "Synthetic unit hydrograph"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Canals and Structures",
+          "topics": [
+            "Types of canals",
+            "Canal alignment",
+            "Design of unlined and lined canals",
+            "Kennedy’s and Lacey’s silt theories",
+            "Typical canal sections",
+            "Canal losses and lining objectives",
+            "Materials used for canal lining and economics",
+            "Introduction to hydraulic structures: dams, spillways, weirs, barrages, canal regulation structures"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Floods",
+          "topics": [
+            "Types of floods and their estimation by different methods",
+            "Probability and frequency analysis of floods",
+            "Flood routing through reservoirs and channels",
+            "Flood control measures",
+            "Economics of flood control"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Irrigation & Water Power Engg. by Punmia & Pandey B.B.Lal",
+        "Engg. Hydrology by K. Subhramanya - Tata Mc Graw Hills Publ. Co.",
+        "Engg. Hydrology - J.NEMEC - Prentice Hall",
+        "Hydrology for Engineers Linsley, Kohler, Paulnus - Tata Mc.Graw Hill.",
+        "Hydrology & Flood Control by Santosh Kumar - Khanna Publishers",
+        "Engg. Hydrology by H.M. Raghunath"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Precast & Modular Construction",
+      "subject_code": "CE603(B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Need for prefabrication",
+            "Principles",
+            "Materials",
+            "Modular coordination",
+            "Standardization",
+            "Systems",
+            "Production",
+            "Transportation",
+            "Erection"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Prefabricated components",
+          "topics": [
+            "Behavior of structural components",
+            "Large panel constructions",
+            "Construction of roof and floor slabs",
+            "Wall panels",
+            "Columns",
+            "Shear walls"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design Principles",
+          "topics": [
+            "Disuniting of structures",
+            "Design of cross section based on efficiency of material used",
+            "Problems in design because of joint flexibility",
+            "Allowance for joint deformation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Joints in Structural Members",
+          "topics": [
+            "Joints for different structural connections",
+            "Dimensions and detailing",
+            "Design of expansion joints"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Design of abnormal load",
+          "topics": [
+            "Progressive collapse",
+            "Code provisions",
+            "Equivalent design loads for considering abnormal effects such as earthquakes, cyclones, etc.",
+            "Importance of avoidance of progressive collapse"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "CBRI, Building materials and components, India, 1990",
+        "Gerostiza C.Z., Hendrikson C. and Rehat D.R., “Knowledge based process planning for construction and manufacturing”, Academic Press Inc., 1994"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advance Pavement Design",
+      "subject_code": "CE603(C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Equivalent Single Wheels Load concepts and applications",
+          "topics": [
+            "Equivalent Single Wheels Load concepts and applications",
+            "Relationship between wheel arrangements and loading effects",
+            "Tyre contact area",
+            "Effect of load repetition",
+            "Effect of transient loads",
+            "Impact of moving loading",
+            "Factors to be considered in design of pavements",
+            "Design wheel load",
+            "Soil factors",
+            "Climatic factors",
+            "Pavement component materials",
+            "Environmental factors",
+            "Special factors such as frost, freezing and thawing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Flexible Pavements – components, stresses and design methods",
+          "topics": [
+            "Component parts of flexible pavement structures and their functions",
+            "Stresses in flexible pavements",
+            "Stress distribution through various layers",
+            "Boussinesque’s theory",
+            "Burmister’s two‑layered theory",
+            "Design methods for flexible pavements",
+            "Group index method",
+            "CBR method",
+            "Burmister’s method",
+            "North Dakota cone method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Rigid Pavements – subgrade evaluation and stress analysis",
+          "topics": [
+            "Evaluation of subgrade",
+            "Modulus‑K determination by plate bearing test and test details",
+            "Westergaard’s stress theory for rigid pavements",
+            "Temperature stresses in rigid pavements",
+            "Warping stresses",
+            "Frictional stresses",
+            "Critical combination of stresses",
+            "Critical loading positions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Rigid Pavement Design and Pavement Joints",
+          "topics": [
+            "IRC method for rigid pavement design",
+            "Fatigue analysis",
+            "PCA chart method",
+            "AASHTO method",
+            "Reliability analysis",
+            "Types of pavement joints",
+            "Contraction and warping joints",
+            "Dowel bars and tie bars",
+            "Temperature reinforcements",
+            "Filling and sealing of joints"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Evaluation and Strengthening of Existing Pavements",
+          "topics": [
+            "Benkelman beam method",
+            "Serviceability Index method",
+            "Rigid overlays design procedures",
+            "Flexible overlays design procedures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Principles of pavement design by E.J. Yoder & M.W. Witczak",
+        "AASHO, “AASHO Interim Guide for Design of Pavement Structures”, Washington, D.C.",
+        "Portland Cement Association, Guidelines for Design of Rigid Pavements, Washington",
+        "DSIR, Concrete Roads Design & Construction",
+        "Srinivasan M. \"Modern Permanent Way\""
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cost Effective & ECO‑Friendly Structures",
+      "subject_code": "CE603(D)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Concepts of energy efficient \\& environment friendly materials and techniques",
+          "topics": [
+            "Energy‑efficient and environmentally‑friendly wall materials – stabilized and sun‑dried walls, soil blocks & bricks, solid & hollow concrete blocks, stone‑masonry blocks, ferro‑cement partitions.",
+            "Energy‑efficient and environmentally‑friendly roof systems – precast RC plank & joist roofs, precast channel roofs, precast L‑panel roofs, precast funicular shells, ferro‑cement shells, filler slabs, sea‑sal fibre roofs, improved country tiles, thatch roofs, M.C.R. tiles."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cost effective construction techniques and equipments",
+          "topics": [
+            "Cost‑effective construction techniques – rat‑trap bond construction, energy‑efficient roofings, ferro‑cement technique, mud technology.",
+            "Cost‑effective construction equipment – brick moulding machine, stabilised soil‑block making machine, plants for manufacturing concrete blocks, M.C.R. tile making machine, ferro‑cement wall‑panel and roofing‑channel making machine, RCC chaukhat making machine."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Cost effective sanitation",
+          "topics": [
+            "Waste‑water disposal systems for low‑cost sanitation.",
+            "Cost‑effective sanitation solutions for rural and urban areas.",
+            "Ferro‑cement drains as a low‑cost sanitation component."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Low Cost Road Construction",
+          "topics": [
+            "Low‑cost road materials and stabilization methods.",
+            "Construction techniques, testing procedures and equipment for low‑cost roads.",
+            "Road drainage and maintenance practices for economical road construction."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Cost analysis and comparison",
+          "topics": [
+            "Cost analysis and comparison of all experimental materials.",
+            "Cost analysis and comparison of all experimental techniques.",
+            "Green building rating systems and their application in cost‑effective design."
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Alternative Building Materials and Technologies – K S Jagadeesh, B V Venkatta Rama Reddy & K S NanjundaRao – New Age International Publishers",
+        "Integrated Life Cycle Design of Structures – Asko Sarja – CRC Press",
+        "Non‑conventional Energy Resources – D S Chauhan and S K Sreevasthava – New Age International Publishers",
+        "Buildings How to Reduce Cost – Laurie Backer – Cost Ford",
+        "Alternative Construction : Contemporary Natural Building Methods – Lynne Elizabeth, Cassandra Adams – Wiley & Sons Australia, 2005",
+        "Man, Climate, Architecture – Givoni – Van Nostrand, New York, 1976",
+        "Sustainable Construction: Green Building Design and Delivery – Charles J. Kibert – John Wiley & Sons, 2005",
+        "Low Cost, Energy Efficient Shelter for Owner & Builder – Eugene Eccli – Rodale Press, 1976"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Fluid Mech. – II",
+      "subject_code": "CE604(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Turbulent flow",
+          "topics": [
+            "Laminar and turbulent boundary layers and laminar sublayer",
+            "Hydrodynamically smooth and rough boundaries",
+            "Velocity distribution in turbulent flow",
+            "Resistance of smooth and artificially roughened pipes, commercial pipes, aging of pipes",
+            "Losses due to sudden expansion and contraction in pipe flow",
+            "Losses in pipe fittings and valves",
+            "Concepts of equivalent length",
+            "Hydraulic and energy gradient lines",
+            "Siphon",
+            "Pipes in series, pipes in parallel and branching of pipes",
+            "Water hammer (quick‑closure case)",
+            "Transmission of power in pipe networks",
+            "Hardy‑Cross method for pipe network analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Uniform flow in open channels",
+          "topics": [
+            "Channel geometry and elements of channel section",
+            "Velocity distribution in open channels",
+            "Energy in open channel flow and specific energy",
+            "Types of flow; critical flow and its computation",
+            "Uniform flow computation",
+            "Chezy’s formula",
+            "Manning’s formula",
+            "Determination of normal depth and velocity",
+            "Normal and critical slopes",
+            "Economical channel sections",
+            "Saint‑Venant equation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Non‑uniform flow in open channels",
+          "topics": [
+            "Assumptions and dynamic equations of gradually varied flow",
+            "Characteristic analysis and computation of flow profiles",
+            "Rapidly varied flow: hydraulic jump in rectangular channels and its basic characteristics",
+            "Surges in open channels and channel flow routing",
+            "Venturi flume"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Forces on immersed bodies",
+          "topics": [
+            "Types of drag",
+            "Drag on a sphere",
+            "Drag on a flat plate",
+            "Drag on a cylinder",
+            "Drag on an aerofoil and development of lift",
+            "Lifting vanes",
+            "Magnus effect"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Fluid machines",
+          "topics": [
+            "Classifications and definitions of turbines",
+            "Similarity laws and specific speed of turbines",
+            "Pelton turbine – construction, settings, speed regulation, dimensions, jet action, torque, power, efficiency and characteristic curves",
+            "Reaction turbines – construction, draft‑tube theory, runaway speed, design basics, characteristic curves and cavitation",
+            "Centrifugal pumps – types, components, manometric head, total head, net positive suction head, specific speed, shut‑off head, energy losses, cavitation, working principle and characteristic curves",
+            "Reciprocating pumps – working principle, coefficient of discharge, slip, single‑acting and double‑acting types, manometric head and acceleration head"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Fluid Mechanics - Modi & Seth - Standard Book House, Delhi",
+        "Open Channel Flow by Rangaraju - Tata McGraw‑Hill Publishing Co., Ltd., New Delhi",
+        "Fluid Mechanics - A.K. Jain - Khanna Publishers, Delhi",
+        "Fluid Mechanics, Hydraulics & Hydraulic Mechanics - K.R. Arora - Standard Publishers Distributors, 1705‑B, Nai Sarak, Delhi‑6",
+        "Hydrology of Open Channels by B.A. Bakhmeteff (McGraw‑Hill, New York)",
+        "Open Channel Hydraulics by V.T. Chow (McGraw‑Hill, New York)",
+        "Engineering Hydraulics by H. Rouse",
+        "Centrifugal & Axial Flow Pump by A.J. Stempanoff (New York)",
+        "Relevant IS codes"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Intellectual Property Rights",
+      "subject_code": "CE604(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction and justifications of IPR; nature of IP; major forms of IP – Copyright, Patent, Trade Marks, Designs, Geographical Indication, layout design of semiconductors, plant varieties; concept and meaning of intellectual property",
+            "Major international documents relating to the protection of IP – Berne Convention, Paris Convention, TRIPS; the World Intellectual Property Organization (WIPO)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Copyright",
+          "topics": [
+            "Meaning and historical development of copyright",
+            "Subject matter of copyright",
+            "Ownership of copyright",
+            "Term of copyright",
+            "Rights of owner",
+            "Economic rights",
+            "Moral rights",
+            "Assignment and licence of rights",
+            "Infringement of copyright",
+            "Exceptions to infringement",
+            "Remedies – civil, criminal, administrative",
+            "Registration procedure"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Patents",
+          "topics": [
+            "Meaning and historical development of patents",
+            "Criteria for obtaining patents",
+            "Non‑patentable inventions",
+            "Procedure for registration",
+            "Term of patent",
+            "Rights of patentee",
+            "Compulsory licence",
+            "Revocation",
+            "Infringement of patents",
+            "Exceptions to infringement",
+            "Remedies",
+            "Patent office and appellate board"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Trade Marks, Designs & GI",
+          "topics": [
+            "Trade Marks – functions of marks, procedure for registration, rights of holder, assignment and licensing of marks, infringement, trade marks registry and appellate board",
+            "Designs – meaning and evolution of design protection, registration, term of protection, rights of holder, unregistered designs",
+            "Geographical Indication – meaning and evolution, difference between GI and trade marks, registration, rights, authorised user"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Contemporary Issues & Enforcement of IPR",
+          "topics": [
+            "IPR and sustainable development",
+            "Impact of the Internet on IPR",
+            "IPR issues in biotechnology and e‑commerce",
+            "Licensing and enforcement of IPR",
+            "Case studies in IPR"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P. Narayanan, Intellectual Property Law, Eastern Law House",
+        "Neeraj Pandey and Khushdeep Dharni, Intellectual Property Rights, PHI, 2014",
+        "N.S. Gopalakrishnan and T.G. Agitha, Principles of Intellectual Property, Eastern Book Co., Lucknow, 2009",
+        "Anand Padmanabhan, Enforcement of Intellectual Property, Lexis Nexis Butterworths, Nagpur, 2012",
+        "Managing Intellectual Property: The Strategic Imperative, Vinod V. Sople, PHI",
+        "Prabuddha Ganguli, Intellectual Property Rights, McGraw‑Hill Education, 2016"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Environmental Impact Assessment",
+      "subject_code": "CE604(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Concept of EIA",
+          "topics": [
+            "Introduction of EIA",
+            "Utility and scope of EIA",
+            "Significant Environmental Impacts",
+            "Stage of EIA",
+            "Environmental Inventory",
+            "Environmental Impact Statement (EIS)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Methods of Impact Identification",
+          "topics": [
+            "Environmental Indices and indicators for describing the affected environment",
+            "Matrix methodologies",
+            "Network, checklist, and other method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Impact analysis",
+          "topics": [
+            "Framework",
+            "Statement predication and assessment of impact of air, water, noise and socio-economic environment"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Preparation of written documentation",
+          "topics": [
+            "Initial planning phase",
+            "Detailed planning phase",
+            "Writing phase",
+            "Organizing relevant information",
+            "Co‑ordination of team writing effort"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Public Participation in Environmental Decision making",
+          "topics": [
+            "Basic definitions",
+            "Regulatory requirements",
+            "Advantages & disadvantages of Public Participation",
+            "Selection of Public participation techniques",
+            "Practical considerations for implementation"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Operation Research",
+      "subject_code": "CE604(D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Linear Models",
+          "topics": [
+            "The phase of an operation research study",
+            "Linear programming",
+            "Graphical method",
+            "Simplex algorithm",
+            "Duality formulation",
+            "Sensitivity analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Transportation Models And Network Models",
+          "topics": [
+            "Transportation Assignment Models",
+            "Traveling Salesman problem",
+            "Network models",
+            "Shortest route",
+            "Minimal spanning tree",
+            "Maximum flow models",
+            "Project network",
+            "CPM and PERT networks",
+            "Critical path scheduling",
+            "Sequencing models"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Inventory Models",
+          "topics": [
+            "Inventory models",
+            "Economic order quantity models",
+            "Quantity discount models",
+            "Stochastic inventory models",
+            "Multi product models",
+            "Inventory control models in practice"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Queueing Models",
+          "topics": [
+            "Queueing models",
+            "Queueing systems and structures",
+            "Notation parameter",
+            "Single server and multi server models",
+            "Poisson input",
+            "Exponential service",
+            "Constant rate service",
+            "Infinite population",
+            "Simulation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Decision Models",
+          "topics": [
+            "Decision models",
+            "Game theory",
+            "Two person zero sum games",
+            "Graphical solution",
+            "Algebraic solution",
+            "Linear Programming solution",
+            "Replacement models",
+            "Models based on service life",
+            "Economic life",
+            "Single / Multi variable search technique",
+            "Dynamic Programming",
+            "Simple Problem"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Taha H.A., “Operations Research”, Sixth Edition, Prentice Hall of India, 2003."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advance surveying lab",
+      "subject_code": "CE605",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "Measurement of Distance by Chaining and Ranging.",
+        "Locating Various Objects by Chain or Cross-Staff Surveying.",
+        "Measurement of bearings of sides of traverse with prismatic compass and computation of correct included angle.",
+        "Determination of elevation of various points with dumpy level by collimation plane method and rise & fall method.",
+        "Fixing bench mark with respect to temporary bench mark with dumpy level by fly levelling and check levelling.",
+        "Measurement of vertical angles with theodolite.",
+        "Determination of horizontal distance between two inaccessible points with theodolite.",
+        "Locating given building by theodolite traversing",
+        "To perform complete survey with Total Station."
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Non- Destructive Testing Lab",
+      "subject_code": "CE606",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "To study of Rebound Hammer Test.",
+        "To study of UPV Test."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

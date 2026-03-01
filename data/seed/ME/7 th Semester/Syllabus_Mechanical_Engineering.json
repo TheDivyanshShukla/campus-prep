@@ -1,0 +1,961 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Heat and Mass Transfer",
+      "subject_code": "ME-701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts",
+          "topics": [
+            "Modes of heat transfer",
+            "Fourier's law",
+            "Newton's law of cooling",
+            "Stefan–Boltzmann law",
+            "Thermal resistance and conductance",
+            "Analogy between heat flow and electricity",
+            "Combined heat transfer processes",
+            "Conduction: Fourier heat conduction equation in rectangular, cylindrical and spherical coordinates",
+            "Thermal diffusivity",
+            "One‑dimensional steady‑state conduction through slabs, tubes, spherical shells and composite structures",
+            "Electrical analogies for heat conduction",
+            "Critical insulation thickness for pipes",
+            "Effect of variable thermal conductivity"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Extended Surfaces (fins)",
+          "topics": [
+            "Heat transfer from straight and annular fins (plates) with uniform cross‑section",
+            "Error in temperature measurement in a thermometer well",
+            "Fin efficiency and fin effectiveness",
+            "Applications of extended surfaces",
+            "Unsteady heat conduction: transient and periodic conduction",
+            "Heating and cooling of bodies with known temperature distribution",
+            "Systems with effectively infinite thermal conductivity",
+            "Response of thermocouples"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Convection",
+          "topics": [
+            "Introduction to convection",
+            "Free and forced convection",
+            "Principle of dimensional analysis",
+            "Buckingham $\\pi$ theorem",
+            "Empirical correlations for laminar and turbulent flow over a flat plate",
+            "Empirical correlations for tubular geometry",
+            "Calculation of convective heat‑transfer coefficient using data‑book correlations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Heat Exchangers and Mass Transfer",
+          "topics": [
+            "Heat exchangers: parallel‑flow and counter‑flow configurations",
+            "Evaporators and condensers",
+            "Overall heat‑transfer coefficient",
+            "Fouling factors",
+            "Log‑mean temperature difference ($LMTD$)",
+            "Methods of heat‑exchanger analysis",
+            "Effectiveness of heat exchangers",
+            "Number of Transfer Units ($NTU$) method",
+            "Mass transfer: Fick’s law",
+            "Equimolar diffusion",
+            "Diffusion coefficient and its analogy with heat transfer",
+            "Diffusion of vapour in a stationary medium"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Thermal Radiation and Boiling/Condensation",
+          "topics": [
+            "Nature of thermal radiation",
+            "Emissive power, absorption, transmission, reflection and emission",
+            "Planck’s distribution law",
+            "Radiation from real surfaces",
+            "Radiation exchange between black and gray surfaces",
+            "Shape factor in radiative exchange",
+            "Analogous electrical network for radiation problems",
+            "Radiation shields",
+            "Filmwise and dropwise condensation",
+            "Nusselt theory for filmwise condensation on vertical plates and its modification for horizontal tubes",
+            "Boiling heat‑transfer phenomena",
+            "Regimes of boiling",
+            "Boiling correlations"
+          ]
+        }
+      ],
+      "experiments": [
+        "Conduction through a rod to determine thermal conductivity of material",
+        "Forced and free convection over a circular cylinder",
+        "Free convection from extended surfaces",
+        "Parallel flow and counter flow heat exchanger effectiveness and heat transfer rate",
+        "Calibration of thermocouple",
+        "Experimental determination of Stefan‑Boltzmann constant"
+      ],
+      "reference_books": [
+        "Sukhatme S.P.; Heat and Mass Transfer; University Press Hyderabad",
+        "Holman J.P.; Heat Transfer; TMH",
+        "Nag P.K.; Heat and Mass Transfer; TMH",
+        "Domkudwar; Heat and Mass Transfer; Dhanpat Rai & Co.",
+        "Sachdeva R.C.; Fundamentals of Engineering Heat and Mass Transfer; New Age Science",
+        "Dutta B.K.; Heat Transfer Principles and Applications; PHI Learning",
+        "Mills A.F. and Ganesan V.; Heat Transfer; Pearson",
+        "Cengel Y.A.; Heat and Mass Transfer; TMH",
+        "Yadav R.; Heat and Mass Transfer; Central India Publishing, Allahabad",
+        "Incropera F.P. and DeWitt D.P.; Heat and Mass Transfer; Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advance Machining Processes",
+      "subject_code": "ME-702(A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Mechanical processes",
+          "topics": [
+            "Process selection",
+            "Mechanics of cutting",
+            "Metal removal rate",
+            "Cutting tool system design",
+            "Ultrasonic machining",
+            "Abrasive jet machining",
+            "Water jet machining",
+            "Effect of parameters and variables",
+            "Applications and limitations",
+            "Recent developments in mechanical processes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Electrochemical and chemical metal removal processes",
+          "topics": [
+            "Electrochemical machining (ECM)",
+            "Elements of ECM",
+            "Power source and control system",
+            "Electrolytes",
+            "Tool‑work system",
+            "Chemistry of the process",
+            "Tool design and metal removal rate",
+            "Process faults",
+            "Material removal and surface finish",
+            "Electrochemical grinding",
+            "Electrochemical deburring",
+            "Electrochemical honing",
+            "Chemical machining"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Thermal metal removal processes",
+          "topics": [
+            "Electric discharge machining (EDM)",
+            "Spark erosion",
+            "Mechanism of metal removal",
+            "Spark erosion generator",
+            "Electrode feed control",
+            "Vibrating electrode system",
+            "Dielectric fluid and flushing",
+            "Accuracy considerations",
+            "Plasma arc machining (PAM)",
+            "Non‑thermal generation of plasma",
+            "Mechanisms and parameters of plasma machining",
+            "Equipment for plasma machining",
+            "Electron beam machining (EBM)",
+            "Generation and control of electron beam",
+            "Theory and process capabilities of EBM",
+            "Neutral particle etching",
+            "Laser beam machining",
+            "Hot machining",
+            "Methods of local heating",
+            "Tool life and production rate"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Rapid prototyping fabrication methods",
+          "topics": [
+            "Fundamentals of rapid prototyping",
+            "Technologies and applications",
+            "Principles and working of 3D printing",
+            "Subtractive vs additive manufacturing processes",
+            "VAT photo‑polymerization",
+            "Material and binder jetting",
+            "Continuous liquid interface production",
+            "Direct metal laser sintering"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Technologies of micro fabrication",
+          "topics": [
+            "Types of microsystem devices",
+            "Industrial applications of microfabrication",
+            "Micro fabrication processes",
+            "LIGA process",
+            "Technologies of nano fabrication",
+            "Importance of size at the nanoscale",
+            "Scanning probe microscopy",
+            "Carbon buckyballs and nanotubes",
+            "Nano fabrication processes"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Mikell P. Groover, Fundamentals of Modern Manufacturing, Wiley India, ISBN 978 81 265 2301 6",
+        "Pandey P.C, Shan H.S., Modern Machining Processes, Tata McGraw Hill, ISBN 0 07 096518 8",
+        "Lal G.K, Gupta V, Reddy N.V., Narosa Publishing House, ISBN 81 7319 709 1",
+        "CMTI Handbook",
+        "Jain V.K. Introduction to Micro Machining Process, Narosa Publication",
+        "Jain V.K., Micromanufacturing Processes, CRC Press"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "ME-702(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Internet of Things (IoT)",
+          "topics": [
+            "Vision",
+            "Definition",
+            "Conceptual Framework",
+            "Architectural view",
+            "Technology behind IoT",
+            "Sources of the IoT",
+            "M2M Communication",
+            "IoT Examples",
+            "Design Principles for Connected Devices: IoT/M2M systems layers and design standardization",
+            "Communication technologies",
+            "Data enrichment and consolidation",
+            "Ease of designing and affordability"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Hardware for IoT",
+          "topics": [
+            "Sensors",
+            "Digital sensors",
+            "Actuators",
+            "Radio Frequency Identification (RFID) technology",
+            "Wireless sensor networks",
+            "Participatory sensing technology",
+            "Embedded Platforms for IoT: Embedded computing basics",
+            "Overview of IoT supported hardware platforms such as Arduino, Raspberry Pi, Beagle Bone, Intel Galileo"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "IoT PROTOCOLS",
+          "topics": [
+            "IoT Access Technologies: Physical and MAC layers, topology and security of IEEE 802.15.4, 802.15.4g, 802.15.4e, 1901.2a, 802.11ah and LoRaWAN",
+            "Network Layer: IP versions, constrained nodes and constrained networks, Zigbee",
+            "Optimizing IP for IoT: From 6LoWPAN to 6Lo",
+            "Routing over low‑power and lossy networks",
+            "Application Transport Methods: Supervisory Control and Data Acquisition (SCADA)",
+            "Application Layer Protocols: CoAP and MQTT"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Security",
+          "topics": [
+            "Understanding the risks",
+            "Modes of attack – Denial of Service",
+            "Guessing the credentials",
+            "Getting access to stored credentials",
+            "Man‑in‑the‑middle attacks",
+            "Sniffing network communication",
+            "Port scanning and web crawling",
+            "Search features and wildcards",
+            "Breaking ciphers",
+            "Tools for achieving security",
+            "Virtual Private Networks (VPN)",
+            "X.509 certificates and encryption",
+            "Authentication of identities",
+            "Usernames and passwords",
+            "Using message brokers and provisioning servers",
+            "Centralization versus decentralization"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IoT Applications",
+          "topics": [
+            "Home Automation – Smart Appliances",
+            "Smoke/Gas Detection",
+            "Smart Parking",
+            "Smart Lighting",
+            "Smart Road",
+            "Health and Lifestyle – Health and fitness monitoring",
+            "Retail – Smart Payments",
+            "Case Studies: Smart city streetlights – control and monitoring"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Raj Kamal “Internet of Things”, McGraw‑Hill, 1st Edition, 2016",
+        "Olivier Hersent, David Boswarthick, Omar Elloumi “The Internet of Things key applications and protocols”, Wiley",
+        "Peter Waher, “Learning Internet of Things”, Packt Publishing",
+        "Arshdeep Bahga, Vijay Madisetti, “Internet of Things (A hands on approach)”, University Press (India)",
+        "Francis daCosta, “Rethinking the Internet of Things: A Scalable Approach to Connecting Everything”, 1st Edition, Apress Publications, 2013",
+        "Cuno Pfister, Getting Started with the Internet of Things, O'Reilly Media, 2011, ISBN: 978‑14493‑9357‑1"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Power Plant Engineering",
+      "subject_code": "ME-702(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Methods of converting various energy sources to electric power",
+            "Direct conversion methods for renewable energy sources",
+            "Solar energy conversion",
+            "Wind energy conversion",
+            "Tidal energy conversion",
+            "Geothermal energy conversion",
+            "Biothermal and biogas conversion",
+            "Hybrid energy systems",
+            "Fuel cells",
+            "Thermoelectric modules",
+            "MHD converter"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Fossil fuel steam stations",
+          "topics": [
+            "Basic principles of plant and station design",
+            "Effect of climatic factors on station and equipment design",
+            "Choice of steam cycle and main equipment",
+            "Recent trends in turbine and boiler sizes and steam conditions",
+            "Plant design and layout (outdoor and indoor)",
+            "System components",
+            "Fuel handling and burning systems",
+            "Feed‑water treatment plant elements",
+            "Condensing plant and circulating water systems",
+            "Cooling towers",
+            "Turbine room and auxiliary plant equipment",
+            "Instrumentation and testing",
+            "Plant heat balance"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Nuclear Power Station",
+          "topics": [
+            "Importance of nuclear power development (global and Indian context)",
+            "Atomic structure and radioactivity review",
+            "Binding energy concept",
+            "Fission and fusion reactions",
+            "Fissionable and fertile materials",
+            "Thermal neutron fission",
+            "Important nuclear fuels",
+            "Moderators and coolants and their relative merits",
+            "Thermal and fast breeder reactors",
+            "Principles of reactor control",
+            "Safety and reliability features"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Hydro‑Power Station",
+          "topics": [
+            "Hydrological computations",
+            "Rainfall runoff",
+            "Flow and power duration curves",
+            "Mass curves",
+            "Storage capacity",
+            "Types of hydro stations and salient features",
+            "Dam components",
+            "Spillways",
+            "Intake systems",
+            "Head works",
+            "Pressure tunnels",
+            "Penstocks",
+            "Reservoirs and balancing reservoirs",
+            "Micro and pico hydro machines",
+            "Selection of hydraulic turbines for power stations",
+            "Site selection"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Power Station Economics",
+          "topics": [
+            "Estimation and prediction of load",
+            "Maximum demand, load factor, diversity factor, plant factor and their influence on design, operation and economics",
+            "Comparison of hydro and nuclear power plant cost structures",
+            "Cost analysis problems",
+            "Economic performance and tariffs",
+            "Interconnected system advantages",
+            "Load dispatch in interconnected systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Nag PK; Power plant Engg; TMH",
+        "Al‑Wakil MM; Power plant Technology; TMH",
+        "Sharma PC; Power plant Engg; Kataria and sons, Delhi",
+        "Domkundwar; Power Plant Engg; Dhanpatrai & sons.",
+        "Rajput RK; A text book of Power plant Engg.; Laxmi Publications."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advance Machine Design",
+      "subject_code": "ME-702(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Design of Belt, Rope and Chain Drives",
+          "topics": [
+            "Methods of power transmission",
+            "Design of flat belt drive and V‑belt drive",
+            "Design of chain drives, roller chain and its selection",
+            "Design of rope drives"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Spur and Helical Gears",
+          "topics": [
+            "Force analysis of gear tooth",
+            "AGMA bending stress equation and AGMA contact stress equation",
+            "Modes of failure, beam strength, Lewis equation, form factor, formative gear and virtual number of teeth",
+            "Gear materials",
+            "Surface strength and wear of teeth; strength against wear",
+            "Design of straight‑tooth spur and helical gears"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Bevel Gears",
+          "topics": [
+            "Application of bevel gears, formative gear and virtual number of teeth",
+            "Force analysis of bevel gears",
+            "Lewis equation for bevel gears",
+            "Strength against wear",
+            "Design of bevel gear"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design of I.C. Engine Components",
+          "topics": [
+            "General design considerations in internal‑combustion engines",
+            "Design of cylinder",
+            "Design of piston and piston rings",
+            "Design of connecting rod",
+            "Design of crankshaft"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Design of Miscellaneous Components",
+          "topics": [
+            "Design of knuckle joint",
+            "Design of cotter joint",
+            "Design of keys",
+            "Design of flanged coupling",
+            "Rigid coupling and flexible coupling",
+            "Design of pressure vessels subjected to internal pressure",
+            "Design of power screw"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Shigley J.E.; Machine Design; TMH",
+        "Bhandari V.B.; Design of Machine Elements; TMH",
+        "Abdul Mubeen; Machine Design; Khanna Publishers",
+        "Sharma & Agrawal; Machine Design; Katson",
+        "Sharma C.S. and Purohit K.; Design of Machine Elements; PHI Learning",
+        "Dwivedi and Pandey; Machine Drawing and Design, Dhanpat Rai & Co.",
+        "Wentzell T.H.; Machine Design; Cegage Learning",
+        "Hall and Somani; Machine Design; Schaum Series; TMH",
+        "Kulkarni S.G.; Machine Design; TMH",
+        "Norton R.; Design Of Machinery; TMH"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Operation Research & Supply Chain",
+      "subject_code": "ME-703(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Linear system and distribution models",
+          "topics": [
+            "Mathematical formulation of linear systems by linear programming (LP)",
+            "Solution of LP for two variables",
+            "Simplex method",
+            "Special cases of LP – transportation and assignment models and their graphical solution",
+            "Vogel's Approximation Method (VAM) or penalty method",
+            "Cell evaluation degeneracy",
+            "Basics of software tools such as LINDO, LINGO, TORA, Excel"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Supply chain (SCM)",
+          "topics": [
+            "Definition, importance, expenditure and opportunities in SCM",
+            "Integration of inbound, outbound logistics and manufacturing to SCM",
+            "Flow of material, money and information",
+            "Difficulties in SCM due to local vs. system‑wide (global) optimisation and uncertainties in demand and transportation",
+            "Bull‑whip effect",
+            "Customer value",
+            "IT, information‑sharing and strategic partnerships",
+            "Plant and warehouse‑network configuration",
+            "Supply contracts and revenue sharing",
+            "Outsourcing",
+            "Transportation, cross‑docking and distribution, forecasting models in SCM",
+            "Coordination and leadership issues",
+            "Changing purchasing role, vendor rating and variability from multiple suppliers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Inventory models",
+          "topics": [
+            "Necessity of inventory in process and safety stock; problem of excess inventory and cycle time; JIT/Lean manufacturing",
+            "Basics of inventory models with deterministic demand – Classical Economic Order Quantity (EOQ) model",
+            "ABC, VED and other analyses based on shelf life, movement, size; MRP technique and calculations",
+            "Lot sizing in MRP, linking MRP with JIT",
+            "Evolution of MRP to ERP to SCM and e‑business"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Waiting line models and competitive strategy",
+          "topics": [
+            "Introduction, input process, service mechanism, queue discipline",
+            "Single‑server model (M/M/1) – average length, average time calculations, optimum service rate",
+            "Basic multiple‑server models (M/M/s)",
+            "Concept and terminology of competitive strategy",
+            "Assumptions, pure and mixed strategies",
+            "Two‑person zero‑sum games, saddle point, dominance",
+            "Graphical, algebraic and LP methods for solving game‑theoretic problems"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Network analysis and meta‑heuristics",
+          "topics": [
+            "Project planning, scheduling and controlling; project management fundamentals",
+            "Network techniques and their role in project management; network logics, Fulkerson's law",
+            "Merits and demerits of AON diagrams; PERT (Program Evaluation Review Technique)",
+            "Critical Path Method (CPM), determination of critical path, float/slack",
+            "Definition of heuristic and meta‑heuristic algorithms",
+            "Introduction to Tabu search, Simulated Annealing and Genetic algorithms",
+            "Application of meta‑heuristics to traveling salesman and non‑linear optimisation problems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Hillier FS and Lieberman GJ; Introduction to Operations Research; TMH",
+        "Simchi‑Levi, Keminsky; Designing and Managing the Supply Chain; TMH",
+        "Heera and Gupta; Operation Research; S Chand Publishing",
+        "Sharma JK; Operations Research; Macmillan",
+        "Taha H; Operations Research; PHI",
+        "Jain, Pandey & Shrivastava; Quantitative Techniques for Management; New Age Publishers",
+        "Srinivasan G; Quantitative Models in Operations and SCM; PHI Learning",
+        "Mohanty RP and Deshmukh SG; Supply Chain Management; Wiley India",
+        "Sen RP; Operations Research – Algorithms and Applications; PHI Learning",
+        "Bowersox DJ, Closs DJ, Cooper MB; Supply Chain Logistics Management; TMH",
+        "Bronson R; Theory and Problems of OR; Schaum Series; TMH",
+        "Kanti Swaroop; Operation Research; Sultan Chand"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Artificial Intelligence Techniques",
+      "subject_code": "ME-703(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Artificial Intelligence",
+          "topics": [
+            "Main components and characteristics of AI (Feature Engineering, $ANN$, Deep Learning)",
+            "Applications of AI",
+            "Advantages and disadvantages of AI",
+            "Goals of AI",
+            "Comparison of programming a system with AI versus without AI",
+            "Challenges in AI",
+            "Programming languages commonly used in AI",
+            "Techniques/Algorithms used in AI",
+            "AI software platforms",
+            "Future trends in AI"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Various Types of Production Systems and Search Techniques",
+          "topics": [
+            "Types of production systems",
+            "Characteristics of production systems",
+            "Breadth‑first search vs. depth‑first search",
+            "Hill‑climbing search technique",
+            "Best‑first search",
+            "$A^{*}$ algorithm",
+            "$AO^{*}$ algorithm",
+            "Various control strategies for production systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Knowledge Representation and Probabilistic Reasoning",
+          "topics": [
+            "Problems in knowledge representation",
+            "Knowledge representation using propositional logic",
+            "Knowledge representation using predicate logic",
+            "Comparison of propositional and predicate logic",
+            "Resolution, refutation, deduction, theorem proving, inferencing",
+            "Monotonic and non‑monotonic reasoning",
+            "Probabilistic reasoning",
+            "Bayes' theorem",
+            "Semantic networks, scripts, schemas, frames, conceptual dependency",
+            "Fuzzy logic",
+            "Forward and backward reasoning"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Game Playing Techniques",
+          "topics": [
+            "Minimax procedure",
+            "$\\alpha$‑$\\beta$ pruning",
+            "Planning techniques",
+            "Block‑world problem in robotics",
+            "Introduction to natural language processing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to Learning, ANN",
+          "topics": [
+            "Learning techniques in AI",
+            "Introduction to artificial neural networks (ANN)",
+            "Common‑sense reasoning",
+            "Convolutional Neural Network ($CNN$)",
+            "Feedforward Neural Network ($FNN$)",
+            "Recurrent Neural Network ($RNN$)",
+            "Multilayer Perceptron",
+            "Three‑layer architecture of ANN",
+            "Implementation of ANN",
+            "Applications of ANN in images, signals and language",
+            "Examples of expert systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rich E and Knight K, “Artificial Intelligence”, TMH, New Delhi.",
+        "Nelsson N.J., “Principles of Artificial Intelligence”, Springer Verlag, Berlin.",
+        "Stuart Russell, Artificial Intelligence: A Modern Approach, 3rd Edition, Peter Norvig, PHI, ISBN13: 978-0136042594, ISBN-10: 0136042597",
+        "B. Yegnanarayana, Artificial Neural Networks, PHI",
+        "Schalkoff, Artificial Neural Networks, McGraw‑Hill Education"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Systems Engineering",
+      "subject_code": "ME-703(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Systems Engineering",
+          "topics": [
+            "Introduction",
+            "Origin",
+            "Examples of Systems requiring systems engineering",
+            "Systems Engineer Career Development Model",
+            "Perspectives of Systems Engineering",
+            "Systems Domains",
+            "Systems Engineering Fields",
+            "System Engineering Approaches"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Structure of Complex Systems",
+          "topics": [
+            "System Building Blocks and Interfaces",
+            "Hierarchy of Complex Systems",
+            "System Building Blocks",
+            "The System Environment",
+            "Interfaces and Interactions",
+            "Complexity in Modern Systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Concept Development and Exploration",
+          "topics": [
+            "Originating a New System",
+            "Operational Analysis",
+            "Functional Analysis",
+            "Feasibility",
+            "System Operational Requirements",
+            "Implementation of Concept Exploration",
+            "Exploration in system life cycle",
+            "Concept definition phase",
+            "Activities involved in concept definition phase"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Engineering Development",
+          "topics": [
+            "Reducing Program Risks",
+            "Requirements Analysis",
+            "Functional Analysis and Design",
+            "Prototype Development as a Risk Mitigation Technique",
+            "Development Testing",
+            "Risk Reduction",
+            "Place of engineering design phase in system life cycle",
+            "Various activities involved in engineering design phase"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Integration and Evaluation",
+          "topics": [
+            "Integrating, Testing, And Evaluating The Total System",
+            "Test Planning And Preparation",
+            "System Integration",
+            "Developmental System Testing",
+            "Operational Test And Evaluation",
+            "Engineering For Production",
+            "Transition From Development To Production",
+            "Production Operations.operation and support phase"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Alexander Kossiakoff, William N Sweet, “System Engineering Principles and Practice, Wiley India\"",
+        "Blanchard Fabrycky, Systems engineering and analysis, Pearson",
+        "Dwivedi Krishna K, Pandey M., Fundamentals of Systems Engineering, Wiley Precise Text book Series, Wiley India. ISBN: 978-265-6654-9",
+        "Dennis M. Buede, William D.Miller, “The Engineering Design of Systems: Models & Methods” Wiley India",
+        "JeffreyL Whitten, Lonnie D Bentley, “System Analysis and Design Methods\"",
+        "Richard Stevens, Peter Brook, “System Engineering – Coping with complexity, Prentice Hall of India\"",
+        "Eisner, H. Essentials of Projects and Systems Engineering Management, 2nd edition. John Wiley & Sons, New Jersey, USA.",
+        "Buede, D. M.. The Engineering Design of Systems, Models and Methods. John Wiley & Sons, New Jersey, USA."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Reliability Engineering",
+      "subject_code": "ME-703(D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Reliability",
+          "topics": [
+            "Definition",
+            "Importance",
+            "History",
+            "Reliability vs. Quality",
+            "Failure pattern of complex product",
+            "Factor of safety and reliability",
+            "Reliability analysis procedure",
+            "Reliability management",
+            "Examples of system failures",
+            "Reliability function – MTTF",
+            "Hazard rate function",
+            "Bathtub curve"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Basic probability theory",
+          "topics": [
+            "Set theory",
+            "Laws of probability",
+            "Probability theorem",
+            "Random variables and probability distributions",
+            "Bay’s Theorem",
+            "Central limit theorem"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Functions of random variables",
+          "topics": [
+            "Single, two and several random variables",
+            "Probability distribution functions",
+            "Density functions for discrete and continuous variables",
+            "Mean, mode and median",
+            "Numerical solutions",
+            "Extremal distributions",
+            "Derivation of the reliability function – constant failure rate model",
+            "Time‑dependent failure models",
+            "Weibull distribution",
+            "Normal distribution",
+            "Lognormal distribution"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Modeling of geometry, strength and loads",
+          "topics": [
+            "Fatigue strength",
+            "Time‑dependent reliability of components",
+            "Failure rate versus time",
+            "Reliability and hazard functions for different distributions",
+            "Estimation of failure rate",
+            "Expected residual life",
+            "Series, parallel and mixed systems",
+            "Complex systems",
+            "Reliability enhancement"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Reliability based design",
+          "topics": [
+            "Optimization problems",
+            "Failure modes and effects analysis (FMEA)",
+            "Event tree and fault tree analysis",
+            "Reliability testing",
+            "Reliability data and analysis",
+            "Measurement of reliability",
+            "Monte Carlo simulation",
+            "Computation of reliability",
+            "Optimization techniques for system reliability with redundancy",
+            "Heuristic methods for optimal system reliability",
+            "Redundancy allocation by dynamic programming",
+            "Reliability optimization by nonlinear programming"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Singiresu S. Rao, Reliability Engineering, Pearson",
+        "Grant E. L. & Leave Worth, Statistical Q. C., T.M.H.",
+        "Balagurusamy, Reliability Engg., T.M.H.",
+        "Mahajan, Statistical Q.C.",
+        "Juran and Grayan, Quality Planning Analysis, T.M.H.",
+        "Charles E. Ebling, “An introduction to Reliability and Maintainability Engg”, Tata McGraw‑Hill, 2000",
+        "Atrick D. O’Connor, “Practical Reliability Engineering”, John Wiley & Sons Inc., 2002",
+        "David J. Smith, “Reliability, Maintainability and Risk: Practical Methods for Engineers”, Butterworth, 2002",
+        "Srinath I.S., Engineering Design and Reliability, ISTE, 1999"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "CAD/CAM /CIM",
+      "subject_code": "ME-704",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Laboratory Overview and Objectives",
+          "topics": [
+            "Provide practical exposure to computer‑aided design (CAD) software tools such as SolidWorks, CATIA, and Unigraphics.",
+            "Introduce computer‑assisted manufacturing (CAM) processes including CNC turning, CNC milling, and CNC drilling.",
+            "Demonstrate remote operation of a computer‑integrated manufacturing (CIM) cell to develop industry‑ready skills."
+          ]
+        }
+      ],
+      "experiments": [
+        "2D and 3D modeling on CAD software",
+        "Use of CAM software for writing CNC programs",
+        "Study of automatic and semi‑automatic control system and writing the electrical analogy",
+        "Production & layout for GT for group of jobs to be manufactured",
+        "A case study / tutorial using CAPP software",
+        "Writing M & G codes for given operations",
+        "Robot and AGV programming",
+        "Modelling and simulation of computer integrated manufacturing system",
+        "Modelling, offline manual part programming and simulation of the operation of 3‑axis CNC milling machine",
+        "Programming and operation of a 5‑axis robot manipulator",
+        "Remote monitoring and operation of computer integrated manufacturing system",
+        "Write the part program for a stepped cylindrical rod (Aluminium, 1200 rpm, feed 20 mm/min, max depth of cut 1 mm) – with canned cycle",
+        "Write the part program for a stepped cylindrical rod (Aluminium, 1200 rpm, feed 20 mm/min, max depth of cut 1 mm) – without canned cycle"
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "MATLAB and R Programming",
+      "subject_code": "ME-705",
+      "subject_type": "Laboratory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "MATLAB Programming",
+          "topics": [
+            "Introduction to $\\textbf{MATLAB}$ environment and basic commands",
+            "Matrix creation, manipulation and arithmetic operations",
+            "Rational and logical operations in $\\textbf{MATLAB}$",
+            "Generating plots using the \\texttt{plot} function",
+            "Complex numbers and statistical functions (e.g., random complex vector generation and summation)",
+            "Handling numbers and strings; M‑file programs for matrix input and diagonal extraction, ASCII character manipulation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "R Programming",
+          "topics": [
+            "Overview of $\\textbf{R}$ language and its statistical computing capabilities",
+            "Installation and setup of R, RStudio, and related tools on Windows/Mac",
+            "R data types, arithmetic and logical operators with examples",
+            "Matrix operations in $\\textbf{R}$: creation, printing, column addition, slicing",
+            "Factors in $\\textbf{R}$: handling categorical and continuous variables",
+            "Data frames in $\\textbf{R}$: creation, appending, selection, subsetting"
+          ]
+        }
+      ],
+      "experiments": [
+        "Introduction to MATLAB",
+        "Working with matrices",
+        "Rational and logical operation of MATLAB",
+        "Creating a plot using the plot function",
+        "Complex and statistical functions (e.g., produce a ten‑element vector of random complex numbers and compute its summation)",
+        "Numbers and strings: program to read a 3×3 matrix and display its diagonal; program to read a string and replace each character with the next ASCII character",
+        "What is R Programming Language?",
+        "How to download and install R, RStudio, Anaconda on Mac or Windows",
+        "Write R data types, arithmetic & logical operators with examples",
+        "Write about R matrix: create, print, add column, slice",
+        "Explain factor in R: categorical & continuous variables",
+        "Explain R data frame: create, append, select, subset"
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Major Project -I",
+      "subject_code": "ME-706",
+      "subject_type": "Project",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

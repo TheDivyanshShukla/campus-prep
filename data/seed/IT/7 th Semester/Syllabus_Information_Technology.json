@@ -1,0 +1,1003 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Soft Computing",
+      "subject_code": "IT 701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Neural Network",
+          "topics": [
+            "Concept",
+            "Biological neural network",
+            "Comparison of ANN with biological NN",
+            "Evolution of artificial neural network",
+            "Basic models",
+            "Types of learning",
+            "Linear separability",
+            "XOR problem",
+            "McCulloch-Pitts neuron model",
+            "Hebb rule"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Supervised Learning",
+          "topics": [
+            "Perceptron learning",
+            "Single layer/multilayer",
+            "Adaline",
+            "Madaline",
+            "Back propagation network",
+            "RBFN",
+            "Application of Neural network in forecasting",
+            "Data compression",
+            "Image compression"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unsupervised learning",
+          "topics": [
+            "Introduction",
+            "Fixed weight competitive nets",
+            "Kohonen SOM",
+            "Counter Propagation networks (Theory, Architecture, Flow Chart, Training Algorithm and applications)",
+            "Introduction to Convolutional neural networks (CNN)",
+            "Recurrent neural networks (RNN)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Fuzzy Set",
+          "topics": [
+            "Introduction",
+            "Basic Definition and Terminology",
+            "Properties and Set‑theoretic Operations",
+            "Fuzzy Relations",
+            "Membership Functions and their assignment",
+            "Fuzzy rules and fuzzy Reasoning",
+            "Fuzzy if‑then Rules",
+            "Fuzzy Inference Systems",
+            "Application of Fuzzy logic in solving engineering problems"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Genetic Algorithm",
+          "topics": [
+            "Introduction to GA",
+            "Simple Genetic Algorithm",
+            "Terminology and operators of GA (individual, gene, fitness, population, data structure, encoding, selection, crossover, mutation, convergence criteria)",
+            "Reasons for working of GA and Schema theorem",
+            "GA optimization problems like TSP (Travelling salesman problem)",
+            "Network design routing",
+            "Introduction to Ant Colony optimization (ACO)",
+            "Particle swarm optimization (PSO)"
+          ]
+        }
+      ],
+      "experiments": [
+        "Form a perceptron net for basic logic gates with binary input and output.",
+        "Using Adaline net, generate XOR function with bipolar inputs and targets.",
+        "Calculation of new weights for a Back propagation network, given the values of input pattern, output pattern, target output, learning rate and activation function.",
+        "Design fuzzy inference system for a given problem.",
+        "Maximize the function y =3x [2 ] + 2 for some given values of x using Genetic algorithm.",
+        "Implement Travelling salesman problem using Genetic Algorithm.",
+        "Optimisation of problem like Job shop scheduling using Genetic algorithm."
+      ],
+      "reference_books": [
+        "S.N. Shivnandam, “Principle of soft computing”, Wiley.",
+        "S. Rajshekaran and G.A.V. Pai, “Neural Network, Fuzzy logic And Genetic Algorithm”, PHI.",
+        "Jack M. Zurada, “Introduction to Artificial Neural Network System” JAico Publication.",
+        "Simon Haykins, “Neural Network- A Comprehensive Foudation”.",
+        "Timothy J.Ross, “Fuzzy logic with Engineering Applications”, McGraw-Hills 1."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Science",
+      "subject_code": "IT 702(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Science and Big Data Overview",
+          "topics": [
+            "Types of data",
+            "Sources of data",
+            "Data collection",
+            "Data storage and management",
+            "Big Data Overview",
+            "Characterization of Big data",
+            "Drivers of Big Data",
+            "Challenges",
+            "Big Data Use Cases",
+            "Defining Big Data Analytics and examples of its use cases",
+            "Data Analytics Lifecycle: Discovery",
+            "Data Analytics Lifecycle: Data Preparation",
+            "Data Analytics Lifecycle: Model Planning",
+            "Data Analytics Lifecycle: Model Building",
+            "Data Analytics Lifecycle: Communicate Results",
+            "Data Analytics Lifecycle: Operationalize"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Advanced Analytical Theory and Methods",
+          "topics": [
+            "Clustering",
+            "K-means",
+            "Additional Clustering Algorithms",
+            "Association Rules",
+            "Apriori Algorithm",
+            "Applications of Association Rules",
+            "Regression",
+            "Linear Regression",
+            "Logistic Regression",
+            "Classification",
+            "Decision Trees",
+            "Naive Bayes",
+            "Additional Classification Methods",
+            "Text Analysis",
+            "Text Analysis Steps",
+            "Determining Sentiments"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Advanced Analytics-Technology and Tools",
+          "topics": [
+            "Analytics for Unstructured Data Use Cases",
+            "MapReduce",
+            "Apache Hadoop",
+            "Traditional database vs Hadoop",
+            "Hadoop Core Components",
+            "HDFS",
+            "Design of HDFS",
+            "HDFS Components",
+            "HDFS Architecture",
+            "Hadoop 2.0 Architecture",
+            "Hadoop-2.0 Resource Management",
+            "YARN"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "The Hadoop Ecosystem",
+          "topics": [
+            "Introduction to Hive",
+            "HBase",
+            "Hive Use Cases: Facebook, Healthcare",
+            "Hive Architecture",
+            "Hive Components",
+            "Integrating Data Sources",
+            "Dealing with Real-Time Data Streams and Complex Event Processing",
+            "Overview of Pig",
+            "Difference between Hive and Pig",
+            "Use Cases of Pig",
+            "Pig program structure",
+            "Pig Components",
+            "Pig Execution",
+            "Pig data models",
+            "Overview of Mahout",
+            "Mahout working"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to R",
+          "topics": [
+            "Basic Data Analytics Methods Using R",
+            "Communicating and Operationalizing an Analytics Project",
+            "Creating the Final Deliverables",
+            "Data Visualization Basics"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "EMC Education Services, “Data Science and Big Data Analytics”, Wiley, 2015.",
+        "Judith Hurwitz, Alan Nugent, Fern Halper, and Marcia Kaufman, “Big Data for Dummies”, Wiley & Sons, 2013.",
+        "Vignesh Prajapati, “Big Data Analytics with R and Hadoop”, Packt Publishing, 2013.",
+        "David Dietrich, Barry Heller, and Beibei Yang, “Data Science and Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data”, John Wiley & Sons, Inc."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cloud Computing",
+      "subject_code": "IT 702(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Grid and Cloud Computing",
+          "topics": [
+            "Introduction of Grid and Cloud computing",
+            "characteristics",
+            "components",
+            "business and IT perspective",
+            "cloud services requirements",
+            "cloud models",
+            "Security in public model",
+            "public verses private clouds",
+            "Cloud computing platforms: Amazon EC2",
+            "Platform as Service: Google App Engine",
+            "Microsoft Azure",
+            "Utility Computing",
+            "Elastic Computing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cloud Services and Design",
+          "topics": [
+            "Cloud services- SAAS",
+            "PAAS",
+            "IAAS",
+            "cloud design and implementation using SOA",
+            "conceptual cloud model",
+            "cloud stack",
+            "computing on demand",
+            "Information life cycle management",
+            "cloud analytics",
+            "information security",
+            "virtual desktop infrastructure",
+            "storage cloud"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Virtualization Technology",
+          "topics": [
+            "Virtualization technology: Definition",
+            "benefits",
+            "sensor virtualization",
+            "HVM",
+            "study of hypervisor",
+            "logical partitioning- LPAR",
+            "Storage virtualization",
+            "SAN",
+            "NAS",
+            "cloud server virtualization",
+            "virtualized data center"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cloud Security Fundamentals",
+          "topics": [
+            "Cloud security fundamentals",
+            "Vulnerability assessment tool for cloud",
+            "Privacy and Security in cloud",
+            "Cloud computing security architecture: Architectural Considerations- General Issues",
+            "Trusted Cloud computing",
+            "Secure Execution Environments and Communications",
+            "Micro-architectures",
+            "Identity Management and Access control-Identity management",
+            "Access control",
+            "Autonomic Security",
+            "Cloud computing security challenges: Virtualization security management- virtual threats",
+            "VM Security Recommendations",
+            "VM-Specific Security techniques",
+            "Secure Execution Environments and Communications in cloud"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Cloud Platforms, Performance and Emerging Issues",
+          "topics": [
+            "SOA and cloud",
+            "SOA and IAAS",
+            "cloud infrastructure benchmarks",
+            "OLAP",
+            "business intelligence",
+            "e-Business",
+            "ISV",
+            "Cloud performance monitoring commands",
+            "issues in cloud computing",
+            "QOS issues in cloud",
+            "mobile cloud computing",
+            "Inter cloud issues",
+            "Sky computing",
+            "Cloud Computing Platform",
+            "Xen Cloud Platform",
+            "Eucalyptus",
+            "OpenNebula",
+            "Nimbus",
+            "TPlatform",
+            "Apache Virtual Computing Lab (VCL)",
+            "Anomaly Elastic Computing Platform"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Dr.Kumar Saurabh, “Cloud Computing”, Wiley India.",
+        "Ronald Krutz and Russell Dean Vines, “Cloud Security”, Wiley-India.",
+        "Judith Hurwitz, R.Bloor, M.Kanfman, F.Halper, “Computing for Dummies”, Wiley India Edition.",
+        "Anthony T.Velte Toby J.Velte, “Cloud Computing – A Practical Approach”, TMH.",
+        "Barrie Sosinsky, ‘Cloud Computing Bible”, Wiley India."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "SIMULATION & MODELING",
+      "subject_code": "IT 702(C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Modeling & Simulation Concepts",
+          "topics": [
+            "System Concepts",
+            "What is a Model?",
+            "Type of Models",
+            "Modeling & Simulation",
+            "Continuous vs. Discrete System Simulation",
+            "Numerical Integration vs. Continuous Simulation",
+            "Analog vs. Digital Simulation",
+            "Simulation vs. Monte‑Carlo Simulation",
+            "Nature of Computer Modeling and Simulation",
+            "When to Use Simulation?",
+            "Limitations of Simulation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Probability Concepts in Simulation",
+          "topics": [
+            "Stochastic variables",
+            "Random numbers: Pseudo‑random generators",
+            "Testing of pseudo‑random number generators",
+            "Generation of non‑uniformly distributed random numbers",
+            "Discrete and continuous random variables",
+            "Density and distributive functions",
+            "Study of distributions such as Poisson, Normal, Uniform"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Simulation of Continuous Systems",
+          "topics": [
+            "Introduction",
+            "Differential equations",
+            "Pure Pursuit Problem",
+            "Simulation of Chemical Reaction",
+            "Autopilot Simulation",
+            "Simulation of other continuous systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Simulation of Discrete Systems",
+          "topics": [
+            "Arrival patterns and service times",
+            "Simulation of Queuing System",
+            "Elementary idea about networks of Queuing with particular emphasis to computer system environment"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Verification & Validation",
+          "topics": [
+            "Design of simulation experiments and validation of simulation experiments",
+            "Comparing model data units and real system data",
+            "Simulation Language: brief introduction to important discrete and continuous languages such as GPSS (study & use of the language)",
+            "Use of database & AI techniques in the area of modeling and simulation"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Deo, Narsing “System Simulation with Digital Computers”",
+        "Gorden G, “System Simulation”, Prentice Hall",
+        "Shridhar Bhai Trivedi, Kishore “Probability & Statistics with reliability Queuing, Computer Science Applications”",
+        "Payer, T.A., “Introduction to System Simulation”, McGraw Hill",
+        "Reitman, J, “Computer Simulation Application”, Wiley",
+        "Barnes B, “Modeling and Performance Measurement of Computer System",
+        "Spriet, WIA. “Computer Aided Modeling and Simulation (Academic Press)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Augmented and Virtual Reality",
+      "subject_code": "IT 702(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Virtual Reality – Virtual Reality and Virtual Environment",
+          "topics": [
+            "Introduction",
+            "Applications of Virtual Reality",
+            "Computer graphics",
+            "Real time computer graphics",
+            "Flight Simulation",
+            "Virtual environment requirement",
+            "Benefits of virtual reality",
+            "Historical development of VR",
+            "Scientific Landmark 3D Computer Graphics: Introduction",
+            "The Virtual world space",
+            "Positioning the virtual observer",
+            "The perspective projection",
+            "Human vision",
+            "Stereo perspective projection",
+            "3D clipping",
+            "Colour theory",
+            "Simple 3D modeling",
+            "Illumination models",
+            "Reflection models",
+            "Shading algorithms",
+            "Radiosity",
+            "Hidden Surface Removal",
+            "Realism‑Stereographic image"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Geometric Modeling – Geometric Modeling",
+          "topics": [
+            "Introduction",
+            "From 2D to 3D",
+            "3D space curves",
+            "3D boundary representation",
+            "Geometrical Transformations – Introduction",
+            "Frames of reference",
+            "Modeling transformations",
+            "Instances",
+            "Picking",
+            "Flying",
+            "Scaling the VE",
+            "Collision detection",
+            "Generic VR system – Introduction",
+            "Virtual environment",
+            "Computer environment",
+            "VR technology",
+            "Model of interaction",
+            "VR Systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Virtual Environment – Animating the Virtual Environment",
+          "topics": [
+            "Introduction",
+            "The dynamics of numbers",
+            "Linear and Nonlinear interpolation",
+            "Animation of objects",
+            "Linear and non‑linear translation",
+            "Shape & object in‑betweening",
+            "Free from deformation",
+            "Particle system",
+            "Physical Simulation – Introduction",
+            "Objects falling in a gravitational field",
+            "Rotating wheels",
+            "Elastic collisions",
+            "Projectiles",
+            "Simple pendulum",
+            "Springs",
+            "Flight dynamics of an aircraft"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "VR Hardware and Software – Human Factors",
+          "topics": [
+            "Introduction",
+            "The eye",
+            "The ear",
+            "The somatic senses",
+            "VR Hardware – Introduction",
+            "Sensor hardware",
+            "Head‑coupled displays",
+            "Acoustic hardware",
+            "Integrated VR systems",
+            "VR Software – Introduction",
+            "Modeling virtual world",
+            "Physical simulation",
+            "VR toolkits",
+            "Introduction to VRML"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Augmented and Mixed Reality",
+          "topics": [
+            "Taxonomy",
+            "Technology and features of augmented reality",
+            "Difference between AR and VR",
+            "Challenges with AR",
+            "AR systems and functionality",
+            "Augmented reality methods",
+            "Visualization techniques for augmented reality",
+            "Wireless displays in educational augmented reality applications",
+            "Mobile projection interfaces",
+            "Marker‑less tracking for augmented reality",
+            "Enhancing interactivity in AR environments",
+            "Evaluating AR systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "John Vince, “Virtual Reality Systems“, Pearson Education Asia, 2007.",
+        "Anand R., “Augmented and Virtual Reality”, Khanna Publishing House, Delhi.",
+        "Adams, “Visualizations of Virtual Reality”, Tata McGraw Hill, 2000.",
+        "Grigore C. Burdea, Philippe Coiffet, “Virtual Reality Technology”, Wiley Inter Science, 2nd Edition, 2006.",
+        "William R. Sherman, Alan B. Craig, “Understanding Virtual Reality: Interface, Application and Design”, Morgan Kaufmann, 2008.",
+        "Alan B. Craig, William R. Sherman and Jeffrey D. Will, Developing Virtual Reality Applications: Foundations of Effective Design, Morgan Kaufmann, 2009.",
+        "Gerard Jounghyun Kim, Designing Virtual Systems: The Structured Approach, 2005.",
+        "Alan B. Craig, Understanding Augmented Reality, Concepts and Applications, Morgan Kaufmann, 2013."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cyber Laws and Forensics",
+      "subject_code": "IT 703 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to cybercrime",
+          "topics": [
+            "Definition of cybercrime",
+            "Cyber crime and information security",
+            "Classification of cybercrimes",
+            "Legal perspectives of cybercrime",
+            "Indian perspective on cybercrime",
+            "Cybercrime and the Indian ITA 2000",
+            "Global perspective on cybercrime",
+            "Cyber offences and criminal planning",
+            "Tools and methods used in cyber crime",
+            "Need for cyber law",
+            "The Indian IT Act",
+            "Challenges to Indian law and cybercrime scenario in India",
+            "Digital signature and Indian IT Act",
+            "Amendments in the Indian IT Act",
+            "Cybercrime and punishment"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Law and framework for information security",
+          "topics": [
+            "Law for intellectual property rights (IPR)",
+            "Patent law",
+            "Copyright law",
+            "Indian Copyright Act",
+            "Privacy issues and law in Hong Kong, Japan, and Australia",
+            "Data Protection Act in Europe",
+            "Health Insurance Portability and Accountability Act (HIPAA) 1996",
+            "Gramm‑Leach‑Bliley Act (GLBA) 1999",
+            "Sarbanes‑Oxley Act (SOX)",
+            "Legal issues in data mining",
+            "Building security into software/system development life cycle"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Digital Forensics Science",
+          "topics": [
+            "Need for computer forensics",
+            "Understanding computer forensics",
+            "Computer forensics vs. related disciplines",
+            "Brief history of computer forensics",
+            "Cyber forensics and digital evidence",
+            "Digital forensics lifecycle",
+            "Chain of custody concept",
+            "Network forensics",
+            "Approaching a computer forensics investigation",
+            "Setting up a computer forensics laboratory",
+            "Forensics and social networking sites",
+            "Computer forensics from compliance perspective",
+            "Challenges in computer forensics",
+            "Forensics auditing",
+            "Anti‑forensics"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Current Computer Forensics Tools",
+          "topics": [
+            "Evaluating computer forensics tool needs",
+            "Types of computer forensics tools",
+            "Tasks performed by computer forensics tools",
+            "Tool comparisons",
+            "Other considerations for tools",
+            "Computer forensics software tools",
+            "Command‑line forensics tools",
+            "UNIX/Linux forensics tools",
+            "GUI forensics tools",
+            "Computer forensics hardware tools",
+            "Forensic workstations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Forensics of hand‑held devices and network forensics",
+          "topics": [
+            "Forensics of hand‑held devices",
+            "Investigating network intrusions and cyber crime",
+            "Network forensics and investigating logs",
+            "Investigating network traffic",
+            "Investigating web attacks",
+            "Router forensics",
+            "Cyber forensics tools and case studies"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "The Indian Cyber law with Cyber glossary, Suresh T. Vishwanathan, New Delhi, Bhart Law House, 2000.",
+        "Law of Cyber Crimes and Information Technology Law, S.V. JogaRao, 2007.",
+        "Digital Forensics with Open Source Tools, Cory Altheide, Harlan Carvey, Syngress imprint of Elsevier.",
+        "Guide to Computer Forensics and Investigations, Bill Nelson, Amelia Phillips, Christopher Steuart, Fourth Edition, Course Technology.",
+        "Digital forensics: Digital evidence in criminal investigation, Angus M. Marshall, John – Wiley and Sons, 2008.",
+        "Cyber Security, Nina Godbole and Sunit Belapure, Wiley India Publication.",
+        "Information system security, Nina Godbole, Wiley India Publication.",
+        "Information Warfare: Corporate attack and defense in digital world, William."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "IT 703 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Unit I",
+          "topics": [
+            "IoT definition",
+            "Characteristics",
+            "IoT conceptual and architectural framework",
+            "Physical and logical design of IoT",
+            "IoT enablers",
+            "Modern day IoT applications",
+            "M2M communications",
+            "IoT vs M2M",
+            "IoT vs WoT",
+            "IoT reference architecture",
+            "IoT Network configurations",
+            "IoT LAN",
+            "IoT WAN",
+            "IoT Node",
+            "IoT Gateway",
+            "IoT Proxy",
+            "IPv4 vs IPV6"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit II",
+          "topics": [
+            "Sensor",
+            "Basic components and challenges of a sensor node",
+            "Sensor features",
+            "Sensor resolution",
+            "Sensor classes: Analog, Digital, Scalar, Vector Sensors",
+            "Sensor Types",
+            "Bias, drift, hysteresis error, quantization error",
+            "Actuator",
+            "Actuator types: Hydraulic, Pneumatic, electrical, thermal/magnetic, mechanical actuators, soft actuators"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit III",
+          "topics": [
+            "Basics of IoT Networking",
+            "IoT Components",
+            "Functional components of IoT",
+            "IoT service oriented architecture",
+            "IoT challenges",
+            "6LoWPAN",
+            "IEEE 802.15.4",
+            "ZigBee and its types",
+            "RFID Features",
+            "RFID working principle and applications",
+            "NFC (Near Field Communication)",
+            "Bluetooth",
+            "Wireless Sensor Networks and its Applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit IV",
+          "topics": [
+            "MQTT",
+            "MQTT methods and components",
+            "MQTT communication",
+            "Topics and applications",
+            "SMQTT",
+            "CoAP",
+            "CoAP message types",
+            "CoAP request‑response model",
+            "XMPP",
+            "AMQP features and components",
+            "AMQP frame types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit V",
+          "topics": [
+            "IoT Platforms",
+            "Arduino",
+            "Raspberry Pi Board",
+            "Other IoT Platforms",
+            "Data Analytics for IoT",
+            "Cloud for IoT",
+            "Cloud storage models & communication APIs",
+            "IoT case studies"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Vijay Madisetti, Arshdeep Bahga, “Internet of Things, A Hands on Approach”, University Press",
+        "Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, “Introduction to Internet of Things: A practical Approach”, ETI Labs",
+        "Pethuru Raj and Anupama C. Raman, “The Internet of Things: Enabling Technologies, Platforms, and Use Cases”, CRC Press",
+        "Jeeva Jose, “Internet of Things”, Khanna Publishing House, Delhi",
+        "Adrian McEwen, “Designing the Internet of Things”, Wiley",
+        "Raj Kamal, “Internet of Things: Architecture and Design”, McGraw Hill",
+        "Cuno Pfister, “Getting Started with the Internet of Things”, O'Reilly Media"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Social Networks",
+      "subject_code": "IT 703 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction to Semantic Web: Limitations of current Web",
+            "Development of Semantic Web",
+            "Emergence of the Social Web",
+            "Social Network analysis: Development of Social Network Analysis",
+            "Key concepts and measures in network analysis",
+            "Electronic sources for network analysis: Electronic discussion networks, blogs and online communities",
+            "Web‑based networks",
+            "Applications of Social Network Analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Modelling, Aggregating and Knowledge Representation",
+          "topics": [
+            "Ontology and their role in the Semantic Web: Ontology‑based knowledge representation",
+            "Ontology languages for the Semantic Web: Resource Description Framework (RDF)",
+            "Web Ontology Language (OWL)",
+            "Modelling and aggregating social network data: State‑of‑the‑art in network data representation",
+            "Ontological representation of social individuals",
+            "Ontological representation of social relationships",
+            "Aggregating and reasoning with social network data",
+            "Advanced representations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Extraction and Mining Communities in Web Social Networks",
+          "topics": [
+            "Extracting evolution of Web community from a series of Web archives",
+            "Detecting communities in social networks",
+            "Definition of community",
+            "Evaluating communities",
+            "Methods for community detection and mining",
+            "Applications of community‑mining algorithms",
+            "Tools for detecting communities, social network infrastructures and communities",
+            "Decentralized online social networks",
+            "Multi‑relational characterization of dynamic social network communities"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Predicting Human Behaviour and Privacy Issues",
+          "topics": [
+            "Understanding and predicting human behaviour for social communities",
+            "User data management",
+            "Inference and distribution",
+            "Enabling new human experiences",
+            "Reality mining",
+            "Context awareness",
+            "Privacy in online social networks",
+            "Trust in online environment",
+            "Trust models based on subjective logic",
+            "Trust network analysis",
+            "Trust transitivity analysis",
+            "Combining trust and reputation",
+            "Trust derivation based on trust comparisons",
+            "Attack spectrum and countermeasures"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Visualization and Applications of Social Networks",
+          "topics": [
+            "Graph theory",
+            "Centrality measures",
+            "Clustering techniques",
+            "Node‑Edge diagrams",
+            "Matrix representation of networks",
+            "Visualizing online social networks",
+            "Visualizing social networks with matrix‑based representations",
+            "Matrix and node‑link diagrams",
+            "Hybrid representations",
+            "Applications of network visualisation",
+            "Cover networks",
+            "Community welfare networks",
+            "Collaboration networks",
+            "Co‑citation networks"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ajith Abraham, Aboul Ella Hassanien, Václav Snášel, “Computational Social Network Analysis: Trends, Tools and Research Advances”, Springer, 2012",
+        "Borko Furht, “Handbook of Social Network Technologies and Applications”, Springer, 1st edition, 2011",
+        "Charu C. Aggarwal, “Social Network Data Analytics”, Springer, 2014",
+        "Giles, Mark Smith, John Yen, “Advances in Social Network Mining and Analysis”, Springer, 2010",
+        "Guandong Xu, Yanchun Zhang and Lin Li, “Web Mining and Social Networking – Techniques and applications”, Springer, 1st edition, 2012",
+        "Peter Mika, “Social Networks and the Semantic Web”, Springer, 1st edition, 2007",
+        "Przemyslaw Kazienko, Nitesh Chawla, “Applications of Social Media and Social Network Analysis”, Springer, 2015",
+        "Maksim Tsvetovat and Alexander Kouznetsov, “Social Network Analysis for Startups”, O’Reilly Media, 2011",
+        "Charles Kadushin, “Understanding Social Networks”, Oxford University Press, 2012",
+        "Social Network Analysis: Theory and Applications"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Image Processing",
+      "subject_code": "IT 703 (D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Digital Image Fundamentals",
+          "topics": [
+            "Origins of Digital Image Processing",
+            "Applications of Digital Image Processing",
+            "Fundamental steps in image processing",
+            "Elements of digital image processing systems",
+            "Image sampling and quantization",
+            "Neighbourhood relationships and connectivity",
+            "Distance measures between pixels",
+            "Linear and non‑linear operations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Image Enhancement in the Spatial Domain",
+          "topics": [
+            "Gray level transformations",
+            "Histogram processing",
+            "Enhancement using arithmetic and logical operations",
+            "Spatial filtering fundamentals",
+            "Smoothing spatial filters",
+            "Sharpening spatial filters",
+            "Combined spatial enhancement techniques"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Image Enhancement in the Frequency Domain and Image Restoration",
+          "topics": [
+            "Fourier Transform and frequency‑domain representation",
+            "Smoothing filters in the frequency domain",
+            "Sharpening filters in the frequency domain",
+            "Homomorphic filtering",
+            "Image degradation and restoration model",
+            "Noise models",
+            "Restoration using spatial filtering",
+            "Periodic noise reduction via frequency‑domain filtering",
+            "Linear shift‑invariant degradations",
+            "Estimation of degradation function",
+            "Inverse filtering",
+            "Wiener filtering",
+            "Constrained least‑squares filtering",
+            "Geometric mean filtering",
+            "Geometric transformations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Image Compression and Image Segmentation",
+          "topics": [
+            "Coding and redundancy (interpixel, psychovisual)",
+            "Image compression models",
+            "Elements of information theory",
+            "Error‑free compression comparison",
+            "Lossy compression techniques",
+            "Standard image compression formats",
+            "Edge detection and discontinuity detection",
+            "Edge linking and boundary detection",
+            "Thresholding methods",
+            "Region‑oriented segmentation",
+            "Motion‑based segmentation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Representation, Description and Object Recognition",
+          "topics": [
+            "Image representation schemes",
+            "Boundary descriptors",
+            "Regional descriptors",
+            "Principal component analysis for description",
+            "Morphology basics",
+            "Fundamental morphological algorithms",
+            "Pattern classes and recognition",
+            "Decision‑theoretic recognition methods",
+            "Structural recognition methods"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "R.C. Gonzalez & Richard E. Wood, “Digital Image Processing”, Addison Wesley Publishing",
+        "Anil K. Jain, “Fundamentals of Digital Image Processing”, PHI",
+        "Sonka, Hlavac, Boyle, “Digital Image Processing and Computer Vision”, Cengage Learning, India Edition",
+        "B. Chanda, D. Dutta Majumder, “Digital Image Processing and Analysis”, PHI"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cloud Computing Lab",
+      "subject_code": "IT 704",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Study of cloud computing concepts",
+        "Using Eucalyptus or Open Nebula or equivalent to set up the cloud",
+        "Find procedure to run the virtual machine of different configuration.",
+        "Check how many virtual machines can be utilized at particular time.",
+        "Install a C compiler in the virtual machine and execute a sample program.",
+        "Show the virtual machine migration based on the certain condition from one node to the other.",
+        "To develop web applications in cloud",
+        "To learn the design and development process involved in creating a cloud based application",
+        "To learn to implement and use parallel programming using Hadoop",
+        "Install Virtualbox/VMware Workstation with different flavours of linux or windows OS on top of windows 7 or 8.",
+        "Install a C compiler in the virtual machine created using virtual box and execute Simple Programs",
+        "Install Google App Engine. Create hello world app and other simple web applications using python/java.",
+        "Use GAE launcher to launch the web applications.",
+        "Simulate a cloud scenario using CloudSim.",
+        "Implementation of various scheduling mechanisms using open source cloud simulator.",
+        "Find a procedure to transfer the files from one virtual machine to another virtual machine.",
+        "Find a procedure to launch virtual machine using trystack (Online Openstack Demo Version)",
+        "Install Hadoop single node cluster and run simple applications like wordcount"
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "IoT Lab",
+      "subject_code": "IT 705",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Familiarization with Arduino/Raspberry Pi and perform necessary software installation.",
+        "To interface LED/Buzzer with Arduino/Raspberry Pi and write a program to turn ON LED for 1 sec after every 2 seconds.",
+        "To interface Push button/Digital sensor (IR/LDR) with Arduino/Raspberry Pi and write a program to turn ON LED when push button is pressed or at sensor detection.",
+        "To interface DHT11 sensor with Arduino/Raspberry Pi and write a program to print temperature and humidity readings.",
+        "To interface motor using relay with Arduino/Raspberry Pi and write a program to turn ON motor when push button is pressed.",
+        "To interface OLED with Arduino/Raspberry Pi and write a program to print temperature and humidity readings on it.",
+        "To interface Bluetooth with Arduino/Raspberry Pi and write a program to send sensor data to smartphone using Bluetooth.",
+        "To interface Bluetooth with Arduino/Raspberry Pi and write a program to turn LED ON/OFF when ‘1’/’0’ is received from smartphone using Bluetooth.",
+        "Write a program on Arduino/Raspberry Pi to upload temperature and humidity data to thingspeak cloud.",
+        "Write a program on Arduino/Raspberry Pi to retrieve temperature and humidity data from thingspeak cloud.",
+        "To install MySQL database on Raspberry Pi and perform basic SQL queries.",
+        "Write a program on Arduino/Raspberry Pi to publish temperature data to MQTT broker.",
+        "Write a program on Arduino/Raspberry Pi to subscribe to MQTT broker for temperature data and print it.",
+        "Write a program to create TCP server on Arduino/Raspberry Pi and respond with humidity data to TCP client when requested.",
+        "Write a program to create UDP server on Arduino/Raspberry Pi and respond with humidity data to UDP client when requested."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

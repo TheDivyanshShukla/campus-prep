@@ -1,0 +1,820 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Electrical Drives",
+      "subject_code": "EX-801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts of Electric Drives",
+          "topics": [
+            "Elements of drive systems",
+            "Requirement of electric drives",
+            "Rating \\& selection of drives",
+            "Groups and individual drives",
+            "Constant power and constant torque drives",
+            "Motor mechanism dynamics",
+            "Review of characteristics of AC \\& DC motors",
+            "Load characteristic",
+            "Load‑drive speed‑torque characteristics",
+            "Quadrant speed‑torque characteristics",
+            "Mechanical systems stability of electric drives",
+            "Referred moment of inertia and torque of motor‑load combination",
+            "Load equalization"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "DC Drives",
+          "topics": [
+            "Starting \\& braking of conventional drives",
+            "Phase‑controlled drives",
+            "Chopper‑controlled drives",
+            "Transient and steady‑state analysis",
+            "Energy recovery systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Induction Motor Drives",
+          "topics": [
+            "Conventional method of starting, braking and speed control for induction motors",
+            "PWM control",
+            "Voltage‑Source Inverter (VSI) fed induction motor drives",
+            "Current‑Source Inverter (CSI) fed induction motor drives",
+            "Cyclo‑converter fed drive",
+            "Vector‑control drives",
+            "Slip‑controlled induction motor drives",
+            "Review of conventional methods and converter‑controlled Crammers \\& Scherbius drives",
+            "Rotor‑impedance control"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Synchronous Motor Drives",
+          "topics": [
+            "VSI fed synchronous motor drives",
+            "CSI fed synchronous motor drives",
+            "Self‑controlled brushless and commutatorless DC motor drives",
+            "Self‑controlled brushless and commutatorless AC motor drives"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Special Drives",
+          "topics": [
+            "Fundamentals of switched‑reluctance motors",
+            "Stepper motors",
+            "Permanent‑magnet motor fundamentals",
+            "Introduction to vector control for permanent‑magnet motors",
+            "Digital control of drives",
+            "Case studies: electric traction, steel & cement plants, textile & paper mills, machine‑tool drive and CNC, electric cars"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study the starting and running characteristics of converter fed DC traction motor.",
+        "Study the energy recovery systems and braking of a DC drive.",
+        "Study the braking methods of a three‑phase induction motor.",
+        "Study the performance of VSI fed three‑phase induction motor using PWM technique.",
+        "Control the speed of a three‑phase slip‑ring induction motor using rotor impedance control.",
+        "Study the performance of vector‑controlled three‑phase induction motor drive.",
+        "Study frequency‑controlled synchronous motor drive.",
+        "Study the control \\& performance characteristics of switched reluctance motor.",
+        "Study the performance \\& control of a stepper motor.",
+        "Study the performance of a permanent‑magnet brushless DC motor drive."
+      ],
+      "reference_books": [
+        "Pillai S. K., \"A First Course on Electrical Drives\", Second Edition, Wiley Eastern.",
+        "Ned Mohan, Electrical Machine Drive, Wiley India.",
+        "Dubey G. K., \"Power Semiconductor Controlled Drives\", PHI.",
+        "Dubey G. K., \"Fundamentals of Electrical Drives\", Narosa Publishing House.",
+        "Bose B. K., \"Power Electronics and AC Drives\", PHI Learning.",
+        "Murphy M. D., and Tumbuli F., \"Power Electronic Control of AC Motors\", Pergamon.",
+        "Press, Oxford University Press.",
+        "P. V. Rao, \"Power Semiconductor Drives\", BS Publications.",
+        "S. ShivaNagaraju, \"Power Semiconductor Drive\", PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Power quality Problems and mitigation techniques",
+      "subject_code": "EX-802 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Power Quality",
+          "topics": [
+            "Introduction to power quality and voltage quality",
+            "Power quality evaluation procedures",
+            "General classes of power quality problems",
+            "Causes and effects of power quality disturbances"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Power Quality Issues due to Loads and Compensation",
+          "topics": [
+            "Loads causing power quality problems",
+            "State‑of‑the‑art passive shunt and series compensation",
+            "Classification and working of passive shunt compensation",
+            "Classification and working of passive series compensation",
+            "Principle and control of active shunt compensator (DSTATCOM)",
+            "Active series compensators – working and control"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unified Power Quality Compensators",
+          "topics": [
+            "Introduction to unified power quality compensators",
+            "Classification of UPQC",
+            "Working and operation of UPQC"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Voltage Sags, Interruptions and Transients",
+          "topics": [
+            "Voltage sags and interruptions – sources",
+            "Estimating voltage sag performance",
+            "Fundamental principles of protection and monitoring of sags",
+            "Transient over‑voltages – sources",
+            "Principles of over‑voltage protection",
+            "Utility capacitor switching transients",
+            "Fundamentals of harmonics and harmonic distortion",
+            "Harmonic sources from commercial loads",
+            "Harmonic sources from industrial loads"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Applied Harmonics and Mitigation",
+          "topics": [
+            "Harmonics distortion evaluation",
+            "Principles for controlling harmonics",
+            "Devices for controlling harmonic distortion",
+            "Shunt active filters – operation and control",
+            "Shunt passive filters – operation and control"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Power Quality - by R.C. Duggan",
+        "Power System harmonics – by A.J. Arrillga",
+        "Power electronic converter harmonics – by Derek A. Paice",
+        "Power quality problems and mitigation techniques: Bhim Singh, Amrish Chandra, Kamal Al- Haddad."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Special Machine",
+      "subject_code": "EX-802 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Stepper Motors",
+          "topics": [
+            "Discretisation of angular position by stepper structures",
+            "Stepping angle and frequency of excitation",
+            "VR and PM rotor structures and their torque production",
+            "Torque‑angle characteristics",
+            "Hybrid structure and torque production by permanent magnet and excitation fluxes",
+            "Power electronic converters for stepper motors",
+            "Control by load angle"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Switched Reluctance Motor",
+          "topics": [
+            "Static torque production",
+            "Partition of energy and effects of saturation",
+            "Dynamic torque production",
+            "Torque‑speed characteristics",
+            "Shaft position sensing",
+            "Solid rotors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Brushless DC Motor",
+          "topics": [
+            "Construction and principle",
+            "Speed control",
+            "Basic concept of torque",
+            "Outer and inner rotor configurations",
+            "Magnetic circuit concept",
+            "Electrical analogy",
+            "Winding pattern: series and parallel",
+            "Thermal considerations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Permanent Magnet Materials and Circuits",
+          "topics": [
+            "Characteristics, parameters, properties, classification and calculations of permanent magnet materials",
+            "Permanent magnet motor types",
+            "DC brushed motor design and analysis",
+            "Control strategies and applications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "PM Synchronous Motors and PM Step Motors",
+          "topics": [
+            "PM synchronous motor rotor construction",
+            "Theory, operation and control of PM synchronous motors",
+            "Applications of PM synchronous motors",
+            "PM step motors and hybrid step motors",
+            "Sensorless control techniques",
+            "Reduction of torque pulsations",
+            "Case studies: electric vehicles, industrial drives, PV‑fed water pumping"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Brushless Permanent Magnet & Reluctance Motor Drives – T.J.E. Miller",
+        "Principles of Electric Machines & Power Electronics – P.C. Sen",
+        "Electric Drives – G.K. Dubey",
+        "Permanent magnet synchronous & brushless DC motor drives – R. Krishnan, CRC Press, 2004"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "SCADA Systems & Applications",
+      "subject_code": "EX-802 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to $\\mathrm{SCADA}$ and PLC",
+          "topics": [
+            "Data acquisition system in $\\mathrm{SCADA}$",
+            "Evaluation of $\\mathrm{SCADA}$",
+            "Communication technologies for $\\mathrm{SCADA}$",
+            "Monitoring and supervisory functions of $\\mathrm{SCADA}$",
+            "PLC block diagram",
+            "PLC programming languages",
+            "Ladder diagram for PLC",
+            "Functional block diagram for PLC",
+            "PLC applications",
+            "Interfacing of PLC with $\\mathrm{SCADA}$",
+            "SCADA system components – schemes",
+            "Remote Terminal Unit ($\\mathrm{RTU}$)",
+            "Intelligent Electronic Devices ($\\mathrm{IED}$)",
+            "Communication network for $\\mathrm{SCADA}$",
+            "$\\mathrm{SCADA}$ server"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "$\\mathrm{SCADA}$ Architecture",
+          "topics": [
+            "Various $\\mathrm{SCADA}$ architectures",
+            "Advantages and disadvantages of each architecture",
+            "Single unified standard architecture IEC 61850",
+            "$\\mathrm{SCADA}$/HMI systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "$\\mathrm{SCADA}$ Communication",
+          "topics": [
+            "Industrial communication technologies – wired methods",
+            "Industrial communication technologies – wireless methods",
+            "Fiber‑optic communication for $\\mathrm{SCADA}$",
+            "Open‑standard communication protocols"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Operation and Control of Interconnected Power System",
+          "topics": [
+            "Automatic substation control",
+            "$\\mathrm{SCADA}$ configuration",
+            "Energy Management System (EMS)",
+            "System operating states",
+            "System security",
+            "State estimation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "$\\mathrm{SCADA}$ Applications",
+          "topics": [
+            "Utility applications – transmission and distribution sector",
+            "Monitoring, analysis and improvement in utility operations",
+            "Industrial applications – oil, gas, water sectors",
+            "Case studies",
+            "Implementation and simulation exercises"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Stuart A. Boyer, *SCADA supervisory control and data acquisition*.",
+        "Gordan Clark, Deem Reynders, *Practical Modem SCADA Protocols*.",
+        "Sunil S. Rao, *Switchgear and Protections*, Khanna Publication."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Application of AI in Electrical/Electronics Engg.",
+      "subject_code": "EX-802 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Models of Neural Network – Architectures",
+            "Knowledge representation",
+            "Artificial Intelligence and Neural networks",
+            "Learning process",
+            "Error correction learning",
+            "Hebbian learning",
+            "Competitive learning",
+            "Boltzman learning",
+            "Supervised learning",
+            "Unsupervised learning",
+            "Reinforcement learning",
+            "learning tasks"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Multi‑layer Perceptron",
+          "topics": [
+            "Multi‑layer perceptron using Back propagation Algorithm",
+            "Self‑organizing Map",
+            "Radial Basis Function Network",
+            "Functional link network",
+            "Hopfield Network"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Fuzzy Systems",
+          "topics": [
+            "Fuzzy versus crisp",
+            "Fuzzy sets",
+            "Membership function",
+            "Basic Fuzzy set operations",
+            "Properties of Fuzzy sets",
+            "Fuzzy cartesian Product",
+            "Operations on Fuzzy relations",
+            "Fuzzy logic",
+            "Fuzzy Quantifiers",
+            "Fuzzy Inference",
+            "Fuzzy Rule based system",
+            "Defuzzification methods"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Genetic Algorithms",
+          "topics": [
+            "Encoding",
+            "Fitness Function",
+            "Reproduction operators",
+            "Genetic Modeling",
+            "Genetic operators",
+            "Crossover",
+            "Single‑site crossover",
+            "Two‑point crossover",
+            "Multi point crossover",
+            "Uniform crossover",
+            "Matrix crossover",
+            "Crossover Rate",
+            "Inversion & Deletion",
+            "Mutation operator",
+            "Mutation",
+            "Mutation Rate",
+            "Bit‑wise operators",
+            "Generational cycle convergence of Genetic Algorithm"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Applications",
+          "topics": [
+            "Load forecasting",
+            "Load flow studies",
+            "Economic load dispatch",
+            "Load frequency control",
+            "Single area system and two area system",
+            "Small Signal Stability (Dynamic stability)",
+            "Reactive power control",
+            "Speed control of DC and AC Motors"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "S. Rajasekaran and G. A. V. Pai, “Neural Networks, Fuzzy Logic & Genetic Algorithms”, PHI, New Delhi, 2003",
+        "P. D. Wasserman, Van Nostrand Reinhold, ”Neural Computing Theory & Practice”, New York, 1989",
+        "Bart Kosko, ”Neural Network & Fuzzy System”, Prentice Hall, 1992",
+        "G. J. Klir and T. A. Folger, ”Fuzzy sets, Uncertainty and Information”, PHI, Pvt. Ltd, 1994",
+        "D. E. Goldberg, ”Genetic Algorithms”, Addison Wesley, 1999"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Power Electronics Converters for Renewable Energy",
+      "subject_code": "EX-803 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to renewable sources",
+          "topics": [
+            "World energy scenario and renewable sources",
+            "Wind, solar, hydro, geothermal fundamentals",
+            "Availability and power extraction of renewable sources",
+            "Photovoltaic effect and basics of solar power generation",
+            "P‑V and I‑V characteristics of PV modules",
+            "Effects of insolation, temperature and shading on PV performance",
+            "PV modules, connections, ratings, and array design",
+            "Maximum power point (MPP) tracking concepts and schemes",
+            "Solar tracking methods",
+            "Standalone PV systems and grid‑interfaced systems",
+            "Energy storage options for PV applications",
+            "AC‑DC load considerations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Power converters for solar",
+          "topics": [
+            "Micro‑converter topologies",
+            "DC‑DC buck, boost, buck‑boost, flyback, forward, and Cuk converters",
+            "Bidirectional DC‑DC converters for PV applications",
+            "Single‑phase and three‑phase inverter configurations",
+            "Multilevel inverter types: Neutral‑point‑clamped, Modular‑multilevel, CSI",
+            "Control schemes for inverters: unipolar and bipolar modulation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Single‑phase and three‑phase back‑controllers",
+          "topics": [
+            "Triggering techniques for power‑factor and harmonic control",
+            "Design and analysis of phase‑control circuits",
+            "Solid‑state transfer switches",
+            "Cycloconverter concepts: three‑phase to single‑phase and vice‑versa",
+            "Effect of source inductance on converter operation",
+            "PWM techniques: single‑pulse and multi‑pulse forms",
+            "STATCON, SVC, UPS and SMPS operation principles"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to wind energy",
+          "topics": [
+            "P‑V and I‑V characteristics of wind turbines",
+            "Wind turbine‑generator‑inverter system architecture",
+            "Mechanical control and ratings of wind turbines",
+            "Maximum power point (MPP) and MPPT schemes for wind",
+            "PLL and synchronization techniques for wind converters",
+            "Power balancing and bypass strategies",
+            "Grid‑connection issues: leakage current, islanding, harmonics",
+            "Harmonic mitigation using passive and active filters",
+            "Active/reactive power feeding and unbalance compensation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Generators for wind and battery systems",
+          "topics": [
+            "DC generator with DC‑to‑AC converter interfaces",
+            "Induction generators with and without converters",
+            "Synchronous generators with back‑to‑back controlled/uncontrolled converters",
+            "Doubly‑fed induction generator topologies and rotor‑side converters",
+            "Permanent‑magnet based generators for wind applications",
+            "Battery technologies: types, charging and discharging methods"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Sudipta Chakraborty, Marcelo G. Sim303265es, and William E. Kramer. Power Electronics for Renewable and Distributed Energy Systems: A Sourcebook of Chetan Singh Solanki, Solar Photovoltaics: fundamentals, Technologies and Applications, Prentice Hall of India, 2011.",
+        "N. Mohan, T.M. Undeland & W.P. Robbins, Power Electronics: Converters, Applications & Design, John Wiley & Sons, 1989.",
+        "Remus Teodorescu, Marco Liserre, Pedro Rodriguez, Grid Converters for Photovoltaic and Wind Power Systems, John Wiley and Sons, Ltd., 2011."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Environmental Issues, Policy, Standards & Regulations",
+      "subject_code": "EX-803 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Global Environmental Concerns and International Frameworks",
+          "topics": [
+            "Global environmental concerns",
+            "Changing global atmosphere",
+            "United Nations Framework Convention on Climate Change (UNFCCC)",
+            "Kyoto Protocol",
+            "Conference of Parties (COP)",
+            "Clean Development Mechanism (CDM)",
+            "Prototype Carbon Fund (PCF)",
+            "Earth Summit",
+            "Sustainable development",
+            "Green Certificate"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Protected‑Area Management, Improvement Strategies and Standards",
+          "topics": [
+            "Global programme for protected‑area management",
+            "Strategies for environmental improvement plans",
+            "Key organisations: UNEP, IPCC, CPCB",
+            "Fundamental features of ISO 14000"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Water Quality Standards and Parameters",
+          "topics": [
+            "Water‑quality parameters (physical, chemical, bacteriological)",
+            "Potable‑water standards",
+            "Waste‑water effluent standards",
+            "Minimal National Standards (MINAS)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "National Environment Policies and Legislation",
+          "topics": [
+            "Water Act 1974",
+            "Air Act 1981",
+            "Environmental (Protection) Act 1986",
+            "M.P. State Environment Policy",
+            "Municipal Solid‑Waste (Management & Handling) Rules 1998",
+            "Biomedical Waste (Management & Handling) Rules 1998"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Energy Sources, Converters and Emerging Technologies",
+          "topics": [
+            "Review of conventional and unconventional energy sources",
+            "Unconventional sources: solar, biogas, wind, tidal",
+            "Energy converters: high‑performance motors, biogas‑driven generators, wind turbines",
+            "Mini‑hydro generators",
+            "State‑of‑the‑art and futuristic energy conversion systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Environmental Issues and Polices, Prentice Hall — Steven Ison, Stephen Peake, Stuart Wall",
+        "ISO 14000 Environmental Management by Goetsch, Davis. Prentice Hall",
+        "Standard methods for the Examination of Water and Wastewater. (1989). 17th Ed. APHA, Washington, D.C., 2‑12",
+        "Energy Management by Paul O’Callaghan – McGraw Hill",
+        "Cleaner Production – Energy Efficiency Manual for GERIAP, UNEP, Bangkok prepared by National Productivity Council",
+        "Training material on ‘Environmental concerns’ prepared by National Productivity Council"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "VLSI circuits and systems",
+      "subject_code": "EX-803 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "MOSTRANSISTORPRINCIPLE",
+          "topics": [
+            "NMOS and PMOS transistors",
+            "Process parameters for MOS and CMOS",
+            "Electrical properties of CMOS circuits and device modeling",
+            "Scaling principles and fundamental limits",
+            "CMOS inverter scaling",
+            "Propagation delays",
+            "Stick diagram",
+            "Layout diagrams"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "COMBINATIONAL LOGIC CIRCUITS",
+          "topics": [
+            "Examples of combinational logic design",
+            "Elmore’s constant",
+            "Pass transistor logic",
+            "Transmission gates",
+            "Static and dynamic CMOS design",
+            "Power dissipation – low‑power design principles"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "SEQUENTIALLOGICCIRCUITS",
+          "topics": [
+            "Static and dynamic latches and registers",
+            "Timing issues",
+            "Pipelines",
+            "Clock strategies",
+            "Memory architecture and memory control circuits",
+            "Low‑power memory circuits",
+            "Synchronous and asynchronous design"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "DESIGNINGARITHMETICBUILDINGBLOCKS",
+          "topics": [
+            "Data‑path circuits",
+            "Architectures for ripple‑carry adders",
+            "Carry‑look‑ahead adders",
+            "High‑speed adders",
+            "Accumulators",
+            "Multipliers",
+            "Dividers",
+            "Barrel shifters",
+            "Speed and area trade‑off considerations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IMPLEMENTATIONSTRATEGIES",
+          "topics": [
+            "Full‑custom and semi‑custom design",
+            "Standard‑cell design and cell libraries",
+            "FPGA building‑block architectures",
+            "FPGA interconnect routing procedures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "N. Weste, K. Eshraghian, “Principles of CMOS VLSI Design”, Second Edition, Addison‑Wesley, 1993",
+        "R. Jacob Baker, Harry W. Li, David E. Boyce, “CMOS Circuit Design, Layout and Simulation”, Prentice Hall of India, 2005",
+        "A. Pucknell, Kamran Eshraghian, “BASIC VLSI Design”, Third Edition, Prentice Hall of India, 2007"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Analytics",
+      "subject_code": "EX-803 (D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Descriptive Statistics",
+          "topics": [
+            "Probability distributions",
+            "Inferential statistics",
+            "Hypothesis testing",
+            "Regression analysis",
+            "Analysis of variance (ANOVA)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Big data and its importance",
+            "Four V’s of big data (volume, velocity, variety, veracity)",
+            "Drivers for big data adoption",
+            "Overview of big data analytics",
+            "Big data analytics applications",
+            "Hadoop’s parallel computing model",
+            "Data discovery techniques",
+            "Open‑source technologies for big data analytics",
+            "Cloud integration with big data",
+            "Predictive analytics in big data",
+            "Mobile business intelligence",
+            "Crowd‑sourcing analytics",
+            "Inter‑ and trans‑firewall analytics",
+            "Information management for big data"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Processing Big Data",
+          "topics": [
+            "Integration of heterogeneous data stores",
+            "Mapping data to programming frameworks",
+            "Data extraction from storage systems",
+            "Data transformation for processing pipelines",
+            "Data partitioning for Hadoop MapReduce"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Hadoop MapReduce",
+          "topics": [
+            "Designing Hadoop MapReduce jobs",
+            "Distributed data processing across server farms",
+            "Monitoring and managing MapReduce job flows",
+            "Components and daemons of the Hadoop ecosystem",
+            "Hadoop Distributed File System (HDFS) architecture",
+            "Execution modes: local, pseudo‑distributed, fully distributed"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Big Data Tools and Techniques",
+          "topics": [
+            "Installation and execution of Apache Pig",
+            "Pig Latin scripting language",
+            "User‑Defined Functions (UDFs) in Pig",
+            "Data processing operators in Pig",
+            "Installation and execution of Apache Hive",
+            "HiveQL query language",
+            "User‑Defined Functions (UDFs) in Hive",
+            "Oracle Big Data platform overview"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Hastie, Trevor, et al. – The Elements of Statistical Learning. Springer, 2009.",
+        "Montgomery, Douglas C., and George C. Runger – Applied Statistics and Probability for Engineers. John Wiley & Sons, 2010.",
+        "NPTEL Video Course: Introduction to Data Analytics by Dr. Balaraman Ravindran (IIT Madras) and Dr. Nandan Sudarsanam (IIT Madras)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "SIMULATION LAB",
+      "subject_code": "EX-804",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Study of Electrical Toolbox",
+          "topics": [
+            "Power System",
+            "Power Electronics",
+            "Control System",
+            "Electrical Measurement",
+            "Flexible AC Transmission"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Simulation Models for Rectifier, Inverter, and Converter",
+          "topics": [
+            "Single‑phase Rectifier",
+            "Three‑phase Rectifier",
+            "Single‑phase Inverter",
+            "Three‑phase Inverter",
+            "Converter for different load models"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Simulation Models using FACTS Devices",
+          "topics": [
+            "STATCOM",
+            "SVC",
+            "TCSC",
+            "SSSC",
+            "IPFC",
+            "UPFC in power‑system transmission lines"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Simulation Models of Power‑Electronics‑Based Electrical Drives",
+          "topics": [
+            "AC Electrical Drives",
+            "DC Electrical Drives"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of various Electrical Toolbox (Power System, Power Electronics, Control System, Electrical Measurement, Flexible AC Transmission).",
+        "Develop simulation models for single‑ and three‑phase rectifiers, inverters, and converters for different load models.",
+        "Develop simulation models using FACTS devices (STATCOM, SVC, TCSC, SSSC, IPFC, UPFC) in power‑system transmission lines.",
+        "Develop simulation models of power‑electronics‑based AC & DC electrical drives."
+      ],
+      "reference_books": [
+        "Shailendra Jain, \"Modeling and Simulation using MATLAB Simulink\", Wiley India.",
+        "https://www.scilab.org/",
+        "https://www.mathworks.com/products/matlab.html"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Major Project-II",
+      "subject_code": "EX-805",
+      "subject_type": "Project",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": "The objectives of the course 'Major Project-I' are To provide students with a comprehensive experience for applying the knowledge gained so far by studying various courses. To develop an inquiring aptitude and build confidence among students by working on solutions of small industrial problems. To give students an opportunity to do something creative and to assimilate real life work situation in institution. To adapt students for latest developments and to handle independently new situations. To develop good expressions power and presentation abilities in students. The focus of the Major Project is on preparing a working system or some design or understanding of a complex system using system analysis tools and submit it the same in the form of write‑up i.e. detail project report. The student should select some real life problems for their project and maintain proper documentation of different stages of project such as need analysis, market analysis, concept evaluation, requirement specification, objectives, work plan, analysis, design, implementation and test plan. Each student is required to prepare a project report and present the same at the final examination with a demonstration of the working system (if any). The faculty and student should work according to following schedule: i) Each student undertakes substantial and individual project in an approved area of the subject and supervised by a member of staff. ii) The student must submit outline and action plan for the project execution (time schedule) and the same be approved by the concerned faculty. iii) At all the steps of the project, students must submit a written report of the same."
+    }
+  ]
+}

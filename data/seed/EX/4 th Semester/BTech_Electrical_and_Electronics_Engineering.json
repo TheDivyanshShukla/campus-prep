@@ -1,0 +1,480 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Electrical Machine-I",
+      "subject_code": "EX402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Transformer‑I",
+          "topics": [
+            "Working principle",
+            "e.m.f. equation",
+            "Construction",
+            "Phasor diagrams",
+            "Equivalent circuit",
+            "Voltage regulation",
+            "Losses",
+            "Separation of hysteresis and eddy current losses",
+            "Efficiency",
+            "Tests: open circuit and short circuit, load, Sumpner’s test",
+            "Condition for maximum efficiency and regulation",
+            "Power and distribution transformer",
+            "All‑day efficiency",
+            "Excitation phenomenon",
+            "Autotransformer: working, advantages, equivalent circuit and phasor diagram"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Transformer‑II",
+          "topics": [
+            "Three‑phase transformer: construction, groups and connections, working and applications",
+            "Scott connection",
+            "Parallel operation of transformers: application, advantages, requirement and load sharing",
+            "Tap changers",
+            "Cooling, conservator and breather",
+            "Pulse and high‑frequency transformers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Three‑phase Induction Motor‑I",
+          "topics": [
+            "Working principle",
+            "Construction",
+            "Comparison of slip‑ring and squirrel‑cage motors",
+            "Steady‑state analysis",
+            "Phasor diagram and equivalent circuit",
+            "Power‑flow diagram",
+            "Torque‑speed and power‑speed characteristics",
+            "Losses and efficiency",
+            "No‑load and block‑rotor test",
+            "Circle diagram"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Three‑phase Induction Motor‑II",
+          "topics": [
+            "Starting of squirrel‑cage and slip‑ring motors",
+            "Power‑factor control",
+            "Cogging & crawling",
+            "Double‑cage & deep‑bar induction motor",
+            "Impact of unbalanced supply and harmonics on performance",
+            "Speed control",
+            "Braking",
+            "Induction generator",
+            "Applications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Single‑Phase Motors",
+          "topics": [
+            "Single‑phase induction motor: double revolving field theory, equivalent circuit and its determination, performance calculation",
+            "Starting methods and types of single‑phase induction motors: working principle and applications",
+            "Comparison with three‑phase induction motor",
+            "Single‑phase A.C. series motor",
+            "Servo motors",
+            "Linear induction motor"
+          ]
+        }
+      ],
+      "experiments": [
+        "Perform turn ratio and polarity test on 1‑phase transformer",
+        "Perform load test on a 1‑phase transformer and plot its load characteristic",
+        "Perform OC and SC tests on a 1‑phase transformer and determine its equivalent circuit; also find its efficiency and regulation at different loads and power factors",
+        "Perform OC and SC tests on a 3‑phase transformer and determine its equivalent circuit; also find its efficiency and regulation at different loads and power factors",
+        "Perform Sumpner’s test on two 1‑phase transformers and determine its efficiency at various loads",
+        "Perform no‑load and block‑rotor test on a 3‑phase induction motor and determine its equivalent circuit",
+        "Perform load test on a 3‑phase induction motor and plot its performance characteristics",
+        "Study various types of starters used for 3‑phase induction motors",
+        "Perform no‑load and block‑rotor test on a 1‑phase induction motor and determine its equivalent circuit"
+      ],
+      "reference_books": [
+        "Electrical Machines by Nagrath and Kothari, McGraw‑Hill",
+        "P.S. Bimbhra, Electrical Machines, Khanna Publishers",
+        "V. Del Toro, “Electrical Machines & Power Systems”, 1985, Prentice‑Hall, Inc., Englewood Cliffs",
+        "S. K. Bhattacharya, Electrical Machines, McGraw‑Hill",
+        "Ashfaq Hussain, Electrical Machines, Dhanpat Rai & Co",
+        "Langsdorf, A. C. Machines, McGraw‑Hill",
+        "Samarajit Ghosh, Electrical Machines, Pearson"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Electronics Logic Design",
+      "subject_code": "EX403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Number Systems and Codes",
+          "topics": [
+            "Digital number systems, base conversion, binary, decimal, octal, hexadecimal, number system with radix r, Gray codes",
+            "Alphanumeric codes – ASCII code and BCD codes, concept of parity, complement r's & (r‑1)'s, subtraction with complements, signed binary numbers, error detecting & correcting codes",
+            "Basic theorems and properties of Boolean algebra: AND, OR, NOT operators, Boolean algebra laws, De Morgan’s theorem, Boolean expression & logic diagram",
+            "Negative logic, alternate logic‑gate representation (bubbled gates), canonical and standard forms (minterms & maxterms), sum‑of‑minterms and product‑of‑maxterms conversion",
+            "Truth tables and Karnaugh maps for 2‑, 3‑, 4‑, 5‑ and 6‑variable functions, solving digital problems using maps, don’t‑care conditions, tabular minimisation",
+            "Sum‑of‑products and product‑of‑sums reduction, exclusive‑OR & exclusive‑NOR circuits, parity generator & checker design"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Combinational Circuits",
+          "topics": [
+            "Design procedure for combinational logic",
+            "Half‑adder, full‑adder, half‑subtractor, full‑subtractor and code‑converter designs",
+            "Analysis of design using universal building blocks",
+            "Implementation of any logic function using only NAND gates or only NOR gates",
+            "Binary serial adder, parallel adder, serial/parallel adder, look‑ahead carry generator, BCD adder",
+            "Binary multiplier and magnitude comparator designs",
+            "Decoder, demultiplexer, encoder, priority encoder implementations",
+            "Multiplexer design and implementation of combinational logic diagrams"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sequential Logic Circuits",
+          "topics": [
+            "Latches: SR latch (NAND & NOR), D latch, edge‑triggered flip‑flops, JK flip‑flop, T flip‑flop, master‑slave flip‑flop",
+            "Analysis of clocked sequential circuits: state tables, state diagrams, state reduction, state equations, state assignments",
+            "Flip‑flop excitation tables and characteristic equations",
+            "Design procedure for sequential circuits using state reduction",
+            "Applications of flip‑flops in sequential logic design"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Registers and Counters",
+          "topics": [
+            "Asynchronous and synchronous counters, modulus counters, down counters, up/down counters, ripple‑counter propagation delay",
+            "Programmable counters, presettable counters, BCD counters, cascading counters, counter applications and decoding glitches",
+            "Ring counter, Johnson counter, rotate‑left and rotate‑right counters",
+            "Registers: buffer register, shift‑left, shift‑right, bidirectional shift registers, parallel‑in‑parallel‑out, serial‑in‑serial‑out, parallel‑in‑serial‑out, serial‑in‑parallel‑out registers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Memory and Converters",
+          "topics": [
+            "Random Access Memory (RAM): timing waveform, memory decoding, internal construction, coincident decoding, address multiplexing",
+            "Read‑Only Memory (ROM) implementation, types of ROMs, combinational PLDs, Programmable Logic Array (PLA), Programmable Array Logic (PAL), sequential programmable devices",
+            "Analog‑to‑Digital conversion techniques: ramp, dual‑slope, integrating, successive‑approximation, parallel, serial, converter specifications",
+            "Digital‑to‑Analog conversion techniques: binary‑weighted and R/2R DACs"
+          ]
+        }
+      ],
+      "experiments": [
+        "Verification of all the logic gates",
+        "Design of BCD to Excess‑3 code converter",
+        "Implementation of NAND & NOR as universal gates",
+        "Design of RS, JK, T & D flip‑flops",
+        "Multiplexer/Demultiplexer based Boolean function implementation",
+        "Design of combinational circuits for (i) half‑adder, (ii) full‑adder, (iii) half‑subtractor, (iv) full‑subtractor",
+        "Design of various A‑D & D‑A converters",
+        "Verification of the truth table of SR flip‑flop",
+        "Verification of BCD to seven‑segment decoder"
+      ],
+      "reference_books": [
+        "A. Anand Kumar, Fundamentals of Digital Circuits, PHI",
+        "A. K. Maini, Digital Electronics, Wiley India",
+        "Thomas Blakeslee, Digital Design with Standard MSI and LSI, Wiley Interscience",
+        "Jain R. P., Modern Digital Electronics, TMH",
+        "M. Mano, Digital Logic & Computer Design, PHI",
+        "Tocci, Digital Systems: Principles & Applications, Pearson Education Asia",
+        "Gothmann, Digital Electronics, PHI",
+        "Malvino & Leech, Digital Principles and Applications, TMH",
+        "Floyad, Digital Fundamentals, UBS",
+        "Nripendra N. Biswas, Logic Design Theory, PHI",
+        "D. C. Green, Digital Electronics, Pearson Education Asia",
+        "Subrata Ghoshal, Digital Electronics, Cengage"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Power System-I",
+      "subject_code": "EX404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Electrical Energy Generation",
+          "topics": [
+            "General background, structure and components of power network",
+            "Introduction to conventional, non-conventional & distributed generation",
+            "Effect of transmission voltage on power system economy",
+            "Selection of size of feeder",
+            "Comparison of isolated versus interconnected power system",
+            "Problems associated with modern large interconnected power system",
+            "Power plant economics – load curves, base load, peak load",
+            "Power plant economics – load factor, demand factor, diversity factor, capacity factor, utilization factor",
+            "Cost of electricity – capital cost, fuel and operation cost"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Transmission Line Components & Underground Cabling",
+          "topics": [
+            "Inductance, resistance and capacitance of transmission line",
+            "Calculation of inductance for single‑phase and three‑phase lines",
+            "Concept of GMR and GMD; symmetrical & asymmetrical configurations",
+            "Calculation of capacitance for two‑wire and three‑wire systems",
+            "Effect of ground on capacitance; charging current",
+            "Transposition of line; composite conductor; skin and proximity effect; bundle conductors",
+            "Underground cable vs overhead line comparison; classification of cables",
+            "Requirements of cable construction; capacitance of single and multi‑core cable",
+            "Economic core diameter; dielectric stress in cable; grading of cables",
+            "Ionization and heating of cables; dielectric losses and sheath loss",
+            "Thermal resistance of cables"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Transmission Systems & Performance of Transmission Line",
+          "topics": [
+            "Various transmission system types and effect of system voltage",
+            "Comparison of conductor materials for overhead systems",
+            "Short, medium and long transmission line representations (Nominal π, Nominal T, equivalent models)",
+            "Network models and ABCD constants for symmetrical & asymmetrical networks",
+            "Mathematical solution for regulation & efficiency of all line types",
+            "Surge impedance, loading, long‑line equation and its equivalent",
+            "Tuned power lines; power flow through transmission line; circle diagram",
+            "Methods of voltage control; static & rotating VAR generators; transformer control"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Insulator & Mechanical Design",
+          "topics": [
+            "Insulator and mechanical design; types of conductors for overhead lines",
+            "Types of line supports and towers; distribution of conductors over towers",
+            "Spacing between conductors; span length and sag‑tension calculations",
+            "Wind and ice loading; line support at different levels; string chart and sag template",
+            "Stringing of conductors; vibration and vibration dampers",
+            "Insulator materials; types of insulators for overhead lines; failure modes",
+            "Voltage distribution of suspension insulators; shielding and grading; string efficiency"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Voltage Control & Distribution System",
+          "topics": [
+            "AC single‑phase, three‑phase, three‑wire & four‑wire distribution systems",
+            "Kelvin’s law for most economical conductor size",
+            "Substation layout and equipment; bus‑bar configurations (single, sectionalized, double)",
+            "Main and transfer bus‑bar systems; ring mains"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "John Grainger and William Stevenson, Power system Analysis, McGraw Hill.",
+        "C.L. Wadhwa, Electrical Power System Analysis, New Age International.",
+        "D.P. Kothari, I.J. Nagrath, Power System Engineering TMH II Ed. Reprint 2009."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Control System",
+      "subject_code": "EX405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Modeling of dynamic systems",
+          "topics": [
+            "Modeling of dynamic systems: Electrical, Mechanical and hydraulic systems",
+            "Concept of transfer function",
+            "Laplace Transform",
+            "State space description of dynamic systems: Open and closed loop systems",
+            "Signal flow graph",
+            "Mason’s formula",
+            "Components of control systems: Error detectors (Synchros & Potentiometer)",
+            "Servomotors (AC & DC)",
+            "Tacho‑generators",
+            "Power amplifier",
+            "Steerer motors"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Time‑domain analysis of closed loop systems",
+          "topics": [
+            "Test signals",
+            "Time response of first and second order systems",
+            "Time domain performance specifications",
+            "Steady state error & error constants",
+            "Feedback control actions: Proportional, derivative and integral control"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Stability",
+          "topics": [
+            "Routh‑Hurwitz stability analysis",
+            "Characteristic equation of closed loop system",
+            "Root loci construction",
+            "Effect of adding poles and zeros on the loci",
+            "Stability by root loci"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Frequency‑domain analysis",
+          "topics": [
+            "Bode plots",
+            "Effect of adding poles and zeros",
+            "Polar plot",
+            "Nyquist stability analysis",
+            "Relative stability: Gain and phase margins"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Design of control systems",
+          "topics": [
+            "Design of control systems with PD/PI/PID control in time domain and frequency domain",
+            "Lead‑lag compensation",
+            "Lag‑lead compensation",
+            "Design of compensating networks",
+            "Solution of state equation: Eigenvalues & eigenvectors",
+            "Digitalization of state transition matrix"
+          ]
+        }
+      ],
+      "experiments": [
+        "Time response of second order system.",
+        "Characteristics of Synchros.",
+        "Effect of feedback on servomotors.",
+        "Determination of transfer function of A‑C servomotor.",
+        "Determination of transfer function of D‑C motor.",
+        "Formulation of PI & PD controller and study of closed loop responses of 1st and 2nd order dynamic systems.",
+        "State space model for classical transfer function using MATLAB.",
+        "Simulation of transfer function using operational amplifier.",
+        "Design problem: Compensating Networks of lead and lag.",
+        "Temperature controller using PID.",
+        "Transfer function of a DC generator.",
+        "Characteristics of AC servomotor.",
+        "Use of MATLAB for root loci and Bode plots of type‑1, type‑2 systems.",
+        "Study of analog computer and simulation of 1st order and 2nd order dynamic equations.",
+        "Formulation of proportional control on 1st order and 2nd order dynamic systems.",
+        "Feedback control of 3rd order dynamic Systems.",
+        "Study of lead and lag compensating networks.",
+        "Effect of adding poles & zeros on root loci and bode plots of type‑1, type‑2 systems through MATLAB."
+      ],
+      "reference_books": [
+        "B.C. Kuo and Farid Golnaraghi, ‘Automatic Control Systems’, Wiley India.",
+        "M. Gopal, ‘Control system engineering’, McGraw Hill.",
+        "K. Ogata, ‘Modern Control Engineering’, Pearson.",
+        "D. Roy, Chaudhary, ‘Modern Control Systems’, PHI.",
+        "S. Salivahanan, R. Rengaraj, G.R. Venkatakrishnan, ‘Control System Engineering’, Pearson.",
+        "Stefani Shahian Savant, Hostetter, ‘Design of feedback control systems’, Oxford.",
+        "B.S. Manke, Control system Engineering, Khanna Publishers."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Python",
+      "subject_code": "EX406",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview",
+          "topics": [
+            "Introduction",
+            "History",
+            "Features"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Environment Setup",
+          "topics": [
+            "Local Environment Setup",
+            "Getting Python",
+            "Installation of Python",
+            "Use of IDE"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Basic Syntax",
+          "topics": [
+            "Python Identifiers",
+            "Reserved Words",
+            "Lines & Indentation",
+            "Multiline Statements",
+            "Quotation in Python",
+            "Comments & other useful constructs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Variables",
+          "topics": [
+            "Assigning Values to Variables",
+            "Multiple Assignment",
+            "Standard Data Types",
+            "Python Numbers",
+            "Python Strings",
+            "Python Lists",
+            "Python Tuples",
+            "Data Type Conversion"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Basic Operators",
+          "topics": [
+            "Types of Operators",
+            "Arithmetic Operators",
+            "Comparison Operators",
+            "Assignment Operators",
+            "Bitwise Operators",
+            "Logical Operators",
+            "Operator Precedence"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Decision Making",
+          "topics": [
+            "If statement Flowchart & Syntax"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Loops",
+          "topics": [
+            "Available loops flowchart",
+            "Syntax",
+            "Usage"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "Functions",
+          "topics": [
+            "Defining a Function",
+            "Syntax",
+            "Calling a Function",
+            "Function Arguments",
+            "Anonymous Functions"
+          ]
+        },
+        {
+          "unit": 9,
+          "title": "Applications & Further Extensions",
+          "topics": []
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

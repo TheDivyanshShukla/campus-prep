@@ -1,0 +1,896 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Digital Signal Processing",
+      "subject_code": "EC-601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Discrete-Time Signals and Systems",
+          "topics": [
+            "Discrete-time signals",
+            "Discrete-time systems",
+            "Analysis of discrete-time linear time-invariant systems",
+            "Discrete time systems described by difference equation",
+            "Solution of difference equation",
+            "Implementation of discrete-time systems",
+            "Stability and causality",
+            "Frequency domain representation of discrete time signals and systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "The z-Transform",
+          "topics": [
+            "The direct z-transform",
+            "Properties of the z-transform",
+            "Rational z-transforms",
+            "Inversion of the z transform",
+            "Analysis of linear time-invariant systems in the z-domain",
+            "Block diagrams and signal flow graph representation of digital network",
+            "Matrix representation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Frequency Analysis of Discrete Time Signals",
+          "topics": [
+            "Discrete Fourier series (DFS)",
+            "Properties of the DFS",
+            "Discrete Fourier transform (DFT)",
+            "Properties of DFT",
+            "Two dimensional DFT",
+            "Circular convolution"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Efficient Computation of the DFT",
+          "topics": [
+            "FFT algorithms",
+            "Decimation in time algorithm",
+            "Decimation in frequency algorithm",
+            "Decomposition for ‘N’ composite number"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Digital filters Design Techniques",
+          "topics": [
+            "Design of IIR and FIR digital filters",
+            "Impulse invariant and bilinear transformation",
+            "Windowing techniques rectangular and other windows",
+            "Examples of FIR filters",
+            "Design using windowing"
+          ]
+        }
+      ],
+      "experiments": [
+        "Generation, analysis and plots of discrete-time signals.",
+        "Implementation of operations on sequences (addition, multiplication, scaling, shifting, folding etc).",
+        "Implementation of Linear time-invariant (LTI) systems and testing them for stability and causality.",
+        "Computation and plot of DTFT of sequences, verification of properties of DTFT.",
+        "Computation and plots of z-transforms, verification of properties of z-transforms.",
+        "Computation and plot of DFT of sequences, verification of properties of DFT.",
+        "Computation and plots of linear/circular convolution of two sequences.",
+        "Computation of radix-2 FFT - Decimation in time and Decimation in frequency.",
+        "Implementation of IIR and FIR filter structures (direct, cascade, parallel etc).",
+        "Implementation of various window design techniques (Rectangular, Bartlett, Hann, Hamming etc)."
+      ],
+      "reference_books": [
+        "Oppenheim and Schafer: Digital Signal Processing, PHI Learning.",
+        "Johnny R. Johnson: Introduction to Digital Signal Processing, PHI Learning.",
+        "Proakis: Digital Signal Processing, Pearson Education.",
+        "Rabiner and Gold: Theory and Application of Digital Signal Processing, PHI Learning.",
+        "Ingle and Proakis: Digital Signal Processing - A MATLAB based Approach, Thompson, Cengage Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Antennas and wave Propagation",
+      "subject_code": "EC-602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Radiation",
+          "topics": [
+            "Potential function and the Electromagnetic field",
+            "Potential functions for Sinusoidal Oscillations",
+            "Retarded potential",
+            "The Alternating current element (or oscillating Electric Dipole)",
+            "Power radiated by a current element",
+            "Application to short antennas",
+            "Assumed current distribution",
+            "Radiation from a Quarter wave monopole or Half wave dipole",
+            "Sine and cosine integral",
+            "Electromagnetic field close to an antenna",
+            "Solution of the potential equations",
+            "Far‑field Approximation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Antenna Fundamentals",
+          "topics": [
+            "Introduction",
+            "Network theorems",
+            "Directional properties of dipole antennas",
+            "Travelling‑wave antennas and effect of feed on standing‑wave antennas",
+            "Two‑element array",
+            "Horizontal patterns in broadcast arrays",
+            "Linear arrays",
+            "Multiplication of patterns",
+            "Effect of earth on vertical patterns",
+            "Binomial array",
+            "Antenna gain",
+            "Effective area"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Types of antennas",
+          "topics": [
+            "Log periodic antenna",
+            "Loop antenna",
+            "Helical antenna",
+            "Biconical antenna",
+            "Folded dipole antenna",
+            "Yagi‑Uda antenna",
+            "Lens antenna",
+            "Turnstile antenna",
+            "Long wire antenna: resonant and travelling wave antennas for different wavelengths",
+            "V‑antenna",
+            "Rhombic antenna",
+            "Beverage antenna"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Aperture and slot",
+          "topics": [
+            "Radiation from rectangular apertures",
+            "Uniform and tapered aperture",
+            "Horn antenna",
+            "Reflector antenna",
+            "Aperture blockage",
+            "Feeding structures",
+            "Slot antennas",
+            "Microstrip antennas – Radiation mechanism – Application",
+            "Numerical tool for antenna analysis"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Propagation of radio waves",
+          "topics": [
+            "Fundamentals of electromagnetic waves",
+            "Effects of the environment",
+            "Modes of propagation",
+            "Ground wave propagation – Introduction",
+            "Plane earth reflection",
+            "Space wave and surface wave",
+            "Transition between surface and space wave",
+            "Tilt of wave front due to ground losses",
+            "Space wave propagation – Introduction",
+            "Field strength relation",
+            "Effects of imperfect earth",
+            "Curvature of earth and interference zone",
+            "Shadowing effect of hills and buildings",
+            "Absorption by atmospheric phenomena",
+            "Variation of field strength with height",
+            "Super refraction",
+            "Scattering",
+            "Tropospheric propagation",
+            "Fading",
+            "Path loss calculations",
+            "Sky wave propagation – Introduction",
+            "Structural details of the ionosphere",
+            "Wave propagation mechanism",
+            "Refraction and reflection of sky waves by ionosphere",
+            "Ray path",
+            "Critical frequency",
+            "Maximum usable frequency (MUF)",
+            "Lowest usable frequency (LUF)",
+            "Operating frequency (OF)",
+            "Virtual height",
+            "Skip distance",
+            "Relation between MUF and skip distance"
+          ]
+        }
+      ],
+      "experiments": [
+        "To Plot the Radiation Pattern of an Omni Directional Antenna.",
+        "To Plot the Radiation Pattern of a Directional Antenna.",
+        "To Plot the Radiation Pattern of a Parabolic Reflector Antenna.",
+        "To Plot the Radiation Pattern of a Log Periodic Antenna.",
+        "To Plot the Radiation Pattern of a Patch Antenna.",
+        "To Plot the Radiation Pattern of a Dipole/ Folded Dipole Antenna.",
+        "To Plot the Radiation Pattern of a Yagi (3-EL/4EL) Antenna.",
+        "To Plot the Radiation Pattern of a Monopole/ WHIP/ Collinear Antenna.",
+        "To Plot the Radiation Pattern of a Broad site Antenna.",
+        "To Plot the Radiation Pattern of a Square Loop Antenna."
+      ],
+      "reference_books": [
+        "Jordan and Balmain: Electromagnetic Waves and Radiating System, PHI Learning.",
+        "Krauss: Antennas and wave propagation, TMH.",
+        "Balanis: Antenna Theory Analysis and Design, Wiley India Pvt. Ltd.",
+        "Harish and Sachidananda: Antennas and wave propagation, Oxford University Press.",
+        "Raju: Antennas and Wave Propagation, Pearson Education.",
+        "Kennedy: Electronic Communication Systems, TMH."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "DATA COMMUNICATION",
+      "subject_code": "EC-603 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Communication",
+          "topics": [
+            "Introduction to Data Communication",
+            "Components of Data Communication",
+            "Data representation",
+            "Serial transmission",
+            "Parallel transmission",
+            "Modes of data transmission",
+            "Line Encoding: Unipolar",
+            "Line Encoding: Polar",
+            "Line Encoding: Bipolar",
+            "Networks – Protocols and standards",
+            "Standards organizations",
+            "Line configurations",
+            "Topology",
+            "Transmission mode",
+            "Categories of networks",
+            "Inter networks"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "OSI model, Transmission media and Switching",
+          "topics": [
+            "OSI model: Functions of the layers",
+            "Transmission media: Guided media",
+            "Transmission media: Unguided media",
+            "Transmission impairment",
+            "Performance",
+            "Switching",
+            "Circuit switching",
+            "Packet switching (virtual circuit approach)",
+            "Packet switching (datagram approach)",
+            "Message switching"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Error Control and Data Link Protocols",
+          "topics": [
+            "Error detection and correction: Types of errors",
+            "Error detection and correction: Detection",
+            "Vertical Redundancy Check (VRC)",
+            "Longitudinal Redundancy Check (LRC)",
+            "Cyclic Redundancy Check (CRC)",
+            "Check sum",
+            "Error correction",
+            "Data Link Layer Protocols: Framing",
+            "Data Link Layer Protocols: HDLC",
+            "Data Link Layer Protocols: ARQ – Stop and Wait",
+            "Data Link Layer Protocols: ARQ – Sliding Window",
+            "Efficiency of data link protocols"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Networks",
+          "topics": [
+            "LAN: Project 802",
+            "Ethernet",
+            "Token bus",
+            "Token ring",
+            "FDDI",
+            "MAN: IEEE 802.6 (DQDB)",
+            "MAN: SMDS",
+            "X.25",
+            "Frame Relay",
+            "ATM",
+            "SONET/SDH"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Networking Devices and TCP/IP Protocol Suite",
+          "topics": [
+            "Networking and internetworking devices: Repeaters",
+            "Bridges",
+            "Gateways",
+            "Other devices",
+            "Routing algorithms",
+            "Distance vector routing",
+            "Link state routing",
+            "TCP/IP protocol suite: Overview of TCP/IP"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Data and Computer Communication – W. Stallings, Pearson",
+        "LANs – Keiser, Tata Mc-Graw Hill",
+        "Data Communication & Networking – B.A. Forouzan, Tata Mc-Graw Hill",
+        "Internetworking with TCP/IP – VOL‑I – D.E. Comer, PHI",
+        "ISDN and Broadband ISDN with Frame Relay & ATM – W. Stallings, Pearson",
+        "Computer Networks by Tanenbaum, PHI",
+        "Data Networks – Bertsekas & Gallager",
+        "Understanding Data Communications & Networks – Shay, William A., Vikas Publishing House Pvt. Ltd."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "CMOS DESIGN",
+      "subject_code": "EC-603 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction to CMOS VLSI circuit",
+            "VLSI design flow",
+            "Design strategies",
+            "Hierarchy",
+            "regularity",
+            "modularity",
+            "locality",
+            "MOS Transistor as a Switches",
+            "CMOS Logic",
+            "Combinational circuit",
+            "latches and register",
+            "Introduction of CAD Tool",
+            "Design entry",
+            "synthesis",
+            "functional simulation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Specification of sequential systems",
+          "topics": [
+            "Characterizing equation & definition of synchronous sequential machines",
+            "Realization of state diagram and state table from verbal description",
+            "Mealy and Moore model machines state table and transition diagram",
+            "Minimization of the state table of completely and incompletely specified sequential machines"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Asynchronous Sequential Machine",
+          "topics": [
+            "Introduction to asynchronous sequential machine",
+            "Fundamental mode and Pulse mode asynchronous sequential machine",
+            "Secondary state assignments in asynchronous sequential machine",
+            "races and hazards"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Integrated Circuits and Processes",
+          "topics": [
+            "Introduction",
+            "Size and complexity of Integrated Circuits",
+            "The Microelectronics Field",
+            "IC Production Process",
+            "Processing Steps",
+            "Packaging and Testing",
+            "MOS Processes",
+            "NMOS Process",
+            "CMOS Process",
+            "Bipolar Technology",
+            "Hybrid Technology",
+            "Design Rules and Process Parameters"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Device Models",
+          "topics": [
+            "Dc Models",
+            "Small Signal Models",
+            "MOS Models",
+            "MOSFET Models in High Frequency and small signal",
+            "Short channel devices",
+            "Sub threshold Operations",
+            "Modeling Noise Sources in MOSFET’s",
+            "Diode Models",
+            "Bipolar Models",
+            "Passive component Models"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Neil Weste: Principle of CMOS VLSI Design, TMH.",
+        "Kohavi: Switching & Finite Automata Theory, TMH.",
+        "Lee: Digital Circuits and Logic Design, PHI Learning..",
+        "Geiger, Allen and Strader: VLSI Design Techniques for Analog and Digital Circuits, TMH.",
+        "Sorab Gandhi: VLSI Fabrication Principles, Wiley India.",
+        "Weste and Eshraghian: Principles of CMOS VLSI design, Addison-Wesley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Satellite Communication",
+      "subject_code": "EC-603 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of satellite systems",
+          "topics": [
+            "Introduction",
+            "Frequency allocations for satellite systems",
+            "Orbits and launching methods",
+            "Kepler’s three laws of planetary motion",
+            "Terms used for earth orbiting satellites",
+            "Orbital elements",
+            "Apogee and perigee heights",
+            "Orbit perturbations",
+            "Inclined orbits",
+            "Local mean solar point and sun‑synchronous orbits",
+            "Standard time"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "The Geostationary orbit",
+          "topics": [
+            "Introduction",
+            "Antenna look angles",
+            "Polar mount antenna",
+            "Limits of visibility",
+            "Near‑geostationary orbits",
+            "Earth eclipse of satellite",
+            "Sun transit outage",
+            "Launching orbits",
+            "Antenna polarization",
+            "Polarization of satellite signals",
+            "Cross‑polarization discrimination",
+            "Depolarization – ionospheric, rain, ice"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "The Space segment",
+          "topics": [
+            "Introduction",
+            "Power supply",
+            "Attitude control",
+            "Station keeping",
+            "Thermal control",
+            "Telemetry, Tracking & Command (TT&C) subsystem",
+            "Transponders",
+            "Antenna subsystem",
+            "Morelos and Satmex‑5 satellites",
+            "Aniksatellites",
+            "Advanced Tiros‑N spacecraft",
+            "The Earth segment – introduction",
+            "Receive‑only home TV systems",
+            "Master antenna TV system",
+            "Community antenna TV system",
+            "Transmit‑receive earth station"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "The space link",
+          "topics": [
+            "Introduction",
+            "Equivalent isotropic radiated power (EIRP)",
+            "Transmission losses",
+            "Link power budget equation",
+            "System noise",
+            "Carrier‑to‑noise ratio (C/N)",
+            "Uplink",
+            "Downlink",
+            "Effects of rain",
+            "Combined uplink and downlink C/N ratio",
+            "Inter‑modulation noise",
+            "Intersatellite links",
+            "Interference between satellite circuits"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Satellite services",
+          "topics": [
+            "VSAT (very small aperture terminal) systems – overview",
+            "VSAT network architecture",
+            "VSAT access control protocols",
+            "VSAT basic techniques",
+            "VSAT earth station",
+            "Calculation of link margins for a VSAT star network",
+            "Direct broadcast satellite (DBS) television – digital DBS TV",
+            "BDS TV system design and link budget",
+            "Error control in digital DBS‑TV",
+            "Installation of DBS‑TV antennas",
+            "Satellite radio broadcasting"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Roddy: Satellite Communications, TMH.",
+        "Timothy Prattt: Satellite Communications, Wiley India.",
+        "Pritchard, Suyderhoud and Nelson: Satellite Communication Systems Engineering, Pearson Education.",
+        "Agarwal: Satellite Communications, Khanna Publishers.",
+        "Gangliardi: Satellite Communications, CBS Publishers.",
+        "Chartrand: Satellite Communication, Cengage Learning.",
+        "Raja Rao: Fundamentals of Satellite communications, PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Microcontroller & Embedded system",
+      "subject_code": "EC-604 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "8051 Interfacing, Applications and serial communication",
+          "topics": [
+            "8051 interfacing to ADC and DAC",
+            "Stepper motor interfacing",
+            "Timer/ counter functions",
+            "8051 based data acquisition system",
+            "8051 connections to RS-232",
+            "8051 Serial communication",
+            "Serial communication modes",
+            "Serial communication programming",
+            "Serial port programming in C"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Microcontroller 8096",
+          "topics": [
+            "Functional block-diagram",
+            "Memory status",
+            "Complete 8096 instruction set",
+            "Classification of instruction set",
+            "Addressing modes",
+            "Programming examples using 8096",
+            "Hardware features of 8096",
+            "Parallel ports",
+            "Control & status registers",
+            "Introduction to 16/32 bit PIC microcontrollers and DSPIC"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Embedded Systems",
+          "topics": [
+            "Definition of embedded system",
+            "Embedded systems vs. general computing systems",
+            "History of embedded systems",
+            "Classification",
+            "Major application areas",
+            "Purpose of embedded systems",
+            "Characteristics and quality attributes of embedded systems",
+            "Common design metrics",
+            "Processor technology: general purpose processor",
+            "Processor technology: application specific processor",
+            "Processor technology: single purpose processor"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Embedded System Architecture",
+          "topics": [
+            "Von Neumann vs Harvard architecture",
+            "Instruction set architecture",
+            "CISC and RISC instruction set architecture",
+            "Basic embedded processor",
+            "Microcontroller architecture",
+            "CISC & RISC examples: 8051, ARM, DSP processors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Input Output and Peripheral Devices",
+          "topics": [
+            "Timers and counters",
+            "Watchdog timers",
+            "Interrupt controllers",
+            "PWM",
+            "Keyboard controller",
+            "Analog to digital converters",
+            "Real time clock"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Muhammad Ali Mazidi and Janice Gillespie Mazidi, The 8051 Microcontroller and Embedded Systems, Pearson education, 2005.",
+        "Kenneth J. Ayala, The 8051 Microcontroller Architecture, III edition, CENGAGE Learning.",
+        "V. Udayashankara and M.S. Mallikarjunaswamy, 8051 Microcontroller: Hardware, Software & Applications, Tata McGraw - Hill, 2009.",
+        "McKinlay, The 8051 Microcontroller and Embedded Systems - using assembly and C, PHI, 2006 / Pearson, 2006.",
+        "Tim Wilmshurst, Designing embedded system with PIC microcontrollers Principles and applications. 2nd ed. 2011 Bsp books pvt lt",
+        "Shibu K V, “Introduction to Embedded System”, TMH.",
+        "David E Simon, “An Embedded Software Primer”, Pearson education Asia, 2001.",
+        "Steven F. Barett, Daniel J. Pack, “Embedded Systems” Pearson education, First Impression2008."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "BIOMEDICAL ELECTRONICS",
+      "subject_code": "EC-604 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "PHYSIOLOGY AND TRANSDUCERS",
+          "topics": [
+            "Cell and its structure",
+            "Resting and Action Potential",
+            "Functional organization of the nervous system",
+            "Structure of nervous system, neurons",
+            "Synapse and transmitters and neural communication",
+            "Cardiovascular system",
+            "Respiratory system",
+            "Basic components of a biomedical system",
+            "Transducers and selection criteria",
+            "Piezo electric and ultrasonic transducers",
+            "Temperature measurements",
+            "Fiber optic temperature sensors"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "ELECTRO-PHYSIOLOGICAL MEASUREMENTS",
+          "topics": [
+            "Electrodes",
+            "Limb electrodes",
+            "Floating electrodes",
+            "Propelled disposable electrodes",
+            "Micro, needle and surface electrodes",
+            "Amplifiers: Preamplifiers, differential amplifiers, chopper amplifiers",
+            "Isolation amplifier",
+            "ECG",
+            "EEG",
+            "EMG",
+            "ERG",
+            "Lead systems and recording methods",
+            "Typical waveforms",
+            "Electrical safety in medical environment: shock hazards",
+            "Leakage current",
+            "Instruments for checking safety parameters of biomedical equipments"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "NON-ELECTRICAL PARAMETER MEASUREMENTS",
+          "topics": [
+            "Measurement of blood pressure",
+            "Cardiac output",
+            "Heart rate",
+            "Heart sound",
+            "Pulmonary function measurements",
+            "Spirometer",
+            "Photoplethysmography and body plethysmography",
+            "Blood gas analyzers: pH of blood, measurement of blood pCO2, pO2, finger-tip oximeter",
+            "ESR measurements",
+            "GSR measurements"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "MEDICAL IMAGING",
+          "topics": [
+            "Radiographic and fluoroscopic techniques",
+            "Computer tomography",
+            "MRI",
+            "Ultrasonography",
+            "Endoscopy",
+            "Thermography",
+            "Different types of biotelemetry systems and patient monitoring",
+            "Introduction to biometric systems"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "ASSISTING AND THERAPEUTIC EQUIPMENTS",
+          "topics": [
+            "Pacemakers",
+            "Defibrillators",
+            "Ventilators",
+            "Nerve and muscle stimulators",
+            "Diathermy",
+            "Heart‑lung machine",
+            "Audio meters",
+            "Dialysers",
+            "Lithotripsy"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "M. Arumugam, ‘Bio-Medical Instrumentation’, Anuradha Agencies, 2003.",
+        "L. A. Geddes and L. E. Baker, ‘Principles of Applied Bio-Medical Instrumentation’, John Wiley & Sons, 1975.",
+        "J. Webster, ‘Medical Instrumentation’, John Wiley & Sons, 1995.",
+        "C. Rajarao and S. K. Guha, ‘Principles of Medical Electronics and Bio-medical Instrumentation’, Universities press (India) Ltd, Orient Longman Ltd, 2000."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "POWER ELECTRONICS",
+      "subject_code": "EC-604 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Power Semiconductor Switches",
+          "topics": [
+            "Power diodes – basic structure and V‑I characteristics; various types",
+            "DIACs – basic structure and V‑I characteristics",
+            "TRIACs – basic structure and V‑I characteristics",
+            "Power BJT – construction and working principle, quasaturation, primary breakdown, secondary breakdown",
+            "IGBTs – basic structure and V‑I characteristics",
+            "Power MOSFETs – basic structure and V‑I characteristics",
+            "Thyristors – basic structure; static and dynamic characteristics; device specifications and ratings; methods of turning on; gate‑triggering circuit using UJT"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Rectifiers",
+          "topics": [
+            "Thyristor series and parallel operation; methods of turning off; commutation circuits",
+            "Line‑frequency phase‑controlled rectifiers using SCR",
+            "Single‑phase rectifiers – half‑wave rectifier with R and RL loads; full‑wave half‑controlled and fully controlled converters with continuous and constant currents; input‑side harmonics and power factor; effect of source inductance",
+            "Three‑phase rectifiers – half‑wave rectifier with R and RL loads; full‑wave fully controlled converters with continuous and constant currents"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Inverters & Cycloconverters",
+          "topics": [
+            "Single‑phase series, parallel and bridge inverters",
+            "Single‑phase PWM inverters – basic circuit and operation",
+            "Single‑phase series resonant inverter",
+            "Single‑phase bridge inverter",
+            "Three‑phase bridge inverter",
+            "Voltage control of inverters",
+            "Harmonics reduction techniques",
+            "Single‑phase and three‑phase current‑source inverters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "AC Voltage Controllers",
+          "topics": [
+            "Principle of ON‑OFF and phase control",
+            "Single‑phase AC voltage controller with resistive and inductive loads",
+            "Three‑phase AC voltage controllers – various configurations and comparison",
+            "Single‑phase transformer tap changer",
+            "Cycloconverters – basic principle of operation; single‑phase to single‑phase; three‑phase to single‑phase; three‑phase to three‑phase; output voltage equation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "DC – DC Converters",
+          "topics": [
+            "Choppers – principle of operation; step‑up and step‑down choppers",
+            "Switching regulators – buck regulators; boost regulators; buck‑boost regulators",
+            "Switched‑mode power supply – principle of operation and analysis"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ned Mohan, Power Electronics., John Wiley and Sons, 2nd edition, 1995.",
+        "Rashid, Power Electronics, Circuits Devices and Applications, Pearson Education, 3rd edition, 2004.",
+        "G.K. Dubey, Thyristorised Power Controllers, Wiley Eastern Ltd, 1993.",
+        "Dewan & Straughen, Power Semiconductor Circuits, John Wiley & Sons, 1975.",
+        "Cyril W. Lander, Power Electronics, Mc Graw Hill, 3rd edition, 1993.",
+        "M.D. Singh and K.B. Khanchandani, “Power Electronics” Tata MC Graw Hill, 2005.",
+        "P.C. Sen, “Principles of Electric Machines and Power Electronics”, John Wiley & Sons, 2nd Edition.",
+        "P.S. Bhimbhra, “Power Electronics”, Khanna Publishers, 2012."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "DATA COMMUNICATION LAB",
+      "subject_code": "EC-605",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Study Various Multiplexing Techniques",
+          "topics": []
+        },
+        {
+          "unit": 2,
+          "title": "Study of Network Interface Card (NIC)",
+          "topics": []
+        },
+        {
+          "unit": 3,
+          "title": "Study of Parallel and Serial Transmission",
+          "topics": []
+        },
+        {
+          "unit": 4,
+          "title": "Study of NRZ and RZ Codes",
+          "topics": []
+        },
+        {
+          "unit": 5,
+          "title": "Study of Different Types of Modem",
+          "topics": []
+        },
+        {
+          "unit": 6,
+          "title": "Study of Integrated Services Digital Network",
+          "topics": []
+        },
+        {
+          "unit": 7,
+          "title": "Study of Twisted Pair, Coaxial Cable and Fibre Optic Cable",
+          "topics": []
+        },
+        {
+          "unit": 8,
+          "title": "Study of Digital Interface RS-232",
+          "topics": []
+        },
+        {
+          "unit": 9,
+          "title": "Study Different Topologies",
+          "topics": []
+        },
+        {
+          "unit": 10,
+          "title": "Study LAN Using Star Topology",
+          "topics": []
+        }
+      ],
+      "experiments": [
+        "Study Various Multiplexing Techniques",
+        "Study of Network Interface Card (NIC)",
+        "Study of Parallel and Serial Transmission",
+        "Study of NRZ and RZ Codes",
+        "Study of Different Types of Modem",
+        "Study of Integrated Services Digital Network",
+        "Study of Twisted Pair, Coaxial Cable and Fibre Optic Cable",
+        "Study of Digital Interface RS-232",
+        "Study Different Topologies",
+        "Study LAN Using Star Topology"
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "MICROCONTROLLER & EMBEDDED SYSTEM LAB",
+      "subject_code": "EC-606",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Programming using arithmetic, logical and bit manipulation instructions of 8051.",
+        "Program and verify Timer/Counter in 8051.",
+        "Communication between 8051 kit and PC.",
+        "Study development tools/environment for ATMEL/PIC microcontroller programming and architecture.",
+        "Write an ALP to generate square of 10 kHz using Timer 0.",
+        "Write an ALP to display a string on LCD.",
+        "Write an ALP to interface seven‑segment with 8051 and display 0‑9 on it.",
+        "Write an ALP to interface DC Motor with 8051.",
+        "Write an ALP to transmit the data using P1 of 8051.",
+        "Write an ALP to interface 4×4 keyboard with 8051.",
+        "Write an ALP to interface temperature sensor using 8051.",
+        "Write an ALP to interface the LCD 16×2 to P16F877A."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

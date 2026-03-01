@@ -1,0 +1,504 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Technical Communication",
+      "subject_code": "AD301",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Technical Communication Skills",
+          "topics": [
+            "Understanding the process and scope of communication",
+            "Relevance and importance of communication in a globalized world",
+            "Forms of communication",
+            "Role of unity, brevity and clarity in various forms of communication"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Types of Communication and Soft Skills",
+          "topics": [
+            "Verbal and non‑verbal communication",
+            "Classification of non‑verbal communication (NVC)",
+            "Barriers to communication",
+            "Communicating globally",
+            "Culture and communication",
+            "Interpersonal communication",
+            "Listening",
+            "Persuasion",
+            "Negotiation",
+            "Communicating bad news and messages",
+            "Communicating in a global world"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Writing Skills and Speaking Skills",
+          "topics": [
+            "Traits of technical writing",
+            "Principles of business writing",
+            "Style of writing",
+            "Writing memos, letters, reports",
+            "Types, characteristics, format and structure of technical reports",
+            "Writing research papers",
+            "Audience awareness in speaking",
+            "Voice, vocabulary and paralanguage",
+            "Group discussion techniques",
+            "Combating nervousness",
+            "Speaking to one and to one thousand listeners",
+            "Mock presentations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Job Interviews, Group Discussion and Professional Presentations",
+          "topics": [
+            "Preparing for interviews",
+            "Self‑assessment",
+            "Drafting effective resumes",
+            "Dress, decorum and delivery techniques",
+            "Techniques for handling interviews",
+            "Use of non‑verbals during interviews",
+            "Handling turbulence during interviews",
+            "Objectives of group discussion",
+            "Method, focus, content, style and argumentation skills in group discussion",
+            "Individual professional presentations: audience awareness, body language, delivery and content"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Grammar and Linguistic Ability",
+          "topics": [
+            "Basics of grammar",
+            "Common errors in writing and speaking",
+            "Advanced grammar study",
+            "Vocabulary development",
+            "Pronunciation etiquette",
+            "Syllables, vowel and consonant sounds",
+            "Tone modulation: rising tone and falling tone",
+            "Flow in speaking",
+            "Speaking with purpose",
+            "Speech and personality",
+            "Professional personality attributes"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Sharon Gerson and Steven Gerson. Technical Writing: Process and Product (8th Edition), London: Longman, 2013",
+        "Rentz, Kathryn, Marie E. Flatley & Paula Lentz. Lesikar’s Business Communication Connecting in a Digital world, McGraw-Hill, Irwin. 2012",
+        "Allan & Barbara Pease. The Definitive Book of Body Language, New York, Bantam, 2004",
+        "Jones, Daniel. The Pronunciation of English, New Delhi, Universal Book Stall. 2010",
+        "Sharma, Sangeeta & Mishra, Binod. Communication Skills for Engineers and Scientists, New Delhi: PHI Learning, 2009, rpt 2012"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Probability and Statistics for Data Science",
+      "subject_code": "AD302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Science and Statistics Fundamentals",
+          "topics": [
+            "Data Science: Introduction and Data Science Life Cycle",
+            "Statistics: Descriptive and Inferential Statistics",
+            "Measures of central tendency: Arithmetic Mean, Median, Mode, Geometric Mean, Harmonic Mean, Partition values",
+            "Measures of dispersion: Range, Quartile Deviation, Mean deviation, Standard Deviation, Variance, Coefficient of Dispersion"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Probability Theory and Distribution Shape Measures",
+          "topics": [
+            "Skewness, Kurtosis, Moments; measures of skewness and kurtosis",
+            "Theory of probability: definition of probability, events, sample space, laws of addition and multiplication, conditional probability",
+            "Independent and dependent events, Bayes’ theorem, mathematical expectations, moment generating functions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Theoretical Distributions and Curve Fitting",
+          "topics": [
+            "Discrete distributions: Binomial distribution and Poisson distribution",
+            "Continuous distributions: Rectangular (uniform) distribution and Normal distribution",
+            "Curve fitting: Methods of least squares, fitting a straight line and a parabola"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Correlation and Regression Analysis",
+          "topics": [
+            "Correlation: Pearson correlation coefficient, rank correlation, lines of regression",
+            "Multiple and partial correlation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Hypothesis Testing and Significance Tests",
+          "topics": [
+            "Testing of hypothesis: null and alternative hypotheses, Type I and Type II errors, level of significance, power of the test",
+            "Tests of significance: chi‑square distribution, tests of variance and goodness‑of‑fit, t‑distribution, F‑distribution, Z‑distribution and related tests"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "S.C. Gupta, V.K. Kapoor – “Fundamentals of Mathematical Statistics”, 10th Edition, Sultan Chand, 2000 (ISBN 8170147913, 9788170147916)",
+        "D.N. Elhance – ‘Fundamentals of Mathematical Statistics’, Kitab Mahal, Allahabad",
+        "A.M. Goon, M.K. Gupta & B. Dasgupta – An Outline of Statistical Theory, Vol. I, 6th revised edition, World Press (1980)"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Structures",
+      "subject_code": "AD303",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Data Structures",
+          "topics": [
+            "Concepts of Data and Information",
+            "Classification of Data Structures",
+            "Abstract Data Types (ADTs)",
+            "Memory representation of data structures",
+            "Cost estimation of data structure operations",
+            "Linear data structures – Arrays",
+            "Linked List – representation in memory",
+            "Singly linked list",
+            "Circular linked list",
+            "Doubly linked list",
+            "Applications of linked list (e.g., polynomial manipulation)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Stacks and Queues",
+          "topics": [
+            "Stack as an ADT",
+            "Implementation techniques for stacks",
+            "Multiple stacks",
+            "Applications of stack – infix to postfix conversion, postfix evaluation, recursion",
+            "Queue as an ADT",
+            "Implementation techniques for queues",
+            "Circular queue",
+            "Deque and Priority Queue",
+            "Queue simulation",
+            "Applications of queues"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Tree Data Structures",
+          "topics": [
+            "Tree definitions – height, depth, order, degree",
+            "Binary Search Tree – operations, traversal, search",
+            "AVL Tree",
+            "Heap",
+            "Forest",
+            "Multi‑way tree",
+            "B‑tree",
+            "B$^+$‑tree",
+            "B$^*$‑tree",
+            "Red‑Black tree",
+            "Comparison of various tree types"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Graphs",
+          "topics": [
+            "Graph definitions and classification – directed and undirected graphs",
+            "Graph representation",
+            "Graph traversal – Depth‑First Search (DFS), Breadth‑First Search (BFS)",
+            "Minimum Spanning Tree algorithms – Kruskal, Prim",
+            "Shortest‑path algorithm – Dijkstra",
+            "Comparison of graph algorithms",
+            "Applications of graphs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Sorting, Searching and Hashing",
+          "topics": [
+            "Sorting techniques – Bubble sort, Quick sort, Selection sort, Heap sort, Insertion sort, Shell sort, Merge sort, Radix sort",
+            "Comparison of sorting algorithms",
+            "Searching techniques – Sequential search, Binary search",
+            "Comparison of search methods",
+            "Hashing and indexing",
+            "Case studies – applications in operating systems, DBMS"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Aho, Hopcroft, Ullman, “Data Structures and Algorithms”, Pearson Education.",
+        "N. Wirth, “Algorithms + Data Structure = Programs”, Prentice Hall.",
+        "Jean‑Paul Tremblay, Paul Sorenson, “An Introduction to Data Structure with application”, TMH.",
+        "Richard, Gilberg, Behrouz, Forouzan, “Data structure – A Pseudocode Approach with C”, Thomson press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Artificial Intelligence",
+      "subject_code": "AD304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Artificial Intelligence",
+          "topics": [
+            "History, motivation and need of AI",
+            "Production systems and their characteristics",
+            "Search space and search techniques: hill climbing, best‑first search, heuristic search, A* and AO*"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Knowledge Representation",
+          "topics": [
+            "Problems in representing knowledge",
+            "Knowledge representation using propositional logic",
+            "Knowledge representation using predicate logic",
+            "Comparison of propositional and predicate logic",
+            "Resolution, refutation and deduction",
+            "Theorem proving and inferencing",
+            "Monotonic and non‑monotonic reasoning"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Probabilistic Reasoning and Semantic Networks",
+          "topics": [
+            "Bayes' theorem and probabilistic reasoning",
+            "Semantic networks, scripts, schemas and frames",
+            "Conceptual dependency",
+            "Forward and backward reasoning"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Game Playing, Planning and Natural Language Processing",
+          "topics": [
+            "Game playing techniques: minimax procedure and alpha‑beta cut‑offs",
+            "Planning and the block‑world problem in robotics",
+            "Introduction to Natural Language Processing (NLP)",
+            "Components of NLP and its application to expert systems"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Expert Systems",
+          "topics": [
+            "Characteristics, requirements and components of expert systems",
+            "Inference engine: forward and backward chaining",
+            "Limitations of expert systems",
+            "Expert system development environment, technology and benefits"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Janakiraman, K. Sarukesi, ‘Foundations of Artificial Intelligence and Expert Systems’, Macmillan Series in Computer Science.",
+        "W. Patterson, ‘Introduction to Artificial Intelligence and Expert Systems’, Prentice Hall of India."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Object Oriented Programming & Methodology",
+      "subject_code": "AD305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Object Oriented Thinking & Programming",
+          "topics": [
+            "Comparison with Procedural Programming",
+            "Features of Object Oriented paradigm – merits and demerits",
+            "Object model",
+            "Elements of OOPS",
+            "IO processing",
+            "Data Type",
+            "Type Conversion",
+            "Control Statement",
+            "Loops",
+            "Arrays"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Encapsulation and Data Abstraction",
+          "topics": [
+            "Concept of Objects: state, behavior & identity",
+            "Class identification and candidate classes",
+            "Attributes and services",
+            "Access modifiers",
+            "Static members of a class",
+            "Instances",
+            "Message passing",
+            "Construction and destruction of objects"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Relationships – Inheritance and Interfaces",
+          "topics": [
+            "Inheritance: purpose and types",
+            "\"is a\" relationship",
+            "Association",
+            "Aggregation",
+            "Concept of interfaces",
+            "Abstract classes"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Polymorphism",
+          "topics": [
+            "Introduction to polymorphism",
+            "Method overriding",
+            "Method overloading",
+            "Static (compile‑time) polymorphism",
+            "Run‑time polymorphism",
+            "Virtual function",
+            "Friend function",
+            "Static function",
+            "Friend class"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Topics",
+          "topics": [
+            "Strings",
+            "Exception handling",
+            "Introduction to multi‑threading",
+            "Data collections",
+            "Case studies: ATM system, Library management system"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "G. Booch, “Object Oriented Analysis & Design”, Addison Wesley.",
+        "James Martin, “Principles of Object Oriented Analysis and Design”, Prentice Hall/PTR.",
+        "Peter Coad and Edward Yourdon, “Object Oriented Design”, Prentice Hall/PTR.",
+        "Herbert Schildt, “Java 2: The Complete Reference”, McGraw-Hill Osborne Media."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Workshop/Introduction to Python-I",
+      "subject_code": "AD306",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Module 1",
+          "topics": [
+            "Introduction to python language",
+            "Basic syntax",
+            "Literal Constants",
+            "Numbers",
+            "Variable and Basic data types",
+            "String",
+            "Escape Sequences",
+            "Operators and Expressions",
+            "Evaluation Order",
+            "Indentation",
+            "Input",
+            "Output",
+            "Functions",
+            "Comments"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Module 2",
+          "topics": [
+            "List",
+            "Tuples",
+            "Dictionary",
+            "DataFrame",
+            "Sets",
+            "constructing",
+            "indexing",
+            "slicing and content manipulation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Module 3",
+          "topics": [
+            "Conditional Statements - If",
+            "If-else",
+            "Nested If-else",
+            "Iterative Statement - For",
+            "While",
+            "Nested Loops",
+            "Control statements - Break",
+            "Continue",
+            "Pass"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Module 4",
+          "topics": [
+            "Class and Object",
+            "Attributes",
+            "Methods",
+            "Scopes and Namespaces",
+            "Inheritance",
+            "Overloading",
+            "Overriding",
+            "Data hiding",
+            "Exception Handling",
+            "Except clause",
+            "Try finally clause",
+            "User Defined Exceptions"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Module 5",
+          "topics": [
+            "Standard Libraries: File I/0",
+            "Sys",
+            "logging",
+            "Regular expression",
+            "Date and Time",
+            "Network programming",
+            "multi-processing and multithreading"
+          ]
+        }
+      ],
+      "experiments": [
+        "To write a Python program to find GCD of two numbers.",
+        "To write a Python Program to find the square root of a number by Newton’s Method.",
+        "To write a Python program to find the exponentiation of a number.",
+        "To write a Python Program to find the maximum from a list of numbers.",
+        "To write a Python Program to perform Linear Search.",
+        "To write a Python Program to perform binary search.",
+        "To write a Python Program to perform selection sort.",
+        "To write a Python Program to perform insertion sort.",
+        "To write a Python Program to perform Merge sort.",
+        "To write a Python program to find first n prime numbers.",
+        "To write a Python program to multiply matrices.",
+        "To write a Python program for command line arguments.",
+        "To write a Python program to find the most frequent words in a text read from a file.",
+        "To write a Python program to simulate elliptical orbits in Pygame.",
+        "To write a Python program to bouncing ball in Pygame."
+      ],
+      "reference_books": [
+        "Timothy A. Budd: Exploring python, McGraw-Hill Education.",
+        "R.Nageshwar Rao, \"Python Programming\", Wiley India.",
+        "Think Python: Allen B. Downey, O'Reilly Media, Inc."
+      ],
+      "extra": null
+    }
+  ]
+}

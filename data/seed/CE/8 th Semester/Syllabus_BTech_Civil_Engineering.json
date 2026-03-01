@@ -1,0 +1,842 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Design of Steel Structures",
+      "subject_code": "CE801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basis of Structural Design and Connection Design",
+          "topics": [
+            "Introduction",
+            "Metallurgy of steel",
+            "Structural properties of steel",
+            "Design philosophies",
+            "Limit state method",
+            "Partial load factors",
+            "Loading and load combination on structures",
+            "Local buckling and section classification",
+            "Types of connections",
+            "Welded connections",
+            "Types of joints and welds",
+            "Connection design",
+            "Concentric connection",
+            "Eccentric connections",
+            "Truss connections",
+            "Bolted connections",
+            "Force transfer mechanism",
+            "Failure mechanism",
+            "Analysis of bolt groups",
+            "Beam column connections",
+            "Shear connection",
+            "Moment connection"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design of Compression and Tension Members",
+          "topics": [
+            "Types of tension member",
+            "Behaviour of tension members",
+            "Factors affecting the strength of tension members",
+            "Design of tension member for yielding",
+            "Net section rupture",
+            "Block shear",
+            "Tension splices",
+            "Lug angles",
+            "Concept of shear lag",
+            "Types of compression members",
+            "Basis of current codal provision for compression member design",
+            "Slenderness ratio",
+            "Elastic buckling",
+            "Strength curves",
+            "Design of compression members"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design of Flexural Members",
+          "topics": [
+            "Beam types",
+            "Lateral stability of beams",
+            "Lateral torsional buckling of symmetric beams",
+            "Design strength of laterally supported and unsupported beams in bending",
+            "Shear strength of steel beams",
+            "Web buckling and crippling",
+            "Design of beams",
+            "Built-up beams",
+            "Design of plate girders",
+            "Types of stiffeners",
+            "Flange and web splices",
+            "Design of beam‑columns subjected to combined tension and bending"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design of Columns and Column Bases",
+          "topics": [
+            "Design of single section and compound section",
+            "Design of laced and battened type columns",
+            "Design of column bases",
+            "Slab base",
+            "Gusseted base",
+            "Grillage foundation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Design of Industrial Buildings",
+          "topics": [
+            "Introduction, Frames",
+            "Multistory frames",
+            "Various types of trusses and their selection",
+            "Design of purlin and elements of truss",
+            "Effect of wind loads on purlin and truss",
+            "Bracing systems",
+            "Design of Gantry Girder"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Gambhir M. L., Fundamentals of Structural Steel Design, McGraw Hill Education., First edition, 2017.",
+        "Dayaratnam P., Design of Steel Structures, A. H. Wheeler & Co. Ltd., Allahabad, 2008",
+        "Arya and Ajmani, Design of Steel Structures, NemChand Brothers, Roorkee, 2007",
+        "Punmia B.C., Ashok Kumar Jain and Arun Kumar Jain, Design of Steel Structures, Arihant Publications, Bombay, 2008",
+        "Shiyekar M. R., Limit State Design in Structural Steel, Prentice Hall of India Pvt. Ltd, Learning Pvt. Ltd., 2nd Edition, 2013.",
+        "Subramanian N, Design of Steel Structures, Oxford University Press, New Delhi, 2013.",
+        "Narayanan R.et.al., Teaching Resource on Structural Steel Design, INSDAG, Ministry of Steel Publications, 2002",
+        "Duggal S. K., Limit State Design of Steel Structures, Tata McGraw Hill Publishing Company, Third edition, 2019.",
+        "Bhavikatti S. S, Design of Steel Structures by Limit State Method as per IS:800-2007, IK International Publishing House Pvt. Ltd., 2009",
+        "IS 800: latest version, General Construction in Steel - Code of Practice, Bureau of Indian Standards, New Delhi.",
+        "IS 875 (Part 1): latest version, Indian Standard Code of Practice for Design Loads (Other than Earthquake) for Buildings and Structures Part 1 Dead Loads - Unit Weights of Building Materials and Stored Materials, Bureau of Indian Standards, New Delhi.",
+        "IS 875 (Part 2): latest version, Indian Standard Code of Practice for Design Loads (Other than Earthquake) for Buildings and Structures Part 2 Imposed Loads, Bureau of Indian Standards, New Delhi.",
+        "IS 875 (Part 3): latest version, Indian Standard Code of Practice for Design Loads (Other than Earthquake) for Buildings and Structures Part 3 Wind Loads, Bureau of Indian Standards, New Delhi.",
+        "IS 875 (Part 4): latest version, Indian Standard Code of Practice for Design Loads (Other than Earthquake) for Buildings and Structures Part 4 Snow Loads, Bureau of Indian Standards, New Delhi.",
+        "IS 875 (Part 5): latest version, Indian Standard Code of Practice for Design Loads (Other than Earthquake) for Buildings and Structures Part 5 Special Loads and Combinations, Bureau of Indian Standards, New Delhi."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Engineering Hydrology",
+      "subject_code": "CE802(A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Hydrological Cycle, Water Budget and Precipitation Analysis",
+          "topics": [
+            "Hydrological cycle",
+            "Water budget",
+            "Practical applications of Hydrology",
+            "Hydrometeorology and airmasses",
+            "Formation of precipitation",
+            "Types of precipitation",
+            "Meteorological observations",
+            "Probability and random variables",
+            "Regression analysis",
+            "Catchment types and importance",
+            "Measurement of precipitation",
+            "Rain gauges and their location",
+            "Interpretation and analysis of rainfall data",
+            "Calculation of average rainfall",
+            "Hyetograph",
+            "Intensity‑duration curves",
+            "Frequency curves",
+            "Mass curve"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Stream‑flow Measurement and Discharge Relations",
+          "topics": [
+            "Stream‑flow measurement methods",
+            "Stage‑discharge relationships",
+            "Rating curve and extensions",
+            "Stream gauge networking",
+            "Stage and discharge hydrographs",
+            "Evaporation and evapotranspiration calculation",
+            "Factors affecting measurement",
+            "Techniques for reducing evaporation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Infiltration and Ground‑water Fundamentals",
+          "topics": [
+            "Infiltration processes",
+            "Factors affecting infiltration",
+            "Measurement of infiltration",
+            "Infiltration equations and indices",
+            "Occurrence of ground water",
+            "Darcy’s law",
+            "Flow in wells (steady and unsteady)",
+            "Ground‑water exploration",
+            "Well yield determination"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Runoff, Unit Hydrograph Theory and Applications",
+          "topics": [
+            "Runoff components",
+            "Factors affecting runoff",
+            "Basin yield",
+            "Rainfall‑runoff relationships",
+            "Flow‑duration curve",
+            "Flow‑mass curve",
+            "Hydrograph and separation of hydrograph",
+            "Unit hydrograph theory and applications",
+            "Derivation of unit hydrograph convolution equation",
+            "Unit hydrograph for complex storms",
+            "Synthetic unit hydrograph",
+            "S‑curve hydrograph",
+            "Distribution graph of hydrographs",
+            "Use and applications of unit hydrograph",
+            "Dimensionless unit hydrograph"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Instantaneous Unit Hydrograph, Flood Routing and Design Floods",
+          "topics": [
+            "Instantaneous unit hydrograph (IUH)",
+            "Derivation of IUH",
+            "Flood routing methods",
+            "Reservoir routing techniques",
+            "Storage‑discharge relationship",
+            "ISD (Inflow‑Storage‑Discharge) method",
+            "Pulse method",
+            "Channel routing – Muskingum method",
+            "Design flood estimation – empirical and rational formulas",
+            "Frequency analysis",
+            "Gumbel’s distribution",
+            "Reservoir sedimentation causes",
+            "Factors affecting reservoir sedimentation and control measures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Engineering Hydrology by Subramanyam",
+        "Introduction to Hydrology by Viessman & Lewis",
+        "Applied Hydrology by C.W. Fetter",
+        "A Text Book of Hydrology by Reddy"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Foundation Engineering",
+      "subject_code": "CE802(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Selection of foundation and Sub‑soil exploration/investigation",
+          "topics": [
+            "Types of foundation",
+            "Factors affecting the selection of type of foundations",
+            "Steps in choosing types of foundation based on soil condition",
+            "Objectives and planning of exploration program",
+            "Methods of exploration – wash boring and rotary drilling – depth of boring",
+            "Soil samples and soil samplers – representative and undisturbed sampling",
+            "Field penetration tests: SPT, SCPT, DCPT",
+            "Introduction to geophysical methods",
+            "Bore log preparation",
+            "Report writing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Shallow Foundation",
+          "topics": [
+            "Introduction to shallow foundations",
+            "Significant depth and design criteria",
+            "Modes of shear failures",
+            "Bearing capacity theories (Prandtl, Rankine, Terzaghi, Skempton, Meyerhof)",
+            "Bearing capacity determination using IS Code",
+            "Settlement and components of settlement and its estimation",
+            "Permissible settlement",
+            "Proportioning of footing for equal settlement",
+            "Allowable bearing pressure",
+            "Bearing capacity from in‑situ tests (SPT, SCPT, plate load)",
+            "Factors affecting bearing capacity",
+            "Contact pressure under rigid and flexible footings",
+            "Floating foundation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Pile foundations",
+          "topics": [
+            "Introduction to pile foundations",
+            "Load transfer mechanism",
+            "Types of piles and their functions",
+            "Factors influencing selection of pile",
+            "Methods of installation and load‑carrying characteristics for cohesive and granular soils",
+            "Pile load carrying capacity from static formulae",
+            "Dynamic formulae (ENR and Hiley)",
+            "Pile load test",
+            "Pile group – carrying capacity, efficiency and settlement",
+            "Negative skin friction"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Foundations on problematic soil & Introduction to Geosynthetics",
+          "topics": [
+            "Characteristics of expansive and collapsible soils",
+            "Footing on problematic soils and associated problems",
+            "Preventive measures for problematic soils",
+            "Underreamed pile foundation – concept, design and field installation",
+            "Introduction to geosynthetics – materials, types, functions and uses"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Lateral Earth Pressure",
+          "topics": [
+            "Active, passive and earth pressure at rest",
+            "Rankine’s theory of earth pressure",
+            "Earth pressures in layered soils",
+            "Coulomb’s earth pressure theory",
+            "Culmann’s graphical method"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Retaining Walls",
+          "topics": [
+            "Types of retaining walls",
+            "Stability of retaining walls against overturning, sliding and bearing capacity",
+            "Drainage from backfill",
+            "Reinforced earth retaining walls"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Murthy, V.N.S., “Text book of Soil Mechanics and Foundation Engineering”, CBS Publishers Distribution Ltd., New Delhi, 2014.",
+        "Arora, K.R., “Soil Mechanics and Foundation Engineering”, Standard Publishers and Distributors, New Delhi, 7th Edition, 2017 (Reprint).",
+        "Punmia, B.C., “Soil Mechanics and Foundations”, Laxmi Publications Pvt. Ltd., New Delhi, 16th Edition, 2017.",
+        "Joseph E. Bowles, “Foundation Analysis and Design”, McGraw Hill Education, 5th Edition, 28 August 2015.",
+        "Shamsher Prakash et al., “Analysis, Design of Foundations and Retaining Structures”, Sarita Prakashan.",
+        "Murthy, V.N.S., “Advanced Foundation Engineering”, CBS Publishers and Distributors.",
+        "Coduto, D.P., “Foundation Design; Principles and Practices”, Pearson Publication."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Bridge Engineering",
+      "subject_code": "CE802(C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Types of Bridge Super Structures",
+          "topics": [
+            "Introduction and types, temporary bridge superstructures, military bridges, other temporary bridges, permanent bridges, R.C.C. bridges, pre‑stressed concrete bridges, steel bridges, movable steel bridge",
+            "Consideration of loads and stresses in road bridges: loads, forces and stress, dead loads, bridge loading as per relevant IRC and IRS specifications (traffic lanes, foot way, kerbs, railing and parapet loading), impact, wind load, longitudinal forces, temperature effect of live load on back‑fill and on the abutment"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design of R.C. Bridge",
+          "topics": [
+            "Slab culvert, pipe culvert, T‑beam, box culvert bridge superstructure",
+            "Courbon’s theory for load distribution, balanced cantilever bridges, design examples"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design of Steel Bridges",
+          "topics": [
+            "Types of steel superstructure, plate girder bridge, truss bridge, wind forces on lattice girder bridge, bracings, arch and bowstring girder bridge",
+            "Design example"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Pier, Abutment and Wing Walls",
+          "topics": [
+            "Types of piers and abutments, stability analysis of piers and abutments, design of piers, forces on piers, stability of abutments, bridge code provisions for abutments, wing walls",
+            "Design examples"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Foundations and Bearings",
+          "topics": [
+            "Types of bridge foundations and general design criteria: shallow foundations, deep foundations, piles, wells and pneumatic caissons, river training works",
+            "Bearings: functions and types, necessity of bearings, design of elastomeric bearings, expansion joints (necessity, types), design considerations"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Victor, D.J., Essential of Bridge Engineering, Oxford & IBH Publishing Co., New Delhi.",
+        "Rowe, R.E., Concrete Bridge Design, C.R. Books Ltd., London.",
+        "Krishna Raju N, Design of Bridges, Oxford & IBH Publishing Co., New Delhi.",
+        "Bakht. B and Jaeger, L.C., Bridge Analysis Simplified, McGraw Hill Book Co. Inc.",
+        "Ponnuswamy, S., Bridge Engineering, Tata McGraw Hill, New Delhi.",
+        "Bakht, B. and Jaeger, L.G., Bridge Deck Analysis Simplified, McGraw Hill International Edition, Singapore.",
+        "Aswani M.G., Vazirani V.N. and Ratwani M.M., Design of Concrete Bridges, Khanna publishers, New Delhi.",
+        "Hambly E.C., Bridge Deck Behaviour.",
+        "Sastry V.V., Design of Bridges, Dhanpat Rai & Co.",
+        "Raina V.K., Concrete Bridge Design and Practice, Tata McGraw Hill, New Delhi.",
+        "Jagadeesh T.R. and Jayaram M.A., \"Design of Bridge Structures\", Prentice Hall of India Pvt. Ltd, Learning Pvt. Ltd., 2013.",
+        "Indian Standard Codes and IRC codes related to bridges."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Earthquake Resistant Design of Structures",
+      "subject_code": "CE802(D)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Engineering Seismology",
+          "topics": [
+            "Introduction to engineering seismology",
+            "Geological and tectonic features of India",
+            "Origin and propagation of seismic waves",
+            "Earthquake measurement parameters",
+            "Characteristics of earthquake and its quantification – magnitude and intensity scales",
+            "Seismic instruments",
+            "Seismic zoning map of India"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Response Spectrum",
+          "topics": [
+            "Response history and strong motion characteristics",
+            "Elastic response spectra",
+            "Inelastic response spectra",
+            "Tripartite (D‑V‑A) response spectrum",
+            "Use of response spectrum in earthquake resistant design",
+            "Computation of seismic forces in multi‑storeyed buildings as per codal provisions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Aseismic Structural Modelling",
+          "topics": [
+            "Structural configuration for earthquake resistant design",
+            "Concept of plan irregularities",
+            "Concept of vertical irregularities",
+            "Soft storey",
+            "Torsion in buildings",
+            "Design provisions for irregularities in IS‑1893",
+            "Effect of infill masonry walls on frames",
+            "Modeling concepts of infill masonry walls",
+            "Behaviour of masonry buildings during earthquakes",
+            "Failure patterns of masonry buildings",
+            "Strength of masonry in shear",
+            "Strength of masonry in flexure",
+            "Slenderness concept of masonry walls"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design of structure for earthquake resistance",
+          "topics": [
+            "Seismic design philosophy",
+            "Load combinations for seismic design",
+            "Ductility and energy absorption in buildings",
+            "Confinement of concrete for ductility",
+            "Design of columns for ductility",
+            "Design of beams for ductility",
+            "Ductile detailing provisions as per IS‑1893",
+            "Lateral load resisting structural systems"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Seismic control of structures",
+          "topics": [
+            "Introduction to seismic control systems",
+            "Concept and types of seismic control systems (active, passive, semi‑active)",
+            "Requirements of efficient earthquake resistant structural system",
+            "Damping devices",
+            "Base isolation systems",
+            "Retrofitting of structures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Chopra Anil Kumar, Dynamics of Structures - Theory and Application to Earthquake Engineering, Pearson Education.",
+        "Hosur Vinod, Earthquake Resistant Design of Building Structures, Wiley (India).",
+        "Duggal S. K., Earthquake Resistant Design of Structures, Oxford University Press.",
+        "Agarwal Pankaj, Shrikande Manish, Earthquake Resistant Design of Structures, Prentice Hall of India, New Delhi India.",
+        "Pauley & Priestly, Seismic Design of Reinforced Concrete and Masonry Buildings, John Wiley & Sons.",
+        "Stratta J. L, Manual of Seismic Design, Prentice-Hall India Pvt Ltd.",
+        "Kramer S. L., Geotechnical Earthquake Engineering, Prentice-Hall India Pvt Ltd.",
+        "All relevant IS codes: IS 1893: Criteria for earthquake resistant design of structures, Bureau of Indian Standards, New Delhi; IS 4326: Code of practice for earthquake resistant design and construction of buildings, Bureau of Indian Standards, New Delhi; IS 13920: Ductility detailing of reinforced concrete structures subjected to seismic forces, Bureau of Indian Standards, New Delhi."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Artificial Intelligence",
+      "subject_code": "CE803(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Artificial Intelligence",
+          "topics": [
+            "Main components and characteristics of AI (Feature Engineering, ANN, Deep Learning)",
+            "Applications of AI",
+            "Advantages and disadvantages of AI",
+            "Goals of AI",
+            "Comparison of programming a system with AI and without AI",
+            "Challenges in AI",
+            "Programming languages preferably used in AI",
+            "Techniques/Algorithms used in AI",
+            "AI software platforms",
+            "Future of AI"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Various types of production systems and search techniques",
+          "topics": [
+            "Types of production systems",
+            "Characteristics of production systems",
+            "Study and comparison of breadth‑first search and depth‑first search",
+            "Other search techniques: hill climbing, best‑first search",
+            "A* algorithm, AO* algorithms, and various control strategies"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Knowledge Representation and Probabilistic Reasoning",
+          "topics": [
+            "Problems in representing knowledge",
+            "Knowledge representation using propositional and predicate logic",
+            "Comparison of propositional and predicate logic",
+            "Resolution, refutation, deduction, theorem proving, inferencing",
+            "Monotonic and non‑monotonic reasoning",
+            "Probabilistic reasoning",
+            "Bayes' theorem",
+            "Semantic networks, scripts, schemas, frames, conceptual dependency",
+            "Fuzzy logic",
+            "Forward and backward reasoning"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Game playing techniques",
+          "topics": [
+            "Minimax procedure",
+            "Alpha‑beta cut‑offs",
+            "Planning",
+            "Study of the block world problem in robotics",
+            "Introduction to natural language processing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to learning, ANN",
+          "topics": [
+            "Various techniques used in learning",
+            "Introduction to artificial neural networks",
+            "Common‑sense reasoning",
+            "Convolutional Neural Network (CNN)",
+            "Feedforward Neural Network (FNN)",
+            "Recurrent Neural Network (RNN)",
+            "Multilayer perceptron",
+            "Architecture / three layers in artificial neural networks",
+            "Implementation of ANN",
+            "Applications of ANN in images, signals and language",
+            "Examples of expert systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rich E and Knight K, “Artificial Intelligence”, TMH, New Delhi.",
+        "Nelsson N.J., “Principles of Artificial Intelligence”, Springer Verlag, Berlin.",
+        "Stuart Russell, Artificial Intelligence: A Modern Approach, 3rd Edition, Peter Norvig, PHI, ISBN13: 978-0136042594, ISBN-10: 0136042597",
+        "B. Yegnanarayana, Artificial Neural Networks, PHI.",
+        "Schalkoff, Artificial Neural Networks, Mc Graw HILL Education."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Analytics",
+      "subject_code": "CE803(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Descriptive Statistics",
+          "topics": [
+            "Probability Distributions",
+            "Inferential Statistics",
+            "Inferential Statistics through hypothesis tests",
+            "Regression & ANOVA",
+            "Regression ANOVA (Analysis of Variance)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Big Data and its Importance",
+            "Four V’s of Big Data",
+            "Drivers for Big Data",
+            "Introduction to Big Data Analytics",
+            "Big Data Analytics applications",
+            "Hadoop’s Parallel World",
+            "Data discovery",
+            "Open source technology for Big Data Analytics",
+            "Cloud and Big Data",
+            "Predictive Analytics",
+            "Mobile Business Intelligence and Big Data",
+            "Crowd Sourcing Analytics",
+            "Inter- and Trans-Firewall Analytics",
+            "Information Management"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Processing Big Data",
+          "topics": [
+            "Integrating disparate data stores",
+            "Mapping data to the programming framework",
+            "Connecting and extracting data from storage",
+            "Transforming data for processing",
+            "Subdividing data in preparation for Hadoop Map Reduce"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Hadoop MapReduce",
+          "topics": [
+            "Employing Hadoop Map Reduce",
+            "Creating the components of Hadoop Map Reduce jobs",
+            "Distributing data processing across server farms",
+            "Executing Hadoop Map Reduce jobs",
+            "Monitoring the progress of job flows",
+            "The building blocks of Hadoop Map Reduce",
+            "Distinguishing Hadoop daemons",
+            "Investigating the Hadoop Distributed File System",
+            "Selecting appropriate execution modes: local, pseudo-distributed, fully distributed"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Big Data Tools and Techniques",
+          "topics": [
+            "Installing and running Pig",
+            "Comparison with databases",
+            "Pig Latin",
+            "User-Defined Functions (Pig)",
+            "Data processing operators",
+            "Installing and running Hive",
+            "HiveQL",
+            "Querying data with Hive",
+            "User-Defined Functions (Hive)",
+            "Oracle Big Data"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Hastie, Trevor, et al. – The Elements of Statistical Learning. Vol. 2. No. 1. New York: Springer, 2009.",
+        "Montgomery, Douglas C., and George C. Runger – Applied Statistics and Probability for Engineers. John Wiley & Sons, 2010.",
+        "NPTEL Video Course: Introduction to Data Analytics by Dr. B. Ravindran (IIT Madras) and Dr. N. Sudarsanam (IIT Madras)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Retrofitting and Rehabilitation of Structures",
+      "subject_code": "CE803(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Definition for Repair, Retrofitting, Strengthening and Rehabilitation",
+          "topics": [
+            "Physical causes of deterioration of concrete structures",
+            "Chemical causes of deterioration of concrete structures",
+            "Evaluation of structural damages to concrete elements due to earthquake",
+            "Durability of concrete – factors affecting durability",
+            "Corrosion of reinforcement in concrete",
+            "Carbonation of concrete",
+            "Chloride ingress",
+            "Alkali–silica reaction",
+            "Freeze‑thaw effects",
+            "Chemical attack on concrete",
+            "Abrasion, erosion and cavitation",
+            "Weathering and efflorescence"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Damage Assessment",
+          "topics": [
+            "Purpose of damage assessment",
+            "Rapid assessment techniques",
+            "Investigation of damage",
+            "Evaluation of surface cracks",
+            "Evaluation of structural cracks",
+            "Damage assessment procedures",
+            "Destructive testing methods",
+            "Non‑destructive testing methods",
+            "Semi‑destructive testing methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Influence on Serviceability and Durability",
+          "topics": [
+            "Effects of climate, temperature and chemicals on serviceability",
+            "Wear and erosion effects",
+            "Design and construction errors",
+            "Corrosion mechanisms in reinforced concrete",
+            "Effect of cover thickness and cracking on durability",
+            "Methods of corrosion protection",
+            "Corrosion inhibitors",
+            "Corrosion‑resistant steels",
+            "Protective coatings",
+            "Cathodic protection"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Maintenance and Retrofitting Techniques",
+          "topics": [
+            "Definition and importance of maintenance",
+            "Facts of maintenance",
+            "Need for retrofitting",
+            "Jacketing technique for columns and beams",
+            "Externally bonded reinforcement (EBR) technique",
+            "Near‑surface mounted (NSM) technique",
+            "External post‑tensioning",
+            "Section enlargement",
+            "Guidelines for seismic rehabilitation of existing buildings"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Materials for Repair and Retrofitting",
+          "topics": [
+            "Artificial fibre‑reinforced polymers – CFRP, GFRP, AFRP",
+            "Natural fibres – sisal, jute",
+            "Adhesives – epoxy resin",
+            "Special concretes and mortars",
+            "Concrete chemicals",
+            "Special elements for accelerated strength gain",
+            "Rust eliminators and polymer coatings for rebars",
+            "Foamed concrete",
+            "Mortar and dry‑pack repair",
+            "Vacuum‑concrete technique",
+            "Gunite and shotcrete",
+            "Epoxy injection for crack repair",
+            "Mortar repair for cracks",
+            "Shoring and underpinning methods"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Properties of Concrete – A. M. Neville, Pearson Education",
+        "Materials for Construction – James S. Lai",
+        "Structural Condition Assessment – Robert T. Ratay",
+        "M. Johnson Sidney, “Deterioration, Maintenance and Repair of Structures”",
+        "Denison Campbell, Allen & Harold Roper, “Concrete Structures – Materials, Maintenance and Repair”, Longman Scientific and Technical",
+        "R. T. Allen and S. C. Edwards, “Repair of Concrete Structures”, Blakie and Sons",
+        "R. N. Raiker, “Learning for Failure from Deficiencies in Design, Construction and Service”, R&D Center (SDCPL)"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Integrated Water Management",
+      "subject_code": "CE803(D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Paradigm Shift in Water Management",
+          "topics": [
+            "Global and national perspectives of water crisis",
+            "Water scarcity",
+            "Water functions in the life-support systems",
+            "Water availability and requirements for humans and nature",
+            "Concepts of ‘blue water’, ‘green water’ and ‘virtual water’ and their roles in water management",
+            "Human‑landscape interventions",
+            "Salient water management issues and challenges"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Sustainable Water Resources Management",
+          "topics": [
+            "Concept of sustainable development",
+            "Sustainability principles for water management",
+            "Goals for guiding sustainable water resource management",
+            "Important preconditioning in water policy approaches",
+            "Framework for planning a sustainable water future"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Integrated Water Resources Management (IWRM) Approach",
+          "topics": [
+            "IWRM Principles: modern principles for water management and planning",
+            "Definition, components, and critique of IWRM",
+            "IWRM Implementation: socio‑scientific, economic, political and ecological factors affecting implementation",
+            "Salient examples of river basin management",
+            "Lessons from best practices in river‑basin management"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Surface and Subsurface Water Systems",
+          "topics": [
+            "Impacts of development activities on the water cycle",
+            "Precipitation, evapotranspiration, infiltration, runoff, streamflow, erosion and sedimentation",
+            "Types of aquifer systems and their hydraulic characteristics",
+            "Environmental impacts on groundwater systems",
+            "Estimation of groundwater recharge and discharge",
+            "Assessment of groundwater potential",
+            "Surface water–groundwater interaction",
+            "Concept of sustainable groundwater development and management",
+            "Water balance, balance of water resources and needs",
+            "Minimum water table and minimum discharges"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Conventional and Non‑conventional Techniques for Water Security",
+          "topics": [
+            "Rainwater harvesting",
+            "Groundwater mining and artificial recharge",
+            "Conjunctive use of surface water and groundwater resources",
+            "Long‑distance water conveyance and transport",
+            "Conservation of ‘green water’",
+            "Desalination",
+            "Treatment of poor‑quality waters"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "K. Subramanya, Engineering Hydrology, Tata McGraw Hill Publishers, New Delhi.",
+        "H.M. Raghunath, Ground Water, Wiley Eastern Publication, New Delhi.",
+        "Daniel P. Loucks and Eelco van Beek, Water Resources Systems. Planning and Management, UNESCO Publication.",
+        "Mollinga, P. et al, Integrated Water Resources Management, Water in South Asia Volume I, Sage Publications, 2006.",
+        "Singh, Chhatrapati Water Rights in India, Ed: Chhatrapati Singh. Water Law in India: The Indian Law Institute, New Delhi,1992.",
+        "Dhruva Narayana, G. Sastry, V. S. Patnaik, Watershed Management, CSWCTRI, Dehradun, ICAR Publications, 1997.",
+        "Lal, Ruttan. Integrated Watershed Management in the Global Ecosystem. CRC Press, New York.",
+        "Heathcote, I. W. Integrated Watershed Management: Principles and Practice. 1988. John Wiley and Sons, Inc., New York."
+      ],
+      "extra": null
+    }
+  ]
+}

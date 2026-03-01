@@ -1,0 +1,732 @@
+{
+  "subjects": [
+    {
+      "subject_name": "OS Internals for Security Support",
+      "subject_code": "CY501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction To Kernel",
+          "topics": [
+            "Architecture of the UNIX operating system",
+            "System concepts",
+            "Data structures",
+            "Buffer Cache",
+            "Buffer header",
+            "Structure of Buffer pool",
+            "Reading and writing disk blocks",
+            "Files INODES",
+            "Structure of a regular file",
+            "Directories",
+            "Super block",
+            "INODE assignment",
+            "System calls - OPEN",
+            "System calls - READ",
+            "System calls - CLOSE",
+            "System calls - WRITE",
+            "System calls - CREATE",
+            "System calls - CHMOD",
+            "System calls - CHOWN",
+            "Pipes",
+            "Mounting and Un-mounting"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Process",
+          "topics": [
+            "Layout System Memory",
+            "Process Description",
+            "Process control",
+            "Process creation",
+            "Signals",
+            "Process scheduling",
+            "Privileges",
+            "Threats",
+            "Intruders",
+            "Malicious software",
+            "Time",
+            "Clock",
+            "Principals of Concurrency",
+            "Inter-Process Communications - Process tracing",
+            "System V IPC",
+            "Shared Memory",
+            "Semaphores"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Security and Protection in Operating Systems",
+          "topics": [
+            "Access control",
+            "Auditing",
+            "Trusted computing",
+            "Multics and the commercial Operating Systems",
+            "Malware analysis",
+            "Protection viruses",
+            "Worms and Trojans",
+            "Root‑kits",
+            "Ransomware",
+            "Polymorphic malware",
+            "Malware capture and analysis using honey‑pots"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Common vulnerabilities and Exposures",
+          "topics": [
+            "Secure system configuration",
+            "Virtualization techniques for security",
+            "Mobile Operating Systems security",
+            "Systems security in Android",
+            "Application Security",
+            "Secure wallets",
+            "Secure co‑processors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Windows Operation System",
+          "topics": [
+            "Versions",
+            "Concepts and tools",
+            "Windows internals",
+            "System Architecture",
+            "System worker threads",
+            "Windows global flags",
+            "Local procedural calls",
+            "Socket",
+            "Sockets Programming",
+            "Winsock",
+            "Functions",
+            "Data structures",
+            "Descriptors",
+            "Connections",
+            "Socket elements",
+            "Stream and Datagram Sockets"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Maurice J. Bach: “The Design of the Unix Operating System”, Prentice Hall of India, 1991.",
+        "Mark E. Russinovich and David A. Solomon: “Microsoft® Windows® Internals”, 4th Edition, Microsoft Press, 2004.",
+        "W. Stallings: “Operating Systems : Internals and Design Principles”, 5th Edition, Prentice Hall, 2005.",
+        "A. Tanenbaum, A. Woodhull: “Operating Systems Design and Implementation”, 3rd Edition, Prentice Hall, 2006."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Design& Analysis of Algorithms",
+      "subject_code": "CY502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Definitions of algorithms and complexity",
+          "topics": [
+            "Definitions of algorithms and complexity",
+            "Time and Space Complexity",
+            "Time‑space tradeoff",
+            "Various bounds on complexity",
+            "Asymptotic notation",
+            "Recurrences and recurrence‑solving techniques",
+            "Introduction to divide‑and‑conquer technique",
+            "Binary search",
+            "Merge sort",
+            "Quick sort",
+            "Heap sort",
+            "Strassen’s matrix multiplication",
+            "Code‑tuning techniques: Loop Optimization",
+            "Data Transfer Optimization",
+            "Logic Optimization"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Greedy Algorithms",
+          "topics": [
+            "Greedy algorithm strategy",
+            "Optimal merge patterns",
+            "Huffman coding",
+            "Minimum spanning trees",
+            "Knapsack problem",
+            "Job sequencing with deadlines",
+            "Single‑source shortest‑path algorithm",
+            "Correctness proofs of greedy algorithms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Dynamic Programming",
+          "topics": [
+            "Dynamic‑programming characteristics",
+            "0/1 knapsack problem",
+            "Multistage graph problem",
+            "Reliability design problem",
+            "Floyd‑Warshall algorithm"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Backtracking",
+          "topics": [
+            "Backtracking concept",
+            "8‑queen’s problem",
+            "Hamiltonian cycle",
+            "Graph colouring problem",
+            "Branch‑and‑bound method",
+            "Traveling salesman problem",
+            "Lower‑bound theory and its use in solving algebraic problems",
+            "Introduction to parallel algorithms"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Tree and Graph Algorithms",
+          "topics": [
+            "Advanced tree and graph algorithms",
+            "NP‑hard and NP‑complete problems",
+            "Approximation algorithms",
+            "Data‑stream algorithms",
+            "Design and complexity of parallel algorithms"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Cormen, Leiserson, Rivest, Stein, “Introduction to Algorithms”, Second Edition, Prentice Hall of India.",
+        "Aho A.V., Hopcroft J.E., J. Ullman, “Design and Analysis of Computer Algorithms”, Addison Wesley.",
+        "Horowitz E. and Sahani, “Fundamentals of Computer Algorithms”, Galgotia Publications.",
+        "Knuth D., “Fundamental algorithms: The Art of Computer programming”, Volume – I, Pearson Education.",
+        "Knuth D., “Sorting and Searching: The Art of Computer programming”, Volume – III, Pearson Education.",
+        "John Kleinberg, Trades E., “Algorithm Design”, Pearson Education.",
+        "A. Papoulis, S.U. Pillai, “Probability, Random Variables and Stochastic Processes”, McGraw Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Biometric Techniques for Security",
+      "subject_code": "CY503 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Biometrics – Introduction",
+          "topics": [
+            "Benefits of biometrics over traditional authentication systems",
+            "Benefits of biometrics in identification systems",
+            "Selecting a biometric for a system",
+            "Applications of biometrics",
+            "Key biometric terms and processes",
+            "Biometric matching methods",
+            "Accuracy in biometric systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Physiological Biometric Technologies",
+          "topics": [
+            "Fingerprints – technical description, characteristics, competing technologies, strengths, weaknesses, deployment",
+            "Facial scan – technical description, characteristics, weaknesses, deployment",
+            "Iris scan – technical description, characteristics, strengths, weaknesses, deployment",
+            "Retina vascular pattern – technical description, characteristics, strengths, weaknesses, deployment"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Hand Scan, DNA Biometrics and Behavioral Biometric Technologies",
+          "topics": [
+            "Hand scan – technical description, characteristics, strengths, weaknesses, deployment",
+            "DNA biometrics – technical description, characteristics, strengths, weaknesses, deployment",
+            "Handprint biometrics – technical description, characteristics, strengths, weaknesses, deployment",
+            "Behavioral DNA biometrics – technical description, characteristics, strengths, weaknesses, deployment"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Signature and Handwriting Technology, Keyboard/Keystroke Dynamics, and Voice Biometrics",
+          "topics": [
+            "Signature and handwriting technology – technical description, classification",
+            "Keyboard/keystroke dynamics – data acquisition, feature extraction, characteristics, strengths, weaknesses, deployment",
+            "Voice biometrics – data acquisition, feature extraction, characteristics, strengths, weaknesses, deployment"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multi‑Biometric and Multi‑Factor Biometric Systems",
+          "topics": [
+            "Multi‑biometrics and multi‑factor biometrics",
+            "Two‑factor authentication with passwords",
+            "Tickets and tokens as authentication factors",
+            "Executive decision processes for biometric deployment",
+            "Implementation plan for multi‑biometric systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Samir Nanavathi, Michel Thieme, and Raj Nanavathi: “Biometrics – Identity verification in a network”, 1st Edition, Wiley Eastern, 2002.",
+        "John Chirillo and Scott Blaul: “Implementing Biometric Security”, 1st Edition, Wiley Eastern Publication, 2005.",
+        "John Berger: “Biometrics for Network Security”, 1st Edition, Prentice Hall, 2004."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Network Security",
+      "subject_code": "CY503 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of Cryptography",
+          "topics": [
+            "Symmetric Encryption Principles",
+            "Symmetric Block Encryption Algorithms",
+            "Random and Pseudorandom Numbers",
+            "Stream Ciphers and RC4",
+            "Cipher Block Modes of Operation",
+            "Approaches to Message Authentication",
+            "Secure Hash Function",
+            "Message Authentication Codes",
+            "Public-Key Cryptography Principles",
+            "Public-Key Cryptography Algorithms",
+            "Digital Signatures"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Hardware and Software Security",
+          "topics": [
+            "Hardware Security",
+            "Smart Cards",
+            "Biometrics",
+            "Virtual Private Networks",
+            "Types of VPNs",
+            "Trusted Operating Systems",
+            "Pretty Good Privacy (PGP)",
+            "Security Protocols",
+            "Security Socket Layer",
+            "Transport Layer Security",
+            "IPSec",
+            "S/MIME"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Intrusion Detection System and Firewalls",
+          "topics": [
+            "IDS – Infrastructure of IDS",
+            "Classification of IDS",
+            "Host‑based IDS",
+            "Network‑based IDS",
+            "Anomaly vs Signature Detection",
+            "Normal Behavior Patterns – Anomaly Detection",
+            "Misbehaviour Signatures – Signature Detection",
+            "Parameter Pattern Matching",
+            "Managing an IDS",
+            "Malicious Software",
+            "Safeguards",
+            "Firewalls",
+            "Packet‑Filtering Firewalls",
+            "Stateful Inspection Firewalls",
+            "Proxy Firewalls",
+            "Guard",
+            "Personal Firewalls",
+            "Limitations of Firewalls"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Wireless Security",
+          "topics": [
+            "Wireless Application Protocol",
+            "WAP Security",
+            "Authentication",
+            "Integrity",
+            "Confidentiality",
+            "Security Issues with Wireless Transport Layer Security (WTLS)",
+            "Wireless LAN",
+            "WLAN Configuration",
+            "WLAN Technology Consideration",
+            "Wireless LAN Security",
+            "Access Point Security",
+            "Work‑Station Security",
+            "Safeguarding Wireless LANs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Web Security",
+          "topics": [
+            "Client/Server Architecture",
+            "Security Considerations and Threats",
+            "Web Traffic Security Approaches",
+            "SSL/TLS for Secure Web Services",
+            "The Twin Concept of “SSL Connection” and “SSL Session”",
+            "SSL Session State",
+            "SSL Connection State",
+            "SSL Record Protocol",
+            "SSL Handshake Protocol",
+            "S‑HTTP",
+            "Secure Electronic Transaction (SET)",
+            "Business Requirements",
+            "SET Participants",
+            "SET Transaction Flow"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Network Security Essentials: Applications and Standards, William Stallings, Pearson Education.",
+        "Network Security and Management, Brijendra Sing, PHI.",
+        "Network Security Bible, Eric Cole, Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Security",
+      "subject_code": "CY503 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Symmetric (Private) Key Cryptographic Systems",
+          "topics": [
+            "History of Cryptography",
+            "Probability theory (Mathematical background)",
+            "Information theory",
+            "Complexity theory",
+            "Number theory",
+            "Caesar cipher",
+            "Affine cipher",
+            "Monoalphabetic substitution",
+            "Transposition cipher",
+            "Homophonic substitution",
+            "Vigenère cipher",
+            "Beauford cipher and DES family",
+            "Product ciphers",
+            "Lucifer cipher",
+            "Data Encryption Standard (DES)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Asymmetric (Public) Key Cryptographic Systems",
+          "topics": [
+            "Concept of PKCS",
+            "RSA cryptosystem",
+            "Variants of RSA",
+            "Primality testing",
+            "Security of RSA",
+            "Merkle–Hellman cryptosystem",
+            "Security of Merkle–Hellman",
+            "ElGamal cryptosystem",
+            "Elliptic Curve Cryptography (ECC)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Stream Ciphers and Block Ciphers",
+          "topics": [
+            "One-time pad",
+            "Synchronous stream ciphers",
+            "Self-synchronizing stream ciphers",
+            "Feedback shift registers",
+            "Linear complexity",
+            "Non-linear feedback shift registers",
+            "Stream ciphers based on LFSRs",
+            "Non-linear combination generators",
+            "Non-linear filter generators",
+            "Clock-controlled generators",
+            "Alternating step generators",
+            "Shrinking generators"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Digital Signatures",
+          "topics": [
+            "Properties of digital signatures",
+            "Generic signature schemes",
+            "Rabin signature scheme",
+            "Lamport signature scheme",
+            "Matyas–Meyer signature scheme",
+            "RSA-based digital signatures",
+            "Multiple RSA signatures",
+            "ElGamal signatures",
+            "Digital Signature Standard (DSS)",
+            "Blind signatures",
+            "RSA blind signatures"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Secret Sharing Algorithms and Pseudorandom Number Generators",
+          "topics": [
+            "Threshold secret sharing",
+            "Shamir's secret sharing scheme",
+            "Blakley's secret sharing scheme",
+            "Modular secret sharing scheme",
+            "Definition of randomness and pseudorandomness",
+            "Statistical tests of randomness",
+            "Linear congruential generator (LCG)",
+            "Modern pseudorandom number generators (PRNGs)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Padmanabhan T R, Shyamala C and Harini N, \"Cryptography and Security\", Wiley Publications, 2011.",
+        "Josef Pieprzyk, Thomas Hardjono and Jenifer Seberry, \"Fundamentals of Computer Security\", Springer, 2010."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cyber Law & Intellectual Property Rights",
+      "subject_code": "CY504(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Evolution of the IT Act",
+          "topics": [
+            "Evolution of the IT Act, Genesis and Necessity",
+            "Salient features of the IT Act, 2000",
+            "Various authorities under IT Act and their powers",
+            "Penalties & Offences, Amendments Impact on other related Acts: IPC, Indian Evidence Act, Bankers Book Evidence Act, RBI Act",
+            "Cyber Space Jurisdiction: Traditional principles of Jurisdiction, issues under IT Act, 2000, Extraterrestrial Jurisdiction",
+            "Cyber Tribunal & Appellate Tribunal, Cyber Regulations, Internet Service Providers and their liabilities"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "E‑Commerce and Laws in India",
+          "topics": [
+            "E‑Commerce and Laws in India, Digital/Electronic Signature in Indian Laws; Issues and provisions in Indian Law related to E‑Commerce",
+            "E‑Governance: Concept and practicality in India, E‑Taxation issues in Cyberspace",
+            "Cyber crime: Types of cyber crime, Cyber crime under IPC",
+            "E‑Contracts and its validity in India"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Indian Evidence Law",
+          "topics": [
+            "Indian Evidence Law - Cyber crimes under the Information Technology Act, 2000",
+            "Cyber crimes under International Law",
+            "Hacking, Child Pornography, Cyber Stalking, Denial of Service Attack, Virus Dissemination, Software Piracy, Internet Relay Chat (IRC) Crime, Credit Card Fraud, Net Extortion, Phishing etc.",
+            "Cyber Terrorism, Violation of Privacy on Internet - Data Protection and Privacy – Indian Court cases"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Intellectual Property Rights, Domain Names and Trademark Disputes",
+          "topics": [
+            "Concept of Trademarks in Internet Era, Cyber Squatting, Reverse Hijacking, Jurisdiction in Trademark Disputes",
+            "Copyright in the Digital Medium, Copyright in Computer Programmes, Copyright and WIPO Treaties",
+            "Concept of Patent Right, Relevant Provisions of Patent Act 1970",
+            "Sensitive Personal Data or Information (SPDI) in Cyber Law, SPDI Definition and Reasonable Security Practices in India"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "International Cyber Laws",
+          "topics": [
+            "International Cyber Laws: International Perspective",
+            "EDI: Concept and legal Issues",
+            "UNCITRAL Model Law",
+            "Electronic Signature Laws of Major Countries",
+            "Cyber Laws of Major Countries"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Justice Yatindra Singh, Cyber Laws, Universal Law Publishing Co., New Delhi",
+        "Farouq Ahmed, Cyber Law in India, New Era publications, New Delhi",
+        "S.R. Myneni: Information Technology Laws (Cyber Laws), Asia Law House, Hyderabad.",
+        "Chris Reed, Internet Law-Text and Materials, Cambridge University Press.",
+        "Pawan Duggal: Cyber Law- the Indian perspective, Universal Law Publishing Co., New Delhi."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "CY504(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of IoT",
+          "topics": [
+            "Evolution of Internet of Things",
+            "Enabling Technologies",
+            "IoT Architectures",
+            "oneM2M",
+            "IoT World Forum (IoTWF) and Alternative IoT models",
+            "Simplified IoT Architecture and Core IoT Functional Stack",
+            "Fog, Edge and Cloud in IoT",
+            "Functional blocks of an IoT ecosystem",
+            "Sensors, actuators, Smart objects and connecting smart objects"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "IoT Protocols",
+          "topics": [
+            "IoT Access Technologies, Physical and MAC layers, topology and Security of IEEE 802.15.4, 802.15.4g, 802.15.4e, 1901.2a, 802.11ah and LoRaWAN",
+            "Network Layer, IP versions, Constrained Nodes and Constrained Networks, Optimizing IP for IoT",
+            "From 6LoWPAN to 6Lo",
+            "Routing over Low Power and Lossy Networks",
+            "Application Transport Methods, Supervisory Control and Data Acquisition",
+            "Application Layer Protocols, CoAP and MQTT"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design and Development",
+          "topics": [
+            "Design Methodology",
+            "Embedded computing logic",
+            "Microcontroller",
+            "System on Chips",
+            "IoT system building blocks",
+            "Arduino Board details, IDE programming",
+            "Raspberry Pi, Interfaces and Raspberry Pi with Python Programming"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Data Analytics And Supporting Services",
+          "topics": [
+            "Structured vs unstructured Data and Data in Motion vs Data in Rest",
+            "Role of Machine Learning",
+            "No SQL Databases",
+            "Hadoop Ecosystem",
+            "Apache Kafka",
+            "Apache Spark",
+            "Edge Streaming Analytics and Network Analytics",
+            "Xively Cloud for IoT",
+            "Python Web Application Framework, Django AWS for IoT",
+            "System Management with NETCONF‑YANG"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Case Studies/Industrial Applications",
+          "topics": [
+            "Cisco IoT system",
+            "IBM Watson IoT platform",
+            "Manufacturing, converged plant‑wide Ethernet Model (CPwE)",
+            "Power Utility Industry, GridBlocks Reference Model",
+            "Smart and Connected Cities: Layered architecture, Smart Lighting, Smart Parking Architecture and Smart Traffic Control"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "David Hanes, Gonzalo Salgueiro, Patrick Grossetete, Rob Barton and Jerome Henry, “IoT Fundamentals: Networking Technologies, Protocols and Use Cases for Internet of Things”, Cisco Press, 2017",
+        "Arshdeep Bahga, Vijay Madisetti, “Internet of Things – A hands‑on approach”, Universities Press, 2015",
+        "Olivier Hersent, David Boswarthick, Omar Elloumi, “The Internet of Things – Key applications and Protocols”, Wiley, 2012",
+        "Jan Höller, Vlasios Tsiatsis, Catherine Mulligan, Stamatis, Karnouskos, Stefan Avesand, David Boyle, \"From Machine-to-Machine to the Internet of Things - Introduction to a New Age of Intelligence\", Elsevier, 2014",
+        "Dieter Uckelmann, Mark Harrison, Michahelles, Florian (Eds), “Architecting the Internet of Things”, Springer, 2011",
+        "Michael Margolis, Arduino Cookbook, Recipes to Begin, Expand, and Enhance Your Projects, 2nd Edition, O'Reilly Media, 2011"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Organization & Architecture",
+      "subject_code": "CD504 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Digital Logic, Computer Arithmetic and Basic System Organization",
+          "topics": [
+            "Review of Digital Logic Circuits",
+            "Digital Logic Components and Data Representation",
+            "Computer Arithmetic – Integer and Floating‑Point Arithmetic operations",
+            "Computer Organization vs. Architecture and milestones in computer architecture",
+            "Basic structure of a computer system",
+            "Components of a computer system – CPU, Memory, System Bus (bus width, bus operations)",
+            "I/O subsystem",
+            "CPU organization – General register organization, Memory register, Instruction register, Control word, Stack organization, ALU, Control unit"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Instruction Set Architecture (ISA) and Control Unit",
+          "topics": [
+            "Machine instruction characteristics and types of operands",
+            "Types of operations and instruction types",
+            "Instruction formats and addressing modes",
+            "Registers and program counter",
+            "Instruction execution cycle",
+            "Interrupts and traps – sources, identification, priorities, servicing",
+            "Case study of the 8086 microprocessor",
+            "Hardwired control unit",
+            "Micro‑programmed control unit – micro‑instructions, micro‑instruction formats, micro‑instruction control",
+            "Micro‑program sequencer and execution of micro‑instructions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Memory Organization",
+          "topics": [
+            "Memory hierarchy",
+            "Main memory – RAM, ROM",
+            "Memory technologies",
+            "Memory addresses and address map",
+            "Flash memory",
+            "Associative memory",
+            "Cache memory – structure and design, mapping schemes, replacement algorithms, improving cache performance",
+            "Cache levels – L1, L2, L3",
+            "Secondary memory – magnetic tape, magnetic disk, optical disks, solid‑state disk"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "I/O Organization",
+          "topics": [
+            "Data‑transfer modes – serial, parallel, synchronous, asynchronous",
+            "I/O techniques – programmed I/O, interrupt‑driven I/O, Direct Memory Access (DMA)",
+            "External interconnection standards – PCI bus, PCI Express, SCSI bus, USB",
+            "I/O channels and I/O processors",
+            "I/O instructions"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Parallel Architectures and Advanced Topics",
+          "topics": [
+            "On‑chip parallelism",
+            "Thread‑level parallelism",
+            "Instruction‑level parallelism",
+            "Multicore processor architecture",
+            "Processor‑level parallelism",
+            "Pipelining",
+            "Vector processing and array processing",
+            "RISC vs. CISC architectures",
+            "Introduction to ARM processor architecture",
+            "Introduction to assembly‑language programming"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "William Stallings, “Computer Organization and Architecture”, Pearson.",
+        "Tannenbaum and Austin, “Structured Computer Organization”, PHI.",
+        "V. Carl Hamacher, “Computer Organization”, McGraw Hill.",
+        "John P. Hayes, “Computer Architecture and Organization”, TMH.",
+        "Morris Mano, “Computer System Architecture”, PHI.",
+        "David A. Patterson and John L. Hennessy, “Computer Organization and Design: The Hardware/Software Interface”, Morgan Kaufmann.",
+        "M. Usha, T.S. Shrikant, “Computer System Architecture and Organization”, Wiley India.",
+        "Chaudhuri, P. Pal, “Computer Organization and Design”, PHI.",
+        "Sarangi, “Computer Organization and Architecture”, McGraw Hill."
+      ],
+      "extra": null
+    }
+  ]
+}
