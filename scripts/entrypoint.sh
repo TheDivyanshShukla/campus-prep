@@ -23,7 +23,7 @@ else
 fi
 
 echo "Checking for seeded data or snapshots..."
-python manage.py shell -c "
+cat << 'EOF' | python manage.py shell
 import os
 import glob
 import subprocess
@@ -46,7 +46,7 @@ elif Subject.objects.count() == 0:
     subprocess.run(['python', 'manage.py', 'sync_pyq_papers', '--download'], check=True)
 else:
     print(f'Data already seeded ({Subject.objects.count()} subjects). Skipping.')
-"
+EOF
 
 
 echo "Collecting static files..."

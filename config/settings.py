@@ -115,7 +115,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Parse DATABASE_URL manually to avoid dj-database-url dependency
+# Parse DATABASE_URL manually
 db_url = os.getenv('DATABASE_URL')
 
 if db_url and (db_url.startswith('postgresql://') or db_url.startswith('postgres://')):
@@ -130,9 +130,24 @@ if db_url and (db_url.startswith('postgresql://') or db_url.startswith('postgres
             'PORT': url.port,
         }
     }
+elif db_url and db_url.startswith('sqlite://'):
+    # Support for sqlite:///data/db.sqlite3
+    url = urlparse.urlparse(db_url)
+    db_path = url.path.lstrip('/')
+    
+    # If the path starts with 'app/', strip it since app is BASE_DIR in docker
+    if db_path.startswith('app/'):
+        db_path = db_path[4:]
+        
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / db_path,
+        }
+    }
 else:
     if DEBUG:
-        print(f"Warning: DATABASE_URL not set or invalid ({db_url}). Using SQLite.")
+        print(f"Warning: DATABASE_URL not set or invalid ({db_url}). Using default SQLite.")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',

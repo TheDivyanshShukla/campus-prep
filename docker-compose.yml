@@ -17,6 +17,7 @@ services:
       - .:/app
       - /app/.venv # Protect the container's environment from host shadowing
       - media_data:/app/media
+      - sqlite_data:/app/data
     ports:
       - "8000:8000"
     environment:
@@ -39,6 +40,7 @@ services:
       - .:/app
       - /app/.venv # Protect the container's environment from host shadowing
       - media_data:/app/media
+      - sqlite_data:/app/data
     environment:
       - CELERY_BROKER_URL=redis://valkey:6379/0
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
@@ -50,3 +52,4 @@ services:
 volumes:
   valkey_data:
   media_data:
+  sqlite_data:
