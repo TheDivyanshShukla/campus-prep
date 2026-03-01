@@ -12,12 +12,10 @@ services:
 
   web:
     build: .
-    # Note: Using python as the entrypoint handles migrations via the entrypoint.sh script
     volumes:
       - .:/app
-      - /app/.venv # Protect the container's environment from host shadowing
-      - media_data:/app/media
       - ./data:/app/data
+      - media_data:/app/media
     ports:
       - "8000:8000"
     environment:
@@ -25,7 +23,7 @@ services:
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
       - DEBUG=False
       - SECRET_KEY=${SECRET_KEY}
-      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_URL=sqlite:///app/data/db.sqlite3
       - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
       - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
       - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
@@ -39,13 +37,12 @@ services:
     command: celery -A config worker --loglevel=info
     volumes:
       - .:/app
-      - /app/.venv # Protect the container's environment from host shadowing
-      - media_data:/app/media
       - ./data:/app/data
+      - media_data:/app/media
     environment:
       - CELERY_BROKER_URL=redis://valkey:6379/0
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
-      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_URL=sqlite:///app/data/db.sqlite3
       - PYTHONUNBUFFERED=1
     depends_on:
       valkey:
