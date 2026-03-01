@@ -22,13 +22,28 @@ else
     echo "Superuser credentials missing or incomplete, skipping creation."
 fi
 
-echo "Checking for seeded data..."
+echo "Checking for seeded data or snapshots..."
 python manage.py shell -c "
+import os
+import glob
+import subprocess
 from apps.academics.models import Subject
-if Subject.objects.count() == 0:
-    print('No data found — loading snapshot...')
-    import subprocess
-    subprocess.run(['python', 'manage.py', 'load_snapshot'], check=True)
+
+# Check for snapshots first
+snapshot_dir = 'data/snapshots'
+snapshots = glob.glob(os.path.join(snapshot_dir, 'snapshot_*.json'))
+
+if snapshots:
+    # Sort and get the latest
+    snapshots.sort(key=os.path.getmtime)
+    latest = os.path.basename(snapshots[-1])
+    print(f'Found snapshot {latest}. Restoring...')
+    subprocess.run(['python', 'manage.py', 'db_snapshot', 'recover', latest, '--no-input'], check=True)
+elif Subject.objects.count() == 0:
+    print('No snapshots and no data found. Running initial seed...')
+    subprocess.run(['python', 'manage.py', 'seed_rgpv'], check=True)
+    print('Downloading PYQs...')
+    subprocess.run(['python', 'manage.py', 'sync_pyq_papers', '--download'], check=True)
 else:
     print(f'Data already seeded ({Subject.objects.count()} subjects). Skipping.')
 "
