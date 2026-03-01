@@ -17,7 +17,7 @@ services:
       - .:/app
       - /app/.venv # Protect the container's environment from host shadowing
       - media_data:/app/media
-      - sqlite_data:/app/data
+      - ./data:/app/data
     ports:
       - "8000:8000"
     environment:
@@ -25,6 +25,7 @@ services:
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
       - DEBUG=False
       - SECRET_KEY=${SECRET_KEY}
+      - DATABASE_URL=${DATABASE_URL}
       - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
       - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
       - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
@@ -40,10 +41,11 @@ services:
       - .:/app
       - /app/.venv # Protect the container's environment from host shadowing
       - media_data:/app/media
-      - sqlite_data:/app/data
+      - ./data:/app/data
     environment:
       - CELERY_BROKER_URL=redis://valkey:6379/0
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
+      - DATABASE_URL=${DATABASE_URL}
       - PYTHONUNBUFFERED=1
     depends_on:
       valkey:
@@ -52,4 +54,3 @@ services:
 volumes:
   valkey_data:
   media_data:
-  sqlite_data:
