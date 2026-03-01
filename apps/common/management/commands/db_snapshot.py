@@ -52,12 +52,12 @@ class Command(BaseCommand):
 
         self.stdout.write(f"🔄 Creating full snapshot: {filename}")
         
-        dumpdata_args = []
+        dumpdata_args = ['--natural-foreign', '--natural-primary']
         
         try:
             # We output to a file instead of stdout using the standard dumpdata argument
             with open(filepath, 'w', encoding='utf-8') as f:
-                call_command('dumpdata', *dumpdata_args, indent=2, stdout=f)
+                call_command('dumpdata', *dumpdata_args, indent=2, stdout=f, exclude=['contenttypes', 'auth.permission'])
             
             self.stdout.write(self.style.SUCCESS(f"✅ Successfully created snapshot: {filename}"))
         except Exception as e:
@@ -115,8 +115,14 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.ERROR("Recovery aborted."))
                 return
             
-        self.stdout.write("⏳ Restoring data...")
+        self.stdout.write("⏳ Clearing conflicting system records (ContentType, Permission)...")
         try:
+            from django.contrib.contenttypes.models import ContentType
+            from django.contrib.auth.models import Permission
+            ContentType.objects.all().delete()
+            Permission.objects.all().delete()
+            
+            self.stdout.write("⏳ Restoring data...")
             call_command('loaddata', filepath)
             self.stdout.write(self.style.SUCCESS(f"✨ Successfully restored database from {filename}"))
         except Exception as e:
