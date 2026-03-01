@@ -108,7 +108,7 @@
     },
     {
       "subject_name": "Cloud Computing",
-      "subject_code": "Departmental Elective-702 (A)",
+      "subject_code": "AD-702 (A)",
       "subject_type": "Departmental Elective",
       "modules": [
         {
@@ -199,7 +199,7 @@
     },
     {
       "subject_name": "Business Intelligence",
-      "subject_code": "Departmental Elective-702 (B)",
+      "subject_code": "AD-702 (B)",
       "subject_type": "Theory",
       "modules": [
         {
@@ -275,7 +275,7 @@
     },
     {
       "subject_name": "Computational Intelligence",
-      "subject_code": "Departmental Elective-702 (C)",
+      "subject_code": "AD-702 (C)",
       "subject_type": "Theory",
       "modules": [
         {
@@ -362,7 +362,7 @@
     },
     {
       "subject_name": "Predictive Analytics",
-      "subject_code": "Departmental Elective-702 (D)",
+      "subject_code": "AD-702 (D)",
       "subject_type": "Departmental Elective",
       "modules": [
         {
@@ -445,7 +445,7 @@
     },
     {
       "subject_name": "Data Visualization",
-      "subject_code": "Open Elective-703 (A)",
+      "subject_code": "AD-703 (A)",
       "subject_type": "Open Elective",
       "modules": [
         {
@@ -525,7 +525,7 @@
     },
     {
       "subject_name": "Mobile Application Development",
-      "subject_code": "Open Elective-703 (B)",
+      "subject_code": "AD-703 (B)",
       "subject_type": "Open Elective",
       "modules": [
         {
@@ -603,7 +603,7 @@
     },
     {
       "subject_name": "Advanced Statistical Analytics",
-      "subject_code": "Open Elective-703 (C)",
+      "subject_code": "AD-703 (C)",
       "subject_type": "Theory",
       "modules": [
         {
@@ -698,7 +698,7 @@
     },
     {
       "subject_name": "Social Media & Web Analytics",
-      "subject_code": "Open Elective-703 (D)",
+      "subject_code": "AD-703 (D)",
       "subject_type": "Open Elective",
       "modules": [
         {

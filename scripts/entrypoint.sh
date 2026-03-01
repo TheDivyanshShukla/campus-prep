@@ -22,8 +22,17 @@ else
     echo "Superuser credentials missing or incomplete, skipping creation."
 fi
 
-echo "Checking for academic data..."
-python manage.py shell -c "from apps.academics.models import Branch; import os; os.system('python manage.py seed_rgpv') if Branch.objects.count() == 0 else print('Academics data already exists.')"
+echo "Checking for seeded data..."
+python manage.py shell -c "
+from apps.academics.models import Subject
+if Subject.objects.count() == 0:
+    print('No data found — loading snapshot...')
+    import subprocess
+    subprocess.run(['python', 'manage.py', 'load_snapshot'], check=True)
+else:
+    print(f'Data already seeded ({Subject.objects.count()} subjects). Skipping.')
+"
+
 
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
