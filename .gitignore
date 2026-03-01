@@ -9,11 +9,8 @@ wheels/
 # Virtual environments
 .venv
 media
-.db
 m.py
 staticfiles
-db.*
 .me/datamine
 tmp
 .temp
-data/
