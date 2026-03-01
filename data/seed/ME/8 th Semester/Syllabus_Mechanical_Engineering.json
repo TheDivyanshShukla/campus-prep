@@ -1,0 +1,918 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Refrigeration & Air Conditioning",
+      "subject_code": "ME 801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Principles and methods of refrigeration, freezing",
+            "Mixture cooling by gas reversible expansion, throttling, evaporation, Joule‑Thomson effect and reverse Carnot cycle",
+            "Unit of refrigeration, coefficient of performance, vortex tube & thermoelectric refrigeration, adiabatic demagnetization",
+            "Air refrigeration cycles – Joule’s cycle, bootstrap cycle, reduced ambient cycle and regenerative cooling cycles"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Vapour Compression System",
+          "topics": [
+            "Vapour compression cycle, p‑h and t‑s diagrams",
+            "Deviations from theoretical cycle, sub‑cooling and super‑heating",
+            "Effect of condenser and evaporator pressure on COP",
+            "Multi‑pressure system: removal of flash gas, multiple expansion & compression with flash intercooling",
+            "Low temperature refrigeration: production of low temperatures, cascade system, dry ice, air liquefaction system"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Vapour Absorption, Steam‑Jet Refrigeration and Refrigerants",
+          "topics": [
+            "Theoretical and practical vapour absorption systems such as aqua‑ammonia, Electrolux and other systems",
+            "Steam‑jet refrigeration: principles, simple cycle operation, description and working of simple system",
+            "Refrigerants – nomenclature & classification, desirable properties, common refrigerants, comparative study, leak detection methods",
+            "Environment‑friendly refrigerants and refrigerant mixtures, brine and its properties"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Psychrometrics",
+          "topics": [
+            "Calculation of psychrometric properties of air by tables and charts",
+            "Psychrometric processes: sensible heating and cooling, evaporative cooling, cooling and dehumidification, heating and humidification, mixing of air streams, sensible heat factor",
+            "Principles of air conditioning, comfort requirements, ventilation standards, infiltrated air load, fresh air load, human comfort, effective temperature chart",
+            "Heat production and regulation of the human body"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Air Conditioning",
+          "topics": [
+            "Calculation of summer & winter air‑conditioning load",
+            "Bypass factor of coil, calculation of supply air rate and its condition",
+            "Room sensible heat factor, gross sensible heat factor, effective sensible heat factor, dehumidified air quantity",
+            "Problems on cooling load calculation",
+            "Air distribution and ventilation systems"
+          ]
+        }
+      ],
+      "experiments": [
+        "General Study of vapor compression refrigeration system.",
+        "General Study of Ice Plant",
+        "General Study and working of cold storage",
+        "General Study Trane Air Condition (Package Type).",
+        "General Study of Electrolux Refrigeration",
+        "General Study One tone Thermax refrigeration unit.",
+        "General Study of Water cooler",
+        "General Study of Psychrometers (Absorption type)",
+        "General Study of Leak Detectors (Halide Torch).",
+        "General Study and working of Gas charging Rig.",
+        "General Study of window Air Conditioner.",
+        "General Study and working of Vapor compression Air conditioning Test rig.",
+        "Experimentation on Cold Storage of Calculate COP & Heat Loss.",
+        "Experimentation on Vapor compression Air Conditioning test rig.",
+        "Changing of Refrigerant by using Gas Charging Kit."
+      ],
+      "reference_books": [
+        "Arora CP; Refrigeration and Air Conditioning; TMH",
+        "Sapali SN; Refrigeration and Air Conditioning; PHI",
+        "Ananthanarayan; Basic Refrigeration and Air conditioning; TMH",
+        "Manohar Prasad; Refrigeration and Air Conditioning; New Age Pub",
+        "Ameen; Refrigeration and Air Conditioning; PHI",
+        "Pita; Air conditioning Principles and systems: an energy approach; PHI",
+        "Stoecker W.F, Jones J; Refrigeration and Air conditioning; McGH, Singapore",
+        "Jordan RC and Priester GB; Refrigeration and Air Conditioning, PHI USA"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Automobile Engineering",
+      "subject_code": "ME 802(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Chassis & Body Engg",
+          "topics": [
+            "Types and technical details of commercial vehicles",
+            "Types of chassis and layout",
+            "Types of frames and testing of frames for bending and torsion on unutilized body frame",
+            "Vehicle body construction",
+            "Driver's visibility and methods for improvement",
+            "Safety aspects of vehicles",
+            "Vehicle aerodynamics and optimisation of body shape",
+            "Driver's cab design",
+            "Body materials",
+            "Location of engine, front‑wheel and rear‑wheel drive, four‑wheel drive"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Steering System",
+          "topics": [
+            "Front axle beam and stub axle",
+            "Front wheel assembly",
+            "Principles and types of wheel alignment",
+            "Front wheel geometry: camber, king‑pin inclination, caster, toe‑in and toe‑out",
+            "Condition for true rolling motion",
+            "Centre‑point steering and directional stability of vehicles",
+            "Steering gear and power steering",
+            "Slip angle, cornering power, over‑steer and under‑steer",
+            "Gyroscopic effect on steering gears"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Transmission System",
+          "topics": [
+            "Function and types of clutches (single plate, multi‑plate, roller & spring clutch)",
+            "Clutch lining and bonding, double declutching",
+            "Types of gear boxes and synchronisers",
+            "Gear materials and determination of gear ratio for vehicles",
+            "Gear box performance at different vehicle speeds",
+            "Automatic transmission, torque converters and fluid coupling",
+            "Principle of hydrostatic drive",
+            "Propeller shaft, constant‑velocity universal joints",
+            "Differential gear box and rear axle construction"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Suspension system",
+          "topics": [
+            "Basic suspension movements",
+            "Independent front and rear suspension",
+            "Shock absorber",
+            "Types of springs: leaf spring, coil spring, air spring, torsion bar",
+            "Location of shackles and power calculations",
+            "Resistance to vehicle motion during acceleration and braking, power‑torque curve, mechanical efficiency at different speeds",
+            "Weight transfer",
+            "Braking systems: disc theory, mechanical, hydraulic and pneumatic power‑brake systems",
+            "Performance, self‑energisation and air‑bleeding of hydraulic brakes",
+            "Types of wheels and tyres, tyre specifications, construction and material properties of tyres and tubes"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Electrical and Control Systems",
+          "topics": [
+            "Storage battery: construction, operation of lead‑acid battery and testing",
+            "Principle of operation of starting mechanism",
+            "Different drive systems and starter relay switch",
+            "Regulator, electric fuel gauge, fuel pump, horn, wiper, lighting system, head‑light dazzling, signalling devices",
+            "Battery‑operated vehicles and choppers",
+            "Importance of maintenance, scheduled and unscheduled maintenance",
+            "Wheel alignment and troubleshooting probable causes & remedies of various systems",
+            "Micro‑processor based control system for automobile",
+            "Intelligent automobile control systems"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Emission standards and pollution control",
+          "topics": [
+            "Indian standards for automotive vehicles: Bharat I, II, III, IV",
+            "Euro I to Euro VI norms",
+            "Fuel quality standards",
+            "Environmental management systems for automotive vehicles",
+            "Catalytic converters and fuel additives",
+            "Modern trends in automotive engine efficiency and emission control"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Crouse, Automotive Mechanics TMH.",
+        "Srinivasan S; Automotive engines; TMH",
+        "Gupta HN; Internal Combustion Engines; PHI;",
+        "Joseph Heitner, Automotive Mechanics, Principles and Practices, CBS Pub.",
+        "Kripal Singh, Automotive Engineering Khanna Pub.",
+        "Newton & Steeds, Automotive Engineering",
+        "Emission standards from BIS and Euro - I to Euro‑VI"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Tribology And Maintenance Engineering",
+      "subject_code": "ME 802(B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "History of tribology",
+            "Early scientific studies of friction, wear and lubrication",
+            "Tribo‑surface preparations and characteristics",
+            "Surface contacts, Hertz contact stresses",
+            "Residual stress",
+            "Surface fatigue, creep, stress relaxation, fracture mechanics",
+            "Elastic, viscoelastic and plastic behavior of materials",
+            "Choice of materials"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Friction",
+          "topics": [
+            "Laws of friction",
+            "Rolling/sliding friction",
+            "Theory of adhesion and abrasion",
+            "Different mechanisms of friction",
+            "Stick‑slip characteristics",
+            "Interface temperature and thermal analysis",
+            "Molecular mechanical theory of friction",
+            "Operating conditions and system parameters",
+            "Calculations of coefficient of friction",
+            "Design of friction devices"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Wear",
+          "topics": [
+            "Different types of wear mechanisms",
+            "Adhesive wear",
+            "Abrasive impact wear",
+            "Percussion erosion",
+            "Fretting wear",
+            "Calculations of wear rate",
+            "Two‑body and three‑body wear",
+            "Wear prevention",
+            "Wear of metal cutting and metal forming tools",
+            "Wear mapping of materials",
+            "Cavitation",
+            "Surface fatigue",
+            "Corrosion",
+            "Performance level classifications",
+            "Specifications of lubricants"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Lubrication",
+          "topics": [
+            "Lubricants and additives",
+            "Composition and properties of lubricants",
+            "Maintenance of oil and emulsions",
+            "Industrial hygiene aspects",
+            "Technical regulations for lubricants",
+            "Boundary, mixed and fluid‑film lubrication",
+            "Industrial methods of lubrication",
+            "SAE, BIS, ASTM, IP, DIN standards",
+            "Oil testing",
+            "Wear and chemistry of lubricants"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Nano tribology and applications",
+          "topics": [
+            "Nano tribology",
+            "Instrumental tests",
+            "Bearings",
+            "Clutches and brakes",
+            "Slide units",
+            "Dynamic seals",
+            "Automobile applications",
+            "Machine tools / press machines applications",
+            "Other applications and case studies"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Principles and applications of tribology, Bharat Bhushan, John Wiley & Sons, ISBN 0471 594075.",
+        "Tribology, - lubrication, friction and wear, I V Kragelsky and V V Alisin, Mir publication, ISBN 1860582885.",
+        "Applied Tribology, M M Khonsari and E. R. Booser, John Wiley, ISBN 04712830."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Machine Tool Design",
+      "subject_code": "ME 802(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Features and Kinematics of Machine Tools",
+          "topics": [
+            "Features of basic machine tools",
+            "Construction and operation of machine tools",
+            "Types of machine tools",
+            "Machine tools motions",
+            "Transmission: rotation into rotation",
+            "Rotation into translation",
+            "Kinematic structures of machine tools – elementary, complex and compound",
+            "Kinematic features of gear shapers",
+            "Kinematic features of gear hobbing machine"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Regulation of Speed",
+          "topics": [
+            "Design of gear boxes and need for variation of speed",
+            "Selection of speed range",
+            "Laws of stepped regulation",
+            "Standardization of speeds",
+            "Speed diagram and analysis of productivity loss",
+            "Kinematic advantage of gear pair (GP)",
+            "Structural diagrams, ray diagram and speed chart",
+            "Gear drives – belt and cone pulley",
+            "Slip gear type",
+            "North (worm) gear drive",
+            "Draw‑key gear drive",
+            "Clutch type gear drive",
+            "Mechanical step‑less drives",
+            "Electrical drives",
+            "Hydraulic drive"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design of Metal Working Tools",
+          "topics": [
+            "Design of press working tools",
+            "Shearing tools",
+            "Piercing tools",
+            "Blanking dies",
+            "Compound die design principles for forging dies",
+            "Bending tools",
+            "Forming and drawing dies",
+            "Tooling for forging – design principles",
+            "Drop forging design principles",
+            "Upset forging design principles",
+            "Design principles and practice for rolling",
+            "Roll press design"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design of Jigs and Fixtures",
+          "topics": [
+            "Principles of location",
+            "Locating methods and devices",
+            "Principles of clamping",
+            "Clamping devices",
+            "Drilling jigs and their types",
+            "Drill bushes",
+            "Fixture economics",
+            "Types of fixtures",
+            "Milling fixtures",
+            "Grinding fixtures",
+            "Broaching fixtures",
+            "Assembly fixtures",
+            "Indexing jigs and fixtures",
+            "Indexing devices"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Design of Gauges and Inspection Features",
+          "topics": [
+            "Design of gauges for dimensional tolerance inspection",
+            "Design of gauges for form inspection",
+            "Die and mould design for plastics and rubber parts – compression molding",
+            "Transfer molding",
+            "Blow molding"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Mehta N.K.; Machine Tool Design and Numerical Control; TMH",
+        "Sen G.C, Bhattacharya A; Principles of Machine Tools; New Central Book Agency.",
+        "Donaldson; Tool Design T.M.H.",
+        "Jain K.C and Chitale A.K; Text Book Of Production Engineering; PHI Learning",
+        "Juneja, Sekhon and Seth; Fundamentals of Metal Cutting and Machine Tools; New Age.",
+        "Krar S.F, Gill A.R, Smid P; Technology of Machine Tools; TMH",
+        "Sharma P.C; Production Engineering; Chand S",
+        "Wilson; Fundamentals of Tool Design; ASTME",
+        "Paqwin J.R; Die Design Handbook; The Industrial Press-NY",
+        "ASTME; Die Design Hand Book; McGraw Hill",
+        "Archinov; Metal Cutting & Cutting Tool Design; MIR Publishers",
+        "Moscow Kempster M.H.A; Introduction to Jig and Tool Design; FLBS"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Production Planning and Control",
+      "subject_code": "ME 802(D)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Types and characteristics of production systems",
+            "Objective and functions of Production Planning & Control",
+            "Place of production",
+            "Planning in Engineering",
+            "Manufacturers organization",
+            "Forecasting and market analysis (pre‑planning)",
+            "Factory location and layout",
+            "Equipment policy and replacement",
+            "Pre‑planning production and capacity planning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Work Study",
+          "topics": [
+            "Method study and basic procedure selection",
+            "Recording of process and critical analysis",
+            "Development and implementation of micro‑motion and memo‑motion study",
+            "Work measurement techniques",
+            "Time study",
+            "Production study",
+            "Work sampling",
+            "Synthesis from standard data",
+            "Predetermined motion time standards"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Production Planning",
+          "topics": [
+            "Aggregate planning",
+            "Master production scheduling (MPS)",
+            "Material Resource Planning (MRP)",
+            "Selection of material methods, machines and manpower",
+            "Routing",
+            "Scheduling and dispatching with corresponding sheets and charts",
+            "Production line balancing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Production and Inventory Control",
+          "topics": [
+            "Progress control through records and charts",
+            "Types of inventories and inventory classification",
+            "Inventory control under constraints",
+            "Economic lot (batch) size",
+            "Trends in purchasing and store keeping",
+            "Just‑in‑time (JIT) production",
+            "MRP II",
+            "Comparison of push and pull systems",
+            "Enterprise Resource Planning (ERP)",
+            "Capacity planning and production control (CAPPC)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Productivity and Human Factors",
+          "topics": [
+            "Importance of productivity",
+            "Productivity patterns",
+            "Productivity measurements and ratios",
+            "Improvement and maintenance processes",
+            "Human abilities and ergonomics",
+            "Training and motivation",
+            "Safety programs",
+            "Workplace design and working conditions"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Elements of Production Planning & Control – Eilon",
+        "Production Planning & Control – Jain and Agarwal",
+        "Operations Management – Buffa and Sarin",
+        "Project Management – S.C. Sharma, Khanna Publishing House",
+        "Production System – J.L. Riggs",
+        "Industrial Engineering and Production Management – Martand Telsang, S. Chand, 2000",
+        "Theory and Problems in Production & Operations Management – Chary S.N., Tata McGraw Hill, 1995"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Analytics",
+      "subject_code": "ME 803(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Descriptive Statistics",
+          "topics": [
+            "Probability Distributions",
+            "Inferential Statistics",
+            "Inferential Statistics through hypothesis tests",
+            "Regression & ANOVA",
+            "Regression ANOVA (Analysis of Variance)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Big Data and its Importance",
+            "Four V’s of Big Data",
+            "Drivers for Big Data",
+            "Introduction to Big Data Analytics",
+            "Big Data Analytics applications",
+            "Hadoop’s Parallel World",
+            "Data discovery",
+            "Open source technology for Big Data Analytics",
+            "Cloud and Big Data",
+            "Predictive Analytics",
+            "Mobile Business Intelligence and Big Data",
+            "Crowd Sourcing Analytics",
+            "Inter- and Trans-Firewall Analytics",
+            "Information Management"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Processing Big Data",
+          "topics": [
+            "Integrating disparate data stores",
+            "Mapping data to the programming framework",
+            "Connecting and extracting data from storage",
+            "Transforming data for processing",
+            "Subdividing data in preparation for Hadoop MapReduce"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Hadoop MapReduce",
+          "topics": [
+            "Employing Hadoop MapReduce",
+            "Creating the components of Hadoop MapReduce jobs",
+            "Distributing data processing across server farms",
+            "Executing Hadoop MapReduce jobs",
+            "Monitoring the progress of job flows",
+            "The building blocks of Hadoop MapReduce",
+            "Distinguishing Hadoop daemons",
+            "Investigating the Hadoop Distributed File System",
+            "Selecting appropriate execution modes: local, pseudo-distributed, fully distributed"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Big Data Tools and Techniques",
+          "topics": [
+            "Installing and Running Pig",
+            "Comparison with Databases",
+            "Pig Latin",
+            "User-Defined Functions (Pig)",
+            "Data Processing Operators",
+            "Installing and Running Hive",
+            "Hive QL",
+            "Querying Data",
+            "User-Defined Functions (Hive)",
+            "Oracle Big Data"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Hastie, Trevor, et al. – The Elements of Statistical Learning. Vol. 2. No. 1. New York: Springer, 2009.",
+        "Montgomery, Douglas C., and George C. Runger. – Applied Statistics and Probability for Engineers. John Wiley & Sons, 2010.",
+        "NPTEL Video Course: Introduction to Data Analytics by Dr. Balaraman Ravindran (IIT Madras) and Dr. Nandan Sudarsanam (IIT Madras)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Energy Conservation, Management & Audit",
+      "subject_code": "ME 803(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Energy Management",
+          "topics": [
+            "Concept of energy management, energy demand and supply, economic analysis, duties and responsibilities of energy managers",
+            "Basic concept of energy conservation",
+            "Energy conservation in Household, Transportation, Agricultural, service and Industrial sectors",
+            "Lighting and HVAC"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Energy Audit",
+          "topics": [
+            "Definition, need and types of energy audit",
+            "Energy management (audit) approach",
+            "Understanding energy cost, benchmarking, energy performance, matching energy use to requirement, maximizing system efficiencies, optimizing the input energy requirement",
+            "Fuel & energy substitution",
+            "Energy audit instruments",
+            "Energy Conservation Act",
+            "Duties and responsibilities of energy manager and auditors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Material Energy Balance and Energy Action Planning",
+          "topics": [
+            "Facility as an energy system",
+            "Method for preparing process flow",
+            "Material and energy balance diagrams",
+            "Key elements of Energy Action Planning",
+            "Force field analysis",
+            "Energy policy purpose, perspective, content, formulation, rectification"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Monitoring and Targeting & Electrical Energy Management",
+          "topics": [
+            "Definition of monitoring & targeting",
+            "Data and information analysis",
+            "Energy conservation in motors, pumps and fan systems",
+            "Energy efficient motors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Thermal Energy Management",
+          "topics": [
+            "Energy conservation in boilers, steam turbine and industrial heating system",
+            "Application of FBC",
+            "Cogeneration and waste heat recovery",
+            "Thermal insulation",
+            "Heat exchangers and heat pump",
+            "Building Energy Management"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Murphy & Mckay, Energy Management, BSP Books Pvt. Ltd.",
+        "Smith CB; Energy Management Principle, Pergamon Press, New York.",
+        "Rajan GG, Optimising Energy Efficiency in Industry, TMH.",
+        "Callaghan P O, Energy Management, McGraw-Hill Book Company.",
+        "Amit Kumar Tyagi, Handbook on Energy Audit and Management, Tata Energy Research Institute.",
+        "Bureau of Energy Efficiency, Study material for energy Managers and Auditors: Paper I to V.",
+        "Hamies; Energy Auditing and Conservation: Method, Measurement, Hemisphere, Washington.",
+        "Witty, Larry C, Industrial Enegy Management Utilisation, Hemisphere Publishers, Washington",
+        "Kreith & Goswami, Energy Management and Conservation Handbook, CRC Press"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Entrepreneurship and Management Concepts",
+      "subject_code": "ME 803(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "System Concepts",
+          "topics": [
+            "Types, definition & characteristics of system concepts",
+            "Supra & subsystems, key component",
+            "Boundary & interface complexity",
+            "Feedback (pull) & feed forward (push) controls",
+            "Open flexible‑adaptive system",
+            "Computer as closed system",
+            "Law of requisite variety",
+            "System coupling, stresses and entropy",
+            "Functional & cross‑functional system",
+            "Steven Alter’s nine‑element work system model and its comparison with IPO model",
+            "Structure and performance of work systems leading to customer delight"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Management",
+          "topics": [
+            "Importance, definition and functions of management",
+            "Schools of theories, knowledge‑driven learning organization and e‑business",
+            "Environment, uncertainty and adaptability",
+            "Corporate culture, difficulties and levels of planning",
+            "BCG matrix and SWOT analysis",
+            "Steps in decision making, structured and unstructured decisions",
+            "Dimensions of organizations, size/specialization, behavior formalization, authority centralization, departmentalization, span and line of control",
+            "Technology and Mintzberg organization typology, line, staff & matrix organization",
+            "Coordination by task‑force, business process reengineering and change management",
+            "HR planning, placement and training, MIS",
+            "Attitudes and personality traits, overlap and differences between leader & manager",
+            "Leadership grid, motivation, Maslow’s need hierarchy, Herzberg two‑factor theory, expectation theory, learning process, teamwork and stress management"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Marketing and Finance",
+          "topics": [
+            "Importance, definition and core concepts of need, want and demand",
+            "Exchange & relationships, product value, cost and satisfaction (goods and services)",
+            "Marketing environment",
+            "Selling, marketing and societal marketing concepts",
+            "Four P’s: product, price, placement, promotion",
+            "Consumer, business and industrial markets, market targeting, advertising, publicity, CRM and market research",
+            "Nature and scope of finance",
+            "Forms of business ownerships",
+            "Balance sheet, profit and loss account, fund flow and cash flow statements",
+            "Break‑even point (BEP) and financial ratio analysis",
+            "Pay‑back period, NPV and capital budgeting"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Productivity and Operations",
+          "topics": [
+            "Productivity, standard of living and happiness",
+            "Types of productivity",
+            "Operations (goods and services) vs. project management",
+            "Production processes and layouts",
+            "Steps in method improvement, time measurement, rating and various allowances",
+            "Standard time and its utility",
+            "Predetermined motion and time method",
+            "Product and process specification",
+            "Total Quality Management (TQM) and cost of quality",
+            "Introduction to lean manufacturing (JIT)",
+            "Quality Function Deployment (QFD), TPM & Six Sigma quality"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Entrepreneurship",
+          "topics": [
+            "Definition and concepts, characteristics, comparison with manager",
+            "Classification, theories of entrepreneur, socio‑economic, cultural and psychological aspects",
+            "Entrepreneur traits and behavior",
+            "Roles in economic growth, employment, social stability, export promotion and indigenization",
+            "Creating a venture, opportunity analysis (competitive and technical factors)",
+            "Sources of funds",
+            "Entrepreneur development program"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Daft R; The new era of management; Cengage.",
+        "Bhat Anil, Arya Kumar; Management: Principles, Processes and Practices; Oxford Higher Edu.",
+        "Mukharji R.S., Agrawal N.K.; Entrepreneurship and Management Concepts, Technocrats Publication.",
+        "Davis & Olson; Management Information System; TMH.",
+        "Steven Alter; Information systems, Pearson, www.stevenalter.com.",
+        "Kotler P; Marketing management; 6- Khan, Jain; Financial Management; 7- ILO; Work study; ILO.",
+        "Mohanty SK; Fundamental of Entrepreneurship; PHI."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Management Information System",
+      "subject_code": "ME 803(D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of MIS",
+          "topics": [
+            "What is MIS",
+            "Decision support systems",
+            "Systems approach",
+            "The systems view of business",
+            "MIS organization within the Company",
+            "Development of organizational theory",
+            "Management and organizational behavior",
+            "Management information and the systems approach"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Information systems for decision‑making and strategic / project planning for MIS",
+          "topics": [
+            "Evolution of an information system",
+            "Basic information systems",
+            "Decision making and MIS",
+            "MIS as technique for making programmed decisions",
+            "Design assisting information systems",
+            "General business planning",
+            "Appropriate MIS response",
+            "MIS planning – general",
+            "MIS planning – detailed"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Conceptual System Design and Detailed System Design",
+          "topics": [
+            "Define the problems",
+            "Systems objectives",
+            "Establish system constraints",
+            "Determine information needs",
+            "Determine information sources",
+            "Develop alternative conceptual designs and select one",
+            "Document the system concept",
+            "Prepare the conceptual design report",
+            "Information and involvement of the organization in detailed design",
+            "Project management of MIS detailed design",
+            "Identify dominant and trade‑off criteria",
+            "Define the subsystems",
+            "Sketch the detailed operating MIS systems and information flows",
+            "Determine the degree of automation of each operation",
+            "Inputs, outputs and processing",
+            "Early system testing",
+            "Software, hardware and tools",
+            "Propose an organization to operate the system",
+            "Document the detailed design",
+            "Revisit the manager‑user interaction"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Implementation, Evaluation and Maintenance of the MIS",
+          "topics": [
+            "Plan the implementation",
+            "Acquire floor space and plan space layouts",
+            "Develop procedures for implementation",
+            "Train the operating personnel",
+            "Computer‑related acquisitions",
+            "Develop forms for data collection and information dissemination",
+            "Develop the files",
+            "Test the system",
+            "Cut‑over",
+            "Document the system",
+            "Evaluate the MIS",
+            "Control and maintain the system"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Pitfalls in MIS Development",
+          "topics": [
+            "Fundamental weaknesses",
+            "Soft spots in planning",
+            "Design problems",
+            "Implementation issues – the TAR PITF"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Murdick R.G., Russ J.B., Clagget J.R., Information Systems for modern management",
+        "Effy O.Z., Management Information Systems, 3rd edition, Thomson",
+        "Jawadekar W.S., Management Information System",
+        "Brien J.A.O., Irwin, Management Information Systems, McGraw Hill",
+        "Dour’s G.B., Olson M.H., Management Information Systems, 2nd edition, McGraw Hill",
+        "Thireramp R.J., Decision Support Systems for Effective Planning and Control, PHI",
+        "Sadagopan S., Management Information Systems, 4th edition, Prentice‑Hall of India",
+        "Kanter J., Managing with Information, 4th edition, Prentice‑Hall of India",
+        "Ladon K.C., Landon J.P., Management Information Systems, 4th edition, Prentice‑Hall of India"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Simulation And Modeling",
+      "subject_code": "ME 804",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Modeling Software Packages",
+          "topics": [
+            "Overview of SolidWorks, CATIA, and ANSYS for modeling",
+            "Assembly of Sleeve and Cotter joint",
+            "Assembly of Gib and Cotter joint",
+            "Assembly of Knuckle Joint",
+            "Assembly of Flanged Coupling",
+            "Assembly of Connecting Rod"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Simulation Software Packages and Types of Analysis",
+          "topics": [
+            "Overview of ANSYS, Fluent and other simulation tools",
+            "Structure analysis techniques",
+            "Thermal analysis techniques",
+            "Stress analysis techniques",
+            "Computational Fluid Dynamics (CFD) analysis techniques",
+            "Finite Element Method (FEM) analysis techniques",
+            "Application of analyses to real‑world engineering problems"
+          ]
+        }
+      ],
+      "experiments": [
+        "Introduction to CATIA software.",
+        "Introduction to ANSYS software.",
+        "Assembly of Sleeve and Cotter joint/ Gib and Cotter joint/ Knuckle Joint/ Flanged Coupling using CATIA.",
+        "Assembly of Connecting Rod using CATIA.",
+        "Stress analysis using ANSYS (examples: plate with a circular hole, rectangular L bracket, axis‑symmetric components, various types of beams, etc.).",
+        "Thermal stress analysis of a 2D component.",
+        "Conductive and convective heat transfer analysis of a 2D component.",
+        "CFD simulation of various situations (examples: laminar pipe flow, flat plate boundary layer, steady flow past a cylinder, compressible flow in a nozzle, flow over an airfoil)."
+      ],
+      "reference_books": [
+        "User manual of CATIA software.",
+        "User manual of ANSYS and Fluent software.",
+        "Chandrupatla, T.R. and Belegundu, A.D., Introduction to Finite Elements in Engineering, Prentice Hall of India Pvt. Ltd.",
+        "Zienkiewicz O.C., The Finite Element Method, 3rd ed., Tata McGraw Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "MAJOR PROJECT- II",
+      "subject_code": "ME 805",
+      "subject_type": "Project",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

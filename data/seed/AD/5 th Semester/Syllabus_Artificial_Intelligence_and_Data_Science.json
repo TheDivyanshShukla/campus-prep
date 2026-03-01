@@ -1,0 +1,975 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Theory of Computation",
+      "subject_code": "AD-501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Automata Theory",
+          "topics": [
+            "Review of Sets",
+            "Mathematical formal proofs including proof by induction and by contradiction",
+            "Introduction to languages, grammars and automata: Alphabet",
+            "Representation of language and grammar",
+            "Types of Automata",
+            "Finite Automata as a language acceptor and translator",
+            "Moore machines and Mealy machines",
+            "Composite machine",
+            "Conversion from Mealy to Moore and vice versa"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Types of Finite Automata",
+          "topics": [
+            "Non Deterministic Finite Automata (NDFA)",
+            "Deterministic finite automata machines",
+            "Conversion of NDFA to DFA",
+            "Minimization of automata machines",
+            "Regular expression",
+            "Applications of regular expressions",
+            "Arden’s theorem",
+            "Meaning of union, intersection, concatenation and closure",
+            "2‑way DFA"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Grammars",
+          "topics": [
+            "Types of grammar",
+            "Context sensitive grammar",
+            "Context free grammar",
+            "Regular grammar",
+            "Derivation trees",
+            "Ambiguity in grammar",
+            "Simplification of context free grammar",
+            "Conversion of grammar to automata machine and vice versa",
+            "Chomsky hierarchy of grammar",
+            "Chomsky normal form and Greibach normal form"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Push down Automata",
+          "topics": [
+            "Example of PDA",
+            "Deterministic and non‑deterministic PDAs",
+            "Context Free Grammar",
+            "Parsing",
+            "Ambiguity",
+            "Normal form of CFGs",
+            "CFG to NPDA",
+            "NPDA to CFGs",
+            "CFG equivalent to PDA",
+            "Petri nets model"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Turing Machine",
+          "topics": [
+            "Turing Machine as acceptor",
+            "Recognizing a Language",
+            "Universal TMs",
+            "Linear Bounded Automata",
+            "Context Sensitive Languages",
+            "Recursive and Recursively Enumerable Languages",
+            "Unrestricted Grammars",
+            "Halting problem of Turing machine & the post correspondence problem",
+            "Concept of Solvability and Unsolvability",
+            "Church’s Thesis",
+            "Complexity Theory – P and NP problems"
+          ]
+        }
+      ],
+      "experiments": [
+        "Design a Program for creating machine that accepts three consecutive one.",
+        "Design a Program for creating machine that accepts the string always ending with 101.",
+        "Design a Program for Mode 3 Machine",
+        "Design a program for accepting decimal number divisible by 2.",
+        "Design a program for creating a machine which accepts string having equal no. of 1’s and 0’s.",
+        "Design a program for creating a machine which count number of 1’s and 0’s in a given string.",
+        "Design a Program to find 2’s complement of a given binary number.",
+        "Design a Program which will increment the given binary number by 1.",
+        "Design a Program to convert NDFA to DFA.",
+        "Design a Program to create PDA machine that accept the well‑formed parenthesis.",
+        "Design a PDA to accept WCWR where w is any string and WR is reverse of that string and C is a Special symbol.",
+        "Design a Turing machine that’s accepts the following language aⁿ bⁿ cⁿ where n>0."
+      ],
+      "reference_books": [
+        "Hopcroft, Ullman, Motwani, “Introduction to Languages, Automata and Computation”, 3rd Edition, Pearson Education, 2008.",
+        "John C. Martin, “Introduction to Languages and the Theory of Computation”, Fourth Edition, Mc Graw Hill, 2010.",
+        "Peter Linz, “An Introduction to Formal Languages and Automata”, Sixth Edition, Jones and Bartlett, 2016.",
+        "Lewis and Papadimitiriou, “Elements of Theory of Computation”, Second Edition, Pearson Education, 2015.",
+        "K.L.P. Mishra and N. Chandrasekaran, “Theory of Computer Science: Automata, Languages and Computation”, Third Edition, Prentice Hall, 2006.",
+        "Cohen John, “Introduction to Computer Theory”, Second Edition, Wiley and Sons, 2007.",
+        "Theory of Computation, Wood, Harper & Row."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Machine Learning",
+      "subject_code": "AD-502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Machine Learning",
+          "topics": [
+            "Introduction to machine learning",
+            "Machine learning life cycle",
+            "Types of machine learning system (supervised, unsupervised, batch, online, instance‑based, model‑based)",
+            "Scope and limitations",
+            "Challenges of machine learning",
+            "Data visualization",
+            "Hypothesis function and testing",
+            "Data pre‑processing",
+            "Data augmentation",
+            "Normalizing data sets",
+            "Bias‑Variance tradeoff",
+            "Relationship between AI, ML, DL and DS"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Clustering in Machine Learning",
+          "topics": [
+            "Clustering in machine learning",
+            "Partitioning clustering",
+            "Distribution model‑based clustering",
+            "Hierarchical clustering",
+            "Fuzzy clustering",
+            "Birch algorithm",
+            "CURE algorithm",
+            "Gaussian mixture models",
+            "Expectation maximization",
+            "Parameter estimation – maximum likelihood estimation (MLE)",
+            "Parameter estimation – maximum a posteriori (MAP)",
+            "Applications of clustering"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Classification Algorithms",
+          "topics": [
+            "Logistic regression",
+            "Decision tree classification",
+            "Neural networks",
+            "K‑Nearest Neighbors (K‑NN)",
+            "Support vector machine",
+            "Naïve Bayes (Gaussian, Multinomial, Bernoulli)",
+            "Confusion matrix",
+            "Classification accuracy",
+            "Precision, recall, F1‑score",
+            "Support"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Ensemble Learning and Random Forest",
+          "topics": [
+            "Introduction to ensemble learning",
+            "Max voting",
+            "Averaging",
+            "Weighted average",
+            "Voting classifiers",
+            "Bagging",
+            "Pasting",
+            "Out‑of‑bag evaluation",
+            "Random patches",
+            "Random subspaces",
+            "Random forests (extra‑trees, feature importance)",
+            "Boosting (AdaBoost, gradient boosting)",
+            "Stacking"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Dimensionality Reduction",
+          "topics": [
+            "Curse of dimensionality",
+            "Projection‑based dimensionality reduction",
+            "Manifold learning",
+            "Principal component analysis (PCA) – preserving variance",
+            "Principal components",
+            "Projecting to d dimensions",
+            "Explained variance ratio",
+            "Choosing number of dimensions",
+            "PCA for compression",
+            "Randomized PCA",
+            "Incremental PCA",
+            "Kernel PCA – kernel selection and hyper‑parameter tuning",
+            "Learning theory – PAC model",
+            "Learning theory – VC model"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Tom M. Mitchell, “Machine Learning”, McGraw Hill Education, First edition, 2017.",
+        "Aurelien Geon, “Hands‑On Machine Learning with Scikit‑Learn and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems”, Shroff/O'Reilly; First edition (2017).",
+        "Andreas Muller, \"Introduction to Machine Learning with Python: A Guide for Data Scientists\", Shroff/O'Reilly; First edition (2016).",
+        "Leonard Kaufman and P. J. Rousseau, Finding groups in data: An introduction to cluster analysis, Wiley, 2005.",
+        "Nello Cristianini and John Shawe‑Taylor, An Introduction to Support Vector Machines, Cambridge University Press, 2000."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet and Web Technology",
+      "subject_code": "AD 503 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Web Design",
+          "topics": [
+            "Concept of WWW and Internet",
+            "HTTP protocol: request, response, headers, methods",
+            "Web browsers and web servers",
+            "Features of Web 2.0",
+            "Effective web design concepts",
+            "Browser, bandwidth and cache considerations",
+            "Display resolution and look & feel of a website",
+            "Page layout and linking",
+            "User‑centric design",
+            "Sitemap planning and publishing",
+            "Designing effective navigation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "HTML, Browser Architecture and Client‑Side Programming",
+          "topics": [
+            "Basics of HTML: formatting, fonts, comments, colors, hyperlinks, lists, tables, images, forms",
+            "XHTML and meta tags",
+            "Character entities, frames and frame sets",
+            "Browser architecture and website structure",
+            "WebSockets overview and HTML5 features",
+            "MIME type and content encoding",
+            "Session tracking and cookies",
+            "Browser operation and plugins",
+            "Search engine basics",
+            "Client‑side programming: JavaScript fundamentals and regular expressions",
+            "Web server concepts"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Style Sheets (CSS) and Advanced JavaScript",
+          "topics": [
+            "CSS fundamentals: need, syntax, structure",
+            "Using CSS for background images, colors, text manipulation, fonts, borders, boxes, margins, padding",
+            "Positioning with CSS",
+            "CSS2 and CSS3 features",
+            "JavaScript client‑side scripting: variables, functions, conditions, loops, pop‑up boxes",
+            "Advanced JavaScript: objects, DOM manipulation, form validation",
+            "DHTML: integration of HTML, CSS and JavaScript",
+            "Event handling and button interactions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "XML and PHP Foundations",
+          "topics": [
+            "XML introduction and key components",
+            "Simple XML structures, DTD and schemas",
+            "Using XML with applications; XSL and XSLT transformations",
+            "PHP basics: syntax, decision and looping constructs",
+            "PHP integration with HTML",
+            "PHP arrays, functions, string handling, form processing, file handling",
+            "Advanced PHP: cookies, sessions, object‑oriented programming",
+            "Browser control and detection in PHP"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "PHP and MySQL Integration",
+          "topics": [
+            "Connecting PHP to MySQL server",
+            "Creating databases and tables",
+            "Selecting, listing, inserting, altering, querying and deleting data",
+            "Using phpMyAdmin and handling database errors",
+            "Case study: web‑based application development"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Developing Web Applications, Ralph Moseley and M. T. Savaliya, Wiley‑India",
+        "Moller, \"An Introduction to XML and Web Technologies\", Pearson Education, 2012",
+        "Web Technologies, Black Book, Dreamtech Press",
+        "HTML 5, Black Book, Dreamtech Press",
+        "Web Design, Joel Sklar, Cengage Learning",
+        "Harwani, Developing Web Applications in PHP and AJAX, McGraw‑Hill",
+        "Internet and World Wide Web How to program, P. J. Deitel & H. M. Deitel, Pearson"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Graphics & Multimedia",
+      "subject_code": "AD 503 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Raster Scan Displays and Drawing Algorithms",
+          "topics": [
+            "Raster Scan displays",
+            "Pixels",
+            "Frame buffer",
+            "Vector and character generation",
+            "Random Scan systems",
+            "Display devices",
+            "Scan conversion techniques",
+            "Simple DDA line drawing algorithm",
+            "Bresenham’s line drawing algorithm",
+            "Midpoint circle drawing algorithm",
+            "Bresenham’s circle drawing algorithm",
+            "Boundary-fill polygon fill algorithm",
+            "Flood-fill polygon fill algorithm"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "2‑D Transformations and Clipping",
+          "topics": [
+            "2‑D translation",
+            "2‑D rotation",
+            "2‑D scaling",
+            "2‑D shearing",
+            "2‑D reflection",
+            "Inverse transformation",
+            "Homogeneous coordinate system",
+            "Matrix transformations",
+            "Composite transformation",
+            "World coordinate system",
+            "Screen coordinate system",
+            "Viewing transformation",
+            "Line clipping algorithms",
+            "Polygon clipping algorithms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "3‑D Transformations, Projection, and Illumination",
+          "topics": [
+            "3‑D translation",
+            "3‑D rotation",
+            "3‑D scaling",
+            "Parallel projection types",
+            "Perspective projection types",
+            "Depth comparison for hidden surface elimination",
+            "Back‑face detection algorithm",
+            "Painter’s algorithm",
+            "Z‑Buffer algorithm",
+            "Bezier curve generation",
+            "B‑spline curve generation",
+            "Diffuse reflection illumination model",
+            "Specular reflection illumination model",
+            "Phong shading",
+            "Gouraud shading",
+            "Ray tracing",
+            "Color models: RGB, YIQ, CMY, HSV"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Visualization Techniques",
+          "topics": [
+            "Visualization of 2D scalar fields: color mapping",
+            "Visualization of 3D scalar fields: ISO surfaces",
+            "Direct volume rendering: ray‑casting",
+            "Transfer functions",
+            "Segmentation",
+            "Visualization of vector fields and flow data",
+            "Visualization of time‑varying data",
+            "High‑dimensional data visualization: dimension reduction",
+            "Parallel coordinates",
+            "Non‑spatial data visualization: multivariate, tree/graph structured, text",
+            "Perceptual and cognitive foundations of visualization",
+            "Evaluation of visualization methods",
+            "Applications of visualization",
+            "Basic animation techniques: traditional, key framing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multimedia and Animation",
+          "topics": [
+            "Fundamentals of multimedia",
+            "Multimedia applications",
+            "Text types and Unicode standard",
+            "Text compression",
+            "Text file formats",
+            "Audio components and digital audio",
+            "Digital audio processing",
+            "Sound cards",
+            "Audio file formats",
+            "Audio processing software",
+            "Video color spaces",
+            "Digital video",
+            "Digital video processing",
+            "Video file formats",
+            "Animation uses",
+            "Principles of animation",
+            "Computer‑based animation",
+            "3D animation",
+            "Animation file formats",
+            "Animation software",
+            "Special effects in animation",
+            "Storyboarding for animation",
+            "Lossless and lossy compression techniques",
+            "Image compression",
+            "Audio compression",
+            "Video compression",
+            "MPEG standards",
+            "Multimedia architecture",
+            "Multimedia databases"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program to draw a line using DDA algorithm.",
+        "Write a program to draw a line through Bresenham’s algorithm.",
+        "Write a program to draw a line using Mid‑Point algorithm.",
+        "Write a program for drawing a circle using Bresenham’s line drawing algorithm.",
+        "Write a program to implement translation of a line and triangle.",
+        "Write a program to implement scaling of a line and triangle.",
+        "Write a program to implement rotation of a line and triangle.",
+        "Write a program showing line clipping using Cohen‑Sutherland line clipping algorithm.",
+        "Write a program on boundary fill and flood fill algorithm implementation.",
+        "Write a program for performing the basic transformations such as translation, scaling, rotation for a given 3D object.",
+        "Write a program on Bezier methods for drawing curves.",
+        "Using Flash/Maya perform different operations (rotation, scaling, move etc.) on objects.",
+        "Create a bouncing ball using key‑frame animation and path animation.",
+        "Create animations using Adobe FLASH. Flash drawing and painting tools. Flash drawing modes. Pencil tools.",
+        "Create a JPEG image that demonstrates the various features of an image editing tool.",
+        "Develop a presentation for a product using techniques like guide layer, masking and onion‑skin using authoring tools.",
+        "Perform basic operations on image using any image editing software.",
+        "Draw a colour cube and spin it using OpenGL transformation matrices.",
+        "Create animation using any authoring tool.",
+        "Write a program to play “wave” or “MIDI” file format sound files."
+      ],
+      "reference_books": [
+        "Donald Hearn and M.P. Becker – “Computer Graphics”, Pearson Pub.",
+        "Foley, Van Dam, Feiner, Hughes – “Computer Graphics: Principles and Practice”, Addison‑Wesley.",
+        "Rogers – “Procedural Elements of Computer Graphics”, Tata McGraw Hill.",
+        "Parekh – “Principles of Multimedia”, Tata McGraw Hill.",
+        "Maurya – “Computer Graphics with Virtual Reality System”, Wiley India.",
+        "Pakhira – “Computer Graphics, Multimedia & Animation”, PHI Learning.",
+        "Andleigh, Thakral – “Multimedia System Design”, PHI Learning.",
+        "Khalid Sayood – “Introduction to Data Compression”, Morgan Kaufmann."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Org. & Architecture",
+      "subject_code": "AD 503 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Structure of Computer",
+          "topics": [
+            "Structure of desktop computers",
+            "CPU organization: general registers, memory register, instruction register, control word, stack organization",
+            "Instruction format, ALU, I/O system and bus architecture",
+            "Program counter and bus structure",
+            "Register Transfer Language (RTL) for bus and memory transfers",
+            "Addressing modes",
+            "Control unit organization: basic instruction concepts, instruction types, micro‑instruction formats",
+            "Fetch‑decode‑execute cycle",
+            "Hard‑wired control unit versus microprogrammed control unit",
+            "Microprogram sequencer and control memory",
+            "Sequencing and execution of micro‑instructions"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Computer Arithmetic",
+          "topics": [
+            "Binary addition and subtraction",
+            "Complement representation and signed arithmetic",
+            "Multiplication and division algorithms",
+            "Booth’s algorithm for multiplication",
+            "Division operation techniques",
+            "Floating‑point arithmetic operations",
+            "Design of an arithmetic unit"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "I/O Organization",
+          "topics": [
+            "I/O interfaces: PCI bus, SCSI bus, USB",
+            "Data transfer modes: serial, parallel, synchronous, asynchronous",
+            "Direct Memory Access (DMA)",
+            "I/O processor architecture"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Memory Organization",
+          "topics": [
+            "Main memory: RAM and ROM technologies",
+            "Secondary storage: magnetic tape, magnetic disk, optical storage",
+            "Cache memory: structure, mapping schemes, replacement algorithms",
+            "Techniques for improving cache performance",
+            "Virtual memory concepts and memory‑management hardware"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multiprocessors and Advanced Architectures",
+          "topics": [
+            "Characteristics and structure of multiprocessor systems",
+            "Inter‑processor arbitration and inter‑processor communication",
+            "Memory organization in multiprocessor systems",
+            "Pipelining concepts",
+            "Vector and array processing techniques",
+            "RISC versus CISC architectures",
+            "Study of modern multicore processors (Intel, AMD)"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of Multiplexer and Demultiplexer",
+        "Study of Half Adder and Subtractor",
+        "Study of Full Adder and Subtractor",
+        "WAP to add two 8‑bit numbers and store the result at memory location 2000",
+        "WAP to multiply two 8‑bit numbers stored at memory locations 2000 and 2001 and store the result at memory locations 2000 and 2001",
+        "WAP to add two 16‑bit numbers and store the result starting at memory address 2000",
+        "WAP which tests if any bit is '0' in a data byte at address 2000; store 00 at 2001 if true, otherwise store FF",
+        "Program to load registers C, D, E, A with contents of consecutive memory locations 2000‑2002 respectively",
+        "Program to increment sixteen consecutive bytes starting at address 2000 by 01",
+        "WAP to add ten bytes stored starting at memory location 3000 and store the result at 300A"
+      ],
+      "reference_books": [
+        "Morris Mano, “Computer System Organization”, PHI",
+        "Alan Clements, “Computer Organization and Architecture”, Cengage Learning",
+        "Subrata Ghosal, “Computer Architecture and Organization”, Pearson",
+        "William Stalling, “Computer Architecture and Organization”, PHI",
+        "M. Usha, T. S. Shrikant, “Computer System Architecture and Organization”, Wiley India",
+        "P. Chaudhuri, “Computer Organization and Design”, PHI",
+        "Sarangi, “Computer Organization and Architecture”, Mc‑Graw‑Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Management Information System",
+      "subject_code": "AD 504 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts of MIS",
+          "topics": [
+            "Data vs Information",
+            "Organization Structures",
+            "Business Process",
+            "Role of the MIS",
+            "Importance, Scope, Impact and Advantages of the MIS",
+            "MIS as a support to management",
+            "Structure/Architecture of MIS",
+            "Classification of MIS based on information characteristics, application, and business function"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Resources and Components of Information Systems",
+          "topics": [
+            "Managing Information Resources in an Organization",
+            "IT infrastructure and upcoming technologies",
+            "Integration and automation of Business Functions",
+            "Developing Business Models",
+            "Fundamentals of Data Processing"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Information System Development",
+          "topics": [
+            "Software Development Life Cycle (SDLC)",
+            "Models and approaches to system development",
+            "Information System Planning",
+            "System Analysis and Design – Need for System Analysis",
+            "Analysis of the existing system",
+            "Analysis of new requirements",
+            "System Development",
+            "System Implementation",
+            "Factors responsible for success and failure of Information Systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Information System Applications",
+          "topics": [
+            "Business Applications",
+            "Decision Support Systems (DSS) – Characteristics",
+            "Problem Analysis vs Decision Making",
+            "DSS applications in e‑enterprise",
+            "Knowledge Management System and Knowledge‑Based Expert System",
+            "Enterprise Model System and e‑Business",
+            "ERP systems",
+            "E‑Commerce",
+            "E‑communication",
+            "Business Process Reengineering"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Evaluation and Maintenance of MIS",
+          "topics": [
+            "Protecting Information Systems – Security challenges in e‑enterprises",
+            "Security threats, vulnerabilities, and safeguards",
+            "Controlling security threats and vulnerabilities",
+            "Technologies for information system control",
+            "Disaster Recovery Plans",
+            "Emerging trends and technologies in Management Information Systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Jawadekar, W.S., \"Management Information Systems\", Tata McGraw Hill.",
+        "Kenneth C. Laudon and Jane P. Laudon, \"Management Information Systems\", Pearson Education.",
+        "Stephen Haag, M. Cummings, Donald J. McCubbrey, \"Management Information Systems for the Information Age\", McGraw‑Hill.",
+        "Goyal, D.P., \"Management Information System\", Macmillan India.",
+        "Mahadeo Jaiswal, Monika Mital, \"Management Information System\", Oxford University Press.",
+        "Murthy C.S.V., \"Management Information System\", Himalaya Publications."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Game Theory with Engineering Applications",
+      "subject_code": "AD 504 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview",
+          "topics": [
+            "What is a Game",
+            "Game Design Schema",
+            "Game Design fundamentals",
+            "Engineering application of game theory",
+            "Iterative design process",
+            "Commissions",
+            "Design & Testing of the Board Game",
+            "Introduction to meaningful play",
+            "Discernable meaningful play",
+            "Integrated meaningful play"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design and Semiotics",
+          "topics": [
+            "Design and meaning",
+            "Semiotics overview",
+            "Four semiotic concepts",
+            "Context shapes interpretations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Systems and Interactivity",
+          "topics": [
+            "Introduction to Systems",
+            "Elements of a System",
+            "Framing Systems",
+            "Open & closed systems",
+            "Introduction to Interactivity",
+            "Multivalent model of interactivity",
+            "Interaction & choice",
+            "Choice molecules",
+            "Anatomy of choice",
+            "Space of possibility"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Defining Digital Games",
+          "topics": [
+            "Overview of digital games",
+            "Magic circle concept",
+            "Primary Schemas: conceptual framework",
+            "Primary Schemas: rule",
+            "Primary Schemas: play",
+            "Primary Schemas: culture"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Rules and Case Studies",
+          "topics": [
+            "Defining rules",
+            "Deck of cards as example",
+            "Quality of rules",
+            "Rules in context",
+            "Operational level rules",
+            "Constituative level rules",
+            "Implicit level rules",
+            "Identity of a Game",
+            "Specificity of rules",
+            "Rules of digital games",
+            "Case study: Tic Tac Toe",
+            "Case study: Deck of Cards"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Brathwaite, Brenda, and Ian Schreiber. Challenges for Game Designers: Non-digital Exercises for Video Game Designers. Boston, MA: Charles River Media/CourseTechnology, 2009. ISBN: 97815845058081",
+        "Game Design Workshop: A Playcentric Approach to Creating Innovative Games by Tracy Fullerton. ISBN-10: 1482217163.",
+        "Challenges for Game Designers by Brenda Brathwaite (now: Romero) and Ian Schreiber. ISBN-10: 158450580X",
+        "Rules of Play - Game Design Fundamentals, Katie Salen and Eric Zimmerman, The MIT Press, Cambridge, Massachusetts London, England."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Operations Research",
+      "subject_code": "AD 504 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Origin & Development of OR and Linear Programming",
+          "topics": [
+            "Origin and development of Operations Research (OR)",
+            "Different phases of OR study",
+            "Methodology of OR",
+            "Scope and limitations of OR",
+            "OR in decision making",
+            "Linear Programming – introduction",
+            "Mathematical formulation of LP problems",
+            "Graphical solution methods",
+            "Standard forms of LP",
+            "Simplex method for maximization problems",
+            "Simplex method for minimization problems",
+            "Interpretation of duality in LP",
+            "Dual simplex method"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Transportation and Assignment Problems",
+          "topics": [
+            "Transportation problem (TP) formulation",
+            "Finding a basic feasible solution for TP",
+            "Optimal solution methods for TP",
+            "Assignment problem formulation",
+            "Hungarian method for solving assignment problems",
+            "Travelling Salesman Problem (TSP) overview"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Project Scheduling – PERT and CPM",
+          "topics": [
+            "Project scheduling using PERT and CPM with known activity times",
+            "Critical Path Analysis",
+            "Types of float (total, free, etc.)",
+            "Probability considerations in PERT",
+            "Updating PERT charts",
+            "Project crashing techniques",
+            "Formulation of CPM as a linear programming problem",
+            "Resource leveling",
+            "Resource scheduling"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Sequencing, Job‑Shop Problems and Dynamic Programming",
+          "topics": [
+            "Introduction to sequencing problems",
+            "Flow‑shop problem – processing n jobs through 2, 3 and m machines",
+            "General n/m job‑shop problem",
+            "Introduction to dynamic programming",
+            "Dynamic‑programming approach for solving linear programming problems",
+            "Applications of dynamic programming in OR"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Queueing Theory",
+          "topics": [
+            "Introduction to queuing theory",
+            "Classification of queuing systems and their characteristics",
+            "Pure‑birth and pure‑death models",
+            "Kendall and Lee’s notation for queuing systems",
+            "Empirical queuing models",
+            "Numerical analysis of M/M/1 queuing model",
+            "Numerical analysis of M/M/c queuing model"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Operations Research, P K Gupta and D S Hira, S. Chand and Company LTD., New Delhi – 2007",
+        "Operations Research, An Introduction, Seventh Edition, Hamdy A. Taha, PHI Private Limited, 2006",
+        "Operations Research, Theory and Applications, Sixth Edition, J K Sharma, Trinity Press, Laxmi Publications Pvt. Ltd., 2016",
+        "Operations Research, Paneerselvan, PHI",
+        "Operations Research, A M Natarajan, P Balasubramani, Pearson Education, 2005",
+        "Introduction to Operations Research, Hillier and Lieberman, 8th Ed., McGraw Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Linux Lab",
+      "subject_code": "AD-506",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Unix/Linux",
+          "topics": [
+            "Concepts of Unix/Linux",
+            "Unix/Linux Installation Process",
+            "Hardware requirements for Unix/Linux",
+            "Advantages of Unix/Linux",
+            "Reasons for Popularity and Success of Linux/Unix Operating System",
+            "Features of Linux/Unix Operating System",
+            "Kernel",
+            "Kernel Functions"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Shell Programming",
+          "topics": [
+            "The Shell Basic Commands",
+            "Shell Variables",
+            "Branching Control Structures",
+            "Loop-Control Structure",
+            "Continue and break Statements",
+            "Sleep Command",
+            "Debugging Script",
+            "Use of Linux as web server, file server, directory server, application server, DNS server, SMTP server, Firewall, Proxy server"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "File System",
+          "topics": [
+            "Definition of File System",
+            "Defining Geometry",
+            "Disk Controller",
+            "Solaris File System",
+            "Disk-Based File Systems",
+            "Network-Based File Systems",
+            "Virtual File Systems",
+            "UFS File System",
+            "The Boot Block",
+            "The Super Block",
+            "The Inode",
+            "Tuning File System",
+            "Repairing File System"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Process Control",
+          "topics": [
+            "Viewing a Process",
+            "Command to display Process",
+            "Process Attributes",
+            "Process States",
+            "Process Fields",
+            "PS Commands options",
+            "PGREP",
+            "PRSTAT",
+            "CDE Process Manager",
+            "Scheduling Process",
+            "Scheduling Priorities",
+            "Changing the Priority of a time-sharing process",
+            "Killing Process"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "System Security",
+          "topics": [
+            "Physical Security",
+            "Controlling System Access",
+            "Restricted Shells",
+            "Controlling File Access",
+            "File Access Commands",
+            "Access Control List (ACLs)",
+            "Setting ACL Entries",
+            "Modifying ACL entries on a file",
+            "Deleting ACL entries on a file",
+            "Restricting FTP",
+            "Securing Super User Access",
+            "Restricting Root Access",
+            "Monitoring super user Access",
+            "TCP Wrappers"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Dynamic Host Configuration Protocol (DHCP)",
+          "topics": [
+            "Introduction to DHCP",
+            "DHCP Leased Time",
+            "DHCP Scopes",
+            "DHCP IP Address Allocation Types",
+            "Planning DHCP Deployment",
+            "DHCP Configuration files",
+            "Automatic Startup of DHCP Server",
+            "Configuration of DHCP Clients",
+            "Manually Configuring the DHCP"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Case Study",
+          "topics": [
+            "Installation of Linux",
+            "Customization of Linux",
+            "Installation of SAMBA",
+            "Installation of APACHE",
+            "Installation of TOMCAT",
+            "Send MAIL",
+            "Postfix",
+            "Implementation of DNS",
+            "LDAP services",
+            "Firewall",
+            "Proxy server"
+          ]
+        }
+      ],
+      "experiments": [
+        "To Study basic & User status Unix/Linux Commands.",
+        "Study & use of commands for performing arithmetic operations with Unix/Linux.",
+        "Create a file called wlcc.txt with some lines and display how many lines, words and characters are present in that file.",
+        "Append ten more simple lines to the wlcc.txt file created above and split the appended file into 3 parts. What will be the names of these split files? Display the contents of each of these files. How many lines will be there on the last file?",
+        "Given two files each of which contains names of students. Create a program to display only those names that are found on both the files.",
+        "Create a program to find out the inode number of any desired file.",
+        "Study & use of the Command for changing file permissions.",
+        "Write a pipeline of commands, which displays on the monitor as well as saves the information about the number of users using the system at present on a file called usere.ux.",
+        "Execute shell commands through vi editor.",
+        "Installation, Configuration & Customizations of Unix/Linux.",
+        "Write a shell script that accepts any number of arguments and prints them in the reverse order.",
+        "Write a shell script to find the smallest of three numbers that are read from the keyboard.",
+        "Write a shell script that reports the logging in of a specified user within one minute after he/she logs in. The script automatically terminates if the specified user does not login during a specified period of time.",
+        "Installation of SAMBA, APACHE, TOMCAT.",
+        "Implementation of DNS, LDAP services.",
+        "Study & installation of Firewall & Proxy server."
+      ],
+      "reference_books": [
+        "Venkatesh Murthy, “Introduction to Unix & Shell”, Pearson Edu",
+        "Forouzan, “Unix & Shell Programming”, Cengage Learning",
+        "Sumitab Das, “Unix Concept & Application”, TMH",
+        "Gopalan, Shivaselvan, “Beginners Guide to Unix”, PHI Learning",
+        "Venkateshwavle, “Linux Programming Tools Unveiled”, BS Publication",
+        "Richard Peterson, “Linux Complete Reference”, TMH",
+        "Richard Peterson, “Unix Complete Reference”, TMH"
+      ],
+      "extra": null
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Electronic Measurements and Instrumentation",
+      "subject_code": "EC302",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Theory of Measurement",
+          "topics": [
+            "Introduction",
+            "Characteristics of Instruments and measurement systems (Static \\& Dynamic)",
+            "Error analysis: Sources, types and statistical analysis",
+            "Instrument Calibration: Comparison Method",
+            "DC and AC Ammeter",
+            "DC Voltmeter – Chopper type and solid‑state",
+            "AC Voltmeter using Rectifier",
+            "Average, RMS, Peak responding voltmeters",
+            "Multimeter",
+            "Power meter",
+            "Bolometer and Calorimeter"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cathode Ray Oscilloscope (CRO) and Bridges",
+          "topics": [
+            "Different parts of CRO and block diagram",
+            "Electrostatic focusing and electrostatic deflection",
+            "Post‑deflection acceleration",
+            "Screen for CRTs and graticules",
+            "Vertical and horizontal deflection system",
+            "Time‑base circuit",
+            "Oscilloscope probes",
+            "Applications of CRO",
+            "Special purpose CROs – multi‑input, dual trace, dual beam, sampling, storage (analog and digital)",
+            "Maxwell’s bridge (inductance and inductance‑capacitance)",
+            "Hay’s bridge",
+            "Schering bridge (high voltage and relative permittivity)",
+            "Wien bridge",
+            "Impedance measurement by Q‑meter"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Transducers",
+          "topics": [
+            "Classification of transducers",
+            "Strain gauge",
+            "Displacement transducer – Linear Variable Differential Transformer (LVDT) and Rotary Variable Differential Transformer (RVDT)",
+            "Temperature transducers – Resistance Temperature Detector (RTD), Thermistor, Thermocouple",
+            "Piezo‑electric transducer",
+            "Optical transducers – photo‑emissive, photo‑conductive, photovoltaic, photodiode, phototransistor"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Signal and Function Generators",
+          "topics": [
+            "Signal and function generators",
+            "Sweep frequency generator",
+            "Pulse and square‑wave generator",
+            "Beat frequency oscillator",
+            "Digital display system and indicators",
+            "Classification of displays",
+            "Display devices – Light Emitting Diodes (LED) and Liquid Crystal Display (LCD)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Digital Instruments and Conversions",
+          "topics": [
+            "Advantages of digital instrument over analog instrument",
+            "Digital‑to‑analog conversion (DAC) – variable resistive type, R‑2R ladder, binary ladder, weighted converter using op‑amp and transistor, practical DAC",
+            "Analog‑to‑digital conversion (ADC) – ramp technique, dual‑slope integrating type, integrating type (voltage‑to‑frequency), successive approximation",
+            "Digital voltmeters and multimeters",
+            "Resolution and sensitivity of digital multimeter"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Albert D. Helfrick, William David Cooper, “Modern electronic instrumentation and measurement techniques”, TMH 2008.",
+        "Oliver Cage, “Electronic Measurements and Instrumentation”, TMH, 2009.",
+        "Alan S. Morris, “Measurement and Instrumentation Principles”, Elsevier (Butterworth Heinmann), 2008.",
+        "David A. Bell, “Electronic Instrumentation and Measurements”, 2nd Ed., PHI, New Delhi 2008.",
+        "H.S. Kalsi, “Electronics Instrumentation”, TMH Ed. 2004.",
+        "A.K. Sawhney, “A Course in Electrical and Electronic Measurements and Instrumentation”, Dhanpat Rai.",
+        "MMS Anand, “Electronic Instruments & Instrumentation Technology”, PHI Pvt. Ltd., New Delhi Ed. 2005"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "DIGITAL SYSTEM DESIGN",
+      "subject_code": "EC303",
+      "subject_type": "Theory and Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Number Systems",
+          "topics": [
+            "Decimal, Binary, Octal and Hexadecimal systems, conversion from one base to another",
+            "Codes – BCD, Excess‑3, Gray, Reflected ASCII, EBCDIC",
+            "Logic gates and binary operations – AND, OR, NOT, NAND, NOR, Exclusive‑OR and Exclusive‑NOR",
+            "Implementations of logic functions using gates, NAND–NOR implementations, multi‑level gate implementations, multi‑output gate implementations",
+            "Boolean postulates and laws – De Morgan’s theorem, principle of duality",
+            "Boolean functions, canonical and standard forms, minimization of Boolean functions, minterm, maxterm",
+            "Sum of Products (SOP) and Product of Sums (POS)",
+            "Karnaugh‑map minimization, don’t‑care conditions",
+            "Quine‑McCluskey method of minimization"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Combinational Logic Circuits",
+          "topics": [
+            "Half adder – Full adder",
+            "Half subtractor – Full subtractor",
+            "Parallel‑binary adder and parallel‑binary subtractor",
+            "Fast adder – Carry‑look‑ahead adder",
+            "Serial adder/subtractor",
+            "BCD adder",
+            "Binary multiplier and binary divider",
+            "Multiplexer/Demultiplexer",
+            "Decoder – Encoder",
+            "Parity checker – Parity generator",
+            "Code converters",
+            "Magnitude comparator"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sequential Logic Design",
+          "topics": [
+            "Building blocks – S‑R, JK and Master‑Slave JK flip‑flops, edge‑triggered flip‑flops",
+            "Finite‑state machines (FSM)",
+            "Design of synchronous FSMs",
+            "Algorithmic State Machine (ASM) charts",
+            "Design of synchronous circuits – Pulse‑train generator",
+            "Pseudo‑Random Binary Sequence (PRBS) generator",
+            "Clock generation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Registers and Counters",
+          "topics": [
+            "Asynchronous ripple (serial) counter",
+            "Asynchronous up/down counter",
+            "Synchronous counters – up/down counters, programmable counters",
+            "Design of synchronous counters – state diagram, state table, state minimization, state assignment, excitation table and maps, circuit implementation",
+            "Modulo‑n counters",
+            "Registers – shift registers, universal shift registers",
+            "Shift‑register counters – ring counter, shift counters",
+            "Sequence generators"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Logic Families and Semiconductor Memories",
+          "topics": [
+            "TTL NAND gate – specifications, noise margin, propagation delay, fan‑in, fan‑out, tri‑state operation",
+            "ECL family characteristics",
+            "CMOS family characteristics and interfacing",
+            "Memory elements",
+            "Programmable logic devices (PLDs) – FPGA concepts",
+            "Logic implementation using programmable devices"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of different basic digital logic gates and verification of their truth table.",
+        "Study and verification of the law of Boolean algebra and De Morgan’s theorem.",
+        "Construction and verification of various combinational circuits such as half adder, full adder, half & full subtractor.",
+        "Study of multiplexer and demultiplexer.",
+        "Study of different code converters, encoder, and decoder.",
+        "Construction and verification of various types of flip‑flops using gates and ICs.",
+        "Construction and verification of different shift registers.",
+        "Construction and verification of different types of counters.",
+        "Study of important TTL technologies and verification of important TTL circuit parameters."
+      ],
+      "reference_books": [
+        "Malvino & Leach, “Digital Principles and Applications”, TMH.",
+        "M. Morris Mano, “Digital Logic Design”, PHI.",
+        "R.P. Jain, “Modern Digital Design”, TMH.",
+        "S. Salivahanan & S. Arivazhagan, “Digital Circuits and Design”, Vikas Publishing.",
+        "D. Roy Chaudhuri, Digital Circuits, “An Introduction Part ‑1 & 2”, Eureka Publisher.",
+        "Ronald J. Tocci, “Digital Systems, Principles and Applications”, PHI.",
+        "Taub & Schilling, “Digital Integrated Electronics”, TMH."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electronic Devices",
+      "subject_code": "EC304",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Semiconductor Material Properties",
+          "topics": [
+            "Elemental & compound semiconductor materials",
+            "Bonding forces and energy bands in intrinsic and extrinsic silicon",
+            "Charge carriers in semiconductors",
+            "Carrier concentration",
+            "Junction properties",
+            "Equilibrium condition",
+            "Biased junction",
+            "Steady‑state condition",
+            "Breakdown mechanism (rectifying diodes, Zener diodes)",
+            "Metal‑semiconductor junction",
+            "Special diodes: tunnel diodes, varactor diodes, Schottky diode, photodiodes, photodetector, LED, solar cell"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Diode Circuits and Power Supply",
+          "topics": [
+            "Ideal and practical diode",
+            "Clipper circuits",
+            "Clamper circuits",
+            "Power‑supply rectifiers – half‑wave, full‑wave, bridge rectifier",
+            "Filter circuits",
+            "Voltage regulation using shunt regulator circuits",
+            "Voltage regulation using series regulator circuits",
+            "Voltage regulation using ICs"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Fundamentals of BJT",
+          "topics": [
+            "BJT construction and basic operation",
+            "Current components and equations",
+            "Configurations: common‑base (CB), common‑emitter (CE), common‑collector (CC)",
+            "Input and output characteristics",
+            "Early effect",
+            "Regions of operation: active, cut‑off, saturation",
+            "BJT as an amplifier",
+            "Ebers‑Moll model",
+            "Power dissipation in transistor (Pd, max rating)",
+            "Phototransistor",
+            "Transistor biasing circuits: fixed bias, self bias, voltage‑divider bias, collector‑to‑base bias",
+            "Load‑line analysis (DC and AC)",
+            "Operating point and bias stabilization",
+            "Thermal runaway",
+            "Transistor as a switch"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Small Signal and Large Signal Analysis",
+          "topics": [
+            "Small‑signal amplifier and bandwidth",
+            "Hybrid‑π model",
+            "h‑parameter analysis of transistor amplifier",
+            "Multistage amplifiers: cascading, boot‑strapping, Darlington, cascode",
+            "Coupling methods in multistage amplifiers",
+            "Low and high frequency response",
+            "Current‑mirror circuits",
+            "Large‑signal analysis and power amplifiers: Class A, B, AB, C, D, transformer‑coupled, push‑pull"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "FETs, UJT and Thyristors",
+          "topics": [
+            "JFET construction, n‑channel and p‑channel, transfer and drain characteristics, parameters, equivalent model, voltage gain, analysis in CG, CS, CD configurations",
+            "Enhancement and depletion MOSFET drain and transfer characteristics",
+            "Unijunction transistor (UJT) principle of operation, characteristics, UJT relaxation oscillator",
+            "Thyristors (including SCR) operation principles"
+          ]
+        }
+      ],
+      "experiments": [
+        "1. Diode Characteristic – pn junction diode characteristics and static & dynamic resistance measurement from graph; plot Zener diode characteristic curve.",
+        "2. Clipper & Clamper – plot the characteristic curves of various clipper circuits; plot the characteristic curves of various clamper circuits.",
+        "3. Half‑wave, Full‑wave & Bridge Rectifier – measure Vrms and Vdc for half‑wave, full‑wave and bridge rectifier; measure ripple factor and rectification ratio for full‑wave and half‑wave rectifiers.",
+        "4. Voltage Regulation – voltage regulation using Zener‑diode shunt regulator and transistor series voltage regulator under varying input and varying load conditions.",
+        "5. BJT Characteristics – plot input & output characteristic curves in CB & CE configurations; determine α, β and Q‑point from the curves; plot characteristic curves of various clipper circuits.",
+        "6. h‑Parameter – measure h‑parameters (Av, Ai, Ro, Ri) in a CE amplifier.",
+        "7. Multi‑Stage Amplifier – plot characteristic curves for direct‑coupled, RC‑coupled, and transformer‑coupled amplifiers.",
+        "8. FET Characteristics – plot characteristic curve for n‑channel JFET in CS configuration; determine pinch‑off voltage from the curve.",
+        "9. UJT Characteristic – plot characteristic curve for UJT; determine intrinsic stand‑off ratio."
+      ],
+      "reference_books": [
+        "Millman & Halkias, “Electronic Devices And Circuits”, TMH.",
+        "Salivahanan, Kumar & Vallavaraj, “Electronic Devices And Circuits”, TMH.",
+        "Boylestad & Neshelsky, “Electronic Devices & Circuits”, PHI.",
+        "Schilling & Belove, “Electronic Circuits, Discrete & Integrated”, TMH.",
+        "Chattopadhyay & Rakhshit, “Electronic Fundamentals & Applications”, New Age.",
+        "Adel S. Sedra & Kenneth C. Smith, “Microelectronic Circuits”, OUP.",
+        "R. A. Gayakwad, “Op‑Amps And Linear Integrated Circuits”, PHI.",
+        "Theodore F. Bogart, Jeffrey S. Beasley, “Guillermo Rico Electronic Devices & Circuits”.",
+        "Allen Mottershead, “Electronic Devices & Circuits”."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Network Analysis",
+      "subject_code": "EC305",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to circuit theory",
+          "topics": [
+            "Basic circuit elements R, L, C and their characteristics (linearity and time‑dependence)",
+            "Voltage and current sources (controlled and uncontrolled)",
+            "Kirchhoff’s Current Law (KCL) and Kirchhoff’s Voltage Law (KVL) analysis",
+            "Steady‑state sinusoidal analysis using phasors",
+            "Concept of phasor and vector representation",
+            "Impedance and admittance",
+            "Nodal and mesh analysis",
+            "Analysis of magnetically coupled circuits",
+            "Dot convention and coupling coefficient",
+            "Tuned circuits",
+            "Series and parallel resonance"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Network Graph theory",
+          "topics": [
+            "Concept of network graph",
+            "Tree, tree branch and link",
+            "Incidence matrix",
+            "Cut‑set and tie‑set matrices",
+            "Dual networks"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Network Theorems",
+          "topics": [
+            "Thevenin’s and Norton’s theorems",
+            "Superposition theorem",
+            "Reciprocity theorem",
+            "Compensation theorem",
+            "Substitution theorem",
+            "Maximum power transfer theorem",
+            "Millman’s theorem",
+            "Tellegen’s theorem",
+            "Problems involving dependent and independent sources"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transient analysis and Laplace transform",
+          "topics": [
+            "Transients in RL, RC and RLC circuits",
+            "Initial and final conditions",
+            "Time constants",
+            "Steady‑state analysis",
+            "Laplace transform solution of integro‑differential equations",
+            "Transformation of waveforms (step, ramp, gate, sinusoidal functions)",
+            "Initial and final value theorems",
+            "Application of network theorems in the transform domain"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Two‑port parameters",
+          "topics": [
+            "Z, Y, ABCD and Hybrid parameters, including inverse and image parameters",
+            "Relationships between two‑port parameters",
+            "Interconnection of two‑port networks",
+            "Reciprocity and symmetry in all parameters"
+          ]
+        }
+      ],
+      "experiments": [
+        "To Verify Thevenin Theorem and Superposition Theorem.",
+        "To Verify Reciprocity Theorem and Millman’s Theorem.",
+        "To Verify Maximum Power Transfer Theorem.",
+        "To Determine Open Circuit and Short Circuit parameters of a Two Port Network.",
+        "To Determine A, B, C, D parameters of a Two Port Network.",
+        "To determine h parameters of a Two Port Network.",
+        "To Find Frequency Response of RLC Series Circuit and RLC Parallel Circuit and determine resonance and 3 dB frequencies.",
+        "To determine charging and discharging times of Capacitors."
+      ],
+      "reference_books": [
+        "M.E. Van Valkenburg, Network Analysis (Pearson)",
+        "S. P. Ghosh, A. K. Chakraborty, Network Analysis & Synthesis (MGH)",
+        "http://www.nptelvideos.in/2012/11/networks-and-systems.html",
+        "Sudhakar, Circuit Network Analysis & Synthesis (TMH)",
+        "J. David Irwin, Engineering Circuit Analysis, 10th edition (Wiley India)",
+        "Kuo, Network Analysis & Synthesis (Wiley India)",
+        "Robert L. Boylestad, Introductory Circuit Analysis (Pearson)",
+        "Smarajit Ghosh, NETWORK THEORY: ANALYSIS AND SYNTHESIS (PHI)",
+        "Roy Choudhary D., Network and Systems (New Age Publications)",
+        "Bhattacharya and Singh, Network Analysis & Synthesis (Pearson)"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "EMI Lab",
+      "subject_code": "EC306",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "Study of Cathode Ray Oscilloscope.",
+        "Study of displacement measurement by LVDT.",
+        "Force measurement by strain gauge.",
+        "Measurement of Capacitor using Q-meter.",
+        "Measurement of Self-induction using Q-meter.",
+        "Temperature measurement by thermistor.",
+        "Study of optical Transducers: Photo-diode, Photo-Transistor.",
+        "Design of digital to analog converter, R-2R ladder Type and analysis of its characteristics.",
+        "Measurement of the unknown Inductance by using Maxwell’s bridge method.",
+        "Measurement of the unknown capacitance by using Schering bridge method.",
+        "Measurement of the unknown Frequency by using Wein’s bridge method.",
+        "Measurement of the unknown Inductance by using Hay’s bridge method.",
+        "Calculate Frequency and amplitude using CRO & Function Generator.",
+        "Calculate Frequency using Lissajous Pattern.",
+        "Study RVDT.",
+        "Study of Function Generator.",
+        "Temperature measurement by thermocouple.",
+        "Temperature measurement by RTD.",
+        "Study of optical Transducers: Photo conductive, Photo voltaic.",
+        "Study digital Multimeter."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

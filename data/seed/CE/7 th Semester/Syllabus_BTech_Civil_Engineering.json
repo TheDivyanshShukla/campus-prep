@@ -1,0 +1,836 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Geotechnical Engg",
+      "subject_code": "CE701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "INTRODUCTION, INDEX PROPERTIES AND CLASSIFICATION OF SOILS",
+          "topics": [
+            "Definition and scope of soil mechanics",
+            "Origin of soil",
+            "Formation of soil",
+            "Clay minerals",
+            "Soil structure",
+            "Three‑phase soil system",
+            "Basic terminology and their relations",
+            "Water content (index property)",
+            "Field density (index property)",
+            "Specific gravity (index property)",
+            "Grain size distribution by sieve analysis",
+            "Grain size distribution by hydrometer analysis",
+            "Relative density",
+            "Atterberg limits and their determination",
+            "Flow Index (index property)",
+            "Plasticity Index (index property)",
+            "Toughness Index (index property)",
+            "Liquidity Index (index property)",
+            "Activity Ratio (index property)",
+            "Particle‑size based soil classification systems",
+            "Textural classification systems",
+            "Unified Soil Classification System (USCS)",
+            "HRB classification system",
+            "IS classification system",
+            "Field identification of soils"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "PERMEABILITY, EFFECTIVE STRESS AND SEEPAGE THROUGH SOILS",
+          "topics": [
+            "Types of soil water",
+            "Capillarity in soils",
+            "Flow of water through soils",
+            "Darcy’s law",
+            "Permeability of soils",
+            "Factors affecting permeability",
+            "Laboratory tests for coefficient of permeability",
+            "Field tests for coefficient of permeability",
+            "Permeability of layered soils",
+            "Seepage pressure",
+            "Total stress",
+            "Neutral stress",
+            "Effective stress",
+            "Upward seepage through soils",
+            "Downward seepage through soils",
+            "Characteristics of flow nets",
+            "Construction methods for flow nets",
+            "Application of flow nets",
+            "Quick condition in seepage",
+            "Laplace equation for two‑dimensional flow",
+            "Seepage through anisotropic soils",
+            "Seepage through non‑homogeneous soils",
+            "Seepage through earth dams"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "STRESS DISTRIBUTION IN SOILS AND COMPACTION",
+          "topics": [
+            "Boussinesq’s theory for point load",
+            "Westergaard’s theory for point load",
+            "Uniformly loaded circular areas",
+            "Uniformly loaded rectangular areas",
+            "Pressure bulb concept",
+            "Variation of vertical stress under point load (vertical plane)",
+            "Variation of vertical stress under point load (horizontal plane)",
+            "Newmark’s influence chart for irregular areas",
+            "Contact pressure distribution in sands",
+            "Contact pressure distribution in clays",
+            "Importance of compaction mechanisms",
+            "Standard Proctor compaction test",
+            "Modified compaction test",
+            "Factors affecting compaction",
+            "Effects of compaction on soil properties",
+            "Field compaction equipment",
+            "Compaction quality control"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "CONSOLIDATION",
+          "topics": [
+            "Types of compressibility",
+            "Spring analogy for consolidation",
+            "Immediate settlement",
+            "Primary consolidation",
+            "Secondary consolidation",
+            "Stress history of clays",
+            "e‑p curves",
+            "e‑log p curves",
+            "Normally consolidated soils",
+            "Over‑consolidated soils",
+            "Under‑consolidated soils",
+            "Pre‑consolidation pressure and its determination",
+            "Consolidation test procedures",
+            "Terzaghi’s one‑dimensional consolidation theory",
+            "Coefficient of consolidation",
+            "Square‑root of time method for settlement analysis",
+            "Logarithm of time method for settlement analysis",
+            "Computation of total settlement"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "SHEAR STRENGTH & STABILIZATION OF SOILS",
+          "topics": [
+            "Definition and importance of shear strength",
+            "Mohr’s failure theory",
+            "Coulomb’s failure theory",
+            "Mohr’s stress circles",
+            "Direct shear test",
+            "Unconfined compression test",
+            "Triaxial compression test",
+            "Vane shear test",
+            "Shear tests under drained conditions",
+            "Shear tests under undrained conditions",
+            "Measurement of pore water pressure",
+            "Pore pressure parameters",
+            "Strength envelopes for soils",
+            "Shear strength of sands",
+            "Critical void ratio",
+            "Liquefaction potential",
+            "Shear strength of clays",
+            "Factors affecting shear strength of granular soils",
+            "Factors affecting shear strength of cohesive soils",
+            "Mechanical stabilization of soils",
+            "Cement stabilization",
+            "Lime stabilization",
+            "Bituminous stabilization",
+            "Chemical stabilization",
+            "Thermal stabilization",
+            "Electrical stabilization",
+            "Stabilization by grouting",
+            "Use of geo‑synthetic materials",
+            "Types, functions and applications of geo‑synthetics",
+            "Reinforced earth structures – components and construction"
+          ]
+        }
+      ],
+      "experiments": [
+        "Determination of water content by Oven drying method.",
+        "Determination of water content by Pycnometer.",
+        "Determination of soil field density by core cutter method.",
+        "Determination of soil field density by sand replacement method.",
+        "Determination of Specific Gravity By Pycnometer.",
+        "Determination of Consistency Limits (Liquid Limit, Plastic Limit, Shrinkage Limit).",
+        "Determination of liquid limit of soil by cone penetrometer.",
+        "Grain size analysis by sieve shaking method.",
+        "Grain size analysis of fine‑grained soil by sedimentation using pipette and hydrometer.",
+        "Determination of coefficient of permeability of soil by constant head method.",
+        "Determination of coefficient of permeability of soil by variable head method.",
+        "Determination of compaction parameters by light compaction.",
+        "Determination of compaction parameters by heavy compaction.",
+        "Direct Shear test.",
+        "Triaxial Test.",
+        "Unconfined Compression Strength Test."
+      ],
+      "reference_books": [
+        "Punamia B.C., Soil Mechanics & Foundations., Firewall Media, 2017 (16th edition).",
+        "Alam Singh, Modern Geotechnical Engineering., CBS Publishers & Distributors, 2012 (3rd edition).",
+        "Gopal Ranjan & A.S.R. Rao, Basic & Applied Soil Mechanics. New Age International, 2016 (3rd edition).",
+        "S.K. Grag, Geotechnical Engineering., Khanna Publishers, 2016 (10th edition)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Prestressed Concrete Structures",
+      "subject_code": "CE702(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction – Theory and Behaviour",
+          "topics": [
+            "Basic concepts",
+            "Advantages",
+            "Materials required",
+            "Systems and methods of prestressing",
+            "Analysis of sections",
+            "Stress concept",
+            "Strength concept",
+            "Load balancing concept",
+            "Effect of loading on the tensile stresses in tendons",
+            "Effect of tendon profile on deflections",
+            "Factors influencing deflections",
+            "Calculation of deflections",
+            "Short term and long term deflections",
+            "Losses of prestress",
+            "Estimation of crack width"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design for Flexure and Shear",
+          "topics": [
+            "Basic assumptions for calculating flexural stresses",
+            "Permissible stresses in steel and concrete as per I.S.1343 Code",
+            "Design of sections of Type I and Type II post‑tensioned and pre‑tensioned beams",
+            "Check for strength limit based on I.S.1343 Code",
+            "Layout of cables in post‑tensioned beams",
+            "Location of wires in pre‑tensioned beams",
+            "Design for shear based on I.S.1343 Code"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Deflection and Design of Anchorage Zone",
+          "topics": [
+            "Factors influencing deflections",
+            "Short term deflections of uncracked members",
+            "Prediction of long term deflections due to creep and shrinkage",
+            "Check for serviceability limit state of deflection",
+            "Determination of anchorage zone stresses in post‑tensioned beams by Magnel’s method, Guyon’s method and IS1343 code",
+            "Design of anchorage zone reinforcement",
+            "Check for transfer bond length in pre‑tensioned beams"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Composite and Continuous Beams and Slabs",
+          "topics": [
+            "Analysis and design of composite beams",
+            "Methods of achieving continuity in continuous beams",
+            "One‑way and two‑way slabs, flat slab",
+            "Analysis for secondary moments",
+            "Concordant cable and linear transformation",
+            "Calculation of stresses",
+            "Principles of design"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Miscellaneous Structures",
+          "topics": [
+            "Design of tension and compression members",
+            "Tanks, pipes, sleepers and poles",
+            "Partial prestressing – definition, methods of achieving partial prestressing, merits and demerits of partial prestressing"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Krishna Raju N., Prestressed Concrete, Tata Mc Graw Hill Book Co. Ltd., New Delhi.",
+        "Pandit G.S. and Gupta S.P., Prestressed Concrete, CBS Publishers and Distributors Pvt. Ltd.",
+        "Lin T.Y. and Ned H. Burns, Design of Prestressed Concrete Structures, Wiley India Pvt. Ltd.",
+        "Dayaratran P., Prestressed Concrete Structures, Oxford & IBH Co., Delhi.",
+        "Rajagopalan N., \"Prestressed Concrete\", Narosa Publishing House.",
+        "IS: 1343, Indian Standard Code of Practice for Prestressed Concrete, Bureau of Indian Standards, New Delhi.",
+        "IS: 784, Indian Standard Specification for Prestressed Concrete Pipes, Bureau of Indian Standards, New Delhi.",
+        "IS: 3935, Code of Practice for Composite Construction, Bureau of Indian Standards, New Delhi."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Environmental Engg‑II",
+      "subject_code": "CE702(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Unit operations for waste‑water treatment",
+          "topics": [
+            "Theory and design of preliminary treatment such as screens, grit chamber, sedimentation and chemical clarification",
+            "Role of micro‑organisms in biological treatment"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Biological Treatment of waste‑water",
+          "topics": [
+            "Methods of Biological Treatment (Theory & Design) – Trickling Filter",
+            "Activated Sludge process (ASP)",
+            "Oxidation ditch",
+            "Septic tank & Imhoff tank",
+            "Theory of sludge"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Advanced Waste‑water treatment",
+          "topics": [
+            "Diatomaceous earth filters",
+            "Ultrafiltration",
+            "Adsorption by activated carbon",
+            "Phosphorus removal",
+            "Nitrogen removal"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction of Air pollution",
+          "topics": [
+            "Definition, sources, classification and characterization of air pollutants",
+            "Effects of air pollution on health, vegetation & materials",
+            "Photochemical smog"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Air pollution chemistry",
+          "topics": [
+            "Meteorological aspects of air pollution dispersion; temperature lapse rate and stability",
+            "Wind velocity and turbulence; plume behaviour",
+            "Dispersion of air pollutants; the Gaussian Plume Model"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Water Supply & Sanitary Engg. – G.S. Birdie – Dhanpat Rai Publishing Company, (P) Ltd., New Delhi",
+        "Waste Water Engg. by B.C. Punmia – Laxmi Publication (P) Ltd., New Delhi",
+        "Environmental Engg. – M.L. Davis & D.A. Cornwell – McGraw‑Hill Company",
+        "Chemistry for Environmental Engg. – Sawyer & McCarty – McGraw‑Hill Book Company, New Delhi",
+        "Water & Waste Water Technology – Mark J. Hammer – Prentice‑Hall of India, New Delhi",
+        "Waste Water Engineering – Metcalf & Eddy – McGraw‑Hill Book Company, New Delhi"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Structural Dynamics",
+      "subject_code": "CE702(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Undamped Single Degree of Freedom System",
+          "topics": [
+            "Degree of freedom",
+            "Undamped system",
+            "Force–displacement relation",
+            "Damping force",
+            "Equation of motion",
+            "Mass–spring–damper system",
+            "D’Alembert’s principle",
+            "Solution of the differential equation of motion",
+            "Frequency (\\(\\omega\\))",
+            "Period",
+            "Amplitude of motion"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Damped Single Degree of Freedom System",
+          "topics": [
+            "Viscous damping",
+            "Equation of motion for damped systems",
+            "Critically damped systems",
+            "Over‑damped and under‑damped systems",
+            "Logarithmic decrement"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Response to Harmonic and Periodic Vibrations",
+          "topics": [
+            "Harmonic vibration of undamped and viscously damped systems",
+            "Natural frequency and damping ratio",
+            "Force transmission and vibration isolation",
+            "Fourier series representation of periodic forces",
+            "Response to periodic excitation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Response to Arbitrary, Step, and Pulse Excitation",
+          "topics": [
+            "Response to unit impulse (Dirac delta)",
+            "Response to arbitrary force functions",
+            "Duhamel’s integral for transient response",
+            "Step force response",
+            "Rectangular pulse force response",
+            "Half‑cycle sinusoidal pulse force response",
+            "Triangular pulse force response"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multi Degree of Freedom System",
+          "topics": [
+            "Matrix formulation of multi‑degree‑of‑freedom systems",
+            "Stiffness and flexibility influence coefficients",
+            "Eigenvalue problem for natural frequencies",
+            "Normal modes and their properties",
+            "Matrix iteration techniques for eigenvalues and eigenvectors",
+            "Free and forced vibration analysis by modal superposition"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Chopra A. K., Dynamics of Structures, Prentice Hall of India, New Delhi.",
+        "Clough R.W., Penzien J., Dynamics of Structures, McGraw‑Hill.",
+        "Biggs J. M., Introduction to Structural Dynamics.",
+        "Mario Paz, Structural Dynamics, CBS Publishers, New Delhi."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Structural Design and Drawing (RCC-II)",
+      "subject_code": "CE702(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Design of Multistory Buildings",
+          "topics": [
+            "Sway and non‑sway buildings",
+            "Shear walls and other bracing elements"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Design of Earth Retaining Structures",
+          "topics": [
+            "Cantilever retaining walls",
+            "Counterfort retaining walls"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Water Tanks",
+          "topics": [
+            "Ground tanks – square, rectangular, circular",
+            "Underground tanks – square, rectangular, circular",
+            "Overhead tanks – square, rectangular, circular, Intze tanks"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design of Silos and Bunkers",
+          "topics": [
+            "Silos",
+            "Bunkers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "T‑beam & Slab Bridges and Prestressing",
+          "topics": [
+            "T‑beam and slab bridges for highway loading (IRC loads)",
+            "Prestressing concepts, materials, systems and losses",
+            "Introduction to working and limit‑state design"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "R.C.C. by O.P. Jain Vol. II",
+        "R.C.C. by B.C. Punmia",
+        "Essentials of Bridge Engineering – D.J. Victor",
+        "Bridge Engineering – Ponnuswamy",
+        "Advanced R.C.C. Design by N.K. Raju",
+        "N. Krishna Raju, Prestressed Concrete, Tata Mc Graw Hill, New Delhi",
+        "Pre‑stressed Concrete – T.Y. Lin"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "CE703(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Definition of Internet of Things",
+            "Characteristics of IoT",
+            "IoT conceptual framework",
+            "IoT architectural view",
+            "Physical design of IoT",
+            "Logical design of IoT",
+            "Applications of IoT"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Machine‑to‑Machine (M2M) and Network Technologies",
+          "topics": [
+            "Machine‑to‑Machine (M2M) communications",
+            "Software Defined Networking (SDN) for IoT",
+            "Network Function Virtualization (NFV) for IoT",
+            "Data storage in IoT",
+            "IoT cloud‑based services"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Web Connectivity and Internet Principles",
+          "topics": [
+            "Web communication protocols for connected devices",
+            "Message communication protocols for connected devices",
+            "MQTT protocol",
+            "CoAP protocol",
+            "SOAP protocol",
+            "REST and HTTP RESTful services",
+            "WebSockets",
+            "Internet connectivity principles",
+            "Internet‑based communication",
+            "IP addressing in IoT",
+            "Media Access Control (MAC) in IoT"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Sensor and Actuator Technologies",
+          "topics": [
+            "Sensor technology",
+            "Participatory sensing",
+            "Industrial IoT",
+            "Automotive IoT",
+            "Actuators",
+            "Sensor data communication protocols",
+            "Radio Frequency Identification (RFID) technology",
+            "Wireless Sensor Network (WSN) technology"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IoT Design Methodology and Case Studies",
+          "topics": [
+            "IoT design methodology: specification and requirements",
+            "IoT design process and model",
+            "Functional and operational view of IoT services",
+            "IoT privacy and security solutions",
+            "Raspberry Pi and Arduino devices for IoT",
+            "IoT case studies: smart‑city street‑light control and monitoring"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rajkamal, “Internet of Things”, Tata McGraw Hill publication",
+        "Vijay Madisetti and Arshdeep Bahga, “Internet of Things (A – Hands‑on Approach)”, 1st Edition, Universal Press",
+        "Charless Bell, “MySQL for the Internet of Things”, Apress Publications",
+        "Francis Da Costa, “Rethinking the Internet of Things: A Scalable Approach to Connecting Everything”, 1st edition, Apress Publications",
+        "Hakima Chaouchi, “The Internet of Things: Connecting Objects”, Wiley Publication",
+        "Donald Norris, “The Internet of Things: Do‑It‑Yourself at Home Projects for Arduino, Raspberry Pi and BeagleBone Black”, McGraw‑Hill Publication"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Project Management",
+      "subject_code": "CE703(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Project Management Concepts & Initiating",
+          "topics": [
+            "Project attributes and balancing project constraints",
+            "Project life cycle and project management process",
+            "Stakeholder engagement and global project management",
+            "Project benefits, identification and selection"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Developing Project Proposals",
+          "topics": [
+            "Building relationships with customers and partners",
+            "Pre‑RFP/proposal marketing and decision to develop a proposal",
+            "Proposal preparation, contents and pricing considerations",
+            "Contracts"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Planning Schedule, & Resource Utilization – Its Performance, and Controlling the Project",
+          "topics": [
+            "Defining project objectives, scope and quality plan",
+            "Creating work breakdown structure (WBS) and assigning responsibilities",
+            "Activity sequencing and estimating resources and durations",
+            "Developing project schedule and resource‑constrained planning, leveling and scheduling",
+            "Project control process and project management information systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Determining Costs, Budget, and Earned Value & Risks",
+          "topics": [
+            "Estimating activity costs and determining project budget",
+            "Determining actual cost and value of work performed (earned value)",
+            "Analyzing cost performance, controlling costs and managing cash flow",
+            "Identifying, assessing and monitoring project risks"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "The Project Team & Project Manager & Documentations & Project Management Structures",
+          "topics": [
+            "Acquiring and developing the project team, kickoff meeting",
+            "Project manager responsibilities, skills and competence development",
+            "Delegation, change management and project documentation",
+            "Functional and matrix organizational structures, advantages and disadvantages"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Contemporary Project Management, 4E by Timothy J. Kloppenborg, Vittal S. Anantatmula, Kathryn Wells. Cengage Learning India.",
+        "Project Management: The Managerial Process, 6E by Clifford F. Gray, Erik W. Larson, Gautam V. Desai. McGraw Hill.",
+        "Project Management, 1E by Pradeep Pai. Pearson.",
+        "Project Management: A Systems Approach to Planning, Scheduling, and Controlling, 12th Edition by Harold Kerzner. Wiley.",
+        "Project Management: A practical guide to planning and managing Projects by Stephen Hartley. Taylor & Francis."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Integrated Waste Management",
+      "subject_code": "CE703(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "INTRODUCTION OF SOLID WASTES",
+          "topics": [
+            "Definition of solid waste, garbage, rubbish",
+            "Sources and types of solid wastes",
+            "Physical, chemical and biological characteristics of solid wastes",
+            "Problems caused by improper disposal of solid wastes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "INTEGRATED SOLID WASTE MANAGEMENT",
+          "topics": [
+            "Definition, reduction, reuse, recycling and recovery principles of waste management",
+            "Functional elements of integrated solid waste management",
+            "Waste generation and handling at source",
+            "Collection of solid wastes and collection methods and services",
+            "Guidelines for collection route layout"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "INTRODUCTION OF TRANSFER STATION",
+          "topics": [
+            "Processing and segregation of solid waste at transfer stations",
+            "Various methods of material segregation",
+            "Importance of transfer stations",
+            "Site selection criteria for transfer stations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "PROCESSING AND TRANSFORMATION OF SOLID WASTES",
+          "topics": [
+            "Composting: definition, methods of composting and advantages of composting",
+            "Incineration: definition, methods of incineration, advantages and disadvantages of incineration"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "DISPOSAL OF SOLID WASTE",
+          "topics": [
+            "Volume reduction, open dumping, landfilling techniques",
+            "Landfills: classification, design and operation of landfills",
+            "Land farming",
+            "Deep well injection"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "George Tchobanoglous, Hilary Theisen and Samuel A Vigil, Integrated Solid Waste management, Tata McGraw Hill",
+        "Ramachandra T.V., Management of Municipal Solid Waste, 2009; by The Energy and Resource Institute, TERI",
+        "Sasikumar, K, Gopi Krishna, Sanoop, Solid Waste Management; 2009, PHI.",
+        "Manual on Solid Waste Management, prepared by The Central Public Health and Environmental Engineering Organization (CPHEEO), India",
+        "MSW Management Rules 2016, Govt. of India, available online at CPCB website"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Building Services",
+      "subject_code": "CE703(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Importance of building services, types of services required in building complexes",
+          "topics": [
+            "Importance of building services",
+            "Types of services required in building complexes",
+            "Planning of services",
+            "Organization structure of services role and administrative functions of supervisors",
+            "Classification of building as per NBC",
+            "Water supply & distribution in high rise buildings",
+            "House connections system of water supply",
+            "Water supply fixtures & appliances",
+            "Swimming pool water treatment",
+            "Algae control in swimming pool"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Lift & Escalator",
+          "topics": [
+            "Anatomy of lift provision",
+            "Classification of lift",
+            "Types of lifts",
+            "Types of operation of lifts",
+            "Lift codes & rules",
+            "Traffic analysis and selection of lift",
+            "Types of lift control",
+            "Structural provisions of lift and buildings",
+            "Fire safety provisions in lifts",
+            "Work done and lift installation by owner",
+            "Details of information to be given to lift supplier",
+            "Accidents in lifts and safety precautions",
+            "Escalators",
+            "Working mechanism of escalators",
+            "Travelators"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Fire‑Fighting",
+          "topics": [
+            "Fire growth and behavior",
+            "Classification of fire",
+            "Fire triangle classification of building according to fire",
+            "Classification of structural components",
+            "Modes of fire",
+            "Fire extinguishers and their types of suitability",
+            "Types of portable fire extinguishers",
+            "Fire hydrants and their location",
+            "Carbon dioxide storing system",
+            "Provisions in building from fire safety (IS 1641)",
+            "Hydrants installation",
+            "Fire lift",
+            "Fire escapes",
+            "Service duct escape route",
+            "Fire detection systems types and applications",
+            "Fire alarm systems types and their working",
+            "Fire control systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Acoustics, Sound Insulation and HVAC System",
+          "topics": [
+            "Noise sources & their effects",
+            "Characteristics of sound",
+            "Acoustical defects",
+            "Noise in building",
+            "Planning noise rating curve",
+            "Reverberation time",
+            "Materials for acoustical treatment",
+            "Requirement for good acoustics",
+            "General principles of acoustics design",
+            "Acoustical design of auditorium, studio, open‑air theatre",
+            "Sound insulation of walls, ceilings, floors",
+            "Natural ventilation",
+            "Types of ventilation systems",
+            "Types of air conditioning",
+            "Principles of control air conditioning",
+            "System of air conditioning essentials",
+            "Thermal insulation of walls & ceiling",
+            "Methods of thermal insulation"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Miscellaneous Services",
+          "topics": [
+            "Building security & access control (biometrics, voice recognition, iris detector, smart card, vascular pattern, fingerprint, contactless system etc)",
+            "Design of car parking system",
+            "Car park management strategy",
+            "Services for disabled",
+            "Rain water harvesting",
+            "Solar systems",
+            "Green building concerns",
+            "Street lighting (campus lighting)",
+            "Landscaping & horticulture",
+            "Waste collection & reuse & recycling",
+            "Package STP",
+            "Use of IoT in building services management",
+            "CCTV surveillance",
+            "Refuse collection & transportation"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Prestressed Concrete Structures Lab",
+      "subject_code": "CE704",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Fabrication, casting and testing of simply supported prestressed concrete beam/slab (pres‑tensioned or post‑tensioned) for strength and deflection behaviour.",
+        "Fabrication, casting and testing of beam/slab (pres‑tensioned or post‑tensioned) with different layout of cables for strength and deflection behaviour.",
+        "Fabrication, casting and testing of various prestressed structures as per contents given in the syllabus.",
+        "Minimum 15 problems from above topics along with cross‑checking using any open‑source / professional software.",
+        "Modeling and analysis of at least one real‑life structure using open‑source / professional software."
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "IOT Lab",
+      "subject_code": "CE705",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Study and Install IDE of Arduino and different types of Arduino.",
+        "Write program using Arduino IDE for Blink LED.",
+        "Write Program for RGB LED using Arduino.",
+        "Study the Temperature sensor and Write Program for monitor temperature using Arduino.",
+        "Study and Implement RFID, NFC using Arduino.",
+        "Study and Configure Raspberry Pi.",
+        "WAP for LED blink using Raspberry Pi.",
+        "Study and Implement Zigbee Protocol using Arduino / Raspberry Pi.",
+        "Study and implement MQTT protocol using Arduino.",
+        "Study and implement CoAP protocol using Arduino."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

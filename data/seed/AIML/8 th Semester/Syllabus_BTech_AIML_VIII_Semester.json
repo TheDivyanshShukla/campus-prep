@@ -1,0 +1,811 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Business Intelligence",
+      "subject_code": "AL801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Business Intelligence",
+          "topics": [
+            "Effective and timely decisions",
+            "Data, information and knowledge",
+            "Role of mathematical models",
+            "Business intelligence architectures",
+            "Cycle of a business intelligence analysis",
+            "Enabling factors in business intelligence projects",
+            "Development of a business intelligence system",
+            "Ethics and business intelligence"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Knowledge Delivery",
+          "topics": [
+            "The business intelligence user types",
+            "Standard reports",
+            "Interactive analysis and ad‑hoc querying",
+            "Parameterized reports and self‑service reporting",
+            "Dimensional analysis",
+            "Alerts/notifications",
+            "Visualization: charts, graphs, widgets, scorecards and dashboards",
+            "Geographic visualization",
+            "Integrated analytics",
+            "Optimizing the presentation for the right message"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Efficiency",
+          "topics": [
+            "Efficiency measures",
+            "CCR model – definition of target objectives, peer groups, identification of good operating practices",
+            "Cross‑efficiency analysis – virtual inputs and outputs, other models",
+            "Pattern matching – cluster analysis, outlier analysis"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Business Intelligence Applications",
+          "topics": [
+            "Marketing models",
+            "Logistic and production models",
+            "Case studies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Future of Business Intelligence",
+          "topics": [
+            "Emerging technologies",
+            "Machine learning",
+            "Predicting the future",
+            "BI search & text analytics",
+            "Advanced visualization",
+            "Rich reporting",
+            "Future beyond technology"
+          ]
+        }
+      ],
+      "experiments": [
+        "Different problems to be framed to enable students to understand the concept learnt and get hands‑on on various tools and software related to the subject. Assignments for ten to twelve lab sessions."
+      ],
+      "reference_books": [
+        "Efraim Turban, Ramesh Sharda, Dursun Delen, “Decision Support and Business Intelligence Systems”, 9th Edition, Pearson 2013.",
+        "Larissa T. Moss, S. Atre, “Business Intelligence Roadmap: The Complete Project Lifecycle of Decision Making”, Addison Wesley, 2003.",
+        "Carlo Vercellis, “Business Intelligence: Data Mining and Optimization for Decision Making”, Wiley Publications, 2009.",
+        "David Loshin Morgan, Kaufman, “Business Intelligence: The Savvy Manager’s Guide”, Second Edition, 2012.",
+        "Cindi Howson, “Successful Business Intelligence: Secrets to Making BI a Killer App”, McGraw‑Hill, 2007.",
+        "Ralph Kimball, Margy Ross, Warren Thornthwaite, Joy Mundy, Bob Becker, “The Data Warehouse Lifecycle Toolkit”, Wiley Publication Inc., 2007."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Block Chain Technologies",
+      "subject_code": "AL 802(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction: Overview of Block chain",
+          "topics": [
+            "Public Ledgers",
+            "Bitcoin",
+            "Smart Contracts",
+            "Block in a Block chain",
+            "Transactions",
+            "Distributed Consensus",
+            "Public vs Private Block chain",
+            "Understanding Cryptocurrency to Block chain",
+            "Permissioned Model of Block chain",
+            "Overview of Security aspects of Block chain",
+            "Cryptographic Hash Function",
+            "Properties of a hash function",
+            "Hash pointer and Merkle tree",
+            "Digital Signature",
+            "Public Key Cryptography",
+            "A basic cryptocurrency"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Understanding Block chain with Crypto currency",
+          "topics": [
+            "Creation of coins",
+            "Payments and double spending",
+            "Bitcoin Scripts",
+            "Bitcoin P2P Network",
+            "Transaction in Bitcoin Network",
+            "Block Mining",
+            "Block propagation and block relay",
+            "Distributed consensus in open environments",
+            "Consensus in a Bitcoin network",
+            "Proof of Work (PoW) – basic introduction",
+            "HashCash PoW",
+            "Bitcoin PoW",
+            "Attacks on PoW and the monopoly problem",
+            "Proof of Stake",
+            "Proof of Burn",
+            "Proof of Elapsed Time",
+            "Life of a Bitcoin Miner",
+            "Mining Difficulty",
+            "Mining Pool"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Understanding Block chain for Enterprises",
+          "topics": [
+            "Permissioned model and use cases",
+            "Design issues for Permissioned block chains",
+            "Execute contracts",
+            "State machine replication",
+            "Distributed consensus in closed environment",
+            "Paxos",
+            "RAFT Consensus",
+            "Byzantine general problem",
+            "Byzantine fault tolerant system",
+            "Lamport-Shostak-Pease BFT Algorithm",
+            "BFT over Asynchronous systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Enterprise application of Block chain",
+          "topics": [
+            "Cross border payments",
+            "Know Your Customer (KYC)",
+            "Food Security",
+            "Mortgage over Block chain",
+            "Block chain enabled Trade",
+            "We Trade – Trade Finance Network",
+            "Supply Chain Financing",
+            "Identity on Block chain"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Block chain application development",
+          "topics": [
+            "Hyperledger Fabric – Architecture",
+            "Identities and Policies",
+            "Membership and Access Control",
+            "Channels",
+            "Transaction Validation",
+            "Writing smart contract using Hyperledger Fabric",
+            "Writing smart contract using Ethereum",
+            "Overview of Ripple",
+            "Overview of Corda"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Melanie Swan, “Block Chain: Blueprint for a New Economy”, O’Reilly, 2015",
+        "Josh Thompsons, “Block Chain: The Block Chain for Beginners- Guide to Block chain Technology and Leveraging Block Chain Programming”",
+        "Daniel Drescher, “Block Chain Basics”, Apress; 1st edition, 2017",
+        "Anshul Kaushik, “Block Chain and Crypto Currencies”, Khanna Publishing House, Delhi",
+        "Imran Bashir, “Mastering Block Chain: Distributed Ledger Technology, Decentralization and Smart Contracts Explained”, Packt Publishing",
+        "Ritesh Modi, “Solidity Programming Essentials: A Beginner’s Guide to Build Smart Contracts for Ethereum and Block Chain”, Packt Publishing",
+        "Salman Baset, Luc Desrosiers, Nitin Gaur, Petr Novotny, Anthony O’Dowd, Venkatraman Ramakrishna, “Hands-On Block Chain with Hyperledger: Building Decentralized Applications with Hyperledger Fabric and Composer”, Import, 2018"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "High Performance computing",
+      "subject_code": "AL802 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to modern processors",
+          "topics": [
+            "General purpose cache based architecture",
+            "Performance metrics and benchmarks",
+            "Moore's Law",
+            "Pipelining",
+            "Superscalar execution",
+            "SIMD",
+            "Memory hierarchies",
+            "Multi‑core processors",
+            "Multi‑threaded processors",
+            "Vector processor design principles",
+            "Maximum performance estimates",
+            "Programming for vector architecture",
+            "Scalar profiling",
+            "Common‑sense optimizations",
+            "Simple measures and their impacts",
+            "Role of compilers",
+            "C++ optimizations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data access optimizations and Parallel Computers",
+          "topics": [
+            "Balance analysis and light‑speed estimates",
+            "Storage order",
+            "Algorithm classifications and assessment optimizations",
+            "Case studies for data‑access optimizations",
+            "Shared memory computers",
+            "Distributed memory computers",
+            "Hybrid systems",
+            "Network computers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Basics of parallel computing and OpenMP programming",
+          "topics": [
+            "Data parallelism",
+            "Functional parallelism",
+            "Parallel scalability laws",
+            "Parallel scalability metrics",
+            "Factors affecting scalability",
+            "Efficiency and load imbalance",
+            "Shared memory parallel programming with OpenMP",
+            "Parallel execution",
+            "Data scoping",
+            "Work sharing using loops",
+            "Synchronization",
+            "Reductions",
+            "Loop scheduling",
+            "Tasking"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Efficient OpenMP Programming",
+          "topics": [
+            "Program profiling",
+            "Performance pitfalls",
+            "Improving impact of OpenMP work‑sharing constructs",
+            "Determining overheads for short loops",
+            "Serialization",
+            "False sharing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Distributed Memory parallel programming with MPI",
+          "topics": [
+            "Message passing interface (MPI)",
+            "Point‑to‑point communication",
+            "Collective communication",
+            "Non‑blocking point‑to‑point communication",
+            "Virtual topologies",
+            "MPI performance tools",
+            "Communication parameters",
+            "Impact of synchronizations, sterilizations and contentions",
+            "Reductions in communication overhead"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "George Hager and Gerhard Wellein, “Introduction to High Performance Computing for Scientists and Engineers”, CRC Press",
+        "Charles Severance, Kevin Dowd, “High Performance Computing”, 2nd Edition, O'Reilly"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Big Data Analytics",
+      "subject_code": "AL802 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Big data characteristics",
+            "Types of big data",
+            "Traditional versus big data",
+            "Evolution of big data",
+            "Challenges with big data",
+            "Technologies available for big data",
+            "Infrastructure for big data",
+            "Use of data analytics",
+            "Desired properties of big data systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Hadoop",
+          "topics": [
+            "Core Hadoop components",
+            "Hadoop ecosystem",
+            "Hive physical architecture",
+            "Hadoop limitations",
+            "RDBMS versus Hadoop",
+            "Hadoop Distributed File System (HDFS)",
+            "Processing data with Hadoop",
+            "Managing resources and applications with Hadoop YARN",
+            "MapReduce programming"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Hive and Pig",
+          "topics": [
+            "Hive architecture",
+            "Hive data types",
+            "Hive Query Language (HQL)",
+            "Introduction to Pig",
+            "Anatomy of Pig",
+            "Pig on Hadoop",
+            "Use case for Pig",
+            "ETL processing with Pig",
+            "Data types in Pig",
+            "Execution model of Pig",
+            "Pig operators and functions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "NoSQL Databases",
+          "topics": [
+            "Introduction to NoSQL",
+            "NoSQL business drivers",
+            "NoSQL data architectural patterns",
+            "Variations of NoSQL architectural patterns for managing big data",
+            "Introduction to MongoDB"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Mining Social Network Graphs",
+          "topics": [
+            "Introduction to social network mining",
+            "Applications of social network mining",
+            "Social networks as graphs",
+            "Types of social networks",
+            "Clustering of social graphs",
+            "Discovery of communities in a social graph",
+            "Introduction to recommender systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Radha Shankarmani, M. Vijaylakshmi, \"Big Data Analytics\", Wiley, Second edition",
+        "Seema Acharya, Subhashini Chellappan, \"Big Data and Analytics\", Wiley, First edition",
+        "Kai Hwang, Geoffrey C. Fox, Jack J. Dongarra, \"Distributed and Cloud Computing\", Elsevier, First edition",
+        "Michael Minelli, Michele Chambers, Ambiga Dhiraj, \"Big Data Big Analytics\", Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Quantum Computing",
+      "subject_code": "AL802(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Motivation for studying Quantum Computing",
+          "topics": [
+            "Major players in the industry (IBM, Microsoft, Rigetti, D-Wave etc.)",
+            "Origin of Quantum Computing",
+            "Overview of major concepts in Quantum Computing: Qubits and multi-qubits states",
+            "Braket notation",
+            "Bloch Sphere representation",
+            "Quantum Superposition",
+            "Quantum Entanglement"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Math Foundation for Quantum Computing",
+          "topics": [
+            "Matrix Algebra: basis vectors and orthogonality",
+            "Inner product and Hilbert spaces",
+            "Matrices and tensors",
+            "Unitary operators and projectors",
+            "Dirac notation",
+            "Eigen values and Eigen vectors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Building Blocks for Quantum Program",
+          "topics": [
+            "Architecture of a Quantum Computing platform",
+            "Details of q-bit system of information representation: Block Sphere",
+            "Multi-qubits States",
+            "Quantum superposition of qubits (valid and invalid superposition)",
+            "Quantum Entanglement",
+            "Useful states from quantum algorithmic perspective e.g. Bell State",
+            "Operation on qubits: Measuring and transforming using gates",
+            "Quantum Logic gates and Circuit: Pauli",
+            "Hadamard",
+            "Phase shift",
+            "Controlled gates",
+            "Ising",
+            "Deutsch",
+            "Swap etc."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Programming model for a Quantum Computing Program",
+          "topics": [
+            "Steps performed on classical computer",
+            "Steps performed on Quantum Computer",
+            "Moving data between bits and qubits",
+            "Basic techniques exploited by quantum algorithms: Amplitude amplification",
+            "Quantum Fourier Transform",
+            "Phase Kick-back",
+            "Quantum Phase estimation",
+            "Quantum Walks"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Major Algorithms and Toolkits",
+          "topics": [
+            "Shor’s Algorithm",
+            "Grover’s Algorithm",
+            "Deutsch’s Algorithm",
+            "Deutsch‑Jozsa Algorithm",
+            "OSS Toolkits for implementing Quantum program: IBM quantum experience",
+            "Microsoft Q",
+            "Rigetti PyQuil (QPU/QVM)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Michael A. Nielsen, “Quantum Computation and Quantum Information”, Cambridge University Press.",
+        "David McMahon, “Quantum Computing Explained”, Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Introduction to IOT",
+      "subject_code": "AL 803(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "IoT definition",
+          "topics": [
+            "Characteristics",
+            "IoT conceptual and architectural framework",
+            "Components of IoT ecosystems",
+            "Physical and logical design of IoT",
+            "IoT enablers",
+            "Modern day IoT applications",
+            "M2M communications",
+            "IoT vs M2M",
+            "IoT vs WoT",
+            "IoT reference architecture",
+            "IoT Network configurations",
+            "IoT LAN",
+            "IoT WAN",
+            "IoT Node",
+            "IoT Gateway",
+            "IoT Proxy",
+            "Review of Basic Microcontrollers and interfacing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Define Sensor",
+          "topics": [
+            "Basic components and challenges of a sensor node",
+            "Sensor features",
+            "Sensor resolution",
+            "Sensor classes: Analog, Digital, Scalar, Vector Sensors",
+            "Sensor Types, bias, drift, Hysteresis error, quantization error",
+            "Actuator",
+            "Actuator types: Hydraulic, Pneumatic, electrical, thermal/magnetic, mechanical actuators, soft actuators"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Basics of IoT Networking",
+          "topics": [
+            "IoT Components",
+            "Functional components of IoT",
+            "IoT service oriented architecture",
+            "IoT challenges",
+            "6LoWPAN",
+            "IEEE 802.15.4",
+            "ZigBee and its types",
+            "RFID Features",
+            "RFID working principle and applications",
+            "NFC (Near Field Communication)",
+            "Bluetooth",
+            "Wireless Sensor Networks and its Applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "MQTT",
+          "topics": [
+            "MQTT methods and components",
+            "MQTT communication",
+            "Topics and applications",
+            "SMQTT",
+            "CoAP",
+            "CoAP message types",
+            "CoAP Request-Response model",
+            "XMPP",
+            "AMQP features and components",
+            "AMQP frame types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IoT Platforms",
+          "topics": [
+            "Arduino",
+            "Raspberry Pi Board",
+            "Other IoT Platforms",
+            "Data Analytics for IoT",
+            "Cloud for IoT",
+            "Cloud storage models & communication APIs",
+            "Attacks in IoT system",
+            "Vulnerability analysis in IoT",
+            "IoT case studies: Smart Home, Smart framing etc."
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Vijay Madisetti, Arshdeep Bahga, “Internet of Things, A Hands on Approach”, University Press",
+        "Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, “Introduction to Internet of Things: A practical Approach”, ETI Labs",
+        "Pethuru Raj and Anupama C. Raman, “The Internet of Things: Enabling Technologies, Platforms, and Use Cases”, CRC Press",
+        "Jeeva Jose, “Internet of Things”, Khanna Publishing House, Delhi",
+        "Adrian McEwen, “Designing the Internet of Things”, Wiley",
+        "Raj Kamal, “Internet of Things: Architecture and Design”, McGraw Hill",
+        "Cuno Pfister, “Getting Started with the Internet of Things”, O Reilly Media"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Bio Informatics",
+      "subject_code": "AL 803(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction to bioinformatics",
+            "Objectives of bioinformatics",
+            "Basic chemistry of nucleic acids",
+            "Structure of DNA & RNA",
+            "Genes",
+            "Structure of bacterial chromosome",
+            "Cloning methodology",
+            "Data maintenance and integrity tasks"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Bioinformatics Databases & Image Processing",
+          "topics": [
+            "Types of databases",
+            "Nucleotide sequence databases",
+            "Protein sequence databases",
+            "Protein structure databases",
+            "Normalization",
+            "Data cleaning and transformation",
+            "Protein folding",
+            "Protein function",
+            "Protein purification and characterization",
+            "Introduction to Java clients",
+            "CORBA",
+            "Using MYSQL",
+            "Feature extraction"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sequence Alignment and Database Searching",
+          "topics": [
+            "Introduction to sequence analysis",
+            "Models for sequence analysis",
+            "Methods of optimal alignment",
+            "Tools for sequence alignment",
+            "Dynamic programming",
+            "Heuristic methods",
+            "Multiple sequence alignment"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Gene Finding and Expression",
+          "topics": [
+            "Cracking the genome",
+            "Biological decoder ring",
+            "Finding genes through mathematics and learning",
+            "Gene prediction tools",
+            "Gene mapping",
+            "Application of mapping",
+            "Modes of gene expression data",
+            "Mining gene expression data"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Proteomics & Problem Solving in Bioinformatics",
+          "topics": [
+            "Proteome analysis",
+            "Tools for proteome analysis",
+            "Genetic networks",
+            "Network properties and analysis",
+            "Complete pathway simulation (E‑cell)",
+            "Genomic analysis for DNA & protein sequences",
+            "Strategies and options for similarity search",
+            "Flowcharts for protein structure prediction"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Gopal & Jones, BIOINFORMATICS with fundamentals of Genomics & Proteomics, TMH Pub",
+        "Rastogi, Bioinformatics – Concepts, skills & Applications, CBS Pub",
+        "Claverie, Bioinformatics, Wiley pub",
+        "Stekel, Microarray Bioinformatics, Cambridge"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Managing Innovation and Entrepreneurship",
+      "subject_code": "AL 803(c )",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Innovation – definition, classification and relationship with entrepreneurship",
+          "topics": [
+            "Definition and classification of innovation",
+            "Relationship between innovation and entrepreneurship",
+            "Creation of competitive advantage through innovation",
+            "Innovative models",
+            "Product innovation",
+            "Process innovation",
+            "Organizational innovation",
+            "Marketing innovation",
+            "Role of innovations in business development"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Sources and creative methods for innovation management",
+          "topics": [
+            "Sources of innovation: push, pull, analogies",
+            "Technology transfer",
+            "Creative methods and approaches used in innovation management",
+            "Agile management approach",
+            "Six Thinking Hats technique",
+            "NUF test method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Project‑based innovation management and open innovation",
+          "topics": [
+            "Project approach to innovation management",
+            "Stage‑Gate method and its essence",
+            "Adaptation of Stage‑Gate to selected business models",
+            "In‑house business development of the innovation process",
+            "Open Innovation concept",
+            "Limits and benefits of Open Innovation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Human‑centered innovation and co‑creation strategies",
+          "topics": [
+            "Innovations aimed at humans",
+            "Role of co‑creation in the innovation process",
+            "Innovation process strategies",
+            "Types of innovation strategies",
+            "Selection of appropriate strategies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Measurement, barriers and facilitation of innovation",
+          "topics": [
+            "Measurement and evaluation of innovation benefits for business",
+            "Financial and non‑financial metrics for innovation",
+            "Combination and choice of metrics",
+            "Barriers to innovation in business",
+            "Causes of innovation failure",
+            "Post‑audit of innovative projects",
+            "Organization and facilitation of an innovation workshop"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "CLARK, T. – OSTERWALDER, A. – PIGNEUR, Y. Business model generation: a handbook for visionaries, game changers, and challengers. Wiley Publications",
+        "BESSANT, J R. – TIDD, J. Managing innovation: integrating technological, market and organizational change. Wiley Publications"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Human Computer Interaction",
+      "subject_code": "AL 804(D )",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Human Computer Interaction (HCI) concepts and definitions",
+            "Nature of interaction human and Machine",
+            "Interaction design",
+            "Understanding and conceptualizing interaction",
+            "Understanding users, interfaces and interactions",
+            "Data gathering"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to User Centered System Design (UCSD) and related concepts",
+          "topics": [
+            "User Centered System Design (UCSD)",
+            "Natural computing",
+            "Core concepts of user centered system design",
+            "Interactive design and its strengths and weaknesses",
+            "Types of user model",
+            "User model evaluation",
+            "Heuristic evaluation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Psychological User Models and Quantitative Performance Analysis",
+          "topics": [
+            "Psychological user models",
+            "Black‑box models of human performance (perception, motor control, memory, problem‑solving)",
+            "Quantitative analysis of performance",
+            "Human processor",
+            "Keystroke Level Model (KLM)",
+            "GOMS descriptions of user performance"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Modeling, Prototyping, and Evaluation Techniques",
+          "topics": [
+            "Modeling of system understanding",
+            "Mental models and metaphor",
+            "Use of design prototypes",
+            "Controlled experiments",
+            "Cognitive walkthrough",
+            "Evaluation from the perspective of a novice learner"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Task Analysis, Design, and Emerging Interaction Paradigms",
+          "topics": [
+            "Task analysis and design",
+            "Contextual and qualitative studies",
+            "Use‑case driven design",
+            "Research techniques",
+            "Cognitive dimensions of notations",
+            "Computer‑Supported Cooperative Work (CSCW)",
+            "Ubiquitous computing",
+            "New interaction techniques",
+            "Programmability"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Alan Dix, Janet E. Finlay, “Human‑Computer interaction”, Pearson Education.",
+        "Olsen, “Human‑Computer Interaction”, Cengage Learning.",
+        "Preece, J. Sharp, H. & Rogers, “Interaction design: beyond human‑computer interaction”, Wiley.",
+        "Smith Atakan Serengal, “Human‑Computer Interaction”, Cengage Learning."
+      ],
+      "extra": null
+    }
+  ]
+}

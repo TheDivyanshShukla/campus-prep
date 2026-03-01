@@ -1,0 +1,716 @@
+{
+  "subjects": [
+    {
+      "subject_name": "MICROPROCESSOR AND ITS APPLICATIONS",
+      "subject_code": "EC501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Salient features of advanced microprocessors and 8086 architecture",
+          "topics": [
+            "Salient features of advanced microprocessors",
+            "RISC & CISC processors",
+            "Review and evolution of advanced microprocessors (8086, 8088, 80186/286/386/486/Pentium)",
+            "Introduction to 8086 processor: Register organization",
+            "Architecture of 8086",
+            "Signal description of 8086",
+            "Minimum mode 8086 systems and timings",
+            "Maximum mode 8086 systems and timings"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Intel 8086 microprocessor programming",
+          "topics": [
+            "Intel 8086 microprocessor programming",
+            "8086 Instruction Set",
+            "Addressing modes",
+            "Assembly Language Programming with Intel 8086 microprocessor"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Interfacing chips and peripherals",
+          "topics": [
+            "Introduction to interfacing chips (8155, 8255)",
+            "Interfacing key boards",
+            "LEDs interfacing",
+            "ADC interfacing",
+            "DAC interfacing",
+            "Memory interfacing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Programmable peripheral devices and communication",
+          "topics": [
+            "General purpose programmable peripheral device 8253",
+            "8254 programmable interval timer",
+            "8259A programmable interrupt controller",
+            "8257 DMA controller",
+            "USART",
+            "Serial I/O and data communication"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Microcontrollers (8051) and embedded systems",
+          "topics": [
+            "Introduction to microcontrollers (8051) and embedded systems",
+            "8051 architecture",
+            "Pin description",
+            "I/O configuration",
+            "Interrupts",
+            "Addressing modes",
+            "Overview of 8051 instruction set",
+            "Embedded system concepts",
+            "Use of microcontrollers in embedded systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Advance microprocessor and peripheral – A.K. Ray and K. M. Bhurchandi, Tata Mcgraw Hill",
+        "Microprocessor and Interfacing – D.V. Hall, McGraw Hill.",
+        "The Intel microprocessor - Barry B. Brey, Pearson",
+        "The 8086 & 8088 Microprocessor- LIU and Gibson, Tata McGraw Hill",
+        "The 8051 microcontroller and embedded systems - M.A. Mazidi, Janice Gillispie-Mazidi, Pearson Prentice Hall"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "DIGITAL COMMUNICATION",
+      "subject_code": "EC502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Sampling theorem and multiplexing",
+          "topics": [
+            "Sampling theorem for low‑pass and band‑pass signals",
+            "Ideal sampling",
+            "Natural sampling",
+            "Flat‑top sampling",
+            "Crosstalk",
+            "Aliasing",
+            "Time‑division multiplexing",
+            "PAM generation and detection",
+            "PWM generation and detection",
+            "PPM generation and detection"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Pulse Code Modulation and encoding techniques",
+          "topics": [
+            "Pulse code modulation",
+            "Quantization",
+            "Quantization noise",
+            "Companding",
+            "Inter‑symbol interference",
+            "Eye pattern",
+            "Delta modulation",
+            "Adaptive modulation",
+            "On‑Off signaling",
+            "Polar signaling",
+            "RZ signaling",
+            "Bipolar signaling",
+            "AMI",
+            "Manchester code",
+            "Differential encoding",
+            "Advantages and disadvantages of encoding techniques"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Band‑pass data transmission modulation schemes",
+          "topics": [
+            "Amplitude shift keying (ASK)",
+            "Binary phase shift keying (BPSK)",
+            "Quadrature phase shift keying (QPSK)",
+            "Differential phase shift keying (DPSK)",
+            "Coherent BFSK",
+            "Non‑coherent BFSK",
+            "Minimum shift keying (MSK)",
+            "Quadrature amplitude modulation (QAM)",
+            "M‑ary PSK concept",
+            "M‑ary FSK concept",
+            "Spectral properties of QPSK",
+            "Spectral properties of MSK"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Detection, signal space and error probability",
+          "topics": [
+            "Matched filter detector",
+            "Correlator detector",
+            "Gram–Schmidt orthogonalization procedure",
+            "Signal space concept for probability‑of‑error computation",
+            "Error probability calculation for BPSK",
+            "Error probability calculation for QPSK",
+            "Error probability calculation for QAM",
+            "Error probability calculation for coherent BFSK",
+            "Comparison of different modulation techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Information theory and error‑correcting codes",
+          "topics": [
+            "Information theory concepts",
+            "Entropy",
+            "Information rate",
+            "Channel capacity",
+            "Shannon’s theorem",
+            "Shannon‑Hartley theorem",
+            "Bandwidth and signal‑to‑noise ratio trade‑off",
+            "Source encoding",
+            "Extension of zero‑memory source",
+            "Linear block codes",
+            "Cyclic codes",
+            "Encoder and decoder circuits for block/cyclic codes",
+            "Burst error‑correcting codes",
+            "Convolutional codes concepts"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Communication Systems – Simon Haykins, Wiley",
+        "Principle of Communication Systems – Taub and Schilling, Tata McGraw‑Hill",
+        "Communication Systems – Singh and Sapre, Tata McGraw‑Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Communication Network and Transmission Lines (CNTL)",
+      "subject_code": "EC- 503 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Characteristic Parameters of symmetrical and asymmetrical two‑port networks and their design",
+          "topics": [
+            "Image impedance",
+            "Iterative impedance",
+            "Characteristic impedance",
+            "Propagation coefficient",
+            "Image transfer coefficient",
+            "Iterative transfer coefficient",
+            "Lattice and Bridged‑T networks",
+            "Reactive matching networks",
+            "Matching techniques",
+            "Insertion loss",
+            "Symmetrical and asymmetrical attenuators and their design"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Passive LC Filters",
+          "topics": [
+            "Analysis and design of low‑pass filters",
+            "Analysis and design of high‑pass filters",
+            "Analysis and design of band‑pass filters",
+            "Analysis and design of band‑elimination filters",
+            "m‑derived filters",
+            "Composite filters",
+            "Filter specifications",
+            "Butterworth approximation",
+            "Chebyshev approximation",
+            "Elliptic function approximation",
+            "Frequency transformation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Positive real function and network synthesis",
+          "topics": [
+            "LC, RL, RC, and RLC network synthesis",
+            "Foster network",
+            "Cauer network",
+            "Minimum positive real function",
+            "Brune’s method",
+            "Bott‑Duffin method",
+            "Synthesis coefficient"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transmission line fundamentals",
+          "topics": [
+            "Lumped‑parameter equivalent",
+            "Voltage and current on a transmission line",
+            "Infinite line",
+            "Characteristic impedance and propagation constant",
+            "Waveform distortion",
+            "Attenuation and phase equalizers",
+            "Distortion‑less line",
+            "Loading",
+            "Line reflection on a line",
+            "Reflection coefficient",
+            "Input and transfer impedances",
+            "Open‑circuit and short‑circuit line",
+            "Reflection factors",
+            "Reflection loss",
+            "Insertion loss",
+            "T and π equivalents of a line",
+            "Location of line fault",
+            "Construction and design of two‑wire line",
+            "Construction and design of coaxial cable"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Line at radio frequencies",
+          "topics": [
+            "Parameters of line and coaxial cable at radio frequencies",
+            "Dissipation‑less line",
+            "Voltage and current on a dissipation‑less line",
+            "Standing waves",
+            "Standing wave ratio",
+            "Input impedance of open‑circuit and short‑circuit",
+            "Power and impedance measurement on lines",
+            "Eighth‑wave line",
+            "Quarter‑wave line",
+            "Half‑wave line",
+            "Circle diagram",
+            "Smith chart",
+            "Solution of problems using Smith chart",
+            "Single and double stub matching",
+            "Introduction to micro‑strip lines and its analysis"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ryder: Networks and Transmission Lines, PHI Learning.",
+        "Valkenberg: Introduction to Modern Network synthesis, Wiley India.",
+        "Suresh: Electric Circuits and Networks, Pearson Education.",
+        "Raju: Electromagnetic field theory and Transmission Lines, Pearson Education.",
+        "Ganesan: Transmission Lines and Waveguides, TMH.",
+        "Rao: Electromagnetic Waves and Transmission Lines, PHI learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "MOBILE COMMUNICATION",
+      "subject_code": "EC- 503 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to wireless communication systems",
+          "topics": [
+            "different generations of wireless networks",
+            "Cellular system design fundamentals",
+            "frequency reuse",
+            "handoff strategies",
+            "interference and system capacity",
+            "trunking and grade of service"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Mobile radio propagation",
+          "topics": [
+            "Free space propagation model",
+            "Ground reflection propagation model",
+            "Long term fading",
+            "Small scale multipath propagation",
+            "Time dispersion parameters",
+            "Coherence bandwidth",
+            "Doppler spread and coherence time",
+            "Types of small‑scale fading",
+            "Clarke’s model for flat fading",
+            "Level crossing and fading statistics"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Capacity in cellular systems",
+          "topics": [
+            "cell splitting and sectoring",
+            "cell‑site antennas and mobile antenna",
+            "co‑channel interference reduction",
+            "frequency management and channel assignment"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Frequency division and time division multiple access",
+          "topics": [
+            "Global System for Mobile (GSM) system architecture",
+            "GSM radio subsystem",
+            "GSM traffic channel and control channel",
+            "GSM frame structure"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Spread spectrum multiple access",
+          "topics": [
+            "Frequency Hopped Multiple Access (FHMA)",
+            "Code Division Multiple Access (CDMA)",
+            "different spreading codes",
+            "CDMA digital cellular system – standards, forward and reverse channels",
+            "capacity of cellular systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Mobile cellular telecommunication – W. C. Lee, McGraw‑Hill",
+        "Wireless communication – T. S. Rappaport, Prentice Hall",
+        "Wireless communication – Simon Haykin, Pearson"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "ADVANCED CONTROL SYSTEM",
+      "subject_code": "EC- 503 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Advantages and disadvantages of digital control system",
+          "topics": [
+            "Ideal sampler",
+            "Sampled and hold circuit",
+            "Zero order hold circuit",
+            "Z transform",
+            "Inverse Z transform by various method",
+            "Mapping between s plane and Z plane",
+            "Solution of the linear difference equation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Pulse transfer function",
+          "topics": [
+            "General procedure for obtaining pulse transfer function",
+            "Pulse transfer function of cascaded elements",
+            "Pulse transfer function of closed loop systems",
+            "Transfer function of discrete data system",
+            "Stability analysis of closed loop system in the z plane",
+            "Jury stability test"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Non Linear Systems",
+          "topics": [
+            "Introduction",
+            "Common physical non linearity’s",
+            "Phase plane method",
+            "Basic concepts",
+            "Singular points",
+            "Stability of non linear system",
+            "Construction of phase trajectories",
+            "System analysis by phase plane method",
+            "Describing functions methods",
+            "Basic concepts derivation of describing function",
+            "Liapunov’s stability criterion"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Root locus and state space methods",
+          "topics": [
+            "Review of root locus",
+            "Lead compensation",
+            "Lag compensation",
+            "Lag‑lead compensation and their comparison",
+            "Review of state space methods",
+            "Observability and controllability of system",
+            "Pole placement by state feedback"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "PID controller and MATLAB Simulink",
+          "topics": [
+            "Tuning rules of PID controller",
+            "Modifications of PID controllers",
+            "Introduction to software package used in control systems‑MATLAB SIMULINK"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Automatic control system—B. C.Kuo, Wiley",
+        "Control system engineering—Nagrath & Gopal, New Age International",
+        "Modern control engineering – K. Ogata, Pearson; 5th edition",
+        "Control system engineering—Norman Nise, Wiley",
+        "Discrete time Control system—K. Ogata, Pearson; 2nd edition"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "ELECTROMAGNETIC THEORY",
+      "subject_code": "EC- 504 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Steady Electric Field",
+          "topics": [
+            "Coulomb’s Law",
+            "units",
+            "Electric field intensity",
+            "Electric flux and flux density",
+            "Gauss law",
+            "Boundary relations",
+            "concept of divergence",
+            "Curl",
+            "scalar and vector potential",
+            "electric field in dielectric and conductor",
+            "continuity equation",
+            "methods of images"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Magnetic field due to steady currents",
+          "topics": [
+            "Magnetic field due to steady currents",
+            "force between current carrying wires",
+            "Stokes theorem",
+            "vector magnetic potential",
+            "magnetization vector and its relation to magnetic field"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Maxwell’s Equation",
+          "topics": [
+            "Time varying field and displacement current",
+            "Faraday’s law"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Wave Equation",
+          "topics": [
+            "Pointing vector",
+            "Plane electromagnetic waves in free space",
+            "Plane electromagnetic waves in dielectric medium and conducting medium",
+            "Skin depth",
+            "slepian vector"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Waves propagation in lossy dielectrics",
+          "topics": [
+            "Waves propagation in lossy dielectrics",
+            "plane waves in lossless dielectrics",
+            "reflection of a plane wave at normal incidence",
+            "reflection of a plane wave at oblique incidence"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Elements of Engineering Electromagnetic Third Edition- N.N. Rao- Prentice Hall, India.",
+        "Elements opf Electromagnetic, Second Edition- Matthew N.O. Sadiku- Saunders coll Publishing.",
+        "Fields & Waves in Communication Electronics- S.Ramo, J.R. Whinnery& T. Van Duzer- John Wiley & Sons.",
+        "Electromagnetic- J.D. Kraus-McGraw Hill",
+        "Electromagnetic Waves & Radiating Systems- E.C. Jordan & K.G. Balmain- Prentice Hall."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer System Organization",
+      "subject_code": "EC- 504 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "COMPUTER BASICS AND CPU",
+          "topics": [
+            "Von Neumann model",
+            "Various subsystems",
+            "CPU",
+            "Memory",
+            "I/O",
+            "System Bus",
+            "CPU and Memory registers",
+            "Program Counter",
+            "Accumulator",
+            "Instruction register",
+            "Micro operations",
+            "Register Transfer Language",
+            "Instruction fetch, decode and execution",
+            "Data movement and manipulation",
+            "Instruction formats and addressing modes of basic computer"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "CONTROL UNIT ORGANIZATION AND ARITHMETIC AND LOGIC UNIT",
+          "topics": [
+            "Hardwired control unit",
+            "Micro‑ and nano‑programmed control unit",
+            "Control memory",
+            "Address sequencing",
+            "Micro‑instruction formats",
+            "Micro‑program sequencer",
+            "Microprogramming",
+            "Arithmetic processor",
+            "Addition, subtraction, multiplication and division",
+            "Floating‑point and decimal arithmetic",
+            "Design of arithmetic unit"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "INPUT OUTPUT ORGANIZATION",
+          "topics": [
+            "Program‑controlled, interrupt‑driven and DMA data‑transfer modes",
+            "Interrupt structures",
+            "I/O interface",
+            "Asynchronous data transfer",
+            "I/O processor",
+            "Serial and parallel data transfer",
+            "Synchronous and asynchronous transmission",
+            "Simplex, half‑duplex and full‑duplex communication"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "MEMORY ORGANIZATION",
+          "topics": [
+            "Memory maps",
+            "Memory hierarchy",
+            "Cache memory organization and mapping",
+            "Associative memory",
+            "Virtual memory",
+            "Memory management hardware"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "MULTIPROCESSORS",
+          "topics": [
+            "Pipeline and vector processing",
+            "Instruction and arithmetic pipelines",
+            "Vector and array processors",
+            "Interconnection structures",
+            "Inter‑processor communication"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Morris Mano: Computer System Architecture, Pearson Education.",
+        "William Stallings: Computer Organization and Architecture, PHI.",
+        "Carl Hamacher: Computer Organization, TMH.",
+        "Tanenbaum: Structured Computer Organization, Pearson Education."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Process Control Instrumentation",
+      "subject_code": "EC- 504 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Historical perspective of process control",
+            "Incentives of process control",
+            "Synthesis of control system",
+            "Classification and definition of process variables",
+            "Need and application of mathematical modeling",
+            "Lumped and distributed parameters",
+            "Analogies: thermal, electrical, and chemical systems",
+            "Modeling of CSTR",
+            "Modeling of heat exchanger",
+            "Interactive and non‑interactive type of system",
+            "Dead time elements",
+            "Developing continuous‑time and discrete‑time models from process data"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Control Modes",
+          "topics": [
+            "Definition of control modes",
+            "Characteristics and comparison of on‑off, proportional, integral, differential, PI, PD, PID control",
+            "Dynamic behavior of feedback‑controlled processes for different control modes",
+            "Control system quality indices: IAE, ISE, IATE",
+            "Tuning of controllers using Ziegler‑Nichols method",
+            "Tuning of controllers using Cohen‑Coon method",
+            "Controller troubleshooting"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Realization of Control Modes",
+          "topics": [
+            "Realization of P, I, D control modes in electric controllers",
+            "Realization of P, I, D control modes in pneumatic controllers",
+            "Realization of P, I, D control modes in hydraulic controllers",
+            "Use of DDC and PLC for control",
+            "Process monitoring",
+            "Man‑machine interface",
+            "Introduction to real‑time systems (RTS) and their characteristics"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Actuators",
+          "topics": [
+            "Hydraulic actuators",
+            "Pneumatic actuators",
+            "Solenoid actuators",
+            "E‑P converters",
+            "Control valves: types and functions",
+            "Quick‑opening valves",
+            "Linear and equal‑percentage valves",
+            "Ball valves",
+            "Butterfly valves",
+            "Globe valves",
+            "Pinch valves",
+            "Valve application and selection",
+            "Cavitation and flashing phenomena",
+            "Dampers and variable‑speed drives"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Controls",
+          "topics": [
+            "Advanced control strategies: cascade control",
+            "Feed‑forward control",
+            "Ratio control",
+            "Selective control",
+            "Override control",
+            "Split‑range control",
+            "Auctioneering control",
+            "Plant‑wide control",
+            "PI diagrams: symbols and terminology",
+            "PI diagrams: case studies",
+            "Overview of instrumentation and control relevant to industries"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Dale Patrick, Stephen Fardo, “Industrial Process Control System”.",
+        "Shinskey F.G., “Process Control System”, III Ed., McGraw Hill.",
+        "Smith C.A. & A.B. Corripio, “Principle & Practiced Automatic Process Control”, J. Wiley.",
+        "Rao M & S.Qiv, “Process Control Engg.”, Gorden & Breach.",
+        "S Levi and AK Agrawala. Real‑time system design. McGraw‑Hill International.",
+        "George Stephanopoulos “Chemical Process Control” PHI, Delhi.",
+        "C.D. Johnson “Process control instrumentation technology” PHI.",
+        "Harriott- Process Control 1st ed., TMH.",
+        "Patranabis- Principles of Process Control 2nd ed., TMH."
+      ],
+      "extra": null
+    }
+  ]
+}

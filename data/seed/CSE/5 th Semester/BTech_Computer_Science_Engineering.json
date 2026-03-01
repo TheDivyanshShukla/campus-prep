@@ -1,0 +1,969 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Theory of Computation",
+      "subject_code": "CS501",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Automata Theory",
+          "topics": [
+            "Examples of automata machines",
+            "Finite Automata as a language acceptor and translator",
+            "Moore machines and Mealy machines",
+            "Composite machine",
+            "Conversion from Mealy to Moore and vice versa"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Types of Finite Automata",
+          "topics": [
+            "Non‑Deterministic Finite Automata (NDFA)",
+            "Deterministic Finite Automata (DFA)",
+            "Conversion of NDFA to DFA",
+            "Minimization of automata machines",
+            "Regular expressions and Arden’s theorem",
+            "Union, intersection, concatenation and closure; 2‑way DFA"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Grammars",
+          "topics": [
+            "Types of grammar: context‑sensitive, context‑free, regular",
+            "Derivation trees, ambiguity, simplification of context‑free grammar, conversion of grammar to automata and vice versa",
+            "Chomsky hierarchy, killing null and unit productions",
+            "Chomsky normal form and Greibach normal form"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Push‑down Automata",
+          "topics": [
+            "Examples of PDA, deterministic and non‑deterministic PDA",
+            "Conversion of PDA into context‑free grammar and vice versa",
+            "CFG equivalent to PDA",
+            "Petri‑net model"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Turing Machine",
+          "topics": [
+            "Techniques for construction; Universal Turing machine, multitape, multi‑head and multidimensional Turing machines, NP‑complete problems",
+            "Decidability and recursively enumerable languages; decidable, undecidable languages, halting problem, Post correspondence problem"
+          ]
+        }
+      ],
+      "experiments": [
+        "Design a Program for creating machine that accepts three consecutive one.",
+        "Design a Program for creating machine that accepts the string always ending with 101.",
+        "Design a Program for Mode 3 Machine.",
+        "Design a program for accepting decimal number divisible by 2.",
+        "Design a program for creating a machine which accepts string having equal no. of 1’s and 0’s.",
+        "Design a program for creating a machine which count number of 1’s and 0’s in a given string.",
+        "Design a Program to find 2’s complement of a given binary number.",
+        "Design a Program which will increment the given binary number by 1.",
+        "Design a Program to convert NDFA to DFA.",
+        "Design a Program to create PDA machine that accept the well-formed parenthesis.",
+        "Design a PDA to accept WCW [R ] where w is any string and W [R] is reverse of that string and C is a Special symbol.",
+        "Design a Turing machine that’s accepts the following language a [n] b [n] c [n ] where n>0."
+      ],
+      "reference_books": [
+        "Introduction to Automata Theory Language & Computation, Hopcroft & Ullman, Narosa Publication.",
+        "Element of the Theory Computation, Lewis &Christors, Pearson.",
+        "Theory of Computation, Chandrasekhar & Mishra, PHI.",
+        "Theory of Computation, Wood, Harper & Row.",
+        "Introduction to Computing Theory, Daniel I-A Cohen, Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Database Management Systems",
+      "subject_code": "CS502",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "DBMS Concepts and Architecture",
+          "topics": [
+            "Introduction, Database approach vs Traditional file accessing approach",
+            "Advantages of database systems",
+            "Data models, Schemas and instances",
+            "Data independence",
+            "Database language and interfaces",
+            "Overall database structure",
+            "Functions of DBA and designer",
+            "ER data model: entities and attributes, entity types",
+            "Defining the E‑R diagram",
+            "Concept of generalization, aggregation and specialization",
+            "Transforming ER diagram into tables",
+            "Object‑oriented data model, network data model, relational data model",
+            "Comparison between the three types of models"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Relational Data Models",
+          "topics": [
+            "Domains, tuples, attributes, relations and characteristics of relations",
+            "Keys and key attributes of relation",
+            "Relational database schemas and integrity constraints",
+            "Referential integrity, intension and extension",
+            "SQL – DDL and DML, integrity constraints, complex queries, various joins, indexing, triggers, assertions",
+            "Relational algebra and relational calculus",
+            "Relational algebra operations: select, project, join, division, outer union",
+            "Tuple‑oriented and domain‑oriented relational calculus and its operations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Database Design and Query Optimization",
+          "topics": [
+            "Introduction to normalization, normal forms, functional dependency",
+            "Decomposition, dependency preservation and lossless join",
+            "Problems with null‑valued and dangling tuples, multivalued dependencies",
+            "Query optimization: introduction, steps of optimization, algorithms for select, project and join",
+            "Optimization methods – heuristic based and cost‑estimation based"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transaction Processing and Concurrency Control",
+          "topics": [
+            "Transaction system, testing of serializability, serializable schedules, conflict & view serializable schedules",
+            "Recoverability and recovery from transaction failures, log‑based recovery, checkpoints, deadlock handling",
+            "Concurrency control techniques: locking, time‑stamping protocols, validation‑based protocol, multiple granularity",
+            "Multiversion concurrency control and recovery with concurrent transactions",
+            "Introduction to distributed databases, data mining, data warehousing",
+            "Object technology and DBMS, comparative study of OODBMS vs DBMS",
+            "Temporal, deductive, multimedia, web & mobile databases"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Relational DBMS (Oracle/PL‑SQL/MySQL)",
+          "topics": [
+            "Architecture, physical files, memory structures, background processes",
+            "Table spaces, segments, extents and blocks; dedicated server and multi‑threaded server",
+            "Distributed database, database links, snapshots",
+            "Data dictionary, dynamic performance views",
+            "Security, role management, privilege management, profiles, invoker‑defined security model",
+            "SQL queries, data extraction from single/multiple tables, equi‑join, non‑equi‑join, self‑join, outer join",
+            "Special operators: LIKE, ANY, ALL, EXISTS, IN; hierarchical queries, inline queries, flashback queries",
+            "ANSI SQL, anonymous blocks, nested anonymous blocks, branching and looping constructs",
+            "Cursor management – nested and parameterized cursors, Oracle exception handling",
+            "Stored procedures, IN/OUT/IN OUT parameters, user‑defined functions and their limitations",
+            "Triggers, mutating table errors, instead‑of triggers"
+          ]
+        }
+      ],
+      "experiments": [
+        "Delete duplicate row from the table.",
+        "Display the alternate row from table.",
+        "Delete alternate row from table.",
+        "Update multiple rows using a single update statement.",
+        "Find the third highest paid and third lowest paid salary.",
+        "Display the 3rd, 4th, 9th rows from table.",
+        "Display the ename, which is start with j, k, l or m.",
+        "Show all employees who were hired the first half of the month.",
+        "Display the three record in the first row and two records in the second row and one record in the third row in a single sql statements.",
+        "Write a sql statements for rollback commit and save points.",
+        "Write a pl/sql for select, insert, update and delete statements.",
+        "Write a pl/sql block to delete a record. If delete operation is successful return 1 else return 0.",
+        "Display name, hire date of all employees using cursors.",
+        "Display details of first 5 highly paid employees using cursors.",
+        "Write a database trigger which fires if you try to insert, update, or delete after 7’o’ clock.",
+        "Write a database trigger, which acts just like primary key and does not allow duplicate values.",
+        "Create a database trigger, which performs the action of the on delete cascade.",
+        "Write a database trigger, which should not delete from emp table if the day is Sunday.",
+        "Prepare a small database application (e.g., financial accounting system, railway reservation system, institute timetable management system, student record system, library management system, hospital management system) as a semester project."
+      ],
+      "reference_books": [
+        "Date C J, “An Introduction To Database System”, Pearson Educations",
+        "Korth, Silberschatz, Sudarshan, “Fundamental of Database System”, McGraw Hill",
+        "Rob, “Data Base System: Design Implementation & Management”, Cengage Learning",
+        "Elmasri, Navathe, “Fundamentals Of Database Systems”, Pearson Educations",
+        "Atul Kahate, “Introduction to Database Management System”, Pearson Educations",
+        "Oracle 9i Database Administration Fundamental‑I, Volume I, Oracle Press, TMH.",
+        "Paneerselvam, “DataBase Management System”, PHI Learning",
+        "dev.mysql.com",
+        "www.postgressql.org"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Analytics",
+      "subject_code": "CS503 (A)",
+      "subject_type": "Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Descriptive Statistics",
+          "topics": [
+            "Probability Distributions",
+            "Inferential Statistics",
+            "Inferential Statistics through hypothesis tests",
+            "Regression \\& ANOVA",
+            "Regression ANOVA (Analysis of Variance)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Big Data",
+          "topics": [
+            "Big Data and its Importance",
+            "Four V’s of Big Data",
+            "Drivers for Big Data",
+            "Introduction to Big Data Analytics",
+            "Big Data Analytics applications",
+            "Hadoop’s Parallel World",
+            "Data discovery",
+            "Open source technology for Big Data Analytics",
+            "cloud and Big Data",
+            "Predictive Analytics",
+            "Mobile Business Intelligence and Big Data",
+            "Crowd Sourcing Analytics",
+            "Inter- and Trans-Firewall Analytics",
+            "Information Management"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Processing Big Data",
+          "topics": [
+            "Integrating disparate data stores",
+            "Mapping data to the programming framework",
+            "Connecting and extracting data from storage",
+            "Transforming data for processing",
+            "Subdividing data in preparation for Hadoop Map Reduce"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Hadoop MapReduce",
+          "topics": [
+            "Employing Hadoop Map Reduce",
+            "Creating the components of Hadoop Map Reduce jobs",
+            "Distributing data processing across server farms",
+            "Executing Hadoop Map Reduce jobs",
+            "Monitoring the progress of job flows",
+            "The Building Blocks of Hadoop Map Reduce",
+            "Distinguishing Hadoop daemons",
+            "Investigating the Hadoop Distributed File System",
+            "Selecting appropriate execution modes: local, pseudo-distributed, fully distributed"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Big Data Tools and Techniques",
+          "topics": [
+            "Installing and Running Pig",
+            "Comparison with Databases",
+            "Pig Latin",
+            "User-Define Functions",
+            "Data Processing Operators",
+            "Installing and Running Hive",
+            "Hive QL",
+            "Querying Data",
+            "User-Defined Functions",
+            "Oracle Big Data"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Michael Minelli, Michehe Chambers, “Big Data, Big Analytics: Emerging Business Intelligence and Analytic Trends for Today’s Business”, 1st Edition, Ambiga Dhiraj, Wiely CIO Series, 2013.",
+        "Arvind Sathi, “Big Data Analytics: Disruptive Technologies for Changing the Game”, 1st Edition, IBM Corporation, 2012.",
+        "Rajaraman, A., Ullman, J. D., Mining of Massive Datasets, Cambridge University Press, United Kingdom, 2012.",
+        "Berman, J.J., Principles of Big Data: Preparing, Sharing and Analyzing Complex Information, Morgan Kaufmann, 2014.",
+        "Barlow, M., Real-Time Big Data Analytics: Emerging Architecture, O'Reilly, 2013.",
+        "Schonberger, V.M., Kenneth Cukier, K., Big Data, John Murray Publishers, 2013.",
+        "Bill Franks, “Taming the Big Data Tidal Wave: Finding Opportunities in Huge Data Streams with Advanced Analytics”, 1st Edition, Wiley and SAS Business Series, 2012."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Pattern Recognition",
+      "subject_code": "CS503 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Definitions",
+            "Data sets for Pattern",
+            "Application Areas and Examples of pattern recognition",
+            "Design principles of pattern recognition system",
+            "Classification and clustering",
+            "Supervised Learning",
+            "Unsupervised learning and adaptation",
+            "Pattern recognition approaches",
+            "Decision Boundaries",
+            "Decision region",
+            "Metric spaces",
+            "Distances"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Classification",
+          "topics": [
+            "Introduction",
+            "Application of classification",
+            "Types of classification",
+            "Decision tree",
+            "Naïve Bayes",
+            "Logistic regression",
+            "Support vector machine",
+            "Random forest",
+            "K Nearest Neighbour Classifier and variants",
+            "Efficient algorithms for nearest neighbour classification",
+            "Different Approaches to Prototype Selection",
+            "Combination of Classifiers",
+            "Training set",
+            "Test set",
+            "Standardization and normalization"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unsupervised Learning & Clustering",
+          "topics": [
+            "Different Paradigms of Pattern Recognition",
+            "Representations of Patterns and Classes",
+            "Unsupervised Learning & Clustering",
+            "Criterion functions for clustering",
+            "Clustering Techniques: Iterative square‑error partitional clustering – K means",
+            "Hierarchical clustering",
+            "Cluster validation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Feature Extraction and Selection",
+          "topics": [
+            "Introduction of feature extraction and feature selection",
+            "Types of feature extraction",
+            "Problem statement and Uses",
+            "Branch and bound algorithm",
+            "Sequential forward / backward selection algorithms",
+            "(l,r) algorithm"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Recent Advances",
+          "topics": [
+            "Recent advances in Pattern Recognition",
+            "Structural PR",
+            "SVMs",
+            "FCM",
+            "Soft computing and Neuro‑fuzzy techniques",
+            "Real‑life examples",
+            "Histogram rules",
+            "Density estimation",
+            "Nearest Neighbor Rule",
+            "Fuzzy classification"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Richard O. Duda, Peter E. Hart and David G. Stork, “Pattern Classification”, 2nd Edition, John Wiley, 2006.",
+        "C. M. Bishop, “Pattern Recognition and Machine Learning”, Springer, 2009.",
+        "S. Theodoridis and K. Koutroumbas, “Pattern Recognition”, 4th Edition, Academic Press, 2009.",
+        "Robert Schalkoff, “Pattern Recognition: statistical, structural and neural approaches”, John Wiley & Sons, Inc, 2007."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cyber Security",
+      "subject_code": "CS503 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Cyber Crime",
+          "topics": [
+            "Introduction of Cyber Crime",
+            "Challenges of cyber crime",
+            "Classifications of Cybercrimes: Email Spoofing",
+            "Spamming",
+            "Internet Time Theft",
+            "Salami attack / Salami Technique"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Web jacking and Online Frauds",
+          "topics": [
+            "Web jacking",
+            "Online Frauds",
+            "Software Piracy",
+            "Computer Network Intrusions",
+            "Password Sniffing",
+            "Identity Theft",
+            "Cyber terrorism",
+            "Virtual Crime",
+            "Perception of cyber criminals (hackers, insurgents, extremist groups)",
+            "Web server hacking",
+            "Session hijacking"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Cyber Crime and Criminal Justice",
+          "topics": [
+            "Concept of Cyber Crime and the IT Act, 2000",
+            "Hacking",
+            "Teenage Web Vandals",
+            "Cyber Fraud and Cheating",
+            "Defamation",
+            "Harassment and E‑mail Abuse",
+            "Other IT Act Offences",
+            "Monetary Penalties",
+            "Jurisdiction and Cyber Crimes",
+            "Nature of Criminality",
+            "Strategies to tackle Cyber Crime",
+            "Trends in Cyber Crime"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Indian Evidence Act and IT Act",
+          "topics": [
+            "Status of Electronic Records as Evidence",
+            "Proof and Management of Electronic Records; Relevancy, Admissibility and Probative Value of E‑Evidence",
+            "Proving Digital Signatures",
+            "Proof of Electronic Agreements",
+            "Proving Electronic Messages"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Tools and Methods in Cybercrime",
+          "topics": [
+            "Proxy Servers and Anonymizers",
+            "Password Cracking",
+            "Keyloggers and Spyware",
+            "Viruses and Worms",
+            "Trojan Horses and Backdoors",
+            "DoS and DDoS Attacks",
+            "Buffer Overflow",
+            "Attacks on Wireless Networks",
+            "Phishing: Methods and Techniques"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Principles of Cyber Crime, Jonathan Clough, Cambridge University Press",
+        "John R. Vacca, Computer Forensics: Computer Crime Scene Investigation, 2nd Edition, Charles River Media, 2005",
+        "Cyber Law Simplified, Vivek Sood, Pub: TMH",
+        "Cyber Security by Nina Godbole, Sunit Belapure, Pub: Wiley‑India",
+        "Information Warfare: Corporate Attack and Defense in Digital World, William Hutchinson, Mathew Warren, Elsevier",
+        "Cyber Laws and IT Protection, Harish Chander, Pub: PHI"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet and Web Technology",
+      "subject_code": "CS504 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Web Design",
+          "topics": [
+            "Concept of WWW, Internet and WWW",
+            "HTTP Protocol: Request and Response",
+            "Web browsers and Web servers",
+            "Features of Web 2.0",
+            "Effective web design concepts",
+            "Web design issues: browser compatibility, bandwidth, cache",
+            "Display resolution and look & feel of websites",
+            "Page layout and linking",
+            "User‑centric design, sitemap planning and publishing website",
+            "Designing effective navigation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "HTML",
+          "topics": [
+            "Basics of HTML, formatting and fonts",
+            "Commenting code, colors, hyperlinks, lists, tables, images, forms",
+            "XHTML, meta tags, character entities, frames and frame sets",
+            "Browser architecture and website structure",
+            "Overview and features of HTML5"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "CSS and JavaScript",
+          "topics": [
+            "Need for CSS and basic syntax",
+            "Using CSS for background images, colors, text manipulation, fonts, borders, boxes, margins, padding",
+            "Positioning with CSS, CSS2 and CSS3 features",
+            "JavaScript client‑side scripting: variables, functions, conditionals, loops",
+            "Pop‑up boxes, objects, DOM manipulation, form validation",
+            "DHTML: combining HTML, CSS and JavaScript, events and buttons"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "XML and PHP",
+          "topics": [
+            "Introduction to XML, uses, simple XML structure, key components, DTD and schemas",
+            "Using XML with applications, transforming XML with XSL and XSLT",
+            "Introduction to PHP, basic syntax, decision and looping constructs",
+            "PHP integration with HTML, arrays, functions, browser detection, string handling",
+            "Form processing, file handling, cookies and sessions",
+            "Object‑oriented programming with PHP"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "PHP and MySQL",
+          "topics": [
+            "Basic PHP commands with examples",
+            "Connecting to MySQL server, creating and selecting databases",
+            "Listing tables, creating tables, inserting, altering and deleting data",
+            "Executing queries, database administration via phpMyAdmin",
+            "Handling database errors and debugging"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Developing Web Applications, Ralph Moseley and M. T. Savaliya, Wiley-India",
+        "Web Technologies, Black Book, dreamtech Press",
+        "HTML 5, Black Book, dreamtech Press",
+        "Web Design, Joel Sklar, Cengage Learning",
+        "Developing Web Applications in PHP and AJAX, Harwani, McGrawHill",
+        "Internet and World Wide Web How to program, P.J. Deitel & H.M. Deitel, Pearson"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Object Oriented Programming",
+      "subject_code": "CS504 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basics of programming",
+          "topics": [
+            "Character set",
+            "Constants",
+            "Variables",
+            "Keywords",
+            "Identifiers and literals",
+            "Type declaration instruction",
+            "Arithmetic types: Integer, Long, Short",
+            "Signed and unsigned types",
+            "Storage classes",
+            "Integer and float conversions",
+            "Type conversion in assignment",
+            "Hierarchy of operations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Decision control structure",
+          "topics": [
+            "Control instructions",
+            "if statement",
+            "if‑else statement",
+            "Logical operators and their hierarchy",
+            "Arithmetic operators",
+            "Relational operators",
+            "Assignment operators",
+            "Increment and decrement operators",
+            "Conditional (ternary) operator",
+            "Bit‑wise operators",
+            "Special operators ( &, *, ., >, sizeof )",
+            "while loop",
+            "for loop",
+            "do‑while loop",
+            "odd loop",
+            "Nested loop",
+            "break statement",
+            "continue statement",
+            "case (switch) control structure",
+            "goto statement",
+            "exit statement"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Array and String handling",
+          "topics": [
+            "Definition of arrays",
+            "Array initialization",
+            "Bound checking for 1‑D arrays",
+            "2‑D array initialization",
+            "Memory map of 1‑D and 2‑D arrays",
+            "Multidimensional arrays",
+            "Definition of strings",
+            "Standard library string functions: strlen, strcpy, strcat, strcmp",
+            "2‑D array of characters"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Structure, Preprocessor and Union",
+          "topics": [
+            "Purpose of structures",
+            "Structure declaration",
+            "Accessing structure elements",
+            "Storage layout of structure elements",
+            "Array of structures",
+            "Applications of structures",
+            "Preprocessor features",
+            "Macro expansion",
+            "Macros with arguments",
+            "File inclusion directives",
+            "Conditional compilation directives: #if, #elif",
+            "Other directives: #include, #define, #undef, #pragma",
+            "Union definition and declaration",
+            "Accessing union members",
+            "Union of structures",
+            "Union member initialization",
+            "Uses of unions",
+            "User‑defined data types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to Object Oriented Programming",
+          "topics": [
+            "Object and class concepts",
+            "Data abstraction",
+            "Data encapsulation",
+            "Inheritance",
+            "Polymorphism",
+            "Static binding",
+            "Dynamic binding",
+            "Message passing",
+            "Benefits of OOP",
+            "Disadvantages of OOP",
+            "Applications of OOP",
+            "Simple program example",
+            "Program anatomy",
+            "Creating a source file",
+            "Compiling and linking"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "David Parsons; Object oriented programming with C++; BPB publication",
+        "Object oriented programming in C++ by Robert Lafore; Galgotia",
+        "Balagurusamy; Object oriented programming with C++; TMH",
+        "Java Complete Reference: Herbert Schildt, Mc Graw Hill",
+        "Hubbard; Programming in C++ (Schaum); TMH",
+        "Mastering C++ by Venugopal, TMH"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Introduction to Database Management Systems",
+      "subject_code": "CS504 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Database Management System Concepts",
+          "topics": [
+            "Introduction",
+            "Significance of Database",
+            "Database System Applications",
+            "Data Independence",
+            "Data Modeling for a Database",
+            "Entities and their Attributes",
+            "Entities",
+            "Attributes",
+            "Relationships and Relationship Types",
+            "Advantages and Disadvantages of Database Management System",
+            "DBMS Vs RDBMS"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Database Models and Implementation",
+          "topics": [
+            "Data Model and Types of Data Model",
+            "Relational Data Model",
+            "Hierarchical Model",
+            "Network Data Model",
+            "Object/Relational Model",
+            "Object-Oriented Model",
+            "Entity-Relationship Model",
+            "Modeling using E-R Diagrams",
+            "Notation used in E-R Model",
+            "Relationships and Relationship Types",
+            "Associative Database Model"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "SQL",
+          "topics": [
+            "Data Definition Language",
+            "Categories of SQL Commands",
+            "Create table",
+            "Drop table",
+            "Alter Table",
+            "Primary Key",
+            "Foreign Key",
+            "Truncate Table",
+            "Index",
+            "Cursor"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "SQL DML",
+          "topics": [
+            "Data Manipulation Language",
+            "Insert Statement",
+            "Multiple Inserts",
+            "Delete Statement",
+            "Delete with conditions",
+            "Update statement",
+            "Update with Conditions",
+            "Merge Statement"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "SELECT",
+          "topics": [
+            "SQL queries",
+            "Data extraction from single tables",
+            "Data extraction from multiple tables",
+            "Equi-join",
+            "Non equi-join",
+            "Self-join",
+            "Outer join",
+            "Usage of LIKE",
+            "ANY operator",
+            "ALL operator",
+            "EXISTS operator",
+            "IN operator",
+            "Hierarchical queries",
+            "Inline queries",
+            "Flashback queries",
+            "Introduction of ANSI SQL",
+            "Anonymous block",
+            "Nested anonymous block",
+            "Branching and looping constructs in ANSI SQL"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Date C J, “An Introduction To Database System”, Pearson Educations",
+        "Korth, Silbertz,Sudarshan, “Fundamental of Database System”, McGraw Hill",
+        "Rob, “Data Base System: Design Implementation & Management”, Cengage Learning",
+        "Elmasri, Navathe, “Fundamentals Of Database Systems”, Pearson Educations",
+        "Atul Kahate, “Introduction to Database Management System”, Pearson Educations",
+        "Oracle 9i Database Administration Fundamental-I, Volume I, Oracle Press, TMH",
+        "Paneerselvam, “DataBase Management System”, PHI Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Linux (LAB)",
+      "subject_code": "CS505",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Unix/Linux",
+          "topics": [
+            "Concepts of Unix/Linux",
+            "Unix/Linux installation process",
+            "Hardware requirements for Unix/Linux",
+            "Advantages of Unix/Linux",
+            "Reasons for popularity and success of Linux/Unix operating systems",
+            "Features of Linux/Unix operating systems",
+            "Kernel architecture",
+            "Kernel functions"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "The Shell Basic Commands, Shell Programming",
+          "topics": [
+            "Shell variables",
+            "Branching control structures in shell scripts",
+            "Loop‑control structures",
+            "Continue and break statements",
+            "Sleep command",
+            "Debugging shell scripts",
+            "Use of Linux as a web server",
+            "Use of Linux as a file server",
+            "Use of Linux as an application server",
+            "Use of Linux as a DNS server",
+            "Use of Linux as an SMTP server",
+            "Use of Linux as a firewall",
+            "Use of Linux as a proxy server"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "File System",
+          "topics": [
+            "Definition of file system",
+            "File system geometry",
+            "Disk controller",
+            "Solaris file system",
+            "Disk‑based file systems",
+            "Network‑based file systems",
+            "Virtual file systems",
+            "UFS file system",
+            "Boot block",
+            "Super block",
+            "Inode structure",
+            "Tuning file system parameters",
+            "Repairing file systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Process Control",
+          "topics": [
+            "Viewing processes",
+            "Commands to display processes",
+            "Process attributes",
+            "Process states",
+            "Process fields",
+            "ps command options",
+            "pgrep utility",
+            "prstat utility",
+            "CDE process manager",
+            "Process scheduling concepts",
+            "Scheduling priorities",
+            "Changing priority of time‑sharing processes",
+            "Killing processes"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "System Security",
+          "topics": [
+            "Physical security",
+            "Controlling system access",
+            "Restricted shells",
+            "Controlling file access",
+            "File access commands",
+            "Access Control Lists (ACLs)",
+            "Setting ACL entries",
+            "Modifying ACL entries on a file",
+            "Deleting ACL entries on a file",
+            "Restricting FTP access",
+            "Securing super‑user access",
+            "Restricting root access",
+            "Monitoring super‑user activity",
+            "TCP wrappers"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Dynamic Host Configuration Protocol (DHCP)",
+          "topics": [
+            "Introduction to DHCP",
+            "DHCP lease time",
+            "DHCP scopes",
+            "DHCP IP address allocation types",
+            "Planning DHCP deployment",
+            "DHCP configuration files",
+            "Automatic startup of DHCP server",
+            "Configuration of DHCP clients",
+            "Manual configuration of DHCP"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Case Study",
+          "topics": [
+            "Installation of Linux",
+            "Customization of Linux",
+            "Installation of SAMBA",
+            "Installation of Apache",
+            "Installation of Tomcat",
+            "Installation of Sendmail",
+            "Installation of Postfix",
+            "Implementation of DNS services",
+            "Implementation of LDAP services",
+            "Installation of firewall",
+            "Installation of proxy server"
+          ]
+        }
+      ],
+      "experiments": [
+        "To study basic & user status Unix/Linux commands.",
+        "Study & use of commands for performing arithmetic operations with Unix/Linux.",
+        "Create a file called wlcc.txt with some lines and display how many lines, words and characters are present in that file.",
+        "Append ten more simple lines to the wlcc.txt file created above and split the appended file into 3 parts. Identify the names of the split files, display the contents of each file, and determine the number of lines in the last file.",
+        "Given two files each containing names of students, create a program to display only those names that are found in both files.",
+        "Create a program to find out the inode number of any desired file.",
+        "Study & use of the command for changing file permissions.",
+        "Write a pipeline of commands that displays on the monitor as well as saves the information about the number of users using the system at present to a file called usere.ux.",
+        "Execute shell commands through the vi editor.",
+        "Installation, configuration & customization of Unix/Linux.",
+        "Write a shell script that accepts any number of arguments and prints them in reverse order.",
+        "Write a shell script to find the smallest of three numbers that are read from the keyboard.",
+        "Write a shell script that reports the login of a specified user within one minute after the user logs in; the script automatically terminates if the user does not log in during a specified period.",
+        "Installation of SAMBA, Apache, Tomcat.",
+        "Implementation of DNS and LDAP services.",
+        "Study & installation of firewall & proxy server."
+      ],
+      "reference_books": [
+        "Venkatesh Murthy, “Introduction to Unix & Shell”, Pearson Edu",
+        "Forouzan, “Unix & Shell Programming”, Cengage Learning",
+        "Sumitab Das, “Unix Concept & Application”, TMH",
+        "Gopalan, Shivaselvan, “Beginners Guide to Unix”, PHI Learning",
+        "Venkateshwavle, “Linux Programming Tools Unveiled”, BS Publication",
+        "Richard Peterson, “Linux Complete Reference”, TMH",
+        "Richard Peterson, “Unix Complete Reference”, TMH"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Python",
+      "subject_code": "CS506",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "To write a Python program to find GCD of two numbers.",
+        "To write a Python Program to find the square root of a number by Newton’s Method.",
+        "To write a Python program to find the exponentiation of a number.",
+        "To write a Python Program to find the maximum from a list of numbers.",
+        "To write a Python Program to perform Linear Search.",
+        "To write a Python Program to perform binary search.",
+        "To write a Python Program to perform selection sort.",
+        "To write a Python Program to perform insertion sort.",
+        "To write a Python Program to perform Merge sort.",
+        "To write a Python program to find first n prime numbers.",
+        "To write a Python program to multiply matrices.",
+        "To write a Python program for command line arguments.",
+        "To write a Python program to find the most frequent words in a text read from a file.",
+        "To write a Python program to simulate elliptical orbits in Pygame.",
+        "To write a Python program to bouncing ball in Pygame."
+      ],
+      "reference_books": [
+        "Timothy A. Budd: Exploring python, McGraw-Hill Education.",
+        "R.Nageshwar Rao,”Python Programming”,Wiley India",
+        "Allen B. Downey; Think Python, O'Reilly Media, Inc."
+      ],
+      "extra": null
+    }
+  ]
+}

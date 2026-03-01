@@ -1,0 +1,359 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Construction Technology",
+      "subject_code": "CE402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Design features and construction of Foundations",
+          "topics": [
+            "Introduction and essential requirements of foundations",
+            "Types of footings and footing depth (strip footings, isolated footings, eccentrically loaded footings, grillage foundations)",
+            "Design features and construction details of combined footing and strap footing",
+            "Frost heave: causes and prevention",
+            "Effect of ground water on footings",
+            "Purpose and classification of pile foundations",
+            "Advantages, disadvantages and selection criteria for pile types",
+            "Pile action and behavior of single piles and pile groups under load",
+            "Definition of load failure for piles"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Formwork and Temporary structures",
+          "topics": [
+            "Design and construction features of temporary structures",
+            "Stationary and slip formwork techniques",
+            "Special features of in‑situ construction",
+            "Stripping and removal of formworks",
+            "Formworks for special structures (e.g., shells, bridges, towers)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Masonry and walls",
+          "topics": [
+            "Brick masonry: bonds, jointing, construction methods",
+            "Stone masonry: casting and laying techniques",
+            "Masonry construction practices and code provisions for load‑bearing and non‑load‑bearing walls",
+            "Common defects in masonry walls and their impact on strength and performance",
+            "Design of brick masonry, precast stone masonry, hollow concrete block, and hollow block masonry walls",
+            "Plastering, pointing, white and colour washing, distempering, and dampness protection",
+            "Doors, windows and ventilators: classification by material, size, location, fittings",
+            "Construction of sunshades, sills, jambs, and RCC door/window frames",
+            "Stair types and rules of proportionality",
+            "Repair techniques for masonry, walls, doors and windows"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Construction of Floors and Roofs",
+          "topics": [
+            "Ground floor components, material selection and construction of various floorings (mud, brick, cement, terrazzo, mosaic, tiled, marble, rubber, glass, plastic)",
+            "Upper floor: slab floors, jack‑arch floors, RCC floors, ribbed/hollow tiled flooring, filler‑joist floors, pre‑cast concrete floors, timber floors",
+            "Repair techniques for floors",
+            "Introduction to roof types and construction of pitched roofs, single roofs, double/purlin roofs, trussed roofs, steel roof trusses",
+            "Roof coverings for pitched and flat/terraced roofs",
+            "Repair techniques for roofs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Construction of Earthquake Resistant Building",
+          "topics": [
+            "Planning of earthquake‑resistant buildings",
+            "Construction of walls with corner reinforcement provisions",
+            "Construction of beams and columns for seismic performance",
+            "Base isolation techniques"
+          ]
+        }
+      ],
+      "experiments": [
+        "Tests on Bricks",
+        "Tests on Aggregates (fine and Coarse)",
+        "Tests on Cements and concrete",
+        "Tests on tiles"
+      ],
+      "reference_books": [
+        "Mohan Rai & M. P. Jai Singh, Advances in Building materials and Constructions.",
+        "S. P. Arora and S. P. Bindra, A text Book of Building Construction - Dhanpat Rai and Sons, New Delhi.",
+        "S. K. Sarkar and Saraswati, Construction Technology - Oxford University Press, New Delhi.",
+        "Sushil Kumar, Building Construction.",
+        "B. C. Punmia, Building Construction.",
+        "Metchell, Building Construction.",
+        "Chudley R., Construction Technology.",
+        "Dr. K.R. Arora, Soil Mechanics & Foundation Engg - Std. Publishers Delhi.",
+        "B.C. Punmia, Soil Mechanics & Foundation Engg. - Laxmi Publications Delhi"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Structural Analysis-I",
+      "subject_code": "CE403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Virtual work and Energy Principles",
+          "topics": [
+            "Principles of Virtual work applied to deformable bodies",
+            "Strain energy and complementary energy",
+            "Energy theorems",
+            "Maxwell’s Reciprocal theorem",
+            "Analysis of Pin‑Jointed frames for static loads"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Indeterminate Structures‑I",
+          "topics": [
+            "Static and Kinematics indeterminacy",
+            "Analysis of Fixed and Continuous beams by theorem of three moments",
+            "Effect of sinking and rotation of supports",
+            "Moment distribution method (without sway)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Indeterminate Structures‑II",
+          "topics": [
+            "Analysis of beams and frames by slope‑deflection method",
+            "Column Analogy method"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Arches and Suspension Cables",
+          "topics": [
+            "Three hinged arches of different shapes",
+            "Eddy’s Theorem",
+            "Suspension cable and stiffening girders",
+            "Two hinged and fixed arches – rib shortening and temperature effects"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Rolling loads and Influence Lines",
+          "topics": [
+            "Maximum shear force and bending moment curves for various types of rolling loads",
+            "Focal length and equivalent uniform distributed load (EUDL)",
+            "Influence lines for determinate structures – beams",
+            "Influence lines for three‑hinged arches"
+          ]
+        }
+      ],
+      "experiments": [
+        "To verify Maxwell‑Bett’s Law.",
+        "To determine the flexural rigidity of the beam and verify it theoretically.",
+        "To determine the deflection of a pin‑jointed truss and verify the results theoretically and graphically.",
+        "To verify strain in an externally loaded beam with a strain gauge indicator and verify theoretically.",
+        "To study behaviour of different types of columns and find Euler’s buckling load for each case.",
+        "To study two hinged arch for the horizontal displacement of the roller end for a given system of loading and compare with analytical results.",
+        "To study the behaviour of a portal frame under different end conditions.",
+        "To find the value of flexural rigidity (EI) for a given beam and compare it with theoretical value.",
+        "To determine the deflection of a pin‑connected truss analytically and graphically and verify experimentally.",
+        "To verify the Muller‑Breslau theorem by using Begg’s deformator set."
+      ],
+      "reference_books": [
+        "Rammamurthy, Theory of Structures, Dhanpat Rai.",
+        "Bhavikatti S.S., Analysis of Structures (I & II), Vikas Publication.",
+        "B. C. Punmia, Theory of Structures, Firewall Media.",
+        "A. Kassimali, Structural Analysis, Cengage Learning.",
+        "A. Ghali, A. Neville, T. G. Brown, Structural Analysis, CRC Press.",
+        "Hibbler, Structure Analysis –1, Pearson Education India.",
+        "C. S. Reddy, Basic Structural Analysis, Tata McGraw Hill Publishing Company.",
+        "Pandit and Gupta, Theory of Structures – I, McGraw Hill.",
+        "West H. H., Fundamental of Structural Analysis, Wiley India.",
+        "Das M. M., Structural Analysis, PHI.",
+        "Thandavamurthy T. S., Structural Analysis, Oxford.",
+        "Muthuku, Azmi I., Basic Structural Analysis, IK International Publisher.",
+        "C. K. Wang, Intermediate Structural Analysis, McGraw Hill.",
+        "J. Kinney Sterling, Indeterminate Structural Analysis, Addison‑Wesley.",
+        "R. R. Mamuther, Theory of Structures, Dhanpat Rai.",
+        "Jain O. P., Jain B. K., Theory & Analysis of Structures (I & II), Nem Chand."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "TRANSPORTATION ENGINEERING –I",
+      "subject_code": "CE404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction, Tractive resistances \\& Permanent way",
+          "topics": [
+            "Principles of transportation and modes (roads, railways, airways, waterways) and their limitations.",
+            "Route surveys, alignment, railway track development and gauge considerations.",
+            "Hauling capacity and tractive effort.",
+            "Rail types, welding, wear, creep.",
+            "Sleeper types, comparison, density requirements.",
+            "Rail fastenings: fish plates, fish bolts, spikes, bearing plates, chain keys, check and guard rails.",
+            "Ballast requirements, material types, quantity, plate laying methods, material trains and relaying of track."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Geometric Design ; Station \\& Yards; Points and Crossings \\& Signaling and interlocking",
+          "topics": [
+            "Formation and cross‑section design, super‑elevation, equilibrium, cant and cant deficiency.",
+            "Curve geometry and permissible speeds on curves.",
+            "Types and locations of stations and yards, general equipment and layout planning.",
+            "Design of simple turnouts and layout details.",
+            "Signal types used in stations and yards and principles of signaling and interlocking."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Bridge Site Investigation and Planning ; Loading Standards \\& Component parts",
+          "topics": [
+            "Site selection, alignment and collection of bridge design data.",
+            "Essential surveys, hydraulic design and scour depth assessment.",
+            "Economic span, clearance, afflux, classification of road and railway bridges.",
+            "Design loads, impact factors and Indian loading standards for railway and highway bridges.",
+            "Superstructure and sub‑structure components: abutments, piers, wing walls, return walls, approaches, decks and flooring systems.",
+            "Selection of appropriate superstructure type."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Bridge Foundations, Construction, Testing and Strengthening of Bridges",
+          "topics": [
+            "Foundation types for bridges: piles, wells, sinking wells, cofferdams.",
+            "Material selection for bridges and construction techniques (underwater and above water).",
+            "Use of sheet piles and cofferdams, erection of girders, equipment and plant.",
+            "Inspection, data collection and strengthening methods for bridges.",
+            "Causes and analysis of bridge failures."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Tunnels",
+          "topics": [
+            "Route selection, engineering surveys, alignment, tunnel cross‑section, bridge action and pressure‑relief phenomena.",
+            "Tunnel approaches, shafts and pilot shafts.",
+            "Construction methods in soft soil, hard soil and rock.",
+            "Lining types and installation methods.",
+            "Mucking, drainage and ventilation practices.",
+            "Notable examples of important tunnels in India and abroad."
+          ]
+        }
+      ],
+      "experiments": [
+        "Collection of photographs showing various bridge types, rail tracks, and tunnels.",
+        "Hydraulic design of bridges.",
+        "Study of modern large‑span bridges, including prestressed bridges and launching processes.",
+        "Field visit to railway bridges for rehabilitation assessment.",
+        "Field visit to railway over‑bridges and under‑bridges."
+      ],
+      "reference_books": [
+        "Chakraborty and Das; Principles of transportation engineering; PHI",
+        "Rangwala SC; Railway Engineering; Charotar Publication House, Anand",
+        "Rangwala SC; Bridge Engineering; Charotar Publication House, Anand",
+        "Ponnuswamy; Bridge Engineering; TMH",
+        "Railway Engineering by Arora & Saxena - Dhanpat Rai & Sons",
+        "Railway Track by K.F. Antia",
+        "Principles and Practice of Bridge Engineering S.P. Bindra - Dhanpat Rai & Sons",
+        "Bridge Engineering - J.S. Alagia - Charotar Publication House, Anand",
+        "Railway, Bridges & Tunnels by Dr. S.C. Saxena",
+        "Harbour, Docks & Tunnel Engineering - R. Srinivasan",
+        "Essentials of Bridge Engg. By I.J. Victor; Relevant IS & IRS codes"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "ENGINEERING GEOLOGY & REMOTE SENSING",
+      "subject_code": "CE405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and physical geology",
+          "topics": [
+            "branches application and scope of geology",
+            "age and parts of the earth",
+            "weathering or rocks",
+            "geological action of river",
+            "ground water",
+            "sea and oceans",
+            "Concept and causes of earthquakes and volcanoes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Mineralogy and crystallography",
+          "topics": [
+            "fundamentals of mineralogy",
+            "physical properties",
+            "study of common rock forming minerals and ore minerals",
+            "importance to civil engineering",
+            "element of crystals and introduction to crystal systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Petrology",
+          "topics": [
+            "rock cycle",
+            "composition",
+            "classification and structures of igneous, sedimentary and metamorphic rocks of civil engineering importance",
+            "study of common rock types",
+            "brief geological history of India"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Structural geology",
+          "topics": [
+            "dip, strike, outcrops",
+            "classification and detailed studies of geological structures i.e. Folds, Faults, Joints, Unconformity",
+            "their importance in civil engineering"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Applied geology and remote sensing",
+          "topics": [
+            "engineering properties of rocks",
+            "selection of sites for Dam, Tunnel, Reservoirs and Canals",
+            "uses of remote sensing technique",
+            "Types, components and elements of remote sensing",
+            "EMS and MSS",
+            "Visual interpretation technique",
+            "application of GIS in civil engineering and resource mapping (site selection, water resources, rocks and soil)"
+          ]
+        }
+      ],
+      "experiments": [
+        "Identification of simple rock forming minerals and important ores.",
+        "Identification of rocks",
+        "Simple map Exercises.",
+        "Field Visit/Geological Excursion"
+      ],
+      "reference_books": [
+        "Prabin Singh - \"Engineering and General Geology\"",
+        "P. K. Mukherjee - \"A test Book of Geology\"",
+        "S. K. Garg - \"A text Book of Physical and Engineering Geology\""
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "SOFTWARE LAB (AutoCAD)",
+      "subject_code": "CE406",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "Introduction to CAD, Introduction to AutoCAD, Software and hardware requirements, various input and output devices. Getting started with AutoCAD, Setting drawing limits, Units etc.",
+        "Learning and practice of Draw commands, Modify commands, utility and other commands.",
+        "Drawing basic Geometric Shapes, Basic Plotting and Editing Tools, Architectural Views & Drafting Views.",
+        "3D modelling with AutoCAD",
+        "Dimensioning, Annotating in AutoCAD with Text & Hatching, Blocks, drafting symbols and Attributes, Layers, Templates & Design Center, Advanced plotting (Layouts, Viewports)",
+        "Drawing plan, section and elevation of 1 BHK house."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

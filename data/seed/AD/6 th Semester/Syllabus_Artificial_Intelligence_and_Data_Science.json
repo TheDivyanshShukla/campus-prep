@@ -1,0 +1,769 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Deep Learning",
+      "subject_code": "AD-601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Deep Learning",
+          "topics": [
+            "Biological Neuron",
+            "Idea of computational units",
+            "McCulloch–Pitts Neural Model",
+            "Linear Perceptron",
+            "Perceptron Learning",
+            "Feed Forward and Back Propagation Networks"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Feedforward Networks",
+          "topics": [
+            "Multilayer Perceptron",
+            "Gradient Descent",
+            "Backpropagation",
+            "Empirical Risk Minimization",
+            "Regularization",
+            "Autoencoders"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Convolutional Networks",
+          "topics": [
+            "Convolution Operation",
+            "Variants of the Basic Convolution Function",
+            "Structured Outputs",
+            "Efficient Convolution Algorithms",
+            "Random or Unsupervised Features",
+            "LeNet",
+            "AlexNet"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Recurrent Neural Networks",
+          "topics": [
+            "Bidirectional RNNs",
+            "Deep Recurrent Networks",
+            "Recursive Neural Networks",
+            "Long Short-Term Memory (LSTM)",
+            "Other Gated RNNs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Deep Generative Models",
+          "topics": [
+            "Boltzmann Machines",
+            "Restricted Boltzmann Machines",
+            "MCMC and Gibbs Sampling",
+            "Gradient Computations in RBMs",
+            "Deep Belief Networks",
+            "Deep Boltzmann Machines"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a Program to implement Linear Perceptron.",
+        "Write a Program to implement Multi-Layer Perceptron.",
+        "Write a Program to implement Autoencoders.",
+        "Write a Program to implement basic Convolutional Neural Network for Image Classification.",
+        "Write a Program to implement LeNet for image classification.",
+        "Write a Program to implement AlexNet for image classification.",
+        "Write a Program to implement RNN for text classification.",
+        "Write a Program to implement LSTM for text prediction.",
+        "Write a Program to implement Boltzmann Machines for any real world classification problem.",
+        "Write a Program to implement Restricted Boltzmann Machines for any real world classification problem."
+      ],
+      "reference_books": [
+        "Ian Goodfellow, Yoshua Bengio, Aaron Courville, “Deep Learning”, MIT Press, 2016.",
+        "Francois Chollet, “Deep Learning with Python”, Manning; Second Edition, 2021.",
+        "Navin Kumar Manaswi, “Deep Learning with Applications Using Python”, Apress, 2018.",
+        "Nikhil Buduma, “Fundamentals of Deep Learning: Designing Next-Generation Machine Intelligence Algorithms”, O’Reilly publications, 2017."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Networks",
+      "subject_code": "AD-602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Computer Network Fundamentals and Physical Layer",
+          "topics": [
+            "Definitions, goals, components, Architecture, Classifications & Types",
+            "Layered Architecture: Protocol hierarchy, Design Issues, Interfaces and Services, Connection‑Oriented & Connectionless Services, Service primitives, Design issues & its functionality",
+            "ISO/OSI Reference Model: Principle, Model, Descriptions of various layers and its comparison with TCP/IP",
+            "Principles of Physical Layer: Media, Bandwidth, Data rate and Modulations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data Link Layer and MAC Sub‑layer",
+          "topics": [
+            "Need, Services Provided, Framing, Flow Control, Error control",
+            "Data Link Layer Protocols: Elementary & Sliding Window protocols – 1‑bit, Go‑Back‑N, Selective Repeat, Hybrid ARQ",
+            "MAC Sub‑layer: MAC Addressing, Binary Exponential Back‑off (BEB) Algorithm, Distributed Random Access/Contention Schemes – ALOHA, Slotted ALOHA, CSMA, CSMA/CD, CSMA/CA",
+            "IEEE 802 series standards and their variants"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Network Layer and Routing",
+          "topics": [
+            "Need, Services Provided, Design issues",
+            "Routing algorithms: Least Cost Routing, Dijkstra's algorithm, Bellman‑Ford algorithm, Hierarchical Routing, Broadcast Routing, Multicast Routing",
+            "IP Addresses, Header format, Packet forwarding, Fragmentation and reassembly, ICMP",
+            "Comparative study of IPv4 & IPv6"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transport Layer",
+          "topics": [
+            "Design Issues",
+            "UDP: Header Format, Per‑Segment Checksum, Carrying Unicast/Multicast Real‑Time Traffic",
+            "TCP: Connection Management, Reliability of Data Transfers, Flow Control, Congestion Control, Header Format, Timer Management"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Application Layer and Network Security",
+          "topics": [
+            "WWW and HTTP, FTP, SSH, Email (SMTP, MIME, IMAP), DNS, Network Management (SNMP)",
+            "Network Security: Introduction to security, Traditional Ciphers, Modern Ciphers, Message Integrity and Authentication"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of Different Type of LAN & Network Equipment.",
+        "Study and Verification of standard Network topologies i.e. Star, Bus, Ring etc.",
+        "LAN installations and Configurations.",
+        "Write a program to implement various types of error correcting techniques.",
+        "Write a program to implement various types of framing methods.",
+        "Study of Tool Command Language (TCL).",
+        "Study and Installation of Standard Network Simulator: NS‑2, NS‑3, OpNet, QualNet etc.",
+        "Study & Installation of ONE (Opportunistic Network Environment) Simulator for High Mobility Networks.",
+        "Configure 802.11 WLAN.",
+        "Implement & Simulate various types of routing algorithm.",
+        "Study & Simulation of MAC Protocols like Aloha, CSMA, CSMA/CD and CSMA/CA using Standard Network Simulators.",
+        "Study of Application layer protocols – DNS, HTTP, HTTPS, FTP and Telnet."
+      ],
+      "reference_books": [
+        "Andrew S. Tanenbaum, David J. Wetherall, “Computer Networks”, Pearson Education.",
+        "Douglas E. Comer, “Internetworking With TCP/IP: Principles, Protocols, And Architecture Volume I”, 6th Edition, Pearson Education.",
+        "Dimitri Bertsekas, Robert Gallager, “Data Networks”, PHI Publication, Second Edition.",
+        "Behrouz A. Forouzan, “TCP/IP Protocol Suite”, Fourth Edition, Tata McGraw Hill.",
+        "Uyless Black, “Computer Networks”, PHI Publication, Second Edition."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Mining and Warehousing",
+      "subject_code": "AD 603 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Warehousing",
+          "topics": [
+            "Introduction",
+            "Delivery Process",
+            "Data warehouse Architecture",
+            "Data cleaning",
+            "Data Integration and transformation",
+            "Data reduction",
+            "Data warehouse schema",
+            "Partitioning strategy",
+            "Data warehouse Implementation",
+            "Data Marts",
+            "Meta Data",
+            "Example of a Multidimensional Data model",
+            "Introduction to Pattern Warehousing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "OLAP Systems",
+          "topics": [
+            "Basic concepts",
+            "OLAP queries",
+            "Types of OLAP servers",
+            "OLAP operations",
+            "Data Warehouse Hardware and Operational Design",
+            "Security",
+            "Backup and Recovery"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Data & Data Mining",
+          "topics": [
+            "Data Types",
+            "Quality of data",
+            "Data Preprocessing",
+            "Similarity measures",
+            "Summary statistics",
+            "Data distributions",
+            "Basic data mining tasks",
+            "Data Mining vs knowledge discovery in databases",
+            "Issues in Data mining",
+            "Introduction to Fuzzy sets and fuzzy logic"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Supervised Learning: Classification",
+          "topics": [
+            "Statistical-based algorithms",
+            "Distance-based algorithms",
+            "Decision tree-based algorithms",
+            "Neural network-based algorithms",
+            "Rule-based algorithms",
+            "Probabilistic Classifiers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Clustering & Association Rule Mining",
+          "topics": [
+            "Hierarchical algorithms",
+            "Partitional algorithms",
+            "Clustering large databases - BIRCH",
+            "DBSCAN",
+            "CURE algorithms",
+            "Parallel and distributed association rule algorithms such as Apriori",
+            "FP growth algorithms"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Pang‑ning Tan, Steinbach & Kumar, “Introduction to Data Mining”, Pearson Edu, 2019.",
+        "Jaiwei Han, Micheline Kamber, “Data Mining: Concepts and Techniques”, Morgan Kaufmann Publishers.",
+        "Margaret H. Dunham, “Data Mining: Introductory and Advanced topics”, Pearson Edu., 2009.",
+        "Anahory & Murray, “Data Warehousing in the Real World”, Pearson Edu., 2009."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Image Processing",
+      "subject_code": "AD 603 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Digital Image Fundamentals",
+          "topics": [
+            "Digital image fundamentals",
+            "Simple image model",
+            "Sampling and quantization",
+            "Relationship between pixels",
+            "Imaging geometry",
+            "Image acquisition systems",
+            "Different types of digital images"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Image Transformations",
+          "topics": [
+            "Image transformations",
+            "Fourier transforms",
+            "Discrete Fourier transforms",
+            "Fast Fourier transform",
+            "Walsh transformation",
+            "Hadamard transformation",
+            "Discrete Cosine Transformation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Image Enhancement",
+          "topics": [
+            "Image enhancement",
+            "Filters in spatial domain",
+            "Filters in frequency domain",
+            "Histogram based processing",
+            "Image subtraction",
+            "Averaging",
+            "Image smoothing",
+            "Median filtering",
+            "Low pass filtering",
+            "Image sharpening by high pass filtering"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Image Encoding and Segmentation",
+          "topics": [
+            "Image encoding and segmentation",
+            "Encoding: mapping",
+            "Quantizer",
+            "Coder",
+            "Error-free compression",
+            "Lossy compression schemes",
+            "JPEG compression standard",
+            "Detection of discontinuities by point detection",
+            "Line detection",
+            "Edge detection",
+            "Edge linking and boundary detection",
+            "Local analysis",
+            "Global processing via Hough transforms",
+            "Global processing via graph theoretic techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Mathematical Morphology",
+          "topics": [
+            "Mathematical morphology",
+            "Binary morphology",
+            "Dilation",
+            "Crosses",
+            "Opening and closing",
+            "Simple methods of representation",
+            "Signatures",
+            "Boundary segments",
+            "Skeleton of a region",
+            "Polynomial approximation",
+            "Recent advancements in DIP",
+            "Machine learning for image processing applications"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rafael C Gonzalez, Richard E Woods 3rd Edition, Digital Image Processing Pearson.",
+        "Rafael C Gonzalez, Richard E Woods 3rd Edition, Digital Image Processing using Matlab – TMH.",
+        "Sonka, Digital Image Processing & Computer Vision, Cengage Learning.",
+        "Jayaraman, Digital Image Processing, TMH.",
+        "Pratt, Digital Image Processing, Wiley India.",
+        "Annadurai, Fundamentals of Digital ImageProcessing, Pearson Education."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Information Retrieval",
+      "subject_code": "AD 603 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "History of Information Retrieval",
+            "Components of Information Retrieval",
+            "Issues in Information Retrieval",
+            "Open source search engine frameworks",
+            "Impact of the web on Information Retrieval",
+            "Role of artificial intelligence (AI) in Information Retrieval",
+            "IR versus Web Search",
+            "Components of a search engine",
+            "Characterizing the web"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Retrieval Models and Weighting",
+          "topics": [
+            "Boolean retrieval model",
+            "Vector space retrieval model",
+            "Term weighting",
+            "TF‑IDF weighting",
+            "Cosine similarity",
+            "Pre‑processing techniques",
+            "Inverted indices",
+            "Efficient processing with sparse vectors",
+            "Language‑model based IR",
+            "Probabilistic IR",
+            "Latent Semantic Indexing (LSI)",
+            "Relevance feedback",
+            "Query expansion"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Web Search and Crawling",
+          "topics": [
+            "Web search overview",
+            "Web structure",
+            "User‑paid placement and search engine optimization",
+            "Web search architectures",
+            "Crawling techniques",
+            "Meta‑crawlers",
+            "Focused crawling",
+            "Web indexes",
+            "Near‑duplicate detection",
+            "Index compression",
+            "XML retrieval"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Link Analysis and Ranking",
+          "topics": [
+            "Link analysis",
+            "Hubs and authorities",
+            "PageRank algorithm",
+            "HITS algorithm",
+            "Searching and ranking",
+            "Relevance scoring for the web",
+            "Similarity measures",
+            "Hadoop & MapReduce for IR",
+            "Evaluation of IR systems",
+            "Personalized search",
+            "Collaborative filtering",
+            "Content‑based recommendation",
+            "Handling the invisible web",
+            "Snippet generation and summarization",
+            "Question answering",
+            "Cross‑lingual retrieval"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Information Filtering and Text Mining",
+          "topics": [
+            "Information filtering",
+            "Organization and relevance feedback",
+            "Text mining",
+            "Text classification",
+            "Text clustering",
+            "Categorization algorithms (Naïve Bayes, decision trees, nearest neighbor)",
+            "Clustering algorithms (agglomerative clustering, k‑means, expectation‑maximisation (EM))"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "C. Manning, P. Raghavan and H. Schütze: Introduction to Information Retrieval, Cambridge University Press, 2008.",
+        "Ricardo Baeza‑Yates and Berthier Ribeiro‑Neto, Modern Information Retrieval: The Concepts and Technology behind Search, 2nd Edition, ACM Press Books, 2011.",
+        "Bruce Croft, Donald Metzler and Trevor Strohman, Search Engines: Information Retrieval in Practice, 1st Edition, Addison‑Wesley, 2009.",
+        "Mark Levene, An Introduction to Search Engines and Web Navigation, 2nd Edition, Wiley, 2010."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "AD 604 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Internet of Things – Fundamentals",
+          "topics": [
+            "IoT definition",
+            "Characteristics of IoT",
+            "IoT conceptual and architectural framework",
+            "Components of IoT ecosystems",
+            "Physical and logical design of IoT",
+            "IoT enablers",
+            "Modern day IoT applications",
+            "M2M communications",
+            "IoT vs M2M",
+            "IoT vs WoT",
+            "IoT reference architecture",
+            "IoT network configurations",
+            "IoT LAN",
+            "IoT WAN",
+            "IoT node",
+            "IoT gateway",
+            "IoT proxy",
+            "Review of basic microcontrollers and interfacing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Sensors and Actuators",
+          "topics": [
+            "Definition of sensor",
+            "Basic components and challenges of a sensor node",
+            "Sensor features",
+            "Sensor resolution",
+            "Sensor classes: analog, digital, scalar, vector sensors",
+            "Sensor types, bias, drift, hysteresis error, quantization error",
+            "Actuators",
+            "Actuator types: hydraulic, pneumatic, electrical, thermal/magnetic, mechanical, soft actuators"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "IoT Networking Technologies",
+          "topics": [
+            "Basics of IoT networking",
+            "IoT functional components",
+            "IoT service‑oriented architecture",
+            "IoT challenges",
+            "6LoWPAN",
+            "IEEE 802.15.4",
+            "ZigBee and its variants",
+            "RFID features and working principle",
+            "RFID applications",
+            "NFC (Near Field Communication)",
+            "Bluetooth",
+            "Wireless Sensor Networks and applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "IoT Communication Protocols",
+          "topics": [
+            "MQTT – methods, components, communication, topics and applications",
+            "SMQTT",
+            "CoAP – message types, request‑response model",
+            "XMPP",
+            "AMQP – features, components, frame types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IoT Platforms, Cloud and Security",
+          "topics": [
+            "IoT platforms – Arduino, Raspberry Pi, other platforms",
+            "Data analytics for IoT",
+            "Cloud for IoT",
+            "Cloud storage models and communication APIs",
+            "Attacks in IoT systems",
+            "Vulnerability analysis in IoT",
+            "IoT case studies – Smart Home, Smart farming, etc."
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Vijay Madisetti, Arshdeep Bahga, “Internet of Things, A Hands on Approach”, University Press",
+        "Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, “Introduction to Internet of Things: A practical Approach”, ETI Labs",
+        "Pethuru Raj and Anupama C. Raman, “The Internet of Things: Enabling Technologies, Platforms, and Use Cases”, CRC Press",
+        "Jeeva Jose, “Internet of Things”, Khanna Publishing House, Delhi",
+        "Adrian McEwen, “Designing the Internet of Things”, Wiley",
+        "Raj Kamal, “Internet of Things: Architecture and Design”, McGraw Hill",
+        "Cuno Pfister, “Getting Started with the Internet of Things”, O'Reilly Media"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Block Chain Technologies",
+      "subject_code": "AD 604 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Overview of Blockchain",
+            "Public Ledgers",
+            "Bitcoin",
+            "Smart Contracts",
+            "Block in a Blockchain",
+            "Transactions",
+            "Distributed Consensus",
+            "Public vs Private Blockchain",
+            "Understanding Cryptocurrency to Blockchain",
+            "Permissioned Model of Blockchain",
+            "Overview of Security Aspects of Blockchain",
+            "Cryptographic Hash Function",
+            "Properties of a Hash Function",
+            "Hash Pointer and Merkle Tree",
+            "Digital Signature",
+            "Public Key Cryptography",
+            "Basic Cryptocurrency"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Understanding Block chain with Crypto currency",
+          "topics": [
+            "Creation of Coins",
+            "Payments and Double Spending",
+            "Bitcoin Scripts",
+            "Bitcoin P2P Network",
+            "Transaction in Bitcoin Network",
+            "Block Mining",
+            "Block Propagation and Block Relay",
+            "Distributed Consensus in Open Environments",
+            "Consensus in a Bitcoin Network",
+            "Proof of Work (PoW) – Basic Introduction",
+            "Hash Cash PoW",
+            "Bitcoin PoW",
+            "Attack on PoW and Monopoly Problem",
+            "Proof of Stake",
+            "Proof of Burn",
+            "Proof of Elapsed Time",
+            "Life of a Bitcoin Miner",
+            "Mining Difficulty",
+            "Mining Pool"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Understanding Block chain for Enterprises",
+          "topics": [
+            "Permissioned Model and Use Cases",
+            "Design Issues for Permissioned Blockchains",
+            "Execute Contracts",
+            "State Machine Replication",
+            "Consensus Models for Permissioned Blockchains",
+            "Distributed Consensus in Closed Environment",
+            "Paxos",
+            "RAFT Consensus",
+            "Byzantine Generals Problem",
+            "Byzantine Fault Tolerant System",
+            "Lamport‑Shostak‑Pease BFT Algorithm",
+            "BFT over Asynchronous Systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Enterprise application of Block chain",
+          "topics": [
+            "Cross‑Border Payments",
+            "Know Your Customer (KYC)",
+            "Food Security",
+            "Mortgage over Blockchain",
+            "Blockchain‑Enabled Trade",
+            "Trade Finance Network (We Trade)",
+            "Supply Chain Financing",
+            "Identity on Blockchain"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Block chain application development",
+          "topics": [
+            "Hyperledger Fabric – Architecture",
+            "Hyperledger Fabric – Identities and Policies",
+            "Hyperledger Fabric – Membership and Access Control",
+            "Hyperledger Fabric – Channels",
+            "Hyperledger Fabric – Transaction Validation",
+            "Writing Smart Contracts using Hyperledger Fabric",
+            "Writing Smart Contracts using Ethereum",
+            "Overview of Ripple",
+            "Overview of Corda"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Melanie Swan, “Block Chain: Blueprint for a New Economy”, O’Reilly, 2015",
+        "Josh Thompsons, “Block Chain: The Block Chain for Beginners- Guide to Blockchain Technology and Leveraging Block Chain Programming”",
+        "Daniel Drescher, “Block Chain Basics”, Apress; 1st edition, 2017",
+        "Anshul Kaushik, “Block Chain and Crypto Currencies”, Khanna Publishing House, Delhi",
+        "Imran Bashir, “Mastering Block Chain: Distributed Ledger Technology, Decentralization and Smart Contracts Explained”, Packt Publishing",
+        "Ritesh Modi, “Solidity Programming Essentials: A Beginner’s Guide to Build Smart Contracts for Ethereum and Block Chain”, Packt Publishing",
+        "Salman Baset, Luc Desrosiers, Nitin Gaur, Petr Novotny, Anthony O’Dowd, Venkatraman Ramakrishna, “Hands‑On Block Chain with Hyperledger: Building Decentralized Applications with Hyperledger Fabric and Composer”, Import, 2018"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Compiler Design",
+      "subject_code": "AD 604 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to compiling & Lexical Analysis",
+          "topics": [
+            "Introduction of Compiler",
+            "Major data structures in compiler",
+            "Types of compiler",
+            "Front-end and back-end of compiler",
+            "Compiler structure: analysis-synthesis model of compilation",
+            "Various phases of a compiler",
+            "Lexical analysis: input buffering",
+            "Specification & recognition of tokens",
+            "Design of a lexical analyzer generator",
+            "LEX"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Syntax Analysis & Syntax Directed Translation",
+          "topics": [
+            "Syntax analysis: CFGs",
+            "Top-down parsing",
+            "Brute force approach",
+            "Recursive descent parsing",
+            "Transformation on the grammars",
+            "Predictive parsing",
+            "Bottom-up parsing",
+            "Operator precedence parsing",
+            "LR parsers (SLR, LALR, LR)",
+            "Parser generation",
+            "Syntax directed definitions: construction of syntax trees",
+            "Bottom-up evaluation of S-attributed definition",
+            "L-attributed definition",
+            "Top-down translation",
+            "Bottom-up evaluation of inherited attributes",
+            "Recursive evaluation",
+            "Analysis of syntax directed definition"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Type Checking & Run Time Environment",
+          "topics": [
+            "Type checking: type system",
+            "Specification of simple type checker",
+            "Equivalence of expression types",
+            "Type conversion",
+            "Overloading of functions and operations",
+            "Polymorphic functions",
+            "Run-time environment: storage organization",
+            "Storage allocation strategies",
+            "Parameter passing",
+            "Dynamic storage allocation",
+            "Symbol table",
+            "Error detection & recovery",
+            "Ad-hoc and systematic methods"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Code Generation",
+          "topics": [
+            "Intermediate code generation: declarations",
+            "Assignment statements",
+            "Boolean expressions",
+            "Case statements",
+            "Back patching",
+            "Procedure calls",
+            "Code generation: issues in the design of code generator",
+            "Basic block and flow graphs",
+            "Register allocation and assignment",
+            "DAG representation of basic blocks",
+            "Peephole optimization",
+            "Generating code from DAG"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Code Optimization",
+          "topics": [
+            "Introduction to code optimization: sources of optimization of basic blocks",
+            "Loops in flow graphs",
+            "Dead code elimination",
+            "Loop optimization",
+            "Introduction to global data flow analysis",
+            "Code improving transformations",
+            "Data flow analysis of structure flow graph",
+            "Symbolic debugging of optimized code"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A. V. Aho, R. Sethi, and J. D. Ullman, Compilers: Principles, Techniques and Tools, Pearson Education",
+        "Raghavan, Compiler Design, TMH Pub.",
+        "Louden, Compiler Construction: Principles and Practice, Cengage Learning",
+        "A. C. Holub, Compiler Design in C, Prentice-Hall Inc., 1993",
+        "Mak, Writing Compiler & Interpreters, Wiley Pub."
+      ],
+      "extra": null
+    }
+  ]
+}

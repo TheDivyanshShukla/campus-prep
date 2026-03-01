@@ -1,0 +1,926 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Computer Vision",
+      "subject_code": "AL701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Computer Vision",
+          "topics": [
+            "Introduction to computer vision",
+            "Introduction to images",
+            "Image Processing vs Computer Vision",
+            "Problems in Computer Vision",
+            "Basic image operations",
+            "Mathematical operations on images: datatype conversion",
+            "Contrast enhancement",
+            "Brightness enhancement",
+            "Bitwise operations (different bitwise operations)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Binary Image Processing",
+          "topics": [
+            "Binary image processing",
+            "Thresholding",
+            "Erosion",
+            "Dilation",
+            "Opening and closing",
+            "Connected component analysis",
+            "Contour analysis"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Image Enhancement and Filtering",
+          "topics": [
+            "Image enhancement and filtering",
+            "Color spaces",
+            "Color transforms",
+            "Histogram equalization",
+            "Advanced histogram equalization (CLAHE)",
+            "Color adjustment using curves",
+            "Image filtering: introduction",
+            "Convolution",
+            "Image smoothing – box blur",
+            "Gaussian blur",
+            "Median blur"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Image Gradients and Edge Detection",
+          "topics": [
+            "Introduction to image gradients",
+            "First order derivative filters",
+            "Second order derivative filters",
+            "Edge detection",
+            "Image segmentation and recognition",
+            "Image classification",
+            "Object detection"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Applications of Computer Vision",
+          "topics": [
+            "Gesture recognition",
+            "Motion estimation and object tracking",
+            "Face detection",
+            "Deep learning with OpenCV"
+          ]
+        }
+      ],
+      "experiments": [
+        "Hands‑on assignments covering 10–12 lab sessions on various computer vision tools and software"
+      ],
+      "reference_books": [
+        "Forsyth & Ponce, “Computer Vision – A Modern Approach”, Pearson Education.",
+        "M.K. Bhuyan, “Computer Vision and Image Processing: Fundamentals and Applications”, CRC Press, USA, ISBN 9780815370840 - CAT# K338147.",
+        "Richard Szeliski, “Computer Vision – Algorithms & Applications”, Springer.",
+        "R.C. Gonzalez & Richard E. Wood, “Digital Image Processing”, Addison‑Wesley Publishing.",
+        "Bharti Motwani, “Machine Learning for Text and Image Data Analysis”, Wiley, 2023."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "AI in Gaming",
+      "subject_code": "AL702(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction to Game AI",
+            "Kinds of AI used in game development",
+            "Model of game AI",
+            "AI engine structure"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Movement Algorithms and Steering",
+          "topics": [
+            "Kinematic movement algorithms",
+            "Problems related to steering behaviour of objects and solutions",
+            "Coordinated movement concepts",
+            "Motor control concepts"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Pathfinding",
+          "topics": [
+            "Basic path‑finding algorithms in game development",
+            "Path‑finding for complex solutions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Decision‑Making and Uncertainty",
+          "topics": [
+            "Decision trees for game development",
+            "State machines for game development",
+            "Fuzzy logic for implementing knowledge uncertainty",
+            "Markov systems for implementing knowledge uncertainty"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to Learning Mechanisms",
+          "topics": [
+            "Board game theory",
+            "Implementation of minimax algorithm",
+            "Implementation of negamax algorithm",
+            "Random number generation techniques",
+            "Minimaxing algorithms",
+            "Action prediction algorithms",
+            "Decision learning algorithms",
+            "Reinforcement learning algorithms"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "https://www.athabascau.ca/syllabi/comp/comp452.php",
+        "https://www.udemy.com/course/artificial-intelligence-for-simple-games",
+        "Artificial Intelligence for Games, Ian Millington and John Funge, CRC Press; 2nd edition, 2009.",
+        "Artificial Intelligence and Games, Georgios N. Yannakakis and Julian Togelius, Springer International Publishing, 2018."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advance Machine Learning",
+      "subject_code": "AL702(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Artificial Neural Network",
+          "topics": [
+            "Introduction to ANN",
+            "Perceptron",
+            "Cost Function",
+            "Gradient Checking",
+            "Multi-layer perceptron",
+            "Backpropagation algorithm",
+            "Random Initialization"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Decision Trees",
+          "topics": [
+            "Representing concepts as decision trees",
+            "Recursive induction of decision trees",
+            "Best splitting attribute: entropy and information gain",
+            "Searching for simple trees and computational complexity",
+            "Overfitting",
+            "Noisy data",
+            "Pruning"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Ensemble Methods",
+          "topics": [
+            "Bagging",
+            "Boosting",
+            "Stacking",
+            "Learning with ensembles",
+            "Random Forest"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Reinforcement Learning",
+          "topics": [
+            "Introduction to reinforcement learning (RL)",
+            "RL framework",
+            "Markov Decision Process (MDP)",
+            "Bellman equations",
+            "Value Iteration",
+            "Policy Iteration",
+            "Actor-critic model",
+            "Q-learning",
+            "SARSA",
+            "Bandit algorithms – UCB",
+            "Bandit algorithms – PAC",
+            "Bandit algorithms – Median Elimination",
+            "Policy Gradient",
+            "Full RL & MDPs",
+            "Bellman Optimality"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Dynamic Programming and Advanced RL Techniques",
+          "topics": [
+            "Dynamic Programming – Value iteration",
+            "Policy iteration",
+            "Q-learning & Temporal Difference Methods",
+            "Temporal‑Difference Learning",
+            "Eligibility Traces",
+            "Function Approximation",
+            "Least Squares Methods",
+            "Fitted Q",
+            "Deep Q‑Learning",
+            "Advanced Q‑learning algorithms",
+            "Inverse reinforcement learning",
+            "Deep Inverse Reinforcement Learning",
+            "Generative Adversarial Imitation Learning",
+            "Recent Trends in RL Architectures"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Christopher M. Bishop, “Pattern Recognition and Machine Learning”, Springer-Verlag New York Inc., 2nd Edition, 2011.",
+        "Tom M. Mitchell, “Machine Learning”, McGraw Hill Education, First edition, 2017.",
+        "Jeeva Jose, Introduction to Machine Learning, Khanna Book Publishing, 2020.",
+        "Rajiv Chopra, Machine Learning, Khanna Book Publishing, 2021.",
+        "Ethem Apaydin, Introduction to Machine Learning, 2e, The MIT Press, 2010.",
+        "Reinforcement Learning: An Introduction, Sutton and Barto, 2nd Edition.",
+        "Reinforcement Learning: State-of-the-Art, Marco Wiering and Martijn van Otterlo, Eds."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Predictive Analytics",
+      "subject_code": "AL702(C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Data Products",
+          "topics": [
+            "Data Product",
+            "Data Product Examples in Enterprise",
+            "Developing a Data Product Strategy"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Reading Data in Python",
+          "topics": [
+            "Reading CSV & JSON Files",
+            "Processing Structured Data in Python",
+            "Live‑Coding: JSON",
+            "Extracting Simple Statistics from Datasets",
+            "Data Processing in Python",
+            "Data Filtering and Cleaning",
+            "Processing Text and Strings in Python",
+            "Processing Times and Dates in Python"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Python Libraries and Toolkits",
+          "topics": [
+            "Matrix Processing and NumPy",
+            "Introduction to Data Visualization",
+            "Introduction to Matplotlib",
+            "urllib and BeautifulSoup"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Gradient Descent Classification in Python",
+          "topics": [
+            "Introduction to Training and Testing",
+            "Gradient Descent in Python",
+            "Gradient Descent in TensorFlow"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Diagnostics for Data Meaningful Predictive Modelling",
+          "topics": [
+            "Regression Diagnostic",
+            "Over‑ and Under‑Fitting",
+            "Classification Diagnostics: Accuracy and Error",
+            "Classification Diagnostics: Precision and Recall",
+            "Codebase for Evaluation and Validation",
+            "Model Complexity and Regularization",
+            "Evaluating Classifiers for Ranking"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "https://www.coursera.org/learn/basic-data-processing-visualization-python",
+        "https://www.coursera.org/learn/design-thinking-predictive-analytics-data-products",
+        "https://www.coursera.org/learn/meaningful-predictive-modeling",
+        "Applied Predictive Analytics: Principles and Techniques for the Professional Data Analyst, Dean Abbott, 2014, Wiley.",
+        "Data Science for Business: What You Need to Know about Data Mining and Data‑Analytic Thinking, Tom Fawcett, O′Reilly, 1st edition, 2013."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Machine Learning for Data Science",
+      "subject_code": "AL702(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Algorithms and Machine Learning",
+            "Introduction to algorithms",
+            "Tools to analyze algorithms",
+            "Algorithmic techniques: Divide and Conquer",
+            "Examples",
+            "Randomization",
+            "Applications"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Algorithms",
+          "topics": [
+            "Graphs",
+            "Maps",
+            "Map searching",
+            "Application of algorithms: stable marriages example",
+            "Dictionaries and hashing",
+            "Search trees",
+            "Dynamic programming"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Application to Personal Genomics",
+          "topics": [
+            "Linear Programming",
+            "NP completeness",
+            "Introduction to personal Genomics",
+            "Massive raw data in Genomics",
+            "Data science on personal genomes",
+            "Interconnectedness on personal genomes",
+            "Case studies"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Machine Learning",
+          "topics": [
+            "Introduction",
+            "Classification",
+            "Linear Classification",
+            "Ensemble classifiers",
+            "Model selection",
+            "Cross validation",
+            "Holdout"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Machine Learning Applications",
+          "topics": [
+            "Probabilistic modelling",
+            "Topic modelling",
+            "Probabilistic inference",
+            "Application: prediction of preterm birth",
+            "Data description and preparation",
+            "Relationship between machine learning and statistics"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Introduction to Machine Learning, Jeeva Jose, Khanna Book Publishing House.",
+        "Machine Learning, Rajiv Chopra, Khanna Book Publishing House.",
+        "Data Science and Machine Learning: Mathematical and Statistical Methods Machine Learning & Pattern Recognition, by Dirk P. Kroese, Zdravko Botev, Thomas Taimre, Radislav Vaisman, Chapman & Hall/Crc, 2019.",
+        "Hands-On Data Science and Python Machine Learning, Frank Kane, Packt Publishers, 2017.",
+        "https://www.edx.org/course/machine-learning-for-data-science-and-analytics",
+        "Dr. Nageswara Rao, “Machine Learning in Data Science Using Python”, Publisher by Dreamtech, 2022"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Compiler Design",
+      "subject_code": "AL703(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to compiling & Lexical Analysis",
+          "topics": [
+            "Introduction to compiling & Lexical Analysis",
+            "Introduction of Compiler",
+            "Major data structures in compiler",
+            "Types of Compiler",
+            "Front‑end and Back‑end of compiler",
+            "Compiler structure: analysis‑synthesis model of compilation",
+            "Various phases of a compiler",
+            "Lexical analysis: Input buffering",
+            "Specification & Recognition of Tokens",
+            "Design of a Lexical Analyzer Generator",
+            "LEX"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Syntax Analysis & Syntax Directed Translation",
+          "topics": [
+            "Syntax Analysis & Syntax Directed Translation",
+            "Syntax analysis: CFGs",
+            "Top down parsing",
+            "Brute force approach",
+            "Recursive descent parsing",
+            "Transformation on the grammars",
+            "Predictive parsing",
+            "Bottom up parsing",
+            "Operator precedence parsing",
+            "LR parsers (SLR, LALR, LR)",
+            "Parser generation",
+            "Syntax directed definitions: Construction of Syntax trees",
+            "Bottom up evaluation of S‑attributed definition",
+            "L‑attribute definition",
+            "Top down translation",
+            "Bottom up evaluation of inherited attributes",
+            "Recursive Evaluation",
+            "Analysis of Syntax directed definition"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Type Checking & Run Time Environment",
+          "topics": [
+            "Type Checking & Run Time Environment",
+            "Type checking: type system",
+            "Specification of simple type checker",
+            "Equivalence of expression",
+            "Types",
+            "Type conversion",
+            "Overloading of functions and operations",
+            "Polymorphic functions",
+            "Run time Environment: storage organization",
+            "Storage allocation strategies",
+            "Parameter passing",
+            "Dynamic storage allocation",
+            "Symbol table",
+            "Error Detection & Recovery",
+            "Ad‑Hoc and Systematic Methods"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Code Generation",
+          "topics": [
+            "Code Generation",
+            "Intermediate code generation: Declarations",
+            "Assignment statements",
+            "Boolean expressions",
+            "Case statements",
+            "Back patching",
+            "Procedure calls",
+            "Issues in the design of code generator",
+            "Basic block and flow graphs",
+            "Register allocation and assignment",
+            "DAG representation of basic blocks",
+            "Peephole optimization",
+            "Generating code from DAG"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Code Optimization",
+          "topics": [
+            "Code Optimization",
+            "Introduction to Code optimization: sources of optimization of basic blocks",
+            "Loops in flow graphs",
+            "Dead code elimination",
+            "Loop optimization",
+            "Introduction to global data flow analysis",
+            "Code Improving transformations",
+            "Data flow analysis of structure flow graph",
+            "Symbolic debugging of optimized code"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A. V. Aho, R. Sethi, and J. D. Ullman. Compilers: Principles, Techniques and Tools, Pearson Education",
+        "Raghavan, Compiler Design, TMH Pub.",
+        "Louden. Compiler Construction: Principles and Practice, Cengage Learning",
+        "A. C. Holub. Compiler Design in C, Prentice‑Hall Inc., 1993.",
+        "Mak, writing compiler & Interpreters, Wiley Pub."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Augmented and Virtual Reality",
+      "subject_code": "AL703(B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Virtual Reality",
+          "topics": [
+            "Virtual Reality and Virtual Environment: Introduction",
+            "Applications of Virtual Reality",
+            "Computer graphics",
+            "Real time computer graphics",
+            "Flight Simulation",
+            "Virtual environment requirement",
+            "Benefits of virtual reality",
+            "Historical development of VR",
+            "Scientific Landmark 3D Computer Graphics: Introduction",
+            "The Virtual world space",
+            "Positioning the virtual observer",
+            "The perspective projection",
+            "Human vision",
+            "Stereo perspective projection",
+            "3D clipping",
+            "Colour theory",
+            "Simple 3D modeling",
+            "Illumination models",
+            "Reflection models",
+            "Shading algorithms",
+            "Radiosity",
+            "Hidden Surface Removal",
+            "Realism stereographic image"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Geometric Modeling",
+          "topics": [
+            "Geometric Modeling: Introduction",
+            "From 2D to 3D",
+            "3D space curves",
+            "3D boundary representation",
+            "Geometrical Transformations: Introduction",
+            "Frames of reference",
+            "Modeling transformations",
+            "Instances",
+            "Picking",
+            "Flying",
+            "Scaling the VE",
+            "Collision detection",
+            "Generic VR system: Introduction",
+            "Virtual environment",
+            "Computer environment",
+            "VR technology",
+            "Model of interaction",
+            "VR Systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Virtual Environment",
+          "topics": [
+            "Animating the Virtual Environment: Introduction",
+            "The dynamics of numbers",
+            "Linear interpolation",
+            "Nonlinear interpolation",
+            "Animation of objects",
+            "Linear translation",
+            "Non-linear translation",
+            "Shape & object inbetweening",
+            "Free form deformation",
+            "Particle system",
+            "Physical Simulation: Introduction",
+            "Objects falling in a gravitational field",
+            "Rotating wheels",
+            "Elastic collisions",
+            "Projectiles",
+            "Simple pendulum",
+            "Springs",
+            "Flight dynamics of an aircraft"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "VR Hardware and Software",
+          "topics": [
+            "Human factors: Introduction",
+            "The eye",
+            "The ear",
+            "The somatic senses",
+            "VR Hardware: Introduction",
+            "Sensor hardware",
+            "Head-coupled displays",
+            "Acoustic hardware",
+            "Integrated VR systems",
+            "VR Software: Introduction",
+            "Modeling virtual world",
+            "Physical simulation",
+            "VR toolkits",
+            "Introduction to VRML"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Augmented and Mixed Reality",
+          "topics": [
+            "Taxonomy, technology and features of augmented reality",
+            "Difference between AR and VR",
+            "Challenges with AR",
+            "AR systems and functionality",
+            "Augmented reality methods",
+            "Visualization techniques for augmented reality",
+            "Wireless displays in educational augmented reality applications",
+            "Mobile projection interfaces",
+            "Marker-less tracking for augmented reality",
+            "Enhancing interactivity in AR environments",
+            "Evaluating AR systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "John Vince, “Virtual Reality Systems“, Pearson Education Asia, 2007.",
+        "Anand R., “Augmented and Virtual Reality”, Khanna Publishing House, Delhi.",
+        "Adams, “Visualizations of Virtual Reality”, Tata McGraw Hill, 2000.",
+        "Grigore C. Burdea, Philippe Coiffet, “Virtual Reality Technology”, Wiley Inter Science, 2nd Edition, 2006.",
+        "William R. Sherman, Alan B. Craig, “Understanding Virtual Reality: Interface, Application and Design”, Morgan Kaufmann, 2008.",
+        "Alan B. Craig, William R. Sherman and Jeffrey D. Will, Developing Virtual Reality Applications: Foundations of Effective Design, Morgan Kaufmann, 2009.",
+        "Paul Mealy, “Virtual & Augmented Reality for Dummies”, Wiley, June 2018"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Agile Software Development",
+      "subject_code": "AL703(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Agile Process",
+          "topics": [
+            "Introduction and background",
+            "Agile Manifesto and Principles",
+            "Stakeholders and Challenges",
+            "Overview of Agile Development Models: Scrum",
+            "Extreme Programming",
+            "Feature Driven Development",
+            "Crystal",
+            "Kanban",
+            "Lean Software Development"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Agile Projects",
+          "topics": [
+            "Planning for Agile Teams: Scrum Teams",
+            "Planning for Agile Teams: XP Teams",
+            "Planning for Agile Teams: General Agile Teams",
+            "Team Distribution",
+            "Agile Project Lifecycles: Typical Agile Project Lifecycles",
+            "Phase Activities",
+            "Product Vision",
+            "Release Planning: Creating the Product Backlog",
+            "User Stories",
+            "Prioritizing and Estimating",
+            "Creating the Release Plan",
+            "Monitoring and Adapting: Managing Risks and Issues",
+            "Retrospectives"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Scrum",
+          "topics": [
+            "Agile Scrum Framework",
+            "Scrum Artifacts",
+            "Scrum Meetings",
+            "Scrum Activities and Roles",
+            "Scrum Team Simulation",
+            "Scrum Planning Principles",
+            "Product and Release Planning",
+            "Sprinting: Planning",
+            "Sprinting: Execution",
+            "Sprinting: Review",
+            "Sprinting: Retrospective",
+            "User story definition and Characteristics",
+            "Acceptance tests and Verifying stories",
+            "Burn‑down chart",
+            "Daily Scrum",
+            "Scrum Case Study"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Introduction to Extreme Programming (XP)",
+          "topics": [
+            "XP Lifecycle",
+            "The XP Team",
+            "XP Concepts: Refactoring",
+            "Technical Debt",
+            "Timeboxing",
+            "Stories",
+            "Velocity",
+            "Adopting XP: Prerequisites",
+            "Adopting XP: Challenges",
+            "Applying XP: Pair Programming",
+            "Collaborating",
+            "Release Planning",
+            "Development",
+            "XP Case Study"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Agile Software Design and Development",
+          "topics": [
+            "Agile design practices",
+            "Role of design principles",
+            "Need and significance of Refactoring",
+            "Refactoring techniques",
+            "Continuous Integration",
+            "Automated build tools",
+            "Version control",
+            "Agility and Quality Assurance: Agile Interaction Design",
+            "Agile approach to Quality Assurance",
+            "Test Driven Development",
+            "Pair programming: Issues and Challenges"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Robert C. Martin, Agile Software Development – Principles, Patterns and Practices, Prentice Hall, 2013.",
+        "Kenneth S. Rubin, Essential Scrum: A Practical Guide to the Most Popular Agile Process, Addison Wesley, 2012.",
+        "James Shore and Shane Warden, The Art of Agile Development, O’Reilly Media, 2007.",
+        "Craig Larman, Agile and Iterative Development: A manager’s Guide, Addison‑Wesley, 2004.",
+        "Ken Schawber, Mike Beedle, Agile Software Development with Scrum, Pearson, 2001.",
+        "Mike Cohn, Agile Estimating and Planning, Pearson Education, 2006.",
+        "Mike Cohn, User Stories Applied: For Agile Software Development, Addison‑Wesley, 2004.",
+        "Rama Bedarkar, Agile Scrum: Improving Practices for Business Gains, Wiley, 2022."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet and Web Technology",
+      "subject_code": "AL703(D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Concept of WWW",
+            "Internet and WWW",
+            "HTTP Protocol: Request and Response",
+            "Web browser and Web servers",
+            "Features of Web 2.0",
+            "Web Design: Concepts of effective web design",
+            "Web design issues including Browser, Bandwidth and Cache, Display resolution, Look and Feel of the Website, Page Layout and linking, User centric design",
+            "Sitemap",
+            "Planning and publishing website",
+            "Designing effective navigation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "HTML",
+          "topics": [
+            "Basics of HTML",
+            "Formatting and fonts",
+            "Commenting code",
+            "Color",
+            "Hyperlink",
+            "Lists",
+            "Tables",
+            "Images",
+            "Forms",
+            "XHTML",
+            "Meta tags",
+            "Character entities",
+            "Frames and frame sets",
+            "Browser architecture and Web site structure",
+            "Overview and features of HTML5"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Style sheets",
+          "topics": [
+            "Need for CSS",
+            "Introduction to CSS",
+            "Basic syntax and structure",
+            "Using CSS",
+            "Background images, colors and properties",
+            "Manipulating texts",
+            "Using fonts, borders and boxes, margins, padding lists",
+            "Positioning using CSS",
+            "CSS2",
+            "Overview and features of CSS3",
+            "JavaScript: Client side scripting with JavaScript",
+            "Variables, functions, conditions, loops and repetition",
+            "Pop up boxes",
+            "Advanced JavaScript: JavaScript and objects, JavaScript own objects, the DOM and web browser environments",
+            "Manipulation using DOM, forms and validations",
+            "DHTML: Combining HTML, CSS and JavaScript, Events and buttons"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "XML",
+          "topics": [
+            "Introduction to XML",
+            "Uses of XML",
+            "Simple XML",
+            "XML key components",
+            "DTD and Schemas",
+            "Using XML with application",
+            "Transforming XML using XSL and XSLT",
+            "PHP: Introduction and basic syntax of PHP",
+            "Decision and looping with examples",
+            "PHP and HTML",
+            "Arrays",
+            "Functions",
+            "Browser control and detection",
+            "String handling",
+            "Form processing",
+            "Files",
+            "Advanced Features: Cookies and Sessions",
+            "Object Oriented Programming with PHP"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "PHP and MySQL",
+          "topics": [
+            "Basic commands with PHP examples",
+            "Connection to server",
+            "Creating a database",
+            "Selecting a database",
+            "Listing database",
+            "Listing table names",
+            "Creating a table",
+            "Inserting data",
+            "Altering tables",
+            "Queries",
+            "Deleting database",
+            "Deleting data and tables",
+            "PHPMyAdmin and database bugs"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Developing Web Applications, Ralph Moseley and M. T. Savaliya, Wiley-India",
+        "Web Technologies, Black Book, dreamtech Press",
+        "HTML 5, Black Book, dreamtech Press",
+        "Web Design, Joel Sklar, Cengage Learning",
+        "Developing Web Applications in PHP and AJAX, Harwani, McGrawHill",
+        "Internet and World Wide Web How to program, P.J. Deitel & H.M. Deitel, Pearson Education",
+        "Developing Web Applications, 2nd ed. by Ralph Mosely, M. T. Savaliya, Wiley India Pvt Ltd"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Skill Development Lab",
+      "subject_code": "AL705",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Software product life cycle",
+          "topics": [
+            "Software product life cycle"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Software product development standards",
+          "topics": [
+            "Software product development standards"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design patterns – 1",
+          "topics": [
+            "Design patterns – 1"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Design Patterns – II",
+          "topics": [
+            "Design Patterns – II"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Case Study",
+          "topics": [
+            "Case Study"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

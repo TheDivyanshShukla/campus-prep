@@ -1,0 +1,545 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Introduction to Linear Algebra",
+      "subject_code": "CY401",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Direct sum of a vector space, Dual Spaces",
+          "topics": [
+            "Direct sum of a vector space",
+            "Dual Spaces",
+            "Annihilator of a subspace",
+            "Quotient Spaces",
+            "Algebra of Linear transformations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Characteristic values and characteristic polynomials, diagonalizable transformations, annihilating polynomials, Cayley‑Hamilton theorem, invariant subspaces and triangular form, simultaneous triangularization and diagonalization, direct sum decompositions, invariant direct sums, primary decomposition theorem",
+          "topics": [
+            "Characteristic values and characteristic polynomials",
+            "Diagonalizable transformations",
+            "Annihilating polynomials",
+            "Cayley‑Hamilton theorem",
+            "Invariant subspaces and triangular form",
+            "Simultaneous triangularization and diagonalization",
+            "Direct sum decompositions",
+            "Invariant direct sums",
+            "Primary decomposition theorem"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Adjoint of a linear transformation, Inner product spaces, Eigenvalues and eigenvectors, Diagonalization, Invariant subspaces, Unitary and normal transformations, Spectral Theorem, Jordan canonical form",
+          "topics": [
+            "Adjoint of a linear transformation",
+            "Inner product spaces",
+            "Eigenvalues and eigenvectors of a linear transformation",
+            "Diagonalization",
+            "Invariant subspaces",
+            "Unitary and normal transformations",
+            "Spectral Theorem",
+            "Jordan canonical form"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Canonical forms, Similarity of linear transformations, Reduction to triangular forms, Nilpotent transformations, Primary decomposition theorem, Jordan blocks and Jordan forms, Invariants of linear transformations",
+          "topics": [
+            "Canonical forms",
+            "Similarity of linear transformations",
+            "Reduction to triangular forms",
+            "Nilpotent transformations",
+            "Primary decomposition theorem",
+            "Jordan blocks and Jordan forms",
+            "Invariants of linear transformations"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Hermitian, Self adjoint, Unitary and normal linear transformation, Symmetric bilinear forms, Skew symmetric bilinear forms, Group preserving bilinear forms",
+          "topics": [
+            "Hermitian linear transformations",
+            "Self‑adjoint linear transformations",
+            "Unitary and normal linear transformations",
+            "Symmetric bilinear forms",
+            "Skew‑symmetric bilinear forms",
+            "Group‑preserving bilinear forms"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P. Halmos, Finite dimensional vector spaces, Springer, 1974.",
+        "Peter D. Lax, Linear algebra, Wiley student edition, 1997.",
+        "E.B. Vinberg, A course in algebra, Graduate text in Mathematics, volume 56, AMS, 2003.",
+        "M. Thamban Nair and Arindama Singh, Linear algebra, Springer, 2018."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Fundamental of Cyber Security",
+      "subject_code": "CY402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Unit 1",
+          "topics": [
+            "Introduction of Cyber Crime",
+            "Challenges of cyber crime",
+            "E‑Mail Spoofing",
+            "Spamming",
+            "Internet Time Theft",
+            "Salami attack/Salami Technique"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2",
+          "topics": [
+            "Web jacking",
+            "Online Frauds",
+            "Software Piracy",
+            "Computer Network Intrusions",
+            "Password Sniffing",
+            "Identity Theft",
+            "Cyber terrorism",
+            "Virtual Crime",
+            "Perception of cyber criminals (hackers, insurgents and extremist groups)",
+            "Web server hacking",
+            "Session hijacking"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3",
+          "topics": [
+            "Concept of Cyber Crime and the IT Act, 2000",
+            "Hacking",
+            "Teenage Web Vandals",
+            "Cyber Fraud and Cheating",
+            "Defamation",
+            "Harassment and E‑mail Abuse",
+            "Other IT Act Offences",
+            "Monetary Penalties",
+            "Jurisdiction and Cyber Crimes",
+            "Nature of Criminality",
+            "Strategies to tackle Cyber Crime",
+            "Trends"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4",
+          "topics": [
+            "Status of Electronic Records as Evidence under Indian Evidence Act, 1872 and IT Act, 2000",
+            "Proof and Management of Electronic Records",
+            "Relevancy, Admissibility and Probative Value of E‑Evidence",
+            "Proving Digital Signatures",
+            "Proof of Electronic Agreements",
+            "Proving Electronic Messages"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5",
+          "topics": [
+            "Proxy Servers and Anonymizers",
+            "Password Cracking",
+            "Key Loggers and Spyware",
+            "Viruses and Worms",
+            "Trojan Horses",
+            "Backdoors",
+            "DoS and DDoS Attacks",
+            "Buffer Overflow",
+            "Attack on Wireless Networks",
+            "Phishing (methods and techniques)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Principles of Cyber crime, Jonathan Clough Cambridge University Press",
+        "John R. Vacca, Computer Forensics: Computer Crime Scene Investigation, 2nd Edition, Charles River Media, 2005",
+        "Cyber Law Simplified, Vivek Sood, Pub: TMH",
+        "Cyber Security by Nina Godbole, Sunit Belapure, Pub: Wiley‑India",
+        "Information Warfare: Corporate attack and defense in digital world, William Hutchinson, Mathew Warren, Elsevier",
+        "Cyber Laws and IT Protection, Harish Chander, Pub: PHI"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Networks",
+      "subject_code": "CY403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to computer networks and OSI model",
+          "topics": [
+            "Fundamentals of computer networks and their uses",
+            "Network topologies",
+            "ISO‑OSI layered architecture and peer‑to‑peer processes",
+            "Encapsulation and functions/services of OSI layers",
+            "Physical layer: digital signals, transmission impairments, maximum data rate",
+            "Shannon's theorem and Nyquist theorem",
+            "Transmission media – guided and unguided",
+            "Circuit, packet and message switching, virtual circuit concept",
+            "Introduction to ISDN and its components"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data link layer protocols and medium access",
+          "topics": [
+            "Design issues and functions of the data link layer",
+            "Error detection and correction techniques",
+            "Forward error correction versus retransmission",
+            "Hamming code and CRC codes",
+            "Framing methods – fixed‑size, variable‑size, bit stuffing, byte stuffing",
+            "Data link protocols – Stop‑and‑Wait, Sliding window, PPP, SLIP, HDLC",
+            "Medium access sublayer – static and dynamic channel allocation",
+            "ALOHA protocol",
+            "CSMA/CD and CSMA/CA",
+            "Collision‑free protocols – bitmap"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "LAN standards, devices and network layer basics",
+          "topics": [
+            "IEEE 802 LAN standards – 802.3, 802.4, 802.5",
+            "LAN devices – hubs, switches (learning, cut‑through, store‑and‑forward)",
+            "Bridges and spanning‑tree protocol",
+            "Remote bridges and inter‑bridge communication",
+            "Internetworking devices – routers and gateways",
+            "Network layer design issues and functions",
+            "Virtual‑circuit and datagram organization"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Routing algorithms and TCP/IP fundamentals",
+          "topics": [
+            "Routing algorithms – shortest‑path, flooding, link‑state (LSR), distance‑vector, hierarchical routing",
+            "TCP/IP protocol suite architecture",
+            "Classful IP addressing",
+            "ARP and RARP mechanisms",
+            "IP datagrams with options and delivery process",
+            "ICMP functions"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Subnetting, transport and application layer services",
+          "topics": [
+            "Subnetting, supernetting and CIDR",
+            "Transport‑layer congestion control, load shedding and jitter control",
+            "Transport‑layer addressing and multiplexing",
+            "Connection establishment, release and flow control",
+            "Application‑layer services – DNS and electronic mail"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "“Computer Networks” – Tanenbaum, PHI Learning",
+        "“Data Communication & Networks”, Forouzan, TMH",
+        "“TCP/IP – Protocol Suite”, Forouzan, TMH, 3rd edition",
+        "“Computer Networks and Internets”, D. E. Comer, Pearson",
+        "“TCP/IP Illustrated”, W. Richard Stevens, Volume I, Addison‑Wesley",
+        "“Internetworking with TCP/IP”, Vol. I‑III, Comer, PHI Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Operating Systems",
+      "subject_code": "CY404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Operating Systems",
+          "topics": [
+            "Function and evolution of operating systems",
+            "Desirable characteristics and features of an OS",
+            "Operating system services",
+            "Types of services",
+            "Utility programs",
+            "System calls"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Process Management and Inter‑Process Communication",
+          "topics": [
+            "Concept of a process",
+            "Process state diagram",
+            "Process‑based kernel and dual‑mode execution",
+            "CPU scheduling algorithms and deterministic modeling",
+            "System calls for process management",
+            "User‑level and kernel‑level threads",
+            "Process management in UNIX and Windows",
+            "Real and virtual concurrency",
+            "Mutual exclusion and synchronization",
+            "Critical‑section problem and semaphores",
+            "Deadlock problems, characterization, prevention, avoidance, recovery",
+            "Inter‑process communication in UNIX and Windows"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Memory Management",
+          "topics": [
+            "Partitioning, swapping, segmentation, paging, and paged segmentation",
+            "Comparison of memory‑management techniques",
+            "Overlay, dynamic linking and loading",
+            "Virtual memory: concept and demand‑paging implementation",
+            "Memory management in UNIX and Windows"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "File Systems Management",
+          "topics": [
+            "File concept and user vs system‑programmer view",
+            "Disk and tape organization",
+            "Modules of a file system",
+            "Disk‑space allocation methods: contiguous, linked, indexed",
+            "Directory structures",
+            "File protection",
+            "System calls for file management",
+            "Disk scheduling algorithms",
+            "File systems in UNIX and Windows"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Input/Output Management",
+          "topics": [
+            "Principles and programming of I/O",
+            "I/O problems and types of I/O operations (program‑controlled, interrupt‑driven, concurrent, asynchronous)",
+            "Logical structure of I/O functions",
+            "I/O buffering",
+            "Kernel I/O subsystem",
+            "Introduction to network, distributed and multiprocessor operating systems",
+            "I/O management in UNIX and Windows"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Andrew S. Tanenbaum, “Modern Operating Systems”, 3rd edition, Prentice Hall",
+        "Maurice J. Bach, “The Design of Unix Operating System”, Prentice Hall of India",
+        "Bovet & Cesati, “Understanding the Linux Kernel”, O'Reilly, 2nd edition"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data base Management System",
+      "subject_code": "CY405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts of Data and DBMS",
+          "topics": [
+            "Basic concepts of data and DBMS",
+            "File organization and access methods",
+            "Introduction to DBMS and differences with traditional file storage systems",
+            "Characteristics of DBMS",
+            "Data models, schemas, and instances",
+            "DBMS architecture and components",
+            "Data independence",
+            "Entity‑Relationship (ER) model concepts",
+            "Types of attributes",
+            "Entity types and relationships",
+            "Cardinalities, participation, roles, and constraints"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Relational Data Model and SQL",
+          "topics": [
+            "Relational data model: domains, tuples, attributes, relations",
+            "Keys and key types",
+            "Integrity constraints",
+            "Relational algebra operations: select, project, rename, join, union, intersection, difference, division, product",
+            "Basic SQL queries and functions",
+            "SQL constraints, joins, and nested queries",
+            "Triggers, assertions, views, stored procedures",
+            "PL/SQL"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Normalization Theory and Database Methodologies",
+          "topics": [
+            "Normalization theory and database design methodologies",
+            "Relation schemas and functional dependencies",
+            "Axioms and inference rules for functional dependencies",
+            "Normal forms: 1NF, 2NF, 3NF, BCNF",
+            "Dependency preservation",
+            "Lossless‑join decomposition"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transaction Processing and Concurrency Control",
+          "topics": [
+            "Transaction processing concepts and transaction states",
+            "ACID properties",
+            "Concurrency and recovery fundamentals",
+            "Schedules, recoverability, and serializability",
+            "Types of serializability and testing methods",
+            "Concurrency control mechanisms: two‑phase locking, timestamp‑based control",
+            "Deadlock management: avoidance, prevention, detection, resolution",
+            "Recovery techniques: deferred update, immediate update, shadow paging, checkpoints"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Storage Structures and Query Optimization",
+          "topics": [
+            "Storage structures and secondary storage devices",
+            "Hashing and indexing structures: single‑level and multi‑level indices",
+            "Query processing and optimization algorithms for select, project, join",
+            "Complexity measures of query operations",
+            "Case study of a contemporary DBMS"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Korth, Silbertz, Sudarshan, “Database Concepts”, McGraw Hill.",
+        "Elmasri, Navathe, “Fundamentals of Database Systems”, Pearson.",
+        "Ivan Bayross, “SQL, PL/SQL the Programming Language of Oracle”, BPB publications.",
+        "S. Sharma, J. Agrawal, S. Agrawal, “Advanced Database Management System”, Dreamtech Press.",
+        "Leon & Leon, “Fundamental of Data Base Management System”, TMH"
+      ],
+      "extra": "Course Objective: The objective of this course is to enable students in developing a high level understanding of the concepts of Database management systems in contrast with traditional data management systems with emphasis on skills to apply these concepts in building, maintaining and retrieving data from these DBMS."
+    },
+    {
+      "subject_name": "Advance Python Programming",
+      "subject_code": "CY406",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of python",
+          "topics": [
+            "Basic of python",
+            "Program structure",
+            "Data Types",
+            "Operators",
+            "control flow",
+            "function",
+            "module and package",
+            "classes and objects"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Socket Programming",
+          "topics": [
+            "Client-side programming using python: TCP and UDP based clients and servers",
+            "High-level library modules for standard Internet and web-related services (HTTP, FTP, XML-RPC, etc.)",
+            "urllib2 module for interacting with web servers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Internet Data Handling",
+          "topics": [
+            "Processing common Internet data formats such as HTML, XML, and JSON",
+            "ElementTree interface for parsing XML"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Web Programming",
+          "topics": [
+            "Basics of web programming in Python",
+            "CGI scripting",
+            "WSGI interface",
+            "Implementing custom HTTP servers"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Networking",
+          "topics": [
+            "Writing custom TCP/UDP servers",
+            "Concurrency",
+            "SSL",
+            "Introduction to message passing"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Thread Programming",
+          "topics": [
+            "Overview of concurrent programming with threads and advanced Python programming idioms",
+            "threading library",
+            "Thread debugging",
+            "Thread synchronization",
+            "Threads and queues",
+            "Python interpreter execution model and the GIL",
+            "logging module",
+            "Context managers"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Message Passing and Data Serialization",
+          "topics": [
+            "Interprocess communication, message passing, and data serialization",
+            "pickle and ctypes",
+            "Multiprocessing: process objects, pipes, queues, shared memory objects, and process pools"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "Distributed Computing",
+          "topics": [
+            "Core programming concepts such as actors, client/server computing, REST, remote procedure call, and distributed objects",
+            "XML-RPC",
+            "Use of multiprocessing library to implement distributed objects"
+          ]
+        },
+        {
+          "unit": 9,
+          "title": "Advanced I/O handling",
+          "topics": [
+            "Blocking I/O",
+            "Nonblocking I/O",
+            "Polling",
+            "Signal-driven I/O",
+            "Asynchronous I/O"
+          ]
+        },
+        {
+          "unit": 10,
+          "title": "Generators and Coroutines",
+          "topics": [
+            "Using generators and coroutines to implement cooperative multitasking",
+            "tasklets",
+            "greenlets",
+            "coroutines"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Martin C. Brown, “Python: The Complete Reference”, McGraw-Hill publication, 2001",
+        "SakisKasampalisQuan Nguyen Dr Gabriele Lanaro Dr. Gabriele Lanaro, “Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with Python”, Packt publication, 2019",
+        "Micha Gorelick & lanOzsvaid, “High Performance Python”, O’Reilly publication,2020"
+      ],
+      "extra": null
+    }
+  ]
+}

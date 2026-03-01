@@ -1,0 +1,1022 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Computer Graphics & Multimedia",
+      "subject_code": "IT 601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Display and Input Devices",
+          "topics": [
+            "Raster scan displays",
+            "Storage tube displays",
+            "Refreshing",
+            "Flickering",
+            "Interlacing",
+            "Colour monitors",
+            "Display processor resolution",
+            "Dot matrix printers",
+            "Inkjet laser printers",
+            "Keyboard operation",
+            "Mouse",
+            "Scanner",
+            "Digitizing camera",
+            "Track ball",
+            "Tablet",
+            "Joysticks",
+            "Graphical input techniques",
+            "Positioning techniques",
+            "Rubber‑band techniques",
+            "Dragging"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Scan Conversion and Curve Drawing",
+          "topics": [
+            "Scan conversion techniques",
+            "Image representation",
+            "Line drawing",
+            "Simple DDA algorithm",
+            "Bresenham’s line algorithm",
+            "Circle drawing",
+            "General circle method",
+            "Symmetric DDA",
+            "Bresenham’s circle algorithm",
+            "Curves",
+            "Parametric function",
+            "Bezier method",
+            "B‑spline method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Geometric Transformations and Projection",
+          "topics": [
+            "2D and 3D coordinate systems",
+            "Translation",
+            "Rotation",
+            "Scaling",
+            "Reflection",
+            "Inverse transformation",
+            "Composite transformation",
+            "World coordinate system",
+            "Screen coordinate system",
+            "Parallel projection",
+            "Perspective projection",
+            "Representation of 3D objects on a 2D screen",
+            "Point clipping",
+            "Line clipping algorithms",
+            "Polygon clipping algorithms",
+            "Hidden surface elimination (introduction)",
+            "Basic illumination model",
+            "Diffuse reflection",
+            "Specular reflection",
+            "Phong shading",
+            "Gouraud shading",
+            "Ray tracing",
+            "Color models: RGB, YIQ, CMY, HSV"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Multimedia System Architecture",
+          "topics": [
+            "Multimedia components and applications",
+            "Multimedia system architecture",
+            "Evolving multimedia technologies",
+            "Defining objects for multimedia systems",
+            "Multimedia data interface standards",
+            "Multimedia databases",
+            "Multimedia hardware",
+            "SCSI interface",
+            "IDE interface",
+            "MCI interface",
+            "Multimedia tools",
+            "Presentation tools",
+            "Authoring tools"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multimedia Compression and Formats",
+          "topics": [
+            "Compression and decompression techniques",
+            "Multimedia data and file‑format standards",
+            "TIFF format",
+            "MIDI format",
+            "JPEG format",
+            "DIB format",
+            "MPEG format",
+            "RTF format",
+            "Multimedia I/O technologies",
+            "Digital voice and audio",
+            "Video image and animation",
+            "Full‑motion video",
+            "Storage and retrieval technologies"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program to implement DDA line drawing algorithm",
+        "Write a program to implement Bresenham’s line drawing algorithm",
+        "Write a program to implement Bresenham’s circle drawing algorithm",
+        "Write a program to draw an ellipse using Bresenham’s algorithm",
+        "Write a program to perform various transformations on line, square & rectangle",
+        "Write a program to implement Cohen‑Sutherland line clipping algorithm",
+        "Write a program to implement Liang‑Bersky line clipping algorithm",
+        "Write a program to implement Cohen‑Sutherland polygon clipping algorithm to clip a polygon with a pattern",
+        "Write a program to convert a color given in RGB space to its equivalent CMY color space",
+        "Study of various Multimedia file formats: RTF, MIDI, GIF, JPEG, MPEG, TIFF etc.",
+        "Write a program to implement JPEG compression scheme for still images",
+        "Write a program to perform Packbits compression & decompression",
+        "Write a short program to create a TIFF file using bitmap segments and text files as the TIFF file components",
+        "Write a program to convert a BMP file into either JPEG or GIF file",
+        "Study of various Multimedia authoring tools"
+      ],
+      "reference_books": [
+        "Donald Hearn and M. Pauline Baker, Computer Graphics C Version, Pearson Education, 2003.",
+        "Prabat K. Andleigh and Kiran Thakrar, Multimedia Systems and Design, PHI Learning.",
+        "Tay Vaughan, Multimedia Making It Work, Tata McGraw Hill edition.",
+        "Amarendra N. Sinha & Arun D. Udai, Computer Graphics, McGraw Hill publication.",
+        "Mukherjee, Fundamental of Computer Graphics and Multimedia, PHI Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Wireless and Mobile Computing",
+      "subject_code": "IT 602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Antenna and Propagation",
+          "topics": [
+            "Antenna",
+            "Radiation pattern",
+            "Antenna types",
+            "Antenna gain",
+            "Propagation modes",
+            "Types of fading",
+            "Model for wireless digital communication",
+            "Multiple access techniques (SDMA, TDMA, FDMA, CDMA, DAMA, PRMA, MAC/CA)",
+            "Cellular network organization",
+            "Operations of cellular system",
+            "Mobile radio propagation effects",
+            "Handoff",
+            "Power control",
+            "Sectorization",
+            "Traffic engineering",
+            "Infinite sources",
+            "Lost calls cleared",
+            "Grade of service",
+            "Poisson arrival process"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "GSM and Broadband Technologies",
+          "topics": [
+            "GSM services",
+            "GSM system architecture",
+            "Radio interface",
+            "Logical channels",
+            "Protocols",
+            "Localization and calling",
+            "Handover",
+            "Security",
+            "HSCSD",
+            "GPRS architecture",
+            "Interfaces",
+            "Channels",
+            "Mobility management",
+            "DECT",
+            "TETRA",
+            "UMTS"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Wireless LAN and Bluetooth",
+          "topics": [
+            "IEEE 802.11 LAN architecture",
+            "802.11a, 802.11b, 802.11g",
+            "Protocol architecture",
+            "Physical layer",
+            "MAC layer",
+            "MAC management",
+            "HIPERLAN protocol architecture",
+            "Access control sublayer",
+            "MAC sublayer",
+            "Bluetooth user scenarios",
+            "Bluetooth physical layer",
+            "Bluetooth MAC layer"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Mobile IP and Ad‑Hoc Networks",
+          "topics": [
+            "Mobile IP",
+            "DHCP",
+            "Ad‑hoc networks: characteristics",
+            "Performance issues in ad‑hoc networks",
+            "Routing in mobile host",
+            "Wireless sensor network",
+            "Mobile transport layer: Indirect TCP, Snooping TCP, Mobile TCP, Timeout freezing, Selective retransmission, Transaction‑oriented TCP",
+            "Introduction to WAP"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Security and Threats",
+          "topics": [
+            "Intruders",
+            "Intrusion detection",
+            "Password management",
+            "Viruses and related threats",
+            "Worms",
+            "Trojan horse defense",
+            "Biometrics and authentication systems",
+            "Firewall design principles"
+          ]
+        }
+      ],
+      "experiments": [
+        "Implement mobile network using open source software such as NS2.",
+        "Implement Code Division Multiple Access (CDMA).",
+        "Write a program to implement frequency reuse for a given geographical area and available frequencies.",
+        "Study of OPNET tool for modeling and simulation of different cellular standards.",
+        "Study and analysis of wired network.",
+        "Study and analysis of wireless network.",
+        "Study and analysis of Bluetooth.",
+        "Study of Mobile IP.",
+        "Write programs using WML (Wireless Markup Language)."
+      ],
+      "reference_books": [
+        "J. Schiller, “Mobile Communication”, Addison, Wiley.",
+        "William Stalling, “Wireless Communication and Network”, Pearson Education.",
+        "Upena Dalal, “Wireless Communication”, Oxford Higher Education.",
+        "Dr. Kamilo Feher, “Wireless Digital Communication”, PHI.",
+        "William C.Y. Lee, “Mobile Communication Design Fundamental”, John Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Compiler Design",
+      "subject_code": "IT 603(A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Compiler",
+          "topics": [
+            "analysis of source program",
+            "phases and passes",
+            "Bootstrapping",
+            "lexical analyzers",
+            "data structures in compilation – LEX: lexical analyzer generator",
+            "Input buffering",
+            "Specification and Recognition of tokens",
+            "YACC",
+            "The syntactic specification of programming languages: Context free grammars",
+            "derivation and parse trees",
+            "capabilities of CFG"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Syntax Analysis",
+          "topics": [
+            "working of Parser",
+            "Top down parsing",
+            "Bottom-up parsing",
+            "Operator precedence parsing",
+            "predictive parsers",
+            "LR parsers (SLR, Canonical LR, LALR)",
+            "constructing SLR parsing tables",
+            "constructing Canonical LR parsing tables",
+            "Constructing LALR parsing tables",
+            "using ambiguous grammars",
+            "an automatic parser generator"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Syntax Directed Translation",
+          "topics": [
+            "Definitions",
+            "Inherited Attributes",
+            "L-attributed definitions",
+            "S-attributed definitions",
+            "Dependency graph",
+            "Construction of syntax trees",
+            "Top down translation",
+            "postfix notation",
+            "bottom up evaluation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Intermediate Code Generation",
+          "topics": [
+            "Three address code",
+            "quadruple & triples",
+            "translation of assignment statements",
+            "Boolean expression and control structures",
+            "Backpatching",
+            "Run Time Memory Management: Static and Dynamic storage allocation",
+            "stack based memory allocation schemes",
+            "Symbol Table management"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Code Optimization and Generation",
+          "topics": [
+            "organization of code optimizer",
+            "basic blocks and flow graphs",
+            "DAG representation of basic blocks",
+            "loops in flow graph",
+            "peephole optimization",
+            "basic block optimization"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A. V. Aho, R. Sethi & J. D. Ullman, Compilers: Principles, Techniques and Tools, Pearson Ed.",
+        "Alfred V. Aho, Jeffrey D. Ullman, Principles of Compiler Design, Narosa Publishing House.",
+        "Ronald Mak, Writing Compilers and Interpreters, Wiley India Edition.",
+        "Louden, Compiler Construction, Cengage Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Mining",
+      "subject_code": "IT 603(B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Warehousing",
+          "topics": [
+            "Need for data warehousing",
+            "Basic elements of data warehousing",
+            "Data Mart",
+            "Data Warehouse Architecture",
+            "Extract and load process",
+            "Clean and Transform data",
+            "$\\text{Star}$, $\\text{Snowflake}$ and $\\text{Galaxy}$ schemas for multidimensional databases",
+            "Fact and dimension data",
+            "Partitioning strategy – horizontal and vertical partitioning",
+            "Data Warehouse and OLAP technology",
+            "Multidimensional data models and different OLAP operations",
+            "OLAP server types: ROLAP, MOLAP",
+            "Data Warehouse implementation",
+            "Efficient computation of data cubes",
+            "Processing of OLAP queries",
+            "Indexing data"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data Mining",
+          "topics": [
+            "Data preprocessing",
+            "Data integration and transformation",
+            "Data reduction",
+            "Discretization and concept‑hierarchy generation",
+            "Basics of data mining",
+            "Data mining techniques",
+            "Knowledge Discovery Process (KDP)",
+            "Applications and challenges of data mining"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Mining Association Rules in Large Databases",
+          "topics": [
+            "Association rule mining",
+            "Single‑dimensional Boolean association rules",
+            "Multi‑level association rules",
+            "Apriori algorithm",
+            "FP‑Growth algorithm",
+            "Time‑series mining association rules",
+            "Latest trends in association‑rule mining"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Classification and Clustering",
+          "topics": [
+            "Distance measures",
+            "Types of clustering algorithms",
+            "K‑Means algorithm",
+            "Decision tree classification",
+            "Bayesian classification",
+            "Other classification methods",
+            "Prediction",
+            "Classifier accuracy",
+            "Categorization of methods",
+            "Outlier analysis"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Web Mining and its Types",
+          "topics": [
+            "Introduction to web mining and its types",
+            "Spatial mining",
+            "Temporal mining",
+            "Text mining",
+            "Security issues in web mining",
+            "Privacy issues in web mining",
+            "Ethical issues in web mining"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Arun K. Pujari, \"Data Mining Technique\", University Press.",
+        "Han, J., Kamber, M., \"Data Mining Concepts & Techniques\".",
+        "M. Kaufman, P. Ponnian, \"Data Warehousing Fundamentals\", John Wiley.",
+        "M. H. Dunham, \"Data Mining Introductory & Advanced Topics\", Pearson Education.",
+        "Ralph Kimball, \"The Data Warehouse Lifecycle Toolkit\", John Wiley.",
+        "E. G. Mallach, \"The Decision Support & Data Warehouse Systems\", TMH."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Embedded Systems",
+      "subject_code": "IT 603(C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Embedded Systems",
+          "topics": [
+            "Definition of embedded system",
+            "embedded systems vs. general computing systems",
+            "history of embedded systems",
+            "classification",
+            "major application areas",
+            "purpose of embedded systems",
+            "characteristics and quality attributes of embedded systems",
+            "common design metrics",
+            "processor technology: general purpose processor",
+            "processor technology: application specific processor",
+            "processor technology: single purpose processor"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Embedded System Architecture",
+          "topics": [
+            "Von Neumann vs Harvard architecture",
+            "instruction set architecture",
+            "CISC and RISC instruction set architecture",
+            "basic embedded processor",
+            "microcontroller architecture",
+            "CISC & RISC examples: 8051",
+            "CISC & RISC examples: ARM",
+            "CISC & RISC examples: DSP processors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Input Output and Peripheral Devices",
+          "topics": [
+            "Timers and counters",
+            "watchdog timers",
+            "interrupt controllers",
+            "PWM",
+            "keyboard controller",
+            "analog to digital converters",
+            "real time clock",
+            "basic terminologies of communication protocols",
+            "concepts of communication protocols",
+            "serial protocol: I2C",
+            "serial protocol: CAN",
+            "serial protocol: firewire",
+            "serial protocol: USB",
+            "parallel protocols: PCI bus",
+            "parallel protocols: IrDA",
+            "parallel protocols: bluetooth",
+            "parallel protocols: IEEE 802.11",
+            "wireless protocols"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Memory System Architecture",
+          "topics": [
+            "Caches",
+            "virtual memory",
+            "MMU",
+            "address translation",
+            "memory and interfacing",
+            "memory write ability and storage performance",
+            "memory types",
+            "composing memory – advanced RAM interfacing",
+            "microprocessor interfacing I/O addressing",
+            "interrupts",
+            "direct memory access",
+            "arbitration multilevel bus architecture"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Embedded System Supporting Technologies",
+          "topics": [
+            "Difference between normal OS and RTOS",
+            "scheduling algorithms",
+            "Case study: Tiny OS",
+            "Case study: VxWorks",
+            "Case study: QNX",
+            "Overview of VLSI technology",
+            "introduction to device drivers",
+            "Case study: washing machine",
+            "Case study: air-conditioning",
+            "Case study: auto focus camera"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "F Vahid, T Giogarvis, Embedded systems: A unified hardware/software approach, Wiley, 1999.",
+        "Raj Kamal, Embedded Systems Introduction, 2nd Ed., TMH publication, 2015.",
+        "David E Simons, An Embedded Software Primer, Pearson, 1999."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Intellectual Property Rights",
+      "subject_code": "IT 604(A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction and justification of IPR",
+            "Nature of intellectual property",
+            "Major forms of IP: copyright, patent, trademarks, designs, geographical indication, layout design of semiconductors, plant varieties",
+            "Concept and meaning of intellectual property",
+            "Major international documents: Berne Convention, Paris Convention, TRIPS",
+            "World Intellectual Property Organization (WIPO)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Copyright",
+          "topics": [
+            "Historical development and meaning of copyright",
+            "Subject matter of copyright",
+            "Ownership of copyright",
+            "Term of copyright",
+            "Rights of owner – economic rights and moral rights",
+            "Assignment and licence of rights",
+            "Infringement of copyright",
+            "Exceptions to infringement",
+            "Remedies – civil, criminal, administrative",
+            "Registration procedure"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Patents",
+          "topics": [
+            "Historical development and meaning of patents",
+            "Criteria for obtaining patents",
+            "Non‑patentable inventions",
+            "Procedure for registration",
+            "Term of patent",
+            "Rights of patentee",
+            "Compulsory licence",
+            "Revocation",
+            "Infringement of patents",
+            "Exceptions to infringement",
+            "Remedies",
+            "Patent office and Appellate Board"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Trade Marks, Designs & Geographical Indication",
+          "topics": [
+            "Trade Marks – functions of marks",
+            "Trade Marks – procedure for registration",
+            "Trade Marks – rights of holder",
+            "Trade Marks – assignment and licensing of marks",
+            "Trade Marks – infringement",
+            "Trade Marks – Registry and Appellate Board",
+            "Designs – meaning and evolution of design protection",
+            "Designs – registration",
+            "Designs – term of protection",
+            "Designs – rights of holder",
+            "Designs – unregistered designs",
+            "Geographical Indication – meaning and evolution",
+            "Geographical Indication – difference from trade marks",
+            "Geographical Indication – registration",
+            "Geographical Indication – rights",
+            "Geographical Indication – authorized user"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Contemporary Issues & Enforcement of IPR",
+          "topics": [
+            "IPR and sustainable development",
+            "Impact of the Internet on IPR",
+            "IPR issues in biotechnology",
+            "IPR issues in e‑commerce",
+            "Licensing and enforcement of IPR",
+            "Case studies in IPR"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P. Narayanan, Intellectual Property Law, Eastern Law House",
+        "Neeraj Pandey and Khushdeep Dharni, Intellectual Property Rights, PHI, 2014",
+        "N.S Gopalakrishnan and T.G. Agitha, Principles of Intellectual Property, Eastern Book Co. Lucknow, 2009.",
+        "Anand Padmanabhan, Enforcement of Intellectual Property, Lexis Nexis Butterworths, Nagpur, 2012.",
+        "Managing Intellectual Property The Strategic Imperative, Vinod V. Sople, PHI.",
+        "Prabuddha Ganguli, “Intellectual Property Rights” Mcgraw Hill Education, 2016."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Software Engineering",
+      "subject_code": "IT 604(B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Software Development Process",
+          "topics": [
+            "Software problem and prospects",
+            "System Development Life Cycle (SDLC)",
+            "Waterfall Model",
+            "Spiral Model",
+            "Unified Process",
+            "Agile development",
+            "Extreme Programming",
+            "Other agile process models"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Measures, Metrics and Indicators",
+          "topics": [
+            "Metrics in Process and Project Domains",
+            "Software Measurement",
+            "Metrics of Software Quality",
+            "Software reliability",
+            "Software estimation techniques",
+            "Lines of Code (LOC) and Function Point (FP) estimation",
+            "Empirical models such as COCOMO",
+            "Project tracking and scheduling",
+            "Reverse engineering"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Software Requirements and Design",
+          "topics": [
+            "Feasibility study",
+            "Informal specifications",
+            "Formal specifications",
+            "Pre/post conditions",
+            "Algebraic specification",
+            "Requirement analysis models",
+            "Specification design tools",
+            "Software design objectives and techniques",
+            "User interface design",
+            "Modularity",
+            "Functional decomposition",
+            "Data Flow Diagrams (DFD)",
+            "Data Dictionary",
+            "Object‑oriented design",
+            "Design patterns",
+            "Implementation strategies (top‑down, bottom‑up)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Coding Standards and Testing",
+          "topics": [
+            "Coding standards and guidelines",
+            "Programming style",
+            "Code sharing",
+            "Code review",
+            "Rapid prototyping",
+            "Specialization",
+            "Construction techniques",
+            "Class extensions",
+            "Intelligent software agents",
+            "Reuse performance improvement",
+            "Debugging",
+            "Software testing strategies",
+            "Verification and validation",
+            "Test plan development",
+            "White‑box testing",
+            "Black‑box testing",
+            "Unit testing",
+            "Integration testing",
+            "System testing",
+            "Test case design",
+            "Acceptance testing",
+            "Maintenance activities"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Software Maintenance and Project Management",
+          "topics": [
+            "Software supportability",
+            "Reengineering",
+            "Business Process Reengineering",
+            "Reverse engineering",
+            "Restructuring",
+            "Forward engineering",
+            "Economics of reengineering",
+            "Project scheduling and tracking plan",
+            "Project management plan",
+            "Software Quality Assurance (SQA) and quality planning",
+            "Software Configuration Management (SCM) activities",
+            "Capability Maturity Model (CMM)",
+            "Software project management standards",
+            "Component‑based software engineering"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P.S. Pressman, Software Engineering. A Practitioner's Approach, TMH.",
+        "Rajib Mall, Fundamental of Software Engineering, PHI.",
+        "Hans Van Vliet, Software Engineering, Wiley India Edition.",
+        "James S. Peters, Software Engineering, Wiley India Edition.",
+        "Pankaj Jalote, Software Engineering: A Precise Approach, Wiley India.",
+        "Kelkar, Software Project Management, PHI Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Wireless Sensor Networks",
+      "subject_code": "IT 604(C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Wireless Sensor Networks",
+          "topics": [
+            "Network Characteristics",
+            "Network Applications",
+            "Network Design Objectives",
+            "Network Design Challenges",
+            "Technological Background: $\\text{MEMS}$ Technology",
+            "Wireless Communication Technology",
+            "Hardware and Software Platforms",
+            "Wireless Sensor Network Standards",
+            "Introduction",
+            "Network Architectures for Wireless Sensor Networks",
+            "Classifications of Wireless Sensor Networks",
+            "Protocol Stack for Wireless Sensor Networks"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Fundamental MAC and Routing Protocols",
+          "topics": [
+            "Fundamental MAC Protocols",
+            "MAC Design for Wireless Sensor Networks",
+            "MAC Protocols for Wireless Sensor Networks: Contention-Based Protocols",
+            "Contention-Free Protocols",
+            "Hybrid Protocols",
+            "Introduction, Fundamentals and Challenges",
+            "Taxonomy of Routing and Data Dissemination Protocols",
+            "Overview of Routing and Data Dissemination Protocols: Location‑Aided Protocols",
+            "Layered and In‑Network Processing‑Based Protocols",
+            "Data‑Centric Protocols",
+            "Multipath‑Based Protocols",
+            "Mobility‑Based Protocols",
+            "QoS‑Based Protocols",
+            "Heterogeneity‑Based Protocols"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Query Processing, Data Aggregation and Localization",
+          "topics": [
+            "Introduction",
+            "Query Processing in Wireless Sensor Networks",
+            "Data Aggregation in Wireless Sensor Networks",
+            "Node Localization: Concepts and Challenges of Node Localization Technologies",
+            "Ranging Techniques for Wireless Sensor Networks",
+            "Wireless Localization Algorithms",
+            "Wireless Sensor Node Localization"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Energy Efficiency and Power Control",
+          "topics": [
+            "Need for Energy Efficiency and Power Control in Wireless Sensor Networks",
+            "Passive Power Conservation Mechanisms: Physical‑Layer Power Conservation Mechanisms",
+            "MAC Layer Power Conservation Mechanisms",
+            "Higher Layer Power Conservation Mechanisms",
+            "Active Power Conservation Mechanisms: MAC Layer Mechanisms",
+            "Network Layer Mechanisms",
+            "Transport Layer Mechanisms"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Network Security",
+          "topics": [
+            "Fundamentals of Network Security",
+            "Challenges of Security in Wireless Sensor Networks",
+            "Security Attacks in Sensor Networks",
+            "Protocols and Mechanisms for Security",
+            "$\\text{IEEE }802.15.4$ and ZigBee Security"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Wireless Sensor Networks: A Networking Perspective, Jun Zheng & Abbas Jamalipour, Wiley.",
+        "Wireless Sensor Networks Technology, Protocols, and Applications, Kazem Sohraby, Daniel Minoli, Taieb Znati, Wiley.",
+        "Fundamentals of Wireless Sensor Networks: Theory and Practice, Waltenegus Dargie & Christian Poellabauer, Wiley."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Programming in Python",
+      "subject_code": "IT 605",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Python –Overview",
+          "topics": [
+            "Introduction",
+            "History",
+            "Features"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Python –Environment Setup",
+          "topics": [
+            "Local Environment Setup",
+            "Getting Python",
+            "Installation of Python",
+            "Use of IDE"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Python –Basic Syntax",
+          "topics": [
+            "Python Identifiers",
+            "Reserved Words",
+            "Lines & Indentation",
+            "Multiline Statements",
+            "Quotation in Python",
+            "Comments & other useful constructs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Python –Variables",
+          "topics": [
+            "Assigning Values to Variables",
+            "Multiple Assignment",
+            "Standard Data Types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Python Numbers",
+          "topics": [
+            "Python Strings",
+            "Python Lists",
+            "Python Tuples",
+            "Dictionary",
+            "DataType Conversion"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Python –Basic Operators",
+          "topics": [
+            "Types of Operators",
+            "Arithmetic Operators",
+            "Comparison Operators",
+            "Assignment Operators",
+            "Bitwise Operators",
+            "Logical Operators",
+            "Operator Precedence"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Python –Decision Making & Loops",
+          "topics": [
+            "Flowchart",
+            "If statement Syntax"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "Python-Functions",
+          "topics": [
+            "Syntax for defining a function",
+            "Calling a Function",
+            "Function Arguments",
+            "Anonymous Functions"
+          ]
+        },
+        {
+          "unit": 9,
+          "title": "Python-Applications & Further Extensions",
+          "topics": []
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Python Crash Course: A Hands-On, Project-Based Introduction to Programming, by Eric Matthes, No Starch Press",
+        "Learn Python the Hard Way by Zed A. Shaw (3rd Edition), Addison Wesley",
+        "Head-First Python, by Paul Barry, O’Reilly",
+        "Python Programming by John Zelle, Franklin, Beedle & Associates Inc."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Android Programming",
+      "subject_code": "IT 606",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Android",
+          "topics": [
+            "Background of mobile technologies",
+            "Overview of the Android platform",
+            "Android as an open platform for mobile development",
+            "Open Handset Alliance and its role",
+            "Android internals – hardware and software layers on which Android runs",
+            "Motivations for using Android for mobile application development"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Developing for Android",
+          "topics": [
+            "Creating the first Android application",
+            "Setting up the Android development environment",
+            "Android SDK (Software Development Kit) components",
+            "Using Eclipse as the IDE for Android development",
+            "Emulators and Android Virtual Devices (AVD) – concepts and usage",
+            "Creating and configuring custom Android emulators",
+            "Android project structure and framework"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Android Activities and UI Design",
+          "topics": [
+            "Concept of Intent and its usage",
+            "Activity lifecycle and the Android manifest file",
+            "Creating applications with multiple Activities",
+            "Expressions and flow‑control within Activities",
+            "Simple UI layouts and layout properties",
+            "Fundamental Android UI design principles",
+            "Different layout types (LinearLayout, RelativeLayout, etc.)",
+            "Creating custom layouts",
+            "Drawable resources and their management",
+            "Resolution and density independence (px, dip, dp, sp, sip)",
+            "XML definition of GUI elements such as PushButton, Text/Label, EditText, ToggleButton",
+            "Layout attributes: weightSum, padding, layout_weight"
+          ]
+        }
+      ],
+      "experiments": [
+        "Experiment on Integrated Development Environment for Android Application Development.",
+        "Design and implement user interfaces and layouts of an Android app.",
+        "Use Intents for activity navigation and broadcasting data in an Android app.",
+        "Design and implement a database application with Content Providers.",
+        "Experiment with camera and location‑based services and develop an Android app with security features."
+      ],
+      "reference_books": [
+        "Head First Android Development, 2nd edition, O'Reilly.",
+        "Android App Development for Dummies, 3rd edition, Michael Burton, John Wiley.",
+        "Busy Coder’s Guide to Android Development, Mark L. Murphy, Commonsware."
+      ],
+      "extra": null
+    }
+  ]
+}

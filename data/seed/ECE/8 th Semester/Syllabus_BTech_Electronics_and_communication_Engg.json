@@ -1,0 +1,619 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Optical Fibre Communication",
+      "subject_code": "EC801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to optical fibers and light propagation",
+          "topics": [
+            "Vector nature of light",
+            "Propagation of light in free space and in a cylindrical dielectric rod",
+            "Ray model and wave model of light propagation",
+            "Different types of optical fibers",
+            "Modal analysis of fibers",
+            "Structure and wave‑guiding fundamentals of optical fibers",
+            "Basic optical laws"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Signal degradation in optical fibers",
+          "topics": [
+            "Dispersion and attenuation in optical fibers",
+            "Intermodal dispersion",
+            "Intramodal dispersion",
+            "Fabrication of optical fibers",
+            "Measurement techniques such as OTDR"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Optical sources and detectors",
+          "topics": [
+            "LEDs and laser diodes as optical sources",
+            "Laser and LED structures",
+            "Principles of photodetection",
+            "PIN photodiodes",
+            "Avalanche photodiodes",
+            "Phototransistors",
+            "Photodetector noise",
+            "Detector response time"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Optical transceivers and fiber interconnection",
+          "topics": [
+            "Direct detection and coherent receivers",
+            "Noise in detection process",
+            "Digital receiver performance evaluation and BER calculation",
+            "System design, power budgeting, rise‑time budgeting",
+            "Fiber joints and splicing techniques",
+            "Optical fiber connectors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Optical networks and amplifiers",
+          "topics": [
+            "Optical network topologies",
+            "SONET and SDH networks",
+            "Optical amplifiers: EDFAs and Raman amplifiers",
+            "WDM systems",
+            "Passive optical networks"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Keiser G, Optical Fibre Communication, 5th ed. 2006, McGrawHill.",
+        "Mynbanv and Scheiner, Fibre Optic Communication Technology, 2nd ed. 2010, Pearson Education.",
+        "Djfar K Mynbaev & Scheiner, Fibre Optic Communication Technology, 5th ed. 2005, Pearson."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "AI & Signal Processing",
+      "subject_code": "EC 802 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of AI",
+          "topics": [
+            "What is AI?",
+            "Foundations of AI",
+            "History of AI",
+            "Agents and environments",
+            "The nature of the environment",
+            "Problem‑solving agents",
+            "Problem formulation",
+            "Search strategies"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Knowledge and Reasoning",
+          "topics": [
+            "Knowledge‑based agents",
+            "Knowledge representation",
+            "Reasoning and logic",
+            "Propositional logic",
+            "First‑order logic",
+            "Using first‑order logic",
+            "Inference in first‑order logic",
+            "Forward chaining",
+            "Backward chaining"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Learning",
+          "topics": [
+            "Learning from observations",
+            "Forms of learning",
+            "Inductive learning",
+            "Learning decision trees",
+            "Why learning works",
+            "Learning in neural networks",
+            "Learning in belief networks"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Orthogonal transforms",
+          "topics": [
+            "Discrete Fourier Transform (DFT)",
+            "Discrete Cosine Transform (DCT)",
+            "Haar transform",
+            "Properties of DFT",
+            "Fast Fourier Transform (FFT) structures",
+            "Decimation‑in‑time",
+            "Decimation‑in‑frequency",
+            "Linear convolution using DFT",
+            "Basic FIR filter structures",
+            "Basic IIR filter structures",
+            "FIR/IIR cascaded lattice structures",
+            "Parallel all‑pass realization of IIR transfer functions"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Multirate signal processing",
+          "topics": [
+            "Basic structures for sampling‑rate conversion",
+            "Decimators and interpolators",
+            "Multistage design of interpolators and decimators",
+            "Polyphase decomposition and FIR structures",
+            "Computationally efficient sampling‑rate converters",
+            "Lagrange interpolation",
+            "Spline interpolation",
+            "Quadrature mirror filter banks",
+            "Applications in subband coding"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Stuart Russell, Peter Norvig: “Artificial Intelligence: A Modern Approach”, 2nd Edition, Pearson Education, 2007",
+        "Artificial Neural Networks, B. Yagna Narayana, PHI",
+        "Artificial Intelligence, 2nd Edition, E. Rich and K. Knight (TMH)",
+        "Artificial Intelligence and Expert Systems – Patterson, PHI",
+        "S. K. Mitra: “Digital Signal Processing: A Computer‑Based Approach” (McGraw‑Hill)",
+        "E. C. Ifeacthor and B. W. Jervis: “Digital Signal Processing: A Practical Approach” (Pearson)",
+        "R. Chassaing and D. Reay, Digital Signal Processing and Applications with TMS320C6713 and TMS320C6416, Wiley, 2008",
+        "J. G. Proakis and D. G. Manolakis, Digital Signal Processing"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Wireless Communication",
+      "subject_code": "EC 802 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Applications and requirements of wireless services – history, service types, performance requirements, economic and social aspects.",
+            "Technical challenges in wireless communications – multipath propagation, spectrum scarcity, limited energy, user mobility, noise and interference‑limited environments.",
+            "Propagation mechanisms – free‑space loss, reflection and transmission, diffraction, scattering by rough surfaces, and wave guiding."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Wireless Propagation Channels",
+          "topics": [
+            "Statistical description of the wireless channel – time‑invariant and time‑variant two‑path models, small‑scale fading (with/without dominant component), Doppler spectra, temporal fading dependence, and large‑scale fading.",
+            "Wideband and directional channel characteristics – delay dispersion causes, system‑theoretic description of wireless channels, WSSUS model, condensed parameters, ultra‑wideband channels, and directional descriptions."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Channel Models",
+          "topics": [
+            "Channel models – narrowband, wideband and directional models; deterministic channel‑modeling methods.",
+            "Channel sounding – introduction, time‑domain measurements, frequency‑domain analysis, modified measurement techniques, and directionally resolved measurements.",
+            "Antennas – fundamentals, antennas for mobile stations, and antennas for base stations."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transceivers and Signal Processing",
+          "topics": [
+            "Structure of a wireless communication link – transceiver block diagram and simplified models.",
+            "Modulation formats and demodulation architectures.",
+            "Error probability analysis in additive white Gaussian noise (\\(\\text{AWGN}\\)) channels, flat‑fading channels, and delay/frequency‑dispersive fading channels."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Diversity",
+          "topics": [
+            "Diversity techniques – introduction, micro‑diversity, macro‑diversity, simulcast, signal combination, error probability with diversity reception, and transmit diversity.",
+            "Equalization methods – introduction, linear equalizers, decision‑feedback equalizers, maximum‑likelihood sequence estimation (Viterbi detector), comparative analysis of equalizer structures, fractional‑spaced equalizers, and blind equalizers."
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Molisch: Wireless Communications, Wiley India.",
+        "Taub and Schilling: Principles of Communication Systems, TMH.",
+        "Haykin: Mordern Wireless Communication, Pearson Education.",
+        "Upena Dalal: Wireless Communication, Oxford University Press.",
+        "Rappaport: Wireless Communication, Pearson Education.",
+        "Price: Wireless Communication and Networks, TMH."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "5G Technology",
+      "subject_code": "EC 802 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of 5G Broadband Wireless Communications",
+          "topics": [
+            "Evaluation of mobile technologies 1G to 4G (LTE, LTE‑A, LTE‑A Pro)",
+            "Overview of 5G requirements",
+            "Regulations for 5G",
+            "Spectrum analysis and sharing for 5G"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "The 5G Wireless Propagation Channels",
+          "topics": [
+            "Channel modeling requirements for 5G",
+            "Propagation scenarios and challenges in 5G modeling",
+            "Channel models for mmWave MIMO systems"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Transmission and Design Techniques for 5G",
+          "topics": [
+            "Basic requirements of transmission over 5G",
+            "Modulation techniques – OFDM, GFDM, FBMC, UFMC",
+            "Multiple access techniques – OFDMA, GFDMA, NOMA"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Device‑to‑Device (D2D) and Machine‑to‑Machine (M2M) Communications",
+          "topics": [
+            "Extension of 4G D2D standardization to 5G",
+            "Radio resource management for mobile broadband D2D",
+            "Multi‑hop and multi‑operator D2D communications"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Millimeter‑Wave Communications",
+          "topics": [
+            "Spectrum regulations and deployment scenarios for mmWave",
+            "Beam‑forming and physical‑layer techniques",
+            "Interference and mobility management in mmWave systems",
+            "Massive MIMO propagation channel models",
+            "Channel estimation in massive MIMO",
+            "Massive MIMO with imperfect CSI",
+            "Multi‑cell massive MIMO and pilot contamination",
+            "Spatial modulation (SM)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Martin Sauter, “From GSM to LTE‑Advanced Pro and 5G: An Introduction to Mobile Networks and Mobile Broadband”, Wiley‑Blackwell.",
+        "Afif Osseiran, Jose F. Monserrat, Patrick Marsch, “Fundamentals of 5G Mobile Networks”, Cambridge University Press.",
+        "Athanasios G. Kanatos, Konstantina S. Nikita, Panagiotis Mathiopoulos, “New Directions in Wireless Communication Systems from Mobile to 5G”, CRC Press.",
+        "Theodore S. Rappaport, Robert W. Heath, Robert C. Danials, James N. Murdock, “Millimeter‑Wave Wireless Communications”, Prentice Hall Communications.",
+        "Jonathan Rodriguez, “Fundamentals of 5G Mobile Networks”, John Wiley & Sons.",
+        "Amitabha Ghosh and Rapeepat Ratasuk, “Essentials of LTE and LTE‑A”, Cambridge University Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Wireless Network",
+      "subject_code": "EC 803 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of Cellular Networks",
+          "topics": [
+            "Mobile telephony, GSM, CDMA/CD and UMTS",
+            "Advancement and migrations of cellular technologies",
+            "WLAN PHY and MAC layers – IEEE 802.11 (a, b, g, ac)",
+            "HIPERLAN",
+            "Wireless ATM",
+            "WiMAX PHY and MAC layers – IEEE 802.16 (fixed and mobile)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "LTE Systems",
+          "topics": [
+            "Introduction to 3GPP, LTE and LTE‑A standards",
+            "LTE uplink and downlink operation",
+            "E‑UTRAN architecture, mobility and resource management",
+            "UTRAN architecture and services",
+            "HSDPA and HSUPA technologies",
+            "OFDM and OFDMA modulation schemes",
+            "SISO and MIMO system concepts",
+            "OFDM‑MIMO integration"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Wireless Sensor Networks",
+          "topics": [
+            "Introduction to wireless sensor networks (WSN) and architecture",
+            "Coverage planning and node placement strategies",
+            "Topology management in WSNs",
+            "Applications of WSNs and mobile WSN scenarios",
+            "Technologies for sensor nodes and network platforms",
+            "Operating environments including underwater WSNs",
+            "Security mechanisms for WSNs",
+            "MAC protocols for WSNs",
+            "Routing and transport protocols for WSNs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Wireless Routing Protocols",
+          "topics": [
+            "Medium access problems in wireless networks",
+            "Traditional routing approaches",
+            "Mobile network layer and Mobile IP concepts",
+            "Introduction to IPv4 and IPv6 addressing",
+            "Data forwarding procedures in Mobile IP (IPv4 & IPv6)",
+            "Mobility management and protocol trade‑offs",
+            "Congestion window management techniques",
+            "Mobile transport layer protocols: Traditional TCP, Mobile TCP, Indirect TCP, Reno, New‑Reno, Tahoe, Vegas, UDP"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Internet of Things (IoT) and GPS Systems",
+          "topics": [
+            "IoT architecture, design principles and required capabilities",
+            "IoT devices and gateways; case studies (body‑area sensor networks, smart homes, smart vehicles, smart manufacturing)",
+            "Emerging IoT standards and protocols (IEEE 802.15 WPAN, Bluetooth, ZigBee, UWB, RFID)",
+            "IoT protocol stack and interfacing between 802.11 and Bluetooth",
+            "Geolocation service techniques and standards",
+            "Introduction to GPS‑aided GAGAN, E.911",
+            "ZigBee, UWB and RFID technologies"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Kazem Sohraby, Daniel Minoli and Taieb Znati – \"Wireless Sensor Networks: Technology, Protocols and Applications\" – Wiley",
+        "Jan Holler, Vlasios Tsiatsis, Catherine Mulligan, Stefan Aves, Stamatis Karnouskos, David Boyle – \"From Machine-to-Machine to the Internet of Things: Introduction to a New Age of Intelligence\" – Academic Press, 1st Edition, 2014",
+        "Ramji Prasad – \"OFDM for Wireless Communication\"",
+        "Steve Rackley – \"Wireless Networking Technology\""
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Digital Image Processing",
+      "subject_code": "EC 803 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Digital Image Processing (DIP)",
+          "topics": [
+            "Introduction to digital image processing, including examples of application fields and the fundamental steps of DIP",
+            "Components of an image processing system",
+            "Digital image fundamentals: elements of visual perception, image sensing and acquisition, image sampling and quantization, basic relationships between pixels"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Image Transforms",
+          "topics": [
+            "Two‑dimensional impulse and its shifting properties",
+            "The $2D$ continuous Fourier transform pair",
+            "The $2D$ sampling theorem and $2D$ sampling",
+            "$2D$ Discrete Fourier Transform ($\\text{DFT}$) and its properties",
+            "Other transforms and their properties: Cosine transform, Sine transform, Walsh transform, Hadamard transform, Haar transform, Slant transform, Karhunen‑Lo\\`eve (KL) transform"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Image Enhancement",
+          "topics": [
+            "Spatial‑domain methods: basic intensity transformation functions, fundamentals of spatial filtering, smoothing spatial filters (linear and non‑linear), sharpening spatial filters (unsharp masking and high‑boost filtering), combined spatial enhancement techniques",
+            "Frequency‑domain methods: fundamentals of filtering in the frequency domain, image smoothing filters (Butterworth and Gaussian low‑pass filters), image sharpening filters (Butterworth and Gaussian high‑pass filters), selective frequency filtering"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Image Restoration",
+          "topics": [
+            "Image degradation and restoration models",
+            "Noise models and restoration by spatial filtering",
+            "Noise reduction via frequency‑domain filtering",
+            "Linear shift‑invariant degradations and estimation of the degradation function",
+            "Inverse filtering, Wiener filtering, and image reconstruction from projections"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Image Compression",
+          "topics": [
+            "Fundamentals of data compression: basic compression methods such as Huffman coding, Golomb coding, LZW coding, Run‑Length coding, and symbol‑based coding",
+            "Digital image watermarking and representation/description techniques, including the Minimum Perimeter Polygons (MPP) algorithm"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Gonzalez and Woods: Digital Image Processing, Pearson Education.",
+        "Anil Jain: Fundamentals of Digital Image Processing, PHI Learning.",
+        "Annadurai: Fundamentals of Digital Image Processing, Pearson Education.",
+        "Sonka, Hlavac and Boyle: Digital Image Processing and Computer Vision, Cengage Learning.",
+        "Chanda and Majumder: Digital Image Processing and Analysis, PHI Learning.",
+        "Jayaraman, Esakkirajan and Veerakumar: Digital Image Processing, TMH.",
+        "William K. Pratt, Digital Image Processing, Wiley India."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Speech Processing",
+      "subject_code": "EC 803 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts of Speech Processing",
+          "topics": [
+            "Articulatory Phonetics – Production and Classification of Speech Sounds",
+            "Acoustic Phonetics – acoustics of speech production",
+            "Review of Digital Signal Processing concepts",
+            "Short‑Time Fourier Transform (STFT)",
+            "Filter‑Bank methods",
+            "Linear Predictive Coding (LPC) methods"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Speech Analysis",
+          "topics": [
+            "Speech distortion measures – mathematical and perceptual",
+            "Log Spectral Distance",
+            "Cepstral Distances",
+            "Weighted Cepstral Distances",
+            "Filtering",
+            "Likelihood Distortions",
+            "Spectral Distortion using a Warped Frequency Scale",
+            "LPC coefficients",
+            "PLP coefficients",
+            "MFCC coefficients",
+            "Dynamic Time Warping (DTW)",
+            "Multiple Time‑Alignment Paths"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Speech Modeling",
+          "topics": [
+            "Markov Processes",
+            "Hidden Markov Model (HMM) evaluation",
+            "Optimal State Sequence – Viterbi Search",
+            "Baum‑Welch parameter re‑estimation",
+            "Implementation issues of HMMs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Speech Recognition",
+          "topics": [
+            "Architecture of large‑vocabulary continuous speech recognition system",
+            "Acoustic models",
+            "Language models – n‑grams",
+            "Context‑dependent sub‑word units",
+            "Applications and present status"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Speech Synthesis",
+          "topics": [
+            "Concatenative synthesis methods",
+            "Waveform synthesis methods",
+            "Sub‑word units for text‑to‑speech (TTS)",
+            "Intelligibility and naturalness – role of prosody",
+            "Applications and present status"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Lawrence Rabiner and Biing‑Hwang Juang, “Fundamentals of Speech Recognition”, Pearson Education, 2003.",
+        "Daniel Jurafsky and James H. Martin, “Speech and Language Processing – An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition”, Pearson Education.",
+        "Steven W. Smith, “The Scientist and Engineer’s Guide to Digital Signal Processing”, California Technical Publishing.",
+        "Thomas F. Quatieri, “Discrete‑Time Speech Signal Processing – Principles and Practice”, Pearson Education.",
+        "Claudio Becchetti and Lucio Prina Ricotti, “Speech Recognition”, John Wiley and Sons, 1999.",
+        "Ben Gold and Nelson Morgan, “Speech and Audio Signal Processing”, Wiley‑India Edition, 2006.",
+        "Frederick Jelinek, “Statistical Methods of Speech Recognition”, MIT Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advanced Communication Engg. Lab",
+      "subject_code": "EC 804",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Amplitude Shift Keying Modulation and Demodulation",
+          "topics": []
+        },
+        {
+          "unit": 2,
+          "title": "Frequency shift keying Modulation and Demodulation",
+          "topics": []
+        },
+        {
+          "unit": 3,
+          "title": "BPSK Generation and Detection",
+          "topics": []
+        },
+        {
+          "unit": 4,
+          "title": "DPSK Generation and detection.",
+          "topics": []
+        },
+        {
+          "unit": 5,
+          "title": "QPSK Generation and detection",
+          "topics": []
+        },
+        {
+          "unit": 6,
+          "title": "Time Division Multiplexing of 2 Bandlimited Signals",
+          "topics": []
+        },
+        {
+          "unit": 7,
+          "title": "Analog and Digital Communication Link Using Optical Fiber",
+          "topics": []
+        },
+        {
+          "unit": 8,
+          "title": "Study of Manchaster Coding & Decoding",
+          "topics": []
+        },
+        {
+          "unit": 9,
+          "title": "Measurement of frequency,guided wavelength,power,VSWR and attenuation in a microwave test bench",
+          "topics": []
+        },
+        {
+          "unit": 10,
+          "title": "Study Of Dipole Antenna Radiation Pattern ( Simple Dipole and Folded Dipole antenna)",
+          "topics": []
+        },
+        {
+          "unit": 11,
+          "title": "To find the Gain and Directivity of Yagi-Uda Antenna, Dipole antenna and Patch antenna",
+          "topics": []
+        },
+        {
+          "unit": 12,
+          "title": "Determination of coupling and isolation characteristics of a stripline directional coupler.",
+          "topics": []
+        },
+        {
+          "unit": 13,
+          "title": "Power Division and Isolation characteristics of a microstrip 3dB power divider",
+          "topics": []
+        }
+      ],
+      "experiments": [
+        "Amplitude Shift Keying Modulation and Demodulation",
+        "Frequency shift keying Modulation and Demodulation",
+        "BPSK Generation and Detection",
+        "DPSK Generation and detection.",
+        "QPSK Generation and detection",
+        "Time Division Multiplexing of 2 Bandlimited Signals",
+        "Analog and Digital Communication Link Using Optical Fiber",
+        "Study of Manchaster Coding & Decoding",
+        "Measurement of frequency,guided wavelength,power,VSWR and attenuation in a microwave test bench",
+        "Study Of Dipole Antenna Radiation Pattern ( Simple Dipole and Folded Dipole antenna)",
+        "To find the Gain and Directivity of Yagi-Uda Antenna, Dipole antenna and Patch antenna",
+        "Determination of coupling and isolation characteristics of a stripline directional coupler.",
+        "Power Division and Isolation characteristics of a microstrip 3dB power divider"
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

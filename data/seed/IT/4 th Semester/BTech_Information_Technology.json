@@ -1,0 +1,765 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Mathematics-III",
+      "subject_code": "BT401",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Numerical Methods – 1",
+          "topics": [
+            "Solution of polynomial and transcendental equations using Bisection method",
+            "Solution of polynomial and transcendental equations using Newton‑Raphson method",
+            "Solution of polynomial and transcendental equations using Regula‑Falsi method",
+            "Finite differences",
+            "Relation between operators",
+            "Interpolation using Newton’s forward difference formula",
+            "Interpolation using Newton’s backward difference formula",
+            "Interpolation with unequal intervals using Newton’s divided difference",
+            "Interpolation with unequal intervals using Lagrange’s formula"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Numerical Methods – 2",
+          "topics": [
+            "Numerical Differentiation",
+            "Numerical integration using Trapezoidal rule",
+            "Numerical integration using Simpson’s 1/3 rule",
+            "Numerical integration using Simpson’s 3/8 rule",
+            "Solution of simultaneous linear algebraic equations by Gauss’s elimination",
+            "Solution of simultaneous linear algebraic equations by Gauss‑Jordan method",
+            "Solution of simultaneous linear algebraic equations by Crout’s method",
+            "Solution of simultaneous linear algebraic equations by Jacobi’s method",
+            "Solution of simultaneous linear algebraic equations by Gauss‑Seidel method",
+            "Solution of simultaneous linear algebraic equations by Relaxation method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Numerical Methods – 3",
+          "topics": [
+            "Ordinary differential equations solved using Taylor series method",
+            "Euler method for ODEs",
+            "Modified Euler method for ODEs",
+            "Fourth‑order Runge‑Kutta method for first‑order equations",
+            "Fourth‑order Runge‑Kutta method for second‑order equations",
+            "Milne’s predictor‑corrector method",
+            "Adam’s predictor‑corrector method",
+            "Finite difference solution of two‑dimensional Laplace equation",
+            "Finite difference solution of two‑dimensional Poisson equation",
+            "Implicit method for one‑dimensional heat equation (Bender‑Schmidt)",
+            "Explicit method for one‑dimensional heat equation (Crank‑Nicholson)",
+            "Finite difference explicit method for wave equation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Transform Calculus",
+          "topics": [
+            "Laplace Transform",
+            "Properties of Laplace Transform",
+            "Laplace Transform of periodic functions",
+            "Inverse Laplace Transform by various methods",
+            "Convolution theorem",
+            "Evaluation of integrals using Laplace Transform",
+            "Solving ODEs using Laplace Transform method",
+            "Fourier transforms"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Concept of Probability",
+          "topics": [
+            "Probability mass function",
+            "Probability density function",
+            "Discrete distributions: Binomial distribution",
+            "Discrete distributions: Poisson distribution",
+            "Continuous distributions: Normal distribution",
+            "Continuous distributions: Exponential distribution"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P. Kandasamy, K. Thilagavathy, K. Gunavathi, Numerical Methods, S. Chand & Company, 2nd Edition, Reprint 2012.",
+        "S.S. Sastry, Introductory methods of numerical analysis, PHI, 4th Edition, 2005.",
+        "Erwin Kreyszig, Advanced Engineering Mathematics, 9th Edition, John Wiley & Sons, 2006.",
+        "B.S. Grewal, Higher Engineering Mathematics, Khanna Publishers, 35th Edition, 2010.",
+        "N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications, Reprint, 2010.",
+        "Veerarajan T., Engineering Mathematics, Tata McGraw-Hill, New Delhi, 2008.",
+        "P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book Stall, 2003 (Reprint).",
+        "S. Ross, A First Course in Probability, 6th Ed., Pearson Education India, 2002.",
+        "W. Feller, An Introduction to Probability Theory and its Applications, Vol. 1, 3rd Ed., Wiley, 1968."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Architecture",
+      "subject_code": "IT402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Computer Architecture and Organization",
+          "topics": [
+            "Computer architecture and organization",
+            "Computer generations",
+            "Von Neumann model",
+            "CPU organization",
+            "Register organization",
+            "Various CPU registers",
+            "Register Transfer",
+            "Bus and Memory Transfers",
+            "Arithmetic, Logic and Shift micro-operations",
+            "Arithmetic logic shift unit"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Arithmetic and Logic Unit and Data Representation",
+          "topics": [
+            "Arithmetic and logic unit",
+            "Fixed-point representation: integer representation",
+            "Sign magnitude representation",
+            "1’s complement representation",
+            "2’s complement representation and range",
+            "Integer arithmetic: negation",
+            "Integer arithmetic: addition",
+            "Integer arithmetic: subtraction",
+            "Integer arithmetic: multiplication",
+            "Integer arithmetic: division",
+            "Floating-point representation",
+            "Floating-point arithmetic",
+            "Hardwired control unit",
+            "Micro-programmed control unit",
+            "Control memory",
+            "Microprogram sequence"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Central Processing Unit and Instruction Set",
+          "topics": [
+            "Central Processing Unit (CPU)",
+            "Stack organization",
+            "Memory stack",
+            "Reverse Polish Notation",
+            "Instruction formats",
+            "Zero-address instructions",
+            "One-address instructions",
+            "Two-address instructions",
+            "Three-address instructions",
+            "RISC instructions",
+            "CISC characteristics",
+            "Addressing modes",
+            "Modes of transfer",
+            "Priority interrupt",
+            "Daisy chaining",
+            "Direct Memory Access (DMA)",
+            "Input-Output Processor (IOP)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Memory System and Virtual Memory",
+          "topics": [
+            "Computer memory system",
+            "Memory hierarchy",
+            "Main memory: RAM",
+            "Main memory: ROM",
+            "Auxiliary memory",
+            "Associative memory",
+            "Cache memory: associative mapping",
+            "Cache memory: direct mapping",
+            "Cache memory: set-associative mapping",
+            "Cache memory: write policy",
+            "Cache performance",
+            "Virtual memory: address space",
+            "Virtual memory: memory space",
+            "Virtual memory: address mapping",
+            "Paging",
+            "Segmentation",
+            "Translation Lookaside Buffer (TLB)",
+            "Page fault",
+            "Effective access time",
+            "Replacement algorithms"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Parallel Processing and Pipelining",
+          "topics": [
+            "Parallel processing",
+            "Pipelining: general considerations",
+            "Arithmetic pipeline",
+            "Instruction pipeline",
+            "Vector operations",
+            "Matrix multiplication",
+            "Memory interleaving",
+            "Multiprocessors",
+            "Characteristics of multiprocessors"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "M. Morris Mano, “Computer System Architecture”, Pearson.",
+        "Dr. M. Usha, T.S. Srikanth, “Computer System Architecture and Organization”, Wiley India.",
+        "William Stallings, ”Computer Organization and Architecture”, Pearson.",
+        "V. Rajaraman, T. Radhakrishnan, “Computer Organization and Architecture”, PHI."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Analysis and Design of Algorithm",
+      "subject_code": "IT403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Algorithms, Design and Analysis",
+          "topics": [
+            "Algorithms",
+            "Designing algorithms",
+            "Analyzing algorithms",
+            "Asymptotic notations",
+            "Heap and heap sort",
+            "Divide and conquer technique",
+            "Binary search",
+            "Merge sort",
+            "Quick sort",
+            "Strassen’s matrix multiplication"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Greedy Algorithms",
+          "topics": [
+            "Greedy strategy",
+            "Optimal merge patterns",
+            "Huffman coding",
+            "Minimum spanning trees",
+            "Knapsack problem",
+            "Job sequencing with deadlines",
+            "Single source shortest path algorithm"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Dynamic Programming",
+          "topics": [
+            "Dynamic programming",
+            "0/1 knapsack problem",
+            "Multistage graph",
+            "Reliability design",
+            "Floyd‑Warshall algorithm"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Backtracking and Branch & Bound",
+          "topics": [
+            "Backtracking concept",
+            "8‑queen’s problem",
+            "Hamiltonian cycle",
+            "Graph coloring problem",
+            "Branch and bound method",
+            "Traveling salesman problem",
+            "Lower bound theory",
+            "Parallel algorithms"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Tree Data Structures and NP‑Completeness",
+          "topics": [
+            "Binary search trees",
+            "Height balanced trees",
+            "2‑3 trees",
+            "B‑trees",
+            "Search and traversal techniques for trees and graphs (in‑order, pre‑order, post‑order, DFS, BFS)",
+            "NP‑completeness"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program for Iterative and Recursive Binary Search.",
+        "Write a program for Merge Sort.",
+        "Write a program for Quick Sort.",
+        "Write a program for Strassen’s Matrix Multiplication.",
+        "Write a program for optimal merge patterns.",
+        "Write a program for Huffman coding.",
+        "Write a program for minimum spanning trees using Kruskal’s algorithm.",
+        "Write a program for minimum spanning trees using Prim’s algorithm.",
+        "Write a program for single sources shortest path algorithm.",
+        "Write a program for Floye‑Warshal algorithm.",
+        "Write a program for traveling salesman problem.",
+        "Write a program for Hamiltonian cycle problem."
+      ],
+      "reference_books": [
+        "Coremen Thomas, Leiserson CE, Rivest RL; Introduction to Algorithms; PHI.",
+        "Horowitz & Sahani; Analysis & Design of Algorithm",
+        "Dasgupta; algorithms; TMH",
+        "Ullmann; Analysis & Design of Algorithm;",
+        "Michael T Goodrich, Robarto Tamassia, Algorithm Design, Wiely India"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Analog & Digital Communication",
+      "subject_code": "IT404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Signals and Systems",
+          "topics": [
+            "Block diagram of a communication system",
+            "Signal definition and classification (continuous, discrete, deterministic, non‑deterministic, periodic, non‑periodic, energy, power, analog, digital)",
+            "Electromagnetic spectra",
+            "Standard signals: DC, sinusoidal, unit‑step, ramp, signum, rectangular pulse, impulse ($\\delta$) signal",
+            "System definition and classification (linear, non‑linear, time‑variant, time‑invariant, causal, non‑causal, stable, unstable)",
+            "Fourier Transform: time‑domain and frequency‑domain representation of signals",
+            "Fourier Transform properties and existence conditions",
+            "Transforms of gate, unit‑step, constant, impulse, sine and cosine waves",
+            "Shifting property of the delta function",
+            "Convolution and the time‑ and frequency‑domain convolution theorems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Amplitude Modulation",
+          "topics": [
+            "Purpose of modulation and classification of amplitude modulation techniques",
+            "Double‑sideband full‑carrier (DSB‑FC) modulation and modulation index",
+            "Frequency spectrum of AM wave, linear versus over‑modulation",
+            "Power relations and transmission efficiency in AM",
+            "Modulation by a complex signal and bandwidth of AM",
+            "AM modulators: square‑law and switching modulators, advantages/disadvantages",
+            "Suppressed‑carrier AM systems (DSB‑SC, SSB‑SC, VSB‑SC) and comparative analysis",
+            "Demodulation techniques: square‑law detector, envelope detector, synchronous detection",
+            "Low‑power and high‑power AM transmitters",
+            "AM receivers: TRF and super‑heterodyne architectures",
+            "Receiver performance parameters: sensitivity, selectivity, fidelity"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Angle Modulation",
+          "topics": [
+            "Introduction to angle modulation and its categories",
+            "Frequency modulation (FM): frequency deviation, modulation index, deviation ratio, bandwidth requirement of FM wave",
+            "Types of FM",
+            "Phase modulation (PM) and differences between FM and PM",
+            "Direct and indirect methods of FM generation",
+            "FM demodulators: slope detector, Foster‑Seeley discriminator, ratio detector",
+            "Overview of pulse modulation systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Sampling and Pulse Modulation",
+          "topics": [
+            "Sampling of signals and sampling theorem for low‑pass and band‑pass signals",
+            "Pulse amplitude modulation (PAM) and time‑division multiplexing (TDM)",
+            "Channel bandwidth considerations for PAM‑TDM signals",
+            "Types of sampling: instantaneous, natural, flat‑top, aperture effect",
+            "Pulse‑position modulation and pulse‑duration modulation",
+            "Digital signal concepts: quantization, quantization error",
+            "Pulse code modulation (PCM) and signal‑to‑noise ratio",
+            "Companding techniques",
+            "Data rate, baud rate, and bit rate calculations",
+            "Multiplexed PCM signals",
+            "Differential PCM (DPCM), delta modulation (DM) and adaptive delta modulation (ADM)",
+            "Comparative analysis of various pulse‑code systems"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Digital Modulation Techniques",
+          "topics": [
+            "Amplitude shift keying (ASK): generation, detection, equation, bandwidth",
+            "Binary phase shift keying (BPSK)",
+            "Differential phase shift keying (DPSK)",
+            "Quadrature phase shift keying (QPSK): offset and non‑offset variants",
+            "M‑ary phase shift keying (M‑ary PSK)",
+            "Binary frequency shift keying (BFSK)",
+            "M‑ary frequency shift keying (M‑ary FSK)",
+            "Quadrature amplitude modulation (QAM)"
+          ]
+        }
+      ],
+      "experiments": [
+        "AM Modulation and Demodulation (Envelope Detector)",
+        "Frequency modulation using reactance modulator",
+        "Frequency modulation using varactor modulator",
+        "Pulse Amplitude Modulation and Demodulation",
+        "Pre‑emphasis and De‑emphasis",
+        "Analog Multiplexing",
+        "Amplitude Modulation using Pspice",
+        "Receiver characteristics (selectivity, sensitivity, fidelity)",
+        "Operation of Foster‑Seeley loop detector",
+        "Operation of ratio detector"
+      ],
+      "reference_books": [
+        "Singh & Sapre, “Communication Systems”, TMH.",
+        "Taub & Schilling, “Principles of Communication Systems”, TMH.",
+        "W. Tomasi, “Electronic Communications Systems”, Pearson Education Pvt. Ltd.",
+        "Taub & Schilling, “Communication Systems”, TMH.",
+        "Abhay Gandhi, “Analog and Digital Communication”, CENGAGE Learning."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Base Management System",
+      "subject_code": "IT405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Concepts",
+          "topics": [
+            "Introduction to DBMS",
+            "File system versus DBMS comparison",
+            "Advantages of database systems",
+            "Database system architecture",
+            "Data models, schemas and instances",
+            "Data independence",
+            "Functions of DBA and designer",
+            "Entities and attributes, entity types, key attributes",
+            "Relationships and definition of the E‑R diagram"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Relational Model",
+          "topics": [
+            "Structure of relational databases",
+            "Domains and relations",
+            "Relational algebra – fundamental operators and syntax",
+            "Relational algebra queries",
+            "Entity‑Relationship model basics and design process",
+            "Constraints, keys, design issues",
+            "E‑R diagrams, weak entity sets",
+            "Extended E‑R features – generalization, specialization, aggregation"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "SQL",
+          "topics": [
+            "Data Definition Language (DDL) in SQL",
+            "Update statements and views",
+            "Data storage definitions",
+            "Data retrieval queries",
+            "Query processing and optimization overview",
+            "Measures of query cost, selection, sorting, join operations",
+            "Transformation of relational expressions",
+            "Estimating statistics of expression results",
+            "Evaluation plans",
+            "Case studies of ORACLE and DB2"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Relational Database Design",
+          "topics": [
+            "Functional dependencies – definition, trivial and non‑trivial FD",
+            "Closure of FD set, irreducible set of FD",
+            "Normalization – 1NF, 2NF, 3NF",
+            "Decomposition preserving dependencies, lossless join",
+            "Boyce‑Codd Normal Form (BCNF)",
+            "Multivalued dependency, Fourth Normal Form (4NF)",
+            "Join dependency, Fifth Normal Form (5NF)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Transaction Management and Concurrency Control",
+          "topics": [
+            "Transaction concepts, processing and recovery",
+            "Concurrency control – lock management",
+            "Specialized locking techniques",
+            "Concurrency control without locking",
+            "Protection and security aspects"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Distributed Databases and Big Data",
+          "topics": [
+            "Distributed database concepts",
+            "Basic concepts of object‑oriented database systems",
+            "Overview of Big Data"
+          ]
+        }
+      ],
+      "experiments": [
+        "To perform various SQL Commands of DDL, DML, DCL.",
+        "Write SQL Commands such as Insertion, deletion and updation for any schema.",
+        "To execute Nested Queries, Join Queries, order-by, having clause and string operation.",
+        "To perform set operators like Union, Intersect, Minus on a set of tables.",
+        "To execute various commands for GROUP functions (avg, count, max, min, Sum).",
+        "Write a PL/SQL block for transaction application using Triggers.",
+        "Write a DBMS program to prepare report for an application using function.",
+        "Designing of various Input screens/Forms.",
+        "Create reports using database connectivity of Front end with back end.",
+        "Create database Design with normalization and implementing in any application."
+      ],
+      "reference_books": [
+        "Korth, Silberschatz, Sudarshan, “Database Concepts”, McGraw Hill.",
+        "Elmasri, Navathe, “Fundamentals of Database Systems”, Pearson.",
+        "Ivan Bayross, “SQL, PL/SQL the Programming Language of Oracle”, BPB publications.",
+        "S. Sharma, J. Agrawal, S. Agrawal, “Advanced Database Management System”, Dreamtech Press.",
+        "Leon & Leon, “Fundamental of Data Base Management System”, TMH."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Introduction to MATLAB/SciLab/Web Design",
+      "subject_code": "IT406",
+      "subject_type": "Theory/Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to MATLAB/SciLab",
+          "topics": [
+            "Installing MATLAB/SciLab under Windows/Linux",
+            "Basics of MATLAB programming",
+            "Data types in MATLAB/Scilab",
+            "Creating variables, comments and multiline comments",
+            "Array operations in MATLAB/Scilab",
+            "Loops and execution control statements",
+            "In‑built mathematical functions",
+            "Working with files: scripts and functions",
+            "Plotting and program output",
+            "Overview of various toolboxes",
+            "Introduction to MATLAB Simulink"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to Web Design",
+          "topics": [
+            "HTML introduction and page structure",
+            "Elements, tags and attributes",
+            "Paragraphs and headings",
+            "Line breaks and horizontal rules",
+            "Lists (ordered, unordered, definition)",
+            "Formatting and color codes",
+            "Font styling and text links",
+            "Email links",
+            "Images and image links",
+            "Forms and input controls",
+            "Tables and frames",
+            "Comments in HTML",
+            "Embedding music and video codes",
+            "Divisions (DIV) and page layout",
+            "DHTML: Cascading Style Sheets (CSS) introduction",
+            "Types of CSS (inline, internal, external)",
+            "Selectors (tag, class, id)",
+            "CSS background and color properties",
+            "CSS text properties",
+            "CSS font properties",
+            "CSS border properties",
+            "CSS padding properties"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write your first Matlab/Scilab program.",
+        "Extract an individual element of an array.",
+        "Write Matlab/Scilab program to illustrate loops and control statements.",
+        "Create a simple plot.",
+        "Name the title and axes titles of the plot.",
+        "Create a webpage with HTML describing your department using paragraph and list tags; apply various colors, font styling (italics, underline, and two additional fonts), and header tags.",
+        "Create a web page using HTML to display a class timetable; use tables to provide layout for a page describing university infrastructure."
+      ],
+      "reference_books": [
+        "Fausett L.V. (2007) Applied Numerical Analysis Using MATLAB, 2nd Ed., Pearson Education.",
+        "Chapra S.C. and Canale R.P. (2006) Numerical Methods for Engineers, 5th Ed., McGraw Hill.",
+        "N.P. Gopalan, \"Web Technology\", PHI.",
+        "Ivan Bayross, \"HTML, JavaScript, DHTML and PHP\", BPB Publication."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Open Source Software Lab (Linux and R)",
+      "subject_code": "IT407",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to LINUX Operating System",
+          "topics": [
+            "Overview of popular Linux distributions",
+            "Hardware requirements for Linux",
+            "Installation of Linux distributions",
+            "Internal and external commands",
+            "Command structure",
+            "General‑purpose utilities: cal, date, echo, printf, bc, script, passwd, PATH, who, uname, tty, stty, pwd, cd, mkdir, rmdir"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Handling Files and System Administration",
+          "topics": [
+            "File system navigation and management commands: cat, cp, rm, mv, more, file, ls, wc, pg, cmp, comm, diff, gzip, tar, zip, df, du, mount, umount, chmod",
+            "VI editor and security by file permissions (chmod, find, locate)",
+            "Compiling C/C++ files and file processing utilities (awk, sed, gcc, sh)",
+            "Networking commands: ping, telnet, ftp, arp, rlogin, make, apt‑get",
+            "Accessing remote servers and files",
+            "System administration: Linux configuration, connecting to remote machines, adding and removing users"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Programming in Linux (Bash Shell Scripting)",
+          "topics": [
+            "Bash shell scripting fundamentals",
+            "Interactive scripts and shell variables",
+            "Positional parameters and command‑line arguments",
+            "Arithmetic operations in shell scripts",
+            "Script control flow: if‑else, nested if, case statements",
+            "File and string tests",
+            "Loop control structures: for, while, until, break, continue",
+            "Logical operators",
+            "Script termination, exit status, sleep and wait",
+            "Debugging techniques and executing multiple scripts"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "R Introduction",
+          "topics": [
+            "Installation of R",
+            "R reserved words, variables and constants",
+            "R operators and control structures",
+            "R programming constructs: for loop, while loop, break & next, repeat loop",
+            "R functions: definition, return values, environment and scope",
+            "Recursive functions and switch statement"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "R Data Structures and Visualization",
+          "topics": [
+            "R vectors, matrices, lists, and data frames",
+            "Object‑oriented features: S3 class, S4 class, reference class, inheritance",
+            "Graphical methods: bar plot, histogram, pie chart, box plot, strip chart"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Forouzan, “Unix & Shell Programming”, Cengage Learning.",
+        "Sumitab Das, “Unix Concept & Application”, TMH.",
+        "Richard Peterson, “Linux Complete Reference”, TMH.",
+        "Michael J. Crawley, “The R Book”, Wiley.",
+        "Roger D. Peng, “R Programming for Data Science”, Lean Publishing.",
+        "Tilman M. Davies, “The Book of R”, No Starch Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "90 hrs Internship based on using various software’s –Internship -II",
+      "subject_code": "BT408",
+      "subject_type": "Internship",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Cyber Security",
+      "subject_code": "BT409",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Introduction of Cyber Crime",
+            "Categorizing Cybercrime",
+            "Cybercrime Theory",
+            "Criminology perception of cyber criminals: hackers, computer intrusions and attacks",
+            "Privacy, surveillance and protection",
+            "Hiding crimes in cyberspace",
+            "Cryptography",
+            "Hacking vs cracking",
+            "Privacy and security at risk in the global information society"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Application Security",
+          "topics": [
+            "Data Security",
+            "Security Technology – Firewall and VPNs",
+            "Intrusion Detection",
+            "Access Control",
+            "Security Threats – Viruses",
+            "Worms",
+            "Trojan Horse",
+            "Bombs",
+            "Trapdoors",
+            "Spoofs",
+            "E‑mail Viruses",
+            "Macro Viruses",
+            "Malicious Software",
+            "Network and Denial of Services Attack",
+            "Security Threats to E‑Commerce – Electronic Payment System, e‑Cash, Credit/Debit Cards"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Cryptrography concepts and Techniques",
+          "topics": [
+            "Plain text",
+            "Cipher text",
+            "Types – substitution, transposition, encryption, decryption",
+            "Symmetric key cryptography algorithms",
+            "Asymmetric key cryptography algorithms",
+            "Steganography"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Security Policies",
+          "topics": [
+            "Development of Policies",
+            "WWW Policies",
+            "Email Security Policies",
+            "Policy Review Process – Corporate Policies – Sample Security Policies",
+            "Publishing and Notification Requirement of the Policies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Information Security Standards",
+          "topics": [
+            "ISO, IT Act, Copyright Act, Patent Law, IPR",
+            "Cyber Laws in India – IT Act 2000 Provisions",
+            "Intellectual Property Law – Copyright Law, Software License, Semiconductor Law, Patent Law",
+            "Case Study – Corporate Security, Cyber cases"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Nina Godbole – \"Cyber Security\" (Wiley)",
+        "Michael E. Whitman and Herbert J. Mattord – \"Principles of Information Security\" (Cengage)",
+        "William Stallings – \"Cryptography and Network Security\" (Pearson)",
+        "Charles P. Pfleeger, Shari Lawrence Pfleeger – \"Analyzing Computer Security\" (Pearson Education India)",
+        "Vinod V. Sople – \"Managing Intellectual Property\" (PHI Learning Private Limited)",
+        "IT Act 2000 Details – www.mit.gov.in",
+        "Atul Khate – \"Cryptography and Network Security\" (TMH)",
+        "V. K. Pachghare – \"Cryptography and Information Security\" (PHI Learning Private Limited, Delhi, India)",
+        "Harish Chander – \"Cyber Laws and IT Protection\" (PHI Learning Private Limited, Delhi)"
+      ],
+      "extra": null
+    }
+  ]
+}

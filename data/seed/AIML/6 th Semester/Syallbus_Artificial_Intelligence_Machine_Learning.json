@@ -1,0 +1,734 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Theory of Computation",
+      "subject_code": "AL-601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Automata Theory",
+          "topics": [
+            "Examples of automata machines",
+            "Finite Automata as language acceptor and translator",
+            "Moore machines",
+            "Mealy machines",
+            "Composite machine",
+            "Conversion from Mealy to Moore and vice versa"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Types of Finite Automata",
+          "topics": [
+            "Non‑deterministic Finite Automata (NFA)",
+            "Deterministic Finite Automata (DFA)",
+            "Conversion of NFA to DFA",
+            "Minimization of automata",
+            "Regular expressions",
+            "Arden’s theorem",
+            "Language operations: union, intersection, concatenation, closure",
+            "Two‑way DFA"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Grammars",
+          "topics": [
+            "Types of grammar",
+            "Context‑sensitive grammar",
+            "Context‑free grammar (CFG)",
+            "Regular grammar",
+            "Derivation trees",
+            "Ambiguity in grammar",
+            "Simplification of CFG",
+            "Conversion of grammar to automata and vice versa",
+            "Chomsky hierarchy of grammars",
+            "Elimination of null and unit productions",
+            "Chomsky Normal Form (CNF)",
+            "Greibach Normal Form (GNF)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Pushdown Automata",
+          "topics": [
+            "Examples of Pushdown Automata (PDA)",
+            "Deterministic PDA",
+            "Non‑deterministic PDA",
+            "Conversion of PDA to CFG and vice versa",
+            "CFG equivalent to PDA",
+            "Petri‑net model for PDA"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Turing Machines and Decidability",
+          "topics": [
+            "Construction techniques for Turing machines",
+            "Universal Turing machine",
+            "Multi‑tape, multi‑head and multidimensional Turing machines",
+            "NP‑complete problems",
+            "Decidable and recursively enumerable languages",
+            "Decidability",
+            "Undecidable languages",
+            "Halting problem",
+            "Post correspondence problem"
+          ]
+        }
+      ],
+      "experiments": [
+        "Design a program for creating a machine that accepts three consecutive ones.",
+        "Design a program for creating a machine that accepts strings always ending with 101.",
+        "Design a program for Mode‑3 machine.",
+        "Design a program for accepting decimal numbers divisible by 2.",
+        "Design a program for creating a machine which accepts strings having equal numbers of 1’s and 0’s.",
+        "Design a program for creating a machine which counts the number of 1’s and 0’s in a given string.",
+        "Design a program to find the 2’s complement of a given binary number.",
+        "Design a program which will increment the given binary number by 1.",
+        "Design a program to convert NFA to DFA.",
+        "Design a program to create a PDA that accepts well‑formed parentheses.",
+        "Design a PDA to accept strings of the form w C wᴿ where w is any string, wᴿ is the reverse of w, and C is a special symbol.",
+        "Design a Turing machine that accepts the language aⁿ bⁿ cⁿ where n > 0."
+      ],
+      "reference_books": [
+        "Introduction to Automata Theory, Languages & Computation – Hopcroft & Ullman (Narosa Publication).",
+        "Elements of the Theory of Computation – Lewis & Christos (Pearson).",
+        "Theory of Computation – Chandrasekhar & Mishra (PHI).",
+        "Theory of Computation – Wood (Harper & Row).",
+        "Introduction to Computing Theory – Daniel I‑A. Cohen (Wiley)."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Networks",
+      "subject_code": "AL-602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Computer Network: Definitions, goals, components, Architecture, Classifications & Types; Layered Architecture; ISO/OSI Reference Model; Physical Layer Principles",
+          "topics": [
+            "Definitions, goals, components, architecture, classifications and types of computer networks.",
+            "Protocol hierarchy and layered architecture, including design issues, interfaces and services.",
+            "Connection‑oriented and connectionless services and associated service primitives.",
+            "ISO/OSI reference model and its comparison with the TCP/IP model.",
+            "Physical layer principles: transmission media, bandwidth, data rate and modulation schemes."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data Link Layer",
+          "topics": [
+            "Data link layer functions: services, framing, flow control and error control.",
+            "Elementary and sliding‑window protocols (1‑bit, Go‑Back‑N, Selective‑Repeat, Hybrid ARQ).",
+            "Protocol verification using finite‑state‑machine and Petri‑net models.",
+            "ARP, RARP and GARP protocols."
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "MAC Sub‑layer",
+          "topics": [
+            "MAC sub‑layer addressing and the Binary Exponential Back‑off (BEB) algorithm.",
+            "Random access and contention schemes (ALOHA, Slotted ALOHA, CSMA, CSMA/CD, CSMA/CA).",
+            "Collision‑free protocols (Basic Bit Map, BRAP, Binary Count Down, MLMA, Adaptive Tree Walk).",
+            "Performance‑measuring metrics for MAC protocols.",
+            "IEEE 802 series standards and their variants."
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Network Layer",
+          "topics": [
+            "Network layer services, design issues and routing algorithms (Least‑Cost, Dijkstra, Bellman‑Ford, hierarchical, broadcast, multicast).",
+            "IP addressing, header format, packet forwarding, fragmentation and reassembly.",
+            "ICMP functionality.",
+            "Comparative study of IPv4 and IPv6."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Transport and Application Layers",
+          "topics": [
+            "Transport layer design issues, UDP header format, checksum and support for unicast/multicast real‑time traffic.",
+            "TCP connection management, reliability mechanisms, flow control, congestion control, header format and timer management.",
+            "Application layer protocols: HTTP/WWW, FTP, SSH, SMTP/MIME/IMAP, DNS, and network management (SNMP)."
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of Different Types of LAN & Network Equipments.",
+        "Study and Verification of standard Network topologies i.e. Star, Bus, Ring etc.",
+        "LAN installations and Configurations.",
+        "Write a program to implement various types of error correcting techniques.",
+        "Write a program to implement various types of farming methods.",
+        "Study of Tool Command Language (TCL).",
+        "Study and Installation of Standard Network Simulators: NS‑2, NS‑3, OpNet, QualNet etc.",
+        "Study & Installation of ONE (Opportunistic Network Environment) Simulator for High Mobility Networks.",
+        "Configure 802.11 WLAN.",
+        "Implement & Simulate various types of routing algorithms.",
+        "Study & Simulation of MAC Protocols like Aloha, CSMA, CSMA/CD and CSMA/CA using Standard Network Simulators.",
+        "Study of Application layer protocols – DNS, HTTP, HTTPS, FTP and Telnet."
+      ],
+      "reference_books": [
+        "Andrew S. Tanenbaum, David J. Wetherall, “Computer Networks”, Pearson Education.",
+        "Douglas E. Comer, “Internetworking With TCP/IP: Principles, Protocols, and Architecture – Volume I”, 6th Edition, Pearson Education.",
+        "Dimitri Bertsekas, Robert Gallager, “Data Networks”, PHI Publication, Second Edition.",
+        "Kaveh Pahlavan, Prashant Krishnamurthy, “Networking Fundamentals”, Wiley Publication.",
+        "U. Y. Black, “Computer Networks”, PHI Publication, Second Edition.",
+        "Ying-Dar Lin, Ren-Hung Hwang, Fred Baker, “Computer Networks: An Open Source Approach”, McGraw Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Image and Video Processing",
+      "subject_code": "AL603 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Module 1",
+          "topics": [
+            "Image representation and analysis",
+            "Introduction to computer vision",
+            "Numerical representation of images",
+            "Image augmentation",
+            "Image enhancement",
+            "Image processing",
+            "Color transforms",
+            "Geometric transforms",
+            "Feature recognition and extraction"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Module 2",
+          "topics": [
+            "Image segmentation",
+            "Object detection",
+            "Breaking image into parts",
+            "Finding contours and edges of objects",
+            "Background subtraction for video"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Module 3",
+          "topics": [
+            "Object motion and tracking",
+            "Tracking a single point over time",
+            "Motion models for object movement",
+            "Analyzing videos as sequences of frames",
+            "Tracking a set of features over time",
+            "Matching features between frames",
+            "Tracking a moving car using optical flow"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Module 4",
+          "topics": [
+            "Robotic localization",
+            "Bayesian statistics for robot positioning",
+            "Sensor measurements for navigation",
+            "Gaussian uncertainty",
+            "Histogram filter for robot localization in Python"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Module 5",
+          "topics": [
+            "Image restoration",
+            "Degradation model",
+            "Noise models",
+            "Estimation of degradation function",
+            "Restoration using Wiener filters",
+            "Restoration using inverse filters"
+          ]
+        }
+      ],
+      "experiments": [
+        "Various forms of image representation",
+        "Apply various image segmentation algorithms",
+        "Apply object motion and tracking",
+        "Apply object localization",
+        "Apply image restoration"
+      ],
+      "reference_books": [
+        "Audio Video Systems, Bali & Bali, Khanna Book Publishing 2020.",
+        "Handbook of Image and Video Processing by Alan C. Bovik, Academic Press, 2000.",
+        "Python 3 Image Processing, Ashwin Pajankar, BPB Publication, 2019.",
+        "https://www.coursera.org/learn/image-processing"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data and Visual Analytics",
+      "subject_code": "AL603 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Definitions and Analysis Techniques",
+          "topics": [
+            "Elements",
+            "Variables",
+            "Data categorization",
+            "Levels of measurement",
+            "Data management and indexing",
+            "Introduction to statistical concepts",
+            "Sampling distributions",
+            "Resampling",
+            "Statistical inference",
+            "Descriptive statistics",
+            "Measures of central tendency",
+            "Measures of location of dispersions"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Advanced Data Analysis Techniques",
+          "topics": [
+            "Statistical hypothesis generation and testing",
+            "Chi‑Square test",
+            "t‑Test",
+            "Analysis of variance (ANOVA)",
+            "Correlation analysis",
+            "Maximum likelihood test",
+            "Regression modelling",
+            "Multivariate analysis",
+            "Bayesian modelling",
+            "Inference and Bayesian network",
+            "Regression analysis"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Data Wrangling",
+          "topics": [
+            "Introduction to data wrangling",
+            "Gathering data",
+            "Assessing data",
+            "Cleaning data",
+            "Design of visualizations",
+            "Univariate exploration of data",
+            "Bivariate exploration of data",
+            "Multivariate exploration of data",
+            "Explanatory visualizations"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Data Ecosystem",
+          "topics": [
+            "Overview of the data analyst ecosystem",
+            "Types of data",
+            "Understanding different file formats",
+            "Sources of data",
+            "Overview of data repositories",
+            "NoSQL databases",
+            "Data marts",
+            "Data lakes",
+            "ETL processes and data pipelines",
+            "Foundations of big data",
+            "Big data processing tools (Hadoop, HDFS, Hive, Spark)"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Data Visualization Tools",
+          "topics": [
+            "Python visualization libraries (matplotlib, pandas, seaborn, ggplot, plotly)",
+            "Introduction to PowerBI tools",
+            "Industry project examples – creating visualizations of complex datasets"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Joel Grus, *Data Science from Scratch*, Shroff Publisher / O’Reilly Media.",
+        "Annalyn Ng, Kenneth Soo, *Numsense! Data Science for the Layman*, Shroff Publisher.",
+        "Cathy O’Neil and Rachel Schutt, *Doing Data Science*, O’Reilly Media.",
+        "Jure Leskovec, Anand Rajaraman and Jeffrey Ullman, *Mining of Massive Datasets*, Cambridge University Press, v2.1.",
+        "Jake VanderPlas, *Python Data Science Handbook*, Shroff Publisher / O’Reilly Media.",
+        "Philipp Janert, *Data Analysis with Open Source Tools*, Shroff Publisher / O’Reilly Media."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Pattern Recognition",
+      "subject_code": "AL603 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Mathematical Preliminaries",
+          "topics": [
+            "Principles of pattern recognition",
+            "Uses of pattern recognition",
+            "Mathematics for pattern recognition",
+            "Classification and Bayesian rules",
+            "Clustering vs classification",
+            "Basics of linear algebra and vector spaces",
+            "Eigenvalues and eigenvectors",
+            "Rank of matrix",
+            "Singular Value Decomposition (SVD)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Pattern Recognition Basics",
+          "topics": [
+            "Bayesian decision theory",
+            "Classifiers",
+            "Discriminant functions",
+            "Decision surfaces",
+            "Parameter estimation methods",
+            "Hidden Markov models",
+            "Dimension reduction methods",
+            "Fisher discriminant analysis",
+            "Principal component analysis (PCA)",
+            "Non‑parametric techniques for density estimation",
+            "Non‑metric methods for pattern classification",
+            "Unsupervised learning",
+            "Clustering algorithms: K‑means",
+            "Clustering algorithms: Hierarchical clustering",
+            "Other clustering methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Feature Selection and Extraction",
+          "topics": [
+            "Problem statement and uses of feature selection",
+            "Branch‑and‑bound algorithm for feature selection",
+            "Sequential forward selection",
+            "Sequential backward selection",
+            "Cauchy‑Schwarz inequality in feature selection",
+            "Probabilistic separability based feature selection criteria",
+            "Inter‑class distance based feature selection criteria",
+            "Principles of feature extraction"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Visual Recognition",
+          "topics": [
+            "Human visual recognition system",
+            "Low‑level modelling (e.g., feature extraction)",
+            "Mid‑level abstraction (e.g., segmentation)",
+            "High‑level reasoning (e.g., scene understanding)",
+            "Detection and segmentation methods",
+            "Context and scene analysis",
+            "Importance and saliency detection",
+            "Large‑scale search and recognition",
+            "Egocentric vision systems",
+            "Human‑in‑the‑loop interactive systems",
+            "3‑D scene understanding"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Recent Advancements in Pattern Recognition",
+          "topics": [
+            "Comparison of classifier performance",
+            "Basics of statistics for pattern recognition",
+            "Covariance and its properties",
+            "Data condensation techniques",
+            "Feature clustering",
+            "Data visualization",
+            "Probability density estimation",
+            "Visualization and aggregation methods",
+            "Fuzzy C‑Means (FCM) and soft‑computing techniques",
+            "Examples of real‑life datasets"
+          ]
+        }
+      ],
+      "experiments": [
+        "Data extraction",
+        "Pre‑processing of images",
+        "Image segmentation",
+        "Image classification"
+      ],
+      "reference_books": [
+        "Pattern Recognition and Machine Learning by Christopher M. Bishop, Springer, 2006.",
+        "Pattern Classification by Richard O. Duda, Peter E. Hart, David G. Stork, Wiley, 1973.",
+        "https://nptel.ac.in/courses/106/106/106106046/"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cloud Computing",
+      "subject_code": "AL604 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction of Grid and Cloud Computing",
+          "topics": [
+            "Introduction of Grid and Cloud computing",
+            "Characteristics",
+            "Components",
+            "Business and IT perspective",
+            "Cloud services requirements",
+            "Cloud models",
+            "Security in public model",
+            "Public versus private clouds",
+            "Cloud computing platforms: Amazon EC2",
+            "Platform as Service: Google App Engine",
+            "Microsoft Azure",
+            "Utility Computing",
+            "Elastic Computing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cloud Services",
+          "topics": [
+            "SAAS",
+            "PAAS",
+            "IAAS",
+            "Cloud design and implementation using SOA",
+            "Conceptual cloud model",
+            "Cloud stack",
+            "Computing on demand",
+            "Information life cycle management",
+            "Cloud analytics",
+            "Information security",
+            "Virtual desktop infrastructure",
+            "Storage cloud"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Virtualization Technology",
+          "topics": [
+            "Definition",
+            "Benefits",
+            "Sensor virtualization",
+            "HVM",
+            "Study of hypervisor",
+            "Logical partitioning (LPAR)",
+            "Storage virtualization",
+            "SAN",
+            "NAS",
+            "Cloud server virtualization",
+            "Virtualized data center"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cloud Security Fundamentals",
+          "topics": [
+            "Cloud security fundamentals",
+            "Vulnerability assessment tool for cloud",
+            "Privacy and security in cloud",
+            "Cloud computing security architecture: Architectural considerations – general issues",
+            "Trusted cloud computing",
+            "Secure execution environments and communications",
+            "Microarchitectures",
+            "Identity management and access control – identity management",
+            "Access control",
+            "Autonomic security",
+            "Cloud computing security challenges – virtualization security management and virtual threats",
+            "VM security recommendations",
+            "VM-specific security techniques",
+            "Secure execution environments and communications in cloud"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "SOA and Cloud",
+          "topics": [
+            "SOA and cloud",
+            "SOA and IAAS",
+            "Cloud infrastructure benchmarks",
+            "OLAP",
+            "Business intelligence",
+            "e-Business",
+            "ISV",
+            "Cloud performance monitoring commands",
+            "Issues in cloud computing",
+            "QoS issues in cloud",
+            "Mobile cloud computing",
+            "Inter‑cloud issues",
+            "Sky computing",
+            "Cloud Computing Platform",
+            "Xen Cloud Platform",
+            "Eucalyptus",
+            "OpenNebula",
+            "Nimbus",
+            "TPlatform",
+            "Apache Virtual Computing Lab (VCL)",
+            "Anomaly Elastic Computing Platform"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Dr. Kumar Saurabh, “Cloud Computing”, Wiley India.",
+        "Ronald Krutz and Russell Dean Vines, “Cloud Security”, Wiley‑India.",
+        "Judith Hurwitz, R. Bloor, M. Kanfman, F. Halper, “Computing for Dummies”, Wiley India Edition.",
+        "Anthony T. Velte, Toby J. Velte, “Cloud Computing – A Practical Approach”, TMH.",
+        "Barrie Sosinsky, “Cloud Computing Bible”, Wiley India."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Information Security & Management",
+      "subject_code": "AL604 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Needs for security",
+            "Basic security terminologies (threats, vulnerability, exploit, etc.)",
+            "Security principles (Confidentiality, Integrity, Availability)",
+            "Authentication",
+            "Non‑repudiation",
+            "Security attacks and their classifications",
+            "Mathematical foundation – prime numbers",
+            "Modular arithmetic",
+            "Fermat’s and Euler’s theorem",
+            "Euclidean algorithm",
+            "Chinese Remainder Theorem",
+            "Discrete logarithms"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Symmetric Key Cryptography",
+          "topics": [
+            "Classical cryptography – substitution and transposition",
+            "Cryptanalysis of classical ciphers",
+            "Symmetric cryptography algorithms: DES, 3DES, AES",
+            "Modes of operation: ECB, CBC, etc.",
+            "Linear cryptanalysis",
+            "Differential cryptanalysis"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Asymmetric Key Cryptography",
+          "topics": [
+            "Key distribution and management",
+            "Diffie‑Hellman key exchange algorithm",
+            "Asymmetric cryptography algorithms: RSA, ECC",
+            "Various attacks on cryptosystems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Authentication & Integrity",
+          "topics": [
+            "Message Authentication Codes (MAC)",
+            "Hash functions",
+            "SHA, MD5",
+            "HMAC",
+            "Digital signatures and authentication protocols",
+            "Authorization",
+            "Access control mechanisms",
+            "X.509 digital certificates"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "E‑mail, IP and Web Security",
+          "topics": [
+            "E‑mail security: PGP, MIME, S/MIME",
+            "IP security protocols",
+            "Web security: TLS, SSL",
+            "Secure Electronic Transaction (SET)",
+            "Firewalls and their types",
+            "Introduction to Intrusion Detection and Prevention Systems (IDPS)",
+            "Risk management",
+            "Security planning"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Michael E. Whitman, Herbert J. Mattord, “Principles of Information Security”, 6th Edition, Cengage Learning.",
+        "William Stallings, “Cryptography and Network Security – Principles and Practice”, 7th Edition, Pearson.",
+        "Roberta Bragge, Mark Rhodes, Keith Straggberg, “Network Security: The Complete Reference”, Tata McGraw Hill Publication."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Intelligent Systems for Robotics",
+      "subject_code": "AL604 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Fundamentals of Robotics",
+            "Robot Kinematics – Position Analysis",
+            "Dynamic Analysis and Forces",
+            "Robot programming languages – three levels of robot programming",
+            "Requirements of a robot programming language",
+            "Problems peculiar to robot programming languages"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Need of AI in Robotics",
+          "topics": [
+            "History and state of the art of AI in robotics",
+            "Motivation for AI in robotics",
+            "Thinking and acting humanly",
+            "Intelligent agents – structure and properties"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Game Playing",
+          "topics": [
+            "AI techniques for game playing",
+            "Plausible move generator",
+            "Static evaluation move generator",
+            "Game playing strategies",
+            "Problems in game playing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Robotics Fundamentals",
+          "topics": [
+            "Robot classification and specification",
+            "Kinematic representations and transformations",
+            "Dynamics techniques",
+            "Trajectory planning and control"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Robotics and Its Applications",
+          "topics": [
+            "DDD concept and intelligent robots",
+            "Robot anatomy and definition",
+            "Laws of robotics",
+            "History and terminology of robotics",
+            "Accuracy and repeatability of robots",
+            "Specifications, speed, joints and links of robots",
+            "Robot classifications and architecture of robotic systems",
+            "Robot drive systems – hydraulic, pneumatic and electric"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Robotics, Vision and Control: Fundamental Algorithms in MATLAB, Peter Corke, Springer, 2011.",
+        "Robotics: Everything You Need to Know About Robotics from Beginner to Expert, Peter McKinnon, Createspace Independent Publishing Platform, 2016.",
+        "Introduction to AI Robotics, Second Edition, By Robin R. Murphy, MIT Press, 2001.",
+        "Artificial Intelligence for Robotics: Build intelligent robots that perform human tasks using AI techniques, Francis X. Govers, Packt Publishers, 2018."
+      ],
+      "extra": null
+    }
+  ]
+}

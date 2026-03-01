@@ -1,0 +1,769 @@
+{
+  "subjects": [
+    {
+      "subject_name": "AI for Computer Vision",
+      "subject_code": "AD-701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Image Formation and Processing",
+          "topics": [
+            "Computer Vision",
+            "Geometric primitives and transformations",
+            "Photometric image formation",
+            "digital camera",
+            "Point operators",
+            "Linear filtering",
+            "More neighborhood operators",
+            "Fourier transforms",
+            "Pyramids and wavelets",
+            "Geometric transformations",
+            "Global optimization"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Feature Detection, Matching and Segmentation",
+          "topics": [
+            "Points and patches",
+            "Edges",
+            "Lines",
+            "Segmentation",
+            "Active contours",
+            "Split and merge",
+            "Mean shift and mode finding",
+            "Normalized cuts",
+            "Graph cuts and energy-based methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Feature-based Alignment & Motion Estimation",
+          "topics": [
+            "2D and 3D feature-based alignment",
+            "Pose estimation",
+            "Geometric intrinsic calibration",
+            "Triangulation",
+            "Two-frame structure from motion",
+            "Factorization",
+            "Bundle adjustment",
+            "Constrained structure and motion",
+            "Translational alignment",
+            "Parametric motion",
+            "Spline-based motion",
+            "Optical flow",
+            "Layered motion"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "3D Reconstruction",
+          "topics": [
+            "Shape from X",
+            "Active range finding",
+            "Surface representations",
+            "Point-based representations",
+            "Volumetric representations",
+            "Model-based reconstruction",
+            "Recovering texture maps and albedos"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Image-based Rendering and Recognition",
+          "topics": [
+            "View interpolation",
+            "Layered depth images",
+            "Light fields and Lumigraphs",
+            "Environment mattes",
+            "Video-based rendering",
+            "Object detection",
+            "Face recognition",
+            "Instance recognition",
+            "Category recognition",
+            "Context and scene understanding",
+            "Recognition databases and test sets"
+          ]
+        }
+      ],
+      "experiments": [
+        "OpenCV Installation and working with Python",
+        "Basic Image Processing, loading images, Cropping, Resizing, Thresholding, Contour analysis, Blob detection",
+        "Image Annotation – Drawing lines, text circle, rectangle, ellipse on images",
+        "Image Enhancement, Understanding Color spaces, color space conversion, Histogram equalization, Convolution, Image smoothing, Gradients, Edge Detection",
+        "Image Features and Image Alignment – Image transforms – Fourier, Hough, Extract ORB Image features, Feature matching and cloning",
+        "Feature matching based image alignment",
+        "Image segmentation using Graphcut / Grabcut",
+        "Camera Calibration with circular grid",
+        "Pose Estimation",
+        "3D Reconstruction – Creating Depth map from stereo images"
+      ],
+      "reference_books": [
+        "Richard Hartley and Andrew Zisserman, “Multiple View Geometry in Computer Vision”, Second Edition, Cambridge University Press, March 2004.",
+        "Christopher M. Bishop, “Pattern Recognition and Machine Learning”, Springer, 2006",
+        "E. R. Davies, “Computer and Machine Vision”, Fourth Edition, Academic Press, 2012."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cloud Computing",
+      "subject_code": "Departmental Elective-702 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction To Cloud Computing",
+          "topics": [
+            "Definition of cloud computing",
+            "Characteristics of cloud computing",
+            "Components of cloud computing",
+            "Cloud architecture: Software as a Service (SaaS)",
+            "Cloud architecture: Platform as a Service (PaaS)",
+            "Cloud architecture: Infrastructure as a Service (IaaS)",
+            "Cloud deployment model: Public clouds",
+            "Cloud deployment model: Private clouds",
+            "Cloud deployment model: Community clouds",
+            "Cloud deployment model: Hybrid clouds",
+            "Advantages of cloud computing",
+            "Comparison of cloud providers with traditional IT service providers"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Services Virtualization Technology and Study of Hypervisor",
+          "topics": [
+            "Utility computing concepts",
+            "Elastic computing concepts",
+            "Grid computing concepts",
+            "Study of hypervisor virtualization applications in enterprises",
+            "High‑performance computing with virtualization",
+            "Pitfalls of virtualization",
+            "Multitenant software: multientity support",
+            "Multitenant software: multi‑schema approach"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Installing cloud platforms and performance evaluation",
+          "topics": [
+            "Organizational scenarios of clouds",
+            "Administration and monitoring of cloud services",
+            "Load balancing techniques in cloud environments",
+            "Resource optimization strategies",
+            "Dynamic resource reconfiguration",
+            "Implementation of real‑time applications on cloud platforms",
+            "Mobile cloud computing",
+            "Edge computing"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cloud security fundamentals & Issues in cloud computing",
+          "topics": [
+            "Secure execution environments in cloud",
+            "Secure communications in cloud",
+            "General issues and challenges during cloud migration",
+            "Seven‑step model of cloud migration",
+            "Vulnerability assessment tools for cloud",
+            "Trusted cloud computing concepts",
+            "Virtualization security management and virtual threats",
+            "VM security recommendations and VM‑specific security techniques",
+            "Quality of Service (QoS) issues in cloud",
+            "Dependability in cloud services",
+            "Data migration challenges and risks in cloud adoption"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Case Study on Open Source and Commercial Clouds",
+          "topics": [
+            "OpenStack case study",
+            "Eucalyptus case study",
+            "OpenNebula case study",
+            "Apache CloudStack case study",
+            "Amazon Web Services (AWS) case study",
+            "Microsoft Azure case study",
+            "Google Cloud case study"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Nikos Antonopoulos, Lee Gillam: \"Cloud Computing: Principles, Systems and Applications\", Springer, 2012",
+        "Ronald L. Krutz, Russell Dean Vines: \"Cloud Security: A Comprehensive Guide to Secure Cloud Computing\", Wiley‑India, 2010",
+        "Tim Malhar, S. Kumaraswammy, S. Latif: \"Cloud Security & Privacy\", SPD, O’REILLY, 2009",
+        "Rishabh Sharma: \"Cloud Computing: Fundamentals, Industry Approach and Trends\", John Wiley Publication"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Business Intelligence",
+      "subject_code": "Departmental Elective-702 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Business Intelligence",
+          "topics": [
+            "Business Intelligence (BI)",
+            "Scope of BI solutions and their fitting into existing infrastructure",
+            "BI Components",
+            "Future of Business Intelligence",
+            "Functional areas and description of BI tools",
+            "Data mining & warehouse",
+            "OLAP",
+            "Drawing insights from data: DIKW pyramid",
+            "Business Analytics project methodology - detailed description of each phase"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Business Intelligence Implementation",
+          "topics": [
+            "Key Drivers",
+            "Key Performance Indicators and Performance Metrics",
+            "BI Architecture/Framework",
+            "Best Practices",
+            "Business Decision Making",
+            "Styles of BI‑ventDriven alerts – a cyclic process of Intelligence Creation",
+            "Ethics of Business Intelligence"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Decision Support System",
+          "topics": [
+            "Representation of decision‑making system",
+            "Evolution of information system",
+            "Definition and development of decision support system",
+            "Decision Taxonomy",
+            "Principles of Decision Management Systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Analysis & Visualization",
+          "topics": [
+            "Definition and applications of data mining",
+            "Data mining process",
+            "Analysis methodologies",
+            "Typical pre‑processing operations: combining values into one, handling incomplete or incorrect data, handling missing values, recoding values, sub setting, sorting, transforming scale, determining percentiles, data manipulation, removing noise, removing inconsistencies, transformations, standardizing, normalizing, min‑max normalization, z‑score standardization, rules of standardizing data",
+            "Role of visualization in analytics",
+            "Different techniques for visualizing data"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Business Intelligence Applications",
+          "topics": [
+            "Marketing models: Relational marketing, Salesforce management",
+            "Business case studies",
+            "Supply chain optimization",
+            "Optimization models for logistics planning",
+            "Revenue management system"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Business Intelligence and Data Mining – by Anil K Maheshwari, publisher Business Expert Press- 2014.",
+        "Philo Janus, Stacia Misner, Building Integrated Business Intelligence Solutions with SQL, Server, 2008 R2 & Office 2010, TMH, 2011.",
+        "Business Intelligence Data Mining and Optimization for decision‑making [Author: Carlo‑Verellis][Publication: (Wiley) 2009]."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computational Intelligence",
+      "subject_code": "Departmental Elective-702 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Computational Intelligence",
+          "topics": [
+            "Types of Computational Intelligence",
+            "Components of Computational Intelligence",
+            "Concept of Learning",
+            "Training model",
+            "Parametric Models",
+            "Non‑parametric Models",
+            "Multilayer Networks – Feed‑Forward network",
+            "Multilayer Networks – Feedback network"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Fuzzy Systems",
+          "topics": [
+            "Fuzzy set theory – fuzzy sets and operations",
+            "Membership functions",
+            "Fuzzy relations and their composition",
+            "Fuzzy measures",
+            "Fuzzy logic – fuzzy rules",
+            "Fuzzy inference",
+            "Fuzzy control – selection of membership functions",
+            "Fuzzification",
+            "Rule‑based design and inference",
+            "Defuzzification"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Genetic Algorithms",
+          "topics": [
+            "Basic genetics concepts",
+            "Working principle of genetic algorithms",
+            "Creation of offspring",
+            "Encoding schemes",
+            "Fitness function",
+            "Selection functions",
+            "Genetic operators – reproduction, crossover, mutation",
+            "Genetic modelling",
+            "Benefits of genetic algorithms"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Rough Set Theory",
+          "topics": [
+            "Introduction to rough set theory",
+            "Fundamental concepts of rough sets",
+            "Set approximation",
+            "Rough membership",
+            "Attributes and optimization in rough sets",
+            "Hidden Markov models",
+            "Decision‑tree model"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to Swarm Intelligence",
+          "topics": [
+            "Swarm intelligence techniques – ant colony optimization",
+            "Swarm intelligence techniques – particle swarm optimization",
+            "Swarm intelligence techniques – bee colony optimization",
+            "Other swarm‑based methods",
+            "Applications of computational intelligence"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Russell C. Eberhart and Yuhui Shi, Computational Intelligence: Concepts to Implementations, Morgan Kaufmann Publishers.",
+        "Andries P. Engelbrecht, Computational Intelligence: An Introduction, Wiley Publishing.",
+        "Simon Haykin, Neural Networks: A Comprehensive Foundation, Prentice Hall.",
+        "David E. Goldberg, Genetic Algorithm in Search Optimization and Machine Learning, Pearson Education.",
+        "Jagdish Chand Bansal, Pramod Kumar Singh, Nikhil R. Pal, Evolutionary and Swarm Intelligence Algorithms, Springer Publishing, 2019.",
+        "S. Rajeskaran, G. A. Vijaylakshmi Pai, “Neural Networks, Fuzzy Logic, Genetic Algorithms Synthesis and Applications”.",
+        "J. S. Roger Jang, C. T. Sun, E. Mizutani, “Neuro‑Fuzzy and Soft Computing: A Computational Approach to Learning & Machine Intelligence”, PHI, 2002."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Predictive Analytics",
+      "subject_code": "Departmental Elective-702 (D)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction and Understanding Data",
+          "topics": [
+            "Introduction to predictive analytics – Business analytics: types, applications",
+            "Predictive models, descriptive models, decision models",
+            "Applications of predictive analytics",
+            "Analytical techniques used in predictive analytics",
+            "Data types and associated techniques",
+            "Complexities of data",
+            "Data preparation and preprocessing",
+            "Exploratory data analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Principles and Techniques",
+          "topics": [
+            "Predictive modeling: propensity models, cluster models, collaborative filtering, applications and limitations",
+            "Statistical analysis: univariate and multivariate statistical analysis",
+            "Model selection: supervised versus unsupervised methods",
+            "Statistical and data mining methodology",
+            "Cross‑validation techniques",
+            "Overfitting and bias‑variance trade‑off",
+            "Balancing the training dataset",
+            "Establishing baseline performance"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Regression and Classification Models",
+          "topics": [
+            "Measuring performance in regression models",
+            "Linear regression and its variants",
+            "Non‑linear regression models",
+            "Regression trees and rule‑based models (case study: compressive strength of concrete mixtures)",
+            "Measuring performance in classification models",
+            "Discriminant analysis and other linear classification models",
+            "Non‑linear classification models",
+            "Classification trees and rule‑based models",
+            "Model evaluation techniques for classification"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Time Series Analysis",
+          "topics": [
+            "Introduction to time series, examples of time series, stationary models and autocorrelation function",
+            "Estimation and elimination of trend and seasonal components",
+            "Stationary process and ARMA models – basic properties and linear processes",
+            "Introduction to ARMA models, properties of sample mean and autocorrelation function",
+            "Forecasting stationary time series using ARMA(p, q) processes",
+            "ACF and PACF analysis",
+            "Modeling and forecasting with ARMA"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Nonstationary and Seasonal Time Series Models",
+          "topics": [
+            "ARIMA models, identification techniques, unit roots in time series, forecasting ARIMA models",
+            "Seasonal ARIMA models",
+            "Regression with ARMA errors",
+            "Multivariate time series analysis",
+            "State‑space models",
+            "Deep learning techniques for time series forecasting"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Anasse Bari, Mohamed Chaouchi, Tommy Jung, Predictive analytics for dummies, 2nd edition Wiley, 2016.",
+        "Dinov, I.D., Data Science and Predictive Analytics: Biomedical and Health Applications using R, Springer, 2018.",
+        "Daniel T. Larose and Chantal D. Larose, Data Mining and Predictive analytics, 2nd edition Wiley, 2015.",
+        "Data Mining and Predictive Analytics, 2ed (An Indian Adaptation) by Daniel Larose, OP Wali - John Wiley Publication."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Data Visualization",
+      "subject_code": "Open Elective-703 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Data Visualization",
+          "topics": [
+            "Overview of data visualization",
+            "Definition of data visualization",
+            "Significance in AI and Data Science",
+            "Principle of Data Visualization",
+            "Methodology",
+            "Applications",
+            "Data pre‑processing for visualization: extraction, cleaning, transformation, aggregation, data integration, data reduction"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data Visualization Techniques",
+          "topics": [
+            "Pixel‑oriented visualization techniques",
+            "Geometric projection visualization techniques",
+            "Icon‑based visualization techniques",
+            "Hierarchical visualization techniques",
+            "Visualization of complex data and relations",
+            "Scalar and point techniques",
+            "Color maps and contouring height plots",
+            "Vector visualization techniques: vector properties, vector glyphs, vector colour coding, stream objects",
+            "Exploratory Data Analysis (EDA) techniques"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Data Visualization Tools",
+          "topics": [
+            "Basic and advanced charts and graphs: bar charts, line charts, scatter plots, histograms, heat maps",
+            "Geospatial visualization: maps, choropleth maps, geospatial heat maps",
+            "Network visualization: node‑link diagrams, force‑directed graphs",
+            "Interactive visualization: interactivity and user‑engagement techniques",
+            "Programming libraries for data visualization: Matplotlib, Seaborn, Plotly",
+            "Data visualization tools: Tableau, visualization using R"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Visualizing Multidimensional Data",
+          "topics": [
+            "Multivariate visualization techniques: parallel coordinates, scatter plot matrices",
+            "Dimensionality reduction techniques: Principal Component Analysis (PCA), t‑Distributed Stochastic Neighbor Embedding (t‑SNE)",
+            "Clustering and classification visualizations: dendrograms, decision trees, confusion matrices",
+            "High‑dimensional data visualizations: glyph‑based visualization, dimension stacking"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advancements in Data Visualization",
+          "topics": [
+            "Time‑Series data visualization",
+            "Big data visualization",
+            "Text data visualization",
+            "Multivariate data visualization",
+            "Storytelling with data",
+            "Dashboard creation",
+            "Ethical considerations in data visualization",
+            "Case studies for finance, marketing, and healthcare"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Tamara Munzer, “Visualization Analysis and Design”, CRC Press 2014",
+        "Alexandru Telea, “Data Visualization Principles and Practice”, CRC Press 2014.",
+        "Data Visualization: Storytelling Using Data by Sharada Sringeswara - John Wiley Publication",
+        "Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures Paperback – 31 March 2019 by Claus O. Wilke (Author), O’Reilly.",
+        "Reimagining Data Visualization Using Python by Seema Acharya - John Wiley Publication."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mobile Application Development",
+      "subject_code": "Open Elective-703 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Android",
+          "topics": [
+            "Android Platform",
+            "Android SDK",
+            "Eclipse Installation",
+            "Android Installation",
+            "Building your First Android application",
+            "Understanding Anatomy of Android Application",
+            "Android Manifest file"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Android Application Design Essentials",
+          "topics": [
+            "Anatomy of an Android application",
+            "Android terminologies",
+            "Application Context",
+            "Activities",
+            "Services",
+            "Intents",
+            "Receiving and Broadcasting Intents",
+            "Android Manifest File and its common settings",
+            "Using Intent Filter",
+            "Permissions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Android User Interface Design Essentials",
+          "topics": [
+            "User Interface screen elements",
+            "Designing user interfaces with layouts",
+            "Drawing and working with animation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Testing Android applications",
+          "topics": [
+            "Testing Android applications",
+            "Publishing Android application",
+            "Using Android preferences",
+            "Managing application resources in a hierarchy",
+            "Working with different types of resources"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Using Common Android APIs",
+          "topics": [
+            "Using Android Data and Storage APIs",
+            "Managing data using SQLite",
+            "Sharing data between applications with Content Providers",
+            "Using Android Networking APIs",
+            "Using Android Web APIs",
+            "Using Android Telephony APIs",
+            "Deploying Android application to the world"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Lauren Darcey and Shane Conder, “Android Wireless Application Development”, Addison-Wesley, 2009.",
+        "Reto Meier, “Professional Android™ Application Development”, Wiley Publishing, 2014.",
+        "Mark L Murphy, “Beginning Android”, Wiley India Pvt Ltd., 2009.",
+        "Joseph Annuzzi, Jr, Lauren Darcey and Shane Conder, “Advanced Android™ Application Development”, Fourth Edition, Addison-Wesley, 2014.",
+        "Barry Burd, “Android Application Development All-in-One For Dummies”, Wiley, 2015."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Advanced Statistical Analytics",
+      "subject_code": "Open Elective-703 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Population and Sample",
+            "Random Sampling from finite population ($\\text{SRSWR}$ and $\\text{SRSWOR}$)",
+            "Parameter and Statistic",
+            "Sampling distribution of a statistic in the context of a finite population",
+            "Sampling distribution of sample mean and sample proportion while sampling from a finite population",
+            "Random sampling from an infinite population",
+            "Sampling distribution of sample mean and sample variance when the sample is drawn from a Normal distribution",
+            "Problems on sampling distributions of statistics from finite and infinite populations",
+            "Statement of Lyapunov–Lévy Central Limit Theorem ($\\text{CLT}$) and its applications"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Correlation, Regression Analysis and ANOVA",
+          "topics": [
+            "Correlation",
+            "Scatter diagram",
+            "Karl Pearson’s coefficient of correlation",
+            "Spearman’s rank correlation coefficient",
+            "Methods of least squares",
+            "Simple Linear Regression (SLR) model",
+            "SLR assumptions and prediction",
+            "Multiple Linear Regression (MLR)",
+            "MLR assumptions and prediction",
+            "Polynomial Regression",
+            "Logistic Regression",
+            "Poisson Regression",
+            "Non‑Linear Regression",
+            "Analysis of Variance (One‑way \\& Two‑way)",
+            "Analysis of Covariance",
+            "Multivariate Analysis of Variance"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Testing of Hypothesis",
+          "topics": [
+            "Null and alternative hypothesis",
+            "Testing procedure (critical region)",
+            "Type I and Type II errors",
+            "Level of significance \\& power of a test",
+            "$p$‑value for symmetric null distribution",
+            "Tests for mean and proportion (single‑sample, two‑sample; exact \\& large‑sample)",
+            "Tests for variance (single‑sample and two‑sample)",
+            "Tests for mean and correlation coefficient for paired samples (exact \\& large‑sample)",
+            "One‑way analysis of variance"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Parametric Point Estimation",
+          "topics": [
+            "Problem of point estimation",
+            "Criteria of a good estimator",
+            "Unbiasedness",
+            "Consistency",
+            "Efficiency",
+            "Sufficiency",
+            "Minimum variance and unbiasedness (small sample)",
+            "Method of moments",
+            "Method of maximum likelihood",
+            "Consistency \\& efficiency (large sample)",
+            "Interval estimation: confidence intervals of mean and proportion in large samples"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Bayesian Statistics",
+          "topics": [
+            "Introduction to Bayesian inference",
+            "Bayesian parameter estimation",
+            "Markov Chain Monte Carlo (MCMC) methods",
+            "Bayesian hierarchical models",
+            "Survival analysis",
+            "Causal inference",
+            "High‑dimensional data analysis"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Understanding and using Advance Statistics by Jeremy Foster, Emma Barkus, Christian Yavorsay, Sage Publication.",
+        "Understanding Advanced Statistical Methods (Chapman \\& Hall/CRC Texts in Statistical Science) by Peter Westfall, Kevin S. S. Henning, 2013."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Social Media & Web Analytics",
+      "subject_code": "Open Elective-703 (D)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Social Media & Analytics",
+          "topics": [
+            "Introduction to Social Media",
+            "Social Media Landscape",
+            "Social Media Analytics & its Need",
+            "SMA in Small and Large Organisations",
+            "Application of SMA in Different Social Media Platforms",
+            "Introduction to Web Analytics – Definition, Process, Key Terms: Site References, Keywords and Key Phrases",
+            "Building Block Terms – Visit Characterization Terms, Content Characterization Terms, Conversion Metrics",
+            "Categories – Offsite Web, On‑Site Web",
+            "Web Analytics Platform, Web Analytics Evolution, Need of Web Analytics, Advantages & Limitations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Network Fundamentals",
+          "topics": [
+            "The Social Networks Perspective – Nodes, Ties and Influencers, Social Network, Web Data and Methods",
+            "Data Collection and Web Analytics Fundamentals – Capturing Data: Web Logs, Web Beacons, JavaScript Tags, Packet Sniffing; Outcome Data: E‑commerce, Lead Generation, Brand/Advocacy and Support; Competitive Data: Panel‑Based Measurement, ISP‑Based Measurement, Search Engine Data; Organisational Structure",
+            "Type and Size of Data, Identifying Unique Page Definition, Cookies, Link Coding Issues"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Web Metrics & Analytics",
+          "topics": [
+            "Common Metrics – Hits, Page Views, Visits, Unique Page Views, Bounce, Bounce Rate & its Improvement, Average Time on Site, Real‑Time Report, Traffic Source Report, Custom Campaigns, Content Report, Google Analytics",
+            "Key Performance Indicator – Need, Characteristics, Perspective and Uses",
+            "Graphs and Matrices – Basic Measures for Individuals and Networks; Random Graphs & Network Evolution; Social Context: Affiliation & Identity",
+            "Web Analytics Tools – A/B testing, Online Surveys, Web Crawling and Indexing; Natural Language Processing Techniques for Micro‑Text Analysis"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Facebook & Google Analytics",
+          "topics": [
+            "Facebook Analytics – Introduction, Parameters, Demographics",
+            "Analyzing Page Audience – Reach and Engagement Analysis",
+            "Post‑Performance on Facebook; Social Campaigns – Goals and Evaluating Outcomes, Measuring and Analysing Social Campaigns, Social Network Analysis, AdWords, Benchmarking, Categories of Traffic",
+            "Google Analytics – Brief Introduction and Working, Google Website Optimizer, Implementation Technology, Limitations, Performance Concerns, Privacy Issues"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Qualitative Analysis",
+          "topics": [
+            "Heuristic Evaluations – Conducting a Heuristic Evaluation, Benefits of Heuristic Evaluations",
+            "Site Visits – Conducting a Site Visit, Benefits of Site Visits",
+            "Surveys – Website Surveys, Post‑Visit Surveys, Creating and Running a Survey, Benefits of Surveys",
+            "Web Analytics 2.0 – Web Analytics 1.0 & its Limitations, Introduction to WA 2.0, Competitive Intelligence Analysis and Data Sources; Website Traffic Analysis – Traffic Trends, Site Overlap and Opportunities"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Matthew Ganis, Avinash Kohirkar, Social Media Analytics: Techniques and Insights for Extracting Business Value Out of Social Media Pearson 2016",
+        "Jim Sterne, Social Media Metrics: How to Measure and Optimize Your Marketing Investment Wiley Latest edition",
+        "Brian Clifton, Advanced Web Metrics with Google Analytics, John Wiley & Sons; 3rd Edition (30 Mar 2012)",
+        "Ganis/Kohirka, SOCIAL MEDIA ANALYTICS Paperback – 29 September 2016 by Pearson"
+      ],
+      "extra": null
+    }
+  ]
+}

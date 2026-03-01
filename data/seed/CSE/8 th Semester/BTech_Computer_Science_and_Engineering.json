@@ -1,0 +1,870 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "CS801",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "IoT definition, characteristics and architecture",
+          "topics": [
+            "IoT definition",
+            "IoT characteristics",
+            "IoT conceptual and architectural framework",
+            "Components of IoT ecosystems",
+            "Physical and logical design of IoT",
+            "IoT enablers",
+            "Modern day IoT applications",
+            "M2M communications",
+            "IoT vs M2M",
+            "IoT vs WoT",
+            "IoT reference architecture",
+            "IoT network configurations",
+            "IoT LAN",
+            "IoT WAN",
+            "IoT node",
+            "IoT gateway",
+            "IoT proxy",
+            "Review of basic microcontrollers and interfacing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Sensors and actuators",
+          "topics": [
+            "Definition of sensor",
+            "Basic components and challenges of a sensor node",
+            "Sensor features",
+            "Sensor resolution",
+            "Sensor classes: analog, digital, scalar, vector sensors",
+            "Sensor types",
+            "Sensor bias",
+            "Sensor drift",
+            "Hysteresis error",
+            "Quantization error",
+            "Actuator definition",
+            "Actuator types: hydraulic, pneumatic, electrical, thermal/magnetic, mechanical, soft actuators"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "IoT networking and communication technologies",
+          "topics": [
+            "Basics of IoT networking",
+            "IoT components",
+            "Functional components of IoT",
+            "IoT service‑oriented architecture",
+            "IoT challenges",
+            "6LoWPAN",
+            "IEEE 802.15.4",
+            "ZigBee and its types",
+            "RFID features",
+            "RFID working principle and applications",
+            "NFC (Near Field Communication)",
+            "Bluetooth",
+            "Wireless sensor networks and their applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "IoT messaging protocols",
+          "topics": [
+            "MQTT",
+            "MQTT methods and components",
+            "MQTT communication",
+            "MQTT topics and applications",
+            "SMQTT",
+            "CoAP",
+            "CoAP message types",
+            "CoAP request‑response model",
+            "XMPP",
+            "AMQP features and components",
+            "AMQP frame types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IoT platforms, analytics and security",
+          "topics": [
+            "IoT platforms (Arduino, Raspberry Pi, other platforms)",
+            "Data analytics for IoT",
+            "Cloud for IoT",
+            "Cloud storage models & communication APIs",
+            "Attacks in IoT systems",
+            "Vulnerability analysis in IoT",
+            "IoT case studies: smart home, smart framing"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Vijay Madisetti, Arshdeep Bahga, “Internet of Things, A Hands on Approach”, University Press",
+        "Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, “Introduction to Internet of Things: A Practical Approach”, ETI Labs",
+        "Pethuru Raj and Anupama C. Raman, “The Internet of Things: Enabling Technologies, Platforms, and Use Cases”, CRC Press",
+        "Jeeva Jose, “Internet of Things”, Khanna Publishing House, Delhi",
+        "Adrian McEwen, “Designing the Internet of Things”, Wiley",
+        "Raj Kamal, “Internet of Things: Architecture and Design”, McGraw Hill",
+        "Cuno Pfister, “Getting Started with the Internet of Things”, O'Reilly Media"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Block Chain Technologies",
+      "subject_code": "CS802 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Overview of blockchain",
+            "Public ledgers",
+            "Bitcoin and its fundamentals",
+            "Smart contracts",
+            "Block structure in a blockchain",
+            "Transactions in blockchain",
+            "Distributed consensus mechanisms",
+            "Public vs private blockchain",
+            "Cryptocurrency concepts",
+            "Permissioned blockchain model",
+            "Security aspects of blockchain",
+            "Cryptographic hash functions",
+            "Properties of hash functions",
+            "Hash pointers and Merkle trees",
+            "Digital signatures",
+            "Public‑key cryptography",
+            "Basic cryptocurrency example"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Understanding Blockchain with Cryptocurrency",
+          "topics": [
+            "Creation of coins and token issuance",
+            "Payments and double‑spending problem",
+            "Bitcoin scripts and transaction validation",
+            "Peer‑to‑peer network architecture",
+            "Transaction processing in the Bitcoin network",
+            "Block mining and propagation",
+            "Distributed consensus in open environments",
+            "Proof of Work (PoW) fundamentals",
+            "Hashcash PoW algorithm",
+            "Attacks on PoW and monopoly concerns",
+            "Proof of Stake, Proof of Burn, Proof of Elapsed Time",
+            "Lifecycle of a Bitcoin miner",
+            "Mining difficulty adjustment",
+            "Mining pool concepts"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Understanding Blockchain for Enterprises",
+          "topics": [
+            "Permissioned blockchain models and use‑cases",
+            "Design issues for permissioned blockchains",
+            "Execution of smart contracts in enterprise settings",
+            "State‑machine replication",
+            "Consensus models for permissioned blockchains",
+            "Distributed consensus in closed environments",
+            "Paxos algorithm",
+            "Raft consensus protocol",
+            "Byzantine Generals Problem",
+            "Byzantine fault‑tolerant systems",
+            "Lamport‑Shostak‑Pease BFT algorithm",
+            "BFT over asynchronous systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Enterprise Applications of Blockchain",
+          "topics": [
+            "Cross‑border payments",
+            "Know Your Customer (KYC) processes",
+            "Food security supply chains",
+            "Mortgage management on blockchain",
+            "Blockchain‑enabled trade finance",
+            "WeTrade – trade finance network",
+            "Supply‑chain financing solutions",
+            "Identity management on blockchain"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Blockchain Application Development",
+          "topics": [
+            "Hyperledger Fabric architecture",
+            "Identity and policy management in Fabric",
+            "Membership and access control",
+            "Channel configuration",
+            "Transaction validation flow",
+            "Writing smart contracts with Hyperledger Fabric",
+            "Writing smart contracts with Ethereum",
+            "Overview of Ripple platform",
+            "Overview of Corda platform"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Melanie Swan, “Block Chain: Blueprint for a New Economy”, O’Reilly, 2015",
+        "Josh Thompsons, “Block Chain: The Block Chain for Beginners- Guide to Block chain Technology and Leveraging Block Chain Programming”",
+        "Daniel Drescher, “Block Chain Basics”, Apress; 1st edition, 2017",
+        "Anshul Kaushik, “Block Chain and Crypto Currencies”, Khanna Publishing House, Delhi.",
+        "Imran Bashir, “Mastering Block Chain: Distributed Ledger Technology, Decentralization and Smart Contracts Explained”, Packt Publishing",
+        "Ritesh Modi, “Solidity Programming Essentials: A Beginner’s Guide to Build Smart Contracts for Ethereum and Block Chain”, Packt Publishing",
+        "Salman Baset, Luc Desrosiers, Nitin Gaur, Petr Novotny, Anthony O’Dowd, Venkatraman Ramakrishna, “Hands-On Block Chain with Hyperledger: Building Decentralized Applications with Hyperledger Fabric and Composer”, Import, 2018"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cloud Computing",
+      "subject_code": "CS802 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Service Oriented Architecture and Web Services",
+          "topics": [
+            "Service Oriented Architecture (SOA)",
+            "Web Services",
+            "Basic Web Services Architecture",
+            "SOAP",
+            "WSDL",
+            "UDDI",
+            "RESTful services – definition, characteristics, components, types",
+            "Software as a Service (SaaS)",
+            "Platform as a Service (PaaS)",
+            "Organizational scenarios of clouds",
+            "Administration and monitoring of cloud services",
+            "Benefits and limitations of cloud services",
+            "Hypervisor study"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Utility Computing, Virtualization and Multitenancy",
+          "topics": [
+            "Utility Computing",
+            "Elastic Computing",
+            "Ajax – asynchronous rich interfaces",
+            "Mashups – user interface services",
+            "Virtualization technology and enterprise applications",
+            "Pitfalls of virtualization",
+            "Multitenant software – multi‑entity support",
+            "Multischema approach",
+            "Multi‑tenancy using cloud data stores"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Data Management and MapReduce in the Cloud",
+          "topics": [
+            "Relational databases in the cloud",
+            "Cloud file systems – GFS and HDFS",
+            "Comparison of GFS, HDFS and other file systems",
+            "BigTable",
+            "HBase",
+            "Dynamo",
+            "MapReduce and extensions",
+            "Parallel computing with MapReduce",
+            "Parallel efficiency of MapReduce",
+            "Relational operations in MapReduce",
+            "Enterprise batch processing",
+            "MapReduce applications and examples"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Cloud Security and Privacy",
+          "topics": [
+            "Cloud security fundamentals",
+            "Vulnerability assessment tools for cloud",
+            "Privacy and security in cloud computing",
+            "Cloud computing security architecture",
+            "General security issues",
+            "Trusted cloud computing",
+            "Security challenges – virtualization security management, virtual threats",
+            "VM security recommendations",
+            "VM‑specific security techniques",
+            "Secure execution environments in cloud",
+            "Secure communications in cloud"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Issues and Cloud Service Platforms",
+          "topics": [
+            "Issues in cloud computing",
+            "Real‑time cloud applications",
+            "Quality of Service (QoS) in cloud",
+            "Dependability of cloud services",
+            "Data migration strategies",
+            "Streaming in cloud",
+            "Cloud middleware",
+            "Mobile cloud computing",
+            "Inter‑cloud issues",
+            "Agrid of clouds and sky computing",
+            "Load balancing in cloud",
+            "Resource optimization and dynamic reconfiguration",
+            "Monitoring in cloud",
+            "Installation of cloud platforms and performance evaluation",
+            "Features and functions of cloud computing platforms"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Scott Granneman, “Google Apps”, Pearson, 2012",
+        "Tim Malhar, S. Kumaraswamy, S. Latif, “Cloud Security & Privacy”, SPD, O’REILLY",
+        "Ronald Krutz and Russell Dean Vines, “Cloud Security”, Wiley‑India, 2011"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "High Performance computing",
+      "subject_code": "CS802 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to modern processors",
+          "topics": [
+            "General purpose cache‑based architecture performance metrics and benchmarks",
+            "Moore's Law",
+            "Pipelining",
+            "Superscalar execution",
+            "SIMD (Single Instruction Multiple Data)",
+            "Memory hierarchies",
+            "Multi‑core processors",
+            "Multi‑threaded processors",
+            "Vector processors – design principles, maximum performance estimates, programming for vector architecture",
+            "Basic optimizations for serial codes – scalar profiling, common‑sense optimizations, simple measures and their impacts, role of compilers, C++ optimizations"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Data access optimizations",
+          "topics": [
+            "Balance analysis and light‑speed estimates",
+            "Storage order considerations",
+            "Algorithm classifications and associated optimizations",
+            "Case studies for data‑access optimizations",
+            "Parallel computers – shared memory computers, distributed memory computers, hybrid systems, network computers"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Basics of parallel computing",
+          "topics": [
+            "Data parallelism and functional parallelism",
+            "Parallel scalability – laws, metrics, factors, efficiency, load imbalance",
+            "Shared‑memory parallel programming with OpenMP – parallel execution, data scoping, work sharing using loops, synchronization, reductions, loop scheduling, tasking"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Efficient OpenMP programming",
+          "topics": [
+            "Program profiling",
+            "Performance pitfalls in OpenMP codes",
+            "Improving the impact of OpenMP work‑sharing constructs",
+            "Determining overheads for short loops",
+            "Serialization and false sharing"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Distributed memory parallel programming with MPI",
+          "topics": [
+            "Message passing basics",
+            "Point‑to‑point communication",
+            "Collective communication",
+            "Non‑blocking point‑to‑point communication",
+            "Virtual topologies",
+            "MPI performance tools",
+            "Communication parameters",
+            "Impact of synchronizations, serializations and contentions",
+            "Reductions in communication overhead"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Object Oriented Software Engineering",
+      "subject_code": "CS802 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Review of Object Oriented Concepts and Principles",
+          "topics": [
+            "The Object Oriented Paradigm",
+            "Basic Concepts",
+            "Software Development Life Cycle and Model Architectures"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to RUP",
+          "topics": [
+            "Basic Concepts",
+            "Symptoms in Software Development and their Root Causes",
+            "Best Practices of RUP",
+            "RUP software life cycle",
+            "4+1 view model",
+            "Various Workflows"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to UML, Notations, Relationships, Stereotypes, Study of UML based tools",
+          "topics": [
+            "Rational Rose",
+            "Poseidon, etc.",
+            "Object Oriented Analysis",
+            "Conventional vs OO analysis approach",
+            "Requirement analysis",
+            "Use case diagram",
+            "Activity diagram",
+            "Analysis class Model"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Object Oriented Design",
+          "topics": [
+            "Conventional vs OO design approach",
+            "Design of CRC cards",
+            "Class diagram",
+            "Behavioral Modeling: Interaction Diagram",
+            "State chart Diagram",
+            "Implementation Diagram: Component and deployment Diagram",
+            "Illustrative Case Studies like ATM",
+            "Payroll",
+            "Course and Registration System"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Object Oriented Testing",
+          "topics": [
+            "Correctness and consistency of OOA & OOD models",
+            "Testing Strategies and test cases for OO software process",
+            "Project Management",
+            "Rational Tool Mentors",
+            "Introduction to Design Patterns"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Ivon Jacobson, “Object Oriented Software Engineering”, Addison Wesley. Booch G., “The Unfied Modelling User Guide”",
+        "Phillipe Kruchten, “The Rational Unified Process - An Introduction”, Pearson Ed. 2000.",
+        "Ivar J, Grady B, James R., “The Unified Software Development Process”, Pearson Ed. 2003.",
+        "Timothy C. Lethbridge, Robert Laganiere, “Object Oriented Software Engg.”, Tata McGraw Hill, 2004.",
+        "IBM Rational Modules"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Image Processing and Computer Vision",
+      "subject_code": "CS803 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to CVIP and Morphological Image Processing",
+          "topics": [
+            "Basics of Computer Vision and Image Processing (CVIP)",
+            "History of CVIP",
+            "Evolution of CVIP",
+            "CV Models",
+            "Image Filtering",
+            "Image Representations",
+            "Image Statistics",
+            "Recognition Methodology – Conditioning",
+            "Recognition Methodology – Labeling",
+            "Recognition Methodology – Grouping",
+            "Recognition Methodology – Extracting",
+            "Recognition Methodology – Matching",
+            "Morphological Image Processing – Introduction",
+            "Morphological Image Processing – Dilation",
+            "Morphological Image Processing – Erosion",
+            "Morphological Image Processing – Opening",
+            "Morphological Image Processing – Closing",
+            "Morphological Image Processing – Hit‑or‑Miss transformation",
+            "Morphological operations on binary images",
+            "Morphological operations on gray‑scale images",
+            "Thinning",
+            "Thickening",
+            "Region growing",
+            "Region shrinking"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Image Representation, Description and Binary Vision",
+          "topics": [
+            "Representation schemes",
+            "Boundary descriptors",
+            "Region descriptors",
+            "Binary Machine Vision – Thresholding",
+            "Binary Machine Vision – Segmentation",
+            "Binary Machine Vision – Connected component labeling",
+            "Binary Machine Vision – Hierarchical segmentation",
+            "Binary Machine Vision – Spatial clustering",
+            "Binary Machine Vision – Split & merge",
+            "Binary Machine Vision – Rule‑based segmentation",
+            "Binary Machine Vision – Motion‑based segmentation",
+            "Area Extraction – Concepts",
+            "Area Extraction – Data structures",
+            "Area Extraction – Edge detection",
+            "Area Extraction – Line linking",
+            "Area Extraction – Hough transform",
+            "Area Extraction – Line fitting",
+            "Area Extraction – Curve fitting (least‑square fitting)"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Region Analysis and Matching Frameworks",
+          "topics": [
+            "Region properties",
+            "External points",
+            "Spatial moments",
+            "Mixed spatial gray‑level moments",
+            "Boundary analysis – Signature properties",
+            "Boundary analysis – Shape numbers",
+            "General frameworks for matching – Distance relational approach",
+            "General frameworks for matching – Ordered structural matching",
+            "General frameworks for matching – View class matching",
+            "Models database organization"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Facet Model Recognition and Projective Geometry",
+          "topics": [
+            "Facet model recognition – Labeling lines",
+            "Understanding line drawings",
+            "Classification of shapes by edge labeling",
+            "Recognition of shapes",
+            "Consistent labeling problem",
+            "Back‑tracking algorithm",
+            "Perspective projective geometry",
+            "Inverse perspective projection",
+            "Photogrammetry – 2D to 3D reconstruction",
+            "Image matching – Intensity matching of ID signals",
+            "Image matching – 2D image matching",
+            "Image matching – Hierarchical image matching",
+            "Object models – 2D representation",
+            "Object models – Global vs. local features"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Knowledge‑Based Vision and Advanced Recognition",
+          "topics": [
+            "Knowledge representation",
+            "Control strategies",
+            "Information integration",
+            "Object recognition – Hough transforms",
+            "Object recognition – Simple object recognition methods",
+            "Shape correspondence",
+            "Shape matching",
+            "Principal Component Analysis (PCA)",
+            "Feature extraction",
+            "Neural networks for image shape recognition",
+            "Machine learning for image shape recognition"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Robert Haralick and Linda Shapiro, \"Computer and Robot Vision\", Vol I, II, Addison Wesley, 1993",
+        "David A. Forsyth, Jean Ponce, \"Computer Vision: A Modern Approach\", Pearson",
+        "Milan Sonka, Vaclav Hlavac, Roger Boyle, \"Image Processing, Analysis, and Machine Vision\", Thomson Learning"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Game Theory with Engineering applications",
+      "subject_code": "CS803 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview",
+          "topics": [
+            "What is a Game",
+            "Game Design Schema",
+            "Game Design fundamentals",
+            "Engineering application of game theory",
+            "Design Process: Iterative design",
+            "Commissions",
+            "Design & Testing of the Board Game",
+            "Introduction to meaningful play",
+            "Two kinds of meaningful play – discernable & integrated"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Semiotics and Design Meaning",
+          "topics": [
+            "Introducing design",
+            "Design & meaning",
+            "Semiotics – a brief overview",
+            "Four semiotic concepts",
+            "Context shapes interpretations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Systems and Interactivity",
+          "topics": [
+            "Introduction to Systems",
+            "Elements of a System",
+            "Framing Systems",
+            "Open & closed systems",
+            "Introduction to Interactivity",
+            "A multivalent model of interactivity",
+            "Interaction & choice",
+            "Choice molecules",
+            "Anatomy of choice",
+            "Space of possibility"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Defining Games and Primary Schemas",
+          "topics": [
+            "Defining games – overview of digital games",
+            "Magic circle",
+            "Primary Schemas – conceptual framework",
+            "Primary Schemas – rule",
+            "Primary Schemas – play",
+            "Primary Schemas – culture"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Rules and Case Studies",
+          "topics": [
+            "Defining rules",
+            "A deck of cards",
+            "Quality of rules",
+            "Rules in context",
+            "Rules on three levels – Operational",
+            "Rules on three levels – Constitutive",
+            "Rules on three levels – Implicit",
+            "Identity of a Game",
+            "Specificity of Rules",
+            "Rules of Digital games",
+            "Case Studies – Tic Tac Toe",
+            "Case Studies – Deck of Cards"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rules of Play - Game Design Fundamentals, Katie Salen and Eric Zimmerman, The MIT Press Cambridge, Massachusetts London, England, book design and photography."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things",
+      "subject_code": "CS803 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Internet of Things - Unit I",
+          "topics": [
+            "IoT definition",
+            "IoT characteristics",
+            "IoT conceptual and architectural framework",
+            "Components of IoT ecosystems",
+            "Physical design of IoT",
+            "Logical design of IoT",
+            "IoT enablers",
+            "Modern day IoT applications",
+            "M2M communications",
+            "IoT vs M2M comparison",
+            "IoT vs WoT comparison",
+            "IoT reference architecture",
+            "IoT network configurations",
+            "IoT LAN",
+            "IoT WAN",
+            "IoT node",
+            "IoT gateway",
+            "IoT proxy",
+            "Review of basic microcontrollers and interfacing"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Internet of Things - Unit II",
+          "topics": [
+            "Definition of sensor",
+            "Basic components and challenges of a sensor node",
+            "Sensor features",
+            "Sensor resolution",
+            "Sensor classes: analog, digital, scalar, vector sensors",
+            "Sensor types",
+            "Sensor bias",
+            "Sensor drift",
+            "Hysteresis error",
+            "Quantization error",
+            "Actuators",
+            "Actuator types: hydraulic, pneumatic, electrical, thermal/magnetic, mechanical, soft actuators"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Internet of Things - Unit III",
+          "topics": [
+            "Basics of IoT networking",
+            "IoT components",
+            "Functional components of IoT",
+            "IoT service‑oriented architecture",
+            "IoT challenges",
+            "6LoWPAN",
+            "IEEE 802.15.4",
+            "ZigBee and its variants",
+            "RFID features",
+            "RFID working principle and applications",
+            "Near Field Communication (NFC)",
+            "Bluetooth technology",
+            "Wireless sensor networks and their applications"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Internet of Things - Unit IV",
+          "topics": [
+            "MQTT protocol",
+            "MQTT methods and components",
+            "MQTT communication model",
+            "MQTT topics and applications",
+            "SMQTT",
+            "CoAP protocol",
+            "CoAP message types",
+            "CoAP request‑response model",
+            "XMPP protocol",
+            "AMQP features and components",
+            "AMQP frame types"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Internet of Things - Unit V",
+          "topics": [
+            "IoT platforms",
+            "Arduino platform",
+            "Raspberry Pi board",
+            "Other IoT platforms",
+            "Data analytics for IoT",
+            "Cloud for IoT",
+            "Cloud storage models and communication APIs",
+            "Attacks in IoT systems",
+            "Vulnerability analysis in IoT",
+            "IoT case studies: smart home",
+            "IoT case studies: smart framing"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Vijay Madisetti, Arshdeep Bahga, “Internet of Things, A Hands on Approach”, University Press",
+        "Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, “Introduction to Internet of Things: A Practical Approach”, ETI Labs",
+        "Pethuru Raj and Anupama C. Raman, “The Internet of Things: Enabling Technologies, Platforms, and Use Cases”, CRC Press",
+        "Jeeva Jose, “Internet of Things”, Khanna Publishing House, Delhi",
+        "Adrian McEwen, “Designing the Internet of Things”, Wiley",
+        "Raj Kamal, “Internet of Things: Architecture and Design”, McGraw Hill",
+        "Cuno Pfister, “Getting Started with the Internet of Things”, O'Reilly Media"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Managing Innovation and Entrepreneurship",
+      "subject_code": "CS803 (D)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Innovation: Definition, Classification, and Relationship with Entrepreneurship",
+          "topics": [
+            "Definition and classification of innovation",
+            "Relationship between innovation and entrepreneurship",
+            "Creation of competitive advantage through innovation",
+            "Innovative models",
+            "Product innovation",
+            "Process innovation",
+            "Organizational innovation",
+            "Marketing innovation",
+            "Role of innovations in business development"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Sources of Innovation and Creative Management Approaches",
+          "topics": [
+            "Sources of innovation: push, pull, analogies",
+            "Technology transfer",
+            "Creative methods for innovation management",
+            "Agile management of the innovation process",
+            "Six Thinking Hats technique",
+            "NUF test for innovation management"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Project Approaches, Stage‑Gate Method and Open Innovation",
+          "topics": [
+            "Project approach to innovation management",
+            "Stage‑Gate method and its essence",
+            "Adaptation of Stage‑Gate to selected business models",
+            "In‑house business development of the innovation process",
+            "Open Innovation concept",
+            "Limits of Open Innovation",
+            "Benefits of Open Innovation for business development"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Human‑Centred Innovation, Co‑creation and Strategy Selection",
+          "topics": [
+            "Human‑centred innovations",
+            "Role of co‑creation in the innovation process",
+            "Innovation process strategies",
+            "Types of innovation strategies",
+            "Selection of appropriate innovation strategies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Evaluation, Barriers, Failure Analysis and Innovation Workshops",
+          "topics": [
+            "Measurement and evaluation of innovation benefits: financial metrics",
+            "Measurement and evaluation of innovation benefits: non‑financial metrics and their combination",
+            "Barriers to innovation in business",
+            "Causes of innovation failure",
+            "Post‑audit of innovative projects",
+            "Organization of an innovation workshop",
+            "Facilitation of an innovation workshop"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "CLARK, T., OSTERWALDER, A., PIGNEUR, Y. – Business model generation: a handbook for visionaries, game changers, and challengers. Wiley Publications.",
+        "BESSANT, J R., TIDD, J. – Managing innovation: integrating technological, market and organizational change. Wiley Publications."
+      ],
+      "extra": "The aim of the course is to motivate students to innovate in business. Students are introduced to basic terminology, typology of innovations, historical context, innovation management issues, impact of innovation, innovative processes, applicable methods and innovation management techniques."
+    }
+  ]
+}

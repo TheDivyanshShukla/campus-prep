@@ -1,0 +1,1058 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Engineering Chemistry",
+      "subject_code": "BT101",
+      "subject_type": "Theory & Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Water – Analysis, Treatments and Industrial Applications",
+          "topics": [
+            "Sources and impurities of water",
+            "Hardness and its units",
+            "Determination of hardness by EDTA method",
+            "Alkalinity and its determination",
+            "Related numerical problems"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Boiler Problems & Softening Methods",
+          "topics": [
+            "Boiler troubles: sludge, scale, priming, foaming, corrosion, caustic embrittlement",
+            "Softening methods: lime‑soda, zeolite, ion‑exchange",
+            "Related numerical problems"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Lubricants and Lubrication",
+          "topics": [
+            "Introduction and mechanism of lubrication",
+            "Classification of lubricants",
+            "Viscosity and viscosity index",
+            "Flash and fire points",
+            "Cloud and pour points",
+            "Aniline point",
+            "Acid number, saponification number, steam emulsification number",
+            "Related numerical problems"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Polymer & Polymerisation",
+          "topics": [
+            "Introduction to polymers and types of polymerisation",
+            "Classification and mechanism (free‑radical and ionic)",
+            "Thermoplastic and thermosetting polymers",
+            "Biodegradable polymers",
+            "Preparation, properties and uses of PVC, PMMA, Teflon, Nylon 6, Nylon 6:6, polyester, phenol‑formaldehyde, urea‑formaldehyde, Buna N, Buna S",
+            "Vulcanisation of rubber"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Phase Equilibrium and Corrosion",
+          "topics": [
+            "Phase diagram of water (single component)",
+            "Phase diagram of binary eutectic system Cu‑Ag",
+            "Corrosion: types, mechanisms and prevention"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 6,
+          "title": "Spectroscopic Techniques and Applications",
+          "topics": [
+            "Principles, instrumentation and applications of spectroscopy",
+            "Electronic spectroscopy",
+            "Vibrational and rotational spectroscopy of diatomic molecules"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 7,
+          "title": "Periodic Properties",
+          "topics": [
+            "Effective nuclear charge",
+            "Variations of s, p, d and f orbital energies",
+            "Electronic configuration",
+            "Atomic and ionic sizes",
+            "Electron affinity and electronegativity",
+            "Polarizability and oxidation states"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "Water testing – determination of total hardness by complexometric titration",
+        "Water testing – determination of mixed alkalinity (OH & CO3)",
+        "Water testing – determination of mixed alkalinity (CO3 & HCO3)",
+        "Water testing – chloride ion estimation by argentometric method",
+        "Fuels & lubricant testing – flash & fire points determination using Pensky‑Martin apparatus",
+        "Fuels & lubricant testing – flash & fire points determination using Abel’s apparatus",
+        "Fuels & lubricant testing – flash & fire points determination using Cleveland’s open‑cup apparatus",
+        "Fuels & lubricant testing – calorific value determination by bomb calorimeter",
+        "Fuels & lubricant testing – viscosity determination using Redwood viscometer No.1",
+        "Fuels & lubricant testing – viscosity determination using Redwood viscometer No.2",
+        "Fuels & lubricant testing – viscosity‑index determination",
+        "Fuels & lubricant testing – proximate analysis of coal: moisture content",
+        "Fuels & lubricant testing – proximate analysis of coal: ash content",
+        "Fuels & lubricant testing – proximate analysis of coal: volatile matter content",
+        "Fuels & lubricant testing – proximate analysis of coal: carbon residue",
+        "Fuels & lubricant testing – steam‑emulsification number determination",
+        "Fuels & lubricant testing – aniline point determination",
+        "Fuels & lubricant testing – cloud point determination of lubricating oil",
+        "Fuels & lubricant testing – pour point determination of lubricating oil",
+        "Alloy analysis – determination of % Fe in iron alloy by redox titration using N‑Phenyl anthranilic acid",
+        "Alloy analysis – determination of Cu and/or Cr in alloy by iodometric titration",
+        "Alloy analysis – determination of % purity of ferrous ammonium sulfate",
+        "Alloy analysis – determination of % purity of copper sulfate"
+      ],
+      "reference_books": [
+        "Chemistry in Engineering and Technology – Vol.1 & 2, Kuriacose and Rajaram, McGraw‑Hill Education",
+        "Fundamental of Molecular Spectroscopy, C.N. Banwell, McGraw‑Hill Education",
+        "Engineering Chemistry, B.K. Sharma, Krishna Prakashan Media (P) Ltd., Meerut",
+        "Basics of Engineering Chemistry, S.S. Dara & A.K. Singh, S. Chand & Company Ltd., Delhi",
+        "Applied Chemistry – Theory and Practice, O.P. Viramani & A.K. Narula, New Age International Pvt. Ltd., New Delhi",
+        "Elementary Spectroscopy, Y.R. Sharma, S. Chand Publishing",
+        "Polymer Science, Vasant R. Gowariker, N.V. Viswanathan, Jayadev Sreedhar, New Age International Pvt. Ltd.",
+        "Advanced Inorganic Chemistry, G.R. Chatwal, Goal Publishing House",
+        "Engineering Chemistry (NPTEL Web‑book), B.L. Tembe, Kamaluddin and M.S. Krishna"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mathematics‑I",
+      "subject_code": "BT102",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Calculus",
+          "topics": [
+            "Rolle’s theorem",
+            "Mean Value theorems",
+            "Expansion of functions by Maclaurin’s and Taylor’s series for one variable",
+            "Taylor’s theorem for functions of two variables",
+            "Partial differentiation",
+            "Maxima & minima for two and three variables",
+            "Method of Lagrange multipliers"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Calculus",
+          "topics": [
+            "Definite integral as a limit of a sum and its application in summation of series",
+            "Beta and Gamma functions and their properties",
+            "Applications of definite integrals to evaluate surface areas and volumes of revolutions",
+            "Multiple integrals, change of order of integration",
+            "Applications of multiple integrals for calculating areas and volumes of curves"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Sequences and Series",
+          "topics": [
+            "Convergence of sequences and series, tests for convergence",
+            "Power series, Taylor's series, series for exponential, trigonometric and logarithmic functions",
+            "Fourier series: half‑range sine and cosine series, Parseval’s theorem"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Vector Spaces",
+          "topics": [
+            "Vector space and subspaces",
+            "Linear combinations of vectors",
+            "Linear dependence and independence",
+            "Basis of a vector space",
+            "Linear transformations"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Matrices",
+          "topics": [
+            "Rank of a matrix",
+            "Solution of simultaneous linear equations by elementary transformations",
+            "Consistency of equations",
+            "Eigen values and eigen vectors",
+            "Diagonalization of matrices",
+            "Cayley‑Hamilton theorem and its application to find inverses"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "G.B. Thomas and R.L. Finney, Calculus and Analytic geometry, 9th Edition, Pearson, Reprint, 2002.",
+        "Erwin Kreyszig, Advanced Engineering Mathematics, 9th Edition, John Wiley & Sons, 2006.",
+        "Veerarajan T., Engineering Mathematics for First Year, Tata McGraw‑Hill, New Delhi, 2008.",
+        "Ramana B.V., Higher Engineering Mathematics, Tata McGraw‑Hill, New Delhi, 11th Reprint, 2010.",
+        "D. Poole, Linear Algebra: A Modern Introduction, 2nd Edition, Brooks/Cole, 2005.",
+        "N.P. Bali and Manish Goyal, A Text Book of Engineering Mathematics, Laxmi Publications, Reprint, 2008.",
+        "B.S. Grewal, Higher Engineering Mathematics, Khanna Publishers, 36th Edition, 2010."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "English for Communication",
+      "subject_code": "BT103",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Identifying Common Errors in Writing",
+          "topics": [
+            "Articles",
+            "Subject‑Verb Agreement",
+            "Prepositions",
+            "Active and Passive Voice",
+            "Reported Speech: Direct and Indirect",
+            "Sentence Structure"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Vocabulary Building and Comprehension",
+          "topics": [
+            "Prefixes and suffixes from foreign languages to form derivatives",
+            "Synonyms",
+            "Antonyms",
+            "Reading comprehension"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Communication",
+          "topics": [
+            "Introduction, meaning and significance",
+            "Process of communication",
+            "Oral and written communication",
+            "7 C’s of communication",
+            "Barriers to communication and ways to overcome them",
+            "Importance of communication for technical students",
+            "Non‑verbal communication"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Developing Writing Skills",
+          "topics": [
+            "Planning, drafting and editing",
+            "Precise writing",
+            "Précis",
+            "Technical definition and technical description",
+            "Report writing: features of a good report",
+            "Structure of a formal report",
+            "Laboratory report",
+            "Progress report"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Business Correspondence",
+          "topics": [
+            "Importance of business letters",
+            "Parts and layout of business letters",
+            "Application of business letters",
+            "Contents of a good résumé and guidelines for writing a résumé",
+            "Preparing and sending quotations",
+            "Order processing",
+            "Complaint handling",
+            "E‑mail etiquette",
+            "Tender preparation"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "‘Technical Communication: Principles and Practice’, Meenakshi Raman and Sangeeta Sharma (Oxford)",
+        "‘Effective Business Communication’, Krizan and Merrier (Cengage Learning)",
+        "‘Communication Skill’, Sanjay Kumar and Pushlata (OUP, 2011)",
+        "“Practical English Usage”, Michael Swan (OUP, 1995)",
+        "“Exercises in Spoken English – Parts I‑III”, CIEFL, Hyderabad (Oxford University Press)",
+        "On Writing Well, William Zinsser (Harper Resource Book, 2001)",
+        "Remedial English Grammar, F. T. Wood (Macmillan, 2007)"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Basic Electrical & Electronics Engineering",
+      "subject_code": "BT104",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "DC Circuits",
+          "topics": [
+            "Voltage and current sources – dependent and independent sources.",
+            "Source conversion, Ohm’s law, Kirchhoff’s laws, Superposition theorem.",
+            "Thevenin’s theorem and its application for analysis of series and parallel resistive circuits.",
+            "Power and energy in circuits, mesh and nodal analysis, Star–Delta transformation."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "AC Circuits",
+          "topics": [
+            "Generation of sinusoidal AC voltage; average, RMS, form factor and peak factor.",
+            "Phasor concept; power factor, impedance and admittance; active, reactive and apparent power.",
+            "Analysis of R‑L, R‑C, R‑L‑C series and parallel circuits.",
+            "Three‑phase AC circuits: phase sequence, balanced and unbalanced supply and loads.",
+            "Relationship between line and phase quantities for star and delta connections; power in balanced and unbalanced three‑phase systems."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Magnetic Circuits",
+          "topics": [
+            "Magnetization characteristics of ferromagnetic materials; self and mutual inductance.",
+            "Energy in linear magnetic systems; series‑connected coils; AC excitation in magnetic circuits.",
+            "Magnetic field produced by current‑carrying conductors; force on a conductor; induced emf; laws of electromagnetic induction.",
+            "Single‑phase transformer – construction, emf equation, equivalent circuit, phasor diagram, voltage regulation, losses and efficiency, open‑circuit and short‑circuit tests."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Electrical Machines",
+          "topics": [
+            "Construction, classification and working principle of DC, induction and synchronous machines.",
+            "Slip concept in three‑phase induction motor; torque‑slip characteristics.",
+            "Types of losses in electrical machines; applications of DC, induction and synchronous machines."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Basic Electronics",
+          "topics": [
+            "Number systems and conversions; De Morgan’s theorem; logic gates; half and full adder circuits; RS and JK flip‑flops.",
+            "Semiconductors; diode V‑I characteristics; bipolar junction transistors (BJT).",
+            "BJT configurations – common‑collector, common‑base, common‑emitter – and modes of operation."
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "Basic safety precautions; introduction and use of measuring instruments – voltmeter, ammeter, multi-meter, oscilloscope; real-life resistors, capacitors and inductors.",
+        "Measuring the steady‑state and transient time‑response of R‑L, R‑C, and R‑L‑C circuits to a step change (transient observed on a storage oscilloscope); sinusoidal steady‑state response of R‑L and R‑C circuits – impedance calculation and verification; observation of phase differences between current and voltage; resonance in R‑L‑C circuits.",
+        "Transformers: observation of the no‑load current waveform on an oscilloscope (non‑sinusoidal due to B‑H curve non‑linearity, with discussion of harmonics); loading of a transformer with measurement of primary and secondary voltages, currents and power.",
+        "Determination of equivalent circuit parameters of a single‑phase transformer by open‑circuit (O.C.) and short‑circuit (S.C.) tests and estimation of voltage regulation and efficiency at various loading conditions.",
+        "Demonstration of cut‑out sections of machines: DC machine (commutator‑brush arrangement), induction machine (squirrel‑cage rotor), synchronous machine (field winding‑slip‑ring arrangement) and single‑phase induction machine.",
+        "Torque–speed characteristic of a separately excited DC motor.",
+        "Synchronous speed of two‑ and four‑pole, three‑phase induction motors; direction reversal by changing phase‑sequence of connections; torque‑slip characteristic of an induction motor; generator operation of an induction machine driven at super‑synchronous speed.",
+        "Synchronous machine operating as a generator: stand‑alone operation with a load and voltage control through field excitation.",
+        "Study of V‑I characteristics of diodes; applications of diodes and their verification.",
+        "Transistor applications as amplifier and switch.",
+        "Verification of truth tables for various gates and flip‑flops; realizations of various gates and flip‑flops; verification of De Morgan’s theorems."
+      ],
+      "reference_books": [
+        "D.P. Kothari & I.J. Nagrath, Basic Electrical Engineering, Tata McGraw Hill, latest edition.",
+        "S.N. Singh, Basic Electrical Engineering, P.H.I., 2013.",
+        "Rajendra Prasad, Fundamentals of Electrical Engineering, Prentice Hall, 2014.",
+        "M.S. Sukhija, T. K. Nagsarkar, Basic Electrical and Electronics Engineering, Oxford University Press, 2012.",
+        "C.L. Wadhwa, Basic Electrical Engineering, New Age International.",
+        "B.L. Theraja & A.K. Theraja, Textbook of Electrical Technology – Vol. 1, S. Chand Publication.",
+        "E. Hughes & I.M. Smith, Hughes Electrical Technology, Pearson.",
+        "Vincent Del Toro, Electrical Engineering Fundamentals."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Engineering Graphics",
+      "subject_code": "BT105",
+      "subject_type": "Theory & Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Module 1: Introduction to Engineering Drawing",
+          "topics": [
+            "Introduction to Engineering Drawing",
+            "Principles of Engineering Graphics and their significance",
+            "Usage of drawing instruments",
+            "Lettering conventions",
+            "Conic sections – Rectangular Hyperbola (general method)",
+            "Cycloid, Epicycloid, Hypocycloid and Involute curves",
+            "Scales – plain, diagonal and vernier"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Module 2: Orthographic Projections",
+          "topics": [
+            "Principles and conventions of orthographic projection",
+            "Projection of points and lines inclined to both principal planes",
+            "Projection of planes inclined to principal planes",
+            "Auxiliary planes and their use in projections"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Module 3: Projections of Regular Solids",
+          "topics": [
+            "Projection of regular solids inclined to principal planes",
+            "Auxiliary views of solids",
+            "Simple annotation and dimensioning of solids",
+            "Floor plan drawings including windows, doors, and fixtures (WC, bath, sink, shower, etc.)"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Module 4: Sections and Sectional Views of Right Angular Solids",
+          "topics": [
+            "Sectional views of prisms, cylinders, pyramids, and cones",
+            "Auxiliary views for sectional drawing",
+            "Development of surfaces of right regular solids (prism, pyramid, cylinder, cone)",
+            "Drawing sectional orthographic views of industrial and building objects (foundation to slab)"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Module 5: Isometric Projections",
+          "topics": [
+            "Principles of isometric projection and isometric scale",
+            "Isometric views of lines, planes, simple and compound solids",
+            "Conversion between isometric and orthographic views"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 6,
+          "title": "Module 6: Overview of Computer Graphics",
+          "topics": [
+            "Computer graphics technologies impacting engineering communication",
+            "CAD software menu system, toolbars, drawing area, dialog boxes, shortcut menus, command line, status bar",
+            "Zoom methods in CAD, select and erase objects",
+            "Isometric views of lines, planes, simple and compound solids in CAD"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 7,
+          "title": "Module 7: Customisation & CAD Drawing",
+          "topics": [
+            "Setup of drawing page and printer, scale settings, units and drawing limits",
+            "ISO and ANSI standards for dimensioning and tolerancing",
+            "Orthographic constraints, snap to objects (manual and automatic)",
+            "Producing drawings using various coordinate input methods",
+            "Drawing circles and other basic geometry"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 8,
+          "title": "Module 8: Annotations, Layering & Other Functions",
+          "topics": [
+            "Applying dimensions and annotations to drawings",
+            "Setting up and using layers, creating and editing custom layers",
+            "Modifying line lengths (extend/lengthen)",
+            "Printing documents",
+            "Orthographic projection techniques and sectional views of composite solids",
+            "CAD modeling of parts and assemblies (parametric and non‑parametric solid, surface, wire‑frame)",
+            "Part editing and 2‑D documentation of models",
+            "Planar projection theory, perspective, isometric, multiview, auxiliary, and section views",
+            "Spatial visualization exercises",
+            "Dimensioning guidelines, tolerancing techniques, multi‑view dimensioning of dwellings"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 9,
+          "title": "Module 9: Team Design Project & BIM Introduction",
+          "topics": [
+            "Creation of engineering models and presentation in 2‑D blueprint and 3‑D wire‑frame/shaded form",
+            "Meshed topologies for engineering analysis and tool‑path generation",
+            "Geometric dimensioning and tolerancing (GD&T)",
+            "Use of solid‑modeling software for associative component and assembly models",
+            "Floor‑plan drawings including windows, doors, and fixtures",
+            "Colour‑coding according to building drawing practice",
+            "Sectional elevation drawings from foundation to ceiling",
+            "Introduction to Building Information Modelling (BIM)"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Bhatt N.D., Panchal V.M. & Ingle P.R., Engineering Drawing, Charotar Publishing House (2014)",
+        "Shah M.B. & Rana B.C., Engineering Drawing and Computer Graphics, Pearson Education (2008)",
+        "Agrawal B. & Agrawal C.M., Engineering Graphics, TMH Publication (2012)",
+        "Narayana K.L. & P. Kannaiah, Textbook on Engineering Drawing, Scitech Publishers (2008)",
+        "(Corresponding set of) CAD Software Theory and User Manuals"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Manufacturing Practices",
+      "subject_code": "BT106",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Lectures & videos",
+          "topics": [
+            "Manufacturing Methods – casting, forming, machining, joining, advanced manufacturing methods",
+            "CNC machining, Additive manufacturing",
+            "Fitting operations & power tools",
+            "Electrical & Electronics",
+            "Carpentry",
+            "Plastic moulding, glass cutting",
+            "Metal casting",
+            "Welding (arc welding & gas welding), brazing"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Workshop Practice",
+          "topics": [
+            "Machine shop (10 hours)",
+            "Fitting shop (8 hours)",
+            "Carpentry (6 hours)",
+            "Electrical & Electronics (8 hours)",
+            "Welding shop – Arc welding (4 hrs) + gas welding (4 hrs) (8 hours total)",
+            "Casting (8 hours)",
+            "Smithy (6 hours)",
+            "Plastic moulding & Glass Cutting (6 hours)"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "Machine shop (10 hours)",
+        "Fitting shop (8 hours)",
+        "Carpentry (6 hours)",
+        "Electrical & Electronics (8 hours)",
+        "Welding shop – Arc welding (4 hrs) + gas welding (4 hrs)",
+        "Casting (8 hours)",
+        "Smithy (6 hours)",
+        "Plastic moulding & Glass Cutting (6 hours)"
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Internship‑I",
+      "subject_code": "BT107",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Swachh Bharat Summer Internship (Unnat Bharat Abhiyan 100 Hrs / Rural Outreach)",
+      "subject_code": "BT108",
+      "subject_type": "Internship",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Engineering Physics",
+      "subject_code": "BT201",
+      "subject_type": "Theory and Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Wave nature of particles and the Schr\\\"odinger equation",
+          "topics": [
+            "Introduction to Quantum mechanics",
+            "Wave nature of particles",
+            "Operators in quantum mechanics",
+            "Time‑dependent Schr\\\"odinger equation",
+            "Time‑independent Schr\\\"odinger equation for wavefunction",
+            "Application: Particle in a one‑dimensional box",
+            "Born interpretation of the wavefunction",
+            "Free‑particle wavefunction and wave‑packets",
+            "Group velocity (v\\_g) and phase velocity (v\\_p) relations",
+            "Uncertainty principle"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Wave optics",
+          "topics": [
+            "Huygens’ principle",
+            "Superposition of waves and interference of light by wave‑front splitting",
+            "Interference of light by amplitude splitting",
+            "Young’s double‑slit experiment",
+            "Newton’s rings",
+            "Michelson interferometer",
+            "Mach‑Zehnder interferometer",
+            "Fraunhofer diffraction from a single slit and a circular aperture",
+            "Rayleigh criterion for limit of resolution and its application to vision",
+            "Diffraction gratings and their resolving power"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to solids",
+          "topics": [
+            "Free electron theory of metals",
+            "Fermi level of intrinsic and extrinsic semiconductors",
+            "Density of states in solids",
+            "Bloch’s theorem for particles in a periodic potential",
+            "Kronig‑Penney model (qualitative description) and origin of energy bands",
+            "V‑I characteristics of a p‑n junction diode",
+            "Zener diode characteristics",
+            "Solar cell operation",
+            "Hall effect in solids"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Lasers",
+          "topics": [
+            "Einstein’s theory of matter‑radiation interaction (A and B coefficients)",
+            "Amplification of light by population inversion",
+            "Gas lasers (He‑Ne, CO\\_2)",
+            "Solid‑state lasers (ruby, Nd:YAG)",
+            "Properties of laser beams: monochromaticity, coherence, directionality, brightness",
+            "Laser speckles",
+            "Applications of lasers in science, engineering and medicine",
+            "Introduction to optical fiber",
+            "Acceptance angle and cone of optical fiber",
+            "Numerical aperture, V number",
+            "Attenuation in optical fibers"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Electrostatics in vacuum",
+          "topics": [
+            "Calculation of electric field for a charge distribution",
+            "Electrostatic potential for a charge distribution",
+            "Electric displacement vector",
+            "Basic introduction to dielectrics",
+            "Gradient, divergence and curl operators",
+            "Stokes’ theorem",
+            "Gauss’s theorem",
+            "Continuity equation for current densities",
+            "Maxwell’s equations in vacuum and non‑conducting medium",
+            "Poynting vector and electromagnetic energy flow"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "To determine the dispersive power of prism.",
+        "To determine the wavelength (\\lambda) of sodium light with the help of Newton’s rings.",
+        "Resolving power of telescope.",
+        "Young’s double‑slit experiment (YDSE).",
+        "To determine the frequency of AC mains supply.",
+        "V‑I characteristics of p‑n junction diode.",
+        "To determine the wavelength (\\lambda) of diode light by single‑slit diffraction.",
+        "To determine Planck’s constant with the help of a photocell.",
+        "Hall effect experiment.",
+        "Calibration of ammeter using a reference Zener diode.",
+        "Study of the effect of temperature on reverse saturation current in p‑n junction diode and determination of the energy band gap.",
+        "To determine the wavelength (\\lambda) of sodium using a plane diffraction grating.",
+        "To determine the prominent spectral lines of a mercury source using a plane diffraction grating.",
+        "To determine the numerical aperture of an optical fiber.",
+        "To determine the wavelength (\\lambda) of a given laser using a plane diffraction grating."
+      ],
+      "reference_books": [
+        "A. Ghatak, Optics.",
+        "O. Svelto, Principles of Lasers.",
+        "David Griffiths, Introduction to Electrodynamics.",
+        "D. J. Griffiths, Quantum Mechanics.",
+        "Halliday & Resnick, Physics."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Mathematics‑II",
+      "subject_code": "BT202",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Ordinary Differential Equations I",
+          "topics": [
+            "Differential Equations of First Order and First Degree (Leibnitz linear, Bernoulli’s, Exact)",
+            "Differential Equations of First Order and Higher Degree",
+            "Higher order differential equations with constants coefficients",
+            "Homogeneous Linear Differential equations",
+            "Simultaneous Differential Equations"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Ordinary Differential Equations II",
+          "topics": [
+            "Second order linear differential equations with variable coefficients",
+            "Method of variation of parameters",
+            "Power series solutions; Legendre polynomials, Bessel functions of the first kind and their properties"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Partial Differential Equations",
+          "topics": [
+            "Formulation of Partial Differential equations",
+            "Linear and Non-Linear Partial Differential Equations",
+            "Homogeneous Linear Partial Differential Equations with Constants Coefficients"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Functions of Complex Variable",
+          "topics": [
+            "Functions of Complex Variables: Analytic Functions, Harmonic Conjugate, Cauchy‑Riemann Equations (without proof)",
+            "Line Integral, Cauchy‑Goursat theorem (without proof), Cauchy Integral formula (without proof)",
+            "Singular Points, Poles & Residues, Residue Theorem, Application of Residues theorem for Evaluation of Real Integral (Unit Circle)"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Vector Calculus",
+          "topics": [
+            "Differentiation of Vectors",
+            "Scalar and vector point function",
+            "Gradient",
+            "Geometrical meaning of gradient",
+            "Directional Derivative",
+            "Divergence and Curl",
+            "Line Integral",
+            "Surface Integral and Volume Integral",
+            "Gauss Divergence",
+            "Stokes and Green theorems"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "G.B. Thomas and R.L. Finney, Calculus and Analytic geometry, 9th Edition, Pearson, Reprint, 2002.",
+        "Erwin kreyszig, Advanced Engineering Mathematics, 9th Edition, John Wiley & Sons, 2006.",
+        "W. E. Boyce and R. C. DiPrima, Elementary Differential Equations and Boundary Value Problems, 9th Edn., Wiley India, 2009.",
+        "S. L. Ross, Differential Equations, 3rd Ed., Wiley India, 1984.",
+        "E. A. Coddington, An Introduction to Ordinary Differential Equations, Prentice Hall India, 1995.",
+        "E. L. Ince, Ordinary Differential Equations, Dover Publications, 1958.",
+        "J. W. Brown and R. V. Churchill, Complex Variables and Applications, 7th Ed., McGraw Hill, 2004.",
+        "N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications, Reprint, 2008.",
+        "B.S. Grewal, Higher Engineering Mathematics, Khanna Publishers, 36th Edition, 2010."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Basic Mechanical Engineering",
+      "subject_code": "BT203",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Materials",
+          "topics": [
+            "Classification of engineering materials",
+            "Composition of cast iron and carbon steels",
+            "Iron‑carbon diagram",
+            "Alloy steels and their applications",
+            "Mechanical properties: strength, hardness, toughness, ductility, brittleness, malleability",
+            "Tensile test and stress‑strain diagram for ductile and brittle materials",
+            "Hooke's law and modulus of elasticity",
+            "Hardness and impact testing of materials (including Brinell hardness number)"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Measurement",
+          "topics": [
+            "Concept of measurements and measurement errors",
+            "Temperature, pressure, velocity, flow strain measurements",
+            "Force and torque measurement techniques",
+            "Use of Vernier caliper, micrometer, dial gauge, slip gauge",
+            "Sine‑bar and combination set for precision measurement"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Production Engineering",
+          "topics": [
+            "Fundamentals of production engineering",
+            "Casting processes",
+            "Carpentry processes",
+            "Welding processes (arc and gas welding, brazing)",
+            "Lathe machine operations",
+            "Drilling machine operations"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Fluids",
+          "topics": [
+            "Fluid properties: pressure, density, viscosity",
+            "Types of fluids (Newtonian and non‑Newtonian)",
+            "Newton’s law of viscosity",
+            "Pascal’s law",
+            "Bernoulli’s equation for incompressible flow",
+            "Working principles of hydraulic machines, pumps, turbines, reciprocating pumps"
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Thermodynamics & Reciprocating Machines",
+          "topics": [
+            "Thermodynamic systems, properties, and state",
+            "Zeroth, First and Second laws of thermodynamics",
+            "Thermodynamic processes at constant pressure, volume, enthalpy, and entropy",
+            "Steam engineering: boiler classification, mountings, efficiency, performance analysis, steam tables",
+            "Reciprocating machines: steam engine principles, Carnot, Otto, Diesel and Dual cycles, P‑V & T‑S diagrams, efficiency",
+            "Two‑stroke and four‑stroke petrol and diesel engines",
+            "Working principle of compressors"
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "Study of Universal Testing Machines",
+        "Linear and Angular measurement using Micrometer, Slip Gauges, Dial Gauge and Sine‑bar",
+        "Study of Lathe Machine",
+        "Study of Drilling Machines",
+        "Verification of Bernoulli’s Theorem",
+        "Study of various types of Boilers",
+        "Study of different Internal Combustion Engines",
+        "Study of different types of Boiler mountings and accessories"
+      ],
+      "reference_books": [
+        "Kothandaraman & Rudramoorthy, Fluid Mechanics & Machinery, New Age",
+        "Nakra & Chaudhary, Instrumentation and Measurements, TMH",
+        "Nag P.K, Engineering Thermodynamics, TMH",
+        "Ganesan, Internal Combustion Engines, TMH",
+        "Agrawal C M, Basic Mechanical Engineering, Wiley Publication",
+        "Achuthan M, Engineering Thermodynamics, PHI"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Basic Civil Engineering & Mechanics",
+      "subject_code": "BT204",
+      "subject_type": "Theory & Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Building Materials & Construction",
+          "topics": [
+            "Stones, bricks, cement, lime, timber types, properties, tests and uses; laboratory tests on concrete and mortar; workability and strength properties of concrete; nominal proportioning, preparation, compaction and curing of concrete.",
+            "Elements of building construction: conventional spread footings, RCC footings, brick masonry walls, plastering and pointing, floors, roofs, doors, windows, lintels and staircases – types and suitability."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "Surveying & Positioning",
+          "topics": [
+            "Introduction to surveying instruments – levels, theodolites, plane tables and related devices; electronic surveying instruments.",
+            "Measurement of distances (conventional and EDM methods), directions, elevations; reciprocal leveling."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "Mapping & Sensing",
+          "topics": [
+            "Mapping details and contouring, profile cross‑sectioning, measurement of areas and volumes, application of measurements in quantity computations; survey stations.",
+            "Introduction to remote sensing and its applications."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "Engineering Mechanics – Forces and Equilibrium",
+          "topics": [
+            "Graphical and analytical treatment of concurrent and non‑concurrent forces; free‑body diagrams, force diagrams and Bow’s notation.",
+            "Application of equilibrium concepts: analysis of plane trusses using method of joints and method of sections; frictional forces in equilibrium problems."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "Engineering Mechanics – Centre of Gravity and Moment of Inertia",
+          "topics": [
+            "Centroid and centre of gravity; moment of inertia of area and mass; radius of gyration; product of inertia and principal axes.",
+            "Support reactions; shear‑force and bending‑moment diagrams for cantilever and simply supported beams with concentrated, distributed loads and couples."
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "Study of Universal Testing machines.",
+        "Linear and angular measurement using micrometer, slip gauges, dial gauge and sine‑bar.",
+        "Study of lathe machine.",
+        "Study of drilling machines.",
+        "Verification of Bernoulli’s theorem.",
+        "Study of various types of boilers.",
+        "Study of different internal‑combustion engines.",
+        "Study of different types of boiler mountings and accessories.",
+        "Traverse surveying with prismatic compass, correction of bearings and balancing the traverse by Bowditch’s rule.",
+        "Leveling exercise using height of instrument (rise‑and‑fall method).",
+        "Measurement of horizontal and vertical angles in the field using theodolite.",
+        "Determination of normal consistency, initial and final setting time of cement (slump test or compaction factor test).",
+        "Determination of compressive strength of brick.",
+        "Determination of particle‑size distribution and fineness modulus of coarse and fine aggregate."
+      ],
+      "reference_books": [
+        "S. Ramamrutam & R. Narayanan; Basic Civil Engineering, Dhanpat Rai Publishing.",
+        "I. B. Prasad, Applied Mechanics, Khanna Publication.",
+        "B. C. Punmia, Surveying, Standard Book Depot.",
+        "Shesha Prakash and Mogaveer; Elements of Civil Engineering & Engineering Mechanics, PHI.",
+        "S. P. Timoshenko, Mechanics of Structures, East West Press Pvt. Ltd.",
+        "Duggal, Surveying, Tata McGraw‑Hill, New Delhi.",
+        "S. C. Rangwala, Building Construction, Charotar Publications, Anand.",
+        "G. Singh, Building Construction, Standard Book House, New Delhi.",
+        "Gopi, Global Positioning System Principles and Applications, TMH.",
+        "R. C. Hibbler, Engineering Mechanics: Statics & Dynamics.",
+        "A. Boresi & J. Schmidt, Engineering Machines – Statics & Dynamics, Thomson Books.",
+        "R. K. Rajput, Engineering Mechanics, S. Chand & Co."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Basic Computer Engineering",
+      "subject_code": "BT205",
+      "subject_type": "Theory & Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "UNIT I",
+          "topics": [
+            "Computer: Definition, Classification, Organization i.e. CPU, register, Bus architecture, Instruction set, Memory & Storage Systems, I/O Devices, and System & Application Software.",
+            "Computer Application in eBusiness, Bio‑Informatics, Health Care, Remote Sensing & GIS, Meteorology and Climatology, Computer Gaming, Multimedia and Animation etc."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 2,
+          "title": "UNIT II",
+          "topics": [
+            "Introduction to Algorithms, Complexities and Flowchart, Introduction to Programming, Categories of Programming Languages, Program Design, Programming Paradigms, Characteristics or Concepts of OOP, Procedure Oriented Programming vs Object Oriented Programming.",
+            "Introduction to C++: Character Set, Tokens, Precedence and Associativity, Program Structure, Data Types, Variables, Operators, Expressions, Statements and control structures, I/O operations, Array, Functions."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 3,
+          "title": "UNIT III",
+          "topics": [
+            "Object & Classes, Scope Resolution Operator, Constructors & Destructors, Friend Functions, Inheritance, Polymorphism, Overloading Functions & Operators, Types of Inheritance, Virtual functions.",
+            "Introduction to Data Structures."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 4,
+          "title": "UNIT IV",
+          "topics": [
+            "Computer Networking: Introduction, Goals, ISO‑OSI Model, Functions of Different Layers, Internetworking Concepts, Devices, TCP/IP Model, Introduction to Internet, World Wide Web, E‑commerce.",
+            "Computer Security Basics: Introduction to viruses, worms, malware, Trojans, Spyware and Anti‑Spyware Software, Different types of attacks like Money Laundering, Information Theft, Cyber Pornography, Email spoofing, Denial of Service (DoS), Cyber Stalking, Logic bombs, Hacking, Spamming, Cyber Defamation, Pharming; Security measures Firewall, Computer Ethics & Good Practices, Introduction of Cyber Laws about Internet Fraud, Good Computer Security Habits."
+          ],
+          "extra": null
+        },
+        {
+          "unit": 5,
+          "title": "UNIT V",
+          "topics": [
+            "Data Base Management System: Introduction, File oriented approach and Database approach, Data Models, Architecture of Database System, Data independence, Data dictionary, DBA, Primary Key, Data definition language and Manipulation Languages.",
+            "Cloud computing: definition, cloud infrastructure, cloud segments or service delivery models (IaaS, PaaS and SaaS), cloud deployment models/types of cloud (public, private, community and hybrid clouds), Pros and Cons of cloud computing."
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [
+        "Study and practice of Internal & External DOS commands.",
+        "Study and practice of Basic Linux commands – ls, cp, mv, rm, chmod, kill, ps etc.",
+        "Study and practice of MS Windows – folder related operations, My‑Computer, Windows Explorer, Control Panel.",
+        "Creation and editing of text files using MS‑Word.",
+        "Creation and operating of spreadsheet using MS‑Excel.",
+        "Creation and editing of Power‑Point slides using MS‑PowerPoint.",
+        "Creation and manipulation of database table using SQL in MS‑Access.",
+        "WAP to illustrate arithmetic expressions.",
+        "WAP to illustrate arrays.",
+        "WAP to illustrate functions.",
+        "WAP to illustrate constructor & destructor.",
+        "WAP to illustrate objects and classes.",
+        "WAP to illustrate operator overloading.",
+        "WAP to illustrate function overloading.",
+        "WAP to illustrate derived classes & inheritance.",
+        "WAP to insert and delete an element from the stack.",
+        "WAP to insert and delete an element from the queue.",
+        "WAP to insert and delete an element from the linked list."
+      ],
+      "reference_books": [
+        "Fundamentals of Computers – E. Balagurusamy, TMH.",
+        "Basic Computer Engineering – Silakari and Shukla, Wiley India.",
+        "Fundamentals of Computers – V. Rajaraman, PHI.",
+        "Information Technology Principles and Application – Ajoy Kumar Ray & Tinku Acharya, PHI.",
+        "Introduction of Computers – Peter Norton, TMH.",
+        "Object Oriented Programming with C++ – E. Balagurusamy, TMH.",
+        "Object Oriented Programming in C++ – R. K. Shukla, Wiley India.",
+        "Concepts in Computing – Kenneth Hoganson, Jones & Bartlett.",
+        "Operating Systems – Silberschatz and Galvin, Wiley India.",
+        "Computer Networks – Andrew Tanenbaum, PHI.",
+        "Data Base Management Systems – Korth, TMH.",
+        "Cloud Computing – Kumar, Wiley India"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Language Lab & Seminars",
+      "subject_code": "BT206",
+      "subject_type": "Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Language Laboratory Sessions",
+          "topics": [
+            "Introducing oneself, family, social roles.",
+            "Public Speaking and oral skills with emphasis on conversational practice, extempore speech, JAM (Just a minute sessions), describing objects and situations, giving directions, debate, telephonic etiquette.",
+            "Reading Comprehension: Intensive reading skills, rapid reading, and reading aloud (Reading material to be selected by the teacher).",
+            "To write a book review. Standard text must be selected by the teacher.",
+            "Role plays: preparation and delivery topic to be selected by teacher/faculty."
+          ],
+          "extra": null
+        }
+      ],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

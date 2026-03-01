@@ -1,0 +1,828 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Thermal Engineering and Gas Dynamics",
+      "subject_code": "ME- 601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Steam generators and boilers",
+          "topics": [
+            "Steam generators: classification",
+            "Conventional boilers",
+            "High‑pressure boilers – Lamont, Benson, Loeffler and Velox steam generators",
+            "Performance and rating of boilers",
+            "Equivalent evaporation",
+            "Boiler efficiency",
+            "Heat balance sheet",
+            "Combustion in boilers",
+            "Super critical boilers",
+            "Fuel and ash handling",
+            "Boiler draught",
+            "Overview of boiler codes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Vapour Cycles",
+          "topics": [
+            "Phase change cycles: Vapor Carnot cycle and its limitation",
+            "Rankine cycle",
+            "Effect of boiler and condenser pressure and superheat on end moisture and efficiency of Rankine cycle",
+            "Modified Rankine cycle",
+            "Reheat cycle",
+            "Perfect regenerative cycle",
+            "Ideal and actual regenerative cycle with single and multiple heaters",
+            "Open and closed type of feed‑water heaters",
+            "Regenerative‑reheat cycle",
+            "Supercritical pressure and binary‑vapor cycle",
+            "Work‑done and efficiency calculations"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Gas Dynamics",
+          "topics": [
+            "Speed of sound in a fluid",
+            "Mach number",
+            "Mach cone",
+            "Stagnation properties",
+            "One‑dimensional isentropic flow of ideal gases through variable‑area duct – Mach number variation",
+            "Area ratio as a function of Mach number",
+            "Mass flow rate and critical pressure ratio",
+            "Effect of friction",
+            "Velocity coefficient",
+            "Coefficient of discharge",
+            "Diffusers",
+            "Normal shock"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Air Compressors",
+          "topics": [
+            "Working of reciprocating compressor",
+            "Work input for single‑stage compression (different compression processes)",
+            "Effect of clearance",
+            "Volumetric efficiency",
+            "Real indicator diagram",
+            "Isentropic, isothermal and mechanical efficiency",
+            "Multi‑stage compression",
+            "Inter‑cooling",
+            "Condition for minimum work done",
+            "Classification and working of rotary compressors"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Nozzles and Condensers",
+          "topics": [
+            "Steam nozzles: isentropic flow of vapors",
+            "Flow of steam through nozzles",
+            "Condition for maximum discharge",
+            "Effect of friction",
+            "Super‑saturated flow",
+            "Steam condensers and cooling towers – introduction",
+            "Types of condensers",
+            "Back pressure and its effect on plant performance",
+            "Air leakage and its effect on performance of condensers",
+            "Various types of cooling towers"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of working of some of the high pressure boilers like Lamont or Benson",
+        "Study of Induced draft/forced and balanced draft by chimney",
+        "Determination of Calorific value of a fuel",
+        "Study of different types of steam turbines",
+        "Determination of efficiencies of condenser",
+        "Boiler trial to chalk out heat balance sheet",
+        "Determination of thermal efficiency of steam power plant",
+        "Determination of Airflow in ducts and pipes",
+        "To find out efficiencies of a reciprocating air compressor and study of multistage Compressors",
+        "Find out heat transfer area of a parallel flow/counter flow heat exchanger"
+      ],
+      "reference_books": [
+        "Arasu Valan A; Thermal Engineering; TMH",
+        "Nag PK; Basic and applied Thermo-dynamics; TMH",
+        "Nag PK; Power plant Engineering; TMH",
+        "Rathakrishnan E; Gas Dynamics; PHI Learning",
+        "Balachandran P; Gas Dynamics for Engineers; PHI Learning",
+        "Yahya SM; Fundamentals of Compressible flow; New Age",
+        "Gordon J. Van Wylen; Thermodynamics",
+        "R.Yadav Thermal Engg.",
+        "Kadambi & Manohar; An Introduction to Energy Conversion – Vol II. Energy conversion cycles"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Machine Component and Design",
+      "subject_code": "ME- 602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to stress in machine component",
+          "topics": [
+            "Stress concentration and fatigue",
+            "Causes of stress concentration",
+            "Stress concentration in tension, bending and torsion",
+            "Reduction of stress concentration",
+            "Theoretical stress concentration factor",
+            "Notch sensitivity",
+            "Fatigue stress concentration factor",
+            "Cyclic loading",
+            "Endurance limit",
+            "S‑N curve",
+            "Loading factor",
+            "Size factor",
+            "Surface factor",
+            "Design considerations for fatigue",
+            "Goodman diagram",
+            "Modified Goodman diagram",
+            "Soderberg equation",
+            "Gerber parabola",
+            "Design for finite life",
+            "Cumulative fatigue damage factor"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Shafts",
+          "topics": [
+            "Design of shaft under combined bending, twisting and axial loading",
+            "Shock and fatigue factors in shaft design",
+            "Design for rigidity of shafts",
+            "Design of shaft subjected to dynamic load",
+            "Design of keys",
+            "Design of shaft couplings"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Springs",
+          "topics": [
+            "Design of helical compression springs",
+            "Design of helical tension springs",
+            "Dimensional and functional constraints for springs",
+            "Design of leaf springs",
+            "Design of torsion springs",
+            "Fatigue loading of springs",
+            "Surge in spring performance",
+            "Special spring types",
+            "Design of power screw and power nut",
+            "Differential screw design",
+            "Compound screw design",
+            "Design of simple screw jack"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Brakes & Clutches",
+          "topics": [
+            "Materials for friction surfaces",
+            "Uniform pressure theory",
+            "Uniform wear theory",
+            "Design of friction clutches – disk clutches",
+            "Design of friction clutches – plate clutches",
+            "Design of friction clutches – cone clutches",
+            "Design of friction clutches – centrifugal clutches",
+            "Design of brakes – rope brakes",
+            "Design of brakes – band brakes",
+            "Design of brakes – block brakes",
+            "Design of internal expanding brakes",
+            "Design of disk brakes"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Journal Bearing",
+          "topics": [
+            "Types of lubrication",
+            "Viscosity considerations",
+            "Hydrodynamic theory of bearings",
+            "Design factors for journal bearings",
+            "Temperature and viscosity effects",
+            "Reynolds' equation",
+            "Stable operation of journal bearings",
+            "Unstable operation of journal bearings",
+            "Heat dissipation and thermal equilibrium",
+            "Boundary lubrication regime",
+            "Dimensionless numbers in bearing analysis",
+            "Design of journal bearings",
+            "Rolling‑element bearings – types of rolling contact bearings",
+            "Bearing friction and power loss",
+            "Bearing life estimation",
+            "Radial loads on bearings",
+            "Thrust loads on bearings",
+            "Axial loads on bearings",
+            "Static load capacities",
+            "Dynamic load capacities",
+            "Selection of ball bearings",
+            "Selection of roller bearings",
+            "Lubrication and sealing of bearings"
+          ]
+        }
+      ],
+      "experiments": [
+        "Design considerations for fatigue.",
+        "Design criteria and procedure for springs.",
+        "Design of shaft.",
+        "Design of keys.",
+        "Design of couplings.",
+        "Design of leaf spring for a given load.",
+        "Design of power screw and nut.",
+        "Design of centrifugal clutch.",
+        "Design of disc brake.",
+        "Design considerations for roller bearings."
+      ],
+      "reference_books": [
+        "Shingley J.E; Machine Design; TMH",
+        "Sharma and Purohit; Design of Machine elements; PHI",
+        "Wentzell Timothy H; Machine Design; Cengage learning",
+        "Mubeen; Machine Design; Khanna Publisher",
+        "Ganesh Babu K and Srithar k; Design of Machine Elements; TMH",
+        "Sharma & Agrawal; Machine Design; Kataria & sons",
+        "Maleev; Machnine Design"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Turbomachinery",
+      "subject_code": "ME-603 (A)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Energy transfer in turbo machines",
+          "topics": [
+            "Application of first law of thermodynamics to turbo machines",
+            "Application of second law of thermodynamics to turbo machines",
+            "Moment of momentum equation and Euler turbine equation",
+            "Principles of impulse machines",
+            "Principles of reaction machines",
+            "Degree of reaction",
+            "Energy equation for relative velocities",
+            "One‑dimensional analysis of turbo machines"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Steam turbines",
+          "topics": [
+            "Impulse staging and velocity/pressure compounding",
+            "Utilization factor and analysis for optimum U.F. (Curtis and Rateau stages)",
+            "Effect of blade and nozzle losses on vane efficiency",
+            "Stage efficiency and optimum efficiency analysis",
+            "Mass flow considerations and blade height design",
+            "Reaction staging: Parsons stages and degree of reaction",
+            "Nozzle efficiency, velocity coefficient, stator efficiency, carry‑over efficiency",
+            "Conditions for optimum efficiency, speed ratio, axial thrust",
+            "Reheat factor in turbines",
+            "Radial equilibrium problem",
+            "Free and forced vortex flow types",
+            "Flow with constant reaction",
+            "Governing and performance characteristics of steam turbines"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Water turbines and centrifugal pumps",
+          "topics": [
+            "Classification of water turbines (Pelton, Francis, Kaplan)",
+            "Vector diagrams and work‑done analysis for water turbines",
+            "Draft tubes and governing of water turbines",
+            "Classification of centrifugal pumps and advantages over reciprocating pumps",
+            "Definitions of manometric head, gross head, and static head",
+            "Vector diagram and work‑done for centrifugal pumps",
+            "Dimensional analysis and similarity for water turbines and pumps",
+            "Unit and specific quantities for pump and turbine performance",
+            "Selection criteria for machines",
+            "Hydraulic, volumetric, mechanical and overall efficiencies",
+            "Main and operating characteristics of pumps and turbines",
+            "Cavitation phenomena in pumps"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Rotary fans, blowers and compressors",
+          "topics": [
+            "Classification based on pressure rise (centrifugal and axial flow machines)",
+            "Centrifugal blowers: vane shape, velocity triangle, degree of reaction, slip coefficient, size and speed, vane stresses, efficiency, characteristics, fan laws",
+            "Centrifugal compressors: vector diagrams, work done, temperature and pressure ratios, slip factor, work input factor, pressure coefficient, dimensions of inlet eye, impeller and diffuser",
+            "Axial flow compressors: vector diagrams, work‑done factor, temperature and pressure ratios, degree of reaction, dimensional analysis, characteristics, surge phenomenon, polytropic and isentropic efficiencies"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Power transmitting turbo machines",
+          "topics": [
+            "Application and general theory of power‑transmitting turbo machines",
+            "Torque ratio, speed ratio, slip and efficiency",
+            "Velocity diagrams for power transmission",
+            "Fluid coupling and torque converter characteristics",
+            "Positive displacement machines versus turbo machines and their distinction",
+            "Positive displacement pumps with fixed and variable displacement",
+            "Hydrostatic systems: hydraulic intensifier, accumulator, press, crane"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Venkanna B.K.; Turbomachinery; PHI",
+        "Shepherd D.G.; Turbo machinery",
+        "Csanady; Turbo machines",
+        "Bansal R.K.; Fluid Mechanics & Fluid Machines",
+        "Rogers, Cohen & Sarvan; Multi‑Stage Gas Turbine Theory",
+        "Kearton W.J.; Steam Turbine: Theory & Practice"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Aided Engineering",
+      "subject_code": "ME- 603 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Computer Engineering",
+          "topics": [
+            "Methods to solve engineering problems – analytical, numerical, experimental, their merits and comparison",
+            "Discretization into smaller elements and effect of size/shape on accuracy",
+            "Importance of meshing and boundary conditions",
+            "Computer Aided Engineering (CAE) and design, chain‑bumping‑stages vs concurrent‑collaborative design cycles",
+            "Computer as enabler for concurrent design and Finite Element Method (FEM)",
+            "Degree of freedom (DOF)",
+            "Mechanical systems with mass, damper and spring",
+            "Stiffness constant $K$ for tensile, bending and torsion",
+            "Practical applications of FEA in new design, optimisation/cost‑cutting and failure analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Types of Analysis",
+          "topics": [
+            "Types of analysis in CAE: static (linear/non‑linear), dynamic, buckling, thermal, fatigue, crash NVH and CFD",
+            "Review of normal, shear, torsion, stress‑strain relations",
+            "Types of forces and moments, tri‑axial stresses, moment of inertia",
+            "Meshing strategies: 1‑D, 2‑D, 3‑D elements and element length",
+            "Force‑stiffness and displacement matrix formulation",
+            "Rayleigh‑Ritz and Galerkin FEM formulations",
+            "Analytical and FEM solution for a single rod element and a two‑rod assembly"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "2 D‑Meshing",
+          "topics": [
+            "Two‑dimensional meshing and elements for sheet work and thin shells",
+            "Effect of mesh density and biasing in critical regions",
+            "Comparison between triangular and quadrilateral elements",
+            "Quality checks: Jacobian, distortion, stretch, free edge, duplicate node and shell normal"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "3 D‑Meshing",
+          "topics": [
+            "Three‑dimensional meshing and elements (only 3 DOF)",
+            "Algorithm for triangle‑to‑tetrahedron conversion, floating and fixed triangles",
+            "Quality checks for tetrahedral meshing",
+            "Brick meshing and associated quality checks",
+            "Special elements and techniques, introduction to weld, bolt, bearing and shrink‑fit simulations",
+            "CAE and test data correlations",
+            "Post‑processing techniques"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Optimization",
+          "topics": [
+            "Review of linear optimisation",
+            "Process and product optimisation",
+            "Design for Manufacturing (DFM) aspects in product development",
+            "Use of morphing technique in FEA",
+            "Classical design for infinite life and design for warranty life",
+            "Warranty yard meetings and functional roles",
+            "Climatic conditions and design abuses",
+            "Case studies"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Gokhle Nitin; et al; Practical Finite Element Analysis; Finite to Infinite, 686 Budhwar Peth, Pune.",
+        "Krishnamoorthy; Finite Element Analysis, theory and programming; TMH",
+        "Buchanan; Finite Element Analysis; Schaum series; TMH",
+        "Seshu P; Textbook of Finite Element Analysis; PHI.",
+        "Desai Chandrakant S et al; Introduction to finite element Method"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Product Design",
+      "subject_code": "ME- 603 (C)",
+      "subject_type": "Departmental elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to product design",
+          "topics": [
+            "Product life-cycle",
+            "Product policy of an organization",
+            "Selection of a profitable product",
+            "Product design process",
+            "Product analysis"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Value engineering in product design",
+          "topics": [
+            "Advantages and applications in product design",
+            "Problem identification and selection",
+            "Analysis of functions",
+            "Anatomy of function",
+            "Primary versus secondary versus tertiary/unnecessary functions",
+            "Functional analysis using Functional Analysis System Technique (FAST)",
+            "Case studies"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Introduction to Product design tools",
+          "topics": [
+            "Quality Function Deployment (QFD)",
+            "Computer Aided Design (CAD)",
+            "Robust design",
+            "Design for X (DFX)",
+            "Design for Manufacturing (DFM)",
+            "Design for Assembly (DFA)",
+            "Ergonomics in product design"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "DFMA guidelines",
+          "topics": [
+            "Product design for manual assembly",
+            "Design guidelines for metallic products",
+            "Design guidelines for non‑metallic products",
+            "Manufacturing processes such as casting, machining, injection molding, etc."
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Rapid Prototyping",
+          "topics": [
+            "Needs of rapid prototyping",
+            "Advantages of rapid prototyping",
+            "Working principles of Stereolithography (SLA)",
+            "Working principles of Laminated Object Manufacturing (LOM)",
+            "Working principles of Selective Laser Sintering (SLS)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Value Engineering: Concepts, Techniques and Applications by A.K. Mukhopadhaya",
+        "Rapid Prototyping: Principles and Applications by C.K. Chua",
+        "Engineering Design by Linda D. Schmidt"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Robotics",
+      "subject_code": "ME- 604 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Need and importance",
+            "Basic concepts",
+            "Structure and classification of industrial robots",
+            "Terminology of robot motion",
+            "Motion characteristics",
+            "Resolution",
+            "Accuracy",
+            "Repeatability",
+            "Robot applications"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "End Effectors and Drive Systems",
+          "topics": [
+            "Drive systems for robots",
+            "Salient features and comparison of drive systems",
+            "Different types of end effectors",
+            "Design of end effectors",
+            "Applications of end effectors"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sensors",
+          "topics": [
+            "Sensor evaluation and selection",
+            "Piezoelectric sensors",
+            "Linear position and displacement sensing",
+            "Revolvers",
+            "Encoders",
+            "Velocity measurement",
+            "Proximity sensing",
+            "Tactile sensing",
+            "Compliance and range sensing",
+            "Image processing and object recognition"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Robot Programming",
+          "topics": [
+            "Teaching of robots",
+            "Manual programming",
+            "Walk‑through programming",
+            "Teach pendant programming",
+            "Offline programming concepts",
+            "Programming languages for robots",
+            "Applications of robot programming"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Safety and Economy of Robots",
+          "topics": [
+            "Work‑cycle time analysis",
+            "Economics and effectiveness of robots",
+            "Safety systems and devices",
+            "Testing methods and acceptance rules for industrial robots"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Mittal RK, Nagrath IJ; Robotics and Control; TMH",
+        "Groover M.P, Weiss M, Nagel, OdreyNG; Industrial Robotics-The Appl□; TMH",
+        "Groover M.P; CAM and Automation; PHI Learning",
+        "Spong Mark and Vidyasagar; Robot Modelling and control; Wiley India",
+        "Yoshikava; Foundations of Robotics- analysis and Control; PHI Learning",
+        "Murphy; Introduction to AI Robotics; PHI Learning",
+        "FU KS, Gonzalez RC, Lee CSG; Robotics □Control, sensing□; TMH",
+        "Shimon, K; Handbook of Industrial Robots; John Wiley & Sons",
+        "Ghosal Ashitava; Robotics Fundamental concepts and analysis; Oxford",
+        "Saha S; Introduction to Robotics; TMH",
+        "Yu Kozyhev; Industrial Robots Handbook; MIR Pub"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Optimization Techniques",
+      "subject_code": "ME- 604 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Optimization",
+          "topics": [
+            "Engineering application of Optimization",
+            "Statement of an Optimization problem",
+            "Optimal problem formulation",
+            "Classification of Optimization problems",
+            "Optimum design concepts",
+            "Definition of Global and Local optima",
+            "Optimality criteria",
+            "Review of basic calculus concepts",
+            "Global optimality"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Linear programming methods for optimum design",
+          "topics": [
+            "Review of Linear programming methods for optimum design",
+            "Post optimality analysis",
+            "Application of LPP models in design and manufacturing"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Optimization algorithms for solving unconstrained optimization problems",
+          "topics": [
+            "Gradient based methods",
+            "Cauchy's steepest descent method",
+            "Newton's method",
+            "Conjugate gradient method"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Optimization algorithms for solving constrained optimization problems",
+          "topics": [
+            "Direct methods",
+            "Penalty function methods",
+            "Steepest descent method (constrained)",
+            "Engineering applications of constrained and unconstrained algorithms"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Modern methods of Optimization",
+          "topics": [
+            "Genetic Algorithms",
+            "Simulated Annealing",
+            "Ant colony optimization",
+            "Tabu search",
+            "Neural-network based optimization",
+            "Fuzzy optimization techniques",
+            "Applications of modern optimization methods",
+            "Use of Matlab to solve optimization problems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rao S. S. – Engineering Optimization, Theory and Practice – New Age International Publishers – 2012 (4th Edition)",
+        "Deb K. – Optimization for Engineering Design Algorithms and Examples – PHI – 2000",
+        "Arora J. – Introduction to Optimization Design – Elsevier Academic Press, New Delhi – 2004",
+        "Saravanan R. – Manufacturing Optimization through Intelligent Techniques – Taylor & Francis (CRC Press) – 2006",
+        "Hardley G. – Linear Programming – Narosa Book Distributors Private Ltd. – 2002"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Renewable Energy Technology",
+      "subject_code": "ME- 604 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Solar Radiation",
+          "topics": [
+            "Extra-terrestrial and terrestrial solar radiation",
+            "Solar radiation measuring instruments and prediction methods",
+            "Solar thermal conversion basics",
+            "Flat plate collectors: liquid and air types",
+            "Theory of flat plate collectors and selective coating",
+            "Advanced flat plate collectors and concentrators",
+            "Optical design of solar concentrators",
+            "Solar water heating systems",
+            "Solar dryers, solar stills, solar cooling and refrigeration",
+            "Solar photovoltaic principles",
+            "Photovoltaic device fabrication technologies",
+            "Applications of solar cells in PV generation systems",
+            "Organic photovoltaic cells"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Wind Energy",
+          "topics": [
+            "Wind speed distribution metrology and statistics",
+            "Weibull, Rayleigh, and Normal distributions for wind speed",
+            "Measurement of wind data",
+            "Energy estimation of wind regimes",
+            "Wind energy conversion principles",
+            "Types and classification of wind energy conversion systems (WECS)",
+            "Power, torque, and speed characteristics of wind turbines",
+            "Power curve of wind turbine and capacity factor",
+            "Matching wind turbine with wind regimes",
+            "Applications of wind energy"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Production of Biomass",
+          "topics": [
+            "Photosynthesis pathways (C3 & C4) and biomass production",
+            "Biomass resource assessment and CO\\textsubscript{2} fixation potential",
+            "Classification of biomass",
+            "Physicochemical characteristics of biomass as fuel",
+            "Biomass conversion routes: biochemical, chemical, thermochemical",
+            "Biochemical conversion: anaerobic digestion and biogas production mechanism",
+            "Types of digesters and design of biogas plants",
+            "Operation and maintenance of biogas plants, manure utilization",
+            "Biomass gasification: types and power generation",
+            "Cost‑benefit analysis of power generation by gasification"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Small Hydropower Systems",
+          "topics": [
+            "Overview of micro, mini, and small hydro systems",
+            "Hydrology and turbine elements",
+            "Assessment and design criteria of hydro power",
+            "Site selection and civil works for hydro projects",
+            "Speed and voltage regulation of hydro generators",
+            "Investment issues, load management, and tariff collection",
+            "Distribution and marketing of hydro power",
+            "Ocean energy resources and routes",
+            "Ocean thermal energy conversion (OTEC) systems and principles",
+            "Ocean wave energy and tidal energy conversion principles"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Geothermal Energy",
+          "topics": [
+            "Origin and types of geothermal energy deposits",
+            "Site selection for geothermal power plants",
+            "Hydrogen as an energy source, production and storage",
+            "Fuel cell types and subsystems",
+            "Principles of fuel cell operation and basic thermodynamics"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Kothari, Singal & Rajan; Renewable Energy Sources and Emerging Technologies, PHI Learn",
+        "Khan, B H, Non Conventional Energy, TMH.",
+        "Sukhatme and Nayak, Solar Energy, Principles of Thermal Collection and Storage, TMH.",
+        "Tiwari and Ghosal, Renewable Energy Resources: basic principle & application, Narosa Publ",
+        "Koteswara Rao, Energy Resources, Conventional & Non-Conventional, BSP Publication.",
+        "Chetan Singh Solanki, Solar Photovoltaics: Fundamental, technologies and Application, PHI L",
+        "Abbasi Tanseem and Abbasi SA; Renewable Energy Sources; PHI Learning",
+        "Ravindranath NH and Hall DO, Biomass, Energy and Environment, Oxford University Press.",
+        "Duffie and Beckman, Solar Engineering of Thermal Process, Wiley",
+        "Nikolai, Khartchenko; Green Power; Tech Book International",
+        "Tester, Sustainable Energy-Choosing Among Options, PHI Learning.",
+        "Godfrey Boyle, Renewable Energy: Power for a sustainable future, Oxford OUP."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "CAD Lab",
+      "subject_code": "ME-605",
+      "subject_type": "Lab",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "2D Drawing and Sketching",
+          "topics": [
+            "Layout and sketching of different geometries",
+            "Drawing environment in AUTOCAD",
+            "Elements of drawing and draw commands",
+            "3D functions in AUTOCAD",
+            "2D: Figures for practice using AutoCAD",
+            "ISOMETRIC drawing for practice using AutoCAD",
+            "3-D solid figures using AUTOCAD"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "3D Modeling and Assembly",
+          "topics": [
+            "Introduction to CREO 3.0",
+            "Learning different Operations like Threading, Sweep, Swept‑blend.",
+            "Modeling & Assembling"
+          ]
+        }
+      ],
+      "experiments": [
+        "Layout and sketching of different geometries",
+        "Drawing environment in AUTOCAD",
+        "Elements of drawing and draw commands",
+        "3D functions in AUTOCAD",
+        "2D: Figures for practice using AutoCAD",
+        "ISOMETRIC drawing for practice using AutoCAD",
+        "3-D solid figures using AUTOCAD",
+        "Introduction to CREO 3.0",
+        "Learning different Operations like Threading, Sweep, Swept‑blend.",
+        "Modeling & Assembling"
+      ],
+      "reference_books": [
+        "Engineering graphics with Auto CAD- R.B. Choudary/Anuradha Publishers.",
+        "Beginning AutoCAD 2019 Exercise Workbook by Cheryl R. Shrock, Steve Heather.",
+        "CAD Exercises by Sachidanand Jha."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "RDBMS Lab",
+      "subject_code": "ME-606",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "What do you mean by normalization and explain its forms with suitable example.",
+        "Case study on normalization.",
+        "Introduction of query processing and query optimization.",
+        "Study and usage of query optimization techniques.",
+        "Study and usage of backup recovery features of database.",
+        "Study and usage of any object or object oriented relational database management software.",
+        "Study and usage of open source data mining tool: WEKA.",
+        "Creating and use web database in PHP.",
+        "Display project using database."
+      ],
+      "reference_books": [
+        "A Silberschatz, H.F. Korth, Sudersan “Database System Concept”, MGH Publication.",
+        "C.J. Date “An introduction to Database System”, 6th ed.",
+        "Elmasri & Navathe “Fundamentals of Database system”, III ed."
+      ],
+      "extra": null
+    }
+  ]
+}

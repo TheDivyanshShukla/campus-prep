@@ -1,0 +1,624 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Analysis Design of Algorithm",
+      "subject_code": "CS402",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Fundamentals of Algorithms and Asymptotic Analysis",
+          "topics": [
+            "Definition and classification of algorithms",
+            "Designing algorithms",
+            "Analyzing algorithms",
+            "Asymptotic notations (O, Ω, Θ, o, ω)",
+            "Heap data structure",
+            "Heap sort algorithm"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Divide and Conquer Techniques",
+          "topics": [
+            "Principles of divide and conquer",
+            "Binary search algorithm",
+            "Merge sort algorithm",
+            "Quick sort algorithm",
+            "Strassen’s matrix multiplication"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Greedy Algorithms",
+          "topics": [
+            "Greedy strategy concept",
+            "Optimal merge patterns",
+            "Huffman coding",
+            "Minimum spanning trees (Kruskal and Prim)",
+            "Knapsack problem (greedy approach)",
+            "Job sequencing with deadlines",
+            "Single source shortest path algorithms (e.g., Dijkstra’s)"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Dynamic Programming",
+          "topics": [
+            "Dynamic programming paradigm",
+            "0/1 knapsack problem using DP",
+            "Multistage graph problems",
+            "Reliability design problems",
+            "Floyd‑Warshall all‑pairs shortest path algorithm"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Backtracking, Branch & Bound and Parallel Algorithms",
+          "topics": [
+            "Backtracking technique",
+            "8‑Queens problem",
+            "Hamiltonian cycle problem",
+            "Graph coloring problem",
+            "Branch and bound method",
+            "Traveling salesman problem using branch‑and‑bound",
+            "Lower bound theory for combinatorial problems",
+            "Introduction to parallel algorithms"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Tree and Graph Data Structures, Traversals and NP‑Completeness",
+          "topics": [
+            "Binary search trees",
+            "Height‑balanced trees (AVL)",
+            "2‑3 trees and B‑trees",
+            "Tree traversal techniques (in‑order, pre‑order, post‑order)",
+            "Graph traversal algorithms (DFS, BFS)",
+            "Fundamentals of NP‑completeness"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program for Iterative and Recursive Binary Search.",
+        "Write a program for Merge Sort.",
+        "Write a program for Quick Sort.",
+        "Write a program for Strassen’s Matrix Multiplication.",
+        "Write a program for optimal merge patterns.",
+        "Write a program for Huffman coding.",
+        "Write a program for minimum spanning trees using Kruskal’s algorithm.",
+        "Write a program for minimum spanning trees using Prim’s algorithm.",
+        "Write a program for single sources shortest path algorithm.",
+        "Write a program for Floye‑Warshall algorithm.",
+        "Write a program for traveling salesman problem.",
+        "Write a program for Hamiltonian cycle problem."
+      ],
+      "reference_books": [
+        "Coremen Thomas, Leiserson CE, Rivest RL; Introduction to Algorithms; PHI.",
+        "Horowitz & Sahani; Analysis & Design of Algorithm",
+        "Dasgupta; algorithms; TMH",
+        "Ullmann; Analysis & Design of Algorithm;",
+        "Michael T Goodrich, Robarto Tamassia, Algorithm Design, Wiely India",
+        "Rajesh K Shukla: Analysis and Design of Algorithms: A Beginner's Approach; Wiley"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Software Engineering",
+      "subject_code": "CS403",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "The Software Product and Software Process",
+          "topics": [
+            "Software Product and Process Characteristics",
+            "Software Process Models (Linear Sequential Model, Prototyping Model, RAD Model, Incremental Model, Spiral Model, Component Assembly Model, RUP, Agile processes)",
+            "Software Process customization and improvement",
+            "Capability Maturity Model (CMM)",
+            "Product and Process Metrics"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Requirement Elicitation, Analysis, and Specification",
+          "topics": [
+            "Functional and Non‑functional requirements",
+            "Requirement sources and elicitation techniques",
+            "Analysis modeling for function‑oriented and object‑oriented software development",
+            "Use‑case modeling",
+            "System and software requirement specifications",
+            "Requirement validation",
+            "Traceability"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Software Design",
+          "topics": [
+            "Software design process",
+            "Design concepts and principles",
+            "Software modeling and UML",
+            "Architectural design",
+            "Architectural views and styles",
+            "User‑interface design",
+            "Function‑oriented design",
+            "Component‑based design (SA/SD)",
+            "Design metrics"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Software Analysis and Testing",
+          "topics": [
+            "Software static and dynamic analysis",
+            "Code inspections",
+            "Software testing fundamentals",
+            "Software test process",
+            "Testing levels",
+            "Test criteria",
+            "Test case design",
+            "Test oracles",
+            "Test techniques",
+            "Black‑box testing",
+            "White‑box unit testing and unit testing frameworks",
+            "Integration testing",
+            "System testing and specialized testing",
+            "Test plan",
+            "Test metrics",
+            "Testing tools",
+            "Introduction to object‑oriented analysis and design, comparison with structured software engineering"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Software Maintenance & Software Project Measurement",
+          "topics": [
+            "Need and types of maintenance",
+            "Software configuration management (SCM)",
+            "Software change management",
+            "Version control",
+            "Change control and reporting",
+            "Program comprehension techniques",
+            "Re‑engineering and reverse engineering",
+            "Tool support",
+            "Project management concepts",
+            "Feasibility analysis",
+            "Project and process planning",
+            "Resource allocation",
+            "Software effort, schedule, and cost estimation",
+            "Project scheduling and tracking",
+            "Risk assessment and mitigation",
+            "Software quality assurance (SQA)",
+            "Project plan",
+            "Project metrics"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Pankaj Jalote, “An Integrated Approach to Software Engineering”, Narosa Pub, 2005",
+        "Rajib Mall, “Fundamentals of Software Engineering”, Second Edition, PHI Learning",
+        "R. S. Pressman, “Software Engineering: A Practitioner's Approach”, Sixth Edition, 2006, McGraw‑Hill",
+        "Sommerville, “Software Engineering”, Pearson Education",
+        "Richard H. Thayer, “Software Engineering & Project Management”, Wiley India",
+        "Waman S. Jawadekar, “Software Engineering”, TMH",
+        "Bob Hughes, M. Cotterell, Rajib Mall, “Software Project Management”, McGraw‑Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Computer Org. & Architecture",
+      "subject_code": "CS404",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Structure of Computer",
+          "topics": [
+            "Structure of Desktop Computers",
+            "CPU: General Register Organization‑Memory Register",
+            "Instruction Register",
+            "Control Word",
+            "Stack Organization",
+            "Instruction Format",
+            "ALU",
+            "I/O System",
+            "Bus",
+            "CPU and Memory Program Counter",
+            "Bus Structure",
+            "Register Transfer Language‑Bus and Memory Transfer",
+            "Addressing Modes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Control Unit Organization",
+          "topics": [
+            "Basic Concept of Instruction",
+            "Instruction Types",
+            "Micro Instruction Formats",
+            "Fetch and Execution Cycle",
+            "Hardwired Control Unit",
+            "Microprogrammed Control Unit",
+            "Microprogram Sequencer",
+            "Control Memory",
+            "Sequencing and Execution of Micro Instruction"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Computer Arithmetic",
+          "topics": [
+            "Addition and Subtraction",
+            "Complement Representation Tools",
+            "Signed Addition and Subtraction",
+            "Multiplication and Division",
+            "Booth’s Algorithm",
+            "Division Operation",
+            "Floating Point Arithmetic Operation",
+            "Design of Arithmetic Unit"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "I/O Organization",
+          "topics": [
+            "I/O Interface – PCI Bus",
+            "SCSI Bus",
+            "USB",
+            "Data Transfer: Serial, Parallel, Synchronous, Asynchronous Modes of Data Transfer",
+            "Direct Memory Access (DMA)",
+            "I/O Processor"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Memory Organization",
+          "topics": [
+            "Main Memory – RAM, ROM",
+            "Secondary Memory – Magnetic Tape, Disk, Optical Storage",
+            "Cache Memory: Cache Structure and Design",
+            "Mapping Scheme",
+            "Replacement Algorithm",
+            "Improving Cache Performance",
+            "Virtual Memory",
+            "Memory Management Hardware"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Multiprocessors",
+          "topics": [
+            "Characteristics of Multiprocessor",
+            "Structure of Multiprocessor – Interprocessor Arbitration",
+            "Inter‑Processor Communication and Synchronization",
+            "Memory in Multiprocessor System",
+            "Concept of Pipelining",
+            "Vector Processing",
+            "Array Processing",
+            "RISC and CISC",
+            "Study of Multicore Processor – Intel, AMD"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study of Multiplexer and Demultiplexer",
+        "Study of Half Adder and Subtractor",
+        "Study of Full Adder and Subtractor",
+        "WAP to add two 8‑bit numbers and store the result at memory location 2000",
+        "WAP to multiply two 8‑bit numbers stored at memory location 2000 and 2001 and store the result at memory locations 2000 and 2001",
+        "WAP to add two 16‑bit numbers. Store the result at memory address starting from 2000",
+        "WAP which tests if any bit is '0' in a data byte specified at address 2000; if so, store 00 at address 2001, otherwise store FF at the same address",
+        "Program to load register C with data at memory address 2000, D with data at 2001, E with data at 2002 and A with data at 2001",
+        "Program to increment the value of sixteen consecutive bytes starting at memory location 2000 by 01",
+        "WAP to add ten bytes stored at memory locations starting from 3000 and store the result at memory location 300A"
+      ],
+      "reference_books": [
+        "Morris Mano, “Computer System Organization ”PHI",
+        "Alan Clements: “Computer Organization and Architecture”, Cengage Learning",
+        "Subrata Ghosal: “Computer Architecture and Organization”, Pearson",
+        "William Stalling,“Computer Architecture and Organization” PHI",
+        "M. Usha, T.S. Shrikant: “Computer System Architecture and Organization”, Wiley India",
+        "Chaudhuri, P.Pal: “Computer Organization and Design”, PHI",
+        "Sarangi: “Computer Organization and Architecture”, Mc‑Graw‑Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Operating Systems",
+      "subject_code": "CS405",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to Operating Systems",
+          "topics": [
+            "Function of an operating system",
+            "Evolution of operating systems",
+            "Different types of operating systems",
+            "Desirable characteristics and features of an operating system",
+            "Operating system services – types of services",
+            "Utility programs as service providers",
+            "System calls as service interfaces"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "File Systems",
+          "topics": [
+            "Concept of a file and its abstraction",
+            "User’s and system programmer’s view of the file system",
+            "Disk organization and storage hierarchy",
+            "Tape organization",
+            "Modules of a file system",
+            "Disk space allocation methods – contiguous, linked, indexed",
+            "Directory structures",
+            "File protection mechanisms",
+            "System calls for file management",
+            "Disk scheduling algorithms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "CPU Scheduling and Memory Management",
+          "topics": [
+            "Process concept and life‑cycle",
+            "Scheduling concepts and criteria",
+            "Types of schedulers (long‑term, short‑term, medium‑term)",
+            "Process state diagram",
+            "CPU scheduling algorithms (FCFS, SJF, Priority, Round‑Robin, Multilevel, etc.)",
+            "Evaluation of scheduling algorithms",
+            "System calls for process management",
+            "Multiple‑processor scheduling techniques",
+            "Thread concepts and models",
+            "Memory management techniques – partitioning, swapping, segmentation, paging, paged segmentation",
+            "Comparison of memory management techniques",
+            "Support for large programs – overlay, dynamic linking and loading",
+            "Virtual memory concepts and demand paging implementation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Input/Output and Concurrent Processes",
+          "topics": [
+            "Principles of input/output systems",
+            "Programming I/O operations",
+            "I/O problems and solutions",
+            "Asynchronous I/O operations",
+            "Speed‑gap and format conversion issues",
+            "I/O interfaces and device controllers",
+            "Program‑controlled I/O",
+            "Interrupt‑driven I/O",
+            "Concurrent I/O techniques",
+            "Real and virtual concurrency",
+            "Mutual exclusion and synchronization mechanisms",
+            "Inter‑process communication methods",
+            "Critical‑section problem and solutions",
+            "Semaphores – binary and counting, WAIT and SIGNAL operations",
+            "Deadlock concepts, characterization, prevention, avoidance, and recovery"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Network, Distributed and Multiprocessor Operating Systems",
+          "topics": [
+            "Introduction to network operating systems",
+            "Distributed operating system concepts",
+            "Multiprocessor operating system architectures",
+            "Case studies: Unix/Linux, Windows, and other contemporary operating systems"
+          ]
+        }
+      ],
+      "experiments": [
+        "Write a program to implement FCFS CPU scheduling algorithm.",
+        "Write a program to implement SJF CPU scheduling algorithm.",
+        "Write a program to implement Priority CPU scheduling algorithm.",
+        "Write a program to implement Round Robin CPU scheduling algorithm.",
+        "Write a program to compare various CPU scheduling algorithms over different scheduling criteria.",
+        "Write a program to implement a classical inter‑process communication problem (producer‑consumer).",
+        "Write a program to implement a classical inter‑process communication problem (Reader‑Writer).",
+        "Write a program to implement a classical inter‑process communication problem (Dining Philosophers).",
+        "Write a program to implement and compare various page‑replacement algorithms.",
+        "Write a program to implement and compare various disk and drum scheduling algorithms.",
+        "Write a program to implement the Banker’s algorithm.",
+        "Write a program to implement Remote Procedure Call (RPC).",
+        "Write device drivers for any device or peripheral."
+      ],
+      "reference_books": [
+        "Silberschatz, Galvin, Gagne – \"Operating System Concepts\", Wiley, 9th Edition.",
+        "William Stalling – \"Operating Systems\", Pearson Education.",
+        "Andrew S. Tanenbaum – \"Modern Operating Systems\", 3rd Edition, Prentice Hall.",
+        "Maurice J. Bach – \"The Design of Unix Operating System\", Prentice Hall of India.",
+        "Bovet & Cesati – \"Understanding the Linux Kernel\", O’Reilly, 2nd Edition."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Programming Practices",
+      "subject_code": "CS406",
+      "subject_type": "Theory and Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Basic Java Features",
+          "topics": [
+            "C++ vs Java",
+            "Java Virtual Machine",
+            "Constants & Variables",
+            "Data Types",
+            "Class",
+            "Methods",
+            "Objects",
+            "Strings and Arrays",
+            "Type Casting",
+            "Operators",
+            "Precedence Relations",
+            "Control Statements",
+            "Exception Handling",
+            "File and Streams",
+            "Visibility",
+            "Constructors",
+            "Operator and Methods Overloading",
+            "Static Members",
+            "Inheritance",
+            "Polymorphism",
+            "Abstract Methods and Classes"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Java Collective Framework – Data Structures",
+          "topics": [
+            "Introduction to Data Structures",
+            "Type-Wrapper Classes for Primitive Types",
+            "Dynamic Memory Allocation",
+            "Linked List",
+            "Stack",
+            "Queues",
+            "Trees",
+            "Generics – Introduction",
+            "Overloading Generic Methods",
+            "Generic Classes",
+            "Collections – Interface Collection and Class Collections",
+            "Lists",
+            "ArrayList and Iterator",
+            "LinkedList",
+            "Vector",
+            "Collections Algorithms – sort, shuffle, reverse, fill, copy, max/min, binary search, addAll",
+            "Stack class of java.util",
+            "PriorityQueue and Queue interface",
+            "Maps",
+            "Properties class",
+            "Unmodifiable Collections"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Advanced Java Features",
+          "topics": [
+            "Multithreading – Thread States, Priorities, Thread Scheduling",
+            "Multithreading – Life Cycle of a Thread, Thread Synchronization",
+            "Multithreading – Creating and Executing Threads, Multithreading with GUI, Monitors and Monitor Locks",
+            "Networking – Manipulating URLs, Reading a file on a Web Server, Socket programming, Security and the Network, RMI",
+            "Accessing Databases with JDBC – Relational Database, SQL, MySQL, Oracle"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Advanced Java Technologies",
+          "topics": [
+            "Servlets – Overview and Architecture, Setting Up Apache Tomcat Server, Handling HTTP GET Requests, Deploying a Web Application, Multitier Applications, Using JDBC from a Servlet",
+            "JavaServer Pages (JSP) – Overview, First JSP Example, Implicit Objects, Scripting, Standard Actions, Directives",
+            "Multimedia – Applets and Applications: Loading, Displaying and Scaling Images, Animating a Series of Images, Loading and Playing Audio Clips"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advance Web/Internet Programming",
+          "topics": [
+            "Overview of J2ME",
+            "Overview of J2EE",
+            "Overview of EJB",
+            "Overview of XML"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": ".NET Technologies",
+          "topics": [
+            "Introduction to .NET framework – features, architecture, components, elements",
+            "Basic Features of C# – Fundamentals, Classes and Objects, Inheritance and Polymorphism, Operator Overloading, Structures",
+            "Advanced Features of C# – Interfaces, Arrays, Indexers and Collections, Strings and Regular Expressions, Handling Exceptions, Delegates and Events",
+            "ASP.NET – Installing framework, Overview of CLR, Class Library, ASP.NET controls, HTML controls, Standard controls, Validation controls, Rich controls",
+            "Windows Forms – Windows Form, MDI Form, Creating Windows applications, Adding controls, Handling events, Tools",
+            "ADO.NET – Component Object Model, ODBC, OLEDB, SQL connected mode, Disconnected mode, Dataset, DataReader, Data controls, GridView, DetailsView, DataSource controls",
+            "XML – Introducing XML, DTD, XML Schema, DOM, Handling XML, XML data source, Navigation controls, Web parts, JavaScript, Web Services"
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "Python Programming",
+          "topics": [
+            "Introduction – basic syntax, literal constants, numbers, variables, basic data types, strings, escape sequences, operators and expressions, evaluation order, indentation, input/output, functions, comments",
+            "Data Structures – List, Tuples, Dictionary, Sets",
+            "Control Flow – Conditional statements (if, if-else, nested), Iterative statements (for, while, nested loops), Control statements (break, continue, pass)",
+            "Object Oriented Programming – Class and Object, Attributes, Methods, Scopes, Namespaces, Inheritance, Overloading, Overriding, Data hiding",
+            "Exception – Exception handling, except clause, try‑finally clause, user‑defined exceptions",
+            "Modules and Packages",
+            "Standard Libraries – File I/O, sys, logging, regular expressions, date and time, network programming, multiprocessing, multithreading"
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "MATLAB",
+          "topics": [
+            "MATLAB Overview – History, Installation, Help Browser, Desktop arrangement, Basic functions, Common symbols, Debugging",
+            "Vector and Matrix – Scalars, Vectors, Matrices, Eigenvalues and eigenvectors, Matrix operations, Operators, Creating matrices, Indexing, Mathematical operations, Array types",
+            "Graphics – 2D plots, Parametric plots, Contour lines, Implicit plots, Field plots, Multiple graphics display, 3D plots, Multivariate data analysis",
+            "MATLAB Programming – M‑files, Editors, Scripts, Functions, Error correction, Debugger",
+            "Digital Image Processing – Basics of image processing with MATLAB",
+            "Neural Networks – Overview, Human and artificial neurons, Feed‑forward and feedback architectures, McCulloch‑Pitts model, Perceptron, Transfer functions, Neural Network Toolbox, Applications"
+          ]
+        }
+      ],
+      "experiments": [
+        "Installation of J2SDK",
+        "Write a program to show Scope of Variables",
+        "Write a program to show Concept of CLASS in JAVA",
+        "Write a program to show Type Casting in JAVA",
+        "Write a program to show How Exception Handling is in JAVA",
+        "Write a Program to show Inheritance",
+        "Write a program to show Polymorphism",
+        "Write a program to show Access Specifiers (Public, Private, Protected) in JAVA",
+        "Write a program to show use and Advantages of CONSTRUCTOR",
+        "Write a program to show Interfacing between two classes",
+        "Write a program to Add a Class to a Package",
+        "Write a program to show Life Cycle of a Thread",
+        "Write a program to demonstrate AWT",
+        "Write a program to Hide a Class",
+        "Write a Program to show Data Base Connectivity Using JAVA",
+        "Write a Program to show “HELLO JAVA ” in Explorer using Applet",
+        "Write a Program to show Connectivity using JDBC",
+        "Write a program to demonstrate multithreading using Java",
+        "Write a program to demonstrate applet life cycle",
+        "Write a program to demonstrate concept of servlet",
+        "Working with call backs and delegates in C#",
+        "Code access security with C#",
+        "Creating a COM+ component with C#",
+        "Creating a Windows Service with C#",
+        "Interacting with a Windows Service with C#",
+        "Using Reflection in C#",
+        "Sending Mail and SMTP Mail in C#",
+        "Perform String Manipulation with the String Builder and String Classes in C#",
+        "Using the System .Net Web Client to Retrieve or Upload Data with C#",
+        "Reading and Writing XML Documents with the XML Text-Reader/-Writer Class and C#",
+        "Working with Page using ASP .Net",
+        "Working with Forms using ASP .Net",
+        "Data Sources access through ADO.Net",
+        "Working with Data readers, Transactions",
+        "Creating Web Application"
+      ],
+      "reference_books": [
+        "E. Balaguruswamy, “Programming In Java”; TMH Publications",
+        "The Complete Reference: Herbert Schildt, TMH",
+        "Deitel & Deitel, ”JAVA, How to Program”; PHI, Pearson.",
+        "Cay Horstmann, Big JAVA, Wiley India.",
+        "Merlin Hughes, et al; Java Network Programming, Manning Publications/Prentice Hall",
+        "C# for Programmers by Harvey Deitel, Paul Deitel, Pearson Education",
+        "Balagurusamy; Programming in C#; TMH",
+        "Web Commerce Technology Handbook by Daniel Minoli, Emma Minoli, TMH",
+        "Web Programming by Chris Bates, Wiley",
+        "Alex Mackey, “ Introduction.NET 4.5 “, Wiley India",
+        "ASP .Net Complete Reference by McDonald, TMH.",
+        "ADO .Net Complete Reference by Odey, TMH",
+        "Timothy A. Budd: Exploring python, McGraw-Hill Education.",
+        "R.Nageshwar Rao, “Python Programming”, Wiley India.",
+        "Think Python: Allen B. Downey, O'Reilly Media, Inc.",
+        "Swapna Kumar, S V B Lenina: MATLAB – Easy way of learning, PHI Learning, 2016",
+        "Amos Gilat, “An Introduction with Applications, 4th ed.”, Wiley India"
+      ],
+      "extra": null
+    }
+  ]
+}

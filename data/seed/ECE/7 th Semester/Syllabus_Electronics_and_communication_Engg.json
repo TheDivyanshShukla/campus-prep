@@ -1,0 +1,707 @@
+{
+  "subjects": [
+    {
+      "subject_name": "VLSI Design",
+      "subject_code": "EC-701",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Practical Consideration and Technology in VLSI Design",
+          "topics": [
+            "Introduction",
+            "Size and complexity of Integrated Circuits",
+            "The Microelectronics Field",
+            "IC Production Process",
+            "Processing Steps",
+            "Packaging and Testing",
+            "MOS Processes",
+            "NMOS Process",
+            "CMOS Process",
+            "Bipolar Technology",
+            "Hybrid Technology",
+            "Design Rules and Process Parameters"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Device Modeling",
+          "topics": [
+            "Dc Models",
+            "Small Signal Models",
+            "MOS Models",
+            "MOSFET Models in High Frequency and small signal",
+            "Short channel devices",
+            "Sub threshold Operations",
+            "Modeling Noise Sources in MOSFET’s",
+            "Diode Models",
+            "Bipolar Models",
+            "Passive component Models"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Circuit Simulation",
+          "topics": [
+            "Introduction",
+            "Circuit Simulation Using Spice",
+            "MOSFET Model",
+            "Level 1 Large signal model",
+            "Level 2 Large Signal Model",
+            "High Frequency Model",
+            "Noise Model of MOSFET",
+            "Large signal Diode Current",
+            "High Frequency BJT Model",
+            "BJT Noise Model",
+            "temperature Dependence of BJT"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Structured Digital Circuits and Systems",
+          "topics": [
+            "Random Logic and Structured Logic Forms",
+            "Register Storage Circuits",
+            "Quasi Static Register Cells",
+            "A Static Register Cell",
+            "Micro coded Controllers",
+            "Microprocessor Design",
+            "Systolic Arrays",
+            "Bit-Serial Processing Elements",
+            "Algotronix"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "CMOS Processing Technology",
+          "topics": [
+            "Basic CMOS Technology",
+            "A Basic n-well CMOS Process",
+            "Twin Tub Processes",
+            "CMOS Process Enhancement",
+            "Interconnects and Circuit Elements",
+            "Layout Design Rules",
+            "Latch up",
+            "Physical Origin",
+            "Latchup Triggering",
+            "Latch up Prevention",
+            "Internal Latch up Prevention Techniques"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Geiger, Allen and Strader: VLSI Design Techniques for Analog and Digital Circuits, TMH.",
+        "Sorab Gandhi: VLSI Fabrication Principles, Wiley India.",
+        "Weste and Eshraghian: Principles of CMOS VLSI design, Addison-Wesley.",
+        "Weste, Harris and Banerjee: CMOS VLSI Design, Pearson-Education.",
+        "Pucknell and Eshraghian: Basic VLSI Design, PHI Learning.",
+        "Botkar: Integrated Circuits, Khanna Publishers.",
+        "Sze: VLSI Technology, TMH."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Microwave Engineering",
+      "subject_code": "EC-702 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Features and applications of microwaves",
+          "topics": [
+            "Wave propagation in striplines and microstrip lines",
+            "Slot lines",
+            "Limitations of conventional vacuum tubes",
+            "Microwave tubes like Two cavity klystron and Reflex klystron",
+            "Magnetron",
+            "TWT",
+            "Backward wave oscillator etc."
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Solid state microwave sources",
+          "topics": [
+            "transferred electron devices",
+            "Tunnel diode",
+            "Gunn diode and oscillators",
+            "IMPATT diode",
+            "TRAPATT diode",
+            "Pin diode",
+            "Varactor diode",
+            "Schottky diode",
+            "Parametric amplifiers",
+            "Crystal diode",
+            "Frequency multipliers",
+            "Microwave BJT & FET"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Scattering matrix",
+          "topics": [
+            "S-parameters & its applications in Network analysis",
+            "Matching Network",
+            "Detector diodes",
+            "detector mounts",
+            "detector output indicator",
+            "slotted line",
+            "measurement of power, impedance & S-parameter",
+            "measurement of frequency & VSWR"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Impedance transformer",
+          "topics": [
+            "Microwave filters",
+            "Power dividers and directional couplers",
+            "E-plane Tee",
+            "H-plane tee",
+            "Matched hybrid Tee.",
+            "Wave propagation in ferrite medium",
+            "Isolators",
+            "Circulators",
+            "YIG resonators",
+            "Simulation Techniques for design of Microwave Components"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Analysis and design of Dielectric resonators",
+          "topics": [
+            "Design of RF and microwave low noise and power amplifiers & oscillators using S-parameter techniques",
+            "Mixer and converter design",
+            "diode phase shifters",
+            "attenuators",
+            "Design of hybrid and monolithic, microwave and millimeter wave integrated circuits"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Liao S., Microwave Devices & Circuits’., 2nd ed. 2001, PHI.",
+        "Gupta K.C., Microwave Engg., 3rd ed. 2004, Wiley Easter Pub.",
+        "Watson, Solid State Microwave Devices, 5th ed. 2008, Wiley.",
+        "David M. Pozar, Microwave Engineering, 3rd edition, 2011, Wiley India.",
+        "Gandhi, Microwave Engineering & Application, 2nd ed. 2005, McMillan Int. Ed.",
+        "Reich, Microwave Principles, 5th ed. 2009, CBS Publ.",
+        "Collin, Foundations for microwave engineering, 4th ed. 2001, Wiley Publ."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Information Theory and Coding",
+      "subject_code": "EC-702 (B)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Information Theory",
+          "topics": [
+            "Introduction to uncertainty, entropy and its properties",
+            "Entropy of binary memoryless source and its extension to discrete memory‑less source",
+            "Measure of information",
+            "Information content of message",
+            "Average information content of symbols",
+            "Self information",
+            "Mutual information and its properties"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Coding theorem",
+          "topics": [
+            "Source coding theorem",
+            "Prefix coding",
+            "Shannon’s encoding algorithm",
+            "Shannon‑Fano encoding algorithm",
+            "Huffman coding",
+            "Extended Huffman coding",
+            "Arithmetic coding",
+            "Lempel‑Ziv coding",
+            "Run‑length encoding"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Information Channels",
+          "topics": [
+            "Communication channels",
+            "Channel models",
+            "Channel matrix",
+            "Joint probability matrix",
+            "Discrete memory‑less channels",
+            "Binary symmetric channel and its channel capacity",
+            "Channel coding theorem and its application to binary erasure channel",
+            "Shannon’s theorem on channel capacity",
+            "Capacity of channel of infinite bandwidth",
+            "Continuous channels"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Error Control Coding",
+          "topics": [
+            "Introduction and examples of error control coding",
+            "Methods of controlling errors",
+            "Types of errors",
+            "Types of codes",
+            "Linear block codes: matrix description, error detection and correction capabilities, probability of undetected error for linear block code in BSC, Hamming codes and their applications",
+            "Cyclic codes: basic properties, encoding using an (n‑k) shift register, generator and parity‑check matrix, encoding and decoding circuits, syndrome computation, error detection and correction"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Advanced Coding Techniques",
+          "topics": [
+            "Introduction to BCH codes, encoding and decoding, error location and correction",
+            "Convolutional codes: construction, convolution encoder, time‑domain approach, transform‑domain approach, code tree, trellis and state diagram",
+            "Viterbi algorithm: theorem for maximum‑likelihood decoding"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Digital Communication - by Haykins Simon Wiley Publ.",
+        "Error control Coding: Theory and Application, - by Shu Lin and Cosstlello, PHI",
+        "Digital Communication - by Sklar, Pearson Education",
+        "Error Correcting Codes - by Peterson W., MIT Press",
+        "Digital Communication - by Proakis, TMH",
+        "Information Theory, Coding and Cryptography – By Ranjan Bose, TMH",
+        "Communication Systems – By Singh and Sapre, TMH"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Nano Electronics",
+      "subject_code": "EC-702 (C)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of semiconductor physics",
+          "topics": [
+            "Nanoscale band structure and Electron transport",
+            "Quantum confinement in semiconductor nanostructures: quantum wells, quantum wires, quantum dots, super-lattices, band offsets, and electronic density of states",
+            "Heavily doped semiconductors and low dimensional quantum devices"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Introduction to lithography",
+          "topics": [
+            "Contact, proximity printing and Projection Printing",
+            "Resolution Enhancement techniques",
+            "Overlay-accuracies",
+            "Mask-Error enhancement factor (MEEF)",
+            "Positive and negative photoresists",
+            "Electron Lithography",
+            "Projection Printing",
+            "Direct writing",
+            "Electron resists"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Tunnel junction and applications of tunneling",
+          "topics": [
+            "Tunneling Through a Potential Barrier",
+            "Metal—Insulator, Metal-Semiconductor, and Metal-Insulator-Metal Junctions",
+            "Coulomb Blockade",
+            "Coulomb blockade in nanocapacitor",
+            "Tunnel Junctions",
+            "Tunnel Junction Excited by a Current Source"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Field Emission, Gate—Oxide Tunneling and Hot Electron Effects in nano MOSFETs",
+          "topics": [
+            "Field Emission",
+            "Gate—Oxide Tunneling",
+            "Hot Electron Effects in nano MOSFETs",
+            "Theory of Scanning Tunneling Microscope",
+            "Double Barrier Tunneling and the Resonant Tunneling Diode",
+            "Nanoscale MOSFET, FinFETs, charge and energy quantization in Single electron devices"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Scaling of physical systems – Geometric scaling & Electrical system scaling, Introduction to MEMS and NEMS",
+          "topics": [
+            "Geometric scaling",
+            "Electrical system scaling",
+            "Introduction to MEMS and NEMS",
+            "Micro sensors (acoustic wave sensor, biomedical and biosensor, chemical sensor, optical sensor, capacitive sensor, pressure sensor and thermal sensor)",
+            "Micro actuation (thermal actuation, piezoelectric actuation)"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Nano Terchnology and Nano Electronics – Materials, devices and measurement Techniques by WR Fahrner – Springe.",
+        "Fundamentals of Nanoelectronics, George W. Hanson, 1/e Pearson Education.",
+        "Nano: The Essentials – Understanding Nano Science and Nanotechnology by T. Pradeep; Tata Mc.Graw Hill.",
+        "Nanotubes and nanowires by C.N.R. Rao and A. Govindaraj, RSC Publishing.",
+        "Quantum-Based Electronic Devices and Systems by M. Dutta and M.A. Stroscio, World Scientific.",
+        "Stephen D. Sentaria, Microsystem Design, Kluwer Academic Press.",
+        "Marc Madou, Fundamentals of microfabrication & Nanofabrication.",
+        "T. Fukada & W. Mens, Micro Mechanical system Principle & Technology, Elsevier, 1998.",
+        "Julian W. Gardnes, Vijay K. Varda, Micro sensors MEMS & Smart Devices, 2001.",
+        "James R. Sheats and Bruce W. Smith, “Microlithography Science and Technology”, Marcel Dekker Inc., New York, 1998."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Cellular Mobile Communication",
+      "subject_code": "EC-703 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to cellular mobile system",
+          "topics": [
+            "Basic cellular system",
+            "Performance criteria",
+            "Uniqueness of mobile radio environment",
+            "Operation of cellular systems",
+            "Planning of cellular system",
+            "General description of problem",
+            "Concept of frequency reuse channels",
+            "Co‑channel interference reduction factor",
+            "Desired C/I in an omni‑directional antenna system",
+            "Hand‑off mechanism",
+            "Cell splitting",
+            "Components of cellular systems"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Cell coverage for signal and traffic",
+          "topics": [
+            "General introduction",
+            "Mobile point‑to‑point model",
+            "Propagation over water or flat open area",
+            "Foliage loss",
+            "Propagation in near‑in distance",
+            "Long distance propagation",
+            "Path loss from point‑to‑point prediction model",
+            "Cell site antenna heights and signal coverage cells",
+            "Mobile‑to‑mobile propagation",
+            "Equivalent circuits of antennas",
+            "Gain and pattern relationship",
+            "Sum and difference patterns",
+            "Antennas at cell site",
+            "Unique situations of cell site antennas",
+            "Mobile antennas"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Cochannel interference reduction",
+          "topics": [
+            "Cochannel interference",
+            "Real‑time cochannel interference measurement at mobile radio transceivers",
+            "Design of antenna systems – omni‑directional and directional",
+            "Lowering the antenna height",
+            "Reduction of cochannel interference",
+            "Umbrella‑pattern effect",
+            "Diversity receiver",
+            "Designing a system to serve a predefined area that experiences cochannel interference",
+            "Adjacent channel interference",
+            "Near‑end‑far‑end interference",
+            "Effect on near‑end mobile units",
+            "Cross‑talk",
+            "Effects of coverage and interference by applying power decrease",
+            "Antenna height decrease",
+            "Beam tilting",
+            "Effects of cell site components",
+            "Interference between systems",
+            "UHF TV interference",
+            "Long‑distance interference"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Frequency management and Channel Assignment",
+          "topics": [
+            "Frequency management",
+            "Frequency spectrum utilization",
+            "Setup channels",
+            "Channel assignment",
+            "Fixed channel assignment",
+            "Non‑fixed channel assignment algorithms",
+            "Additional spectrum",
+            "Traffic and channel assignment",
+            "Perception of call blocking from the subscribers",
+            "Value of implementing handoffs",
+            "Initiation of handoff",
+            "Delaying a handoff",
+            "Forced handoff",
+            "Queuing of handoff",
+            "Power‑difference handoff",
+            "Mobile assisted handoff and soft handoff",
+            "Cell‑site handoff and intersystem handoff",
+            "Dropped call rate formula"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Digital Cellular Systems",
+          "topics": [
+            "GSM architecture",
+            "Layer modeling",
+            "Transmission",
+            "GSM channels and channel modes",
+            "Multiple access scheme",
+            "CDMA terms of CDMA systems",
+            "Output power limits and control",
+            "Modulation characteristics",
+            "Call processing",
+            "Hand‑off procedures",
+            "Miscellaneous mobile systems – TDD systems",
+            "Cordless phone",
+            "PDC",
+            "PCN",
+            "PCS",
+            "Non‑cellular systems"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Lee: Cellular and Mobile Telecommunication- Analog & digital systems, TMH.",
+        "Rappaport: Wireless Communications- principles and practice, Pearson.",
+        "Lee: Mobile communications design fundamentals, Wiley India.",
+        "Faher Kamilo: Wireless Digital Communication, PHI Learning.",
+        "Raj Kamal: Mobile Computing, Oxford University Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things (IoT)",
+      "subject_code": "EC-703 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Definition and Characteristics of \\textit{IoT}",
+            "IoT Conceptual Framework",
+            "IoT Architectural View",
+            "Physical Design of \\textit{IoT}",
+            "Logical Design of \\textit{IoT}",
+            "Applications of \\textit{IoT}"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "M2M, SDN, NFV and Cloud Services",
+          "topics": [
+            "Machine-to-Machine (\\textit{M2M}) Communication",
+            "Software Defined Networking (\\textit{SDN}) for \\textit{IoT}",
+            "Network Function Virtualization (\\textit{NFV}) for \\textit{IoT}",
+            "Data Storage in \\textit{IoT}",
+            "Cloud‑Based Services for \\textit{IoT}"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Web Connectivity and Internet Principles",
+          "topics": [
+            "Design Principles for Web Connectivity",
+            "Web Communication Protocols for Connected Devices (\\textit{HTTP}, \\textit{WebSockets})",
+            "Message Communication Protocols (\\textit{MQTT}, \\textit{CoAP}, \\textit{SOAP}, \\textit{REST})",
+            "Internet Connectivity Principles",
+            "IP Addressing in \\textit{IoT}",
+            "Media Access Control (MAC) for \\textit{IoT}"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Sensor and Actuator Technologies",
+          "topics": [
+            "Sensor Technology and Participatory Sensing",
+            "Industrial \\textit{IoT} and Automotive \\textit{IoT}",
+            "Actuators and Sensor Data Communication Protocols",
+            "Radio‑Frequency Identification (\\textit{RFID}) Technology",
+            "Wireless Sensor Network (\\textit{WSN}) Technology"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IoT Design Methodology and Case Studies",
+          "topics": [
+            "IoT Design Methodology: Specification, Requirements, Process, Model, Service, Functional & Operational View",
+            "Privacy and Security Solutions for \\textit{IoT}",
+            "Implementation with Raspberry Pi and Arduino Platforms",
+            "Case Studies: Smart‑City Street‑Light Control and Monitoring"
+          ]
+        }
+      ],
+      "experiments": [
+        "Study and Install IDE of Arduino and explore different Arduino boards",
+        "Write program using Arduino IDE for Blink LED",
+        "Write program for RGB LED using Arduino",
+        "Study the temperature sensor and program it to monitor temperature with Arduino",
+        "Study and implement RFID and NFC using Arduino",
+        "Study and configure Raspberry Pi",
+        "Develop a web application to blink LED using Raspberry Pi",
+        "Study and implement Zigbee protocol using Arduino / Raspberry Pi",
+        "Study and implement MQTT protocol using Arduino",
+        "Study and implement CoAP protocol using Arduino"
+      ],
+      "reference_books": [
+        "Rajkamal, \\textit{Internet of Things}, Tata McGraw‑Hill",
+        "Vijay Madisetti and Arshdeep Bahga, \\textit{Internet of Things (A Hands‑on Approach)}, 1st Edition, Universal Press",
+        "Charles Bell, \\textit{MySQL for the Internet of Things}, Apress",
+        "Francis DaCosta, \\textit{Rethinking the Internet of Things: A Scalable Approach to Connecting Everything}, 1st Edition, Apress",
+        "Hakima Chaouchi, \\textit{The Internet of Things: Connecting Objects}, Wiley",
+        "Donald Norris, \\textit{The Internet of Things: Do‑It‑Yourself at Home Projects for Arduino, Raspberry Pi and BeagleBone Black}, McGraw‑Hill"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Probability Theory and Stochastic processing",
+      "subject_code": "EC-703 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Probability and Random Variable",
+          "topics": [
+            "Probability introduced through Sets and Relative Frequency",
+            "Experiments and Sample Spaces",
+            "Discrete and Continuous Sample Spaces",
+            "Events",
+            "Probability Definitions and Axioms",
+            "Mathematical Model of Experiments",
+            "Probability as a Relative Frequency",
+            "Joint Probability",
+            "Conditional Probability",
+            "Total Probability",
+            "Bayes’ Theorem",
+            "Independent Events",
+            "Definition of a Random Variable",
+            "Conditions for a Function to be a Random Variable",
+            "Discrete, Continuous and Mixed Random Variables"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Distribution & Density Functions and Operation on One Random Variable",
+          "topics": [
+            "Distribution and Density functions and their Properties (Binomial, Poisson, Uniform, Gaussian, Exponential, Rayleigh)",
+            "Conditional Distribution and Conditional Density",
+            "Methods of defining Conditional Event",
+            "Conditional Density Properties",
+            "Expectations – Introduction and Expected Value of a Random Variable",
+            "Function of a Random Variable",
+            "Moments about the Origin",
+            "Central Moments, Variance and Skew",
+            "Chebychev’s Inequality",
+            "Characteristic Function",
+            "Moment Generating Function",
+            "Monotonic Transformations for a Continuous Random Variable",
+            "Non‑monotonic Transformations of Continuous Random Variable",
+            "Transformation of a Discrete Random Variable"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Multiple Random Variables and Operations",
+          "topics": [
+            "Vector Random Variables",
+            "Joint Distribution Function and its Properties",
+            "Marginal Distribution Functions",
+            "Conditional Distribution and Density – Point Conditioning",
+            "Conditional Distribution and Density – Interval Conditioning",
+            "Statistical Independence",
+            "Sum of Two Random Variables",
+            "Sum of Several Random Variables",
+            "Central Limit Theorem (Proof not expected)",
+            "Unequal Distribution, Equal Distributions",
+            "Expected Value of a Function of Random Variables",
+            "Joint Moments about the Origin",
+            "Joint Central Moments",
+            "Joint Characteristic Functions",
+            "Jointly Gaussian Random Variables – Two Random Variables case",
+            "Jointly Gaussian Random Variables – N Random Variables case and Properties",
+            "Transformations of Multiple Random Variables",
+            "Linear Transformations of Gaussian Random Variables"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Stochastic Processes – Temporal Characteristics",
+          "topics": [
+            "Stochastic Process Concept",
+            "Classification of Processes",
+            "Deterministic and Nondeterministic Processes",
+            "Distribution and Density Functions of Processes",
+            "Concept of Stationarity and Statistical Independence",
+            "First‑Order Stationary Processes",
+            "Second‑Order and Wide‑Sense Stationarity",
+            "Nth‑Order and Strict‑Sense Stationarity",
+            "Time Averages and Ergodicity",
+            "Mean‑Ergodic Processes",
+            "Correlation‑Ergodic Processes",
+            "Autocorrelation Function and its Properties",
+            "Cross‑Correlation Function and its Properties",
+            "Covariance and its Properties",
+            "Linear System Response of Mean and Mean‑squared Value",
+            "Gaussian Random Processes",
+            "Poisson Random Process"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Stochastic Processes – Spectral Characteristics",
+          "topics": [
+            "Power Spectrum and its Properties",
+            "Relationship between Power Spectrum and Autocorrelation Function",
+            "Cross‑Power Density Spectrum and its Properties",
+            "Relationship between Cross‑Power Spectrum and Cross‑Correlation Function",
+            "Spectral Characteristics of System Response",
+            "Power Density Spectrum of Response",
+            "Cross‑Power Spectral Density of Input and Output of a Linear System"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Probability, Random Variables & Random Signal Principles - Peyton Z. Peebles, 4Ed., 2001, TMH.",
+        "Probability and Random Processes – Scott Miller, Donald Childers, 2 Ed, Elsevier, 2012.",
+        "Probability, Random Variables and Stochastic Processes – Athanasios Papoulis and S. Unnikrishna Pillai, 4 Ed., TMH.",
+        "Theory of Probability and Stochastic Processes- Pradip Kumar Gosh, University Press",
+        "Probability and Random Processes with Application to Signal Processing – Henry Stark and John W. Woods, 3 Ed., PE",
+        "Probability Methods of Signal and System Analysis - George R. Cooper, Clave D. MC Gillem, 3 Ed., 1999, Oxford.",
+        "Statistical Theory of Communication - S.P. Eugene Xavier, 1997, New Age Publications."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "IOT LAB",
+      "subject_code": "EC-705",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [
+        "Study and Install IDE of Arduino and different types of Arduino.",
+        "Write program using Arduino IDE for Blink LED.",
+        "Write Program for RGB LED using Arduino.",
+        "Study the Temperature sensor and Write Program foe monitor temperature using Arduino.",
+        "Study and Implement RFID, NFC using Arduino.",
+        "Study and Configure Raspberry Pi.",
+        "WAP for LED blink using Raspberry Pi.",
+        "Study and Implement Zigbee Protocol using Arduino / Raspberry Pi.",
+        "Study and implement MQTT protocol using Arduino.",
+        "Study and implement CoAP protocol using Arduino."
+      ],
+      "reference_books": [],
+      "extra": null
+    }
+  ]
+}

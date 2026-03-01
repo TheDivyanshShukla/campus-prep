@@ -22,7 +22,7 @@ class Subject(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='subjects')
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE, related_name='subjects')
     code = models.CharField(max_length=20, help_text="e.g., CS-402")
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=500)
     description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
 
@@ -35,7 +35,7 @@ class Subject(models.Model):
 class Unit(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='units')
     number = models.PositiveSmallIntegerField(help_text="Unit number (usually 1-5)")
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=1000)
     description = models.TextField(blank=True)
     topics = models.JSONField(default=list, blank=True, help_text="List of topics for this unit, synced from syllabus.")
 

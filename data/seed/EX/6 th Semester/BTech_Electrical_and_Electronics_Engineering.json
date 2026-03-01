@@ -1,0 +1,893 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Power System‑II",
+      "subject_code": "EX‑601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "General Problems in Modern Power Systems",
+          "topics": [
+            "Problems associated with modern interconnected power systems",
+            "Deregulation and power‑systems restructuring",
+            "Distributed generation and congestion issues",
+            "Available transfer capacities",
+            "Pricing of energy and transmission services"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "DC Machine‑II and Power‑Flow Studies",
+          "topics": [
+            "DC machine – II",
+            "$\\text{Static power‑flow equations}$ and solution methods",
+            "Gauss–Seidel method for load flow",
+            "Newton‑Raphson method for load flow",
+            "Fast Decoupled Load‑Flow (FDLF) method",
+            "Comparison of Gauss–Seidel, Newton‑Raphson and FDLF methods",
+            "Economic operation of power systems – economic dispatch",
+            "Emission dispatch and line loss minimisation",
+            "Incremental transmission loss (ITL) calculation",
+            "Economic dispatch using Lagrangian multiplier method"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "MW Frequency Control and AGC",
+          "topics": [
+            "Fundamentals of speed governing for MW frequency control",
+            "Modelling of speed‑control mechanisms",
+            "Primary Automatic Load‑Frequency Control (ALFC)",
+            "Closing of ALFC",
+            "Static and dynamic response to primary ALFC",
+            "Speed‑control characteristics",
+            "Fundamentals of Automatic Generation Control (AGC)",
+            "AGC in isolated and interconnected power systems",
+            "Modelling of the tie‑line",
+            "Static and dynamic response of a two‑area system",
+            "Economic dispatch control related to frequency regulation"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Reactive Power & Voltage Control",
+          "topics": [
+            "Reactive power and voltage control fundamentals",
+            "Protection and absorption of reactive power",
+            "Methods of voltage control – static VAR systems",
+            "Types and applications of static VAR devices",
+            "Characteristics of excitation systems",
+            "DC, AC and static excitation systems",
+            "General block‑diagram representation of voltage regulators"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Power System Stability",
+          "topics": [
+            "Power‑system stability – steady‑state, dynamic and transient stability",
+            "Swing equation and equal‑area criterion",
+            "Solution of swing equation using step‑by‑step method, modified Euler’s method and Runge‑Kutta method",
+            "Methods of improving transient stability"
+          ]
+        }
+      ],
+      "experiments": [
+        "Develop a MATLAB program to obtain the Y‑bus matrix for an N‑bus system.",
+        "Perform load‑flow solution for a 3‑bus system using Gauss–Seidel, Newton‑Raphson and FDLF methods up to three iterations.",
+        "Perform load‑flow solution for IEEE 6‑bus and 30‑bus systems in MATLAB using the Newton‑Raphson method.",
+        "Assess transient stability of a single‑machine system.",
+        "Investigate the effect of compensation on the voltage profile of an IEEE 6‑bus system.",
+        "Study any power‑system software tools (e.g., PSCAD, EDSA, Mi‑POWER, ETAP, etc.)."
+      ],
+      "reference_books": [
+        "I.J. Nagrath & D.P. Kothari, *Modern Power System Analysis*, Tata McGraw‑Hill, 2nd edition.",
+        "C.L. Wadhwa, *Electrical Power Systems*, New Age International, 2nd edition, 1998.",
+        "T.J.E. Miller, *Reactive Power Control in Electric Systems*, John Wiley & Sons.",
+        "A. Chakrawarti, *Power System Analysis: Operation and Control*, PHI Learning, 3rd edition.",
+        "O.I. Elgerd, *Electric Energy Systems Theory*, TMH, New Delhi, 2nd edition, 1983.",
+        "P. Kundur, *Power System Stability and Control*, McGraw‑Hill, New York, 1993.",
+        "C.W. Taylor, *Power System Voltage Stability*, McGraw‑Hill, New York, 1993.",
+        "I.J. Nagrath & D.P. Kothari, *Power System Engineering*, Tata McGraw‑Hill, New Delhi, 1994.",
+        "B.M. Weedy, *Electric Power System*, John Wiley & Sons, 3rd edition.",
+        "P.S.R. Murthy, *Power System Operation and Control*, B.S. Publication.",
+        "A.J. Wood & B.F. Wollenberg, *Power Generation, Operation and Control*, John Wiley & Sons, 1984.",
+        "T.K. Nagsarkar & M.S. Sukhiza, *Power System Analysis*, Oxford University Press.",
+        "L.K. Kirchmayer, *Economic Operation of Power Systems*, Wiley Eastern Ltd."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Microprocessor & Micro‑controller",
+      "subject_code": "EX‑602",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Microprocessor 8086",
+          "topics": [
+            "Introduction to 16‑bit 8086 microprocessors",
+            "Architecture of 8086",
+            "Pin configuration and mode",
+            "Timing diagram",
+            "Memory interfacing",
+            "Interrupts",
+            "Instruction set of 8086",
+            "Addressing modes",
+            "Assembler directives and operations",
+            "Assembly and machine language programming",
+            "Subroutine call and return",
+            "Concept of stack",
+            "Stack structure of 8086",
+            "Timings and delays"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Input‑Output Interfacing",
+          "topics": [
+            "Memory‑mapped I/O and peripheral I/O",
+            "Architecture and modes of operation of PPI 8255",
+            "Interfacing PPI 8255 to 16‑bit microprocessor and programming",
+            "Architecture of DMA controller (8257)",
+            "Architecture of programmable interval timer 8254",
+            "USART 8251"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Microcontroller 8051",
+          "topics": [
+            "Intel 8051 family of 8‑bit microcontrollers",
+            "Architecture of 8051",
+            "Pin description",
+            "I/O configuration",
+            "Interrupts, interrupt structure and priorities",
+            "Port structure and operation",
+            "Accessing internal and external memories (different modes of operation)",
+            "Memory organization",
+            "Addressing modes",
+            "Instruction set of 8051",
+            "Programming of 8051"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "8051 Interfacing and Serial Communication",
+          "topics": [
+            "Interfacing 8051 to ADC and DAC",
+            "Stepper motor interfacing with 8051",
+            "Timer/counter functions in 8051",
+            "8051‑based thyristor firing circuit",
+            "8051 connections to RS‑232",
+            "8051 serial communication",
+            "Serial communication modes",
+            "Serial communication programming",
+            "Serial port programming in C"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Microcontroller 8096 and PIC Introduction",
+          "topics": [
+            "Introduction to 16‑bit microcontroller 8096",
+            "Functional block diagram of 8096",
+            "Memory status of 8096",
+            "Complete 8096 instruction set",
+            "Classification of instruction set",
+            "Addressing modes of 8096",
+            "Programming examples using 8096",
+            "Hardware features of 8096",
+            "Parallel ports",
+            "Control and status registers",
+            "Introduction to 16/32‑bit PIC microcontrollers and dsPIC"
+          ]
+        }
+      ],
+      "experiments": [
+        "Programs for 16‑bit arithmetic operations for 8086 (using various addressing modes)",
+        "Program for sorting an array for 8086",
+        "Program for searching for a number or character in a string for 8086",
+        "Program for string manipulations for 8086",
+        "Program for digital clock design using 8086",
+        "Interfacing ADC and DAC to 8086",
+        "Parallel communication between two microprocessors using 8255",
+        "Serial communication between two microprocessor kits using 8251",
+        "Interfacing to 8086 and programming to control stepper motor",
+        "Programming using arithmetic, logical and bit manipulation instructions of 8051",
+        "Program and verify Timer/Counter in 8051",
+        "Program and verify Interrupt handling in 8051",
+        "UART operation in 8051",
+        "Communication between 8051 kit and PC",
+        "Interfacing LCD to 8051",
+        "Interfacing matrix/keyboard to 8051",
+        "Data transfer from peripheral to memory through DMA controller 8237/8257"
+      ],
+      "reference_books": [
+        "Hall Douglas V., Microprocessor and Interfacing, Revised second edition 2006, Macmillan, McGraw Hill.",
+        "A.K. Ray & K.M. Bhurchandi, Advanced Microprocessors and Peripherals – Architecture, Programming and Interfacing, Tata McGraw‑Hill, 2009 TMH reprint.",
+        "Kenneth J. Ayala, The 8086 Microprocessor: Programming and Interfacing the PC, Indian edition, CENGAGE Learning.",
+        "Muhammad Ali Mazidi and Janice Gillespie Mazidi, The 8051 Microcontroller and Embedded Systems, Pearson Education, 2005.",
+        "McKinlay, The 8051 Microcontroller and Embedded Systems – Using Assembly and C, PHI, 2006 / Pearson, 2006.",
+        "Tim Wilmshurst, Designing Embedded Systems with PIC Microcontrollers – Principles and Applications, 2nd ed., 2011, BSP Books Pvt. Ltd."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Utilization of Electrical Engineering",
+      "subject_code": "EX‑603 (A)",
+      "subject_type": "Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Illumination Engineering",
+          "topics": [
+            "Nature of light",
+            "Units",
+            "Sensitivity of the eye",
+            "Luminous efficiency",
+            "Glare",
+            "Production of light",
+            "Incandescent lamps",
+            "Arc lamps",
+            "Gas discharge lamps – fluorescent lamps polar curves",
+            "Effect of voltage variation on efficiency and life of lamps",
+            "Distribution and control of light",
+            "Lighting calculations",
+            "Solid angle",
+            "Inverse square and cosine laws",
+            "Methods of calculations",
+            "Factory lighting",
+            "Flood lighting and street lighting",
+            "Direct, diffused and mixed reflection & transmission factor",
+            "Refractors",
+            "Light fittings"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Heating, Welding And Electrolysis",
+          "topics": [
+            "Electrical heating – advantages",
+            "Methods and applications of electrical heating",
+            "Resistance heating",
+            "Design of heating elements",
+            "Efficiency and losses control in heating",
+            "Induction heating – core type furnaces",
+            "Induction heating – core‑less furnaces",
+            "Induction heating – high frequency eddy current heating",
+            "Dielectric heating – principle and special applications",
+            "Arc furnaces – direct arc furnaces",
+            "Arc furnaces – indirect arc furnaces",
+            "Electrodes and design of heating elements for arc furnaces",
+            "Power supply and control for heating processes",
+            "Different methods of electrical welding",
+            "Resistance welding",
+            "Arc welding",
+            "Energy‑storage welding",
+            "Laser welding",
+            "Electron‑beam welding",
+            "Electrical equipment for welding",
+            "Arc furnace transformers and welding transformers",
+            "Review of electrolytic principles",
+            "Laws of electrolysis",
+            "Electroplating",
+            "Anodizing‑electro‑cleaning",
+            "Extraction of refinery metals",
+            "Power supply for electrolytic processes",
+            "Current and energy efficiency"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Traction",
+          "topics": [
+            "Special features of traction motors",
+            "Selection of traction motor",
+            "Different systems of electric traction and their advantages and disadvantages",
+            "Mechanics of train movement – simplified speed‑time curves for different services",
+            "Average and schedule speed",
+            "Tractive effort",
+            "Specific energy consumption",
+            "Factors affecting specific energy consumption",
+            "Acceleration and braking retardation",
+            "Adhesive weight",
+            "Coefficient of adhesion"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Electric Drives",
+          "topics": [
+            "Individual and collective drives – electrical braking",
+            "Plugging",
+            "Rheostatic and regenerative braking",
+            "Load equalization",
+            "Use of fly‑wheel criteria for selection of motors for various industrial drives",
+            "Calculation of electrical loads for refrigeration and air‑conditioning",
+            "Intermittent loading",
+            "Temperature rise curve"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Introduction to Electric and Hybrid Vehicles",
+          "topics": [
+            "Configuration and performance of electric vehicles",
+            "Traction motor characteristics",
+            "Tractive effort",
+            "Transmission requirement",
+            "Vehicle performance",
+            "Energy consumption"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Open Shaw, Taylor. Utilization of electrical energy., Orient Longmans, 1962.",
+        "H. Pratap, Art and Science of Utilization of Electrical Energy.",
+        "Gupta, J.B., Utilization of Elect. Energy, Katariya and sons, New Delhi.",
+        "Garg, G.C., Utilization of Elect. Power and Elect. Traction.",
+        "N V Suryanarayan, Utilization of Elect. Power including Electric Drives and Elect. Traction, New Age International.",
+        "Hancok N N, Electric Power Utilisation, Wheeler Pub.",
+        "Mehrdad, Ehsani, Yimin Gao, Sabastien E. Gay, Ali Emadi, “Modern electric, hybrid electric and fuel cell vehicles”, CRC Press."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Energy Conservation & Management",
+      "subject_code": "EX-603 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "General energy problem",
+          "topics": [
+            "Energy use patterns and scope for conservation",
+            "Energy audit: Energy monitoring, Energy accounting and analysis, Auditing and targeting",
+            "Energy conservation policy",
+            "Energy management & audit",
+            "Types of energy audit",
+            "Energy management (audit), qualities and function of energy managers",
+            "Language of an energy manager",
+            "Questionnaire, Check list for top management",
+            "Loss of energy in material flow",
+            "Energy performance, maximizing system efficiency, optimizing input energy requirements",
+            "Energy auditing instruments",
+            "Material load energy balance diagram"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Thermodynamics of Energy Conservation",
+          "topics": [
+            "Basic principle",
+            "Irreversibility and second law efficiency analysis of systems",
+            "Primary energy sources, optimum use of prime-movers",
+            "Energy efficient housekeeping",
+            "Energy recovery in thermal systems",
+            "Waste heat recovery techniques",
+            "Thermal insulation",
+            "Thermal energy audit in heating, ventilation and air conditioning",
+            "Maintenance and energy audit – friction, lubrication and tribological innovations",
+            "Predictive and preventive maintenance"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Load curve analysis & load management",
+          "topics": [
+            "Load curve analysis & load management (DSM)",
+            "Energy storage for power systems (mechanical, thermal, electrical & magnetic)",
+            "Restructuring of electric tariff from energy conservation considerations",
+            "Economic analysis, depreciation method, time value of money",
+            "Evaluation method of projects, replacement analysis, special problems, inflation risk analysis",
+            "Payback period, energy economics, cost‑benefit risk analysis"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Energy efficient electric drives",
+          "topics": [
+            "Energy efficient electric drives",
+            "Energy efficient motors vs. VSD (variable speed drive)",
+            "Power factor improvement in power system",
+            "Energy conservation in transportation systems, especially electric vehicles",
+            "Energy flow networks, simulation & modeling, formulation of objectives & constraints, alternative options, matrix chart"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Energy conservation task before industry",
+          "topics": [
+            "Energy conservation equipment, co‑generation",
+            "Energy conservation processes in industry (sugar, textiles, cement, etc.)",
+            "Electrical energy conservation in buildings, heating and lighting",
+            "Domestic gadgets"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Energy Management – W.R. Murphy & G. Mckey Butler worths.",
+        "Energy Management Head Book – W.C. Turner, John Wiley.",
+        "Energy Management Principles – Craig B. Smith, Pergamon Press.",
+        "Energy Conservation – Paul O. Callagan, Pergamon Press.",
+        "Design & Management of Energy Conservation – Callaghan.",
+        "Elect, Energy Utilization & Conservation – Dr. S.C. Tripathi."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electromagnetic Waves",
+      "subject_code": "EX‑603 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Transmission Lines",
+          "topics": [
+            "Introduction",
+            "Concept of distributed elements",
+            "Equations of voltage and current",
+            "Standing waves and impedance transformation",
+            "Lossless and low‑loss transmission lines",
+            "Power transfer on a transmission line",
+            "Analysis of transmission line in terms of admittances",
+            "Transmission line calculations with the help of Smith chart",
+            "Applications of transmission line",
+            "Impedance matching using transmission lines"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Maxwell’s Equations",
+          "topics": [
+            "Basic quantities of Electromagnetics",
+            "Basic laws of Electromagnetics: Gauss’s law",
+            "Ampere’s Circuital law",
+            "Faraday’s law of Electromagnetic induction",
+            "Maxwell’s equations",
+            "Surface charge and surface current",
+            "Boundary conditions at media interface"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Uniform Plane Wave",
+          "topics": [
+            "Homogeneous unbound medium",
+            "Wave equation for time harmonic fields",
+            "Solution of the wave equation",
+            "Uniform plane wave",
+            "Wave polarization",
+            "Wave propagation in conducting medium",
+            "Phase velocity of a wave",
+            "Power flow and Poynting vector"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Plane Waves at Media Interface",
+          "topics": [
+            "Plane wave in arbitrary direction",
+            "Plane wave at dielectric interface",
+            "Reflection and refraction of waves at dielectric interface",
+            "Total internal reflection",
+            "Wave polarization at media interface",
+            "Brewster angle",
+            "Fields and power flow at media interface",
+            "Lossy media interface",
+            "Reflection from conducting boundary"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Waveguides",
+          "topics": [
+            "Parallel plane waveguide: Transverse Electric (TE) mode",
+            "Transverse Magnetic (TM) mode",
+            "Cut‑off frequency",
+            "Phase velocity and dispersion",
+            "Transverse Electromagnetic (TEM) mode",
+            "Analysis of waveguide – general approach",
+            "Rectangular waveguides"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Antennas",
+          "topics": [
+            "Radiation parameters of antenna",
+            "Potential functions",
+            "Solution for potential functions",
+            "Radiations from Hertz dipole",
+            "Near field",
+            "Far field",
+            "Total power radiated by a dipole",
+            "Radiation resistance and radiation pattern of Hertz dipole",
+            "Hertz dipole in receiving mode"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "R. K. Shevgaonkar, “Electromagnetic Waves”, Tata McGraw Hill, 2005.",
+        "D. K. Cheng, “Field and Wave Electromagnetics”, Addison‑Wesley, 1989.",
+        "M. N. O. Sadiku, “Elements of Electromagnetics”, Oxford University Press, 2007.",
+        "C. A. Balanis, “Advanced Engineering Electromagnetics”, John Wiley & Sons, 2012.",
+        "C. A. Balanis, “Antenna Theory: Analysis and Design”, John Wiley & Sons, 2005."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electronic Instrumentation",
+      "subject_code": "EX-604 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to CRO",
+          "topics": [
+            "Different parts of CRO",
+            "Block diagram of CRO",
+            "Electrostatic focusing",
+            "Electrostatic deflection",
+            "Post‑deflection acceleration",
+            "Screen for CRTs",
+            "Graticule",
+            "Vertical and horizontal deflection system",
+            "Time‑base circuit",
+            "Oscilloscope probes and transducers",
+            "Attenuators",
+            "Applications of CROs",
+            "Lissajous patterns",
+            "Special purpose CROs – multi‑input",
+            "Dual‑trace CRO",
+            "Dual‑beam CRO",
+            "Sampling oscilloscope",
+            "Storage oscilloscope (analog & digital)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "A.C. Bridge Measurement",
+          "topics": [
+            "Sources and detectors for bridge circuits",
+            "Use of bridges for measurement of inductance, capacitance & Q factor",
+            "Maxwell's bridge",
+            "Maxwell's inductance‑capacitance bridge",
+            "Hay's bridge",
+            "Anderson's bridge",
+            "Owen's bridge",
+            "De‑Sauty's bridge",
+            "Schering bridge",
+            "High‑voltage Schering bridge",
+            "Measurement of relative permittivity",
+            "Heaviside‑Campbell bridge",
+            "Wein's bridge",
+            "Universal bridge",
+            "Sources of errors in bridge circuits",
+            "Wagner's earthing device",
+            "Q‑meter and its applications and measurement methods"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Transducers",
+          "topics": [
+            "Definition and classification of transducers",
+            "Mechanical devices as primary detectors",
+            "Characteristics and selection criteria for transducers",
+            "Resistive, inductive and capacitive transducers",
+            "Strain gauge and gauge factor",
+            "Thermistor",
+            "Thermocouples",
+            "Linear Variable Differential Transformer (LVDT)",
+            "Rotary Variable Differential Transformer (RVDT)",
+            "Synchros",
+            "Piezo‑electric transducers",
+            "Magneto‑elastic and magnetostrictive Hall‑effect transducers",
+            "Optoelectronic transducers – photovoltaic cells, photoconductive cells, photodiodes, photo‑conductive cells, phototransistors, photo‑optic transducers",
+            "Introduction to analog and digital data‑acquisition systems",
+            "Instrumentation systems used",
+            "Interfacing transducers to electronic control and measuring systems",
+            "Multiplexing – D/A multiplexing, A/D multiplexing",
+            "Special encoders",
+            "Digital control description"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Signal Generators",
+          "topics": [
+            "Fixed and variable‑frequency AF oscillators",
+            "Sine‑wave generators",
+            "Standard signal generator",
+            "AF sine and square‑wave generator",
+            "Function generator",
+            "Square‑ and pulse‑generator",
+            "Random‑noise generator",
+            "Sweep generator",
+            "TV sweep generator",
+            "Marker generator",
+            "Sweep‑marker generator",
+            "Wobblyscope",
+            "Video‑pattern generator (Vectroscope)",
+            "Beat‑frequency oscillator",
+            "Wave analyser – basic wave analyser",
+            "Frequency‑selective wave analyser",
+            "Heterodyne wave analyser",
+            "Harmonic‑distortion analyser",
+            "Spectrum analyser – digital Fourier analyser"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Digital Instruments",
+          "topics": [
+            "Advantages of digital instruments over analog instruments",
+            "Resolution and sensitivity of digital meters",
+            "Digital voltmeter – ramp type",
+            "Digital voltmeter – dual‑slope integration type",
+            "Digital voltmeter – integrating type",
+            "Digital voltmeter – successive‑approximation type",
+            "Continuous‑balance DVM or servo‑balancing potentiometer type DVM",
+            "Compression of electronic & digital voltmeter",
+            "Digital multimeter",
+            "Digital frequency meter",
+            "Time‑period measurement",
+            "High‑frequency measurement",
+            "Electronic counter",
+            "Digital tachometer",
+            "Digital pH meter",
+            "Digital phase meter",
+            "Digital capacitance meter",
+            "Digital display systems and indicators – CRT, LED, LCD, Nixie tubes, electroluminescent displays, incandescent displays, electrophoretic image displays, liquid‑vapour displays, dot‑matrix displays",
+            "Analog recorders",
+            "X‑Y recorders",
+            "Instruments used in computer‑controlled instrumentation – RS‑232C, IEEE‑488 (GPIB) interface"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Albert D. Helfrick, W.D. Cooper, Modern Electronic Instrumentation and Measurement Techniques, PHI.",
+        "Kalsi H.S., Electronic Instrumentation, TMH.",
+        "A.K. Sawhney, Electrical and Electronic Measurements and Instrumentation, Dhanpat Rai and Co.",
+        "E.W. Golding, Electrical Measurement and Measuring Instruments, Sir Isaac Pitman and Sons, Ltd., London 1940.",
+        "C.S. Rangan, G.R. Sarma, V.S.V. Mani, Instrumentation Devices and Systems, Tata McGraw‑Hill Publishing Company Ltd.",
+        "B.C. Nakra, K.K. Choudhry, Instrumentation, Measurement and Analysis, Tata McGraw‑Hill Publishing Company Ltd.",
+        "Morris A.S., Principles of Measurement & Instrumentation, PHI."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet of Things (IOT)",
+      "subject_code": "EX-604 (B)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Definition",
+            "Characteristics of IOT",
+            "IOT Conceptual framework",
+            "IOT Architectural view",
+            "Physical design of IOT",
+            "Logical design of IOT",
+            "Application of IOT"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Machine‑to‑Machine and Cloud Technologies",
+          "topics": [
+            "Machine‑to‑Machine (M2M)",
+            "Software Defined Networking (SDN) and Network Function Virtualization (NFV) for IOT",
+            "Data storage in IOT",
+            "IOT Cloud Based Services"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Design Principles for Web Connectivity",
+          "topics": [
+            "Web Communication Protocols for connected devices",
+            "Message Communication Protocols for connected devices",
+            "SOAP",
+            "REST",
+            "HTTP, RESTful services and Web Sockets",
+            "Internet Connectivity Principles",
+            "Internet based communication",
+            "IP addressing in IOT",
+            "Media Access Control"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Sensor Technology and Applications",
+          "topics": [
+            "Sensor Technology",
+            "Participatory Sensing",
+            "Industrial IOT and Automotive IOT",
+            "Actuator",
+            "Sensor data Communication Protocols",
+            "Radio Frequency Identification (RFID) Technology",
+            "Wireless Sensor Network Technology"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "IOT Design Methodology and Case Studies",
+          "topics": [
+            "IOT Design methodology: Specification‑Requirement, process, model, service, functional & operational view",
+            "IOT Privacy and security solutions",
+            "Raspberry Pi & Arduino devices",
+            "IOT Case studies: smart city streetlights control & monitoring"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Rajkamal, “Internet of Things”, Tata McGraw Hill publication",
+        "Vijay Madisetti and Arshdeep Bahga, “Internet of things (A‑Hand‑on‑Approach)”, 1st Edition, Universal Press",
+        "Hakima Chaouchi, “The Internet of Things: Connecting Objects”, Wiley publication",
+        "Charless Bell, “MySQL for the Internet of Things”, Apress publications",
+        "Francis dacosta, “Rethinking the Internet of Things: A scalable Approach to connecting everything”, 1st edition, Apress publications 2013",
+        "Donald Norris, “The Internet of Things: Do‑It‑Yourself at Home Projects for Arduino, Raspberry Pi and BeagleBone Black”, McGraw Hill publication"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Analog & Digital Communication",
+      "subject_code": "EX-604 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Signal Representation and System Response",
+          "topics": [
+            "Time domain and frequency domain representation of signal",
+            "Fourier Transform and its properties",
+            "Transform of gate and periodic gate",
+            "Impulse, periodic impulse, sine and cosine wave",
+            "Concept of energy density and power density (Parseval’s theorem)",
+            "Power density of periodic gate and impulse function",
+            "Impulse response of a system",
+            "Convolutions and convolution with impulse function",
+            "Causal and non‑causal system impulse response of ideal low‑pass filter",
+            "Correlation and autocorrelation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Modulation Techniques",
+          "topics": [
+            "Base‑band signal and need of modulation",
+            "Introduction to modulation techniques",
+            "Amplitude modulation (AM) – equation and frequency‑domain representation",
+            "Bandwidth and power distribution of AM signals",
+            "AM suppressed‑carrier waveform – equation and frequency‑domain representation",
+            "Generation (balance/chopper modulator) and synchronous detection technique",
+            "Errors in synchronous detection",
+            "Introduction to SSB and VSB",
+            "Angle modulation – frequency and phase modulation equations, phase and frequency deviations",
+            "Modulation index and frequency spectrum",
+            "Narrowband FM (NBFM) and wideband FM (WBFM)",
+            "Bandwidth comparison of modulation techniques"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Sampling and Digital Coding",
+          "topics": [
+            "Sampling of signal",
+            "Sampling theorem for low‑pass and band‑pass signals",
+            "Pulse amplitude modulation (PAM)",
+            "Time‑division multiplexing (TDM)",
+            "Channel bandwidth for PAM‑TDM signals",
+            "Types of sampling: instantaneous, natural and flat‑top",
+            "Aperture effect",
+            "Pulse‑position and pulse‑duration modulations",
+            "Digital signal quantization and quantization error",
+            "Pulse code modulation (PCM) and signal‑to‑noise ratio",
+            "Companding",
+            "Data rate, baud rate and bit rate",
+            "Multiplexed PCM signal",
+            "Differential PCM (DPCM)",
+            "Delta modulation (DM) and adaptive delta modulation (ADM)",
+            "Comparison of various digital coding systems"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Digital Modulation Techniques",
+          "topics": [
+            "Generation, detection, equations and bandwidth of amplitude shift keying (ASK)",
+            "Binary phase shift keying (BPSK)",
+            "Differential phase shift keying (DPSK)",
+            "Offset and non‑offset quadrature phase shift keying (QPSK)",
+            "M‑ary PSK",
+            "Binary frequency shift keying (BFSK)",
+            "M‑ary FSK",
+            "Quadrature amplitude modulation (QAM)",
+            "Modem concepts",
+            "Introduction to probability of error"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Information Theory and Coding",
+          "topics": [
+            "Information theory – information, entropies (marginal and conditional)",
+            "Model of a communication system",
+            "Mathematical representation of source, channel and receiver characteristics",
+            "Mutual information and channel capacity",
+            "Efficiency of noise‑free channel",
+            "Binary symmetric channel (BSC) and binary erasure channel (BEC)",
+            "Repetition codes and NM‑symmetric binary channel",
+            "Shannon theorem and Shannon‑Hartley theorem (S/N‑BW trade‑off)",
+            "Source encoding – Shannon, Fano and Huffman coding methods and their efficiency",
+            "Error‑control coding – minimum Hamming distance, linear block codes, cyclic codes, convolutional codes",
+            "Line encoding – Manchester coding, RZ, NRZ coding"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Singh & Sapre, Communication System, TMH",
+        "Taub & Shilling, Communication System, TMH",
+        "Hsu; Analog and Digital Communication (Schaum); TMH",
+        "B.P. Lathi, Modern Digital and Analog Communication System",
+        "Simon Haykin, Communication System. John Wiley",
+        "Wayne Tomasi, Electronic Communication System",
+        "Martin S. Roden, Analog & Digital Communication System; Discovery Press",
+        "Frank R. Dungan, Electronic Communication System, Thomson/Vikas"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Electronic Instrumentation Lab",
+      "subject_code": "EX-605",
+      "subject_type": "Lab",
+      "modules": [],
+      "experiments": [
+        "Measurement of inductance of a coil using Anderson Bridge.",
+        "Measurement of capacitance of a capacitor using Schering bridge.",
+        "LVDT and capacitance transducers characteristics and calibration.",
+        "Resistance strain gauge- Strain Measurement and calibration.",
+        "Measurement of R,L,C & Q using LCR-Q meter.",
+        "Study & measurement of frequency using Lissajous patterns.",
+        "Measurement of pressure using pressure sensor.",
+        "Study of Piezo-electric Transducer and Measurement of impact using Piezo-electric Transducer.",
+        "Measurement of Displacement using LVDT.",
+        "Measurement of speed of a Motor using photoelectric transducer.",
+        "Study & Measurement using ph meter.",
+        "Temperature measurement & Control using thermo couple & using thermistor."
+      ],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Simulation Lab",
+      "subject_code": "EX-606",
+      "subject_type": "Practical",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": null
+    },
+    {
+      "subject_name": "Minor Project‑II",
+      "subject_code": "EX‑608",
+      "subject_type": "Minor Project",
+      "modules": [],
+      "experiments": [],
+      "reference_books": [],
+      "extra": "The Minor Project Work provides students an opportunity to do something on their own and under the supervision of a guide. Each student shall work on an approved project, which may involve fabrication, design or investigation of a technical problem that may take design, experimental or analytical character or combine element of these areas. The project work involves sufficient work so that students get acquainted with different aspects of manufacture, design or analysis. The students also have to keep in mind that in final semester they would be required to implement whatever has been planned in the Minor Project in this semester. It is possible that a work, which involves greater efforts and time may be taken up at this stage and finally completed in final semester, but partial completion report should be submitted in this semester and also evaluated by an external examiner."
+    }
+  ]
+}

@@ -1,0 +1,774 @@
+{
+  "subjects": [
+    {
+      "subject_name": "Cyber Crime Investigation & Digital Forensic",
+      "subject_code": "CY601",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Cyber Crime",
+          "topics": [
+            "Definition, nature and extent of cyber crimes in India and other countries",
+            "Classification of cyber crimes",
+            "Differences between conventional crimes and cyber crimes",
+            "Trends in cyber crimes across the world"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Forms of Cyber Crimes",
+          "topics": [
+            "Cyber bullying, hacking, cracking, DoS attacks",
+            "Viruses, worms, logical bombs, time bombs, email bombing",
+            "Data diddling, salami attacks, phishing, steganography, cyberstalking, spoofing, cyber pornography, defamation",
+            "Computer vandalism, crimes through social networking sites, malware, social engineering",
+            "Credit‑card frauds, financial frauds, telecom frauds",
+            "Cloud‑based frauds, e‑commerce frauds and other emerging forms"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Profile of Cyber Criminals",
+          "topics": [
+            "Cyber crime psychology and related theoretical frameworks",
+            "Learning, motivation, personality and intelligence theories of cyber criminals",
+            "Criminal profiling techniques",
+            "Economic impact of cyber crimes on individuals, corporations, governments and nations",
+            "Psychological and sociological impact of cyber crimes"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Modus Operandi of Various Cyber Crimes and Frauds",
+          "topics": [
+            "Fraud triangle and fraud detection techniques with counter‑measures",
+            "Intrusion analysis as a core skill set",
+            "Methods for performing intrusion analysis and the intrusion kill chain",
+            "Passive discovery of activity in historical data and logs",
+            "Detecting future threat actions and capabilities",
+            "Denial of access to threats, delaying and degrading adversary tactics and malware",
+            "Identifying intrusion patterns and key indicators"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Thomus J. Halt, Adam M. Bossler and Kathryn C. Seigfried‑Spellar, *Cyber Crime Investigation & Digital Forensic: An Introduction*, 2nd edition."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Software Engineering",
+      "subject_code": "CY602",
+      "subject_type": "Theory & Practical",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "The Software Product and Software Process",
+          "topics": [
+            "Software Product and Process Characteristics",
+            "Software Process Models: Linear Sequential Model, Prototyping Model, RAD Model, Evolutionary Process Models such as Incremental Model, Spiral Model, Component Assembly Model, RUP and Agile processes",
+            "Software Process customization and improvement",
+            "Capability Maturity Model (CMM)",
+            "Product and Process Metrics"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Requirement Elicitation, Analysis, and Specification",
+          "topics": [
+            "Functional and Non‑functional requirements",
+            "Requirement sources and elicitation techniques",
+            "Analysis modeling for function‑oriented and object‑oriented software development",
+            "Use‑case modeling",
+            "System and software requirement specifications",
+            "Requirement validation and traceability"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Software Design",
+          "topics": [
+            "Software design process",
+            "Design concepts and principles",
+            "Software modeling and UML",
+            "Architectural design",
+            "Architectural views and styles",
+            "User interface design",
+            "Function‑oriented design",
+            "SA/SD component‑based design",
+            "Design metrics"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Software Analysis and Testing",
+          "topics": [
+            "Software static and dynamic analysis",
+            "Code inspections",
+            "Software testing fundamentals",
+            "Software test process",
+            "Testing levels",
+            "Test criteria",
+            "Test case design",
+            "Test oracles",
+            "Test techniques",
+            "Black‑box testing",
+            "White‑box unit testing and unit‑testing frameworks",
+            "Integration testing",
+            "System testing and other specialized testing",
+            "Test plan",
+            "Test metrics",
+            "Testing tools",
+            "Introduction to object‑oriented analysis, design and comparison with structured software engineering"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Software Maintenance & Software Project Measurement",
+          "topics": [
+            "Need and types of maintenance",
+            "Software configuration management (SCM)",
+            "Software change management",
+            "Version control",
+            "Change control and reporting",
+            "Program comprehension techniques",
+            "Reengineering, reverse engineering and tool support",
+            "Project management concepts",
+            "Feasibility analysis",
+            "Project and process planning",
+            "Resources allocation",
+            "Software effort, schedule and cost estimations",
+            "Project scheduling and tracking",
+            "Risk assessment and mitigation",
+            "Software quality assurance (SQA)",
+            "Project plan",
+            "Project metrics"
+          ]
+        }
+      ],
+      "experiments": [
+        "Lab work: running case‑study project covering all phases of the software development life‑cycle – requirements modeling, architecture and detailed design, coding (using Rational Rose, Eclipse, NetBeans or Visual Studio), and testing."
+      ],
+      "reference_books": [
+        "Pankaj Jalote, “An Integrated Approach to Software Engineering”, Narosa Publishers, 2005.",
+        "Rajib Mall, “Fundamentals of Software Engineering”, Second Edition, PHI Learning.",
+        "R. S. Pressman, “Software Engineering: A Practitioner’s Approach”, Sixth Edition, McGraw‑Hill, 2006.",
+        "Sommerville, “Software Engineering”, Pearson Education.",
+        "Richard H. Thayer, “Software Engineering & Project Management”, Wiley India.",
+        "Waman S. Jawadekar, “Software Engineering”, TMH.",
+        "Bob Hughes, M. Cotterell, Rajib Mall, “Software Project Management”, McGraw‑Hill."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Internet & Web Technology",
+      "subject_code": "CY603 (A)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction",
+          "topics": [
+            "Concept of WWW and Internet",
+            "HTTP protocol – request and response",
+            "Web browsers and web servers",
+            "Features of Web 2.0",
+            "Effective web design concepts",
+            "Web‑design issues: browser compatibility, bandwidth, cache",
+            "Display resolution considerations",
+            "Look and feel of a website",
+            "Page layout and linking techniques",
+            "User‑centric design principles",
+            "Sitemap creation and planning",
+            "Publishing a website",
+            "Designing effective navigation"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "HTML",
+          "topics": [
+            "Basics of HTML",
+            "Formatting and fonts in HTML",
+            "Commenting code",
+            "Use of color",
+            "Hyperlinks",
+            "Lists (ordered, unordered, definition)",
+            "Tables",
+            "Embedding images",
+            "HTML forms",
+            "XHTML basics",
+            "Meta tags",
+            "Character entities",
+            "Frames and frame sets",
+            "Browser architecture and website structure",
+            "Overview and features of HTML5"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Style Sheets, JavaScript and DHTML",
+          "topics": [
+            "Need for CSS",
+            "Introduction to CSS",
+            "Basic CSS syntax and structure",
+            "Applying CSS background images",
+            "CSS colors and properties",
+            "Manipulating text with CSS",
+            "Using fonts in CSS",
+            "Borders and box model",
+            "Margins and padding",
+            "Positioning elements using CSS",
+            "CSS2 features",
+            "Overview and features of CSS3",
+            "Client‑side scripting with JavaScript",
+            "JavaScript variables, functions, conditions, loops and repetition",
+            "Pop‑up boxes in JavaScript",
+            "Advanced JavaScript: objects and custom objects",
+            "Document Object Model (DOM) and browser environments",
+            "DOM manipulation",
+            "Form validation with JavaScript",
+            "DHTML – combining HTML, CSS and JavaScript",
+            "Event handling and button interactions"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "XML and PHP",
+          "topics": [
+            "Introduction to XML",
+            "Uses of XML",
+            "Simple XML structures",
+            "Key components of XML",
+            "Document Type Definitions (DTD) and XML Schemas",
+            "Using XML with applications",
+            "Transforming XML with XSL and XSLT",
+            "Introduction to PHP and basic syntax",
+            "Decision structures and looping in PHP",
+            "Embedding PHP within HTML",
+            "PHP arrays and functions",
+            "Browser control and detection in PHP",
+            "String handling in PHP",
+            "Form processing with PHP",
+            "File handling in PHP",
+            "Advanced PHP features: cookies and sessions",
+            "Object‑oriented programming with PHP"
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "PHP and MySQL",
+          "topics": [
+            "Basic PHP commands",
+            "Connecting to MySQL server from PHP",
+            "Creating a MySQL database",
+            "Selecting a database",
+            "Listing databases and table names",
+            "Creating tables",
+            "Inserting data into tables",
+            "Altering tables",
+            "Executing queries",
+            "Deleting databases, tables and data",
+            "Using phpMyAdmin",
+            "Common database bugs and troubleshooting"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Developing Web Applications, Ralph Moseley and M. T. Savaliya, Wiley‑India",
+        "Web Technologies, Black Book, Dreamtech Press",
+        "HTML 5, Black Book, Dreamtech Press",
+        "Web Design, Joel Sklar, Cengage Learning",
+        "Developing Web Applications in PHP and AJAX, Harwani, McGraw‑Hill",
+        "Internet and World Wide Web How to program, P. J. Deitel & H. M. Deitel, Pearson"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Applied Cryptography",
+      "subject_code": "CY603 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "History and Classical Cryptography",
+          "topics": [
+            "History of cryptography",
+            "Background in probability and algorithms",
+            "Classical cryptography: shift cipher, monoalphabetic substitution cipher, polyalphabetic substitution cipher",
+            "Encryption with perfect secrecy and one‑time pad",
+            "Implementation aspects: shared secret randomness vs perfect secrecy",
+            "Modern cryptography principles: one‑way functions, trapdoor functions, hard‑core bits",
+            "Construction of a public‑key cryptosystem based on general cryptographic primitives",
+            "Implementation aspects: computational efficiency vs hardness"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Number Theory, Reductions and Symmetric Encryption",
+          "topics": [
+            "Algorithmic number theory and cryptographic assumptions",
+            "Reductions and proofs by reductions",
+            "Number‑theoretic candidates for cryptographic primitives (e.g., factoring)",
+            "Public‑key cryptosystems derived from number‑theory problems",
+            "Brief discussion of quantum computing",
+            "Large integer arithmetic for implemented public‑key cryptosystems",
+            "Randomness and pseudo‑randomness: PRGs, PRFs, permutations",
+            "Symmetric encryption: security notions and schemes based on pseudo‑randomness primitives",
+            "Security proofs for symmetric encryption schemes",
+            "Implementation aspects: generating and testing randomness"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Block Ciphers, Modes, Cryptanalysis and Message Authentication",
+          "topics": [
+            "Block ciphers: DES, Triple‑DES, AES",
+            "Substitution‑permutation networks and Feistel networks",
+            "Modes of operation: ECB, CBC, OFB, Counter, GCM",
+            "Cryptanalysis attacks: exhaustive, linear, differential, meet‑in‑the‑middle",
+            "Key length considerations and security‑performance trade‑offs",
+            "Message authentication: CBC‑MAC, HMAC, collision‑resistant hashes (MD5, SHA‑1, SHA‑2, SHA‑3)",
+            "CCA security for symmetric encryption",
+            "Combined confidentiality and integrity schemes",
+            "Application case study: password‑based secure computer access",
+            "Implementation aspects: security‑performance‑features trade‑offs"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Asymmetric Encryption and Advanced Primitives",
+          "topics": [
+            "Number‑theoretic primitives: discrete logarithms, elliptic curves",
+            "Asymmetric encryption constructions: RSA variants, El Gamal, hybrid encryption",
+            "Security‑performance‑features trade‑offs for asymmetric schemes",
+            "Malleable and homomorphic encryption: Paillier, brief overview of Gentry’s scheme",
+            "Advanced schemes achieving various security notions (e.g., Cramer‑Shoup)",
+            "Identity‑based encryption",
+            "Implementation aspects: security‑performance‑trust trade‑offs"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "J. Katz and Y. Lindell, Introduction to Modern Cryptography: Principles and Protocols, Chapman & Hall/CRC Press, 2nd edition",
+        "A. Menezes, P. Van Oorschot, S. Vanstone, Handbook of Applied Cryptography, CRC Press, August 2001"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Autometa & Compiler design",
+      "subject_code": "CY603 (C)",
+      "subject_type": "Departmental Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Introduction to compiling & Lexical Analysis",
+          "topics": [
+            "Introduction to compiling & Lexical Analysis",
+            "Introduction of Compiler",
+            "Major data structures in compiler",
+            "Types of Compiler",
+            "Front‑end and Back‑end of compiler",
+            "Compiler structure: analysis‑synthesis model of compilation",
+            "Various phases of a compiler",
+            "Lexical analysis: input buffering",
+            "Specification & recognition of tokens",
+            "Design of a lexical analyzer generator",
+            "LEX"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Syntax Analysis & Syntax Directed Translation",
+          "topics": [
+            "Syntax analysis & syntax directed translation",
+            "Syntax analysis: context‑free grammars (CFGs)",
+            "Top‑down parsing",
+            "Brute‑force approach",
+            "Recursive‑descent parsing",
+            "Transformation on the grammars",
+            "Predictive parsing",
+            "Bottom‑up parsing",
+            "Operator‑precedence parsing",
+            "LR parsers (SLR, LALR, LR)",
+            "Parser generation",
+            "Syntax‑directed definitions: construction of syntax trees",
+            "Bottom‑up evaluation of S‑attributed definitions",
+            "L‑attributed definitions",
+            "Top‑down translation",
+            "Bottom‑up evaluation of inherited attributes",
+            "Recursive evaluation",
+            "Analysis of syntax‑directed definitions"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Type Checking & Run‑Time Environment",
+          "topics": [
+            "Type checking & run‑time environment",
+            "Type checking: type system",
+            "Specification of a simple type checker",
+            "Equivalence of expressions",
+            "Types and type conversion",
+            "Overloading of functions and operations",
+            "Polymorphic functions",
+            "Run‑time environment: storage organization",
+            "Storage allocation strategies",
+            "Parameter passing",
+            "Dynamic storage allocation",
+            "Symbol table management",
+            "Error detection & recovery",
+            "Ad‑hoc and systematic methods"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Code Generation",
+          "topics": [
+            "Intermediate code generation: declarations",
+            "Intermediate code generation: assignment statements",
+            "Intermediate code generation: boolean expressions",
+            "Intermediate code generation: case statements",
+            "Intermediate code generation: back‑patching",
+            "Intermediate code generation: procedure calls",
+            "Code generation issues in the design of a code generator",
+            "Basic block and flow‑graph construction",
+            "Register allocation and assignment",
+            "DAG representation of basic blocks",
+            "Peephole optimization",
+            "Generating code from DAGs"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Code Optimization",
+          "topics": [
+            "Introduction to code optimization",
+            "Sources of optimization for basic blocks",
+            "Loops in flow graphs",
+            "Dead code elimination",
+            "Loop optimization",
+            "Introduction to global data‑flow analysis",
+            "Code‑improving transformations",
+            "Data‑flow analysis of structured flow graphs",
+            "Symbolic debugging of optimized code"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "A. V. Aho, R. Sethi, and J. D. Ullman. Compilers: Principles, Techniques and Tools, Pearson Education",
+        "Raghavan, Compiler Design, TMH Pub.",
+        "Louden. Compiler Construction: Principles and Practice, Cengage Learning",
+        "A. C. Holub. Compiler Design in C, Prentice‑Hall Inc., 1993.",
+        "Mak, writing compiler & Interpreters, Wiley Pub"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "IT Business & Disaster Recovery Planning",
+      "subject_code": "CY604 (A)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Disaster Recovery and Business Continuity",
+          "topics": [
+            "Introduction",
+            "Terminologies",
+            "Disaster Types",
+            "Consequences of Disaster",
+            "Disaster Recovery & Business Continuity",
+            "Principles of Disaster Recovery and Business Continuity",
+            "Issues in Disaster Recovery & Business Continuity",
+            "Addressed Activities",
+            "Solutions",
+            "Best Practices",
+            "International Strategy for Disaster Reduction (ISDR)"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Nature and Causes of Disasters",
+          "topics": [
+            "Nature of Disasters",
+            "Categorization of Disasters",
+            "Natural Disasters – Earthquakes",
+            "Protecting Yourself During Earthquake",
+            "Volcanoes",
+            "Protection from Volcanoes",
+            "Forecasting Volcanoes",
+            "Estimating Earthquakes",
+            "Earthquakes",
+            "Tsunami",
+            "Protecting Yourself During Tsunami",
+            "Landslides",
+            "Effects of Landslides",
+            "Protecting Yourself from Landslides",
+            "Floods",
+            "Effect of Floods",
+            "Prevention Measures",
+            "Wildfires Safety Measures",
+            "Drought",
+            "Consequences of Drought",
+            "Measures to Overcome Drought Effects",
+            "Man‑Made Disasters",
+            "Accidents",
+            "Power Outage",
+            "Telecommunication Outage",
+            "Categorization of Human Intentional Disasters"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Emergency Management",
+          "topics": [
+            "Need for Emergency Management",
+            "Phases of Emergency Management",
+            "Mitigation",
+            "Preparedness",
+            "Response",
+            "Recovery",
+            "Effect of Disaster on Business Organizations",
+            "Emergency Management for Business Organizations",
+            "FEMA – Federal Emergency Management Agency",
+            "Activities of FEMA"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Laws and Acts",
+          "topics": [
+            "Introduction to Applicable Acts in Disaster Recovery",
+            "Foreign Corrupt Practices Act (FCPA)",
+            "Gramm‑Leach‑Bliley Act",
+            "Flood Disaster Protection Act of 1973",
+            "CAN‑SPAM Act of 2003",
+            "Personal Information Protection and Electronic Documents Act (PIPEDA)",
+            "Data Protection Act 1998 (Europe)",
+            "Transmission of Personal Data",
+            "Directive 2002/58/EC (Personal Data)",
+            "Directive 95/46/EC",
+            "Insurance, Financial Groups Directive (FGD)",
+            "OECD Financial Transactions Reporting (FTR) Act 1988",
+            "Foundation of Personal Data Security Law"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Business Continuity Management",
+          "topics": [
+            "Business Continuity Planning",
+            "Objectives of Business Continuity Planning",
+            "Essential Resources in Business Continuity Planning",
+            "Business Continuity Management Planning Steps in ISO",
+            "Risk Analysis",
+            "Risk Assessment",
+            "Basic Elements of Risk Assessment",
+            "Business Impact Analysis (BIA)",
+            "Components of Business Impact Analysis",
+            "Threat Analysis",
+            "Crisis Management Steps"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "John Rittinghouse, James F. Ransome, “Business Continuity and Disaster Recovery for InfoSec Managers”.",
+        "Susan Snedaker, “Business Continuity and Disaster Recovery Planning for IT Professionals”.",
+        "Joseph F. Gustin, “Disaster and Recovery Planning: A Guide for Facility Managers”."
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "OOAD",
+      "subject_code": "CY604 (B)",
+      "subject_type": "Theory",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Overview of Object Oriented concepts",
+          "topics": [
+            "Objects and classes",
+            "Abstraction",
+            "Generalization and inheritance",
+            "Encapsulation",
+            "Multiple inheritance",
+            "Aggregation abstraction classes",
+            "Polymorphism",
+            "Link and association",
+            "Need for object oriented approach"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "System design life cycle and Object Oriented Analysis",
+          "topics": [
+            "System design life cycle",
+            "Object oriented software development process model",
+            "Object Oriented Analysis",
+            "Object Modeling Technique (OMT) – object model",
+            "Object Modeling Technique (OMT) – function model",
+            "Relationship among models",
+            "Object diagrams",
+            "State diagrams",
+            "Data flow diagrams",
+            "Analysis"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Object Oriented Design",
+          "topics": [
+            "Overview of object design",
+            "Combination of the models",
+            "Designing algorithms",
+            "Design optimization",
+            "Implementation of control",
+            "Adjustment",
+            "Design of association",
+            "Object representation",
+            "Physical packaging",
+            "Documenting design decision",
+            "Comparison of use‑case driven approach"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Translation of Object Oriented Design into Implementation",
+          "topics": [
+            "Translation of OOD into implementation",
+            "Programming style",
+            "Documentation",
+            "Characterization of object oriented languages",
+            "Comparison of object oriented languages such as C++ and Java",
+            "Object programming"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unified Modeling Language (UML) and Object Oriented Databases",
+          "topics": [
+            "UML – class diagram",
+            "UML – sequence diagram",
+            "UML – use case diagram",
+            "UML – collaboration diagram",
+            "UML – state chart diagram",
+            "UML – activity diagram",
+            "UML – component diagram",
+            "UML – deployment diagram",
+            "Object oriented database – relational vs object oriented database",
+            "Architecture of object oriented database",
+            "Query language for object oriented database"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "Satzinger, Jackson and Burd, “Object oriented Analysis and design with the Unified Process”",
+        "CENGAGE Learning. Michael Blaha and J. Rumbugh, “Object oriented Modeling and design with UML”, Pearson",
+        "Education O’Docherty, “Object Oriented Analysis and Design Understanding, System Development with - UML2.0”, Wiley India"
+      ],
+      "extra": null
+    },
+    {
+      "subject_name": "Dataware Housing & Mining",
+      "subject_code": "CY604 (C)",
+      "subject_type": "Open Elective",
+      "modules": [
+        {
+          "unit": 1,
+          "title": "Data Warehousing",
+          "topics": [
+            "Need for data warehousing",
+            "Basic elements of data warehousing",
+            "Data Mart",
+            "Data Warehouse Architecture",
+            "Extract and load process",
+            "Clean and transform data",
+            "Star, Snowflake and Galaxy schemas for multidimensional databases",
+            "Fact and dimension data",
+            "Partitioning strategy – horizontal and vertical partitioning"
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "OLAP Technology and Data Warehouse Implementation",
+          "topics": [
+            "Data Warehouse and OLAP technology",
+            "Multidimensional data models and different OLAP operations",
+            "OLAP server: ROLAP, MOLAP",
+            "Data Warehouse implementation",
+            "Efficient computation of data cubes",
+            "Processing of OLAP queries",
+            "Indexing data"
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Data Mining",
+          "topics": [
+            "Data preprocessing",
+            "Data integration and transformation",
+            "Data reduction",
+            "Discretization and concept hierarchy generation",
+            "Basics of data mining",
+            "Data mining techniques",
+            "KDP (Knowledge Discovery Process)",
+            "Application and challenges of data mining",
+            "Web structure mining",
+            "Web usage mining",
+            "Spatial mining",
+            "Text mining",
+            "Security issues",
+            "Privacy issues",
+            "Ethical issues"
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Mining Association Rules in Large Databases",
+          "topics": [
+            "Association rule mining",
+            "Single‑dimensional Boolean association rules",
+            "Multi‑level association rules",
+            "Apriori algorithm",
+            "Fp‑Growth algorithm",
+            "Time‑series mining association rules",
+            "Latest trends in association‑rules mining"
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Classification and Clustering",
+          "topics": [
+            "Distance measures for classification and clustering",
+            "Types of clustering",
+            "K‑Means algorithm",
+            "Decision tree induction",
+            "Bayesian classification",
+            "Association‑rule based classification",
+            "Other classification methods",
+            "Prediction",
+            "Classifier accuracy",
+            "Categorization of methods",
+            "Partitioning methods",
+            "Outlier analysis"
+          ]
+        }
+      ],
+      "experiments": [],
+      "reference_books": [
+        "P. Ponnian, “Data Warehousing Fundamentals”, John Wiley; Han, Kamber, “Data Mining Concepts & Techniques”.",
+        "M. Kaufman, M. H. Dunham, “Data Mining Introductory & Advanced Topics”, Pearson Education; Ralph Kimball, “The Data Warehouse Lifecycle Toolkit”.",
+        "John Wiley; M. Berry, G. Linoff, “Master in Data Mining”, John Wiley; W. H. Inmon, “Building the Data Warehouses”.",
+        "Wiley Dreamtech; E. G. Mallach, “The Decision Support & Data Warehouse Systems”, TMH."
+      ],
+      "extra": null
+    }
+  ]
+}
