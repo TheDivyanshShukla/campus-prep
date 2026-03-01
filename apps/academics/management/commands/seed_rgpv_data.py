@@ -4,6 +4,7 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from django.db import transaction
 from apps.academics.models import Branch, Semester, Subject, Unit
+from apps.content.models import ParsedDocument
 
 class Command(BaseCommand):
     help = 'Clears and seeds the database with RGPV data from JSON files in data/seed/'
@@ -15,8 +16,9 @@ class Command(BaseCommand):
         self.stdout.write("Starting Clean RGPV Data Seeding Process...")
 
         if options['clear']:
-            self.stdout.write(self.style.WARNING("Clearing existing Subjects and Units..."))
+            self.stdout.write(self.style.WARNING("Clearing existing Subjects, Units, and Syllabus Documents..."))
             Unit.objects.all().delete()
+            ParsedDocument.objects.filter(document_type='SYLLABUS').delete()
             Subject.objects.all().delete()
 
         # 1. Base Setup (Semesters and Branches)
@@ -160,6 +162,35 @@ class Command(BaseCommand):
             if not created and subject.name != name:
                 subject.name = name
                 subject.save()
+
+            # --- Syllabus ParsedDocument (Dummy Parse) ---
+            syllabus_data = {
+                "modules": subject_data.get('modules', []),
+                "experiments": subject_data.get('experiments', []),
+                "reference_books": subject_data.get('reference_books', [])
+            }
+            
+            # Create or update the syllabus document
+            # We use a unique title to find it easily
+            doc_title = f"Official Syllabus - {code}"
+            syllabus_doc, doc_created = ParsedDocument.objects.get_or_create(
+                document_type='SYLLABUS',
+                title=doc_title,
+                defaults={
+                    'is_published': True,
+                    'is_premium': False,
+                    'render_mode': 'NATIVE',
+                    'structured_data': syllabus_data
+                }
+            )
+            
+            if not doc_created:
+                syllabus_doc.structured_data = syllabus_data
+                syllabus_doc.save()
+            
+            # Ensure the document is linked to this subject
+            if subject not in syllabus_doc.subjects.all():
+                syllabus_doc.subjects.add(subject)
 
             # Bulk operations for units
             existing_units = {u.number: u for u in subject.units.all()}

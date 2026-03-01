@@ -1,0 +1,128 @@
+import os
+import sys
+import psycopg2
+from pathlib import Path
+from dotenv import load_dotenv
+from io import BytesIO
+
+# Load environment variables from .env
+BASE_DIR = Path(__file__).resolve().parent.parent
+env_path = BASE_DIR / '.env'
+load_dotenv(dotenv_path=env_path)
+
+def get_db_urls():
+    """Extracts local and remote database URLs."""
+    remote_url = "postgresql://postgres:5kerip7bo4pjiq1g@81.17.97.186:3423/postgres"
+    local_url = "postgresql://postgres:postgres@localhost:5432/mydb"
+    return local_url, remote_url
+
+def get_tables(cursor):
+    """Fetches all public tables from the database."""
+    cursor.execute("""
+        SELECT table_name 
+        FROM information_schema.tables 
+        WHERE table_schema = 'public' AND table_type = 'BASE TABLE'
+    """)
+    return [row[0] for row in cursor.fetchall()]
+
+def table_exists(cursor, table_name):
+    """Checks if a table exists in the destination database."""
+    cursor.execute("""
+        SELECT EXISTS (
+            SELECT FROM information_schema.tables 
+            WHERE table_schema = 'public' AND table_name = %s
+        );
+    """, (table_name,))
+    return cursor.fetchone()[0]
+
+def sync_databases(local_url, remote_url):
+    """Syncs databases using pure Python streaming, creating missing tables."""
+    print(f"\n🚀 Pure Python Database Sync")
+    print(f"----------------------------")
+    print(f"Source (Local):  {local_url}")
+    print(f"Target (Server): {remote_url}")
+    print(f"----------------------------")
+    
+    confirm = input("\n⚠️  WARNING: This will OVERWRITE the server database tables with local data. Proceed? (y/N): ")
+    if confirm.lower() != 'y':
+        print("❌ Sync aborted.")
+        return
+
+    try:
+        print("\n⏳ Establishing connections...")
+        src_conn = psycopg2.connect(local_url)
+        dst_conn = psycopg2.connect(remote_url)
+        
+        src_cur = src_conn.cursor()
+        dst_cur = dst_conn.cursor()
+
+        tables = get_tables(src_cur)
+        print(f"📊 Found {len(tables)} tables to sync.")
+
+        # First pass: ensure all tables exist
+        missing_tables = []
+        for table in tables:
+            if not table_exists(dst_cur, table):
+                missing_tables.append(table)
+        
+        if missing_tables:
+            print(f"⚠️  {len(missing_tables)} tables are missing on the server.")
+            auto_migrate = input("� Would you like to automatically run Django migrations on the server? (y/N): ")
+            
+            if auto_migrate.lower() == 'y':
+                print("\n⚙️  Running 'uv run manage.py migrate' for remote database...")
+                import subprocess
+                
+                # Clone current env and set DATABASE_URL to remote
+                env = os.environ.copy()
+                env['DATABASE_URL'] = remote_url
+                
+                try:
+                    # Run migrate command
+                    subprocess.run(
+                        ["uv", "run", "manage.py", "migrate"], 
+                        env=env, 
+                        check=True,
+                        cwd=str(BASE_DIR)
+                    )
+                    print("✅ Migrations completed on server.")
+                    
+                    # Refresh destination cursor to see new tables
+                    dst_cur.execute("SELECT 1;") # Keep connection alive/active
+                except subprocess.CalledProcessError as e:
+                    print(f"❌ Migration failed: {e}")
+                    return
+            else:
+                print("\n❌ Error: Remote database is not initialized. Please run migrations on the server first.")
+                return
+
+        for table in tables:
+            # Re-check if it exists now after migration
+            if not table_exists(dst_cur, table):
+                print(f"⏩ Skipping table {table} (still missing on server after migration check)")
+                continue
+
+            print(f"📦 Syncing table: {table}...", end="", flush=True)
+            dst_cur.execute(f'TRUNCATE TABLE "{table}" CASCADE;')
+            
+            buffer = BytesIO()
+            src_cur.copy_expert(f'COPY "{table}" TO STDOUT BINARY', buffer)
+            buffer.seek(0)
+            dst_cur.copy_expert(f'COPY "{table}" FROM STDIN BINARY', buffer)
+            
+            dst_conn.commit()
+            print(" ✅")
+
+        print("\n✨ Database Synchronization Successful!")
+
+    except Exception as e:
+        print(f"\n❌ Sync failed: {e}")
+        if 'dst_conn' in locals():
+            dst_conn.rollback()
+    finally:
+        if 'src_conn' in locals(): src_conn.close()
+        if 'dst_conn' in locals(): dst_conn.close()
+
+if __name__ == "__main__":
+    local_db, remote_db = get_db_urls()
+    sync_databases(local_db, remote_db)

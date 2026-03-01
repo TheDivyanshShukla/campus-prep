@@ -26,7 +26,7 @@ class AcademicsDataService(BaseService):
     def get_subject_by_id(cls, subject_id):
         return cls.get_or_set_cache(
             f'subject_{subject_id}',
-            lambda: Subject.objects.select_related('branch', 'semester').filter(pk=subject_id).first(),
+            lambda: Subject.objects.select_related('branch', 'semester').prefetch_related('units').filter(pk=subject_id).first(),
             timeout=3600
         )
 
