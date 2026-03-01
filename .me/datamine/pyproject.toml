@@ -1,0 +1,16 @@
+[project]
+name = "datamine"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "numpy>=2.2.6",
+    "opencv-python>=4.13.0.92",
+    "pillow>=12.1.1",
+    "pymupdf>=1.27.1",
+    "pytesseract>=0.3.13",
+    "requests>=2.32.5",
+    "scipy>=1.15.3",
+]
