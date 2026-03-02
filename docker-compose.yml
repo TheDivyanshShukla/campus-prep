@@ -23,7 +23,7 @@ services:
       - CELERY_RESULT_BACKEND=redis://valkey:6379/0
       - DEBUG=False
       - SECRET_KEY=${SECRET_KEY}
-      - DATABASE_URL=sqlite:///app/data/db.sqlite3
+      - DATABASE_URL=sqlite:///app/data/db_container_test.sqlite3
       - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
       - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
       - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
