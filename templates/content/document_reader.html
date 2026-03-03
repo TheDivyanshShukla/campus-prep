@@ -372,8 +372,14 @@
             <!-- Floating Search Bar for Native Mode -->
             <div id="floatingSearchBar" class="fixed top-20 left-4 right-4 sm:left-auto sm:right-8 z-[100] flex items-center bg-background border border-border shadow-2xl rounded-lg transition-all duration-300 transform -translate-y-4 opacity-0 pointer-events-none max-w-[calc(100vw-2rem)] sm:max-w-none">
                 <div class="flex items-center pl-3 flex-1 overflow-hidden">
+                    <svg id="searchSpinner" class="hidden animate-spin w-4 h-4 text-primary mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
                     <svg id="searchIcon" class="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     <input type="text" id="pdfSearchInput" placeholder="Find in document..." class="w-full sm:w-64 py-2 sm:py-2.5 bg-transparent border-none focus:outline-none focus:ring-0 text-sm text-foreground min-w-[80px]" autocomplete="off">
+                </div>
+                <div id="searchControls" class="hidden flex items-center border-l border-border h-full flex-shrink-0">
+                    <span id="searchCount" class="px-2 sm:px-3 text-[10px] sm:text-xs font-mono text-muted-foreground whitespace-nowrap">0/0</span>
+                    <button onclick="prevSearchResult()" class="p-2 sm:p-2.5 hover:bg-muted text-muted-foreground transition-colors border-l border-border"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button>
+                    <button onclick="nextSearchResult()" class="p-2 sm:p-2.5 hover:bg-muted text-muted-foreground transition-colors border-l border-border"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                 </div>
                 <button onclick="closeSearch()" class="p-2 sm:p-2.5 hover:bg-red-500/10 hover:text-red-500 text-muted-foreground transition-colors border-l border-border rounded-r-lg flex-shrink-0"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             </div>

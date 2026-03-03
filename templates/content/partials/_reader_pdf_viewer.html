@@ -49,6 +49,7 @@
 
         loadingTask.promise.then(function (pdf) {
             window.pdfDocGlobal = pdf;
+            window.dispatchEvent(new Event('readerPdfReady'));
             document.getElementById('pageNavTotal').innerText = '/ ' + pdf.numPages;
             document.getElementById('pageNavInput').max = pdf.numPages;
 
