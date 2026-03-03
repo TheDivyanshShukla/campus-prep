@@ -1,6 +1,5 @@
 import os
 import argparse
-import multiprocessing
 import cv2
 import json
 from concurrent.futures import ProcessPoolExecutor
@@ -26,16 +25,24 @@ class ScanProcessorCLI:
         
         # 1. Load Images
         if ext == '.pdf':
-            images = pdf_to_images(file_path)
+            images, source_page_dpis = pdf_to_images(
+                file_path,
+                dpi=self.args.dpi,
+                preserve_source_dpi=self.args.preserve_source_dpi,
+                return_dpi=True
+            )
         else:
             img = cv2.imread(file_path)
             if img is None:
                 print(f"[!] Error reading {filename}")
                 return
             images = [img]
+            source_page_dpis = [self.args.dpi]
             
         processed_pages = []
+        processed_page_dpis = []
         for idx, img in enumerate(images):
+            source_dpi = source_page_dpis[idx] if idx < len(source_page_dpis) else self.args.dpi
             # 2. Page Detection & Transform
             rect_pages = self.pipeline.process_image(img)
             
@@ -70,6 +77,7 @@ class ScanProcessorCLI:
                     p = crop_fixed_percentage(p, self.args.remove_footer)
                     
                 processed_pages.append(p)
+                processed_page_dpis.append(source_dpi)
         
         # 6. Save Output
         if not processed_pages:
@@ -78,12 +86,16 @@ class ScanProcessorCLI:
         base_name = os.path.splitext(filename)[0]
         output_pdf_path = os.path.join(output_folder, f"{base_name}.pdf")
         if self.args.ocr:
-            try:
-                images_to_pdf_ocr(processed_pages, output_pdf_path, dpi=self.args.dpi, tesseract_path=self.args.tesseract_path)
-            except Exception as e:
-                print(f"[!] OCR Failed for {filename}: {e}")
-                print("[*] Falling back to standard PDF...")
-                images_to_pdf(processed_pages, output_pdf_path, dpi=self.args.dpi)
+            images_to_pdf_ocr(
+                processed_pages,
+                output_pdf_path,
+                dpi=self.args.dpi,
+                tesseract_path=self.args.tesseract_path,
+                page_dpis=processed_page_dpis,
+                linearize=self.args.linearize,
+                ocr_lang=self.args.ocr_lang,
+                ocr_mode=self.args.ocr_mode
+            )
         else:
             images_to_pdf(processed_pages, output_pdf_path, dpi=self.args.dpi)
         
@@ -97,8 +109,11 @@ class ScanProcessorCLI:
 
 def run_job(args_tuple):
     file_path, output_folder, args = args_tuple
-    processor = ScanProcessorCLI(args)
-    processor.process_single_file(file_path, output_folder)
+    try:
+        processor = ScanProcessorCLI(args)
+        processor.process_single_file(file_path, output_folder)
+    except Exception as exc:
+        print(f"[!] Failed processing {os.path.basename(file_path)}: {exc}")
 
 def main():
     parser = argparse.ArgumentParser(description="ScanProcess: Automated Document Scan Cleanup")
@@ -106,13 +121,22 @@ def main():
     parser.add_argument("output", nargs="?", default="output_scans", help="Output folder for processed results (default: output_scans)")
     parser.add_argument("--mode", choices=['color', 'grayscale', 'bw'], default='color', help="Scan mode")
     parser.add_argument("--dpi", type=int, default=300, help="Output DPI")
+    parser.add_argument("--preserve-source-dpi", dest="preserve_source_dpi", action="store_true", help="Estimate and preserve source page DPI for PDF inputs")
+    parser.add_argument("--no-preserve-source-dpi", dest="preserve_source_dpi", action="store_false", help="Disable source DPI estimation and force --dpi")
+    parser.add_argument("--ocr-lang", default="eng", help="Tesseract OCR language(s), e.g. 'eng' or 'eng+hin'")
+    parser.add_argument("--ocr-mode", choices=["lossless", "tesseract-pdf"], default="lossless", help="OCR output mode")
     parser.add_argument("--remove-footer", type=float, default=0, help="Percentage to crop from bottom")
     parser.add_argument("--save-images", action="store_true", help="Save individual processed images")
-    parser.add_argument("--ocr", action="store_true", help="Make PDF searchable (selectable text) using Tesseract")
+    parser.add_argument("--linearize", dest="linearize", action="store_true", help="Save output PDF as linearized (fast web view)")
+    parser.add_argument("--no-linearize", dest="linearize", action="store_false", help="Disable linearized PDF output")
+    ocr_group = parser.add_mutually_exclusive_group()
+    ocr_group.add_argument("--ocr", dest="ocr", action="store_true", help="Make PDF searchable (selectable text) using Tesseract")
+    ocr_group.add_argument("--no-ocr", dest="ocr", action="store_false", help="Disable OCR output")
     parser.add_argument("--no-enhance", action="store_true", help="Skip aggressive enhancement (shadow removal/thresholding) to preserve original quality")
     parser.add_argument("--tesseract-path", help="Path to tesseract executable (e.g. C:\\Program Files\\Tesseract-OCR\\tesseract.exe)")
     parser.add_argument("--config", help="Path to JSON config file")
     
+    parser.set_defaults(ocr=True, preserve_source_dpi=True, linearize=True)
     args = parser.parse_args()
     
     # Load config if provided
