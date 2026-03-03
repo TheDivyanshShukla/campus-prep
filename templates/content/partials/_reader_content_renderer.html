@@ -351,6 +351,7 @@
         overlay.style.cursor = 'crosshair';
         overlay.style.background = 'rgba(0,0,0,0.06)';
         overlay.style.userSelect = 'none';
+        overlay.style.touchAction = 'none';
 
         const rect = document.createElement('div');
         rect.style.position = 'fixed';
@@ -359,8 +360,58 @@
         rect.style.pointerEvents = 'none';
         rect.style.display = 'none';
 
+        const handle = document.createElement('div');
+        handle.style.position = 'fixed';
+        handle.style.width = '20px';
+        handle.style.height = '20px';
+        handle.style.borderRadius = '999px';
+        handle.style.background = 'rgba(16,185,129,0.98)';
+        handle.style.border = '2px solid #ffffff';
+        handle.style.boxShadow = '0 2px 8px rgba(0,0,0,0.35)';
+        handle.style.display = 'none';
+        handle.style.zIndex = '10001';
+        handle.style.cursor = 'nwse-resize';
+        handle.style.pointerEvents = 'auto';
+
+        const controls = document.createElement('div');
+        controls.style.position = 'fixed';
+        controls.style.bottom = '16px';
+        controls.style.left = '50%';
+        controls.style.transform = 'translateX(-50%)';
+        controls.style.display = 'none';
+        controls.style.gap = '8px';
+        controls.style.zIndex = '10002';
+
+        const cancelBtn = document.createElement('button');
+        cancelBtn.type = 'button';
+        cancelBtn.textContent = 'Cancel';
+        cancelBtn.style.padding = '8px 14px';
+        cancelBtn.style.borderRadius = '10px';
+        cancelBtn.style.border = '1px solid rgba(255,255,255,0.35)';
+        cancelBtn.style.background = 'rgba(15,23,42,0.82)';
+        cancelBtn.style.color = '#fff';
+        cancelBtn.style.fontSize = '12px';
+        cancelBtn.style.fontWeight = '700';
+
+        const confirmBtn = document.createElement('button');
+        confirmBtn.type = 'button';
+        confirmBtn.textContent = 'Confirm';
+        confirmBtn.style.padding = '8px 14px';
+        confirmBtn.style.borderRadius = '10px';
+        confirmBtn.style.border = '1px solid rgba(16,185,129,0.55)';
+        confirmBtn.style.background = 'rgba(16,185,129,0.95)';
+        confirmBtn.style.color = '#06281d';
+        confirmBtn.style.fontSize = '12px';
+        confirmBtn.style.fontWeight = '800';
+
+        controls.appendChild(cancelBtn);
+        controls.appendChild(confirmBtn);
+
         const hint = document.createElement('div');
-        hint.textContent = 'Drag to capture image region · Esc to cancel';
+        const isMobilePointer = window.matchMedia('(pointer: coarse)').matches || ('ontouchstart' in window);
+        hint.textContent = isMobilePointer
+            ? 'Tap first corner, then opposite corner · Drag handle to adjust · Confirm'
+            : 'Drag to capture image region · Esc to cancel';
         hint.style.position = 'fixed';
         hint.style.top = '16px';
         hint.style.left = '50%';
@@ -373,7 +424,9 @@
         hint.style.color = '#fff';
 
         overlay.appendChild(rect);
+        overlay.appendChild(handle);
         overlay.appendChild(hint);
+        overlay.appendChild(controls);
         document.body.appendChild(overlay);
 
         let dragging = false;
@@ -381,6 +434,16 @@
         let startY = 0;
         let endX = 0;
         let endY = 0;
+        let mobilePhase = 0;
+        let handleDragging = false;
+
+        const getSelectionRect = () => {
+            const x = Math.min(startX, endX);
+            const y = Math.min(startY, endY);
+            const w = Math.abs(endX - startX);
+            const h = Math.abs(endY - startY);
+            return { x, y, w, h, left: x, top: y, right: x + w, bottom: y + h };
+        };
 
         const restoreCaptureUi = () => {
             if (panelEl) panelEl.style.visibility = prevPanelVisibility;
@@ -395,53 +458,24 @@
         };
 
         const updateRect = () => {
-            const x = Math.min(startX, endX);
-            const y = Math.min(startY, endY);
-            const w = Math.abs(endX - startX);
-            const h = Math.abs(endY - startY);
+            const { x, y, w, h } = getSelectionRect();
             rect.style.display = 'block';
             rect.style.left = `${x}px`;
             rect.style.top = `${y}px`;
             rect.style.width = `${w}px`;
             rect.style.height = `${h}px`;
-        };
 
-        const onKeydown = (e) => {
-            if (e.key === 'Escape') {
-                cleanup();
-                _readerSetStatus('Capture cancelled');
+            if (isMobilePointer && mobilePhase >= 2) {
+                handle.style.display = 'block';
+                handle.style.left = `${x + w - 10}px`;
+                handle.style.top = `${y + h - 10}px`;
+            } else {
+                handle.style.display = 'none';
             }
         };
 
-        window.addEventListener('keydown', onKeydown);
-
-        overlay.addEventListener('mousedown', e => {
-            if (e.button !== 0) return;
-            dragging = true;
-            startX = endX = e.clientX;
-            startY = endY = e.clientY;
-            updateRect();
-            e.preventDefault();
-        });
-
-        overlay.addEventListener('mousemove', e => {
-            if (!dragging) return;
-            endX = e.clientX;
-            endY = e.clientY;
-            updateRect();
-        });
-
-        overlay.addEventListener('mouseup', async e => {
-            if (e.button !== 0 || !dragging) return;
-            dragging = false;
-            endX = e.clientX;
-            endY = e.clientY;
-            updateRect();
-
-            const x = Math.min(startX, endX);
-            const y = Math.min(startY, endY);
-            const w = Math.abs(endX - startX);
-            const h = Math.abs(endY - startY);
+        const runCaptureFromCurrentRect = async () => {
+            const { x, y, w, h } = getSelectionRect();
 
             if (w < 12 || h < 12) {
                 cleanup();
@@ -500,6 +534,105 @@
             } catch (err) {
                 _readerSetStatus(err.message || 'Capture failed', true);
             }
+        };
+
+        const onKeydown = (e) => {
+            if (e.key === 'Escape') {
+                cleanup();
+                _readerSetStatus('Capture cancelled');
+            }
+        };
+
+        window.addEventListener('keydown', onKeydown);
+
+        cancelBtn.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            cleanup();
+            _readerSetStatus('Capture cancelled');
+        });
+
+        confirmBtn.addEventListener('click', async e => {
+            e.preventDefault();
+            e.stopPropagation();
+            await runCaptureFromCurrentRect();
+        });
+
+        if (isMobilePointer) {
+            overlay.addEventListener('click', e => {
+                if (e.target === confirmBtn || e.target === cancelBtn || controls.contains(e.target) || e.target === handle) return;
+
+                const pointX = e.clientX;
+                const pointY = e.clientY;
+
+                if (mobilePhase === 0) {
+                    startX = endX = pointX;
+                    startY = endY = pointY;
+                    mobilePhase = 1;
+                    updateRect();
+                    hint.textContent = 'Tap opposite corner';
+                    return;
+                }
+
+                if (mobilePhase === 1) {
+                    endX = pointX;
+                    endY = pointY;
+                    mobilePhase = 2;
+                    controls.style.display = 'flex';
+                    hint.textContent = 'Move the green handle to resize, then tap Confirm';
+                    updateRect();
+                }
+            });
+
+            handle.addEventListener('pointerdown', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (mobilePhase < 2) return;
+                handleDragging = true;
+                handle.setPointerCapture(e.pointerId);
+            });
+
+            handle.addEventListener('pointermove', e => {
+                if (!handleDragging) return;
+                endX = e.clientX;
+                endY = e.clientY;
+                updateRect();
+            });
+
+            handle.addEventListener('pointerup', e => {
+                handleDragging = false;
+                if (handle.hasPointerCapture(e.pointerId)) {
+                    handle.releasePointerCapture(e.pointerId);
+                }
+            });
+
+            return;
+        }
+
+        overlay.addEventListener('mousedown', e => {
+            if (e.button !== 0) return;
+            dragging = true;
+            startX = endX = e.clientX;
+            startY = endY = e.clientY;
+            updateRect();
+            e.preventDefault();
+        });
+
+        overlay.addEventListener('mousemove', e => {
+            if (!dragging) return;
+            endX = e.clientX;
+            endY = e.clientY;
+            updateRect();
+        });
+
+        overlay.addEventListener('mouseup', async e => {
+            if (e.button !== 0 || !dragging) return;
+            dragging = false;
+            endX = e.clientX;
+            endY = e.clientY;
+            updateRect();
+
+            await runCaptureFromCurrentRect();
         });
     }
 
