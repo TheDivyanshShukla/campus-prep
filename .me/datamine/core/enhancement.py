@@ -67,3 +67,116 @@ def crop_fixed_percentage(image, percent_bottom=0):
     h, w = image.shape[:2]
     crop_h = int(h * (1 - percent_bottom/100))
     return image[:crop_h, :]
+
+
+def remove_large_black_blobs_by_font_size(
+    image,
+    padding=2,
+    area_multiplier=1.0,
+    density_threshold=0.45,
+    edge_margin_px=6,
+    edge_area_multiplier=0.35,
+    edge_density_threshold=0.08,
+):
+    """
+    Remove dark blobs larger than estimated largest text size.
+    Includes an edge-artifact path for large border-touching blobs that may be
+    less dense (e.g., black wedges near page corners).
+    """
+    if len(image.shape) == 3:
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    else:
+        gray = image
+
+    _, binary_inv = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(binary_inv, connectivity=8)
+
+    text_heights = []
+    for label_idx in range(1, num_labels):
+        x = stats[label_idx, cv2.CC_STAT_LEFT]
+        y = stats[label_idx, cv2.CC_STAT_TOP]
+        w = stats[label_idx, cv2.CC_STAT_WIDTH]
+        h = stats[label_idx, cv2.CC_STAT_HEIGHT]
+        area = stats[label_idx, cv2.CC_STAT_AREA]
+        if w <= 0 or h <= 0:
+            continue
+
+        aspect_ratio = w / float(h)
+        if 4 <= area <= 1500 and 0.08 <= aspect_ratio <= 8.0 and 4 <= h <= 80:
+            text_heights.append(h)
+
+    if text_heights:
+        largest_font_size = float(np.percentile(text_heights, 95))
+    else:
+        largest_font_size = 20.0
+
+    area_threshold = max(20.0, area_multiplier * (largest_font_size ** 2))
+    edge_area_threshold = max(20.0, edge_area_multiplier * area_threshold)
+
+    cleaned = image.copy()
+    page_h, page_w = gray.shape[:2]
+
+    for label_idx in range(1, num_labels):
+        x = stats[label_idx, cv2.CC_STAT_LEFT]
+        y = stats[label_idx, cv2.CC_STAT_TOP]
+        w = stats[label_idx, cv2.CC_STAT_WIDTH]
+        h = stats[label_idx, cv2.CC_STAT_HEIGHT]
+        area = float(stats[label_idx, cv2.CC_STAT_AREA])
+        if w <= 0 or h <= 0:
+            continue
+
+        bbox_area = float(w * h)
+        density = area / bbox_area if bbox_area > 0 else 0.0
+        touches_edge = (
+            x <= edge_margin_px
+            or y <= edge_margin_px
+            or (x + w) >= (page_w - edge_margin_px)
+            or (y + h) >= (page_h - edge_margin_px)
+        )
+
+        standard_blob = area >= area_threshold and density >= density_threshold
+        edge_blob = touches_edge and area >= edge_area_threshold and density >= edge_density_threshold
+
+        if standard_blob or edge_blob:
+            x0 = max(0, x - padding)
+            y0 = max(0, y - padding)
+            x1 = min(page_w, x + w + padding)
+            y1 = min(page_h, y + h + padding)
+
+            if len(cleaned.shape) == 3:
+                cleaned[y0:y1, x0:x1] = (255, 255, 255)
+            else:
+                cleaned[y0:y1, x0:x1] = 255
+
+    return cleaned
+
+
+def remove_footer_link_area(
+    image,
+    box_width_ratio=0.62,
+    box_height_ratio=0.075,
+    bottom_margin_ratio=0.0,
+):
+    """
+    Whiten a bottom-center box to remove URL/footer text artifacts.
+    Ratios are relative to page width/height.
+    """
+    cleaned = image.copy()
+    h, w = cleaned.shape[:2]
+
+    box_w = max(1, int(w * box_width_ratio))*2
+    box_h = max(1, int(h * box_height_ratio))
+    margin = max(0, int(h * bottom_margin_ratio))
+
+    x0 = max(0, (w - box_w) // 2)
+    x1 = min(w, x0 + box_w)
+    y1 = max(0, h - margin)
+    y0 = max(0, y1 - box_h)
+
+    if len(cleaned.shape) == 3:
+        cleaned[y0:y1, x0:x1] = (255, 255, 255)
+    else:
+        cleaned[y0:y1, x0:x1] = 255
+
+    return cleaned
+

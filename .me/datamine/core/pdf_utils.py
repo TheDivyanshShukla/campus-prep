@@ -170,14 +170,46 @@ def _save_pdf_with_optional_linearize(pdf_writer, output_path, linearize=True):
             raise
 
 
-def _add_hidden_ocr_text_layer(page, img, page_dpi, ocr_lang):
+def _prepare_ocr_image(img, border_clean_px=10):
+    """
+    OCR-only preprocessing: remove border noise and increase text contrast.
+    Keeps dimensions unchanged so text layer alignment remains accurate.
+    """
     if len(img.shape) == 3:
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    else:
+        gray = img.copy()
+
+    h, w = gray.shape[:2]
+    border = max(0, int(border_clean_px))
+    if border > 0:
+        gray[:, :min(w, border)] = 255
+        gray[:, max(0, w - border):] = 255
+        gray[:min(h, border), :] = 255
+        gray[max(0, h - border):, :] = 255
+
+    gray = cv2.GaussianBlur(gray, (3, 3), 0)
+    bw = cv2.adaptiveThreshold(
+        gray,
+        255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY,
+        31,
+        8,
+    )
+    return bw
+
+
+def _add_hidden_ocr_text_layer(page, img, page_dpi, ocr_lang, ocr_psm=11, ocr_border_clean_px=10):
+    if len(img.shape) == 3:
+        ocr_img = _prepare_ocr_image(img, border_clean_px=ocr_border_clean_px)
+        img_rgb = cv2.cvtColor(ocr_img, cv2.COLOR_GRAY2RGB)
         pil_img = Image.fromarray(img_rgb)
     else:
-        pil_img = Image.fromarray(img)
+        ocr_img = _prepare_ocr_image(img, border_clean_px=ocr_border_clean_px)
+        pil_img = Image.fromarray(ocr_img)
 
-    tesseract_config = f"--dpi {int(page_dpi)} -c textonly_pdf=1"
+    tesseract_config = f"--dpi {int(page_dpi)} --psm {int(ocr_psm)} -c textonly_pdf=1 -c preserve_interword_spaces=1"
     text_pdf_bytes = pytesseract.image_to_pdf_or_hocr(
         pil_img,
         extension='pdf',
@@ -196,6 +228,8 @@ def _images_to_pdf_ocr_lossless(
     page_dpis=None,
     linearize=True,
     ocr_lang='eng',
+    ocr_psm=11,
+    ocr_border_clean_px=10,
 ):
     pdf_writer = fitz.open()
     for idx, img in enumerate(images):
@@ -210,7 +244,14 @@ def _images_to_pdf_ocr_lossless(
 
         page = pdf_writer.new_page(width=page_width_pt, height=page_height_pt)
         page.insert_image(page.rect, stream=encoded.tobytes())
-        _add_hidden_ocr_text_layer(page, img, page_dpi, ocr_lang)
+        _add_hidden_ocr_text_layer(
+            page,
+            img,
+            page_dpi,
+            ocr_lang,
+            ocr_psm=ocr_psm,
+            ocr_border_clean_px=ocr_border_clean_px,
+        )
 
     _save_pdf_with_optional_linearize(pdf_writer, output_path, linearize=linearize)
     pdf_writer.close()
@@ -224,6 +265,8 @@ def images_to_pdf_ocr(
     linearize=True,
     ocr_lang='eng',
     ocr_mode='lossless',
+    ocr_psm=11,
+    ocr_border_clean_px=10,
 ):
     """
     Rebuilds a searchable PDF from a list of images using Tesseract OCR.
@@ -239,6 +282,8 @@ def images_to_pdf_ocr(
             page_dpis=page_dpis,
             linearize=linearize,
             ocr_lang=ocr_lang,
+            ocr_psm=ocr_psm,
+            ocr_border_clean_px=ocr_border_clean_px,
         )
         return
         
@@ -253,7 +298,10 @@ def images_to_pdf_ocr(
             pil_img = Image.fromarray(img)
         
         # Perform OCR and get searchable PDF bytes for this page
-        tesseract_config = f"--dpi {int(page_dpi)}"
+        ocr_img = _prepare_ocr_image(img, border_clean_px=ocr_border_clean_px)
+        if len(ocr_img.shape) == 2:
+            pil_img = Image.fromarray(ocr_img)
+        tesseract_config = f"--dpi {int(page_dpi)} --psm {int(ocr_psm)} -c preserve_interword_spaces=1"
         pdf_bytes = pytesseract.image_to_pdf_or_hocr(
             pil_img,
             extension='pdf',
