@@ -198,7 +198,6 @@ class RGPVScraper:
 
         conn.commit()
         print(f"  Found {count} new papers.")
-        time.sleep(random.uniform(0.5, 1.5))
 
     def run(self):
         print("Discovering all branches from homepage...")

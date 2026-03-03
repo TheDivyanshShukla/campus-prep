@@ -1,0 +1,102 @@
+[2026-03-03 11:23:02 UTC] Run started: total=50, dry_run=False, resume=True, workers=32
+[2026-03-03 11:23:02 UTC] PROCESS id=494 source=raw_docs/bt-105-engineering-graphics-jun-2022_cmpxN35.pdf target=bt-105-engineering-graphics-jun-2022_cmpxN35-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=495 source=raw_docs/bt-105-engineering-graphics-nov-2022_mfHV5qw.pdf target=bt-105-engineering-graphics-nov-2022_mfHV5qw-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=496 source=raw_docs/bt-201-engineering-physics-jun-2022_4ePKSmZ.pdf target=bt-201-engineering-physics-jun-2022_4ePKSmZ-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=497 source=raw_docs/bt-201-engineering-physics-nov-2022_okEKmBt.pdf target=bt-201-engineering-physics-nov-2022_okEKmBt-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=498 source=raw_docs/bt-202-mathematics-2-jun-2022_HqZOGZj.pdf target=bt-202-mathematics-2-jun-2022_HqZOGZj-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=499 source=raw_docs/bt-202-mathematics-2-nov-2022_G6Vypa5.pdf target=bt-202-mathematics-2-nov-2022_G6Vypa5-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=500 source=raw_docs/bt-203-basic-mechanical-engineering-jun-2022_r5m8sVI.pdf target=bt-203-basic-mechanical-engineering-jun-2022_r5m8sVI-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=501 source=raw_docs/bt-203-basic-mechanical-engineering-nov-2022_d9I10E7.pdf target=bt-203-basic-mechanical-engineering-nov-2022_d9I10E7-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=502 source=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2022_pguLDzb.pdf target=bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2022_pguLDzb-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=503 source=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-nov-2022_yzi5svW.pdf target=bt-204-basic-civil-engineering-and-engineering-mechanics-nov-2022_yzi5svW-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=504 source=raw_docs/bt-205-basic-computer-engineering-jun-2022_Xjnwcee.pdf target=bt-205-basic-computer-engineering-jun-2022_Xjnwcee-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=505 source=raw_docs/bt-205-basic-computer-engineering-nov-2022_qPo5UVP.pdf target=bt-205-basic-computer-engineering-nov-2022_qPo5UVP-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=506 source=raw_docs/cs-ct-co-it-ci-csit-302-discrete-structure-jun-2025_00id0iZ.pdf target=cs-ct-co-it-ci-csit-302-discrete-structure-jun-2025_00id0iZ-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=507 source=raw_docs/ai-al-cd-401-introduction-to-discrete-structure-and-linear-algebra-dec-2024_XVNjlD3.pdf target=ai-al-cd-401-introduction-to-discrete-structure-and-linear-algebra-dec-2024_XVNjlD3-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=508 source=raw_docs/ai-al-cd-401-introduction-to-discrete-structure-and-linear-algebra-jun-2024_SOpo3rE.pdf target=ai-al-cd-401-introduction-to-discrete-structure-and-linear-algebra-jun-2024_SOpo3rE-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=509 source=raw_docs/it-304-object-oriented-programming-and-methodology-dec-2024_F6HPzrL.pdf target=it-304-object-oriented-programming-and-methodology-dec-2024_F6HPzrL-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=510 source=raw_docs/cs-ct-co-303-data-structures-dec-2024_v19Xj1b.pdf target=cs-ct-co-303-data-structures-dec-2024_v19Xj1b-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=511 source=raw_docs/cs-ct-co-303-data-structures-jun-2024_tTAGR64.pdf target=cs-ct-co-303-data-structures-jun-2024_tTAGR64-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=512 source=raw_docs/cs-ct-co-ci-cy-304-digital-systems-dec-2024_U4NkX6w.pdf target=cs-ct-co-ci-cy-304-digital-systems-dec-2024_U4NkX6w-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=513 source=raw_docs/csit-302-discrete-structure-dec-2024.pdf target=csit-302-discrete-structure-dec-2024-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=514 source=raw_docs/cs-it-302-discrete-structure-jun-2024.pdf target=cs-it-302-discrete-structure-jun-2024-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=515 source=raw_docs/al-cd-401-introduction-to-discrete-structure-and-linear-algebra-jun-2023_LTFAVIo.pdf target=al-cd-401-introduction-to-discrete-structure-and-linear-algebra-jun-2023_LTFAVIo-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=516 source=raw_docs/al-cd-401-introduction-to-discrete-structure-and-linear-algebra-nov-2023_V6ETDlx.pdf target=al-cd-401-introduction-to-discrete-structure-and-linear-algebra-nov-2023_V6ETDlx-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=517 source=raw_docs/it-304-object-oriented-programming-and-methodology-dec-2023_CUxZPbw.pdf target=it-304-object-oriented-programming-and-methodology-dec-2023_CUxZPbw-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=518 source=raw_docs/cs-ct-co-303-data-structures-dec-2023_u58dZsd.pdf target=cs-ct-co-303-data-structures-dec-2023_u58dZsd-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=519 source=raw_docs/cs-ct-co-303-data-structures-jun-2023_7Jakpsq.pdf target=cs-ct-co-303-data-structures-jun-2023_7Jakpsq-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=520 source=raw_docs/ad-al-cd-cy-is-305-object-oriented-programming-and-methodology-jun-2023_xOzG9Eo.pdf target=ad-al-cd-cy-is-305-object-oriented-programming-and-methodology-jun-2023_xOzG9Eo-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=521 source=raw_docs/cs-ct-co-ci-304-digital-circuits-and-system-jun-2023_UZsskot.pdf target=cs-ct-co-ci-304-digital-circuits-and-system-jun-2023_UZsskot-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=522 source=raw_docs/cs-ct-co-ci-cy-304-digital-systems-dec-2023_Mo2vols.pdf target=cs-ct-co-ci-cy-304-digital-systems-dec-2023_Mo2vols-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=523 source=raw_docs/csit-ci-302-discrete-structure-jun-2023.pdf target=csit-ci-302-discrete-structure-jun-2023-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=524 source=raw_docs/cs-ct-co-it-ci-302-discrete-structure-dec-2023_bGNjbkz.pdf target=cs-ct-co-it-ci-302-discrete-structure-dec-2023_bGNjbkz-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=525 source=raw_docs/al-cd-401-introduction-to-discrete-structure-and-linear-jun-2022_hlepAnz.pdf target=al-cd-401-introduction-to-discrete-structure-and-linear-jun-2022_hlepAnz-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=526 source=raw_docs/ci-cs-ct-co-it-302-discrete-structure-nov-2022_orSLvMT.pdf target=ci-cs-ct-co-it-302-discrete-structure-nov-2022_orSLvMT-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=527 source=raw_docs/cs-ct-co-303-data-structures-nov-2022_ryy5mFi.pdf target=cs-ct-co-303-data-structures-nov-2022_ryy5mFi-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=528 source=raw_docs/it-304-object-oriented-programming-and-methodology-nov-2022_3xayAWc.pdf target=it-304-object-oriented-programming-and-methodology-nov-2022_3xayAWc-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=529 source=raw_docs/cs-ct-co-ci-304-digital-circuits-and-system-nov-2022_iXBDZQk.pdf target=cs-ct-co-ci-304-digital-circuits-and-system-nov-2022_iXBDZQk-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=530 source=raw_docs/cs-ct-co-ci-304-digital-systems-digital-circuits-and-system-nov-2022_tTHIaft.pdf target=cs-ct-co-ci-304-digital-systems-digital-circuits-and-system-nov-2022_tTHIaft-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=531 source=raw_docs/cs-ct-co-ci-304-digital-systems-nov-2022_GYuOZDq.pdf target=cs-ct-co-ci-304-digital-systems-nov-2022_GYuOZDq-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=532 source=raw_docs/cy-404-operating-systems-jun-2025.pdf target=cy-404-operating-systems-jun-2025-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=533 source=raw_docs/cy-602-software-engineering-jun-2025.pdf target=cy-602-software-engineering-jun-2025-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=534 source=raw_docs/al-csit-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2025_lQWJ9X7.pdf target=al-csit-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2025_lQWJ9X7-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=535 source=raw_docs/al-csit-cs-ct-co-io-is-404-computer-organization-jun-2025_9KPGr2n.pdf target=al-csit-cs-ct-co-io-is-404-computer-organization-jun-2025_9KPGr2n-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=536 source=raw_docs/cs-sd-402-analysis-design-of-algorithm-jun-2025_TP1C37U.pdf target=cs-sd-402-analysis-design-of-algorithm-jun-2025_TP1C37U-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=537 source=raw_docs/cy-404-operating-systems-jun-2024.pdf target=cy-404-operating-systems-jun-2024-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=538 source=raw_docs/cy-602-software-engineering-dec-2024.pdf target=cy-602-software-engineering-dec-2024-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=539 source=raw_docs/al-cd-cs-ct-co-sd-403-software-engineering-jun-2024_8RUBTj7.pdf target=al-cd-cs-ct-co-sd-403-software-engineering-jun-2024_8RUBTj7-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=540 source=raw_docs/al-csit-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-dec-2024.pdf target=al-csit-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-dec-2024-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=541 source=raw_docs/al-csit-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2024_Xn8ppPQ.pdf target=al-csit-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2024_Xn8ppPQ-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=542 source=raw_docs/cs-sd-402-analysis-design-of-algorithm-dec-2024_JtwGi4j.pdf target=cs-sd-402-analysis-design-of-algorithm-dec-2024_JtwGi4j-ocr.pdf
+[2026-03-03 11:23:02 UTC] PROCESS id=543 source=raw_docs/cs-sd-402-analysis-design-of-algorithm-jun-2024_nnT7Krj.pdf target=cs-sd-402-analysis-design-of-algorithm-jun-2024_nnT7Krj-ocr.pdf
+[2026-03-03 11:23:27 UTC] SUCCESS id=525 target=al-cd-401-introduction-to-discrete-structure-and-linear-jun-2022_hlepAnz-ocr.pdf
+[2026-03-03 11:23:30 UTC] SUCCESS id=505 target=bt-205-basic-computer-engineering-nov-2022_qPo5UVP-ocr.pdf
+[2026-03-03 11:23:34 UTC] SUCCESS id=499 target=bt-202-mathematics-2-nov-2022_G6Vypa5-ocr.pdf
+[2026-03-03 11:23:42 UTC] SUCCESS id=527 target=cs-ct-co-303-data-structures-nov-2022_ryy5mFi-ocr.pdf
+[2026-03-03 11:23:47 UTC] SUCCESS id=519 target=cs-ct-co-303-data-structures-jun-2023_7Jakpsq-ocr.pdf
+[2026-03-03 11:23:47 UTC] SUCCESS id=526 target=ci-cs-ct-co-it-302-discrete-structure-nov-2022_orSLvMT-ocr.pdf
+[2026-03-03 11:23:50 UTC] SUCCESS id=521 target=cs-ct-co-ci-304-digital-circuits-and-system-jun-2023_UZsskot-ocr.pdf
+[2026-03-03 11:23:52 UTC] SUCCESS id=501 target=bt-203-basic-mechanical-engineering-nov-2022_d9I10E7-ocr.pdf
+[2026-03-03 11:24:03 UTC] SUCCESS id=520 target=ad-al-cd-cy-is-305-object-oriented-programming-and-methodology-jun-2023_xOzG9Eo-ocr.pdf
+[2026-03-03 11:24:07 UTC] SUCCESS id=494 target=bt-105-engineering-graphics-jun-2022_cmpxN35-ocr.pdf
+[2026-03-03 11:24:15 UTC] SUCCESS id=504 target=bt-205-basic-computer-engineering-jun-2022_Xjnwcee-ocr.pdf
+[2026-03-03 11:24:16 UTC] SUCCESS id=503 target=bt-204-basic-civil-engineering-and-engineering-mechanics-nov-2022_yzi5svW-ocr.pdf
+[2026-03-03 11:24:17 UTC] SUCCESS id=523 target=csit-ci-302-discrete-structure-jun-2023-ocr.pdf
+[2026-03-03 11:24:20 UTC] SUCCESS id=510 target=cs-ct-co-303-data-structures-dec-2024_v19Xj1b-ocr.pdf
+[2026-03-03 11:24:29 UTC] SUCCESS id=517 target=it-304-object-oriented-programming-and-methodology-dec-2023_CUxZPbw-ocr.pdf
+[2026-03-03 11:24:35 UTC] SUCCESS id=509 target=it-304-object-oriented-programming-and-methodology-dec-2024_F6HPzrL-ocr.pdf
+[2026-03-03 11:24:36 UTC] SUCCESS id=495 target=bt-105-engineering-graphics-nov-2022_mfHV5qw-ocr.pdf
+[2026-03-03 11:24:39 UTC] SUCCESS id=534 target=al-csit-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2025_lQWJ9X7-ocr.pdf
+[2026-03-03 11:24:42 UTC] SUCCESS id=538 target=cy-602-software-engineering-dec-2024-ocr.pdf
+[2026-03-03 11:24:42 UTC] SUCCESS id=514 target=cs-it-302-discrete-structure-jun-2024-ocr.pdf
+[2026-03-03 11:24:42 UTC] SUCCESS id=506 target=cs-ct-co-it-ci-csit-302-discrete-structure-jun-2025_00id0iZ-ocr.pdf
+[2026-03-03 11:24:42 UTC] SUCCESS id=529 target=cs-ct-co-ci-304-digital-circuits-and-system-nov-2022_iXBDZQk-ocr.pdf
+[2026-03-03 11:24:43 UTC] SUCCESS id=522 target=cs-ct-co-ci-cy-304-digital-systems-dec-2023_Mo2vols-ocr.pdf
+[2026-03-03 11:24:44 UTC] SUCCESS id=515 target=al-cd-401-introduction-to-discrete-structure-and-linear-algebra-jun-2023_LTFAVIo-ocr.pdf
+[2026-03-03 11:24:44 UTC] SUCCESS id=533 target=cy-602-software-engineering-jun-2025-ocr.pdf
+[2026-03-03 11:24:45 UTC] SUCCESS id=511 target=cs-ct-co-303-data-structures-jun-2024_tTAGR64-ocr.pdf
+[2026-03-03 11:24:46 UTC] SUCCESS id=528 target=it-304-object-oriented-programming-and-methodology-nov-2022_3xayAWc-ocr.pdf
+[2026-03-03 11:24:48 UTC] SUCCESS id=502 target=bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2022_pguLDzb-ocr.pdf
+[2026-03-03 11:24:49 UTC] SUCCESS id=537 target=cy-404-operating-systems-jun-2024-ocr.pdf
+[2026-03-03 11:24:49 UTC] SUCCESS id=516 target=al-cd-401-introduction-to-discrete-structure-and-linear-algebra-nov-2023_V6ETDlx-ocr.pdf
+[2026-03-03 11:24:51 UTC] SUCCESS id=498 target=bt-202-mathematics-2-jun-2022_HqZOGZj-ocr.pdf
+[2026-03-03 11:24:51 UTC] SUCCESS id=513 target=csit-302-discrete-structure-dec-2024-ocr.pdf
+[2026-03-03 11:24:52 UTC] SUCCESS id=531 target=cs-ct-co-ci-304-digital-systems-nov-2022_GYuOZDq-ocr.pdf
+[2026-03-03 11:24:53 UTC] SUCCESS id=530 target=cs-ct-co-ci-304-digital-systems-digital-circuits-and-system-nov-2022_tTHIaft-ocr.pdf
+[2026-03-03 11:24:55 UTC] SUCCESS id=535 target=al-csit-cs-ct-co-io-is-404-computer-organization-jun-2025_9KPGr2n-ocr.pdf
+[2026-03-03 11:24:56 UTC] SUCCESS id=496 target=bt-201-engineering-physics-jun-2022_4ePKSmZ-ocr.pdf
+[2026-03-03 11:24:57 UTC] SUCCESS id=497 target=bt-201-engineering-physics-nov-2022_okEKmBt-ocr.pdf
+[2026-03-03 11:25:02 UTC] SUCCESS id=539 target=al-cd-cs-ct-co-sd-403-software-engineering-jun-2024_8RUBTj7-ocr.pdf
+[2026-03-03 11:25:03 UTC] SUCCESS id=507 target=ai-al-cd-401-introduction-to-discrete-structure-and-linear-algebra-dec-2024_XVNjlD3-ocr.pdf
+[2026-03-03 11:25:03 UTC] SUCCESS id=532 target=cy-404-operating-systems-jun-2025-ocr.pdf
+[2026-03-03 11:25:03 UTC] SUCCESS id=542 target=cs-sd-402-analysis-design-of-algorithm-dec-2024_JtwGi4j-ocr.pdf
+[2026-03-03 11:25:04 UTC] SUCCESS id=512 target=cs-ct-co-ci-cy-304-digital-systems-dec-2024_U4NkX6w-ocr.pdf
+[2026-03-03 11:25:05 UTC] SUCCESS id=524 target=cs-ct-co-it-ci-302-discrete-structure-dec-2023_bGNjbkz-ocr.pdf
+[2026-03-03 11:25:05 UTC] SUCCESS id=518 target=cs-ct-co-303-data-structures-dec-2023_u58dZsd-ocr.pdf
+[2026-03-03 11:25:08 UTC] SUCCESS id=536 target=cs-sd-402-analysis-design-of-algorithm-jun-2025_TP1C37U-ocr.pdf
+[2026-03-03 11:25:10 UTC] SUCCESS id=508 target=ai-al-cd-401-introduction-to-discrete-structure-and-linear-algebra-jun-2024_SOpo3rE-ocr.pdf
+[2026-03-03 11:25:10 UTC] SUCCESS id=541 target=al-csit-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2024_Xn8ppPQ-ocr.pdf
+[2026-03-03 11:25:10 UTC] SUCCESS id=540 target=al-csit-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-dec-2024-ocr.pdf
+[2026-03-03 11:25:12 UTC] SUCCESS id=543 target=cs-sd-402-analysis-design-of-algorithm-jun-2024_nnT7Krj-ocr.pdf
+[2026-03-03 11:25:20 UTC] SUCCESS id=500 target=bt-203-basic-mechanical-engineering-jun-2022_r5m8sVI-ocr.pdf
+[2026-03-03 11:25:20 UTC] Run finished: success=50, failed=0, skipped=0, total=50

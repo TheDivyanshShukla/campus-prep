@@ -1,0 +1,102 @@
+[2026-03-03 11:12:47 UTC] Run started: total=50, dry_run=False, resume=True
+[2026-03-03 11:12:47 UTC] PROCESS id=444 source=raw_docs/raw_docs/bt-101-engineering-chemistry-jun-2025_wzxopxR-ocr.pdf target=raw_docs/raw_docs/bt-101-engineering-chemistry-jun-2025_wzxopxR-ocr-ocr.pdf
+[2026-03-03 11:13:02 UTC] SUCCESS id=444 target=raw_docs/raw_docs/bt-101-engineering-chemistry-jun-2025_wzxopxR-ocr-ocr.pdf
+[2026-03-03 11:13:02 UTC] PROCESS id=445 source=raw_docs/bt-102-mathematics-1-jun-2025_5fxdqo7.pdf target=raw_docs/bt-102-mathematics-1-jun-2025_5fxdqo7-ocr.pdf
+[2026-03-03 11:13:10 UTC] SUCCESS id=445 target=raw_docs/bt-102-mathematics-1-jun-2025_5fxdqo7-ocr.pdf
+[2026-03-03 11:13:10 UTC] PROCESS id=446 source=raw_docs/bt-103-english-for-communication-jun-2025_v6b5QBd.pdf target=raw_docs/bt-103-english-for-communication-jun-2025_v6b5QBd-ocr.pdf
+[2026-03-03 11:13:17 UTC] SUCCESS id=446 target=raw_docs/bt-103-english-for-communication-jun-2025_v6b5QBd-ocr.pdf
+[2026-03-03 11:13:17 UTC] PROCESS id=447 source=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2025_6AJjvaw.pdf target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2025_6AJjvaw-ocr.pdf
+[2026-03-03 11:13:24 UTC] SUCCESS id=447 target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2025_6AJjvaw-ocr.pdf
+[2026-03-03 11:13:24 UTC] PROCESS id=448 source=raw_docs/bt-105-engineering-graphics-jun-2025_PBqIQc6.pdf target=raw_docs/bt-105-engineering-graphics-jun-2025_PBqIQc6-ocr.pdf
+[2026-03-03 11:13:34 UTC] SUCCESS id=448 target=raw_docs/bt-105-engineering-graphics-jun-2025_PBqIQc6-ocr.pdf
+[2026-03-03 11:13:34 UTC] PROCESS id=449 source=raw_docs/bt-201-engineering-physics-jun-2025_gZJkuEW.pdf target=raw_docs/bt-201-engineering-physics-jun-2025_gZJkuEW-ocr.pdf
+[2026-03-03 11:13:42 UTC] SUCCESS id=449 target=raw_docs/bt-201-engineering-physics-jun-2025_gZJkuEW-ocr.pdf
+[2026-03-03 11:13:42 UTC] PROCESS id=450 source=raw_docs/bt-202-mathematics-2-jun-2025_kkV4kgF.pdf target=raw_docs/bt-202-mathematics-2-jun-2025_kkV4kgF-ocr.pdf
+[2026-03-03 11:13:50 UTC] SUCCESS id=450 target=raw_docs/bt-202-mathematics-2-jun-2025_kkV4kgF-ocr.pdf
+[2026-03-03 11:13:50 UTC] PROCESS id=451 source=raw_docs/bt-203-basic-mechanical-engineering-jun-2025_9nzxGTG.pdf target=raw_docs/bt-203-basic-mechanical-engineering-jun-2025_9nzxGTG-ocr.pdf
+[2026-03-03 11:13:59 UTC] SUCCESS id=451 target=raw_docs/bt-203-basic-mechanical-engineering-jun-2025_9nzxGTG-ocr.pdf
+[2026-03-03 11:13:59 UTC] PROCESS id=452 source=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2025_COaHMJi.pdf target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2025_COaHMJi-ocr.pdf
+[2026-03-03 11:14:08 UTC] SUCCESS id=452 target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2025_COaHMJi-ocr.pdf
+[2026-03-03 11:14:08 UTC] PROCESS id=453 source=raw_docs/bt-205-basic-computer-engineering-jun-2025_MKzoPM0.pdf target=raw_docs/bt-205-basic-computer-engineering-jun-2025_MKzoPM0-ocr.pdf
+[2026-03-03 11:14:16 UTC] SUCCESS id=453 target=raw_docs/bt-205-basic-computer-engineering-jun-2025_MKzoPM0-ocr.pdf
+[2026-03-03 11:14:16 UTC] PROCESS id=454 source=raw_docs/bt-101-engineering-chemistry-dec-2024_r33nVU4.pdf target=raw_docs/bt-101-engineering-chemistry-dec-2024_r33nVU4-ocr.pdf
+[2026-03-03 11:14:24 UTC] SUCCESS id=454 target=raw_docs/bt-101-engineering-chemistry-dec-2024_r33nVU4-ocr.pdf
+[2026-03-03 11:14:24 UTC] PROCESS id=455 source=raw_docs/bt-102-mathematics-1-dec-2024_s58jggl.pdf target=raw_docs/bt-102-mathematics-1-dec-2024_s58jggl-ocr.pdf
+[2026-03-03 11:14:33 UTC] SUCCESS id=455 target=raw_docs/bt-102-mathematics-1-dec-2024_s58jggl-ocr.pdf
+[2026-03-03 11:14:33 UTC] PROCESS id=456 source=raw_docs/bt-103-english-for-communication-dec-2024_7qvCzjz.pdf target=raw_docs/bt-103-english-for-communication-dec-2024_7qvCzjz-ocr.pdf
+[2026-03-03 11:14:41 UTC] SUCCESS id=456 target=raw_docs/bt-103-english-for-communication-dec-2024_7qvCzjz-ocr.pdf
+[2026-03-03 11:14:41 UTC] PROCESS id=457 source=raw_docs/bt-104-basic-electrical-and-electronics-engineering-dec-2024_sO9HbXT.pdf target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-dec-2024_sO9HbXT-ocr.pdf
+[2026-03-03 11:14:52 UTC] SUCCESS id=457 target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-dec-2024_sO9HbXT-ocr.pdf
+[2026-03-03 11:14:52 UTC] PROCESS id=458 source=raw_docs/bt-105-engineering-graphics-dec-2024_olfgeME.pdf target=raw_docs/bt-105-engineering-graphics-dec-2024_olfgeME-ocr.pdf
+[2026-03-03 11:15:03 UTC] SUCCESS id=458 target=raw_docs/bt-105-engineering-graphics-dec-2024_olfgeME-ocr.pdf
+[2026-03-03 11:15:03 UTC] PROCESS id=459 source=raw_docs/bt-105-engineering-graphics-jun-2024_CriliBd.pdf target=raw_docs/bt-105-engineering-graphics-jun-2024_CriliBd-ocr.pdf
+[2026-03-03 11:15:16 UTC] SUCCESS id=459 target=raw_docs/bt-105-engineering-graphics-jun-2024_CriliBd-ocr.pdf
+[2026-03-03 11:15:16 UTC] PROCESS id=460 source=raw_docs/bt-201-engineering-physics-dec-2024_vmO2TAa.pdf target=raw_docs/bt-201-engineering-physics-dec-2024_vmO2TAa-ocr.pdf
+[2026-03-03 11:15:23 UTC] SUCCESS id=460 target=raw_docs/bt-201-engineering-physics-dec-2024_vmO2TAa-ocr.pdf
+[2026-03-03 11:15:23 UTC] PROCESS id=461 source=raw_docs/bt-202-mathematics-2-dec-2024_TrjNSYV.pdf target=raw_docs/bt-202-mathematics-2-dec-2024_TrjNSYV-ocr.pdf
+[2026-03-03 11:15:29 UTC] SUCCESS id=461 target=raw_docs/bt-202-mathematics-2-dec-2024_TrjNSYV-ocr.pdf
+[2026-03-03 11:15:29 UTC] PROCESS id=462 source=raw_docs/bt-203-basic-mechanical-engineering-dec-2024_1xOWUFD.pdf target=raw_docs/bt-203-basic-mechanical-engineering-dec-2024_1xOWUFD-ocr.pdf
+[2026-03-03 11:15:36 UTC] SUCCESS id=462 target=raw_docs/bt-203-basic-mechanical-engineering-dec-2024_1xOWUFD-ocr.pdf
+[2026-03-03 11:15:36 UTC] PROCESS id=463 source=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-dec-2024_w0J5rRQ.pdf target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-dec-2024_w0J5rRQ-ocr.pdf
+[2026-03-03 11:15:42 UTC] SUCCESS id=463 target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-dec-2024_w0J5rRQ-ocr.pdf
+[2026-03-03 11:15:42 UTC] PROCESS id=464 source=raw_docs/bt-205-basic-computer-engineering-dec-2024_uJlRVk2.pdf target=raw_docs/bt-205-basic-computer-engineering-dec-2024_uJlRVk2-ocr.pdf
+[2026-03-03 11:15:47 UTC] SUCCESS id=464 target=raw_docs/bt-205-basic-computer-engineering-dec-2024_uJlRVk2-ocr.pdf
+[2026-03-03 11:15:47 UTC] PROCESS id=465 source=raw_docs/bt-205-basic-computer-engineering-jun-2024_We7ot8w.pdf target=raw_docs/bt-205-basic-computer-engineering-jun-2024_We7ot8w-ocr.pdf
+[2026-03-03 11:15:57 UTC] SUCCESS id=465 target=raw_docs/bt-205-basic-computer-engineering-jun-2024_We7ot8w-ocr.pdf
+[2026-03-03 11:15:57 UTC] PROCESS id=466 source=raw_docs/bt-101-engineering-chemistry-dec-2023_GyXEUkS.pdf target=raw_docs/bt-101-engineering-chemistry-dec-2023_GyXEUkS-ocr.pdf
+[2026-03-03 11:16:05 UTC] SUCCESS id=466 target=raw_docs/bt-101-engineering-chemistry-dec-2023_GyXEUkS-ocr.pdf
+[2026-03-03 11:16:05 UTC] PROCESS id=467 source=raw_docs/bt-101-engineering-chemistry-jun-2023_PKkIhuQ.pdf target=raw_docs/bt-101-engineering-chemistry-jun-2023_PKkIhuQ-ocr.pdf
+[2026-03-03 11:16:12 UTC] SUCCESS id=467 target=raw_docs/bt-101-engineering-chemistry-jun-2023_PKkIhuQ-ocr.pdf
+[2026-03-03 11:16:12 UTC] PROCESS id=468 source=raw_docs/bt-102-mathematics-1-dec-2023_QrgT1WL.pdf target=raw_docs/bt-102-mathematics-1-dec-2023_QrgT1WL-ocr.pdf
+[2026-03-03 11:16:19 UTC] SUCCESS id=468 target=raw_docs/bt-102-mathematics-1-dec-2023_QrgT1WL-ocr.pdf
+[2026-03-03 11:16:19 UTC] PROCESS id=469 source=raw_docs/bt-102-mathematics-1-jun-2023_68RVDz6.pdf target=raw_docs/bt-102-mathematics-1-jun-2023_68RVDz6-ocr.pdf
+[2026-03-03 11:16:28 UTC] SUCCESS id=469 target=raw_docs/bt-102-mathematics-1-jun-2023_68RVDz6-ocr.pdf
+[2026-03-03 11:16:28 UTC] PROCESS id=470 source=raw_docs/bt-103-english-for-communication-dec-2023_k3Q8Cnt.pdf target=raw_docs/bt-103-english-for-communication-dec-2023_k3Q8Cnt-ocr.pdf
+[2026-03-03 11:16:35 UTC] SUCCESS id=470 target=raw_docs/bt-103-english-for-communication-dec-2023_k3Q8Cnt-ocr.pdf
+[2026-03-03 11:16:35 UTC] PROCESS id=471 source=raw_docs/bt-103-english-for-communication-jun-2023_ryrVRdK.pdf target=raw_docs/bt-103-english-for-communication-jun-2023_ryrVRdK-ocr.pdf
+[2026-03-03 11:16:40 UTC] SUCCESS id=471 target=raw_docs/bt-103-english-for-communication-jun-2023_ryrVRdK-ocr.pdf
+[2026-03-03 11:16:40 UTC] PROCESS id=472 source=raw_docs/bt-104-basic-electrical-and-electronics-engineering-dec-2023_pVA8tbX.pdf target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-dec-2023_pVA8tbX-ocr.pdf
+[2026-03-03 11:16:46 UTC] SUCCESS id=472 target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-dec-2023_pVA8tbX-ocr.pdf
+[2026-03-03 11:16:46 UTC] PROCESS id=473 source=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2023_9zBZPuN.pdf target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2023_9zBZPuN-ocr.pdf
+[2026-03-03 11:16:56 UTC] SUCCESS id=473 target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2023_9zBZPuN-ocr.pdf
+[2026-03-03 11:16:56 UTC] PROCESS id=474 source=raw_docs/bt-105-engineering-graphics-dec-2023_8TUDWJ3.pdf target=raw_docs/bt-105-engineering-graphics-dec-2023_8TUDWJ3-ocr.pdf
+[2026-03-03 11:17:04 UTC] SUCCESS id=474 target=raw_docs/bt-105-engineering-graphics-dec-2023_8TUDWJ3-ocr.pdf
+[2026-03-03 11:17:04 UTC] PROCESS id=475 source=raw_docs/bt-105-engineering-graphics-jun-2023_TBnotC7.pdf target=raw_docs/bt-105-engineering-graphics-jun-2023_TBnotC7-ocr.pdf
+[2026-03-03 11:17:12 UTC] SUCCESS id=475 target=raw_docs/bt-105-engineering-graphics-jun-2023_TBnotC7-ocr.pdf
+[2026-03-03 11:17:12 UTC] PROCESS id=476 source=raw_docs/bt-201-engineering-physics-dec-2023_PImSsiB.pdf target=raw_docs/bt-201-engineering-physics-dec-2023_PImSsiB-ocr.pdf
+[2026-03-03 11:17:18 UTC] SUCCESS id=476 target=raw_docs/bt-201-engineering-physics-dec-2023_PImSsiB-ocr.pdf
+[2026-03-03 11:17:18 UTC] PROCESS id=477 source=raw_docs/bt-201-engineering-physics-jun-2023_vlMttRF.pdf target=raw_docs/bt-201-engineering-physics-jun-2023_vlMttRF-ocr.pdf
+[2026-03-03 11:17:23 UTC] SUCCESS id=477 target=raw_docs/bt-201-engineering-physics-jun-2023_vlMttRF-ocr.pdf
+[2026-03-03 11:17:23 UTC] PROCESS id=478 source=raw_docs/bt-202-mathematics-2-dec-2023_Jqwnpde.pdf target=raw_docs/bt-202-mathematics-2-dec-2023_Jqwnpde-ocr.pdf
+[2026-03-03 11:17:30 UTC] SUCCESS id=478 target=raw_docs/bt-202-mathematics-2-dec-2023_Jqwnpde-ocr.pdf
+[2026-03-03 11:17:30 UTC] PROCESS id=479 source=raw_docs/bt-202-mathematics-2-jun-2023_pzvnpaK.pdf target=raw_docs/bt-202-mathematics-2-jun-2023_pzvnpaK-ocr.pdf
+[2026-03-03 11:17:35 UTC] SUCCESS id=479 target=raw_docs/bt-202-mathematics-2-jun-2023_pzvnpaK-ocr.pdf
+[2026-03-03 11:17:35 UTC] PROCESS id=480 source=raw_docs/bt-203-basic-mechanical-engineering-dec-2023_Ofpn4PI.pdf target=raw_docs/bt-203-basic-mechanical-engineering-dec-2023_Ofpn4PI-ocr.pdf
+[2026-03-03 11:17:53 UTC] SUCCESS id=480 target=raw_docs/bt-203-basic-mechanical-engineering-dec-2023_Ofpn4PI-ocr.pdf
+[2026-03-03 11:17:53 UTC] PROCESS id=481 source=raw_docs/bt-203-basic-mechanical-engineering-jun-2023_rsCkYW6.pdf target=raw_docs/bt-203-basic-mechanical-engineering-jun-2023_rsCkYW6-ocr.pdf
+[2026-03-03 11:18:04 UTC] SUCCESS id=481 target=raw_docs/bt-203-basic-mechanical-engineering-jun-2023_rsCkYW6-ocr.pdf
+[2026-03-03 11:18:04 UTC] PROCESS id=482 source=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-dec-2023_8LSqv1t.pdf target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-dec-2023_8LSqv1t-ocr.pdf
+[2026-03-03 11:18:15 UTC] SUCCESS id=482 target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-dec-2023_8LSqv1t-ocr.pdf
+[2026-03-03 11:18:15 UTC] PROCESS id=483 source=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2023_5I9i7GX.pdf target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2023_5I9i7GX-ocr.pdf
+[2026-03-03 11:18:25 UTC] SUCCESS id=483 target=raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2023_5I9i7GX-ocr.pdf
+[2026-03-03 11:18:25 UTC] PROCESS id=484 source=raw_docs/bt-205-basic-computer-engineering-dec-2023_uHRA1t6.pdf target=raw_docs/bt-205-basic-computer-engineering-dec-2023_uHRA1t6-ocr.pdf
+[2026-03-03 11:18:36 UTC] SUCCESS id=484 target=raw_docs/bt-205-basic-computer-engineering-dec-2023_uHRA1t6-ocr.pdf
+[2026-03-03 11:18:36 UTC] PROCESS id=485 source=raw_docs/bt-205-basic-computer-engineering-jun-2023_Y2h4lWK.pdf target=raw_docs/bt-205-basic-computer-engineering-jun-2023_Y2h4lWK-ocr.pdf
+[2026-03-03 11:18:45 UTC] SUCCESS id=485 target=raw_docs/bt-205-basic-computer-engineering-jun-2023_Y2h4lWK-ocr.pdf
+[2026-03-03 11:18:45 UTC] PROCESS id=486 source=raw_docs/bt-101-engineering-chemistry-jun-2022_AE5NQIf.pdf target=raw_docs/bt-101-engineering-chemistry-jun-2022_AE5NQIf-ocr.pdf
+[2026-03-03 11:19:00 UTC] SUCCESS id=486 target=raw_docs/bt-101-engineering-chemistry-jun-2022_AE5NQIf-ocr.pdf
+[2026-03-03 11:19:00 UTC] PROCESS id=487 source=raw_docs/bt-101-engineering-chemistry-nov-2022_uR4HWBj.pdf target=raw_docs/bt-101-engineering-chemistry-nov-2022_uR4HWBj-ocr.pdf
+[2026-03-03 11:19:10 UTC] SUCCESS id=487 target=raw_docs/bt-101-engineering-chemistry-nov-2022_uR4HWBj-ocr.pdf
+[2026-03-03 11:19:10 UTC] PROCESS id=488 source=raw_docs/bt-102-mathematics-1-nov-2022_TZCt3oR.pdf target=raw_docs/bt-102-mathematics-1-nov-2022_TZCt3oR-ocr.pdf
+[2026-03-03 11:19:28 UTC] SUCCESS id=488 target=raw_docs/bt-102-mathematics-1-nov-2022_TZCt3oR-ocr.pdf
+[2026-03-03 11:19:28 UTC] PROCESS id=489 source=raw_docs/bt-102-mathematics-jun-2022_AC3nmOC.pdf target=raw_docs/bt-102-mathematics-jun-2022_AC3nmOC-ocr.pdf
+[2026-03-03 11:19:55 UTC] SUCCESS id=489 target=raw_docs/bt-102-mathematics-jun-2022_AC3nmOC-ocr.pdf
+[2026-03-03 11:19:55 UTC] PROCESS id=490 source=raw_docs/bt-103-english-for-communication-jun-2022_G93C752.pdf target=raw_docs/bt-103-english-for-communication-jun-2022_G93C752-ocr.pdf
+[2026-03-03 11:20:00 UTC] SUCCESS id=490 target=raw_docs/bt-103-english-for-communication-jun-2022_G93C752-ocr.pdf
+[2026-03-03 11:20:00 UTC] PROCESS id=491 source=raw_docs/bt-103-english-for-communication-nov-2022_KXwSNcZ.pdf target=raw_docs/bt-103-english-for-communication-nov-2022_KXwSNcZ-ocr.pdf
+[2026-03-03 11:20:06 UTC] SUCCESS id=491 target=raw_docs/bt-103-english-for-communication-nov-2022_KXwSNcZ-ocr.pdf
+[2026-03-03 11:20:06 UTC] PROCESS id=492 source=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2022_Gee8DDc.pdf target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2022_Gee8DDc-ocr.pdf
+[2026-03-03 11:20:14 UTC] SUCCESS id=492 target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2022_Gee8DDc-ocr.pdf
+[2026-03-03 11:20:14 UTC] PROCESS id=493 source=raw_docs/bt-104-basic-electrical-and-electronics-engineering-nov-2022_MZQqn0p.pdf target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-nov-2022_MZQqn0p-ocr.pdf
+[2026-03-03 11:20:23 UTC] SUCCESS id=493 target=raw_docs/bt-104-basic-electrical-and-electronics-engineering-nov-2022_MZQqn0p-ocr.pdf
+[2026-03-03 11:20:23 UTC] Run finished: success=50, failed=0, skipped=0, total=50
