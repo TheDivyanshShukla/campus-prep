@@ -5,6 +5,126 @@
 <script>
     let searchResults = [];
     let searchCurrentIdx = 0;
+    let searchMode = 'pdf';
+
+    function getSearchUi() {
+        return {
+            controls: document.getElementById('searchControls'),
+            searchSpinner: document.getElementById('searchSpinner'),
+            searchIcon: document.getElementById('searchIcon'),
+            searchCount: document.getElementById('searchCount'),
+        };
+    }
+
+    function clearNativeHighlights() {
+        const container = document.getElementById('secure-content-container');
+        const marks = document.querySelectorAll('mark.reader-search-hit');
+        marks.forEach(mark => {
+            const textNode = document.createTextNode(mark.textContent || '');
+            mark.replaceWith(textNode);
+        });
+        if (container) {
+            container.normalize();
+        }
+    }
+
+    function escapeRegExp(value) {
+        return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function buildNativeSearchResults(query) {
+        searchResults = [];
+        searchCurrentIdx = 0;
+
+        const container = document.getElementById('secure-content-container');
+        if (!container || !query) return;
+
+        clearNativeHighlights();
+
+        const walker = document.createTreeWalker(
+            container,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    if (!node || !node.nodeValue || !node.nodeValue.trim()) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                    const parent = node.parentElement;
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+                    const blocked = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'MARK'];
+                    if (blocked.includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const textNodes = [];
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        const regex = new RegExp(escapeRegExp(query), 'gi');
+        textNodes.forEach(node => {
+            const text = node.nodeValue || '';
+            if (!regex.test(text)) {
+                regex.lastIndex = 0;
+                return;
+            }
+            regex.lastIndex = 0;
+
+            const fragment = document.createDocumentFragment();
+            let lastIndex = 0;
+            let match;
+            while ((match = regex.exec(text)) !== null) {
+                const before = text.slice(lastIndex, match.index);
+                if (before) {
+                    fragment.appendChild(document.createTextNode(before));
+                }
+
+                const hit = document.createElement('mark');
+                hit.className = 'reader-search-hit bg-yellow-300 text-black rounded px-0.5';
+                hit.textContent = match[0];
+                fragment.appendChild(hit);
+                searchResults.push(hit);
+
+                lastIndex = match.index + match[0].length;
+            }
+
+            const tail = text.slice(lastIndex);
+            if (tail) {
+                fragment.appendChild(document.createTextNode(tail));
+            }
+
+            node.parentNode.replaceChild(fragment, node);
+        });
+    }
+
+    function showSearchState() {
+        const { controls, searchCount } = getSearchUi();
+        const input = document.getElementById('pdfSearchInput');
+        const hasQuery = !!(input && input.value.trim());
+
+        if (controls) {
+            if (hasQuery) {
+                controls.classList.remove('hidden');
+            } else {
+                controls.classList.add('hidden');
+            }
+        }
+
+        if (!searchCount) return;
+        if (!hasQuery) {
+            searchCount.innerText = '0/0';
+            return;
+        }
+
+        if (!searchResults.length) {
+            searchCount.innerText = '0/0';
+            return;
+        }
+
+        searchCount.innerText = `${searchCurrentIdx + 1}/${searchResults.length}`;
+    }
 
     function toggleSearch() {
         const bar = document.getElementById('floatingSearchBar');
@@ -23,58 +143,88 @@
         bar.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
         bar.classList.remove('translate-y-0');
         document.querySelectorAll('canvas').forEach(c => c.style.boxShadow = '');
+        clearNativeHighlights();
+        searchResults = [];
+        searchCurrentIdx = 0;
+        showSearchState();
     }
 
     async function executeSearch() {
-        if (!window.pdfDocGlobal) return;
         const query = document.getElementById('pdfSearchInput').value.toLowerCase().trim();
-        const controls = document.getElementById('searchControls');
-        const searchSpinner = document.getElementById('searchSpinner');
-        const searchIcon = document.getElementById('searchIcon');
+        const { searchSpinner, searchIcon, controls, searchCount } = getSearchUi();
 
         if (!query) {
-            controls.classList.add('hidden');
             document.querySelectorAll('canvas').forEach(c => c.style.boxShadow = '');
+            clearNativeHighlights();
+            searchResults = [];
+            searchCurrentIdx = 0;
+            showSearchState();
             return;
         }
 
-        searchIcon.classList.add('hidden');
-        searchSpinner.classList.remove('hidden');
+        if (searchIcon) searchIcon.classList.add('hidden');
+        if (searchSpinner) searchSpinner.classList.remove('hidden');
         searchResults = [];
         searchCurrentIdx = 0;
 
-        for (let i = 1; i <= window.pdfDocGlobal.numPages; i++) {
-            try {
-                const page = await window.pdfDocGlobal.getPage(i);
-                const textContent = await page.getTextContent();
-                const pageText = textContent.items.map(item => item.str).join(' ').toLowerCase();
-                if (pageText.includes(query)) searchResults.push(i);
-            } catch (e) {
-                console.error('Search error on page', i, e);
-            }
+        const hasPdfContainer = !!document.getElementById('pdf-container');
+        if (hasPdfContainer && !window.pdfDocGlobal) {
+            if (controls) controls.classList.remove('hidden');
+            if (searchCount) searchCount.innerText = '...';
+            if (searchSpinner) searchSpinner.classList.remove('hidden');
+            if (searchIcon) searchIcon.classList.add('hidden');
+            return;
         }
 
-        searchSpinner.classList.add('hidden');
-        searchIcon.classList.remove('hidden');
+        if (window.pdfDocGlobal) {
+            searchMode = 'pdf';
+            for (let i = 1; i <= window.pdfDocGlobal.numPages; i++) {
+                try {
+                    const page = await window.pdfDocGlobal.getPage(i);
+                    const textContent = await page.getTextContent();
+                    const pageText = textContent.items.map(item => item.str).join(' ').toLowerCase();
+                    if (pageText.includes(query)) searchResults.push(i);
+                } catch (e) {
+                    console.error('Search error on page', i, e);
+                }
+            }
+        } else {
+            searchMode = 'native';
+            buildNativeSearchResults(query);
+        }
+
+        if (searchSpinner) searchSpinner.classList.add('hidden');
+        if (searchIcon) searchIcon.classList.remove('hidden');
 
         if (searchResults.length > 0) {
-            controls.classList.remove('hidden');
-            document.getElementById('searchCount').innerText = `1/${searchResults.length}`;
             scrollToSearchResult(0);
         } else {
-            controls.classList.add('hidden');
+            showSearchState();
         }
     }
 
     function scrollToSearchResult(idx) {
         if (searchResults.length === 0) return;
         searchCurrentIdx = idx;
-        document.getElementById('searchCount').innerText = `${idx + 1}/${searchResults.length}`;
-        const canvas = document.getElementById(`page-canvas-${searchResults[idx]}`);
-        if (canvas) {
-            canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            canvas.style.boxShadow = '0 0 0 8px #eab308';
-            setTimeout(() => { canvas.style.boxShadow = ''; }, 2500);
+        showSearchState();
+
+        if (searchMode === 'pdf') {
+            const canvas = document.getElementById(`page-canvas-${searchResults[idx]}`);
+            if (canvas) {
+                canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                canvas.style.boxShadow = '0 0 0 8px #eab308';
+                setTimeout(() => { canvas.style.boxShadow = ''; }, 2500);
+            }
+            return;
+        }
+
+        const active = searchResults[idx];
+        if (active) {
+            document.querySelectorAll('mark.reader-search-hit-active').forEach(el => {
+                el.classList.remove('reader-search-hit-active', 'ring-2', 'ring-yellow-500');
+            });
+            active.classList.add('reader-search-hit-active', 'ring-2', 'ring-yellow-500');
+            active.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     }
 
@@ -108,6 +258,12 @@
                 toggleSearch();
             }
             if (e.key === 'Escape') closeSearch();
+        });
+
+        window.addEventListener('readerPdfReady', function () {
+            if (searchInput.value.trim()) {
+                executeSearch();
+            }
         });
     });
 </script>
