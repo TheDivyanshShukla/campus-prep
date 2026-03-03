@@ -13,3 +13,4 @@ m.py
 staticfiles
 tmp
 .temp
+data/pg/*

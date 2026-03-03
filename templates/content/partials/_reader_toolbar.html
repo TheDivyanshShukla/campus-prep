@@ -43,9 +43,33 @@
     function applyZoom() {
         document.getElementById('zoomPercentage').innerText = window.currentZoom + '%';
         
+        // Also update menu zoom percentage if it exists
+        const zoomMenuEl = document.getElementById('zoomPercentageMenu');
+        if (zoomMenuEl) {
+            zoomMenuEl.innerText = window.currentZoom + '%';
+        }
+        
+        const isZoomed = window.currentZoom > 100;
+        
+        // Handle PDF Container
+        const pdfContainer = document.getElementById('pdf-container');
+        if (pdfContainer) {
+            pdfContainer.style.width = window.currentZoom + '%';
+            pdfContainer.style.margin = '0 auto';
+            
+            // Enable horizontal scroll on zoomed state
+            const pdfWrapper = pdfContainer.parentElement;
+            if (pdfWrapper) {
+                pdfWrapper.style.overflowX = isZoomed ? 'auto' : 'hidden';
+                pdfWrapper.style.overflowY = 'visible';
+                pdfWrapper.style.WebkitOverflowScrolling = 'touch'; // Smooth scroll on iOS
+            }
+        }
+
         // Target PDF canvases
         document.querySelectorAll('#pdf-container canvas').forEach(c => {
-            c.style.width = window.currentZoom + '%';
+            c.style.width = '100%';
+            c.style.display = 'block';
         });
 
         // Target Native Mode container
@@ -53,6 +77,14 @@
         if (nativeContainer) {
             nativeContainer.style.width = window.currentZoom + '%';
             nativeContainer.style.margin = '0 auto'; // Keep it centered
+            
+            // Enable horizontal scroll on zoomed state
+            const nativeWrapper = nativeContainer.parentElement;
+            if (nativeWrapper) {
+                nativeWrapper.style.overflowX = isZoomed ? 'auto' : 'hidden';
+                nativeWrapper.style.overflowY = 'visible';
+                nativeWrapper.style.WebkitOverflowScrolling = 'touch'; // Smooth scroll on iOS
+            }
         }
     }
 
@@ -84,22 +116,86 @@
     function toggleCinemaMode() {
         const body = document.body;
         const mainContainer = document.getElementById('reader-main-container');
-        const fsText = document.getElementById('fullscreen-text');
+        const cinemaStatusEl = document.getElementById('cinemaStatus');
         
         body.classList.toggle('cinema-mode');
         
         if (body.classList.contains('cinema-mode')) {
             mainContainer.classList.remove('max-w-4xl');
             mainContainer.classList.add('max-w-none');
-            fsText.innerText = 'Exit Full Screen';
+            document.getElementById('cinemaModeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 4H5a2 2 0 00-2 2v4m0 0a2 2 0 002 2h4m0 0V4m0 8a2 2 0 00-2-2H5m16 0h4a2 2 0 012 2v4m0 0a2 2 0 01-2 2h-4m0 0v-8m0 8a2 2 0 01-2-2h-4m16-4h-4a2 2 0 01-2-2v-4"></path>';
+            if (cinemaStatusEl) {
+                cinemaStatusEl.innerText = 'ON';
+            }
         } else {
             mainContainer.classList.add('max-w-4xl');
             mainContainer.classList.remove('max-w-none');
-            fsText.innerText = 'Full Screen';
+            document.getElementById('cinemaModeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>';
+            if (cinemaStatusEl) {
+                cinemaStatusEl.innerText = 'OFF';
+            }
         }
         
         // Retrigger zoom apply to fix any canvas sizing issues
         if (typeof applyZoom === 'function') applyZoom();
+    }
+
+    // ---------- Options Menu Toggle ----------
+
+    function toggleOptionsMenu() {
+        const menu = document.getElementById('optionsMenu');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('opacity-0');
+        menu.classList.toggle('pointer-events-none');
+        
+        // Close when clicking outside
+        if (!menu.classList.contains('hidden')) {
+            setTimeout(() => {
+                document.addEventListener('click', closeOptionsMenuOnClickOutside);
+            }, 0);
+        } else {
+            document.removeEventListener('click', closeOptionsMenuOnClickOutside);
+        }
+    }
+
+    function closeOptionsMenuOnClickOutside(e) {
+        const menu = document.getElementById('optionsMenu');
+        const btn = document.getElementById('optionsMenuBtn');
+        
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            menu.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+            document.removeEventListener('click', closeOptionsMenuOnClickOutside);
+        }
+    }
+
+    // ---------- Font Size Controls ----------
+
+    window.currentFontSize = 100;
+
+    function applyFontSize() {
+        const container = document.getElementById('secure-content-container');
+        if (container) {
+            container.style.fontSize = window.currentFontSize + '%';
+        }
+        
+        const fontSizeEl = document.getElementById('fontSizePercentage');
+        if (fontSizeEl) {
+            fontSizeEl.innerText = window.currentFontSize + '%';
+        }
+        
+        // Also update menu font size percentage if it exists
+        const fontSizeMenuEl = document.getElementById('fontSizePercentageMenu');
+        if (fontSizeMenuEl) {
+            fontSizeMenuEl.innerText = window.currentFontSize + '%';
+        }
+    }
+
+    function fontSizeIncrease() {
+        if (window.currentFontSize < 200) { window.currentFontSize += 10; applyFontSize(); }
+    }
+
+    function fontSizeDecrease() {
+        if (window.currentFontSize > 80) { window.currentFontSize -= 10; applyFontSize(); }
     }
 
     // ---------- Eye Care Tint Toggle ----------
@@ -107,14 +203,26 @@
     function toggleTint() {
         const body = document.body;
         const btn = document.getElementById('tintToggleBtn');
+        const tintStatusEl = document.getElementById('tintStatus');
+        
         body.classList.toggle('tint-enabled');
         
         if (body.classList.contains('tint-enabled')) {
-            btn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
-            btn.classList.remove('bg-neutral-100', 'dark:bg-neutral-800');
+            if (btn) {
+                btn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
+                btn.classList.remove('bg-neutral-100', 'dark:bg-neutral-800');
+            }
+            if (tintStatusEl) {
+                tintStatusEl.innerText = 'ON';
+            }
         } else {
-            btn.classList.remove('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
-            btn.classList.add('bg-neutral-100', 'dark:bg-neutral-800');
+            if (btn) {
+                btn.classList.remove('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
+                btn.classList.add('bg-neutral-100', 'dark:bg-neutral-800');
+            }
+            if (tintStatusEl) {
+                tintStatusEl.innerText = 'OFF';
+            }
         }
     }
 
@@ -128,6 +236,10 @@
             if (btn) {
                 btn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/50');
                 btn.classList.remove('bg-neutral-100', 'dark:bg-neutral-800');
+            }
+            const tintStatusEl = document.getElementById('tintStatus');
+            if (tintStatusEl) {
+                tintStatusEl.innerText = 'ON';
             }
         }
 
