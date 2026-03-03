@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.db import models
+import re
 import base64
 import orjson
 import json
@@ -185,9 +186,31 @@ def read_document(request, document_id, slug=None):
     pdf_token = uuid.uuid4().hex
     request.session[f'pdf_token_{document.id}'] = pdf_token
 
+    current_subject = document.subjects.first()
+    subject_units = []
+    preferred_unit_number = None
+    if current_subject:
+        subject_units = list(
+            current_subject.units.all()
+            .order_by('number')
+            .values('id', 'number', 'name')
+        )
+
+    # Best-effort unit inference from document title, e.g. "Unit 3", "U-2", "Unit: 5"
+    title = (document.title or '')
+    unit_match = re.search(r'\b(?:unit|u)\s*[-:#]?\s*(\d{1,2})\b', title, flags=re.IGNORECASE)
+    if unit_match:
+        try:
+            preferred_unit_number = int(unit_match.group(1))
+        except (TypeError, ValueError):
+            preferred_unit_number = None
+
     return render(request, 'content/document_reader.html', {
         'document': document,
-        'current_subject': document.subjects.first(),
+        'current_subject': current_subject,
+        'subject_units': subject_units,
+        'preferred_unit_number': preferred_unit_number,
+        'can_append_to_notes': request.user.is_authenticated and current_subject is not None,
         'encrypted_data': encrypted_data,
         'tamper_nonce': anti_tamper_nonce,
         'pdf_token': pdf_token,

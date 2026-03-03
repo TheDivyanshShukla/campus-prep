@@ -9,6 +9,8 @@ from django.core.files.storage import default_storage
 from django.db.models import Count
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from django.utils.html import escape
 from django.views.decorators.http import require_GET, require_POST
 
 from apps.academics.data_services import AcademicsDataService
@@ -109,12 +111,15 @@ def editor(request, subject_id, unit_id):
         subject=subject, unit=unit, is_published=True
     ).first()
 
+    embed_mode = request.GET.get('embed') == '1'
+
     return render(request, 'student_notes/editor.html', {
         'note': note,
         'subject': subject,
         'unit': unit,
         'base_note': base_note,
         'blocks_json': json.dumps(note.blocks),
+        'embed_mode': embed_mode,
     })
 
 
@@ -221,6 +226,93 @@ def api_restore_version(request, version_id):
     return JsonResponse({
         'success': True,
         'blocks': note.blocks,
+        'updated_at': note.updated_at.isoformat(),
+    })
+
+
+@login_required
+@require_POST
+def api_append_from_reader(request):
+    """Append selected reader content (text/image) to a student's unit note."""
+    try:
+        data = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({'success': False, 'error': 'Invalid JSON'}, status=400)
+
+    subject_id = data.get('subject_id')
+    unit_id = data.get('unit_id')
+    selected_text = (data.get('text') or '').strip()
+    image_url = (data.get('image_url') or '').strip()
+    image_urls = data.get('image_urls') or []
+    source_title = (data.get('source_title') or '').strip()
+
+    if not isinstance(image_urls, list):
+        image_urls = []
+    image_urls = [str(url).strip() for url in image_urls if str(url).strip()]
+    if image_url:
+        image_urls.append(image_url)
+
+    if not subject_id or not unit_id:
+        return JsonResponse({'success': False, 'error': 'Missing subject/unit'}, status=400)
+
+    if not selected_text and not image_urls:
+        return JsonResponse({'success': False, 'error': 'Nothing to append'}, status=400)
+
+    subject = Subject.objects.filter(pk=subject_id, is_active=True).first()
+    unit = Unit.objects.filter(pk=unit_id, subject_id=subject_id).first()
+    if not subject or not unit:
+        return JsonResponse({'success': False, 'error': 'Invalid subject or unit'}, status=404)
+
+    note, _created = Note.objects.get_or_create(
+        user=request.user,
+        subject=subject,
+        unit=unit,
+    )
+
+    # Version-protect current note if it has content
+    current_blocks = note.blocks if isinstance(note.blocks, dict) else {'blocks': []}
+    block_list = current_blocks.get('blocks')
+    if not isinstance(block_list, list):
+        block_list = []
+
+    has_content = any((b.get('content') or '').strip() for b in block_list)
+    if has_content:
+        NoteVersion.objects.create(note=note, blocks=note.blocks)
+
+    new_blocks = []
+
+    if selected_text:
+        safe_text = escape(selected_text).replace('\n', '<br>')
+        new_blocks.append({
+            'id': str(uuid.uuid4()),
+            'type': 'paragraph',
+            'content': safe_text,
+            'attrs': {'from_reader': True, 'source_title': source_title},
+            'children': [],
+        })
+
+    for queued_url in image_urls:
+        new_blocks.append({
+            'id': str(uuid.uuid4()),
+            'type': 'image',
+            'content': '',
+            'attrs': {
+                'url': queued_url,
+                'caption': f'From {source_title}' if source_title else 'From reader',
+                'align': 'left',
+                'from_reader': True,
+            },
+            'children': [],
+        })
+
+    block_list.extend(new_blocks)
+    note.blocks = {'blocks': block_list}
+    note.save(update_fields=['blocks', 'updated_at'])
+
+    return JsonResponse({
+        'success': True,
+        'note_id': note.id,
+        'editor_url': reverse('student_notes:editor', args=[subject.id, unit.id]),
         'updated_at': note.updated_at.isoformat(),
     })
 

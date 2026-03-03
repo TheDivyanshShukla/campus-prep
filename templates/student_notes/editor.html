@@ -9,6 +9,17 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 
 <style type="text/tailwindcss">
+    {% if embed_mode %}
+    header, footer, .global-nav, #main-navbar { display: none !important; }
+    main { padding-top: 0 !important; }
+    {% endif %}
+
+    /* Match reader behavior: keep global header non-sticky on notes page */
+    header.sticky {
+        position: relative !important;
+        top: auto !important;
+    }
+
     /* ── Block Editor Core ───────────────────────────────── */
     .note-block { position: relative; }
     .note-block .block-grip {
@@ -89,6 +100,38 @@
     .focus-mode main { padding-top: 0; }
     .focus-mode #editor-toolbar { border-radius: 0; }
 
+    /* ── Mobile toolbar stabilization (avoid scroll micro-jump) ───────── */
+    @media (max-width: 639px) {
+        #editor-toolbar {
+            height: 3.5rem;
+            min-height: 3.5rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            background: hsl(var(--background));
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        #editor-toolbar > .container {
+            height: 100%;
+            flex-wrap: nowrap;
+        }
+
+        #editor-toolbar.toolbar-mobile-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+        }
+
+        #editor-app.has-mobile-toolbar-offset {
+            padding-top: 3.5rem;
+        }
+    }
+
     /* Quick-revision dimmed blocks */
     .qr-dimmed { opacity: 0.15; pointer-events: none; transition: opacity 0.2s; }
 </style>
@@ -98,7 +141,7 @@
 <div id="editor-app" class="min-h-[calc(100vh-4rem)]">
 
     <!-- ── Toolbar ────────────────────────────────────────────────────────── -->
-    <div id="editor-toolbar" class="sticky top-16 z-30 bg-background/80 backdrop-blur-md border-b border-border px-4 py-2">
+    <div id="editor-toolbar" class="sticky top-0 z-30 bg-background/80 backdrop-blur-md border-b border-border px-4 py-2 overflow-x-clip">
         <div class="container mx-auto max-w-3xl flex items-center justify-between gap-2 flex-wrap">
             <!-- Left: back + breadcrumb -->
             <div class="flex items-center gap-2 min-w-0">
@@ -147,15 +190,26 @@
                 </button>
 
                 <!-- Focus mode -->
-                <button onclick="editor.toggleFocusMode()" title="Focus Mode" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                <button onclick="editor.toggleFocusMode()" title="Focus Mode" class="hidden sm:inline-flex p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                </button>
+
+                <!-- Hide toolbar -->
+                <button onclick="collapseEditorToolbar()" title="Hide Toolbar" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- Show Toolbar Tab -->
+    <button id="editorToolbarToggleBtn" onclick="expandEditorToolbar()" class="fixed top-0 right-4 z-[45] px-3 py-1.5 bg-background border border-t-0 border-border shadow-md rounded-b-lg text-xs font-bold text-muted-foreground hover:text-foreground hover:bg-muted flex items-center gap-1 transition-all duration-300 -translate-y-full opacity-0 pointer-events-none" aria-label="Show Toolbar">
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        Show Toolbar
+    </button>
+
     <!-- ── Search panel ───────────────────────────────────────────────────── -->
-    <div id="search-panel" class="hidden sticky top-[7.5rem] z-20 bg-background border-b border-border px-4 py-2">
+    <div id="search-panel" class="hidden sticky top-[3.5rem] z-20 bg-background border-b border-border px-4 py-2">
         <div class="container mx-auto max-w-3xl flex items-center gap-2">
             <input id="search-input" type="text" placeholder="Search in note..." class="flex-1 bg-transparent outline-none text-sm border border-border rounded-lg px-3 py-1.5 focus:ring-1 focus:ring-ring">
             <span id="search-count" class="text-xs text-muted-foreground"></span>
@@ -184,7 +238,7 @@
     <div id="slash-menu" class="hidden fixed z-50 w-64 bg-background border border-border rounded-xl shadow-2xl overflow-y-auto py-1.5" style="max-height:320px"></div>
 
     <!-- ── Inline formatting toolbar (floating) ──────────────────────────── -->
-    <div id="inline-toolbar" class="hidden fixed z-50 bg-background border border-border rounded-xl shadow-2xl px-1 py-1 flex items-center gap-0.5">
+    <div id="inline-toolbar" class="hidden fixed z-[80] bg-background border border-border rounded-xl shadow-2xl px-1 py-1 flex items-center gap-0.5">
         <button onclick="editor.applyFormat('bold')" title="Bold" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm font-bold">B</button>
         <button onclick="editor.applyFormat('italic')" title="Italic" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm italic">I</button>
         <button onclick="editor.applyFormat('underline')" title="Underline" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm underline">U</button>
@@ -254,6 +308,92 @@
         versionDetailBaseUrl: '/notes/api/version/',
         initialBlocks: {{ blocks_json|safe }},
     });
+
+    function collapseEditorToolbar() {
+        const toolbar = document.getElementById('editor-toolbar');
+        const toggleBtn = document.getElementById('editorToolbarToggleBtn');
+        if (!toolbar || !toggleBtn) return;
+
+        toolbar.dataset.collapsed = 'true';
+        stabilizeMobileToolbar();
+
+        toolbar.style.overflow = 'hidden';
+        toolbar.style.height = '0px';
+        toolbar.style.paddingTop = '0px';
+        toolbar.style.paddingBottom = '0px';
+        toolbar.style.marginBottom = '0px';
+        toolbar.style.borderBottomWidth = '0px';
+        toolbar.style.opacity = '0';
+        toolbar.style.pointerEvents = 'none';
+
+        toggleBtn.style.transform = 'translateY(0)';
+        toggleBtn.style.opacity = '1';
+        toggleBtn.style.pointerEvents = 'auto';
+    }
+
+    function expandEditorToolbar() {
+        const toolbar = document.getElementById('editor-toolbar');
+        const toggleBtn = document.getElementById('editorToolbarToggleBtn');
+        if (!toolbar || !toggleBtn) return;
+
+        toolbar.dataset.collapsed = 'false';
+
+        toolbar.style.height = 'auto';
+        toolbar.style.paddingTop = '';
+        toolbar.style.paddingBottom = '';
+        toolbar.style.marginBottom = '';
+        toolbar.style.borderBottomWidth = '';
+        toolbar.style.opacity = '1';
+        toolbar.style.overflow = '';
+        toolbar.style.pointerEvents = '';
+
+        toggleBtn.style.transform = '';
+        toggleBtn.style.opacity = '0';
+        toggleBtn.style.pointerEvents = 'none';
+
+        stabilizeMobileToolbar();
+    }
+
+    function stabilizeMobileToolbar() {
+        const toolbar = document.getElementById('editor-toolbar');
+        const app = document.getElementById('editor-app');
+        if (!toolbar || !app) return;
+
+        const isMobile = window.matchMedia('(max-width: 639px)').matches;
+        const isCollapsed = toolbar.dataset.collapsed === 'true';
+
+        if (!isMobile) {
+            toolbar.classList.remove('toolbar-mobile-fixed');
+            app.classList.remove('has-mobile-toolbar-offset');
+            app.style.paddingTop = '';
+            toolbar.style.transform = '';
+            return;
+        }
+
+        toolbar.classList.add('toolbar-mobile-fixed');
+
+        if (isCollapsed) {
+            app.classList.remove('has-mobile-toolbar-offset');
+            app.style.paddingTop = '0px';
+            return;
+        }
+
+        app.classList.add('has-mobile-toolbar-offset');
+
+        const toolbarHeight = Math.round(toolbar.getBoundingClientRect().height || 56);
+        app.style.paddingTop = `${toolbarHeight}px`;
+
+        const viewportOffsetTop = window.visualViewport ? Math.round(window.visualViewport.offsetTop) : 0;
+        toolbar.style.transform = `translate3d(0, ${viewportOffsetTop}px, 0)`;
+    }
+
+    window.addEventListener('resize', stabilizeMobileToolbar, { passive: true });
+    window.addEventListener('orientationchange', stabilizeMobileToolbar, { passive: true });
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', stabilizeMobileToolbar, { passive: true });
+        window.visualViewport.addEventListener('scroll', stabilizeMobileToolbar, { passive: true });
+    }
+    requestAnimationFrame(stabilizeMobileToolbar);
 
     /* Quick-revision dropdown toggle */
     function toggleQRMenu() {

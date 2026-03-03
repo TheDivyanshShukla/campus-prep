@@ -998,12 +998,18 @@
             document.addEventListener('selectionchange', () => {
                 if (this.readOnly) return;
                 const sel = window.getSelection();
-                if (!sel || sel.isCollapsed || !this.editorEl.contains(sel.anchorNode)) { this._hideInlineToolbar(); return; }
+                if (!sel || !sel.rangeCount || sel.isCollapsed) { this._hideInlineToolbar(); return; }
+                const inEditor = this.editorEl.contains(sel.anchorNode) || this.editorEl.contains(sel.focusNode);
+                if (!inEditor) { this._hideInlineToolbar(); return; }
                 const range = sel.getRangeAt(0);
                 const rect = range.getBoundingClientRect();
                 if (rect.width < 2) { this._hideInlineToolbar(); return; }
-                this.inlineToolbarEl.style.top  = (rect.top + window.scrollY - 44) + 'px';
-                this.inlineToolbarEl.style.left = (rect.left + rect.width / 2) + 'px';
+
+                // inline toolbar is `position: fixed`, so use viewport coords directly
+                const top = Math.max(8, rect.top - 44);
+                const left = Math.min(window.innerWidth - 16, Math.max(16, rect.left + rect.width / 2));
+                this.inlineToolbarEl.style.top  = `${top}px`;
+                this.inlineToolbarEl.style.left = `${left}px`;
                 this.inlineToolbarEl.classList.remove('hidden');
             });
         }
