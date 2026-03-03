@@ -4,7 +4,7 @@
 [ ] ai chatbot
 [ ] book mark
 [ ] parse the pyq paper.
-[ ] search option.
+[X] search option.
 [X] index page branch and sem select not working
 [ ] make or get notes.
 [X] visit wihout auth
