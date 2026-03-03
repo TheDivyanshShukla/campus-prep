@@ -13,14 +13,18 @@ from apps.content.data_services import ContentDataService
 
 def signup_view(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        # Check if already onboarded
+        user = request.user
+        if user.first_name and user.last_name and user.phone_number and user.preferred_branch and user.preferred_semester:
+            return redirect('dashboard')
+        return redirect('onboarding')
         
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('dashboard')
+            return redirect('onboarding')
     else:
         form = CustomUserCreationForm()
         
@@ -28,13 +32,20 @@ def signup_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        # Check if already onboarded
+        user = request.user
+        if user.first_name and user.last_name and user.phone_number and user.preferred_branch and user.preferred_semester:
+            return redirect('dashboard')
+        return redirect('onboarding')
         
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            # Check if user needs onboarding
+            if not (user.first_name and user.last_name and user.phone_number and user.preferred_branch and user.preferred_semester):
+                return redirect('onboarding')
             return redirect('dashboard')
     else:
         form = AuthenticationForm()
