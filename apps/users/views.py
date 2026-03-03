@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
+from django.http import JsonResponse
 from django.utils import timezone
+from django.views.decorators.http import require_http_methods
 from apps.content.data_services import ContentDataService
+from apps.common.turnstile import turnstile_service
 
 
 @login_required
@@ -106,6 +109,37 @@ def user_purchases(request):
     return render(request, 'users/purchases.html', {
         'active_unlocks': active_unlocks,
         'expired_unlocks': expired_unlocks
+    })
+
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def verify_turnstile_api(request):
+    """
+    API endpoint to verify Turnstile tokens.
+    
+    Expected POST data: { "token": "..." }
+    Returns: { "success": bool, "message": str }
+    """
+    import json
+    
+    try:
+        data = json.loads(request.body)
+        token = data.get('token', '')
+    except (json.JSONDecodeError, AttributeError):
+        return JsonResponse({
+            'success': False,
+            'message': 'Invalid request body'
+        }, status=400)
+    
+    # Get client IP for Turnstile verification
+    client_ip = request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR')
+    
+    is_valid, message = turnstile_service.verify_token(token, client_ip)
+    
+    return JsonResponse({
+        'success': is_valid,
+        'message': message
     })
 
 
