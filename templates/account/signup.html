@@ -99,6 +99,9 @@
                     {% if form.password2.errors %}<p class="text-xs text-red-500 mt-1">{{ form.password2.errors|join:", " }}</p>{% endif %}
                 </div>
 
+                <!-- Turnstile Widget -->
+                {% include "includes/turnstile_widget.html" %}
+
                 <button type="submit"
                         class="w-full h-10 mt-1 rounded-lg bg-foreground text-background text-sm font-semibold tracking-wide uppercase hover:opacity-90 active:scale-[0.98] transition-all">
                     Continue

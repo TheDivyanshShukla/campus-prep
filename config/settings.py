@@ -129,6 +129,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.users.context_processors.turnstile',
             ],
         },
     },
@@ -364,6 +365,11 @@ CACHES = {
 
 # X-Frame-Options to allow framing PDFs natively
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# Cloudflare Turnstile Settings
+CLOUDFLARE_TURNSTILE_SITE_KEY = os.getenv('CLOUDFLARE_TURNSTILE_SITE_KEY', '')
+CLOUDFLARE_TURNSTILE_SECRET_KEY = os.getenv('CLOUDFLARE_TURNSTILE_SECRET_KEY', '')
+TURNSTILE_ENABLED = bool(CLOUDFLARE_TURNSTILE_SITE_KEY and CLOUDFLARE_TURNSTILE_SECRET_KEY)
 
 # Web Push Settings
 WEBPUSH_SETTINGS = {

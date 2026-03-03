@@ -8,6 +8,9 @@ urlpatterns = [
     path('signup/', RedirectView.as_view(url='/accounts/signup/', permanent=False), name='signup'),
     path('logout/', RedirectView.as_view(url='/accounts/logout/', permanent=False), name='logout'),
 
+    # API endpoints
+    path('api/verify-turnstile/', views.verify_turnstile_api, name='verify_turnstile'),
+
     # App views
     path('onboarding/', views.onboarding_view, name='onboarding'),
     path('change-program/', views.change_program_view, name='change_program'),
