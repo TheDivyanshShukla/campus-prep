@@ -36,5 +36,8 @@ urlpatterns = [
     path('sw.js', views_notifications.service_worker, name='service_worker'),
 ]
 
+if settings.ENABLE_SILK:
+    urlpatterns += [path('__silk__/', include('silk.urls', namespace='silk'))]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -54,6 +54,9 @@ def _env_bool(name: str, default: bool) -> bool:
         return default
     return raw_value.strip().lower() in {'1', 'true', 'yes', 'on'}
 
+
+ENABLE_SILK = _env_bool('ENABLE_SILK', DEBUG)
+
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
 
 CSRF_TRUSTED_ORIGINS = [
@@ -107,6 +110,9 @@ INSTALLED_APPS = [
     'webpush',
 ]
 
+if ENABLE_SILK:
+    INSTALLED_APPS.append('silk')
+
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
@@ -120,6 +126,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if ENABLE_SILK:
+    auth_middleware = 'django.contrib.auth.middleware.AuthenticationMiddleware'
+    if auth_middleware in MIDDLEWARE:
+        insert_at = MIDDLEWARE.index(auth_middleware) + 1
+        MIDDLEWARE.insert(insert_at, 'silk.middleware.SilkyMiddleware')
+    else:
+        MIDDLEWARE.append('silk.middleware.SilkyMiddleware')
 
 ROOT_URLCONF = 'config.urls'
 
@@ -382,3 +396,11 @@ WEBPUSH_SETTINGS = {
     "VAPID_PRIVATE_KEY": "EkZX7mVKA5060KUK6Rj0fkOntfmaPMnrGwftazT0VHE",
     "VAPID_ADMIN_EMAIL": "admin@rgpv.live"
 }
+
+if ENABLE_SILK:
+    SILKY_AUTHENTICATION = _env_bool('SILKY_AUTHENTICATION', True)
+    SILKY_AUTHORISATION = _env_bool('SILKY_AUTHORISATION', True)
+    SILKY_INTERCEPT_PERCENT = int(os.getenv('SILKY_INTERCEPT_PERCENT', '100'))
+    SILKY_MAX_REQUEST_BODY_SIZE = int(os.getenv('SILKY_MAX_REQUEST_BODY_SIZE', '-1'))
+    SILKY_MAX_RESPONSE_BODY_SIZE = int(os.getenv('SILKY_MAX_RESPONSE_BODY_SIZE', '1024'))
+    SILKY_PYTHON_PROFILER = _env_bool('SILKY_PYTHON_PROFILER', False)
