@@ -29,6 +29,7 @@ dependencies = [
     "pydantic>=2.12.5",
     "pymupdf>=1.27.1",
     "pymupdf4llm>=0.3.4",
+    "pypdf>=6.7.5",
     "python-dotenv>=1.2.1",
     "python-jose[cryptography]>=3.5.0",
     "razorpay>=2.0.0",
