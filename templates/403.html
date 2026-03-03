@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-full {% if request.COOKIES.theme == 'dark' %}dark{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied — CampusPrep</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'logo-rounded.png' %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 3.6%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 3.6%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 47.6% 11.2%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 217.2 91.2% 59.8%;
+        }
+        
+        html.dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 217.2 32.6% 17.5%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.6% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+        }
+    </style>
+</head>
+<body class="h-full bg-background text-foreground">
+    <div class="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(168,85,247,0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(168,85,247,0.08),transparent)]"></div>
+        </div>
+
+        <div class="text-center max-w-md">
+            <!-- Logo -->
+            <a href="/" class="inline-block text-3xl font-extrabold tracking-tight mb-12">
+                Campus<span class="text-primary">Prep</span>
+            </a>
+
+            <!-- Error Icon -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-24 h-24 bg-purple-100 dark:bg-purple-950/30 rounded-3xl flex items-center justify-center">
+                    <svg class="w-12 h-12 text-purple-600 dark:text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Error Code -->
+            <h1 class="text-6xl font-black mb-4 text-purple-600 dark:text-purple-500">
+                403
+            </h1>
+
+            <!-- Error Message -->
+            <h2 class="text-2xl font-bold mb-3 text-foreground">Access Denied</h2>
+            <p class="text-muted-foreground mb-8 leading-relaxed">
+                You don't have permission to access this resource. If you think this is a mistake, contact us for assistance.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="/" class="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity active:scale-95">
+                    Go Home
+                </a>
+                <a href="javascript:history.back()" class="px-6 py-3 border border-border bg-card text-foreground font-semibold rounded-lg hover:bg-muted transition-colors active:scale-95">
+                    Go Back
+                </a>
+            </div>
+
+            <!-- Help Text -->
+            <p class="mt-8 text-sm text-muted-foreground">
+                Need help? <a href="mailto:support@campusprep.in" class="text-primary hover:underline font-medium">Contact support</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
