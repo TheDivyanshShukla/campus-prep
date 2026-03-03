@@ -8,7 +8,7 @@ class SyllabusParser(BaseDocumentParser):
         return ParsedSyllabus
 
     def get_system_prompt(self, context: dict) -> str:
-        return f"""You are an elite expert AI parser specializing in Academic Syllabi for RGPV University.
+        return f"""You are an elite expert AI parser specializing in Academic Syllabus for RGPV University.
         
 CONTEXT:
 Subject: {context.get('subject_code')} - {context.get('subject_name')}
