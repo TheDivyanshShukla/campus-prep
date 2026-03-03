@@ -134,11 +134,20 @@
             padding-bottom: 1rem;
         }
     }
+
+    /* Native mode: allow selecting chunks for quick add-to-notes */
+    #secure-content-container,
+    #secure-content-container * {
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<div id="reader-main-container" class="max-w-4xl mx-auto px-0.5 sm:px-6 lg:px-8 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;">
+<div id="reader-main-container" class="max-w-4xl mx-auto px-0.5 sm:px-6 lg:px-8 select-none" {% if document.render_mode == 'DIRECT_PDF' %}oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;" onselectstart="return false;" ondragstart="return false;"{% endif %}>
     
     <!-- Sticky / Collapsible Header Wrapper -->
     <div id="stickyHeader" class="sticky top-0 z-40 bg-background/95 backdrop-blur-md pt-4 pb-2 mb-0 transition-all duration-300 transform origin-top">
@@ -445,10 +454,96 @@
             </div>
         </div>
     </div>
+
+    {% if document.render_mode != 'DIRECT_PDF' %}
+    <div id="reader-note-capture" class="fixed bottom-6 right-4 z-[70] w-[min(92vw,22rem)] bg-background/95 backdrop-blur-xl border border-border rounded-xl shadow-2xl p-3 space-y-2">
+        <div class="flex items-center justify-between gap-2">
+            <p class="text-xs font-black uppercase tracking-wider text-muted-foreground">Quick Add to Notes</p>
+            <div class="flex items-center gap-2">
+                <span id="readerNoteStatus" class="text-[10px] text-muted-foreground"></span>
+                <button type="button" id="readerNotesHideBtn" onclick="collapseReaderNotesPanel()" class="p-1 rounded-md hover:bg-muted text-muted-foreground" title="Hide notes panel" aria-label="Hide notes panel">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 12H5"/></svg>
+                </button>
+            </div>
+        </div>
+
+        {% if can_append_to_notes and subject_units %}
+        <div class="space-y-2">
+            <div id="readerUnitRow">
+            <select id="readerUnitSelect" class="w-full text-xs bg-background border border-border rounded-lg px-2 py-1.5">
+                {% for unit in subject_units %}
+                <option value="{{ unit.id }}" data-unit-number="{{ unit.number }}">Unit {{ unit.number }} · {{ unit.name }}</option>
+                {% endfor %}
+            </select>
+            </div>
+
+            <textarea id="readerNoteText" rows="3" placeholder="Type quick note or use Add Selection" class="w-full text-xs bg-background border border-border rounded-lg px-2 py-1.5 outline-none focus:ring-1 focus:ring-ring resize-y"></textarea>
+
+            <div id="readerImageQueue" class="hidden text-[11px] px-2 py-1.5 bg-muted rounded-lg border border-border"></div>
+
+            <div class="flex items-center gap-1.5">
+                <button id="readerAddSelectionBtn" class="flex-1 px-2 py-1.5 text-[11px] font-bold rounded-lg border border-border hover:bg-muted">Add Selection</button>
+                <button id="readerCaptureRegionBtn" class="px-2 py-1.5 text-[11px] font-bold rounded-lg border border-border hover:bg-muted">Capture</button>
+                <button id="readerSaveNoteBtn" class="flex-1 px-2 py-1.5 text-[11px] font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90">Save</button>
+                <a id="readerOpenNoteBtn" href="#" class="px-2 py-1.5 text-[11px] font-bold rounded-lg border border-border hover:bg-muted">Open</a>
+            </div>
+            <div class="flex items-center justify-between gap-2 text-[10px]">
+                <span class="text-muted-foreground">Open in</span>
+                <div class="inline-flex border border-border rounded-md overflow-hidden">
+                    <button id="readerOpenModeTab" type="button" class="px-2 py-1 bg-primary text-primary-foreground">Tab</button>
+                    <button id="readerOpenModeInline" type="button" class="px-2 py-1 hover:bg-muted">Panel</button>
+                </div>
+            </div>
+            <p class="text-[10px] text-muted-foreground">Tip: click any rendered image to queue it for notes.</p>
+        </div>
+        {% else %}
+        <div class="text-[11px] text-muted-foreground">
+            Sign in to add selected chunks and images to your unit notes.
+        </div>
+        {% if not request.user.is_authenticated %}
+        <a href="{% url 'login' %}" class="inline-flex px-2 py-1.5 text-[11px] font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90">Login</a>
+        {% endif %}
+        {% endif %}
+    </div>
+
+    <button id="readerNotesToggleBtn" onclick="expandReaderNotesPanel()" class="fixed right-0 bottom-28 z-[71] px-2 py-2 bg-background border border-r-0 border-border shadow-md rounded-l-lg text-[11px] font-bold text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 translate-x-full opacity-0 pointer-events-none" aria-label="Show notes panel">
+        <span class="flex flex-col items-center leading-[1.05] gap-[2px]">
+            <span>N</span>
+            <span>o</span>
+            <span>t</span>
+            <span>e</span>
+            <span>s</span>
+        </span>
+    </button>
+
+    <div id="readerInlineNotePane" class="hidden fixed right-4 bottom-6 z-[72] w-[min(96vw,34rem)] h-[min(82vh,40rem)] bg-background border border-border rounded-xl shadow-2xl overflow-hidden">
+        <div class="h-10 px-3 border-b border-border flex items-center justify-between bg-muted/40">
+            <p class="text-xs font-bold text-muted-foreground uppercase tracking-wider">Notes Panel</p>
+            <button type="button" id="readerInlineCloseBtn" class="p-1 rounded-md hover:bg-muted text-muted-foreground" aria-label="Close notes panel">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <iframe id="readerInlineNoteFrame" title="Notes" class="w-full h-[calc(100%-2.5rem)] bg-background" loading="lazy"></iframe>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
 
 {% block scripts %}
+{% if document.render_mode != 'DIRECT_PDF' %}
+<script>
+    window.readerNoteCaptureConfig = {
+        enabled: {{ can_append_to_notes|yesno:'true,false' }},
+        appendUrl: "{% url 'student_notes:api_append_from_reader' %}",
+        uploadImageUrl: "{% url 'student_notes:api_upload_image' %}",
+        editorBasePath: "/notes/editor/",
+        subjectId: {{ current_subject.id|default:'null' }},
+        preferredUnitNumber: {{ preferred_unit_number|default:'null' }},
+        sourceTitle: "{{ document.title|escapejs }}",
+        csrfToken: "{{ csrf_token }}"
+    };
+</script>
+{% endif %}
 {% include "content/partials/_reader_security.html" %}
 {% include "content/partials/_reader_toolbar.html" %}
 {% include "content/partials/_reader_search.html" %}

@@ -15,5 +15,6 @@ urlpatterns = [
     path('api/version/<int:version_id>/', views.api_version_detail, name='api_version_detail'),
     path('api/restore/<int:version_id>/', views.api_restore_version, name='api_restore_version'),
     path('api/copy-base/', views.api_copy_base_note, name='api_copy_base_note'),
+    path('api/append-from-reader/', views.api_append_from_reader, name='api_append_from_reader'),
     path('api/upload-image/', views.api_upload_image, name='api_upload_image'),
 ]

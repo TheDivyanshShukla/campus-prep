@@ -28,9 +28,13 @@
             label = 'Interactive Logic';
         }
 
+        const addImageBtn = (window.readerNoteCaptureConfig && window.readerNoteCaptureConfig.enabled && url)
+            ? `<button type="button" data-note-image-url="${url}" class="mt-3 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg border border-border hover:bg-muted">Add image to notes</button>`
+            : '';
+
         const imageHtml = url ? `<div class="mt-4 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-lg bg-white">
             <img src="${url}" class="w-full h-auto block" alt="Recreated Academic Diagram" loading="lazy">
-        </div>` : '';
+        </div>${addImageBtn}` : '';
 
         return `
         <div class="mt-4 p-4 border ${borderColor} ${bgColor} rounded-xl group transition-all duration-300 hover:shadow-md">
@@ -198,6 +202,528 @@
         container.insertAdjacentHTML('beforeend', `<div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">${html}</div>`);
     }
 
+    // ---------- Native Reader → Student Notes Capture ----------
+
+    function _readerSetStatus(message, isError = false) {
+        const el = document.getElementById('readerNoteStatus');
+        if (!el) return;
+        el.textContent = message || '';
+        el.classList.toggle('text-red-500', !!isError);
+        el.classList.toggle('text-emerald-500', !isError && !!message);
+        if (message) {
+            setTimeout(() => {
+                if (el.textContent === message) {
+                    el.textContent = '';
+                    el.classList.remove('text-red-500', 'text-emerald-500');
+                }
+            }, 2600);
+        }
+    }
+
+    function _readerRenderImageQueue() {
+        const queue = document.getElementById('readerImageQueue');
+        if (!queue) return;
+
+        const items = Array.isArray(window.__readerQueuedImageUrls) ? window.__readerQueuedImageUrls : [];
+        if (!items.length) {
+            queue.classList.add('hidden');
+            queue.textContent = '';
+            return;
+        }
+
+        queue.classList.remove('hidden');
+        queue.innerHTML = `
+            <div class="flex items-center justify-between gap-2 mb-1">
+                <span>${items.length} image${items.length > 1 ? 's' : ''} queued ✓</span>
+                <button type="button" id="readerClearAllImagesBtn" class="inline-flex items-center justify-center w-6 h-6 rounded-md border border-border hover:bg-muted text-muted-foreground" title="Clear all queued images" aria-label="Clear all queued images">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V4a1 1 0 011-1h4a1 1 0 011 1v3m-7 0h8"/></svg>
+                </button>
+            </div>
+            <div class="space-y-1 max-h-20 overflow-auto" id="readerImageQueueList"></div>
+        `;
+
+        const list = document.getElementById('readerImageQueueList');
+        if (list) {
+            list.innerHTML = items.map((url, idx) => `
+                <div class="flex items-center justify-between gap-2 text-[10px] bg-background/60 border border-border rounded px-1.5 py-1">
+                    <span class="truncate">Capture ${idx + 1}</span>
+                    <button type="button" class="readerRemoveQueuedImg inline-flex items-center justify-center w-5 h-5 rounded hover:bg-muted text-muted-foreground" data-idx="${idx}" title="Remove image">
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            `).join('');
+
+            list.querySelectorAll('.readerRemoveQueuedImg').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    const idx = Number(btn.dataset.idx);
+                    if (Number.isNaN(idx)) return;
+                    window.__readerQueuedImageUrls.splice(idx, 1);
+                    _readerRenderImageQueue();
+                });
+            });
+        }
+
+        const clearAll = document.getElementById('readerClearAllImagesBtn');
+        if (clearAll) {
+            clearAll.addEventListener('click', e => {
+                e.preventDefault();
+                window.__readerQueuedImageUrls = [];
+                _readerRenderImageQueue();
+            }, { once: true });
+        }
+    }
+
+    function _readerQueueImage(url) {
+        const u = (url || '').trim();
+        if (!u) return;
+        if (!Array.isArray(window.__readerQueuedImageUrls)) window.__readerQueuedImageUrls = [];
+        window.__readerQueuedImageUrls.push(u);
+        _readerRenderImageQueue();
+    }
+
+    function _clamp(v, min, max) {
+        return Math.min(max, Math.max(min, v));
+    }
+
+    function _intersectArea(a, b) {
+        const left = Math.max(a.left, b.left);
+        const top = Math.max(a.top, b.top);
+        const right = Math.min(a.right, b.right);
+        const bottom = Math.min(a.bottom, b.bottom);
+        if (right <= left || bottom <= top) return 0;
+        return (right - left) * (bottom - top);
+    }
+
+    function _ensureHtml2Canvas() {
+        if (window.html2canvas) return Promise.resolve(window.html2canvas);
+        if (window.__html2canvasPromise) return window.__html2canvasPromise;
+
+        window.__html2canvasPromise = new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+            s.async = true;
+            s.onload = () => resolve(window.html2canvas);
+            s.onerror = () => reject(new Error('Screenshot library failed to load'));
+            document.head.appendChild(s);
+        });
+
+        return window.__html2canvasPromise;
+    }
+
+    async function _uploadCapturedBlob(blob) {
+        const cfg = window.readerNoteCaptureConfig || {};
+        if (!cfg.uploadImageUrl) throw new Error('Upload endpoint missing');
+
+        const form = new FormData();
+        form.append('image', new File([blob], `capture-${Date.now()}.png`, { type: 'image/png' }));
+
+        const r = await fetch(cfg.uploadImageUrl, {
+            method: 'POST',
+            headers: { 'X-CSRFToken': cfg.csrfToken || '' },
+            body: form,
+        });
+        const j = await r.json();
+        if (!r.ok || !j.success || !j.url) {
+            throw new Error(j.error || 'Upload failed');
+        }
+        return j.url;
+    }
+
+    async function startDragCapture(container) {
+        const cfg = window.readerNoteCaptureConfig || {};
+        if (!cfg.enabled) return;
+        if (window.__readerCaptureInProgress) return;
+        window.__readerCaptureInProgress = true;
+
+        const panelEl = document.getElementById('reader-note-capture');
+        const tabEl = document.getElementById('readerNotesToggleBtn');
+        const prevPanelVisibility = panelEl ? panelEl.style.visibility : '';
+        const prevTabVisibility = tabEl ? tabEl.style.visibility : '';
+
+        if (panelEl) panelEl.style.visibility = 'hidden';
+        if (tabEl) tabEl.style.visibility = 'hidden';
+
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.inset = '0';
+        overlay.style.zIndex = '9999';
+        overlay.style.cursor = 'crosshair';
+        overlay.style.background = 'rgba(0,0,0,0.06)';
+        overlay.style.userSelect = 'none';
+
+        const rect = document.createElement('div');
+        rect.style.position = 'fixed';
+        rect.style.border = '2px solid rgba(16,185,129,0.95)';
+        rect.style.background = 'rgba(16,185,129,0.14)';
+        rect.style.pointerEvents = 'none';
+        rect.style.display = 'none';
+
+        const hint = document.createElement('div');
+        hint.textContent = 'Drag to capture image region · Esc to cancel';
+        hint.style.position = 'fixed';
+        hint.style.top = '16px';
+        hint.style.left = '50%';
+        hint.style.transform = 'translateX(-50%)';
+        hint.style.padding = '6px 10px';
+        hint.style.fontSize = '11px';
+        hint.style.fontWeight = '700';
+        hint.style.borderRadius = '8px';
+        hint.style.background = 'rgba(15,23,42,0.92)';
+        hint.style.color = '#fff';
+
+        overlay.appendChild(rect);
+        overlay.appendChild(hint);
+        document.body.appendChild(overlay);
+
+        let dragging = false;
+        let startX = 0;
+        let startY = 0;
+        let endX = 0;
+        let endY = 0;
+
+        const restoreCaptureUi = () => {
+            if (panelEl) panelEl.style.visibility = prevPanelVisibility;
+            if (tabEl) tabEl.style.visibility = prevTabVisibility;
+            window.__readerCaptureInProgress = false;
+        };
+
+        const cleanup = () => {
+            window.removeEventListener('keydown', onKeydown);
+            overlay.remove();
+            restoreCaptureUi();
+        };
+
+        const updateRect = () => {
+            const x = Math.min(startX, endX);
+            const y = Math.min(startY, endY);
+            const w = Math.abs(endX - startX);
+            const h = Math.abs(endY - startY);
+            rect.style.display = 'block';
+            rect.style.left = `${x}px`;
+            rect.style.top = `${y}px`;
+            rect.style.width = `${w}px`;
+            rect.style.height = `${h}px`;
+        };
+
+        const onKeydown = (e) => {
+            if (e.key === 'Escape') {
+                cleanup();
+                _readerSetStatus('Capture cancelled');
+            }
+        };
+
+        window.addEventListener('keydown', onKeydown);
+
+        overlay.addEventListener('mousedown', e => {
+            if (e.button !== 0) return;
+            dragging = true;
+            startX = endX = e.clientX;
+            startY = endY = e.clientY;
+            updateRect();
+            e.preventDefault();
+        });
+
+        overlay.addEventListener('mousemove', e => {
+            if (!dragging) return;
+            endX = e.clientX;
+            endY = e.clientY;
+            updateRect();
+        });
+
+        overlay.addEventListener('mouseup', async e => {
+            if (e.button !== 0 || !dragging) return;
+            dragging = false;
+            endX = e.clientX;
+            endY = e.clientY;
+            updateRect();
+
+            const x = Math.min(startX, endX);
+            const y = Math.min(startY, endY);
+            const w = Math.abs(endX - startX);
+            const h = Math.abs(endY - startY);
+
+            if (w < 12 || h < 12) {
+                cleanup();
+                _readerSetStatus('Selection too small', true);
+                return;
+            }
+
+            cleanup();
+            _readerSetStatus('Capturing...');
+
+            try {
+                const selRect = { left: x, top: y, right: x + w, bottom: y + h };
+                const html2canvas = await _ensureHtml2Canvas();
+
+                const targetRect = container.getBoundingClientRect();
+                const overlap = _intersectArea(selRect, {
+                    left: targetRect.left,
+                    top: targetRect.top,
+                    right: targetRect.right,
+                    bottom: targetRect.bottom,
+                });
+                if (overlap <= 0) throw new Error('Select inside the reader content');
+
+                const scale = window.devicePixelRatio || 1;
+                const shot = await html2canvas(container, {
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: null,
+                    logging: false,
+                    scale,
+                    scrollX: window.scrollX,
+                    scrollY: window.scrollY,
+                    windowWidth: document.documentElement.clientWidth,
+                    windowHeight: document.documentElement.clientHeight,
+                });
+
+                const sx = _clamp((selRect.left - targetRect.left) * scale, 0, shot.width);
+                const sy = _clamp((selRect.top - targetRect.top) * scale, 0, shot.height);
+                const ex = _clamp((selRect.right - targetRect.left) * scale, 0, shot.width);
+                const ey = _clamp((selRect.bottom - targetRect.top) * scale, 0, shot.height);
+                const sw = Math.max(1, Math.round(ex - sx));
+                const sh = Math.max(1, Math.round(ey - sy));
+
+                const canvas = document.createElement('canvas');
+                canvas.width = sw;
+                canvas.height = sh;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(shot, sx, sy, sw, sh, 0, 0, sw, sh);
+
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 0.95));
+                if (!blob) throw new Error('Capture failed');
+
+                const url = await _uploadCapturedBlob(blob);
+                _readerQueueImage(url);
+                _readerSetStatus('Capture queued');
+            } catch (err) {
+                _readerSetStatus(err.message || 'Capture failed', true);
+            }
+        });
+    }
+
+    function collapseReaderNotesPanel() {
+        const panel = document.getElementById('reader-note-capture');
+        const tab = document.getElementById('readerNotesToggleBtn');
+        if (!panel || !tab) return;
+        panel.style.transform = 'translateX(calc(100% + 1.5rem))';
+        panel.style.opacity = '0';
+        panel.style.pointerEvents = 'none';
+
+        tab.style.transform = 'translateX(0)';
+        tab.style.opacity = '1';
+        tab.style.pointerEvents = 'auto';
+    }
+
+    function expandReaderNotesPanel() {
+        const panel = document.getElementById('reader-note-capture');
+        const tab = document.getElementById('readerNotesToggleBtn');
+        if (!panel || !tab) return;
+        panel.style.transform = '';
+        panel.style.opacity = '';
+        panel.style.pointerEvents = '';
+
+        tab.style.transform = '';
+        tab.style.opacity = '';
+        tab.style.pointerEvents = 'none';
+    }
+
+    window.collapseReaderNotesPanel = collapseReaderNotesPanel;
+    window.expandReaderNotesPanel = expandReaderNotesPanel;
+
+    function initReaderNoteCapture(container) {
+        const cfg = window.readerNoteCaptureConfig || {};
+        if (!cfg.enabled) return;
+
+        const unitEl = document.getElementById('readerUnitSelect');
+        const unitRowEl = document.getElementById('readerUnitRow');
+        const textEl = document.getElementById('readerNoteText');
+        const addSelBtn = document.getElementById('readerAddSelectionBtn');
+        const captureBtn = document.getElementById('readerCaptureRegionBtn');
+        const saveBtn = document.getElementById('readerSaveNoteBtn');
+        const openBtn = document.getElementById('readerOpenNoteBtn');
+        const modeTabBtn = document.getElementById('readerOpenModeTab');
+        const modeInlineBtn = document.getElementById('readerOpenModeInline');
+        const inlinePaneEl = document.getElementById('readerInlineNotePane');
+        const inlineFrameEl = document.getElementById('readerInlineNoteFrame');
+        const inlineCloseBtn = document.getElementById('readerInlineCloseBtn');
+        const panelEl = document.getElementById('reader-note-capture');
+        if (!unitEl || !textEl || !addSelBtn || !saveBtn) return;
+
+        const getEditorUrl = () => {
+            const sid = Number(cfg.subjectId || 0);
+            const uid = Number(unitEl.value || 0);
+            if (!sid || !uid) return '';
+            return `${cfg.editorBasePath || '/notes/editor/'}${sid}/${uid}/`;
+        };
+
+        if (openBtn) {
+            openBtn.href = getEditorUrl() || '#';
+            unitEl.addEventListener('change', () => {
+                openBtn.href = getEditorUrl() || '#';
+            });
+        }
+
+        if (!Array.isArray(window.__readerQueuedImageUrls)) window.__readerQueuedImageUrls = [];
+        _readerRenderImageQueue();
+
+        let openMode = localStorage.getItem('reader.notes.openMode') || 'tab';
+        const applyOpenModeUi = () => {
+            if (!modeTabBtn || !modeInlineBtn) return;
+            const tabActive = openMode === 'tab';
+            modeTabBtn.className = `px-2 py-1 ${tabActive ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`;
+            modeInlineBtn.className = `px-2 py-1 ${!tabActive ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`;
+        };
+        applyOpenModeUi();
+        if (modeTabBtn) {
+            modeTabBtn.addEventListener('click', () => {
+                openMode = 'tab';
+                localStorage.setItem('reader.notes.openMode', openMode);
+                applyOpenModeUi();
+            });
+        }
+        if (modeInlineBtn) {
+            modeInlineBtn.addEventListener('click', () => {
+                openMode = 'inline';
+                localStorage.setItem('reader.notes.openMode', openMode);
+                applyOpenModeUi();
+            });
+        }
+        if (inlineCloseBtn && inlinePaneEl) {
+            inlineCloseBtn.addEventListener('click', () => {
+                inlinePaneEl.classList.add('hidden');
+                if (inlineFrameEl) inlineFrameEl.src = 'about:blank';
+            });
+        }
+
+        if (panelEl) {
+            panelEl.style.transition = 'transform 0.3s ease, opacity 0.25s ease';
+        }
+
+        // Default state: keep quick-add panel hidden until user opens from right tab
+        collapseReaderNotesPanel();
+
+        // Auto-select unit and hide picker when deterministic
+        const preferredUnitNumber = Number(cfg.preferredUnitNumber || 0);
+        let autoMatched = false;
+        if (preferredUnitNumber) {
+            const matchedOpt = [...unitEl.options].find(o => Number(o.dataset.unitNumber || 0) === preferredUnitNumber);
+            if (matchedOpt) {
+                unitEl.value = matchedOpt.value;
+                autoMatched = true;
+            }
+        }
+        if (unitRowEl && (autoMatched || unitEl.options.length <= 1)) {
+            unitRowEl.classList.add('hidden');
+        }
+
+        addSelBtn.addEventListener('click', () => {
+            const sel = window.getSelection();
+            const txt = (sel && sel.toString() || '').trim();
+            if (!txt) {
+                _readerSetStatus('Select text first', true);
+                return;
+            }
+
+            if (!container.contains(sel.anchorNode) || !container.contains(sel.focusNode)) {
+                _readerSetStatus('Selection must be inside content', true);
+                return;
+            }
+
+            textEl.value = textEl.value ? `${textEl.value}\n${txt}` : txt;
+            _readerSetStatus('Selection added');
+        });
+
+        if (captureBtn) {
+            captureBtn.addEventListener('click', () => {
+                startDragCapture(container);
+            });
+        }
+
+        container.addEventListener('click', e => {
+            const addImageBtn = e.target.closest('[data-note-image-url]');
+            if (addImageBtn) {
+                e.preventDefault();
+                _readerQueueImage(addImageBtn.getAttribute('data-note-image-url') || '');
+                _readerSetStatus('Image queued');
+                return;
+            }
+
+            const img = e.target.closest('img');
+            if (img && img.src && container.contains(img)) {
+                _readerQueueImage(img.src);
+                _readerSetStatus('Image queued');
+            }
+        });
+
+        saveBtn.addEventListener('click', async () => {
+            const payload = {
+                subject_id: cfg.subjectId,
+                unit_id: Number(unitEl.value),
+                text: (textEl.value || '').trim(),
+                image_urls: window.__readerQueuedImageUrls || [],
+                source_title: cfg.sourceTitle || ''
+            };
+
+            if (!payload.text && !payload.image_urls.length) {
+                _readerSetStatus('Add text or image first', true);
+                return;
+            }
+
+            saveBtn.disabled = true;
+            _readerSetStatus('Saving...');
+            try {
+                const res = await fetch(cfg.appendUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': cfg.csrfToken || ''
+                    },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (!res.ok || !data.success) {
+                    throw new Error(data.error || 'Save failed');
+                }
+
+                textEl.value = '';
+                window.__readerQueuedImageUrls = [];
+                _readerRenderImageQueue();
+                _readerSetStatus('Added to notes');
+                if (openBtn && data.editor_url) {
+                    openBtn.href = data.editor_url;
+                    window.__readerLastEditorUrl = data.editor_url;
+                }
+            } catch (err) {
+                _readerSetStatus(err.message || 'Save failed', true);
+            } finally {
+                saveBtn.disabled = false;
+            }
+        });
+
+        if (openBtn) {
+            openBtn.addEventListener('click', e => {
+                e.preventDefault();
+                const baseUrl = window.__readerLastEditorUrl || getEditorUrl() || openBtn.getAttribute('href');
+                if (!baseUrl || baseUrl === '#') {
+                    _readerSetStatus('Save once to open notes', true);
+                    return;
+                }
+
+                if (openMode === 'inline') {
+                    const embedUrl = `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}embed=1`;
+                    if (inlineFrameEl && inlinePaneEl) {
+                        inlineFrameEl.src = embedUrl;
+                        inlinePaneEl.classList.remove('hidden');
+                    }
+                } else {
+                    window.open(baseUrl, '_blank', 'noopener');
+                }
+            });
+        }
+    }
+
     // ---------- Decryption + Render Engine ----------
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -259,6 +785,8 @@
             if (!window.__drm_tripped && window.MathJax) {
                 MathJax.typesetPromise([document.body]).catch(err => console.error('MathJax error: ' + err.message));
             }
+
+            initReaderNoteCapture(container);
         }, 300); // Reduced delay for faster rendering while still allowing DRM sweeps
     });
 </script>
