@@ -14,3 +14,4 @@ staticfiles
 tmp
 .temp
 data/pg/*
+.env

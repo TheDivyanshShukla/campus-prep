@@ -45,6 +45,14 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-dummy-key-for-dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
+PRODUCTION = not DEBUG
+
+
+def _env_bool(name: str, default: bool) -> bool:
+    raw_value = os.getenv(name)
+    if raw_value is None:
+        return default
+    return raw_value.strip().lower() in {'1', 'true', 'yes', 'on'}
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
 
@@ -53,6 +61,15 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'https://campusprep.in'
 ]
+
+# Reverse proxy / HTTPS settings
+# Required when TLS terminates at a load balancer/CDN (for example Cloudflare/Nginx)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
+SECURE_SSL_REDIRECT = _env_bool('SECURE_SSL_REDIRECT', PRODUCTION)
+SESSION_COOKIE_SECURE = _env_bool('SESSION_COOKIE_SECURE', PRODUCTION)
+CSRF_COOKIE_SECURE = _env_bool('CSRF_COOKIE_SECURE', PRODUCTION)
 
 
 # Application definition
@@ -286,6 +303,7 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https' if PRODUCTION else 'http'
 
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
