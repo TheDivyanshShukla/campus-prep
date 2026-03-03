@@ -1,0 +1,102 @@
+[2026-03-03 11:37:49 UTC] Run started: total=50, dry_run=False, resume=True, workers=32
+[2026-03-03 11:37:49 UTC] PROCESS id=544 source=raw_docs/cy-404-operating-systems-jun-2023.pdf target=cy-404-operating-systems-jun-2023-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=545 source=raw_docs/cy-404-operating-systems-nov-2023.pdf target=cy-404-operating-systems-nov-2023-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=546 source=raw_docs/al-cd-cs-ct-co-403-software-engineering-jun-2023_kuWPcHZ.pdf target=al-cd-cs-ct-co-403-software-engineering-jun-2023_kuWPcHZ-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=547 source=raw_docs/al-cd-cs-ct-co-403-software-engineering-nov-2023_4QsuEcP.pdf target=al-cd-cs-ct-co-403-software-engineering-nov-2023_4QsuEcP-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=548 source=raw_docs/al-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2023_uoxwmBZ.pdf target=al-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2023_uoxwmBZ-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=549 source=raw_docs/al-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-nov-2023_s0kwIcz.pdf target=al-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-nov-2023_s0kwIcz-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=550 source=raw_docs/cs-402-analysis-design-of-algorithm-jun-2023_410ygjX.pdf target=cs-402-analysis-design-of-algorithm-jun-2023_410ygjX-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=551 source=raw_docs/cs-402-analysis-design-of-algorithm-nov-2023_DMUkHGE.pdf target=cs-402-analysis-design-of-algorithm-nov-2023_DMUkHGE-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=552 source=raw_docs/cb-403-software-engineering-jun-2022.pdf target=cb-403-software-engineering-jun-2022-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=553 source=raw_docs/ci-cs-ct-co-al-io-is-404-computer-organization-and-architecture-jun-2022_toVnGzf.pdf target=ci-cs-ct-co-al-io-is-404-computer-organization-and-architecture-jun-2022_toVnGzf-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=554 source=raw_docs/cs-402-analysis-design-of-algorithm-jun-2022_uC341lk.pdf target=cs-402-analysis-design-of-algorithm-jun-2022_uC341lk-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=555 source=raw_docs/cs-501-theory-of-computation-dec-2025_FwOMAv4.pdf target=cs-501-theory-of-computation-dec-2025_FwOMAv4-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=556 source=raw_docs/cs-503-c-cyber-security-dec-2025_8c9kfkV.pdf target=cs-503-c-cyber-security-dec-2025_8c9kfkV-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=557 source=raw_docs/ai-al-is-io-502-database-management-systems-dec-2024.pdf target=ai-al-is-io-502-database-management-systems-dec-2024-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=558 source=raw_docs/cs-503-c-cyber-security-dec-2024_FcG8kyI.pdf target=cs-503-c-cyber-security-dec-2024_FcG8kyI-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=559 source=raw_docs/cs-504-a-internet-and-web-technology-dec-2024_9I7uHpQ.pdf target=cs-504-a-internet-and-web-technology-dec-2024_9I7uHpQ-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=560 source=raw_docs/cd-501-theory-of-computation-dec-2024.pdf target=cd-501-theory-of-computation-dec-2024-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=561 source=raw_docs/al-601-theory-of-computation-may-2023.pdf target=al-601-theory-of-computation-may-2023-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=562 source=raw_docs/cd-501-theory-of-computation-nov-2023.pdf target=cd-501-theory-of-computation-nov-2023-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=563 source=raw_docs/cs-502-database-management-systems-nov-2023_Pc1QPzV.pdf target=cs-502-database-management-systems-nov-2023_Pc1QPzV-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=564 source=raw_docs/cs-503-a-data-analytics-nov-2023_piYSmsr.pdf target=cs-503-a-data-analytics-nov-2023_piYSmsr-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=565 source=raw_docs/cs-503-b-pattern-recognition-nov-2023_nuV4Fgq.pdf target=cs-503-b-pattern-recognition-nov-2023_nuV4Fgq-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=566 source=raw_docs/cs-503-c-cyber-security-nov-2023_XYzrNZ2.pdf target=cs-503-c-cyber-security-nov-2023_XYzrNZ2-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=567 source=raw_docs/ad-503-a-internet-and-web-technology-nov-2023.pdf target=ad-503-a-internet-and-web-technology-nov-2023-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=568 source=raw_docs/ad-501-theory-of-computation-nov-2022.pdf target=ad-501-theory-of-computation-nov-2022-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=569 source=raw_docs/cs-502-data-management-systems-nov-2022_Hs1MrAP.pdf target=cs-502-data-management-systems-nov-2022_Hs1MrAP-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=570 source=raw_docs/cs-503-c-cyber-security-nov-2022_E9x7fOw.pdf target=cs-503-c-cyber-security-nov-2022_E9x7fOw-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=571 source=raw_docs/ad-503-a-internet-and-web-technology-nov-2022.pdf target=ad-503-a-internet-and-web-technology-nov-2022-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=572 source=raw_docs/cy-403-computer-networks-jun-2025.pdf target=cy-403-computer-networks-jun-2025-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=573 source=raw_docs/ci-602-machine-learning-jun-2025.pdf target=ci-602-machine-learning-jun-2025-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=574 source=raw_docs/cs-603-a-advanced-computer-architecture-jun-2025_s2cXsQQ.pdf target=cs-603-a-advanced-computer-architecture-jun-2025_s2cXsQQ-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=575 source=raw_docs/cs-604-b-project-management-jun-2025_cD9nv7g.pdf target=cs-604-b-project-management-jun-2025_cD9nv7g-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=576 source=raw_docs/cs-sd-603-c-compiler-design-jun-2025_yUyRd7f.pdf target=cs-sd-603-c-compiler-design-jun-2025_yUyRd7f-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=577 source=raw_docs/cb-601-computer-networks-dec-2024.pdf target=cb-601-computer-networks-dec-2024-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=578 source=raw_docs/al-602-computer-networks-may-2024.pdf target=al-602-computer-networks-may-2024-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=579 source=raw_docs/cy-701-machine-learning-dec-2024.pdf target=cy-701-machine-learning-dec-2024-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=580 source=raw_docs/cs-601-machine-learning-may-2024_rGHg9TL.pdf target=cs-601-machine-learning-may-2024_rGHg9TL-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=581 source=raw_docs/cs-603-a-advanced-computer-architecture-may-2024_c7MH0Nu.pdf target=cs-603-a-advanced-computer-architecture-may-2024_c7MH0Nu-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=582 source=raw_docs/cs-603-c-compiler-design-dec-2024_EepaVbA.pdf target=cs-603-c-compiler-design-dec-2024_EepaVbA-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=583 source=raw_docs/ad-604-c-compiler-design-may-2024.pdf target=ad-604-c-compiler-design-may-2024-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=584 source=raw_docs/cs-604-b-project-management-dec-2024_daHB5GD.pdf target=cs-604-b-project-management-dec-2024_daHB5GD-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=585 source=raw_docs/cs-604-b-project-management-may-2024_ynFwdzU.pdf target=cs-604-b-project-management-may-2024_ynFwdzU-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=586 source=raw_docs/al-602-computer-networks-may-2023.pdf target=al-602-computer-networks-may-2023-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=587 source=raw_docs/cs-601-machine-learning-may-2023_ZCI9GZm.pdf target=cs-601-machine-learning-may-2023_ZCI9GZm-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=588 source=raw_docs/cs-603-c-compiler-design-may-2023_haKnhzj.pdf target=cs-603-c-compiler-design-may-2023_haKnhzj-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=589 source=raw_docs/cs-604-a-knowledge-management-may-2023_0jC2jtV.pdf target=cs-604-a-knowledge-management-may-2023_0jC2jtV-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=590 source=raw_docs/cs-604-b-project-management-may-2023_P1jCFYQ.pdf target=cs-604-b-project-management-may-2023_P1jCFYQ-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=591 source=raw_docs/cs-601-machine-learning-may-2022_YayR12e.pdf target=cs-601-machine-learning-may-2022_YayR12e-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=592 source=raw_docs/cs-602-computer-networks-may-2022_bhUMZy4.pdf target=cs-602-computer-networks-may-2022_bhUMZy4-ocr.pdf
+[2026-03-03 11:37:49 UTC] PROCESS id=593 source=raw_docs/cs-603-b-computer-graphics-and-visualization-may-2022_TA40XM7.pdf target=cs-603-b-computer-graphics-and-visualization-may-2022_TA40XM7-ocr.pdf
+[2026-03-03 11:38:15 UTC] SUCCESS id=574 target=cs-603-a-advanced-computer-architecture-jun-2025_s2cXsQQ-ocr.pdf
+[2026-03-03 11:38:23 UTC] SUCCESS id=545 target=cy-404-operating-systems-nov-2023-ocr.pdf
+[2026-03-03 11:38:29 UTC] SUCCESS id=547 target=al-cd-cs-ct-co-403-software-engineering-nov-2023_4QsuEcP-ocr.pdf
+[2026-03-03 11:38:31 UTC] SUCCESS id=557 target=ai-al-is-io-502-database-management-systems-dec-2024-ocr.pdf
+[2026-03-03 11:38:34 UTC] SUCCESS id=577 target=cb-601-computer-networks-dec-2024-ocr.pdf
+[2026-03-03 11:38:41 UTC] SUCCESS id=549 target=al-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-nov-2023_s0kwIcz-ocr.pdf
+[2026-03-03 11:38:42 UTC] SUCCESS id=575 target=cs-604-b-project-management-jun-2025_cD9nv7g-ocr.pdf
+[2026-03-03 11:38:44 UTC] SUCCESS id=565 target=cs-503-b-pattern-recognition-nov-2023_nuV4Fgq-ocr.pdf
+[2026-03-03 11:38:44 UTC] SUCCESS id=579 target=cy-701-machine-learning-dec-2024-ocr.pdf
+[2026-03-03 11:38:46 UTC] SUCCESS id=544 target=cy-404-operating-systems-jun-2023-ocr.pdf
+[2026-03-03 11:38:55 UTC] SUCCESS id=546 target=al-cd-cs-ct-co-403-software-engineering-jun-2023_kuWPcHZ-ocr.pdf
+[2026-03-03 11:39:03 UTC] SUCCESS id=562 target=cd-501-theory-of-computation-nov-2023-ocr.pdf
+[2026-03-03 11:39:18 UTC] SUCCESS id=573 target=ci-602-machine-learning-jun-2025-ocr.pdf
+[2026-03-03 11:39:26 UTC] SUCCESS id=550 target=cs-402-analysis-design-of-algorithm-jun-2023_410ygjX-ocr.pdf
+[2026-03-03 11:39:36 UTC] SUCCESS id=581 target=cs-603-a-advanced-computer-architecture-may-2024_c7MH0Nu-ocr.pdf
+[2026-03-03 11:39:37 UTC] SUCCESS id=580 target=cs-601-machine-learning-may-2024_rGHg9TL-ocr.pdf
+[2026-03-03 11:39:38 UTC] SUCCESS id=571 target=ad-503-a-internet-and-web-technology-nov-2022-ocr.pdf
+[2026-03-03 11:39:38 UTC] SUCCESS id=588 target=cs-603-c-compiler-design-may-2023_haKnhzj-ocr.pdf
+[2026-03-03 11:39:39 UTC] SUCCESS id=548 target=al-ci-cs-ct-co-io-is-404-computer-organization-and-architecture-jun-2023_uoxwmBZ-ocr.pdf
+[2026-03-03 11:39:41 UTC] SUCCESS id=563 target=cs-502-database-management-systems-nov-2023_Pc1QPzV-ocr.pdf
+[2026-03-03 11:39:43 UTC] SUCCESS id=590 target=cs-604-b-project-management-may-2023_P1jCFYQ-ocr.pdf
+[2026-03-03 11:39:43 UTC] SUCCESS id=561 target=al-601-theory-of-computation-may-2023-ocr.pdf
+[2026-03-03 11:39:44 UTC] SUCCESS id=576 target=cs-sd-603-c-compiler-design-jun-2025_yUyRd7f-ocr.pdf
+[2026-03-03 11:39:45 UTC] SUCCESS id=558 target=cs-503-c-cyber-security-dec-2024_FcG8kyI-ocr.pdf
+[2026-03-03 11:39:46 UTC] SUCCESS id=592 target=cs-602-computer-networks-may-2022_bhUMZy4-ocr.pdf
+[2026-03-03 11:39:47 UTC] SUCCESS id=582 target=cs-603-c-compiler-design-dec-2024_EepaVbA-ocr.pdf
+[2026-03-03 11:39:47 UTC] SUCCESS id=572 target=cy-403-computer-networks-jun-2025-ocr.pdf
+[2026-03-03 11:39:48 UTC] SUCCESS id=566 target=cs-503-c-cyber-security-nov-2023_XYzrNZ2-ocr.pdf
+[2026-03-03 11:39:51 UTC] SUCCESS id=555 target=cs-501-theory-of-computation-dec-2025_FwOMAv4-ocr.pdf
+[2026-03-03 11:39:55 UTC] SUCCESS id=559 target=cs-504-a-internet-and-web-technology-dec-2024_9I7uHpQ-ocr.pdf
+[2026-03-03 11:39:56 UTC] SUCCESS id=568 target=ad-501-theory-of-computation-nov-2022-ocr.pdf
+[2026-03-03 11:40:00 UTC] SUCCESS id=569 target=cs-502-data-management-systems-nov-2022_Hs1MrAP-ocr.pdf
+[2026-03-03 11:40:00 UTC] SUCCESS id=589 target=cs-604-a-knowledge-management-may-2023_0jC2jtV-ocr.pdf
+[2026-03-03 11:40:00 UTC] SUCCESS id=585 target=cs-604-b-project-management-may-2024_ynFwdzU-ocr.pdf
+[2026-03-03 11:40:00 UTC] SUCCESS id=583 target=ad-604-c-compiler-design-may-2024-ocr.pdf
+[2026-03-03 11:40:02 UTC] SUCCESS id=556 target=cs-503-c-cyber-security-dec-2025_8c9kfkV-ocr.pdf
+[2026-03-03 11:40:03 UTC] SUCCESS id=560 target=cd-501-theory-of-computation-dec-2024-ocr.pdf
+[2026-03-03 11:40:04 UTC] SUCCESS id=554 target=cs-402-analysis-design-of-algorithm-jun-2022_uC341lk-ocr.pdf
+[2026-03-03 11:40:04 UTC] SUCCESS id=551 target=cs-402-analysis-design-of-algorithm-nov-2023_DMUkHGE-ocr.pdf
+[2026-03-03 11:40:06 UTC] SUCCESS id=578 target=al-602-computer-networks-may-2024-ocr.pdf
+[2026-03-03 11:40:06 UTC] SUCCESS id=564 target=cs-503-a-data-analytics-nov-2023_piYSmsr-ocr.pdf
+[2026-03-03 11:40:06 UTC] SUCCESS id=587 target=cs-601-machine-learning-may-2023_ZCI9GZm-ocr.pdf
+[2026-03-03 11:40:07 UTC] SUCCESS id=570 target=cs-503-c-cyber-security-nov-2022_E9x7fOw-ocr.pdf
+[2026-03-03 11:40:07 UTC] SUCCESS id=567 target=ad-503-a-internet-and-web-technology-nov-2023-ocr.pdf
+[2026-03-03 11:40:07 UTC] SUCCESS id=552 target=cb-403-software-engineering-jun-2022-ocr.pdf
+[2026-03-03 11:40:08 UTC] SUCCESS id=593 target=cs-603-b-computer-graphics-and-visualization-may-2022_TA40XM7-ocr.pdf
+[2026-03-03 11:40:09 UTC] SUCCESS id=584 target=cs-604-b-project-management-dec-2024_daHB5GD-ocr.pdf
+[2026-03-03 11:40:09 UTC] SUCCESS id=591 target=cs-601-machine-learning-may-2022_YayR12e-ocr.pdf
+[2026-03-03 11:40:11 UTC] SUCCESS id=553 target=ci-cs-ct-co-al-io-is-404-computer-organization-and-architecture-jun-2022_toVnGzf-ocr.pdf
+[2026-03-03 11:40:11 UTC] SUCCESS id=586 target=al-602-computer-networks-may-2023-ocr.pdf
+[2026-03-03 11:40:11 UTC] Run finished: success=50, failed=0, skipped=0, total=50
