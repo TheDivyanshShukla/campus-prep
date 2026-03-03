@@ -19,10 +19,10 @@
 
     <!-- Filter Bar (Optional for quick switching) -->
     <div class="mb-12">
-        <form method="GET" action="{% url 'explore_subjects' %}" class="max-w-4xl mx-auto bg-card border border-border rounded-2xl p-4 shadow-sm backdrop-blur-sm bg-background/80 flex flex-col md:flex-row gap-4 items-end">
+        <form method="GET" action="{% url 'explore_subjects' %}" class="relative z-30 overflow-visible max-w-4xl mx-auto bg-card border border-border rounded-2xl p-4 shadow-sm backdrop-blur-sm bg-background/80 flex flex-col md:flex-row gap-4 items-end">
             <div class="flex-1 w-full text-left">
                 <label class="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Branch</label>
-                <select name="branch">
+                <select name="branch" class="w-full h-12 px-4 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all">
                     {% for b in branches %}
                     <option value="{{ b.id }}" {% if b.id == branch.id %}selected{% endif %}>{{ b.name }}</option>
                     {% endfor %}
@@ -30,7 +30,7 @@
             </div>
             <div class="flex-1 w-full text-left">
                 <label class="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Semester</label>
-                <select name="semester">
+                <select name="semester" class="w-full h-12 px-4 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all">
                     {% for s in semesters %}
                     <option value="{{ s.id }}" {% if s.id == semester.id %}selected{% endif %}>Semester {{ s.number }}</option>
                     {% endfor %}

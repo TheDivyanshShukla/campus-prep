@@ -17,7 +17,26 @@ from apps.users.data_services import UserDataService
 from apps.academics.models import Subject, Branch, Semester
 from apps.content.models import ParsedDocument
 
+GUEST_ALLOWED_DOCUMENT_TYPES = {'UNSOLVED_PYQ', 'SYLLABUS'}
+
+
+def _can_guest_access_document(document):
+    return document.document_type in GUEST_ALLOWED_DOCUMENT_TYPES
+
+
+def _can_access_document(user, document):
+    if user.is_authenticated:
+        return UserDataService.check_premium_access(user, document)
+
+    if not _can_guest_access_document(document):
+        return False
+
+    return UserDataService.check_premium_access(user, document)
+
 def home(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     branches = ContentDataService.get_all_branches()
     semesters = ContentDataService.get_all_semesters()
     
@@ -42,12 +61,36 @@ def home(request):
         'is_onboarded': is_onboarded
     })
 
-@login_required
 def explore_subjects(request):
-    """
-    Deprecated: Redirects to the personalized student dashboard.
-    """
-    return redirect('dashboard')
+    """Public subject explorer filtered by branch and semester."""
+    branches = ContentDataService.get_all_branches()
+    semesters = ContentDataService.get_all_semesters()
+
+    branch_id = request.GET.get('branch') or request.POST.get('branch')
+    semester_id = request.GET.get('semester') or request.POST.get('semester')
+
+    branch = None
+    semester = None
+
+    if branch_id:
+        branch = Branch.objects.filter(pk=branch_id, is_active=True).first()
+    if semester_id:
+        semester = Semester.objects.filter(pk=semester_id, is_active=True).first()
+
+    if not branch and branches:
+        branch = branches[0]
+    if not semester and semesters:
+        semester = semesters[0]
+
+    subjects = ContentDataService.get_subjects_by_branch_and_semester(branch, semester)
+
+    return render(request, 'content/explore_subjects.html', {
+        'subjects': subjects,
+        'branch': branch,
+        'semester': semester,
+        'branches': branches,
+        'semesters': semesters,
+    })
 
 @staff_member_required
 def admin_ai_parser(request):
@@ -91,7 +134,6 @@ def subject_dashboard(request, subject_id):
         'unlocked_doc_ids': unlocked_doc_ids
     })
 
-@login_required
 def read_document(request, document_id, slug=None):
     """
     The Zero-PDF native JSON renderer. Includes premium access checks.
@@ -101,9 +143,12 @@ def read_document(request, document_id, slug=None):
         return redirect('home')
         
     user = request.user
-    
-    if not UserDataService.check_premium_access(user, document):
-        # User is locked out, redirect to dashboard
+
+    if not _can_access_document(user, document):
+        if not user.is_authenticated and not _can_guest_access_document(document):
+            return redirect('login')
+
+        # User is locked out, redirect to dashboard/subject
         fallback_subject = document.subjects.first()
         if fallback_subject:
             return redirect('subject_dashboard', subject_id=fallback_subject.id)
@@ -149,7 +194,6 @@ def read_document(request, document_id, slug=None):
         # The key is deliberately NOT sent in the HTML payload
     })
 
-@login_required
 def serve_secure_pdf(request, document_id):
     """
     Acts as an authenticated proxy to stream the raw PDF binary.
@@ -158,7 +202,7 @@ def serve_secure_pdf(request, document_id):
     if not document:
         return HttpResponseForbidden("Document not found.")
         
-    if not UserDataService.check_premium_access(request.user, document):
+    if not _can_access_document(request.user, document):
         return HttpResponseForbidden("Unauthorized to view this PDF.")
             
     if not document.source_file:
@@ -192,7 +236,6 @@ def serve_secure_pdf(request, document_id):
     except Exception as e:
         return HttpResponseForbidden("Failed to retrieve file.")
 
-@login_required
 @require_POST
 def get_document_key(request, document_id):
     """
@@ -200,6 +243,13 @@ def get_document_key(request, document_id):
     *after* passing all anti-scraping traps. It retrieves the key from the server session
     and verifies the anti-tamper challenge.
     """
+    document = ContentDataService.get_document_by_id(document_id)
+    if not document:
+        return HttpResponseForbidden("Document not found.")
+
+    if not _can_access_document(request.user, document):
+        return HttpResponseForbidden("Unauthorized to access document key.")
+
     session_key = f'doc_key_{document_id}'
     session_data = request.session.get(session_key)
     

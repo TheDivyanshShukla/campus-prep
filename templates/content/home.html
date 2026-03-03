@@ -29,7 +29,7 @@
                 Find your study material
             </h3>
             
-            <form action="{% if user.is_authenticated and is_onboarded %}{% url 'change_program' %}{% else %}{% url 'onboarding' %}{% endif %}" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <form action="{% if user.is_authenticated and is_onboarded %}{% url 'change_program' %}{% elif user.is_authenticated %}{% url 'onboarding' %}{% else %}{% url 'explore_subjects' %}{% endif %}" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {% csrf_token %}
                 <!-- Branch Config -->
                 <div>
