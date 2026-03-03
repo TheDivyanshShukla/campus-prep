@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Almost there — CampusPrep{% endblock %}
+
+{% block content %}
+<div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-10">
+    <div class="w-full max-w-[400px]">
+        <div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm p-8">
+
+            <div class="mb-6">
+                <a href="{% url 'home' %}" class="inline-block text-xl font-extrabold tracking-tight mb-5">
+                    Campus<span class="text-blue-600 dark:text-blue-400">Prep</span>
+                </a>
+                <h1 class="text-[1.35rem] font-bold text-foreground leading-snug">One last step</h1>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">Confirm your email to continue to Campus Prep</p>
+            </div>
+
+            {% if messages %}
+            {% for message in messages %}
+            <div class="mb-4 px-3.5 py-3 rounded-lg text-sm
+                {% if message.tags == 'error' %}text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900
+                {% else %}text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900{% endif %}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <form method="POST" action="{% url 'socialaccount_signup' %}" class="space-y-3">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                <div class="mb-1 px-3.5 py-3 rounded-lg text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900">
+                    {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+                </div>
+                {% endif %}
+
+                <div>
+                    <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-foreground mb-1.5">Email address</label>
+                    <input type="email"
+                           id="{{ form.email.id_for_label }}"
+                           name="{{ form.email.html_name }}"
+                           value="{{ form.email.value|default:'' }}"
+                           autocomplete="email"
+                           class="w-full h-10 px-3.5 rounded-lg border {% if form.email.errors %}border-red-400 dark:border-red-600{% else %}border-zinc-200 dark:border-zinc-700{% endif %} bg-transparent text-foreground text-sm outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 dark:focus:border-blue-400 transition-colors">
+                    {% if form.email.errors %}<p class="text-xs text-red-500 mt-1">{{ form.email.errors|join:", " }}</p>{% endif %}
+                </div>
+
+                <button type="submit"
+                        class="w-full h-10 mt-1 rounded-lg bg-foreground text-background text-sm font-semibold tracking-wide uppercase hover:opacity-90 active:scale-[0.98] transition-all">
+                    Continue
+                </button>
+            </form>
+
+            <p class="mt-5 text-center text-sm text-zinc-500 dark:text-zinc-400">
+                <a href="{% url 'account_login' %}" class="text-foreground font-medium hover:underline">← Use a different account</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-12">
+    <!-- Ambient background -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(99,102,241,0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(99,102,241,0.08),transparent)]"></div>
+    </div>
+
+    <div class="w-full max-w-md">
+        <!-- Logo -->
+        <div class="text-center mb-8">
+            <a href="{% url 'home' %}" class="inline-block text-2xl font-extrabold tracking-tight">
+                Campus<span class="text-blue-600 dark:text-blue-400">Prep</span>
+            </a>
+            <!-- Google avatar hint -->
+            <div class="mt-6 w-14 h-14 mx-auto bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+            </div>
+            <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-foreground">Almost there!</h1>
+            <p class="mt-2 text-sm text-muted-foreground">Confirm your email to finish signing in with Google.</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white dark:bg-zinc-950 border border-border rounded-2xl shadow-xl shadow-black/5 dark:shadow-none p-8 space-y-6">
+
+            {% if messages %}
+            <div class="space-y-2">
+                {% for message in messages %}
+                <div class="flex items-start gap-2.5 px-4 py-3 rounded-xl text-sm font-medium
+                    {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-200 dark:bg-red-900/20 dark:text-red-400 dark:border-red-800
+                    {% else %}bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800{% endif %}">
+                    <span>{{ message }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="{% url 'socialaccount_signup' %}" class="space-y-4">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                <div class="px-4 py-3 rounded-xl text-sm text-red-700 bg-red-50 border border-red-200 dark:bg-red-900/20 dark:text-red-400 dark:border-red-800">
+                    {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Email (pre-filled from Google) -->
+                <div class="space-y-1.5">
+                    <label for="{{ form.email.id_for_label }}" class="block text-sm font-semibold text-foreground">
+                        Email address
+                    </label>
+                    <input type="email"
+                           id="{{ form.email.id_for_label }}"
+                           name="{{ form.email.html_name }}"
+                           value="{{ form.email.value|default:'' }}"
+                           autocomplete="email"
+                           class="w-full h-11 px-4 rounded-xl border {% if form.email.errors %}border-red-400 dark:border-red-600{% else %}border-border{% endif %} bg-background focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition-all text-sm"
+                           placeholder="you@example.com">
+                    {% if form.email.errors %}
+                    <p class="text-xs text-red-500 font-medium mt-1">{{ form.email.errors|join:", " }}</p>
+                    {% endif %}
+                </div>
+
+                <button type="submit"
+                        class="w-full h-11 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-sm font-bold transition-all shadow-md active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-ring">
+                    Continue to CampusPrep
+                </button>
+            </form>
+        </div>
+
+        <p class="text-center mt-6 text-sm text-muted-foreground">
+            <a href="{% url 'account_login' %}" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                ← Use a different account
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}

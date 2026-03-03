@@ -24,6 +24,7 @@ from apps.notifications import views as views_notifications
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', include('apps.content.urls')),
     path('', include('apps.users.urls')),
     path('payments/', include('apps.products.urls')),
