@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Authentication Error — CampusPrep{% endblock %}
+
+{% block content %}
+<div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-12">
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(99,102,241,0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(99,102,241,0.08),transparent)]"></div>
+    </div>
+
+    <div class="w-full max-w-md text-center">
+        <a href="{% url 'home' %}" class="inline-block text-2xl font-extrabold tracking-tight">
+            Campus<span class="text-blue-600 dark:text-blue-400">Prep</span>
+        </a>
+
+        <div class="mt-8 bg-white dark:bg-zinc-950 border border-border rounded-2xl shadow-xl shadow-black/5 dark:shadow-none p-10 space-y-4">
+            <div class="w-16 h-16 mx-auto bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center">
+                <svg class="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-extrabold text-foreground">Sign-in failed</h1>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                Something went wrong during Google sign-in. This can happen if you deny permissions or if there's a temporary issue.
+            </p>
+            <div class="flex flex-col gap-3 pt-2">
+                <a href="{% url 'account_login' %}"
+                   class="w-full h-11 leading-[2.75rem] inline-block bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-sm font-bold transition-all shadow-md active:scale-[0.98]">
+                    Try Again
+                </a>
+                <a href="{% url 'home' %}" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Go to homepage
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

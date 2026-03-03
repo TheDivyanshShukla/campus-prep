@@ -1,6 +1,5 @@
-from django.conf import settings
+# No additional context needed — allauth provides all auth context automatically.
 
-def clerk_settings(request):
     """
     Exposes Clerk keys to templates.
     While keys are provided, the SDK is only loaded unauthenticated pages

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Confirm Email — CampusPrep{% endblock %}
+
+{% block content %}
+<div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-12">
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(99,102,241,0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(99,102,241,0.08),transparent)]"></div>
+    </div>
+
+    <div class="w-full max-w-md text-center">
+        <a href="{% url 'home' %}" class="inline-block text-2xl font-extrabold tracking-tight">
+            Campus<span class="text-blue-600 dark:text-blue-400">Prep</span>
+        </a>
+
+        <div class="mt-8 bg-white dark:bg-zinc-950 border border-border rounded-2xl shadow-xl shadow-black/5 dark:shadow-none p-10 space-y-5">
+            {% if confirmation %}
+            <div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center">
+                <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-extrabold text-foreground">Confirm your email</h1>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                Please confirm that <strong class="text-foreground">{{ confirmation.email_address.email }}</strong> is your email address.
+            </p>
+            <form method="POST" action="{% url 'account_confirm_email' confirmation.key %}">
+                {% csrf_token %}
+                <button type="submit"
+                        class="w-full h-11 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-sm font-bold transition-all shadow-md active:scale-[0.98]">
+                    Confirm Email Address
+                </button>
+            </form>
+            {% else %}
+            <div class="w-16 h-16 mx-auto bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center">
+                <svg class="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-extrabold text-foreground">Invalid confirmation link</h1>
+            <p class="text-sm text-muted-foreground">This confirmation link is invalid or has expired.</p>
+            <a href="{% url 'account_email' %}" class="inline-block mt-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-xl text-sm font-bold hover:bg-primary/90 transition-all">
+                Manage Email Addresses
+            </a>
+            {% endif %}
+        </div>
+
+        <p class="mt-6 text-sm text-muted-foreground">
+            <a href="{% url 'account_login' %}" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                ← Back to sign in
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}
