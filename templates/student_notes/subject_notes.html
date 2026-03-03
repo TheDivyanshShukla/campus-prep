@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ subject.code }} Notes — CampusPrep{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 max-w-3xl">
+    <!-- Back link + header -->
+    <a href="{% url 'student_notes:index' %}" class="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 mb-4">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        All Subjects
+    </a>
+    <h1 class="text-2xl font-bold tracking-tight">{{ subject.code }} — {{ subject.name }}</h1>
+    <p class="text-muted-foreground text-sm mt-1 mb-8">Your personal notes for each chapter</p>
+
+    <!-- Unit list -->
+    <div class="space-y-3">
+        {% for item in unit_data %}
+        <div class="border border-border rounded-xl p-4 hover:border-emerald-500/20 transition-all duration-200">
+            <div class="flex items-center justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold bg-muted px-2 py-0.5 rounded">Unit {{ item.unit.number }}</span>
+                        {% if item.has_content %}
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0" title="Has notes"></span>
+                        {% endif %}
+                    </div>
+                    <h3 class="font-medium text-sm mt-1.5 truncate">{{ item.unit.name }}</h3>
+                    {% if item.has_content %}
+                    <p class="text-xs text-muted-foreground mt-0.5">{{ item.block_count }} blocks</p>
+                    {% endif %}
+                </div>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    {% if item.base_note and not item.has_content %}
+                    <button onclick="copyBaseNote({{ item.base_note.id }})"
+                            class="text-xs px-3 py-1.5 border border-amber-500/30 text-amber-600 dark:text-amber-400 rounded-lg hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors font-medium">
+                        Copy Template
+                    </button>
+                    {% endif %}
+                    <a href="{% url 'student_notes:editor' subject.id item.unit.id %}"
+                       class="text-xs px-4 py-1.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
+                        {% if item.has_content %}Edit{% else %}Start{% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if not unit_data %}
+    <div class="text-center py-16">
+        <p class="text-muted-foreground text-sm">No chapters found for this subject yet.</p>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+async function copyBaseNote(baseNoteId) {
+    if (!confirm('This will copy the template into your notes. Continue?')) return;
+    try {
+        const resp = await fetch('{% url "student_notes:api_copy_base_note" %}', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': '{{ csrf_token }}' },
+            body: JSON.stringify({ base_note_id: baseNoteId }),
+        });
+        const data = await resp.json();
+        if (data.success) location.reload();
+        else alert(data.error || 'Failed to copy template');
+    } catch { alert('Network error'); }
+}
+</script>
+{% endblock %}

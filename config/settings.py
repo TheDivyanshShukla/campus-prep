@@ -107,6 +107,7 @@ INSTALLED_APPS = [
     'apps.gamification.apps.GamificationConfig',
     'apps.practice.apps.PracticeConfig',
     'apps.notifications.apps.NotificationsConfig',
+    'apps.student_notes.apps.StudentNotesConfig',
     'webpush',
 ]
 

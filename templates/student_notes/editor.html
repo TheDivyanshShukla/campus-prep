@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ unit.name }} — Notes | CampusPrep{% endblock %}
+
+{% block head %}
+<!-- KaTeX for formula rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<style type="text/tailwindcss">
+    /* ── Block Editor Core ───────────────────────────────── */
+    .note-block { position: relative; }
+    .note-block .block-grip {
+        cursor: grab; user-select: none;
+        width: 1.25rem; flex-shrink: 0;
+        display: flex; align-items: center; justify-content: center;
+        color: hsl(var(--muted-foreground)); font-size: 0.7rem; letter-spacing: -2px;
+        border-radius: 0.25rem;
+        margin-top: 0.15rem;
+    }
+    .note-block .block-grip:hover { background: hsl(var(--muted)); }
+    .note-block .block-menu-btn {
+        position: absolute; right: -0.25rem; top: 0.15rem;
+        width: 1.25rem; height: 1.25rem;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 0.25rem; font-size: 0.75rem;
+        color: hsl(var(--muted-foreground));
+    }
+    .note-block .block-menu-btn:hover { background: hsl(var(--muted)); }
+
+    /* Placeholder for empty contentEditable — only shown on focused block */
+    .block-content:focus:empty::before,
+    [data-placeholder]:focus:empty::before {
+        content: attr(data-placeholder);
+        color: hsl(var(--muted-foreground) / 0.5);
+        pointer-events: none;
+        font-style: italic;
+    }
+
+    /* Text selection highlighting for better visibility */
+    .block-content::selection,
+    [contenteditable]::selection,
+    [contenteditable] *::selection {
+        background: hsl(var(--primary) / 0.28);
+        color: inherit;
+    }
+
+    /* Allow native drag-select to flow freely across all blocks */
+    #editor-blocks { user-select: text; }
+
+    /* ── Block type styles ───────────────────────────────── */
+    .bt-heading1 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+    .bt-heading2 { font-size: 1.5rem; font-weight: 600; line-height: 1.25; }
+    .bt-heading3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+    .bt-quote { border-left: 3px solid hsl(var(--border)); padding-left: 1rem; color: hsl(var(--muted-foreground)); font-style: italic; }
+
+    /* ── Slash menu ──────────────────────────────────────── */
+    #slash-menu { max-height: 320px; }
+
+    /* ── Inline toolbar ──────────────────────────────────── */
+    #inline-toolbar { transform: translateX(-50%); }
+    #inline-toolbar button { min-width: 1.75rem; }
+
+    /* ── Highlight colours ───────────────────────────────── */
+    .hl-important { background: rgba(239,68,68,0.10); border-left: 3px solid #ef4444; color: inherit; }
+    .hl-revise    { background: rgba(245,158,11,0.10); border-left: 3px solid #f59e0b; color: inherit; }
+    .hl-formula   { background: rgba(168,85,247,0.10); border-left: 3px solid #a855f7; color: inherit; }
+    .hl-doubt     { background: rgba(59,130,246,0.10); border-left: 3px solid #3b82f6; color: inherit; }
+
+    /* Dark mode: stronger opacity so color is visible on dark bg */
+    .dark .hl-important { background: rgba(239,68,68,0.20); border-left-color: #f87171; }
+    .dark .hl-revise    { background: rgba(245,158,11,0.20); border-left-color: #fbbf24; }
+    .dark .hl-formula   { background: rgba(168,85,247,0.20); border-left-color: #c084fc; }
+    .dark .hl-doubt     { background: rgba(59,130,246,0.20); border-left-color: #60a5fa; }
+
+    /* Inline text highlight — invert in dark mode */
+    .dark [style*='background-color: rgb(254, 240, 138)'] { background-color: rgba(161,140,0,0.4) !important; color: #fef9c3 !important; }
+    .dark [style*='background-color: rgb(187, 247, 208)'] { background-color: rgba(0,120,60,0.35)  !important; color: #bbf7d0 !important; }
+    .dark [style*='background-color: rgb(191, 219, 254)'] { background-color: rgba(0,80,200,0.35)  !important; color: #bfdbfe !important; }
+    .dark [style*='background-color: rgb(254, 202, 202)'] { background-color: rgba(180,0,0,0.35)   !important; color: #fecaca !important; }
+
+    /* ── Read mode ───────────────────────────────────────── */
+    .read-mode .block-grip, .read-mode .block-menu-btn { display: none !important; }
+    .read-mode .note-block { padding-left: 0; }
+
+    /* ── Focus mode ──────────────────────────────────────── */
+    .focus-mode header, .focus-mode footer { display: none !important; }
+    .focus-mode main { padding-top: 0; }
+    .focus-mode #editor-toolbar { border-radius: 0; }
+
+    /* Quick-revision dimmed blocks */
+    .qr-dimmed { opacity: 0.15; pointer-events: none; transition: opacity 0.2s; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="editor-app" class="min-h-[calc(100vh-4rem)]">
+
+    <!-- ── Toolbar ────────────────────────────────────────────────────────── -->
+    <div id="editor-toolbar" class="sticky top-16 z-30 bg-background/80 backdrop-blur-md border-b border-border px-4 py-2">
+        <div class="container mx-auto max-w-3xl flex items-center justify-between gap-2 flex-wrap">
+            <!-- Left: back + breadcrumb -->
+            <div class="flex items-center gap-2 min-w-0">
+                <a href="{% url 'student_notes:subject_notes' subject.id %}" class="text-muted-foreground hover:text-foreground transition-colors flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </a>
+                <span class="text-sm font-medium truncate"><span class="text-muted-foreground">{{ subject.code }}</span> › Unit {{ unit.number }}</span>
+            </div>
+
+            <!-- Right: actions -->
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+                <!-- Save status -->
+                <span id="save-status" class="text-xs text-muted-foreground mr-1 hidden sm:inline">Saved</span>
+
+                <!-- Search -->
+                <button onclick="editor.toggleSearch()" title="Search (Ctrl+F)" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </button>
+
+                <!-- Quick Revision dropdown -->
+                <div class="relative" id="qr-dropdown">
+                    <button onclick="toggleQRMenu()" title="Quick Revision" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                    </button>
+                    <div id="qr-menu" class="hidden absolute right-0 top-full mt-1 w-48 bg-background border border-border rounded-xl shadow-xl z-50 py-1.5 text-sm">
+                        <button onclick="editor.showQuickRevision('important')" class="w-full text-left px-3 py-2 hover:bg-muted flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span> Important</button>
+                        <button onclick="editor.showQuickRevision('revise')" class="w-full text-left px-3 py-2 hover:bg-muted flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Revise</button>
+                        <button onclick="editor.showQuickRevision('formula')" class="w-full text-left px-3 py-2 hover:bg-muted flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Formulas</button>
+                        <button onclick="editor.showQuickRevision('doubt')" class="w-full text-left px-3 py-2 hover:bg-muted flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Doubts</button>
+                        <button onclick="editor.showQuickRevision('heading')" class="w-full text-left px-3 py-2 hover:bg-muted flex items-center gap-2">📑 Headings only</button>
+                        <button onclick="editor.showQuickRevision('checklist')" class="w-full text-left px-3 py-2 hover:bg-muted flex items-center gap-2">☑ Checklists only</button>
+                        <div class="border-t border-border my-1"></div>
+                        <button onclick="editor.exitQuickRevision()" class="w-full text-left px-3 py-2 hover:bg-muted text-muted-foreground">Show all blocks</button>
+                    </div>
+                </div>
+
+                <!-- Version history -->
+                <button onclick="editor.showVersionHistory()" title="Version History" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </button>
+
+                <!-- Read / Edit mode toggle -->
+                <button id="mode-toggle" onclick="editor.toggleReadMode()" title="Toggle Read Mode" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                    <svg id="mode-icon-edit" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <svg id="mode-icon-read" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                </button>
+
+                <!-- Focus mode -->
+                <button onclick="editor.toggleFocusMode()" title="Focus Mode" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Search panel ───────────────────────────────────────────────────── -->
+    <div id="search-panel" class="hidden sticky top-[7.5rem] z-20 bg-background border-b border-border px-4 py-2">
+        <div class="container mx-auto max-w-3xl flex items-center gap-2">
+            <input id="search-input" type="text" placeholder="Search in note..." class="flex-1 bg-transparent outline-none text-sm border border-border rounded-lg px-3 py-1.5 focus:ring-1 focus:ring-ring">
+            <span id="search-count" class="text-xs text-muted-foreground"></span>
+            <button onclick="editor.searchPrev()" class="p-1 rounded hover:bg-muted"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg></button>
+            <button onclick="editor.searchNext()" class="p-1 rounded hover:bg-muted"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <button onclick="editor.toggleSearch()" class="p-1 rounded hover:bg-muted text-muted-foreground"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+        </div>
+    </div>
+
+    <!-- ── Editor canvas ──────────────────────────────────────────────────── -->
+    <div class="container mx-auto max-w-3xl px-4 py-8">
+        <!-- Unit title (read-only context) -->
+        <h1 class="text-2xl font-bold tracking-tight mb-1">{{ unit.name }}</h1>
+        <p class="text-xs text-muted-foreground mb-8">{{ subject.code }} · Semester {{ subject.semester.number }}</p>
+
+        <!-- Blocks rendered here by JS -->
+        <div id="editor-blocks" class="space-y-0.5 min-h-[40vh]"></div>
+
+        <!-- Click-to-add area -->
+        <div id="add-block-area" class="py-8 text-center cursor-text" onclick="editor.addBlockAtEnd()">
+            <p class="text-sm text-muted-foreground/40">Click here or press Enter to add a block</p>
+        </div>
+    </div>
+
+    <!-- ── Slash command menu (floating) ──────────────────────────────────── -->
+    <div id="slash-menu" class="hidden fixed z-50 w-64 bg-background border border-border rounded-xl shadow-2xl overflow-y-auto py-1.5" style="max-height:320px"></div>
+
+    <!-- ── Inline formatting toolbar (floating) ──────────────────────────── -->
+    <div id="inline-toolbar" class="hidden fixed z-50 bg-background border border-border rounded-xl shadow-2xl px-1 py-1 flex items-center gap-0.5">
+        <button onclick="editor.applyFormat('bold')" title="Bold" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm font-bold">B</button>
+        <button onclick="editor.applyFormat('italic')" title="Italic" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm italic">I</button>
+        <button onclick="editor.applyFormat('underline')" title="Underline" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm underline">U</button>
+        <button onclick="editor.applyFormat('strikeThrough')" title="Strikethrough" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm line-through">S</button>
+        <div class="w-px h-5 bg-border mx-0.5"></div>
+        <button onclick="editor.applyFormat('code')" title="Inline Code" class="px-1.5 py-1 rounded-lg hover:bg-muted text-xs font-mono">&lt;/&gt;</button>
+        <button onclick="editor.promptLink()" title="Link" class="px-1.5 py-1 rounded-lg hover:bg-muted text-sm">🔗</button>
+        <div class="w-px h-5 bg-border mx-0.5"></div>
+        <!-- Highlight colours -->
+        <button onclick="editor.applyHighlightColor('#fef08a')" title="Yellow highlight" class="w-5 h-5 rounded bg-yellow-200 border border-yellow-300"></button>
+        <button onclick="editor.applyHighlightColor('#bbf7d0')" title="Green highlight" class="w-5 h-5 rounded bg-green-200 border border-green-300"></button>
+        <button onclick="editor.applyHighlightColor('#bfdbfe')" title="Blue highlight" class="w-5 h-5 rounded bg-blue-200 border border-blue-300"></button>
+        <button onclick="editor.applyHighlightColor('#fecaca')" title="Red highlight" class="w-5 h-5 rounded bg-red-200 border border-red-300"></button>
+        <button onclick="editor.applyHighlightColor('')" title="Remove highlight" class="w-5 h-5 rounded bg-background border border-border text-[9px] leading-none flex items-center justify-center">✕</button>
+        <div class="w-px h-5 bg-border mx-0.5"></div>
+        <!-- Text colour -->
+        <div class="relative group" title="Text colour">
+            <button id="txt-color-btn" onclick="document.getElementById('txt-color-picker').classList.toggle('hidden')" class="w-6 h-6 flex flex-col items-center justify-center rounded hover:bg-muted gap-px">
+                <span id="txt-color-preview" class="text-xs font-bold leading-none" style="color:inherit">A</span>
+                <span id="txt-color-bar" class="w-4 h-1 rounded-sm" style="background:#ef4444"></span>
+            </button>
+            <div id="txt-color-picker" class="hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-background border border-border rounded-xl shadow-2xl p-2 grid grid-cols-5 gap-1 w-40">
+                <button onclick="editor.applyTextColor('')"          title="Default"   class="w-6 h-6 rounded border border-border bg-foreground/10 text-[9px] flex items-center justify-center">A</button>
+                <button onclick="editor.applyTextColor('#ef4444')"  title="Red"       class="w-6 h-6 rounded" style="background:#ef4444"></button>
+                <button onclick="editor.applyTextColor('#f97316')"  title="Orange"    class="w-6 h-6 rounded" style="background:#f97316"></button>
+                <button onclick="editor.applyTextColor('#eab308')"  title="Yellow"    class="w-6 h-6 rounded" style="background:#eab308"></button>
+                <button onclick="editor.applyTextColor('#22c55e')"  title="Green"     class="w-6 h-6 rounded" style="background:#22c55e"></button>
+                <button onclick="editor.applyTextColor('#06b6d4')"  title="Cyan"      class="w-6 h-6 rounded" style="background:#06b6d4"></button>
+                <button onclick="editor.applyTextColor('#3b82f6')"  title="Blue"      class="w-6 h-6 rounded" style="background:#3b82f6"></button>
+                <button onclick="editor.applyTextColor('#8b5cf6')"  title="Purple"    class="w-6 h-6 rounded" style="background:#8b5cf6"></button>
+                <button onclick="editor.applyTextColor('#ec4899')"  title="Pink"      class="w-6 h-6 rounded" style="background:#ec4899"></button>
+                <button onclick="editor.applyTextColor('#a3a3a3')"  title="Gray"      class="w-6 h-6 rounded" style="background:#a3a3a3"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Block context menu (floating) ──────────────────────────────────── -->
+    <div id="block-ctx-menu" class="hidden fixed z-50 w-52 bg-background border border-border rounded-xl shadow-2xl py-1.5 text-sm"></div>
+
+    <!-- ── Version history modal ──────────────────────────────────────────── -->
+    <div id="version-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+        <div class="bg-background border border-border rounded-2xl shadow-2xl w-full max-w-md mx-4 max-h-[70vh] flex flex-col">
+            <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+                <h2 class="font-semibold">Version History</h2>
+                <button onclick="document.getElementById('version-modal').classList.add('hidden')" class="p-1 rounded hover:bg-muted text-muted-foreground">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div id="version-list" class="flex-1 overflow-y-auto px-5 py-3 space-y-2">
+                <p class="text-sm text-muted-foreground text-center py-8">Loading...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/note-editor.js' %}"></script>
+<script>
+    const editor = new NoteEditor({
+        noteId: {{ note.id }},
+        csrfToken: '{{ csrf_token }}',
+        saveUrl: '{% url "student_notes:api_save" %}',
+        uploadUrl: '{% url "student_notes:api_upload_image" %}',
+        versionsUrl: '{% url "student_notes:api_versions" note.id %}',
+        restoreBaseUrl: '/notes/api/restore/',
+        versionDetailBaseUrl: '/notes/api/version/',
+        initialBlocks: {{ blocks_json|safe }},
+    });
+
+    /* Quick-revision dropdown toggle */
+    function toggleQRMenu() {
+        document.getElementById('qr-menu').classList.toggle('hidden');
+    }
+    document.addEventListener('click', e => {
+        if (!e.target.closest('#qr-dropdown')) document.getElementById('qr-menu').classList.add('hidden');
+    });
+</script>
+{% endblock %}

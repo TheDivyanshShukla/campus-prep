@@ -30,6 +30,7 @@ urlpatterns = [
     path('payments/', include('apps.products.urls')),
     path('api/gamification/', include('apps.gamification.urls')),
     path('practice/', include('apps.practice.urls')),
+    path('notes/', include('apps.student_notes.urls')),
     path('notifications/', include('apps.notifications.urls')),
     path('webpush/', include('webpush.urls')),
     path('webpush/vapid/', views_notifications.vapid_config, name='vapid_config'),
