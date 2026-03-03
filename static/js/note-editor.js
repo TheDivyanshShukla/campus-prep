@@ -90,6 +90,7 @@
             this._undoStack  = [];
             this._redoStack  = [];
             this._undoTimer  = null;
+            this._katexRetryTimer = null;
 
 
 
@@ -116,12 +117,34 @@
         // ── Initialization ────────────────────────────────────────────────
         _init() {
             this._render();
+            this._ensureKatexReadyRender();
             this._setupAutoSave();
             this._setupGlobalKeys();
             this._setupPasteAndDrop();
             this._setupSelectionWatch();
             this._setupCrossBlockSelect();
             this._focusBlock(0);
+        }
+
+        _ensureKatexReadyRender() {
+            // KaTeX is loaded via deferred CDN script in template, so editor may init first.
+            if (typeof katex !== 'undefined') return;
+
+            let tries = 0;
+            const maxTries = 40; // ~4s max wait
+            const tick = () => {
+                if (typeof katex !== 'undefined') {
+                    this._render();
+                    return;
+                }
+                tries += 1;
+                if (tries < maxTries) this._katexRetryTimer = setTimeout(tick, 100);
+            };
+
+            this._katexRetryTimer = setTimeout(tick, 100);
+            window.addEventListener('load', () => {
+                if (typeof katex !== 'undefined') this._render();
+            }, { once: true });
         }
 
         // ── Block factory ─────────────────────────────────────────────────
