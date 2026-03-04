@@ -1452,8 +1452,10 @@
 
             // Upload in background; when done, swap blob URL for real URL
             const form = new FormData();
-            form.append('image', file);
             try {
+                const webpFile = await this._convertImageFileToWebP(file);
+                form.append('image', webpFile);
+
                 const r = await fetch(this.uploadUrl, {
                     method: 'POST',
                     headers: { 'X-CSRFToken': this.csrfToken },
@@ -1483,6 +1485,41 @@
                 alert('Image upload failed');
             } finally {
                 URL.revokeObjectURL(blobUrl);
+            }
+        }
+
+        async _convertImageFileToWebP(file) {
+            if (file.type === 'image/webp') {
+                return file;
+            }
+
+            const imageObjectUrl = URL.createObjectURL(file);
+            try {
+                const image = await new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.onerror = () => reject(new Error('Failed to load image for WebP conversion'));
+                    img.src = imageObjectUrl;
+                });
+
+                const canvas = document.createElement('canvas');
+                canvas.width = image.naturalWidth || image.width;
+                canvas.height = image.naturalHeight || image.height;
+
+                const ctx = canvas.getContext('2d');
+                if (!ctx) {
+                    throw new Error('Canvas context unavailable for WebP conversion');
+                }
+                ctx.drawImage(image, 0, 0);
+
+                const webpBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.9));
+                if (!webpBlob) {
+                    throw new Error('WebP conversion failed');
+                }
+
+                return new File([webpBlob], `${Date.now()}.webp`, { type: 'image/webp' });
+            } finally {
+                URL.revokeObjectURL(imageObjectUrl);
             }
         }
 

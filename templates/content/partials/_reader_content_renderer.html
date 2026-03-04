@@ -316,7 +316,7 @@
         if (!cfg.uploadImageUrl) throw new Error('Upload endpoint missing');
 
         const form = new FormData();
-        form.append('image', new File([blob], `capture-${Date.now()}.png`, { type: 'image/png' }));
+        form.append('image', new File([blob], `capture-${Date.now()}.webp`, { type: 'image/webp' }));
 
         const r = await fetch(cfg.uploadImageUrl, {
             method: 'POST',
@@ -543,7 +543,7 @@
                     }
                 }
 
-                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 0.95));
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.9));
                 if (!blob) throw new Error('Capture failed');
 
                 const url = await _uploadCapturedBlob(blob);
