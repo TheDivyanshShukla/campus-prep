@@ -356,7 +356,7 @@ AI_PARSER_MAX_CONCURRENCY = int(os.getenv('AI_PARSER_MAX_CONCURRENCY', '5'))
 AI_PARSER_OVERLAP_SIZE = int(os.getenv('AI_PARSER_OVERLAP_SIZE', '1'))
 
 # Model Mappings for AI Parser
-AI_PARSER_DEFAULT_MODEL = os.getenv('AI_PARSER_DEFAULT_MODEL', 'gemini/gemini-2.5-flash')
+AI_PARSER_DEFAULT_MODEL = os.getenv('AI_PARSER_DEFAULT_MODEL', 'qwen/qwen3-vl-235b-a22b-thinking')
 AI_PARSER_MODEL_MAPPING = {
     'SYLLABUS': os.getenv('AI_PARSER_SYLLABUS_MODEL', AI_PARSER_DEFAULT_MODEL),
     'PYQ': os.getenv('AI_PARSER_PYQ_MODEL', AI_PARSER_DEFAULT_MODEL),  # Use heavier model for PYQs if needed

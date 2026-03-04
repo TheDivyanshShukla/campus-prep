@@ -1,0 +1,402 @@
+[2026-03-04 10:14:43 UTC] Run started total=200 batch_size=200 workers=1 dry_run=True resume=True
+[2026-03-04 10:14:43 UTC] PROCESS id=844 source=raw_docs/ce-602-environmental-engineering-1-jun-2025_Vy5tO7v-ocr.pdf target=s3/raw_docs/ce-602-environmental-engineering-1-jun-2025_Vy5tO7v-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=845 source=raw_docs/ce-603-a-water-resources-engineering-jun-2025_ZUVvt3I-ocr.pdf target=s3/raw_docs/ce-603-a-water-resources-engineering-jun-2025_ZUVvt3I-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=846 source=raw_docs/ce-603-c-advance-pavement-design-jun-2025_37080cm-ocr.pdf target=s3/raw_docs/ce-603-c-advance-pavement-design-jun-2025_37080cm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=847 source=raw_docs/ce-604-c-environmental-impact-assessment-jun-2025_3RUiYAw-ocr.pdf target=s3/raw_docs/ce-604-c-environmental-impact-assessment-jun-2025_3RUiYAw-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=848 source=raw_docs/ce-604-structural-design-and-drawing-jun-2025_X1Zru5X-ocr.pdf target=s3/raw_docs/ce-604-structural-design-and-drawing-jun-2025_X1Zru5X-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=849 source=raw_docs/ce-601-structural-design-and-drawing-rcc-1-may-2024_OWB978W-ocr.pdf target=s3/raw_docs/ce-601-structural-design-and-drawing-rcc-1-may-2024_OWB978W-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=850 source=raw_docs/ce-602-environmental-engineering-1-may-2024_QIfOy36-ocr.pdf target=s3/raw_docs/ce-602-environmental-engineering-1-may-2024_QIfOy36-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=851 source=raw_docs/ce-603-a-water-resources-engineering-may-2024_5QK2aEc-ocr.pdf target=s3/raw_docs/ce-603-a-water-resources-engineering-may-2024_5QK2aEc-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=852 source=raw_docs/ce-603-c-advance-pavement-design-may-2024_vfi2PlQ-ocr.pdf target=s3/raw_docs/ce-603-c-advance-pavement-design-may-2024_vfi2PlQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=853 source=raw_docs/ce-604-a-fluid-mechanics-2-may-2024_i30lrus-ocr.pdf target=s3/raw_docs/ce-604-a-fluid-mechanics-2-may-2024_i30lrus-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=854 source=raw_docs/ce-604-c-environmental-impact-assessment-may-2024_aGYlYD0-ocr.pdf target=s3/raw_docs/ce-604-c-environmental-impact-assessment-may-2024_aGYlYD0-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=855 source=raw_docs/ce-601-structural-design-and-drawing-may-2023_a7O3w2M-ocr.pdf target=s3/raw_docs/ce-601-structural-design-and-drawing-may-2023_a7O3w2M-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=856 source=raw_docs/ce-602-environmental-engineering-1-may-2023_Oa4SzQU-ocr.pdf target=s3/raw_docs/ce-602-environmental-engineering-1-may-2023_Oa4SzQU-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=857 source=raw_docs/ce-603-a-water-resource-engineering-may-2023_Tdxs9cP-ocr.pdf target=s3/raw_docs/ce-603-a-water-resource-engineering-may-2023_Tdxs9cP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=858 source=raw_docs/ce-603-b-precast-and-modular-construction-may-2023_zEechNB-ocr.pdf target=s3/raw_docs/ce-603-b-precast-and-modular-construction-may-2023_zEechNB-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=859 source=raw_docs/ce-604-c-environmental-impact-assesment-may-2023_NWK39T1-ocr.pdf target=s3/raw_docs/ce-604-c-environmental-impact-assesment-may-2023_NWK39T1-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=860 source=raw_docs/ce-604-d-operation-research-may-2023_YuKoRUH-ocr.pdf target=s3/raw_docs/ce-604-d-operation-research-may-2023_YuKoRUH-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=861 source=raw_docs/ce-601-structural-design-and-drawing-rcc-1-may-2022_QfJMZyv-ocr.pdf target=s3/raw_docs/ce-601-structural-design-and-drawing-rcc-1-may-2022_QfJMZyv-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=862 source=raw_docs/ce-602-environmental-engineering-1-may-2022_uxiykHa-ocr.pdf target=s3/raw_docs/ce-602-environmental-engineering-1-may-2022_uxiykHa-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=863 source=raw_docs/ce-603-a-water-resources-engineering-may-2022_pvwe1EW-ocr.pdf target=s3/raw_docs/ce-603-a-water-resources-engineering-may-2022_pvwe1EW-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=864 source=raw_docs/ce-603-b-precast-and-modular-construction-may-2022_QjgeJ0G-ocr.pdf target=s3/raw_docs/ce-603-b-precast-and-modular-construction-may-2022_QjgeJ0G-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=865 source=raw_docs/ce-604-a-fluid-mechanics-2-may-2022_Q1jFlaP-ocr.pdf target=s3/raw_docs/ce-604-a-fluid-mechanics-2-may-2022_Q1jFlaP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=866 source=raw_docs/ce-604-c-environmental-impact-assessment-may-2022_pRy5vny-ocr.pdf target=s3/raw_docs/ce-604-c-environmental-impact-assessment-may-2022_pRy5vny-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=867 source=raw_docs/ce-604-d-operation-research-may-2022_tcC85m6-ocr.pdf target=s3/raw_docs/ce-604-d-operation-research-may-2022_tcC85m6-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=868 source=raw_docs/ce-701-geotechnical-engineering-jun-2025_6QiKr2o-ocr.pdf target=s3/raw_docs/ce-701-geotechnical-engineering-jun-2025_6QiKr2o-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=869 source=raw_docs/ce-703-d-building-services-jun-2025_S6qzCdP-ocr.pdf target=s3/raw_docs/ce-703-d-building-services-jun-2025_S6qzCdP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=870 source=raw_docs/ce-702-b-environmental-engineering-2-dec-2024_WA2lKvI-ocr.pdf target=s3/raw_docs/ce-702-b-environmental-engineering-2-dec-2024_WA2lKvI-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=871 source=raw_docs/ce-703-c-integrated-waste-management-dec-2024_M6TAZKl-ocr.pdf target=s3/raw_docs/ce-703-c-integrated-waste-management-dec-2024_M6TAZKl-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=872 source=raw_docs/ce-703-d-building-services-dec-2024_pPRFgqm-ocr.pdf target=s3/raw_docs/ce-703-d-building-services-dec-2024_pPRFgqm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=873 source=raw_docs/ce-701-geotechnical-engineering-nov-2023_YwH5cdz-ocr.pdf target=s3/raw_docs/ce-701-geotechnical-engineering-nov-2023_YwH5cdz-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=874 source=raw_docs/ce-702-b-environmental-engineering-2-nov-2023_N4lFO0m-ocr.pdf target=s3/raw_docs/ce-702-b-environmental-engineering-2-nov-2023_N4lFO0m-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=875 source=raw_docs/ce-702-c-structural-dynamics-nov-2023_SEEhgG0-ocr.pdf target=s3/raw_docs/ce-702-c-structural-dynamics-nov-2023_SEEhgG0-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=876 source=raw_docs/ce-702-d-structural-design-and-drawing-rcc-2-nov-2023_6KLpga8-ocr.pdf target=s3/raw_docs/ce-702-d-structural-design-and-drawing-rcc-2-nov-2023_6KLpga8-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=877 source=raw_docs/ce-703-b-project-management-nov-2023_U7MpqW8-ocr.pdf target=s3/raw_docs/ce-703-b-project-management-nov-2023_U7MpqW8-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=878 source=raw_docs/ce-703-c-integrated-waste-management-nov-2023_GduDKXF-ocr.pdf target=s3/raw_docs/ce-703-c-integrated-waste-management-nov-2023_GduDKXF-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=879 source=raw_docs/ce-703-d-building-services-nov-2023_wGCqVGG-ocr.pdf target=s3/raw_docs/ce-703-d-building-services-nov-2023_wGCqVGG-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=880 source=raw_docs/ce-702-a-prestressed-concrete-structures-nov-2022_HSNDcbC-ocr.pdf target=s3/raw_docs/ce-702-a-prestressed-concrete-structures-nov-2022_HSNDcbC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=881 source=raw_docs/ce-702-c-structural-dynamics-nov-2022_x2M2HxY-ocr.pdf target=s3/raw_docs/ce-702-c-structural-dynamics-nov-2022_x2M2HxY-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=882 source=raw_docs/ce-703-b-project-management-nov-2022_6dRHtG8-ocr.pdf target=s3/raw_docs/ce-703-b-project-management-nov-2022_6dRHtG8-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=883 source=raw_docs/ce-703-d-building-services-nov-2022_KBU7wre-ocr.pdf target=s3/raw_docs/ce-703-d-building-services-nov-2022_KBU7wre-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=884 source=raw_docs/ce-801-design-of-steel-structures-jun-2025_hHDFCOI-ocr.pdf target=s3/raw_docs/ce-801-design-of-steel-structures-jun-2025_hHDFCOI-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=885 source=raw_docs/ce-802-b-foundation-engineering-jun-2025_dF7RWgD-ocr.pdf target=s3/raw_docs/ce-802-b-foundation-engineering-jun-2025_dF7RWgD-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=886 source=raw_docs/ce-803-d-integrated-water-management-jun-2025_CX2aPzw-ocr.pdf target=s3/raw_docs/ce-803-d-integrated-water-management-jun-2025_CX2aPzw-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=887 source=raw_docs/ce-801-design-of-steel-structures-may-2024_JD6gwjX-ocr.pdf target=s3/raw_docs/ce-801-design-of-steel-structures-may-2024_JD6gwjX-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=888 source=raw_docs/ce-802-b-foundation-engineering-may-2024_VjONJRx-ocr.pdf target=s3/raw_docs/ce-802-b-foundation-engineering-may-2024_VjONJRx-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=889 source=raw_docs/ce-803-d-integrated-water-management-may-2024_o7qoIbb-ocr.pdf target=s3/raw_docs/ce-803-d-integrated-water-management-may-2024_o7qoIbb-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=890 source=raw_docs/ce-801-design-of-steel-structures-may-2023_qRpsHvm-ocr.pdf target=s3/raw_docs/ce-801-design-of-steel-structures-may-2023_qRpsHvm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=891 source=raw_docs/ce-801-design-of-steel-structures-nov-2023_A1GPmkC-ocr.pdf target=s3/raw_docs/ce-801-design-of-steel-structures-nov-2023_A1GPmkC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=892 source=raw_docs/ce-802-b-foundation-engineering-may-2023_QpAu2h3-ocr.pdf target=s3/raw_docs/ce-802-b-foundation-engineering-may-2023_QpAu2h3-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=893 source=raw_docs/ce-802-b-foundation-engineering-nov-2023_CoXqVW2-ocr.pdf target=s3/raw_docs/ce-802-b-foundation-engineering-nov-2023_CoXqVW2-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=894 source=raw_docs/ce-803-b-ee-803-d-ex-803-d-me-803-a-data-analytics-may-2023_UdHmLKH-ocr.pdf target=s3/raw_docs/ce-803-b-ee-803-d-ex-803-d-me-803-a-data-analytics-may-2023_UdHmLKH-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=895 source=raw_docs/ce-803-c-retrofitting-and-rehabilitation-of-structures-ce-803-c-nov-2023_nfRmxnQ-ocr.pdf target=s3/raw_docs/ce-803-c-retrofitting-and-rehabilitation-of-structures-ce-803-c-nov-2023_nfRmxnQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=896 source=raw_docs/ce-803-d-integrated-water-management-may-2023_YKonJIZ-ocr.pdf target=s3/raw_docs/ce-803-d-integrated-water-management-may-2023_YKonJIZ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=897 source=raw_docs/ce-801-design-of-steel-structures-ce-801-may-2022_ABUeY1M-ocr.pdf target=s3/raw_docs/ce-801-design-of-steel-structures-ce-801-may-2022_ABUeY1M-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=898 source=raw_docs/ce-802-b-foundation-engineering-may-2022_xVWFnjz-ocr.pdf target=s3/raw_docs/ce-802-b-foundation-engineering-may-2022_xVWFnjz-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=899 source=raw_docs/ce-803-c-retrofitting-and-rehabilitation-of-structures-may-2022_cRLeGWl-ocr.pdf target=s3/raw_docs/ce-803-c-retrofitting-and-rehabilitation-of-structures-may-2022_cRLeGWl-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=900 source=raw_docs/ce-803-d-integrated-water-management-may-2022_QhINl64-ocr.pdf target=s3/raw_docs/ce-803-d-integrated-water-management-may-2022_QhINl64-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=901 source=raw_docs/cb-303-object-oriented-programming-dec-2023_td3mkTC-ocr.pdf target=s3/raw_docs/cb-303-object-oriented-programming-dec-2023_td3mkTC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=902 source=raw_docs/cy-404-operating-systems-jun-2022-ocr.pdf target=s3/raw_docs/cy-404-operating-systems-jun-2022-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=903 source=raw_docs/cb-502-compiler-design-dec-2024_MonIb7f-ocr.pdf target=s3/raw_docs/cb-502-compiler-design-dec-2024_MonIb7f-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=904 source=raw_docs/cb-602-information-security-jun-2025_H1W0bOC-ocr.pdf target=s3/raw_docs/cb-602-information-security-jun-2025_H1W0bOC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=905 source=raw_docs/cb-602-information-security-dec-2024_mLOaUw8-ocr.pdf target=s3/raw_docs/cb-602-information-security-dec-2024_mLOaUw8-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=906 source=raw_docs/ad-al-cd-cy-io-is-301-technical-communication-dec-2024_M9VfuyV-ocr.pdf target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-dec-2024_M9VfuyV-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=907 source=raw_docs/cd-304-database-management-system-dec-2023_sL4VZAy-ocr.pdf target=s3/raw_docs/cd-304-database-management-system-dec-2023_sL4VZAy-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=908 source=raw_docs/cd-304-database-management-system-nov-2022_s7XvsTS-ocr.pdf target=s3/raw_docs/cd-304-database-management-system-nov-2022_s7XvsTS-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=909 source=raw_docs/cd-cy-504-c-computer-organization-and-architecture-dec-2024_PeikT1W-ocr.pdf target=s3/raw_docs/cd-cy-504-c-computer-organization-and-architecture-dec-2024_PeikT1W-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=910 source=raw_docs/cd-504-a-computer-graphics-and-visualization-nov-2023_UBmqh9h-ocr.pdf target=s3/raw_docs/cd-504-a-computer-graphics-and-visualization-nov-2023_UBmqh9h-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=911 source=raw_docs/cd-cy-504-c-computer-organization-and-architecture-nov-2023_W6bo3xg-ocr.pdf target=s3/raw_docs/cd-cy-504-c-computer-organization-and-architecture-nov-2023_W6bo3xg-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=912 source=raw_docs/cd-601-deep-learning-dec-2024_FGvDw3F-ocr.pdf target=s3/raw_docs/cd-601-deep-learning-dec-2024_FGvDw3F-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=913 source=raw_docs/cd-604-natural-language-processing-dec-2024_9EwdZDs-ocr.pdf target=s3/raw_docs/cd-604-natural-language-processing-dec-2024_9EwdZDs-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=914 source=raw_docs/cd-701-data-engineering-dec-2024_7TSrAl9-ocr.pdf target=s3/raw_docs/cd-701-data-engineering-dec-2024_7TSrAl9-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=915 source=raw_docs/cd-701-data-engineering-nov-2023_2F9PYZg-ocr.pdf target=s3/raw_docs/cd-701-data-engineering-nov-2023_2F9PYZg-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=916 source=raw_docs/cd-801-compiler-design-jun-2025_I7soV4m-ocr.pdf target=s3/raw_docs/cd-801-compiler-design-jun-2025_I7soV4m-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=917 source=raw_docs/ag-it-402-computer-arechitecture-jun-2025_PCvgpUJ-ocr.pdf target=s3/raw_docs/ag-it-402-computer-arechitecture-jun-2025_PCvgpUJ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=918 source=raw_docs/ag-ci-it-405-data-base-management-system-jun-2022_g6L09Qa-ocr.pdf target=s3/raw_docs/ag-ci-it-405-data-base-management-system-jun-2022_g6L09Qa-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=919 source=raw_docs/it-501-operating-system-nov-2023-ocr.pdf target=s3/raw_docs/it-501-operating-system-nov-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=920 source=raw_docs/ci-it-503-a-theory-of-computation-nov-2022_CGCJelz-ocr.pdf target=s3/raw_docs/ci-it-503-a-theory-of-computation-nov-2022_CGCJelz-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=921 source=raw_docs/ci-it-504-b-artificial-intelligence-nov-2022_ThLFxQ2-ocr.pdf target=s3/raw_docs/ci-it-504-b-artificial-intelligence-nov-2022_ThLFxQ2-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=922 source=raw_docs/ci-801-data-science-may-2024_OtzG1WU-ocr.pdf target=s3/raw_docs/ci-801-data-science-may-2024_OtzG1WU-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=923 source=raw_docs/ag-it-305-digital-circuits-and-systems-dec-2023_TyKmfGT-ocr.pdf target=s3/raw_docs/ag-it-305-digital-circuits-and-systems-dec-2023_TyKmfGT-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=924 source=raw_docs/ag-it-402-computer-architecture-jun-2022_A8hLGbB-ocr.pdf target=s3/raw_docs/ag-it-402-computer-architecture-jun-2022_A8hLGbB-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=925 source=raw_docs/ea-ec-ed-io-304-electronic-devices-jun-2025_03Ae3nb-ocr.pdf target=s3/raw_docs/ea-ec-ed-io-304-electronic-devices-jun-2025_03Ae3nb-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=926 source=raw_docs/ea-ec-ed-io-304-electronic-devices-dec-2024_FyTiVtO-ocr.pdf target=s3/raw_docs/ea-ec-ed-io-304-electronic-devices-dec-2024_FyTiVtO-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=927 source=raw_docs/ec-io-304-electronic-devices-jun-2024_JH0ZScH-ocr.pdf target=s3/raw_docs/ec-io-304-electronic-devices-jun-2024_JH0ZScH-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=928 source=raw_docs/ex-304-network-analysis-dec-2024-ocr.pdf target=s3/raw_docs/ex-304-network-analysis-dec-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=929 source=raw_docs/ex-304-network-analysis-jun-2024-ocr.pdf target=s3/raw_docs/ex-304-network-analysis-jun-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=930 source=raw_docs/ec-io-304-electronic-devices-dec-2023_1UJc3E7-ocr.pdf target=s3/raw_docs/ec-io-304-electronic-devices-dec-2023_1UJc3E7-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=931 source=raw_docs/ex-304-network-analysis-dec-2023-ocr.pdf target=s3/raw_docs/ex-304-network-analysis-dec-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=932 source=raw_docs/io-is-801-artificial-intelligence-may-2024_4oIEyjr-ocr.pdf target=s3/raw_docs/io-is-801-artificial-intelligence-may-2024_4oIEyjr-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=933 source=raw_docs/cy-403-computer-networks-jun-2023-ocr.pdf target=s3/raw_docs/cy-403-computer-networks-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=934 source=raw_docs/is-502-database-management-systems-dec-2025_63XEwcx-ocr.pdf target=s3/raw_docs/is-502-database-management-systems-dec-2025_63XEwcx-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=935 source=raw_docs/is-602-internet-and-web-technology-may-2024_85khhyr-ocr.pdf target=s3/raw_docs/is-602-internet-and-web-technology-may-2024_85khhyr-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=936 source=raw_docs/is-602-internet-and-web-technology-may-2023_n6EBrjv-ocr.pdf target=s3/raw_docs/is-602-internet-and-web-technology-may-2023_n6EBrjv-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=937 source=raw_docs/cy-302-fundamental-of-cryptography-dec-2024_Cl0nyTa-ocr.pdf target=s3/raw_docs/cy-302-fundamental-of-cryptography-dec-2024_Cl0nyTa-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=938 source=raw_docs/cy-302-fundamental-of-cryptography-dec-2023_T9gkgQe-ocr.pdf target=s3/raw_docs/cy-302-fundamental-of-cryptography-dec-2023_T9gkgQe-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=939 source=raw_docs/cy-302-fundamental-of-cryptography-jun-2023_o4x6IrM-ocr.pdf target=s3/raw_docs/cy-302-fundamental-of-cryptography-jun-2023_o4x6IrM-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=940 source=raw_docs/cy-304-digital-system-jun-2023_mx3QWVP-ocr.pdf target=s3/raw_docs/cy-304-digital-system-jun-2023_mx3QWVP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=941 source=raw_docs/cy-401-introduction-to-linear-algebra-jun-2025_07d5k8V-ocr.pdf target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2025_07d5k8V-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=942 source=raw_docs/cy-402-fundamental-of-cyber-security-jun-2025_Hr8u9V9-ocr.pdf target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2025_Hr8u9V9-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=943 source=raw_docs/cy-401-introduction-to-linear-algebra-dec-2024_VruwUyy-ocr.pdf target=s3/raw_docs/cy-401-introduction-to-linear-algebra-dec-2024_VruwUyy-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=944 source=raw_docs/cy-401-introduction-to-linear-algebra-jun-2024_D9Ne2Mf-ocr.pdf target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2024_D9Ne2Mf-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=945 source=raw_docs/cy-402-fundamental-of-cyber-security-dec-2024_4lUQrxm-ocr.pdf target=s3/raw_docs/cy-402-fundamental-of-cyber-security-dec-2024_4lUQrxm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=946 source=raw_docs/cy-402-fundamental-of-cyber-security-jun-2024_nfyfBCW-ocr.pdf target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2024_nfyfBCW-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=947 source=raw_docs/cy-403-computer-networks-jun-2024_KMI66AC-ocr.pdf target=s3/raw_docs/cy-403-computer-networks-jun-2024_KMI66AC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=948 source=raw_docs/cy-405-database-management-system-dec-2024_swpKkIm-ocr.pdf target=s3/raw_docs/cy-405-database-management-system-dec-2024_swpKkIm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=949 source=raw_docs/cy-405-database-management-system-jun-2024_5hix7hn-ocr.pdf target=s3/raw_docs/cy-405-database-management-system-jun-2024_5hix7hn-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=950 source=raw_docs/cy-401-introduction-to-linear-algebra-jun-2023_yCzinVF-ocr.pdf target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2023_yCzinVF-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=951 source=raw_docs/cy-401-introduction-to-linear-algebra-nov-2023_wsfEAT5-ocr.pdf target=s3/raw_docs/cy-401-introduction-to-linear-algebra-nov-2023_wsfEAT5-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=952 source=raw_docs/cy-402-fundamental-of-cyber-security-jun-2023_jkn2ZNP-ocr.pdf target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2023_jkn2ZNP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=953 source=raw_docs/cy-402-fundamental-of-cyber-security-nov-2023_ZgnnxhB-ocr.pdf target=s3/raw_docs/cy-402-fundamental-of-cyber-security-nov-2023_ZgnnxhB-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=954 source=raw_docs/it-502-computer-networks-nov-2023-ocr.pdf target=s3/raw_docs/it-502-computer-networks-nov-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=955 source=raw_docs/cy-405-database-management-system-jun-2023_zzSmInz-ocr.pdf target=s3/raw_docs/cy-405-database-management-system-jun-2023_zzSmInz-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=956 source=raw_docs/cy-405-database-management-system-nov-2023_8c20lkx-ocr.pdf target=s3/raw_docs/cy-405-database-management-system-nov-2023_8c20lkx-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=957 source=raw_docs/cy-401-introduction-to-linear-algebra-jun-2022_IHzSHcY-ocr.pdf target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2022_IHzSHcY-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=958 source=raw_docs/cy-402-fundamental-of-cyber-security-jun-2022_bC4vWEC-ocr.pdf target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2022_bC4vWEC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=959 source=raw_docs/cy-405-database-management-system-jun-2022_y3yzRQl-ocr.pdf target=s3/raw_docs/cy-405-database-management-system-jun-2022_y3yzRQl-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=960 source=raw_docs/cy-501-os-internals-for-security-support-dec-2024_lQOQ5dO-ocr.pdf target=s3/raw_docs/cy-501-os-internals-for-security-support-dec-2024_lQOQ5dO-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=961 source=raw_docs/cy-502-design-and-analysis-of-algorithms-dec-2024_0K9btN2-ocr.pdf target=s3/raw_docs/cy-502-design-and-analysis-of-algorithms-dec-2024_0K9btN2-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=962 source=raw_docs/cy-503-b-network-security-dec-2024_Hfi2IZk-ocr.pdf target=s3/raw_docs/cy-503-b-network-security-dec-2024_Hfi2IZk-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=963 source=raw_docs/cy-504-b-internet-of-things-dec-2024_YNXrNYa-ocr.pdf target=s3/raw_docs/cy-504-b-internet-of-things-dec-2024_YNXrNYa-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=964 source=raw_docs/cy-501-os-internals-for-security-support-nov-2023_qaDHBZ1-ocr.pdf target=s3/raw_docs/cy-501-os-internals-for-security-support-nov-2023_qaDHBZ1-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=965 source=raw_docs/cy-502-design-and-analysis-of-algorithms-nov-2023_xJ5Uwd5-ocr.pdf target=s3/raw_docs/cy-502-design-and-analysis-of-algorithms-nov-2023_xJ5Uwd5-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=966 source=raw_docs/cy-503-b-network-security-nov-2023_aaysmYN-ocr.pdf target=s3/raw_docs/cy-503-b-network-security-nov-2023_aaysmYN-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=967 source=raw_docs/cy-504-a-cyber-law-and-intellectual-property-right-nov-2023_OQxPwQL-ocr.pdf target=s3/raw_docs/cy-504-a-cyber-law-and-intellectual-property-right-nov-2023_OQxPwQL-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=968 source=raw_docs/cy-501-os-internals-for-security-support-nov-2022_GEty2Xh-ocr.pdf target=s3/raw_docs/cy-501-os-internals-for-security-support-nov-2022_GEty2Xh-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=969 source=raw_docs/cy-502-design-and-analysis-of-algorithms-cy-502-nov-2022_YYdK9Et-ocr.pdf target=s3/raw_docs/cy-502-design-and-analysis-of-algorithms-cy-502-nov-2022_YYdK9Et-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=970 source=raw_docs/cy-503-b-network-security-nov-2022_FHz3Dqs-ocr.pdf target=s3/raw_docs/cy-503-b-network-security-nov-2022_FHz3Dqs-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=971 source=raw_docs/cy-504-a-cyber-law-and-intellectual-property-right-nov-2022_lqma7ky-ocr.pdf target=s3/raw_docs/cy-504-a-cyber-law-and-intellectual-property-right-nov-2022_lqma7ky-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=972 source=raw_docs/cy-504-b-internet-of-things-nov-2022_4Mou5Li-ocr.pdf target=s3/raw_docs/cy-504-b-internet-of-things-nov-2022_4Mou5Li-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=973 source=raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-jun-2025_Rd7Pf1T-ocr.pdf target=s3/raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-jun-2025_Rd7Pf1T-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=974 source=raw_docs/cy-604-c-data-warehousing-and-mining-jun-2025_la3u5JP-ocr.pdf target=s3/raw_docs/cy-604-c-data-warehousing-and-mining-jun-2025_la3u5JP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=975 source=raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-dec-2024_yxS896b-ocr.pdf target=s3/raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-dec-2024_yxS896b-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=976 source=raw_docs/cy-604-b-ooad-dec-2024_CFVoOcv-ocr.pdf target=s3/raw_docs/cy-604-b-ooad-dec-2024_CFVoOcv-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=977 source=raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-may-2023_5a7s9cD-ocr.pdf target=s3/raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-may-2023_5a7s9cD-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=978 source=raw_docs/cy-602-software-engineering-may-2023_TCImyxo-ocr.pdf target=s3/raw_docs/cy-602-software-engineering-may-2023_TCImyxo-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=979 source=raw_docs/cy-603-a-internet-and-web-technology-may-2023_6IdqWZ1-ocr.pdf target=s3/raw_docs/cy-603-a-internet-and-web-technology-may-2023_6IdqWZ1-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=980 source=raw_docs/cy-604-c-data-warehousing-and-mining-may-2023_m4IesVm-ocr.pdf target=s3/raw_docs/cy-604-c-data-warehousing-and-mining-may-2023_m4IesVm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=981 source=raw_docs/cy-702-a-penetration-testing-and-vulnerability-analysis-dec-2024_p7B2x3h-ocr.pdf target=s3/raw_docs/cy-702-a-penetration-testing-and-vulnerability-analysis-dec-2024_p7B2x3h-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=982 source=raw_docs/cy-702-d-multimedia-security-and-forensics-nov-2023_Lii3m8g-ocr.pdf target=s3/raw_docs/cy-702-d-multimedia-security-and-forensics-nov-2023_Lii3m8g-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=983 source=raw_docs/cy-703-c-data-engineering-nov-2023_hRAgDbI-ocr.pdf target=s3/raw_docs/cy-703-c-data-engineering-nov-2023_hRAgDbI-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=984 source=raw_docs/cy-801-hardware-security-may-2024_HH2cWZu-ocr.pdf target=s3/raw_docs/cy-801-hardware-security-may-2024_HH2cWZu-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=985 source=raw_docs/cy-802-c-lightweight-cryptography-may-2024_Z2iuehW-ocr.pdf target=s3/raw_docs/cy-802-c-lightweight-cryptography-may-2024_Z2iuehW-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=986 source=raw_docs/cy-803-a-mobile-and-wireless-security-may-2024_xl3n1Fp-ocr.pdf target=s3/raw_docs/cy-803-a-mobile-and-wireless-security-may-2024_xl3n1Fp-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=987 source=raw_docs/ec-302-electronic-measurements-and-instrumentation-jun-2025_Y3bFiyt-ocr.pdf target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-jun-2025_Y3bFiyt-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=988 source=raw_docs/ec-303-digital-system-design-jun-2025_aylTIvJ-ocr.pdf target=s3/raw_docs/ec-303-digital-system-design-jun-2025_aylTIvJ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=989 source=raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2025_PzuEQfD-ocr.pdf target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2025_PzuEQfD-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=990 source=raw_docs/ex-302-signals-and-systems-jun-2025_4FjXbbt-ocr.pdf target=s3/raw_docs/ex-302-signals-and-systems-jun-2025_4FjXbbt-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=991 source=raw_docs/ec-302-electronic-measurements-and-instrumentation-dec-2024_rfdmZ8U-ocr.pdf target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-dec-2024_rfdmZ8U-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=992 source=raw_docs/ec-302-electronic-measurements-and-instrumentation-jun-2024_Fj8g5Uo-ocr.pdf target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-jun-2024_Fj8g5Uo-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=993 source=raw_docs/ec-303-digital-system-design-dec-2024_3Srwr5B-ocr.pdf target=s3/raw_docs/ec-303-digital-system-design-dec-2024_3Srwr5B-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=994 source=raw_docs/ec-303-digital-system-design-jun-2024_ZxgAMO6-ocr.pdf target=s3/raw_docs/ec-303-digital-system-design-jun-2024_ZxgAMO6-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=995 source=raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-dec-2024_5DTZHV3-ocr.pdf target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-dec-2024_5DTZHV3-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=996 source=raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2024_hqFbgfQ-ocr.pdf target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2024_hqFbgfQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=997 source=raw_docs/ex-302-signals-and-systems-dec-2024_8i9qAVR-ocr.pdf target=s3/raw_docs/ex-302-signals-and-systems-dec-2024_8i9qAVR-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=998 source=raw_docs/ex-302-signals-and-systems-jun-2024_A28H4Nj-ocr.pdf target=s3/raw_docs/ex-302-signals-and-systems-jun-2024_A28H4Nj-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=999 source=raw_docs/ex-503-c-renewable-power-generation-dec-2024-ocr.pdf target=s3/raw_docs/ex-503-c-renewable-power-generation-dec-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1000 source=raw_docs/ex-305-analog-electronics-dec-2024_XtTuNrj-ocr.pdf target=s3/raw_docs/ex-305-analog-electronics-dec-2024_XtTuNrj-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1001 source=raw_docs/ex-305-analog-electronics-jun-2024_C2ADrfq-ocr.pdf target=s3/raw_docs/ex-305-analog-electronics-jun-2024_C2ADrfq-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1002 source=raw_docs/ec-302-electronic-measurements-and-instrumentation-dec-2023_I2C37IP-ocr.pdf target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-dec-2023_I2C37IP-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1003 source=raw_docs/ec-302-electronic-measurements-and-instrumentation-ec-302-jun-2023_oywMU02-ocr.pdf target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-ec-302-jun-2023_oywMU02-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1004 source=raw_docs/ec-303-digital-system-design-dec-2023_SggTeQv-ocr.pdf target=s3/raw_docs/ec-303-digital-system-design-dec-2023_SggTeQv-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1005 source=raw_docs/ec-303-digital-system-design-jun-2023_Bv8G23j-ocr.pdf target=s3/raw_docs/ec-303-digital-system-design-jun-2023_Bv8G23j-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1006 source=raw_docs/ec-304-electronic-devices-jun-2023_RRcKKIu-ocr.pdf target=s3/raw_docs/ec-304-electronic-devices-jun-2023_RRcKKIu-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1007 source=raw_docs/ex-304-network-analysis-jun-2023-ocr.pdf target=s3/raw_docs/ex-304-network-analysis-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1008 source=raw_docs/ex-305-analog-electronics-dec-2023-ocr.pdf target=s3/raw_docs/ex-305-analog-electronics-dec-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1009 source=raw_docs/ex-305-analog-electronics-jun-2023-ocr.pdf target=s3/raw_docs/ex-305-analog-electronics-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1010 source=raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-dec-2023_OzOXXGK-ocr.pdf target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-dec-2023_OzOXXGK-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1011 source=raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2023_UgOGbEX-ocr.pdf target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2023_UgOGbEX-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1012 source=raw_docs/ex-302-signals-and-systems-dec-2023_1DO4Cxm-ocr.pdf target=s3/raw_docs/ex-302-signals-and-systems-dec-2023_1DO4Cxm-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1013 source=raw_docs/ex-302-signals-and-systems-jun-2023_zCRf5xN-ocr.pdf target=s3/raw_docs/ex-302-signals-and-systems-jun-2023_zCRf5xN-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1014 source=raw_docs/ec-302-electronic-measurements-and-instrumentation-nov-2022_PKw1ydq-ocr.pdf target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-nov-2022_PKw1ydq-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1015 source=raw_docs/ec-303-digital-system-design-nov-2022_feRu6HJ-ocr.pdf target=s3/raw_docs/ec-303-digital-system-design-nov-2022_feRu6HJ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1016 source=raw_docs/ec-304-electronic-devices-nov-2022_2VL4WHg-ocr.pdf target=s3/raw_docs/ec-304-electronic-devices-nov-2022_2VL4WHg-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1017 source=raw_docs/ex-304-network-analysis-nov-2022-ocr.pdf target=s3/raw_docs/ex-304-network-analysis-nov-2022-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1018 source=raw_docs/ec-402-signal-and-system-jun-2025_KfDjaxT-ocr.pdf target=s3/raw_docs/ec-402-signal-and-system-jun-2025_KfDjaxT-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1019 source=raw_docs/ec-403-analog-communication-jun-2025_KiRTBtC-ocr.pdf target=s3/raw_docs/ec-403-analog-communication-jun-2025_KiRTBtC-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1020 source=raw_docs/ee-ex-405-control-system-jun-2025-ocr.pdf target=s3/raw_docs/ee-ex-405-control-system-jun-2025-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1021 source=raw_docs/ec-404-cotrol-system-jun-2025_YSr591W-ocr.pdf target=s3/raw_docs/ec-404-cotrol-system-jun-2025_YSr591W-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1022 source=raw_docs/ec-405-analog-circuits-jun-2025_qYugeV9-ocr.pdf target=s3/raw_docs/ec-405-analog-circuits-jun-2025_qYugeV9-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1023 source=raw_docs/ee-ex-402-electrical-machine-1-jun-2025_yqQDCyl-ocr.pdf target=s3/raw_docs/ee-ex-402-electrical-machine-1-jun-2025_yqQDCyl-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1024 source=raw_docs/ee-ex-403-digital-electronics-and-logic-design-jun-2025_JnyNRzt-ocr.pdf target=s3/raw_docs/ee-ex-403-digital-electronics-and-logic-design-jun-2025_JnyNRzt-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1025 source=raw_docs/ee-ex-404-power-system-1-jun-2025_XL5DVSL-ocr.pdf target=s3/raw_docs/ee-ex-404-power-system-1-jun-2025_XL5DVSL-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1026 source=raw_docs/ec-402-signal-and-system-dec-2024_KzGvFpL-ocr.pdf target=s3/raw_docs/ec-402-signal-and-system-dec-2024_KzGvFpL-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1027 source=raw_docs/ec-402-signal-and-system-jun-2024_y4UKKxq-ocr.pdf target=s3/raw_docs/ec-402-signal-and-system-jun-2024_y4UKKxq-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1028 source=raw_docs/ec-403-analog-communication-dec-2024_KIds7BQ-ocr.pdf target=s3/raw_docs/ec-403-analog-communication-dec-2024_KIds7BQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1029 source=raw_docs/ec-403-analog-communication-jun-2024_0mXmCzW-ocr.pdf target=s3/raw_docs/ec-403-analog-communication-jun-2024_0mXmCzW-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1030 source=raw_docs/ee-ex-405-control-system-dec-2024-ocr.pdf target=s3/raw_docs/ee-ex-405-control-system-dec-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1031 source=raw_docs/ee-ex-405-control-system-jun-2024-ocr.pdf target=s3/raw_docs/ee-ex-405-control-system-jun-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1032 source=raw_docs/ec-405-analog-circuits-dec-2024_mk34kpO-ocr.pdf target=s3/raw_docs/ec-405-analog-circuits-dec-2024_mk34kpO-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1033 source=raw_docs/ee-ex-402-electrical-machine-1-dec-2024_JKjNHSi-ocr.pdf target=s3/raw_docs/ee-ex-402-electrical-machine-1-dec-2024_JKjNHSi-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1034 source=raw_docs/ee-ex-402-electrical-machine-1-jun-2024_uXYVKsX-ocr.pdf target=s3/raw_docs/ee-ex-402-electrical-machine-1-jun-2024_uXYVKsX-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1035 source=raw_docs/ee-ex-403-digital-electronics-and-logic-design-jun-2024_Lki6imS-ocr.pdf target=s3/raw_docs/ee-ex-403-digital-electronics-and-logic-design-jun-2024_Lki6imS-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1036 source=raw_docs/ee-ex-404-power-system-1-dec-2024_YjJVrMz-ocr.pdf target=s3/raw_docs/ee-ex-404-power-system-1-dec-2024_YjJVrMz-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1037 source=raw_docs/ee-ex-404-power-system-1-jun-2024_SfBrsfH-ocr.pdf target=s3/raw_docs/ee-ex-404-power-system-1-jun-2024_SfBrsfH-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1038 source=raw_docs/ec-402-signal-and-system-jun-2023_YYBA5A9-ocr.pdf target=s3/raw_docs/ec-402-signal-and-system-jun-2023_YYBA5A9-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1039 source=raw_docs/ec-402-signal-and-system-nov-2023_Hzqmzur-ocr.pdf target=s3/raw_docs/ec-402-signal-and-system-nov-2023_Hzqmzur-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1040 source=raw_docs/ec-403-analog-communication-jun-2023_ZTFkY1k-ocr.pdf target=s3/raw_docs/ec-403-analog-communication-jun-2023_ZTFkY1k-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1041 source=raw_docs/ec-403-analog-communication-nov-2023_h0yaQc0-ocr.pdf target=s3/raw_docs/ec-403-analog-communication-nov-2023_h0yaQc0-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1042 source=raw_docs/ee-ex-405-control-system-jun-2023-ocr.pdf target=s3/raw_docs/ee-ex-405-control-system-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] PROCESS id=1043 source=raw_docs/ee-ex-405-control-system-nov-2023-ocr.pdf target=s3/raw_docs/ee-ex-405-control-system-nov-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=844 target=s3/raw_docs/ce-602-environmental-engineering-1-jun-2025_Vy5tO7v-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=845 target=s3/raw_docs/ce-603-a-water-resources-engineering-jun-2025_ZUVvt3I-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=846 target=s3/raw_docs/ce-603-c-advance-pavement-design-jun-2025_37080cm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=847 target=s3/raw_docs/ce-604-c-environmental-impact-assessment-jun-2025_3RUiYAw-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=848 target=s3/raw_docs/ce-604-structural-design-and-drawing-jun-2025_X1Zru5X-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=849 target=s3/raw_docs/ce-601-structural-design-and-drawing-rcc-1-may-2024_OWB978W-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=850 target=s3/raw_docs/ce-602-environmental-engineering-1-may-2024_QIfOy36-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=851 target=s3/raw_docs/ce-603-a-water-resources-engineering-may-2024_5QK2aEc-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=852 target=s3/raw_docs/ce-603-c-advance-pavement-design-may-2024_vfi2PlQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=853 target=s3/raw_docs/ce-604-a-fluid-mechanics-2-may-2024_i30lrus-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=854 target=s3/raw_docs/ce-604-c-environmental-impact-assessment-may-2024_aGYlYD0-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=855 target=s3/raw_docs/ce-601-structural-design-and-drawing-may-2023_a7O3w2M-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=856 target=s3/raw_docs/ce-602-environmental-engineering-1-may-2023_Oa4SzQU-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=857 target=s3/raw_docs/ce-603-a-water-resource-engineering-may-2023_Tdxs9cP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=858 target=s3/raw_docs/ce-603-b-precast-and-modular-construction-may-2023_zEechNB-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=859 target=s3/raw_docs/ce-604-c-environmental-impact-assesment-may-2023_NWK39T1-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=860 target=s3/raw_docs/ce-604-d-operation-research-may-2023_YuKoRUH-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=861 target=s3/raw_docs/ce-601-structural-design-and-drawing-rcc-1-may-2022_QfJMZyv-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=862 target=s3/raw_docs/ce-602-environmental-engineering-1-may-2022_uxiykHa-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=863 target=s3/raw_docs/ce-603-a-water-resources-engineering-may-2022_pvwe1EW-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=864 target=s3/raw_docs/ce-603-b-precast-and-modular-construction-may-2022_QjgeJ0G-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=865 target=s3/raw_docs/ce-604-a-fluid-mechanics-2-may-2022_Q1jFlaP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=866 target=s3/raw_docs/ce-604-c-environmental-impact-assessment-may-2022_pRy5vny-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=867 target=s3/raw_docs/ce-604-d-operation-research-may-2022_tcC85m6-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=868 target=s3/raw_docs/ce-701-geotechnical-engineering-jun-2025_6QiKr2o-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=869 target=s3/raw_docs/ce-703-d-building-services-jun-2025_S6qzCdP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=870 target=s3/raw_docs/ce-702-b-environmental-engineering-2-dec-2024_WA2lKvI-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=871 target=s3/raw_docs/ce-703-c-integrated-waste-management-dec-2024_M6TAZKl-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=872 target=s3/raw_docs/ce-703-d-building-services-dec-2024_pPRFgqm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=873 target=s3/raw_docs/ce-701-geotechnical-engineering-nov-2023_YwH5cdz-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=874 target=s3/raw_docs/ce-702-b-environmental-engineering-2-nov-2023_N4lFO0m-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=875 target=s3/raw_docs/ce-702-c-structural-dynamics-nov-2023_SEEhgG0-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=876 target=s3/raw_docs/ce-702-d-structural-design-and-drawing-rcc-2-nov-2023_6KLpga8-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=877 target=s3/raw_docs/ce-703-b-project-management-nov-2023_U7MpqW8-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=878 target=s3/raw_docs/ce-703-c-integrated-waste-management-nov-2023_GduDKXF-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=879 target=s3/raw_docs/ce-703-d-building-services-nov-2023_wGCqVGG-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=880 target=s3/raw_docs/ce-702-a-prestressed-concrete-structures-nov-2022_HSNDcbC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=881 target=s3/raw_docs/ce-702-c-structural-dynamics-nov-2022_x2M2HxY-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=882 target=s3/raw_docs/ce-703-b-project-management-nov-2022_6dRHtG8-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=883 target=s3/raw_docs/ce-703-d-building-services-nov-2022_KBU7wre-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=884 target=s3/raw_docs/ce-801-design-of-steel-structures-jun-2025_hHDFCOI-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=885 target=s3/raw_docs/ce-802-b-foundation-engineering-jun-2025_dF7RWgD-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=886 target=s3/raw_docs/ce-803-d-integrated-water-management-jun-2025_CX2aPzw-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=887 target=s3/raw_docs/ce-801-design-of-steel-structures-may-2024_JD6gwjX-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=888 target=s3/raw_docs/ce-802-b-foundation-engineering-may-2024_VjONJRx-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=889 target=s3/raw_docs/ce-803-d-integrated-water-management-may-2024_o7qoIbb-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=890 target=s3/raw_docs/ce-801-design-of-steel-structures-may-2023_qRpsHvm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=891 target=s3/raw_docs/ce-801-design-of-steel-structures-nov-2023_A1GPmkC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=892 target=s3/raw_docs/ce-802-b-foundation-engineering-may-2023_QpAu2h3-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=893 target=s3/raw_docs/ce-802-b-foundation-engineering-nov-2023_CoXqVW2-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=894 target=s3/raw_docs/ce-803-b-ee-803-d-ex-803-d-me-803-a-data-analytics-may-2023_UdHmLKH-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=895 target=s3/raw_docs/ce-803-c-retrofitting-and-rehabilitation-of-structures-ce-803-c-nov-2023_nfRmxnQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=896 target=s3/raw_docs/ce-803-d-integrated-water-management-may-2023_YKonJIZ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=897 target=s3/raw_docs/ce-801-design-of-steel-structures-ce-801-may-2022_ABUeY1M-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=898 target=s3/raw_docs/ce-802-b-foundation-engineering-may-2022_xVWFnjz-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=899 target=s3/raw_docs/ce-803-c-retrofitting-and-rehabilitation-of-structures-may-2022_cRLeGWl-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=900 target=s3/raw_docs/ce-803-d-integrated-water-management-may-2022_QhINl64-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=901 target=s3/raw_docs/cb-303-object-oriented-programming-dec-2023_td3mkTC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=902 target=s3/raw_docs/cy-404-operating-systems-jun-2022-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=903 target=s3/raw_docs/cb-502-compiler-design-dec-2024_MonIb7f-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=904 target=s3/raw_docs/cb-602-information-security-jun-2025_H1W0bOC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=905 target=s3/raw_docs/cb-602-information-security-dec-2024_mLOaUw8-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=906 target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-dec-2024_M9VfuyV-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=907 target=s3/raw_docs/cd-304-database-management-system-dec-2023_sL4VZAy-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=908 target=s3/raw_docs/cd-304-database-management-system-nov-2022_s7XvsTS-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=909 target=s3/raw_docs/cd-cy-504-c-computer-organization-and-architecture-dec-2024_PeikT1W-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=910 target=s3/raw_docs/cd-504-a-computer-graphics-and-visualization-nov-2023_UBmqh9h-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=911 target=s3/raw_docs/cd-cy-504-c-computer-organization-and-architecture-nov-2023_W6bo3xg-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=912 target=s3/raw_docs/cd-601-deep-learning-dec-2024_FGvDw3F-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=913 target=s3/raw_docs/cd-604-natural-language-processing-dec-2024_9EwdZDs-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=914 target=s3/raw_docs/cd-701-data-engineering-dec-2024_7TSrAl9-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=915 target=s3/raw_docs/cd-701-data-engineering-nov-2023_2F9PYZg-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=916 target=s3/raw_docs/cd-801-compiler-design-jun-2025_I7soV4m-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=917 target=s3/raw_docs/ag-it-402-computer-arechitecture-jun-2025_PCvgpUJ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=918 target=s3/raw_docs/ag-ci-it-405-data-base-management-system-jun-2022_g6L09Qa-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=919 target=s3/raw_docs/it-501-operating-system-nov-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=920 target=s3/raw_docs/ci-it-503-a-theory-of-computation-nov-2022_CGCJelz-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=921 target=s3/raw_docs/ci-it-504-b-artificial-intelligence-nov-2022_ThLFxQ2-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=922 target=s3/raw_docs/ci-801-data-science-may-2024_OtzG1WU-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=923 target=s3/raw_docs/ag-it-305-digital-circuits-and-systems-dec-2023_TyKmfGT-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=924 target=s3/raw_docs/ag-it-402-computer-architecture-jun-2022_A8hLGbB-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=925 target=s3/raw_docs/ea-ec-ed-io-304-electronic-devices-jun-2025_03Ae3nb-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=926 target=s3/raw_docs/ea-ec-ed-io-304-electronic-devices-dec-2024_FyTiVtO-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=927 target=s3/raw_docs/ec-io-304-electronic-devices-jun-2024_JH0ZScH-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=928 target=s3/raw_docs/ex-304-network-analysis-dec-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=929 target=s3/raw_docs/ex-304-network-analysis-jun-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=930 target=s3/raw_docs/ec-io-304-electronic-devices-dec-2023_1UJc3E7-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=931 target=s3/raw_docs/ex-304-network-analysis-dec-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=932 target=s3/raw_docs/io-is-801-artificial-intelligence-may-2024_4oIEyjr-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=933 target=s3/raw_docs/cy-403-computer-networks-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=934 target=s3/raw_docs/is-502-database-management-systems-dec-2025_63XEwcx-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=935 target=s3/raw_docs/is-602-internet-and-web-technology-may-2024_85khhyr-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=936 target=s3/raw_docs/is-602-internet-and-web-technology-may-2023_n6EBrjv-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=937 target=s3/raw_docs/cy-302-fundamental-of-cryptography-dec-2024_Cl0nyTa-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=938 target=s3/raw_docs/cy-302-fundamental-of-cryptography-dec-2023_T9gkgQe-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=939 target=s3/raw_docs/cy-302-fundamental-of-cryptography-jun-2023_o4x6IrM-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=940 target=s3/raw_docs/cy-304-digital-system-jun-2023_mx3QWVP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=941 target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2025_07d5k8V-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=942 target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2025_Hr8u9V9-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=943 target=s3/raw_docs/cy-401-introduction-to-linear-algebra-dec-2024_VruwUyy-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=944 target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2024_D9Ne2Mf-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=945 target=s3/raw_docs/cy-402-fundamental-of-cyber-security-dec-2024_4lUQrxm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=946 target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2024_nfyfBCW-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=947 target=s3/raw_docs/cy-403-computer-networks-jun-2024_KMI66AC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=948 target=s3/raw_docs/cy-405-database-management-system-dec-2024_swpKkIm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=949 target=s3/raw_docs/cy-405-database-management-system-jun-2024_5hix7hn-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=950 target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2023_yCzinVF-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=951 target=s3/raw_docs/cy-401-introduction-to-linear-algebra-nov-2023_wsfEAT5-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=952 target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2023_jkn2ZNP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=953 target=s3/raw_docs/cy-402-fundamental-of-cyber-security-nov-2023_ZgnnxhB-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=954 target=s3/raw_docs/it-502-computer-networks-nov-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=955 target=s3/raw_docs/cy-405-database-management-system-jun-2023_zzSmInz-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=956 target=s3/raw_docs/cy-405-database-management-system-nov-2023_8c20lkx-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=957 target=s3/raw_docs/cy-401-introduction-to-linear-algebra-jun-2022_IHzSHcY-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=958 target=s3/raw_docs/cy-402-fundamental-of-cyber-security-jun-2022_bC4vWEC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=959 target=s3/raw_docs/cy-405-database-management-system-jun-2022_y3yzRQl-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=960 target=s3/raw_docs/cy-501-os-internals-for-security-support-dec-2024_lQOQ5dO-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=961 target=s3/raw_docs/cy-502-design-and-analysis-of-algorithms-dec-2024_0K9btN2-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=962 target=s3/raw_docs/cy-503-b-network-security-dec-2024_Hfi2IZk-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=963 target=s3/raw_docs/cy-504-b-internet-of-things-dec-2024_YNXrNYa-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=964 target=s3/raw_docs/cy-501-os-internals-for-security-support-nov-2023_qaDHBZ1-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=965 target=s3/raw_docs/cy-502-design-and-analysis-of-algorithms-nov-2023_xJ5Uwd5-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=966 target=s3/raw_docs/cy-503-b-network-security-nov-2023_aaysmYN-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=967 target=s3/raw_docs/cy-504-a-cyber-law-and-intellectual-property-right-nov-2023_OQxPwQL-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=968 target=s3/raw_docs/cy-501-os-internals-for-security-support-nov-2022_GEty2Xh-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=969 target=s3/raw_docs/cy-502-design-and-analysis-of-algorithms-cy-502-nov-2022_YYdK9Et-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=970 target=s3/raw_docs/cy-503-b-network-security-nov-2022_FHz3Dqs-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=971 target=s3/raw_docs/cy-504-a-cyber-law-and-intellectual-property-right-nov-2022_lqma7ky-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=972 target=s3/raw_docs/cy-504-b-internet-of-things-nov-2022_4Mou5Li-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=973 target=s3/raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-jun-2025_Rd7Pf1T-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=974 target=s3/raw_docs/cy-604-c-data-warehousing-and-mining-jun-2025_la3u5JP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=975 target=s3/raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-dec-2024_yxS896b-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=976 target=s3/raw_docs/cy-604-b-ooad-dec-2024_CFVoOcv-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=977 target=s3/raw_docs/cy-601-cyber-crime-investigation-and-digital-forensic-may-2023_5a7s9cD-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=978 target=s3/raw_docs/cy-602-software-engineering-may-2023_TCImyxo-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=979 target=s3/raw_docs/cy-603-a-internet-and-web-technology-may-2023_6IdqWZ1-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=980 target=s3/raw_docs/cy-604-c-data-warehousing-and-mining-may-2023_m4IesVm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=981 target=s3/raw_docs/cy-702-a-penetration-testing-and-vulnerability-analysis-dec-2024_p7B2x3h-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=982 target=s3/raw_docs/cy-702-d-multimedia-security-and-forensics-nov-2023_Lii3m8g-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=983 target=s3/raw_docs/cy-703-c-data-engineering-nov-2023_hRAgDbI-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=984 target=s3/raw_docs/cy-801-hardware-security-may-2024_HH2cWZu-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=985 target=s3/raw_docs/cy-802-c-lightweight-cryptography-may-2024_Z2iuehW-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=986 target=s3/raw_docs/cy-803-a-mobile-and-wireless-security-may-2024_xl3n1Fp-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=987 target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-jun-2025_Y3bFiyt-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=988 target=s3/raw_docs/ec-303-digital-system-design-jun-2025_aylTIvJ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=989 target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2025_PzuEQfD-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=990 target=s3/raw_docs/ex-302-signals-and-systems-jun-2025_4FjXbbt-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=991 target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-dec-2024_rfdmZ8U-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=992 target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-jun-2024_Fj8g5Uo-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=993 target=s3/raw_docs/ec-303-digital-system-design-dec-2024_3Srwr5B-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=994 target=s3/raw_docs/ec-303-digital-system-design-jun-2024_ZxgAMO6-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=995 target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-dec-2024_5DTZHV3-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=996 target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2024_hqFbgfQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=997 target=s3/raw_docs/ex-302-signals-and-systems-dec-2024_8i9qAVR-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=998 target=s3/raw_docs/ex-302-signals-and-systems-jun-2024_A28H4Nj-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=999 target=s3/raw_docs/ex-503-c-renewable-power-generation-dec-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1000 target=s3/raw_docs/ex-305-analog-electronics-dec-2024_XtTuNrj-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1001 target=s3/raw_docs/ex-305-analog-electronics-jun-2024_C2ADrfq-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1002 target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-dec-2023_I2C37IP-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1003 target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-ec-302-jun-2023_oywMU02-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1004 target=s3/raw_docs/ec-303-digital-system-design-dec-2023_SggTeQv-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1005 target=s3/raw_docs/ec-303-digital-system-design-jun-2023_Bv8G23j-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1006 target=s3/raw_docs/ec-304-electronic-devices-jun-2023_RRcKKIu-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1007 target=s3/raw_docs/ex-304-network-analysis-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1008 target=s3/raw_docs/ex-305-analog-electronics-dec-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1009 target=s3/raw_docs/ex-305-analog-electronics-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1010 target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-dec-2023_OzOXXGK-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1011 target=s3/raw_docs/ee-ex-303-electrical-measurements-and-measuring-instruments-jun-2023_UgOGbEX-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1012 target=s3/raw_docs/ex-302-signals-and-systems-dec-2023_1DO4Cxm-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1013 target=s3/raw_docs/ex-302-signals-and-systems-jun-2023_zCRf5xN-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1014 target=s3/raw_docs/ec-302-electronic-measurements-and-instrumentation-nov-2022_PKw1ydq-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1015 target=s3/raw_docs/ec-303-digital-system-design-nov-2022_feRu6HJ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1016 target=s3/raw_docs/ec-304-electronic-devices-nov-2022_2VL4WHg-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1017 target=s3/raw_docs/ex-304-network-analysis-nov-2022-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1018 target=s3/raw_docs/ec-402-signal-and-system-jun-2025_KfDjaxT-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1019 target=s3/raw_docs/ec-403-analog-communication-jun-2025_KiRTBtC-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1020 target=s3/raw_docs/ee-ex-405-control-system-jun-2025-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1021 target=s3/raw_docs/ec-404-cotrol-system-jun-2025_YSr591W-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1022 target=s3/raw_docs/ec-405-analog-circuits-jun-2025_qYugeV9-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1023 target=s3/raw_docs/ee-ex-402-electrical-machine-1-jun-2025_yqQDCyl-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1024 target=s3/raw_docs/ee-ex-403-digital-electronics-and-logic-design-jun-2025_JnyNRzt-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1025 target=s3/raw_docs/ee-ex-404-power-system-1-jun-2025_XL5DVSL-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1026 target=s3/raw_docs/ec-402-signal-and-system-dec-2024_KzGvFpL-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1027 target=s3/raw_docs/ec-402-signal-and-system-jun-2024_y4UKKxq-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1028 target=s3/raw_docs/ec-403-analog-communication-dec-2024_KIds7BQ-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1029 target=s3/raw_docs/ec-403-analog-communication-jun-2024_0mXmCzW-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1030 target=s3/raw_docs/ee-ex-405-control-system-dec-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1031 target=s3/raw_docs/ee-ex-405-control-system-jun-2024-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1032 target=s3/raw_docs/ec-405-analog-circuits-dec-2024_mk34kpO-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1033 target=s3/raw_docs/ee-ex-402-electrical-machine-1-dec-2024_JKjNHSi-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1034 target=s3/raw_docs/ee-ex-402-electrical-machine-1-jun-2024_uXYVKsX-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1035 target=s3/raw_docs/ee-ex-403-digital-electronics-and-logic-design-jun-2024_Lki6imS-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1036 target=s3/raw_docs/ee-ex-404-power-system-1-dec-2024_YjJVrMz-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1037 target=s3/raw_docs/ee-ex-404-power-system-1-jun-2024_SfBrsfH-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1038 target=s3/raw_docs/ec-402-signal-and-system-jun-2023_YYBA5A9-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1039 target=s3/raw_docs/ec-402-signal-and-system-nov-2023_Hzqmzur-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1040 target=s3/raw_docs/ec-403-analog-communication-jun-2023_ZTFkY1k-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1041 target=s3/raw_docs/ec-403-analog-communication-nov-2023_h0yaQc0-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1042 target=s3/raw_docs/ee-ex-405-control-system-jun-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] SUCCESS id=1043 target=s3/raw_docs/ee-ex-405-control-system-nov-2023-ocr.pdf
+[2026-03-04 10:14:43 UTC] Run finished success=200 failed=0 skipped=0 total=200

@@ -27,6 +27,7 @@ If a question does not have a unit explicitly mentioned, use the SYLLABUS REFERE
 1. MARKS: Ensure marks are captured accurately.
 2. OR CHOICES: Correctly identify if a question has an 'OR' choice and set `has_or_choice` accordingly.
 3. PARTS: Capture 'a', 'b', 'c' parts accurately in the `part` field.
+4. Total there are 8 questions in the paper. each question may have multiple parts (a, b, c) or just a, b. each 1 question is of 14 marks.
 """
 
     async def get_extra_context(self, parsed_document_obj, subject) -> dict:

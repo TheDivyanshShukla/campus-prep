@@ -20,7 +20,7 @@ uv run manage.py seed_rgpv_data
 uv run manage.py flush --no-input
 
 
-uv run manage.py sync_pyq_papers --download                                                        
+uv run manage.py sync_pyq_papers --download
 
 
 uv run manage.py db_snapshot recover snapshot_20260302_034153_full.json --no-input

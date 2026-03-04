@@ -1,0 +1,402 @@
+[2026-03-04 10:07:59 UTC] Run started total=200 batch_size=200 workers=32 dry_run=False resume=True
+[2026-03-04 10:07:59 UTC] PROCESS id=644 source=raw_docs/ad-al-ai-304-artificial-intelligence-jun-2024_3oIGZJk-ocr.pdf target=s3/raw_docs/ad-al-ai-304-artificial-intelligence-jun-2024_3oIGZJk-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=645 source=raw_docs/ad-al-cd-cy-io-is-301-technical-communication-jun-2024_y9Vq6qO-ocr.pdf target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-jun-2024_y9Vq6qO-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=646 source=raw_docs/ad-al-cd-cy-is-305-object-oriented-programming-and-methodology-jun-2024_lupvCjR-ocr.pdf target=s3/raw_docs/ad-al-cd-cy-is-305-object-oriented-programming-and-methodology-jun-2024_lupvCjR-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=647 source=raw_docs/ad-302-probability-and-statistics-for-data-science-dec-2023_Cz04wWW-ocr.pdf target=s3/raw_docs/ad-302-probability-and-statistics-for-data-science-dec-2023_Cz04wWW-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=648 source=raw_docs/ad-302-probability-and-statistics-for-data-science-jun-2023_n2stXRX-ocr.pdf target=s3/raw_docs/ad-302-probability-and-statistics-for-data-science-jun-2023_n2stXRX-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=649 source=raw_docs/ci-it-303-data-structure-dec-2023_zCctWS2-ocr.pdf target=s3/raw_docs/ci-it-303-data-structure-dec-2023_zCctWS2-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=650 source=raw_docs/ci-303-data-structure-jun-2023-ocr.pdf target=s3/raw_docs/ci-303-data-structure-jun-2023-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=651 source=raw_docs/ad-al-304-artificial-inteligence-jun-2023_0dkMIne-ocr.pdf target=s3/raw_docs/ad-al-304-artificial-inteligence-jun-2023_0dkMIne-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=652 source=raw_docs/ad-al-ai-304-artificial-intelligence-dec-2023_1IDZYD0-ocr.pdf target=s3/raw_docs/ad-al-ai-304-artificial-intelligence-dec-2023_1IDZYD0-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=653 source=raw_docs/ad-al-cd-cy-io-is-301-technical-communication-dec-2023_a38PHeh-ocr.pdf target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-dec-2023_a38PHeh-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=654 source=raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-dec-2023_8Oeqz4P-ocr.pdf target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-dec-2023_8Oeqz4P-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=655 source=raw_docs/ad-301-technical-communication-dec-2022_P0jZIJI-ocr.pdf target=s3/raw_docs/ad-301-technical-communication-dec-2022_P0jZIJI-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=656 source=raw_docs/ad-302-probability-and-statistics-for-data-science-nov-2022_wQBgtuW-ocr.pdf target=s3/raw_docs/ad-302-probability-and-statistics-for-data-science-nov-2022_wQBgtuW-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=657 source=raw_docs/ad-303-data-structure-dec-2022_jlAJHx5-ocr.pdf target=s3/raw_docs/ad-303-data-structure-dec-2022_jlAJHx5-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=658 source=raw_docs/it-303-data-structure-nov-2022_lyNE6pM-ocr.pdf target=s3/raw_docs/it-303-data-structure-nov-2022_lyNE6pM-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=659 source=raw_docs/ad-al-304-artificial-intelligence-nov-2022_2KQO6gV-ocr.pdf target=s3/raw_docs/ad-al-304-artificial-intelligence-nov-2022_2KQO6gV-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=660 source=raw_docs/ad-al-cd-cy-io-is-301-technical-communication-nov-2022_VPvLMqL-ocr.pdf target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-nov-2022_VPvLMqL-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=661 source=raw_docs/ag-csit-it-405-data-base-management-system-jun-2025-ocr.pdf target=s3/raw_docs/ag-csit-it-405-data-base-management-system-jun-2025-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=662 source=raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2025_KwLqZ8r-ocr.pdf target=s3/raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2025_KwLqZ8r-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=663 source=raw_docs/ad-404-data-science-jun-2025_KwaT3Fc-ocr.pdf target=s3/raw_docs/ad-404-data-science-jun-2025_KwaT3Fc-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=664 source=raw_docs/ad-402-data-base-management-system-jun-2024_dCnnKZC-ocr.pdf target=s3/raw_docs/ad-402-data-base-management-system-jun-2024_dCnnKZC-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=665 source=raw_docs/ad-404-data-science-jun-2024_9DKoihb-ocr.pdf target=s3/raw_docs/ad-404-data-science-jun-2024_9DKoihb-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=666 source=raw_docs/ag-csit-ci-it-405-data-base-management-system-jun-2023-ocr.pdf target=s3/raw_docs/ag-csit-ci-it-405-data-base-management-system-jun-2023-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=667 source=raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2023_KtCUIvP-ocr.pdf target=s3/raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2023_KtCUIvP-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=668 source=raw_docs/ad-404-data-science-jun-2023_OYZxeXU-ocr.pdf target=s3/raw_docs/ad-404-data-science-jun-2023_OYZxeXU-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=669 source=raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2024_QE3tg4W-ocr.pdf target=s3/raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2024_QE3tg4W-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=670 source=raw_docs/cy-701-machine-learning-nov-2023-ocr.pdf target=s3/raw_docs/cy-701-machine-learning-nov-2023-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=671 source=raw_docs/ad-504-a-management-information-system-nov-2023_MbJLXZX-ocr.pdf target=s3/raw_docs/ad-504-a-management-information-system-nov-2023_MbJLXZX-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=672 source=raw_docs/ad-502-machine-learning-nov-2022_BsTiMAB-ocr.pdf target=s3/raw_docs/ad-502-machine-learning-nov-2022_BsTiMAB-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=673 source=raw_docs/ad-504-a-management-information-system-nov-2022_yaotQwY-ocr.pdf target=s3/raw_docs/ad-504-a-management-information-system-nov-2022_yaotQwY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=674 source=raw_docs/ad-601-deep-learning-jun-2025_ZAaXnl0-ocr.pdf target=s3/raw_docs/ad-601-deep-learning-jun-2025_ZAaXnl0-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=675 source=raw_docs/ad-603-a-data-mining-and-warehousing-jun-2025_utGiGE6-ocr.pdf target=s3/raw_docs/ad-603-a-data-mining-and-warehousing-jun-2025_utGiGE6-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=676 source=raw_docs/cd-601-deep-learning-may-2024-ocr.pdf target=s3/raw_docs/cd-601-deep-learning-may-2024-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=677 source=raw_docs/ad-603-a-data-mining-and-warehousing-may-2024_8lyMD2b-ocr.pdf target=s3/raw_docs/ad-603-a-data-mining-and-warehousing-may-2024_8lyMD2b-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=678 source=raw_docs/cd-601-deep-learning-may-2023-ocr.pdf target=s3/raw_docs/cd-601-deep-learning-may-2023-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=679 source=raw_docs/ad-603-a-data-mining-and-warehousing-may-2023_8nwsoP1-ocr.pdf target=s3/raw_docs/ad-603-a-data-mining-and-warehousing-may-2023_8nwsoP1-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=680 source=raw_docs/ad-604-a-internet-of-things-may-2023_lpHjVgl-ocr.pdf target=s3/raw_docs/ad-604-a-internet-of-things-may-2023_lpHjVgl-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=681 source=raw_docs/ad-702-c-cs-702-a-computational-intelligence-nov-2023_ODjTI23-ocr.pdf target=s3/raw_docs/ad-702-c-cs-702-a-computational-intelligence-nov-2023_ODjTI23-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=682 source=raw_docs/ad-701-ai-for-computer-vision-dec-2024_Twk89JU-ocr.pdf target=s3/raw_docs/ad-701-ai-for-computer-vision-dec-2024_Twk89JU-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=683 source=raw_docs/ad-702-a-cloud-computing-dec-2024_dD8MWZe-ocr.pdf target=s3/raw_docs/ad-702-a-cloud-computing-dec-2024_dD8MWZe-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=684 source=raw_docs/ad-703-a-data-visualization-dec-2024_5w0T61h-ocr.pdf target=s3/raw_docs/ad-703-a-data-visualization-dec-2024_5w0T61h-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=685 source=raw_docs/ad-801-big-data-jun-2025_VehNPT2-ocr.pdf target=s3/raw_docs/ad-801-big-data-jun-2025_VehNPT2-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=686 source=raw_docs/ad-802-b-reinforcement-learning-jun-2025_D0JsPPR-ocr.pdf target=s3/raw_docs/ad-802-b-reinforcement-learning-jun-2025_D0JsPPR-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=687 source=raw_docs/ad-al-803-io-is-803-managing-innovation-and-entrepreneurship-jun-2025_siW1uVh-ocr.pdf target=s3/raw_docs/ad-al-803-io-is-803-managing-innovation-and-entrepreneurship-jun-2025_siW1uVh-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=688 source=raw_docs/ad-al-io-is-803-managing-innovation-and-entrepreneurship-may-2024_BItzSEW-ocr.pdf target=s3/raw_docs/ad-al-io-is-803-managing-innovation-and-entrepreneurship-may-2024_BItzSEW-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=689 source=raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-jun-2025_GoNQGem-ocr.pdf target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-jun-2025_GoNQGem-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=690 source=raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-jun-2024_BxbvoEX-ocr.pdf target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-jun-2024_BxbvoEX-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=691 source=raw_docs/al-cd-302-introduction-to-probability-and-statistics-jun-2023_7rp9zuk-ocr.pdf target=s3/raw_docs/al-cd-302-introduction-to-probability-and-statistics-jun-2023_7rp9zuk-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=692 source=raw_docs/al-cd-302-introduction-to-probability-and-statistics-nov-2022_X3RrRGp-ocr.pdf target=s3/raw_docs/al-cd-302-introduction-to-probability-and-statistics-nov-2022_X3RrRGp-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=693 source=raw_docs/ai-al-cd-401-introduction-to-discrete-structure-jun-2025_aYudYmC-ocr.pdf target=s3/raw_docs/ai-al-cd-401-introduction-to-discrete-structure-jun-2025_aYudYmC-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=694 source=raw_docs/ag-csit-it-403-analysis-and-design-of-algorithm-jun-2025-ocr.pdf target=s3/raw_docs/ag-csit-it-403-analysis-and-design-of-algorithm-jun-2025-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=695 source=raw_docs/ai-al-cd-402-analysis-and-design-of-algorithm-jun-2024_FwMkNFs-ocr.pdf target=s3/raw_docs/ai-al-cd-402-analysis-and-design-of-algorithm-jun-2024_FwMkNFs-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=696 source=raw_docs/al-405-machine-learning-jun-2024_GkPKzni-ocr.pdf target=s3/raw_docs/al-405-machine-learning-jun-2024_GkPKzni-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=697 source=raw_docs/al-405-machine-learning-jun-2023_GG8evX8-ocr.pdf target=s3/raw_docs/al-405-machine-learning-jun-2023_GG8evX8-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=698 source=raw_docs/ag-csit-ci-it-403-analysis-and-design-of-algorithm-jun-2023-ocr.pdf target=s3/raw_docs/ag-csit-ci-it-403-analysis-and-design-of-algorithm-jun-2023-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=699 source=raw_docs/ag-ci-it-403-analysis-and-design-of-algorithm-nov-2023_28R7XuZ-ocr.pdf target=s3/raw_docs/ag-ci-it-403-analysis-and-design-of-algorithm-nov-2023_28R7XuZ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=700 source=raw_docs/al-405-machine-learning-jun-2022_qUKJWs4-ocr.pdf target=s3/raw_docs/al-405-machine-learning-jun-2022_qUKJWs4-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=701 source=raw_docs/ag-ci-it-403-analysis-and-design-of-algorithm-jun-2022_sz5ecL3-ocr.pdf target=s3/raw_docs/ag-ci-it-403-analysis-and-design-of-algorithm-jun-2022_sz5ecL3-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=702 source=raw_docs/cy-404-operating-systems-dec-2024-ocr.pdf target=s3/raw_docs/cy-404-operating-systems-dec-2024-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=703 source=raw_docs/al-503-deep-system-dec-2024_143grFs-ocr.pdf target=s3/raw_docs/al-503-deep-system-dec-2024_143grFs-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=704 source=raw_docs/al-503-a-information-retrieval-nov-2023_NYFEVnm-ocr.pdf target=s3/raw_docs/al-503-a-information-retrieval-nov-2023_NYFEVnm-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=705 source=raw_docs/al-503-b-deep-learning-nov-2023_1qFcsmY-ocr.pdf target=s3/raw_docs/al-503-b-deep-learning-nov-2023_1qFcsmY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=706 source=raw_docs/al-504-a-ai-in-health-care-nov-2023_KaUKGmy-ocr.pdf target=s3/raw_docs/al-504-a-ai-in-health-care-nov-2023_KaUKGmy-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=707 source=raw_docs/al-504-b-natural-language-processing-nov-2023_D35SMwO-ocr.pdf target=s3/raw_docs/al-504-b-natural-language-processing-nov-2023_D35SMwO-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=708 source=raw_docs/al-is-io-502-data-base-management-system-nov-2023_EIzDVmG-ocr.pdf target=s3/raw_docs/al-is-io-502-data-base-management-system-nov-2023_EIzDVmG-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=709 source=raw_docs/al-501-operating-systems-nov-2022_AbY2i84-ocr.pdf target=s3/raw_docs/al-501-operating-systems-nov-2022_AbY2i84-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=710 source=raw_docs/io-502-database-management-systems-nov-2022-ocr.pdf target=s3/raw_docs/io-502-database-management-systems-nov-2022-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=711 source=raw_docs/al-503-b-deep-learning-nov-2022_SYufu4c-ocr.pdf target=s3/raw_docs/al-503-b-deep-learning-nov-2022_SYufu4c-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=712 source=raw_docs/al-504-b-natural-language-processing-nov-2022_b3TX72f-ocr.pdf target=s3/raw_docs/al-504-b-natural-language-processing-nov-2022_b3TX72f-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=713 source=raw_docs/ai-al-601-theory-of-computation-jun-2025_bZOM8lm-ocr.pdf target=s3/raw_docs/ai-al-601-theory-of-computation-jun-2025_bZOM8lm-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=714 source=raw_docs/al-601-theory-of-computation-may-2024_oj8SNzl-ocr.pdf target=s3/raw_docs/al-601-theory-of-computation-may-2024_oj8SNzl-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=715 source=raw_docs/al-603-b-data-and-visual-analytics-may-2024_4BjgqEh-ocr.pdf target=s3/raw_docs/al-603-b-data-and-visual-analytics-may-2024_4BjgqEh-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=716 source=raw_docs/al-604-a-cloud-computing-may-2024_grtxRNk-ocr.pdf target=s3/raw_docs/al-604-a-cloud-computing-may-2024_grtxRNk-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=717 source=raw_docs/al-603-b-data-and-visual-analytics-may-2023_90BJGwj-ocr.pdf target=s3/raw_docs/al-603-b-data-and-visual-analytics-may-2023_90BJGwj-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=718 source=raw_docs/al-604-a-cloud-computing-may-2023_Lt1eNCi-ocr.pdf target=s3/raw_docs/al-604-a-cloud-computing-may-2023_Lt1eNCi-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=719 source=raw_docs/al-604-c-intelligent-systems-for-robotics-may-2023_bgAS3JB-ocr.pdf target=s3/raw_docs/al-604-c-intelligent-systems-for-robotics-may-2023_bgAS3JB-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=720 source=raw_docs/al-701-computer-vision-dec-2025_wdSYZB1-ocr.pdf target=s3/raw_docs/al-701-computer-vision-dec-2025_wdSYZB1-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=721 source=raw_docs/al-702-b-advanced-machine-learining-dec-2025_9hKnrkm-ocr.pdf target=s3/raw_docs/al-702-b-advanced-machine-learining-dec-2025_9hKnrkm-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=722 source=raw_docs/al-701-computer-vision-nov-2023_iI8MpjN-ocr.pdf target=s3/raw_docs/al-701-computer-vision-nov-2023_iI8MpjN-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=723 source=raw_docs/al-702-a-ai-in-gaming-nov-2023_waD2Re9-ocr.pdf target=s3/raw_docs/al-702-a-ai-in-gaming-nov-2023_waD2Re9-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=724 source=raw_docs/al-702-c-predictive-analytics-nov-2023_GgmSiFQ-ocr.pdf target=s3/raw_docs/al-702-c-predictive-analytics-nov-2023_GgmSiFQ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=725 source=raw_docs/al-702-d-machine-learning-for-data-science-nov-2023_1vUoHjb-ocr.pdf target=s3/raw_docs/al-702-d-machine-learning-for-data-science-nov-2023_1vUoHjb-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=726 source=raw_docs/al-703-b-augmented-and-virtual-reality-nov-2023_gZryH12-ocr.pdf target=s3/raw_docs/al-703-b-augmented-and-virtual-reality-nov-2023_gZryH12-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=727 source=raw_docs/al-703-c-agile-software-development-nov-2023_sNNKpZY-ocr.pdf target=s3/raw_docs/al-703-c-agile-software-development-nov-2023_sNNKpZY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=728 source=raw_docs/al-703-d-internet-and-web-technology-nov-2023_VS99m2a-ocr.pdf target=s3/raw_docs/al-703-d-internet-and-web-technology-nov-2023_VS99m2a-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=729 source=raw_docs/al-801-business-intelligence-may-2024_hbHUSfj-ocr.pdf target=s3/raw_docs/al-801-business-intelligence-may-2024_hbHUSfj-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=730 source=raw_docs/al-802-a-blockchain-technologies-may-2024_dzhVSzA-ocr.pdf target=s3/raw_docs/al-802-a-blockchain-technologies-may-2024_dzhVSzA-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=731 source=raw_docs/al-803-a-introduction-to-iot-may-2024_VWcd2Un-ocr.pdf target=s3/raw_docs/al-803-a-introduction-to-iot-may-2024_VWcd2Un-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=732 source=raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-dec-2024_CFKDRZZ-ocr.pdf target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-dec-2024_CFKDRZZ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=733 source=raw_docs/ai-al-cd-402-analysis-and-design-of-algorithm-dec-2024_OCy2sCA-ocr.pdf target=s3/raw_docs/ai-al-cd-402-analysis-and-design-of-algorithm-dec-2024_OCy2sCA-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=734 source=raw_docs/au-me-302-thermodynamics-jun-2025_nYkCeCV-ocr.pdf target=s3/raw_docs/au-me-302-thermodynamics-jun-2025_nYkCeCV-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=735 source=raw_docs/au-me-303-materials-technology-jun-2025_UQvCk8v-ocr.pdf target=s3/raw_docs/au-me-303-materials-technology-jun-2025_UQvCk8v-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=736 source=raw_docs/au-me-304-strength-of-material-jun-2025_lWvIl3R-ocr.pdf target=s3/raw_docs/au-me-304-strength-of-material-jun-2025_lWvIl3R-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=737 source=raw_docs/au-me-305-manufacturing-process-jun-2025_xkTWEQS-ocr.pdf target=s3/raw_docs/au-me-305-manufacturing-process-jun-2025_xkTWEQS-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=738 source=raw_docs/au-me-302-thermodynamics-dec-2024_GynuMsP-ocr.pdf target=s3/raw_docs/au-me-302-thermodynamics-dec-2024_GynuMsP-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=739 source=raw_docs/au-me-303-materials-technology-dec-2024_Zy9GZkS-ocr.pdf target=s3/raw_docs/au-me-303-materials-technology-dec-2024_Zy9GZkS-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=740 source=raw_docs/au-me-303-materials-technology-jun-2024_p7jVaxr-ocr.pdf target=s3/raw_docs/au-me-303-materials-technology-jun-2024_p7jVaxr-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=741 source=raw_docs/au-me-304-strength-of-material-dec-2024_M4547UE-ocr.pdf target=s3/raw_docs/au-me-304-strength-of-material-dec-2024_M4547UE-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=742 source=raw_docs/au-me-304-strength-of-material-jun-2024_75CRN9z-ocr.pdf target=s3/raw_docs/au-me-304-strength-of-material-jun-2024_75CRN9z-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=743 source=raw_docs/au-me-305-manufacturing-process-dec-2024_igt9Yf2-ocr.pdf target=s3/raw_docs/au-me-305-manufacturing-process-dec-2024_igt9Yf2-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=744 source=raw_docs/au-me-302-thermodynamics-dec-2023_fUbPfq8-ocr.pdf target=s3/raw_docs/au-me-302-thermodynamics-dec-2023_fUbPfq8-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=745 source=raw_docs/au-me-302-thermodynamics-jun-2023_dogaa8q-ocr.pdf target=s3/raw_docs/au-me-302-thermodynamics-jun-2023_dogaa8q-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=746 source=raw_docs/au-me-303-materials-technology-dec-2023_SWSZypY-ocr.pdf target=s3/raw_docs/au-me-303-materials-technology-dec-2023_SWSZypY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=747 source=raw_docs/au-me-303-materials-technology-jun-2023_tFVFdp1-ocr.pdf target=s3/raw_docs/au-me-303-materials-technology-jun-2023_tFVFdp1-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=748 source=raw_docs/au-me-304-strength-of-material-dec-2023_HtNHId9-ocr.pdf target=s3/raw_docs/au-me-304-strength-of-material-dec-2023_HtNHId9-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=749 source=raw_docs/au-me-304-strength-of-material-jun-2023_IOaQGL6-ocr.pdf target=s3/raw_docs/au-me-304-strength-of-material-jun-2023_IOaQGL6-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=750 source=raw_docs/au-me-305-manufacturing-process-dec-2023_FxjcJL6-ocr.pdf target=s3/raw_docs/au-me-305-manufacturing-process-dec-2023_FxjcJL6-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=751 source=raw_docs/au-me-305-manufacturing-process-jun-2023_4qyS9CT-ocr.pdf target=s3/raw_docs/au-me-305-manufacturing-process-jun-2023_4qyS9CT-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=752 source=raw_docs/au-me-302-thermodynamics-nov-2022_P7uVumq-ocr.pdf target=s3/raw_docs/au-me-302-thermodynamics-nov-2022_P7uVumq-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=753 source=raw_docs/au-me-402-instrumentation-and-control-jun-2025_Nl3s812-ocr.pdf target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2025_Nl3s812-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=754 source=raw_docs/au-me-403-theory-of-machines-jun-2025_VdjhrvG-ocr.pdf target=s3/raw_docs/au-me-403-theory-of-machines-jun-2025_VdjhrvG-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=755 source=raw_docs/au-me-404-fluid-mechanics-jun-2025_QnjJaga-ocr.pdf target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2025_QnjJaga-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=756 source=raw_docs/au-me-405-manufacturing-technology-jun-2025_4QZk2Bl-ocr.pdf target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2025_4QZk2Bl-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=757 source=raw_docs/au-me-402-instrumentation-and-control-dec-2024_duyGUMD-ocr.pdf target=s3/raw_docs/au-me-402-instrumentation-and-control-dec-2024_duyGUMD-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=758 source=raw_docs/au-me-402-instrumentation-and-control-jun-2024_wB21jKy-ocr.pdf target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2024_wB21jKy-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=759 source=raw_docs/au-me-403-theory-of-machines-dec-2024_2cbrBfX-ocr.pdf target=s3/raw_docs/au-me-403-theory-of-machines-dec-2024_2cbrBfX-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=760 source=raw_docs/au-me-403-theory-of-machines-jun-2024_SZt19mY-ocr.pdf target=s3/raw_docs/au-me-403-theory-of-machines-jun-2024_SZt19mY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=761 source=raw_docs/au-me-404-fluid-mechanics-dec-2024_UvqoWPY-ocr.pdf target=s3/raw_docs/au-me-404-fluid-mechanics-dec-2024_UvqoWPY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=762 source=raw_docs/au-me-404-fluid-mechanics-jun-2024_QAhdxGt-ocr.pdf target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2024_QAhdxGt-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=763 source=raw_docs/au-me-405-manufacturing-technology-dec-2024_MMrzzCb-ocr.pdf target=s3/raw_docs/au-me-405-manufacturing-technology-dec-2024_MMrzzCb-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=764 source=raw_docs/au-me-405-manufacturing-technology-jun-2024_j3WTQPG-ocr.pdf target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2024_j3WTQPG-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=765 source=raw_docs/au-me-402-instrumentation-and-control-jun-2023_YAGGqOd-ocr.pdf target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2023_YAGGqOd-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=766 source=raw_docs/au-me-402-instrumentation-and-control-nov-2023_yHjMCyS-ocr.pdf target=s3/raw_docs/au-me-402-instrumentation-and-control-nov-2023_yHjMCyS-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=767 source=raw_docs/au-me-403-theory-of-machines-jun-2023_CPcs5b4-ocr.pdf target=s3/raw_docs/au-me-403-theory-of-machines-jun-2023_CPcs5b4-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=768 source=raw_docs/au-me-403-theory-of-machines-nov-2023_HcjTNKP-ocr.pdf target=s3/raw_docs/au-me-403-theory-of-machines-nov-2023_HcjTNKP-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=769 source=raw_docs/au-me-404-fluid-mechanics-jun-2023_D270bhI-ocr.pdf target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2023_D270bhI-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=770 source=raw_docs/au-me-404-fluid-mechanics-nov-2023_yzQXRr0-ocr.pdf target=s3/raw_docs/au-me-404-fluid-mechanics-nov-2023_yzQXRr0-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=771 source=raw_docs/au-me-405-manufacturing-technology-jun-2023_FmCxYyW-ocr.pdf target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2023_FmCxYyW-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=772 source=raw_docs/au-me-405-manufacturing-technology-nov-2023_YINTYWh-ocr.pdf target=s3/raw_docs/au-me-405-manufacturing-technology-nov-2023_YINTYWh-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=773 source=raw_docs/au-me-402-instrumentation-and-control-jun-2022_YDiWiMR-ocr.pdf target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2022_YDiWiMR-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=774 source=raw_docs/au-me-403-theory-of-machines-jun-2022_QzEAmp8-ocr.pdf target=s3/raw_docs/au-me-403-theory-of-machines-jun-2022_QzEAmp8-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=775 source=raw_docs/au-me-404-fluid-mechanics-jun-2022_lLJqlSK-ocr.pdf target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2022_lLJqlSK-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=776 source=raw_docs/au-me-405-manufacturing-technology-jun-2022_7UryRNt-ocr.pdf target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2022_7UryRNt-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=777 source=raw_docs/au-me-604-c-renewable-energy-technology-jun-2025_BRC90h7-ocr.pdf target=s3/raw_docs/au-me-604-c-renewable-energy-technology-jun-2025_BRC90h7-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=778 source=raw_docs/au-me-604-c-renewable-energy-technology-dec-2024_MaVTLlQ-ocr.pdf target=s3/raw_docs/au-me-604-c-renewable-energy-technology-dec-2024_MaVTLlQ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=779 source=raw_docs/au-me-604-c-renewable-energy-technology-may-2024_RY773nY-ocr.pdf target=s3/raw_docs/au-me-604-c-renewable-energy-technology-may-2024_RY773nY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=780 source=raw_docs/au-me-604-c-renewable-energy-technology-may-2023_B4W0fXA-ocr.pdf target=s3/raw_docs/au-me-604-c-renewable-energy-technology-may-2023_B4W0fXA-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=781 source=raw_docs/au-me-604-c-renewable-energy-technology-may-2022_JgJRZar-ocr.pdf target=s3/raw_docs/au-me-604-c-renewable-energy-technology-may-2022_JgJRZar-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=782 source=raw_docs/ab-rm-304-strength-of-material-nov-2022_x41pCx7-ocr.pdf target=s3/raw_docs/ab-rm-304-strength-of-material-nov-2022_x41pCx7-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=783 source=raw_docs/ab-rm-305-manufacturing-technology-nov-2022_juNjg6P-ocr.pdf target=s3/raw_docs/ab-rm-305-manufacturing-technology-nov-2022_juNjg6P-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=784 source=raw_docs/ab-rm-405-materials-technology-jun-2022_GP69nTa-ocr.pdf target=s3/raw_docs/ab-rm-405-materials-technology-jun-2022_GP69nTa-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=785 source=raw_docs/ce-302-construction-materials-jun-2025_setjTde-ocr.pdf target=s3/raw_docs/ce-302-construction-materials-jun-2025_setjTde-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=786 source=raw_docs/ce-303-surveying-jun-2025_BPF9EdE-ocr.pdf target=s3/raw_docs/ce-303-surveying-jun-2025_BPF9EdE-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=787 source=raw_docs/ce-304-building-planning-and-architecture-jun-2025_G5LDTCi-ocr.pdf target=s3/raw_docs/ce-304-building-planning-and-architecture-jun-2025_G5LDTCi-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=788 source=raw_docs/ce-305-strength-of-materials-jun-2025_KJLtMvV-ocr.pdf target=s3/raw_docs/ce-305-strength-of-materials-jun-2025_KJLtMvV-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=789 source=raw_docs/ce-302-construction-materials-jun-2024_YCofUaG-ocr.pdf target=s3/raw_docs/ce-302-construction-materials-jun-2024_YCofUaG-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=790 source=raw_docs/ce-303-surveying-dec-2024_N7U5PWE-ocr.pdf target=s3/raw_docs/ce-303-surveying-dec-2024_N7U5PWE-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=791 source=raw_docs/ce-303-surveying-jun-2024_eZDDlQq-ocr.pdf target=s3/raw_docs/ce-303-surveying-jun-2024_eZDDlQq-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=792 source=raw_docs/ce-304-building-planning-and-architecture-dec-2024_qTIgnDY-ocr.pdf target=s3/raw_docs/ce-304-building-planning-and-architecture-dec-2024_qTIgnDY-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=793 source=raw_docs/ce-304-building-planning-and-architecture-jun-2024_mEBfeaq-ocr.pdf target=s3/raw_docs/ce-304-building-planning-and-architecture-jun-2024_mEBfeaq-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=794 source=raw_docs/ce-305-strength-of-materials-dec-2024_OAGmOhJ-ocr.pdf target=s3/raw_docs/ce-305-strength-of-materials-dec-2024_OAGmOhJ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=795 source=raw_docs/ft-405-strength-of-materials-jun-2024-ocr.pdf target=s3/raw_docs/ft-405-strength-of-materials-jun-2024-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=796 source=raw_docs/ce-302-construction-materials-dec-2023_o68l61W-ocr.pdf target=s3/raw_docs/ce-302-construction-materials-dec-2023_o68l61W-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=797 source=raw_docs/ce-302-construction-materials-jun-2023_7Lfiqxp-ocr.pdf target=s3/raw_docs/ce-302-construction-materials-jun-2023_7Lfiqxp-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=798 source=raw_docs/ce-303-surveying-dec-2023_2baIImH-ocr.pdf target=s3/raw_docs/ce-303-surveying-dec-2023_2baIImH-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=799 source=raw_docs/ce-303-surveying-jun-2023_OATbPOr-ocr.pdf target=s3/raw_docs/ce-303-surveying-jun-2023_OATbPOr-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=800 source=raw_docs/ce-304-building-planning-and-architecture-dec-2023_sNqwmjw-ocr.pdf target=s3/raw_docs/ce-304-building-planning-and-architecture-dec-2023_sNqwmjw-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=801 source=raw_docs/ce-304-building-planning-and-architecture-jun-2023_LsVqH62-ocr.pdf target=s3/raw_docs/ce-304-building-planning-and-architecture-jun-2023_LsVqH62-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=802 source=raw_docs/ce-305-strength-of-materials-dec-2023_hsjy7Ye-ocr.pdf target=s3/raw_docs/ce-305-strength-of-materials-dec-2023_hsjy7Ye-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=803 source=raw_docs/ce-305-strength-of-materials-jun-2023_8vud0Xx-ocr.pdf target=s3/raw_docs/ce-305-strength-of-materials-jun-2023_8vud0Xx-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=804 source=raw_docs/ce-302-construction-materials-nov-2022_Nj7MV1X-ocr.pdf target=s3/raw_docs/ce-302-construction-materials-nov-2022_Nj7MV1X-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=805 source=raw_docs/ce-303-surveying-nov-2022_oCxwVNL-ocr.pdf target=s3/raw_docs/ce-303-surveying-nov-2022_oCxwVNL-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=806 source=raw_docs/ce-304-building-planning-and-architecture-nov-2022_zJINLrl-ocr.pdf target=s3/raw_docs/ce-304-building-planning-and-architecture-nov-2022_zJINLrl-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=807 source=raw_docs/ce-305-strength-of-materials-nov-2022_Ll3rbpV-ocr.pdf target=s3/raw_docs/ce-305-strength-of-materials-nov-2022_Ll3rbpV-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=808 source=raw_docs/ce-402-construction-technology-jun-2025_XIQEcI4-ocr.pdf target=s3/raw_docs/ce-402-construction-technology-jun-2025_XIQEcI4-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=809 source=raw_docs/ce-403-structural-analysis-1-jun-2025_clQcYve-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-jun-2025_clQcYve-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=810 source=raw_docs/ce-404-transportation-engineering-1-jun-2025_HYgt9nj-ocr.pdf target=s3/raw_docs/ce-404-transportation-engineering-1-jun-2025_HYgt9nj-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=811 source=raw_docs/ce-405-engineering-geology-jun-2025_jAzpufC-ocr.pdf target=s3/raw_docs/ce-405-engineering-geology-jun-2025_jAzpufC-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=812 source=raw_docs/ce-402-construction-technology-jun-2024_CB6TKFb-ocr.pdf target=s3/raw_docs/ce-402-construction-technology-jun-2024_CB6TKFb-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=813 source=raw_docs/ce-403-structural-analysis-1-dec-2024_xy8mOpT-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-dec-2024_xy8mOpT-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=814 source=raw_docs/ce-403-structural-analysis-1-jun-2024_f3sD5lZ-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-jun-2024_f3sD5lZ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=815 source=raw_docs/ce-402-construction-technology-jun-2023_e5IW4NA-ocr.pdf target=s3/raw_docs/ce-402-construction-technology-jun-2023_e5IW4NA-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=816 source=raw_docs/ce-402-construction-technology-nov-2023_2T7v0kp-ocr.pdf target=s3/raw_docs/ce-402-construction-technology-nov-2023_2T7v0kp-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=817 source=raw_docs/ce-403-structural-analysis-1-jun-2023_3QXPwBt-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-jun-2023_3QXPwBt-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=818 source=raw_docs/ce-403-structural-analysis-1-nov-2023_LPAlqcI-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-nov-2023_LPAlqcI-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=819 source=raw_docs/ce-404-transportation-engineering-1-jun-2023_3BMv0br-ocr.pdf target=s3/raw_docs/ce-404-transportation-engineering-1-jun-2023_3BMv0br-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=820 source=raw_docs/ce-404-transportation-engineering-1-nov-2023_aGcamHC-ocr.pdf target=s3/raw_docs/ce-404-transportation-engineering-1-nov-2023_aGcamHC-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=821 source=raw_docs/ce-405-engineering-geology-and-remote-sensing-jun-2023_aFCZ5ph-ocr.pdf target=s3/raw_docs/ce-405-engineering-geology-and-remote-sensing-jun-2023_aFCZ5ph-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=822 source=raw_docs/ce-405-engineering-geology-and-remote-sensing-nov-2023_SPhAqiF-ocr.pdf target=s3/raw_docs/ce-405-engineering-geology-and-remote-sensing-nov-2023_SPhAqiF-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=823 source=raw_docs/ce-402-construction-technology-jun-2022_ZuwM52b-ocr.pdf target=s3/raw_docs/ce-402-construction-technology-jun-2022_ZuwM52b-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=824 source=raw_docs/ce-403-structural-analysis-1-jun-2022_zDzVh0v-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-jun-2022_zDzVh0v-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=825 source=raw_docs/ce-403-structural-analysis-1-nov-2022_ZimLGPb-ocr.pdf target=s3/raw_docs/ce-403-structural-analysis-1-nov-2022_ZimLGPb-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=826 source=raw_docs/ce-404-transportation-engineering-1-jun-2022_ma0lsuZ-ocr.pdf target=s3/raw_docs/ce-404-transportation-engineering-1-jun-2022_ma0lsuZ-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=827 source=raw_docs/ce-405-engineering-geology-and-remote-sensing-jun-2022_wdz0bQz-ocr.pdf target=s3/raw_docs/ce-405-engineering-geology-and-remote-sensing-jun-2022_wdz0bQz-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=828 source=raw_docs/ce-501-fluid-mechanics-1-jun-2025_tWlsV1z-ocr.pdf target=s3/raw_docs/ce-501-fluid-mechanics-1-jun-2025_tWlsV1z-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=829 source=raw_docs/ce-502-transportation-engineering-2-jun-2025_qotTA5Z-ocr.pdf target=s3/raw_docs/ce-502-transportation-engineering-2-jun-2025_qotTA5Z-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=830 source=raw_docs/ce-503-c-quantity-surveying-and-costing-jun-2025_14yc3bj-ocr.pdf target=s3/raw_docs/ce-503-c-quantity-surveying-and-costing-jun-2025_14yc3bj-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=831 source=raw_docs/ce-501-fluid-mechanics-1-may-2024_qHGVIE9-ocr.pdf target=s3/raw_docs/ce-501-fluid-mechanics-1-may-2024_qHGVIE9-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=832 source=raw_docs/ce-502-transportation-engineering-2-may-2024_yG1zWo4-ocr.pdf target=s3/raw_docs/ce-502-transportation-engineering-2-may-2024_yG1zWo4-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=833 source=raw_docs/ce-503-c-quantity-surveying-and-costing-dec-2024_wevcmqz-ocr.pdf target=s3/raw_docs/ce-503-c-quantity-surveying-and-costing-dec-2024_wevcmqz-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=834 source=raw_docs/ce-504-b-remote-sensing-and-gis-dec-2024_jwmgY9s-ocr.pdf target=s3/raw_docs/ce-504-b-remote-sensing-and-gis-dec-2024_jwmgY9s-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=835 source=raw_docs/ce-501-fluid-mechanics-1-nov-2023_2rVCRGT-ocr.pdf target=s3/raw_docs/ce-501-fluid-mechanics-1-nov-2023_2rVCRGT-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=836 source=raw_docs/ce-502-transportation-engineering-2-nov-2023_dBczNVK-ocr.pdf target=s3/raw_docs/ce-502-transportation-engineering-2-nov-2023_dBczNVK-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=837 source=raw_docs/ce-503-a-structural-analysis-2-nov-2023_zHeSYMF-ocr.pdf target=s3/raw_docs/ce-503-a-structural-analysis-2-nov-2023_zHeSYMF-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=838 source=raw_docs/ce-503-c-quantity-surveying-and-costing-nov-2023_XzalgNy-ocr.pdf target=s3/raw_docs/ce-503-c-quantity-surveying-and-costing-nov-2023_XzalgNy-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=839 source=raw_docs/ce-504-b-remote-sensing-and-gis-nov-2023_fc0fBdL-ocr.pdf target=s3/raw_docs/ce-504-b-remote-sensing-and-gis-nov-2023_fc0fBdL-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=840 source=raw_docs/ce-504-c-renewable-energy-resources-nov-2023_Zk2zLtW-ocr.pdf target=s3/raw_docs/ce-504-c-renewable-energy-resources-nov-2023_Zk2zLtW-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=841 source=raw_docs/ce-503-a-structural-analysis-2-nov-2022_lJSiPvx-ocr.pdf target=s3/raw_docs/ce-503-a-structural-analysis-2-nov-2022_lJSiPvx-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=842 source=raw_docs/ce-503-d-marine-construction-nov-2022_Bfn0zFc-ocr.pdf target=s3/raw_docs/ce-503-d-marine-construction-nov-2022_Bfn0zFc-ocr.pdf
+[2026-03-04 10:07:59 UTC] PROCESS id=843 source=raw_docs/ce-601-structural-design-and-drawing-rcc-1-jun-2025_63QmOir-ocr.pdf target=s3/raw_docs/ce-601-structural-design-and-drawing-rcc-1-jun-2025_63QmOir-ocr.pdf
+[2026-03-04 10:08:17 UTC] SUCCESS id=655 target=s3/raw_docs/ad-301-technical-communication-dec-2022_P0jZIJI-ocr.pdf
+[2026-03-04 10:08:19 UTC] SUCCESS id=672 target=s3/raw_docs/ad-502-machine-learning-nov-2022_BsTiMAB-ocr.pdf
+[2026-03-04 10:08:22 UTC] SUCCESS id=663 target=s3/raw_docs/ad-404-data-science-jun-2025_KwaT3Fc-ocr.pdf
+[2026-03-04 10:08:26 UTC] SUCCESS id=666 target=s3/raw_docs/ag-csit-ci-it-405-data-base-management-system-jun-2023-ocr.pdf
+[2026-03-04 10:08:28 UTC] SUCCESS id=676 target=s3/raw_docs/cd-601-deep-learning-may-2024-ocr.pdf
+[2026-03-04 10:08:31 UTC] SUCCESS id=650 target=s3/raw_docs/ci-303-data-structure-jun-2023-ocr.pdf
+[2026-03-04 10:08:32 UTC] SUCCESS id=680 target=s3/raw_docs/ad-604-a-internet-of-things-may-2023_lpHjVgl-ocr.pdf
+[2026-03-04 10:08:33 UTC] SUCCESS id=665 target=s3/raw_docs/ad-404-data-science-jun-2024_9DKoihb-ocr.pdf
+[2026-03-04 10:08:33 UTC] SUCCESS id=654 target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-dec-2023_8Oeqz4P-ocr.pdf
+[2026-03-04 10:08:34 UTC] SUCCESS id=677 target=s3/raw_docs/ad-603-a-data-mining-and-warehousing-may-2024_8lyMD2b-ocr.pdf
+[2026-03-04 10:08:34 UTC] SUCCESS id=660 target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-nov-2022_VPvLMqL-ocr.pdf
+[2026-03-04 10:08:35 UTC] SUCCESS id=682 target=s3/raw_docs/ad-701-ai-for-computer-vision-dec-2024_Twk89JU-ocr.pdf
+[2026-03-04 10:08:37 UTC] SUCCESS id=685 target=s3/raw_docs/ad-801-big-data-jun-2025_VehNPT2-ocr.pdf
+[2026-03-04 10:08:38 UTC] SUCCESS id=687 target=s3/raw_docs/ad-al-803-io-is-803-managing-innovation-and-entrepreneurship-jun-2025_siW1uVh-ocr.pdf
+[2026-03-04 10:08:43 UTC] SUCCESS id=689 target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-jun-2025_GoNQGem-ocr.pdf
+[2026-03-04 10:08:43 UTC] SUCCESS id=681 target=s3/raw_docs/ad-702-c-cs-702-a-computational-intelligence-nov-2023_ODjTI23-ocr.pdf
+[2026-03-04 10:08:44 UTC] SUCCESS id=688 target=s3/raw_docs/ad-al-io-is-803-managing-innovation-and-entrepreneurship-may-2024_BItzSEW-ocr.pdf
+[2026-03-04 10:08:47 UTC] SUCCESS id=690 target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-jun-2024_BxbvoEX-ocr.pdf
+[2026-03-04 10:08:48 UTC] SUCCESS id=678 target=s3/raw_docs/cd-601-deep-learning-may-2023-ocr.pdf
+[2026-03-04 10:08:49 UTC] SUCCESS id=667 target=s3/raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2023_KtCUIvP-ocr.pdf
+[2026-03-04 10:08:51 UTC] SUCCESS id=693 target=s3/raw_docs/ai-al-cd-401-introduction-to-discrete-structure-jun-2025_aYudYmC-ocr.pdf
+[2026-03-04 10:08:51 UTC] SUCCESS id=683 target=s3/raw_docs/ad-702-a-cloud-computing-dec-2024_dD8MWZe-ocr.pdf
+[2026-03-04 10:08:51 UTC] SUCCESS id=668 target=s3/raw_docs/ad-404-data-science-jun-2023_OYZxeXU-ocr.pdf
+[2026-03-04 10:08:51 UTC] SUCCESS id=657 target=s3/raw_docs/ad-303-data-structure-dec-2022_jlAJHx5-ocr.pdf
+[2026-03-04 10:08:54 UTC] SUCCESS id=691 target=s3/raw_docs/al-cd-302-introduction-to-probability-and-statistics-jun-2023_7rp9zuk-ocr.pdf
+[2026-03-04 10:08:54 UTC] SUCCESS id=684 target=s3/raw_docs/ad-703-a-data-visualization-dec-2024_5w0T61h-ocr.pdf
+[2026-03-04 10:08:55 UTC] SUCCESS id=696 target=s3/raw_docs/al-405-machine-learning-jun-2024_GkPKzni-ocr.pdf
+[2026-03-04 10:08:59 UTC] SUCCESS id=701 target=s3/raw_docs/ag-ci-it-403-analysis-and-design-of-algorithm-jun-2022_sz5ecL3-ocr.pdf
+[2026-03-04 10:09:03 UTC] SUCCESS id=673 target=s3/raw_docs/ad-504-a-management-information-system-nov-2022_yaotQwY-ocr.pdf
+[2026-03-04 10:09:03 UTC] SUCCESS id=703 target=s3/raw_docs/al-503-deep-system-dec-2024_143grFs-ocr.pdf
+[2026-03-04 10:09:04 UTC] SUCCESS id=702 target=s3/raw_docs/cy-404-operating-systems-dec-2024-ocr.pdf
+[2026-03-04 10:09:04 UTC] SUCCESS id=669 target=s3/raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2024_QE3tg4W-ocr.pdf
+[2026-03-04 10:09:06 UTC] SUCCESS id=662 target=s3/raw_docs/ad-403-software-engineering-with-agile-methodology-jun-2025_KwLqZ8r-ocr.pdf
+[2026-03-04 10:09:06 UTC] SUCCESS id=674 target=s3/raw_docs/ad-601-deep-learning-jun-2025_ZAaXnl0-ocr.pdf
+[2026-03-04 10:09:07 UTC] SUCCESS id=705 target=s3/raw_docs/al-503-b-deep-learning-nov-2023_1qFcsmY-ocr.pdf
+[2026-03-04 10:09:08 UTC] SUCCESS id=645 target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-jun-2024_y9Vq6qO-ocr.pdf
+[2026-03-04 10:09:09 UTC] SUCCESS id=644 target=s3/raw_docs/ad-al-ai-304-artificial-intelligence-jun-2024_3oIGZJk-ocr.pdf
+[2026-03-04 10:09:09 UTC] SUCCESS id=651 target=s3/raw_docs/ad-al-304-artificial-inteligence-jun-2023_0dkMIne-ocr.pdf
+[2026-03-04 10:09:09 UTC] SUCCESS id=661 target=s3/raw_docs/ag-csit-it-405-data-base-management-system-jun-2025-ocr.pdf
+[2026-03-04 10:09:11 UTC] SUCCESS id=679 target=s3/raw_docs/ad-603-a-data-mining-and-warehousing-may-2023_8nwsoP1-ocr.pdf
+[2026-03-04 10:09:11 UTC] SUCCESS id=706 target=s3/raw_docs/al-504-a-ai-in-health-care-nov-2023_KaUKGmy-ocr.pdf
+[2026-03-04 10:09:11 UTC] SUCCESS id=658 target=s3/raw_docs/it-303-data-structure-nov-2022_lyNE6pM-ocr.pdf
+[2026-03-04 10:09:12 UTC] SUCCESS id=710 target=s3/raw_docs/io-502-database-management-systems-nov-2022-ocr.pdf
+[2026-03-04 10:09:12 UTC] SUCCESS id=686 target=s3/raw_docs/ad-802-b-reinforcement-learning-jun-2025_D0JsPPR-ocr.pdf
+[2026-03-04 10:09:12 UTC] SUCCESS id=707 target=s3/raw_docs/al-504-b-natural-language-processing-nov-2023_D35SMwO-ocr.pdf
+[2026-03-04 10:09:15 UTC] SUCCESS id=675 target=s3/raw_docs/ad-603-a-data-mining-and-warehousing-jun-2025_utGiGE6-ocr.pdf
+[2026-03-04 10:09:16 UTC] SUCCESS id=659 target=s3/raw_docs/ad-al-304-artificial-intelligence-nov-2022_2KQO6gV-ocr.pdf
+[2026-03-04 10:09:20 UTC] SUCCESS id=722 target=s3/raw_docs/al-701-computer-vision-nov-2023_iI8MpjN-ocr.pdf
+[2026-03-04 10:09:22 UTC] SUCCESS id=720 target=s3/raw_docs/al-701-computer-vision-dec-2025_wdSYZB1-ocr.pdf
+[2026-03-04 10:09:22 UTC] SUCCESS id=653 target=s3/raw_docs/ad-al-cd-cy-io-is-301-technical-communication-dec-2023_a38PHeh-ocr.pdf
+[2026-03-04 10:09:24 UTC] SUCCESS id=723 target=s3/raw_docs/al-702-a-ai-in-gaming-nov-2023_waD2Re9-ocr.pdf
+[2026-03-04 10:09:25 UTC] SUCCESS id=694 target=s3/raw_docs/ag-csit-it-403-analysis-and-design-of-algorithm-jun-2025-ocr.pdf
+[2026-03-04 10:09:27 UTC] SUCCESS id=726 target=s3/raw_docs/al-703-b-augmented-and-virtual-reality-nov-2023_gZryH12-ocr.pdf
+[2026-03-04 10:09:28 UTC] SUCCESS id=724 target=s3/raw_docs/al-702-c-predictive-analytics-nov-2023_GgmSiFQ-ocr.pdf
+[2026-03-04 10:09:28 UTC] SUCCESS id=699 target=s3/raw_docs/ag-ci-it-403-analysis-and-design-of-algorithm-nov-2023_28R7XuZ-ocr.pdf
+[2026-03-04 10:09:30 UTC] SUCCESS id=728 target=s3/raw_docs/al-703-d-internet-and-web-technology-nov-2023_VS99m2a-ocr.pdf
+[2026-03-04 10:09:30 UTC] SUCCESS id=698 target=s3/raw_docs/ag-csit-ci-it-403-analysis-and-design-of-algorithm-jun-2023-ocr.pdf
+[2026-03-04 10:09:30 UTC] SUCCESS id=646 target=s3/raw_docs/ad-al-cd-cy-is-305-object-oriented-programming-and-methodology-jun-2024_lupvCjR-ocr.pdf
+[2026-03-04 10:09:36 UTC] SUCCESS id=731 target=s3/raw_docs/al-803-a-introduction-to-iot-may-2024_VWcd2Un-ocr.pdf
+[2026-03-04 10:09:40 UTC] SUCCESS id=648 target=s3/raw_docs/ad-302-probability-and-statistics-for-data-science-jun-2023_n2stXRX-ocr.pdf
+[2026-03-04 10:09:41 UTC] SUCCESS id=734 target=s3/raw_docs/au-me-302-thermodynamics-jun-2025_nYkCeCV-ocr.pdf
+[2026-03-04 10:09:42 UTC] SUCCESS id=727 target=s3/raw_docs/al-703-c-agile-software-development-nov-2023_sNNKpZY-ocr.pdf
+[2026-03-04 10:09:42 UTC] SUCCESS id=664 target=s3/raw_docs/ad-402-data-base-management-system-jun-2024_dCnnKZC-ocr.pdf
+[2026-03-04 10:09:44 UTC] SUCCESS id=729 target=s3/raw_docs/al-801-business-intelligence-may-2024_hbHUSfj-ocr.pdf
+[2026-03-04 10:09:44 UTC] SUCCESS id=671 target=s3/raw_docs/ad-504-a-management-information-system-nov-2023_MbJLXZX-ocr.pdf
+[2026-03-04 10:09:46 UTC] SUCCESS id=704 target=s3/raw_docs/al-503-a-information-retrieval-nov-2023_NYFEVnm-ocr.pdf
+[2026-03-04 10:09:47 UTC] SUCCESS id=692 target=s3/raw_docs/al-cd-302-introduction-to-probability-and-statistics-nov-2022_X3RrRGp-ocr.pdf
+[2026-03-04 10:09:48 UTC] SUCCESS id=721 target=s3/raw_docs/al-702-b-advanced-machine-learining-dec-2025_9hKnrkm-ocr.pdf
+[2026-03-04 10:09:49 UTC] SUCCESS id=735 target=s3/raw_docs/au-me-303-materials-technology-jun-2025_UQvCk8v-ocr.pdf
+[2026-03-04 10:09:51 UTC] SUCCESS id=736 target=s3/raw_docs/au-me-304-strength-of-material-jun-2025_lWvIl3R-ocr.pdf
+[2026-03-04 10:09:52 UTC] SUCCESS id=737 target=s3/raw_docs/au-me-305-manufacturing-process-jun-2025_xkTWEQS-ocr.pdf
+[2026-03-04 10:09:53 UTC] SUCCESS id=670 target=s3/raw_docs/cy-701-machine-learning-nov-2023-ocr.pdf
+[2026-03-04 10:09:55 UTC] SUCCESS id=652 target=s3/raw_docs/ad-al-ai-304-artificial-intelligence-dec-2023_1IDZYD0-ocr.pdf
+[2026-03-04 10:09:57 UTC] SUCCESS id=647 target=s3/raw_docs/ad-302-probability-and-statistics-for-data-science-dec-2023_Cz04wWW-ocr.pdf
+[2026-03-04 10:09:59 UTC] SUCCESS id=745 target=s3/raw_docs/au-me-302-thermodynamics-jun-2023_dogaa8q-ocr.pdf
+[2026-03-04 10:10:03 UTC] SUCCESS id=656 target=s3/raw_docs/ad-302-probability-and-statistics-for-data-science-nov-2022_wQBgtuW-ocr.pdf
+[2026-03-04 10:10:03 UTC] SUCCESS id=709 target=s3/raw_docs/al-501-operating-systems-nov-2022_AbY2i84-ocr.pdf
+[2026-03-04 10:10:03 UTC] SUCCESS id=649 target=s3/raw_docs/ci-it-303-data-structure-dec-2023_zCctWS2-ocr.pdf
+[2026-03-04 10:10:04 UTC] SUCCESS id=738 target=s3/raw_docs/au-me-302-thermodynamics-dec-2024_GynuMsP-ocr.pdf
+[2026-03-04 10:10:05 UTC] SUCCESS id=739 target=s3/raw_docs/au-me-303-materials-technology-dec-2024_Zy9GZkS-ocr.pdf
+[2026-03-04 10:10:06 UTC] SUCCESS id=743 target=s3/raw_docs/au-me-305-manufacturing-process-dec-2024_igt9Yf2-ocr.pdf
+[2026-03-04 10:10:09 UTC] SUCCESS id=746 target=s3/raw_docs/au-me-303-materials-technology-dec-2023_SWSZypY-ocr.pdf
+[2026-03-04 10:10:10 UTC] SUCCESS id=750 target=s3/raw_docs/au-me-305-manufacturing-process-dec-2023_FxjcJL6-ocr.pdf
+[2026-03-04 10:10:13 UTC] SUCCESS id=740 target=s3/raw_docs/au-me-303-materials-technology-jun-2024_p7jVaxr-ocr.pdf
+[2026-03-04 10:10:16 UTC] SUCCESS id=744 target=s3/raw_docs/au-me-302-thermodynamics-dec-2023_fUbPfq8-ocr.pdf
+[2026-03-04 10:10:18 UTC] SUCCESS id=708 target=s3/raw_docs/al-is-io-502-data-base-management-system-nov-2023_EIzDVmG-ocr.pdf
+[2026-03-04 10:10:18 UTC] SUCCESS id=756 target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2025_4QZk2Bl-ocr.pdf
+[2026-03-04 10:10:21 UTC] SUCCESS id=753 target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2025_Nl3s812-ocr.pdf
+[2026-03-04 10:10:23 UTC] SUCCESS id=751 target=s3/raw_docs/au-me-305-manufacturing-process-jun-2023_4qyS9CT-ocr.pdf
+[2026-03-04 10:10:24 UTC] SUCCESS id=695 target=s3/raw_docs/ai-al-cd-402-analysis-and-design-of-algorithm-jun-2024_FwMkNFs-ocr.pdf
+[2026-03-04 10:10:24 UTC] SUCCESS id=758 target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2024_wB21jKy-ocr.pdf
+[2026-03-04 10:10:27 UTC] SUCCESS id=730 target=s3/raw_docs/al-802-a-blockchain-technologies-may-2024_dzhVSzA-ocr.pdf
+[2026-03-04 10:10:29 UTC] SUCCESS id=733 target=s3/raw_docs/ai-al-cd-402-analysis-and-design-of-algorithm-dec-2024_OCy2sCA-ocr.pdf
+[2026-03-04 10:10:29 UTC] SUCCESS id=755 target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2025_QnjJaga-ocr.pdf
+[2026-03-04 10:10:30 UTC] SUCCESS id=711 target=s3/raw_docs/al-503-b-deep-learning-nov-2022_SYufu4c-ocr.pdf
+[2026-03-04 10:10:31 UTC] SUCCESS id=763 target=s3/raw_docs/au-me-405-manufacturing-technology-dec-2024_MMrzzCb-ocr.pdf
+[2026-03-04 10:10:31 UTC] SUCCESS id=754 target=s3/raw_docs/au-me-403-theory-of-machines-jun-2025_VdjhrvG-ocr.pdf
+[2026-03-04 10:10:32 UTC] SUCCESS id=748 target=s3/raw_docs/au-me-304-strength-of-material-dec-2023_HtNHId9-ocr.pdf
+[2026-03-04 10:10:32 UTC] SUCCESS id=761 target=s3/raw_docs/au-me-404-fluid-mechanics-dec-2024_UvqoWPY-ocr.pdf
+[2026-03-04 10:10:33 UTC] SUCCESS id=697 target=s3/raw_docs/al-405-machine-learning-jun-2023_GG8evX8-ocr.pdf
+[2026-03-04 10:10:35 UTC] SUCCESS id=716 target=s3/raw_docs/al-604-a-cloud-computing-may-2024_grtxRNk-ocr.pdf
+[2026-03-04 10:10:35 UTC] SUCCESS id=749 target=s3/raw_docs/au-me-304-strength-of-material-jun-2023_IOaQGL6-ocr.pdf
+[2026-03-04 10:10:36 UTC] SUCCESS id=760 target=s3/raw_docs/au-me-403-theory-of-machines-jun-2024_SZt19mY-ocr.pdf
+[2026-03-04 10:10:37 UTC] SUCCESS id=771 target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2023_FmCxYyW-ocr.pdf
+[2026-03-04 10:10:39 UTC] SUCCESS id=741 target=s3/raw_docs/au-me-304-strength-of-material-dec-2024_M4547UE-ocr.pdf
+[2026-03-04 10:10:39 UTC] SUCCESS id=732 target=s3/raw_docs/ai-al-cd-302-introduction-to-probability-and-statistics-dec-2024_CFKDRZZ-ocr.pdf
+[2026-03-04 10:10:40 UTC] SUCCESS id=718 target=s3/raw_docs/al-604-a-cloud-computing-may-2023_Lt1eNCi-ocr.pdf
+[2026-03-04 10:10:43 UTC] SUCCESS id=779 target=s3/raw_docs/au-me-604-c-renewable-energy-technology-may-2024_RY773nY-ocr.pdf
+[2026-03-04 10:10:44 UTC] SUCCESS id=772 target=s3/raw_docs/au-me-405-manufacturing-technology-nov-2023_YINTYWh-ocr.pdf
+[2026-03-04 10:10:46 UTC] SUCCESS id=769 target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2023_D270bhI-ocr.pdf
+[2026-03-04 10:10:46 UTC] SUCCESS id=752 target=s3/raw_docs/au-me-302-thermodynamics-nov-2022_P7uVumq-ocr.pdf
+[2026-03-04 10:10:49 UTC] SUCCESS id=764 target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2024_j3WTQPG-ocr.pdf
+[2026-03-04 10:10:50 UTC] SUCCESS id=766 target=s3/raw_docs/au-me-402-instrumentation-and-control-nov-2023_yHjMCyS-ocr.pdf
+[2026-03-04 10:10:51 UTC] SUCCESS id=774 target=s3/raw_docs/au-me-403-theory-of-machines-jun-2022_QzEAmp8-ocr.pdf
+[2026-03-04 10:10:51 UTC] SUCCESS id=783 target=s3/raw_docs/ab-rm-305-manufacturing-technology-nov-2022_juNjg6P-ocr.pdf
+[2026-03-04 10:10:51 UTC] SUCCESS id=747 target=s3/raw_docs/au-me-303-materials-technology-jun-2023_tFVFdp1-ocr.pdf
+[2026-03-04 10:10:56 UTC] SUCCESS id=781 target=s3/raw_docs/au-me-604-c-renewable-energy-technology-may-2022_JgJRZar-ocr.pdf
+[2026-03-04 10:10:56 UTC] SUCCESS id=759 target=s3/raw_docs/au-me-403-theory-of-machines-dec-2024_2cbrBfX-ocr.pdf
+[2026-03-04 10:10:56 UTC] SUCCESS id=778 target=s3/raw_docs/au-me-604-c-renewable-energy-technology-dec-2024_MaVTLlQ-ocr.pdf
+[2026-03-04 10:10:57 UTC] SUCCESS id=773 target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2022_YDiWiMR-ocr.pdf
+[2026-03-04 10:10:59 UTC] SUCCESS id=725 target=s3/raw_docs/al-702-d-machine-learning-for-data-science-nov-2023_1vUoHjb-ocr.pdf
+[2026-03-04 10:10:59 UTC] SUCCESS id=785 target=s3/raw_docs/ce-302-construction-materials-jun-2025_setjTde-ocr.pdf
+[2026-03-04 10:11:00 UTC] SUCCESS id=790 target=s3/raw_docs/ce-303-surveying-dec-2024_N7U5PWE-ocr.pdf
+[2026-03-04 10:11:01 UTC] SUCCESS id=765 target=s3/raw_docs/au-me-402-instrumentation-and-control-jun-2023_YAGGqOd-ocr.pdf
+[2026-03-04 10:11:03 UTC] SUCCESS id=786 target=s3/raw_docs/ce-303-surveying-jun-2025_BPF9EdE-ocr.pdf
+[2026-03-04 10:11:03 UTC] SUCCESS id=789 target=s3/raw_docs/ce-302-construction-materials-jun-2024_YCofUaG-ocr.pdf
+[2026-03-04 10:11:03 UTC] SUCCESS id=768 target=s3/raw_docs/au-me-403-theory-of-machines-nov-2023_HcjTNKP-ocr.pdf
+[2026-03-04 10:11:05 UTC] SUCCESS id=777 target=s3/raw_docs/au-me-604-c-renewable-energy-technology-jun-2025_BRC90h7-ocr.pdf
+[2026-03-04 10:11:06 UTC] SUCCESS id=791 target=s3/raw_docs/ce-303-surveying-jun-2024_eZDDlQq-ocr.pdf
+[2026-03-04 10:11:08 UTC] SUCCESS id=793 target=s3/raw_docs/ce-304-building-planning-and-architecture-jun-2024_mEBfeaq-ocr.pdf
+[2026-03-04 10:11:11 UTC] SUCCESS id=717 target=s3/raw_docs/al-603-b-data-and-visual-analytics-may-2023_90BJGwj-ocr.pdf
+[2026-03-04 10:11:11 UTC] SUCCESS id=797 target=s3/raw_docs/ce-302-construction-materials-jun-2023_7Lfiqxp-ocr.pdf
+[2026-03-04 10:11:11 UTC] SUCCESS id=713 target=s3/raw_docs/ai-al-601-theory-of-computation-jun-2025_bZOM8lm-ocr.pdf
+[2026-03-04 10:11:12 UTC] SUCCESS id=794 target=s3/raw_docs/ce-305-strength-of-materials-dec-2024_OAGmOhJ-ocr.pdf
+[2026-03-04 10:11:14 UTC] SUCCESS id=800 target=s3/raw_docs/ce-304-building-planning-and-architecture-dec-2023_sNqwmjw-ocr.pdf
+[2026-03-04 10:11:14 UTC] SUCCESS id=784 target=s3/raw_docs/ab-rm-405-materials-technology-jun-2022_GP69nTa-ocr.pdf
+[2026-03-04 10:11:14 UTC] SUCCESS id=787 target=s3/raw_docs/ce-304-building-planning-and-architecture-jun-2025_G5LDTCi-ocr.pdf
+[2026-03-04 10:11:14 UTC] SUCCESS id=804 target=s3/raw_docs/ce-302-construction-materials-nov-2022_Nj7MV1X-ocr.pdf
+[2026-03-04 10:11:15 UTC] SUCCESS id=742 target=s3/raw_docs/au-me-304-strength-of-material-jun-2024_75CRN9z-ocr.pdf
+[2026-03-04 10:11:15 UTC] SUCCESS id=805 target=s3/raw_docs/ce-303-surveying-nov-2022_oCxwVNL-ocr.pdf
+[2026-03-04 10:11:18 UTC] SUCCESS id=770 target=s3/raw_docs/au-me-404-fluid-mechanics-nov-2023_yzQXRr0-ocr.pdf
+[2026-03-04 10:11:18 UTC] SUCCESS id=809 target=s3/raw_docs/ce-403-structural-analysis-1-jun-2025_clQcYve-ocr.pdf
+[2026-03-04 10:11:18 UTC] SUCCESS id=715 target=s3/raw_docs/al-603-b-data-and-visual-analytics-may-2024_4BjgqEh-ocr.pdf
+[2026-03-04 10:11:20 UTC] SUCCESS id=815 target=s3/raw_docs/ce-402-construction-technology-jun-2023_e5IW4NA-ocr.pdf
+[2026-03-04 10:11:21 UTC] SUCCESS id=788 target=s3/raw_docs/ce-305-strength-of-materials-jun-2025_KJLtMvV-ocr.pdf
+[2026-03-04 10:11:23 UTC] SUCCESS id=796 target=s3/raw_docs/ce-302-construction-materials-dec-2023_o68l61W-ocr.pdf
+[2026-03-04 10:11:23 UTC] SUCCESS id=817 target=s3/raw_docs/ce-403-structural-analysis-1-jun-2023_3QXPwBt-ocr.pdf
+[2026-03-04 10:11:24 UTC] SUCCESS id=819 target=s3/raw_docs/ce-404-transportation-engineering-1-jun-2023_3BMv0br-ocr.pdf
+[2026-03-04 10:11:28 UTC] SUCCESS id=823 target=s3/raw_docs/ce-402-construction-technology-jun-2022_ZuwM52b-ocr.pdf
+[2026-03-04 10:11:29 UTC] SUCCESS id=813 target=s3/raw_docs/ce-403-structural-analysis-1-dec-2024_xy8mOpT-ocr.pdf
+[2026-03-04 10:11:29 UTC] SUCCESS id=807 target=s3/raw_docs/ce-305-strength-of-materials-nov-2022_Ll3rbpV-ocr.pdf
+[2026-03-04 10:11:32 UTC] SUCCESS id=824 target=s3/raw_docs/ce-403-structural-analysis-1-jun-2022_zDzVh0v-ocr.pdf
+[2026-03-04 10:11:33 UTC] SUCCESS id=792 target=s3/raw_docs/ce-304-building-planning-and-architecture-dec-2024_qTIgnDY-ocr.pdf
+[2026-03-04 10:11:33 UTC] SUCCESS id=757 target=s3/raw_docs/au-me-402-instrumentation-and-control-dec-2024_duyGUMD-ocr.pdf
+[2026-03-04 10:11:33 UTC] SUCCESS id=714 target=s3/raw_docs/al-601-theory-of-computation-may-2024_oj8SNzl-ocr.pdf
+[2026-03-04 10:11:34 UTC] SUCCESS id=762 target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2024_QAhdxGt-ocr.pdf
+[2026-03-04 10:11:34 UTC] SUCCESS id=821 target=s3/raw_docs/ce-405-engineering-geology-and-remote-sensing-jun-2023_aFCZ5ph-ocr.pdf
+[2026-03-04 10:11:35 UTC] SUCCESS id=827 target=s3/raw_docs/ce-405-engineering-geology-and-remote-sensing-jun-2022_wdz0bQz-ocr.pdf
+[2026-03-04 10:11:35 UTC] SUCCESS id=802 target=s3/raw_docs/ce-305-strength-of-materials-dec-2023_hsjy7Ye-ocr.pdf
+[2026-03-04 10:11:35 UTC] SUCCESS id=719 target=s3/raw_docs/al-604-c-intelligent-systems-for-robotics-may-2023_bgAS3JB-ocr.pdf
+[2026-03-04 10:11:36 UTC] SUCCESS id=795 target=s3/raw_docs/ft-405-strength-of-materials-jun-2024-ocr.pdf
+[2026-03-04 10:11:37 UTC] SUCCESS id=820 target=s3/raw_docs/ce-404-transportation-engineering-1-nov-2023_aGcamHC-ocr.pdf
+[2026-03-04 10:11:38 UTC] SUCCESS id=833 target=s3/raw_docs/ce-503-c-quantity-surveying-and-costing-dec-2024_wevcmqz-ocr.pdf
+[2026-03-04 10:11:39 UTC] SUCCESS id=780 target=s3/raw_docs/au-me-604-c-renewable-energy-technology-may-2023_B4W0fXA-ocr.pdf
+[2026-03-04 10:11:41 UTC] SUCCESS id=837 target=s3/raw_docs/ce-503-a-structural-analysis-2-nov-2023_zHeSYMF-ocr.pdf
+[2026-03-04 10:11:41 UTC] SUCCESS id=822 target=s3/raw_docs/ce-405-engineering-geology-and-remote-sensing-nov-2023_SPhAqiF-ocr.pdf
+[2026-03-04 10:11:43 UTC] SUCCESS id=838 target=s3/raw_docs/ce-503-c-quantity-surveying-and-costing-nov-2023_XzalgNy-ocr.pdf
+[2026-03-04 10:11:45 UTC] SUCCESS id=840 target=s3/raw_docs/ce-504-c-renewable-energy-resources-nov-2023_Zk2zLtW-ocr.pdf
+[2026-03-04 10:11:49 UTC] SUCCESS id=842 target=s3/raw_docs/ce-503-d-marine-construction-nov-2022_Bfn0zFc-ocr.pdf
+[2026-03-04 10:11:50 UTC] SUCCESS id=843 target=s3/raw_docs/ce-601-structural-design-and-drawing-rcc-1-jun-2025_63QmOir-ocr.pdf
+[2026-03-04 10:11:50 UTC] SUCCESS id=832 target=s3/raw_docs/ce-502-transportation-engineering-2-may-2024_yG1zWo4-ocr.pdf
+[2026-03-04 10:11:50 UTC] SUCCESS id=812 target=s3/raw_docs/ce-402-construction-technology-jun-2024_CB6TKFb-ocr.pdf
+[2026-03-04 10:11:50 UTC] SUCCESS id=767 target=s3/raw_docs/au-me-403-theory-of-machines-jun-2023_CPcs5b4-ocr.pdf
+[2026-03-04 10:11:52 UTC] SUCCESS id=803 target=s3/raw_docs/ce-305-strength-of-materials-jun-2023_8vud0Xx-ocr.pdf
+[2026-03-04 10:11:54 UTC] SUCCESS id=828 target=s3/raw_docs/ce-501-fluid-mechanics-1-jun-2025_tWlsV1z-ocr.pdf
+[2026-03-04 10:11:55 UTC] SUCCESS id=712 target=s3/raw_docs/al-504-b-natural-language-processing-nov-2022_b3TX72f-ocr.pdf
+[2026-03-04 10:11:57 UTC] SUCCESS id=798 target=s3/raw_docs/ce-303-surveying-dec-2023_2baIImH-ocr.pdf
+[2026-03-04 10:11:58 UTC] SUCCESS id=775 target=s3/raw_docs/au-me-404-fluid-mechanics-jun-2022_lLJqlSK-ocr.pdf
+[2026-03-04 10:11:59 UTC] SUCCESS id=808 target=s3/raw_docs/ce-402-construction-technology-jun-2025_XIQEcI4-ocr.pdf
+[2026-03-04 10:11:59 UTC] SUCCESS id=826 target=s3/raw_docs/ce-404-transportation-engineering-1-jun-2022_ma0lsuZ-ocr.pdf
+[2026-03-04 10:12:01 UTC] SUCCESS id=839 target=s3/raw_docs/ce-504-b-remote-sensing-and-gis-nov-2023_fc0fBdL-ocr.pdf
+[2026-03-04 10:12:02 UTC] SUCCESS id=816 target=s3/raw_docs/ce-402-construction-technology-nov-2023_2T7v0kp-ocr.pdf
+[2026-03-04 10:12:02 UTC] SUCCESS id=811 target=s3/raw_docs/ce-405-engineering-geology-jun-2025_jAzpufC-ocr.pdf
+[2026-03-04 10:12:02 UTC] SUCCESS id=841 target=s3/raw_docs/ce-503-a-structural-analysis-2-nov-2022_lJSiPvx-ocr.pdf
+[2026-03-04 10:12:04 UTC] SUCCESS id=836 target=s3/raw_docs/ce-502-transportation-engineering-2-nov-2023_dBczNVK-ocr.pdf
+[2026-03-04 10:12:04 UTC] SUCCESS id=799 target=s3/raw_docs/ce-303-surveying-jun-2023_OATbPOr-ocr.pdf
+[2026-03-04 10:12:04 UTC] SUCCESS id=831 target=s3/raw_docs/ce-501-fluid-mechanics-1-may-2024_qHGVIE9-ocr.pdf
+[2026-03-04 10:12:04 UTC] SUCCESS id=801 target=s3/raw_docs/ce-304-building-planning-and-architecture-jun-2023_LsVqH62-ocr.pdf
+[2026-03-04 10:12:06 UTC] SUCCESS id=814 target=s3/raw_docs/ce-403-structural-analysis-1-jun-2024_f3sD5lZ-ocr.pdf
+[2026-03-04 10:12:06 UTC] SUCCESS id=782 target=s3/raw_docs/ab-rm-304-strength-of-material-nov-2022_x41pCx7-ocr.pdf
+[2026-03-04 10:12:06 UTC] SUCCESS id=834 target=s3/raw_docs/ce-504-b-remote-sensing-and-gis-dec-2024_jwmgY9s-ocr.pdf
+[2026-03-04 10:12:07 UTC] SUCCESS id=818 target=s3/raw_docs/ce-403-structural-analysis-1-nov-2023_LPAlqcI-ocr.pdf
+[2026-03-04 10:12:08 UTC] SUCCESS id=776 target=s3/raw_docs/au-me-405-manufacturing-technology-jun-2022_7UryRNt-ocr.pdf
+[2026-03-04 10:12:09 UTC] SUCCESS id=829 target=s3/raw_docs/ce-502-transportation-engineering-2-jun-2025_qotTA5Z-ocr.pdf
+[2026-03-04 10:12:09 UTC] SUCCESS id=830 target=s3/raw_docs/ce-503-c-quantity-surveying-and-costing-jun-2025_14yc3bj-ocr.pdf
+[2026-03-04 10:12:10 UTC] SUCCESS id=700 target=s3/raw_docs/al-405-machine-learning-jun-2022_qUKJWs4-ocr.pdf
+[2026-03-04 10:12:10 UTC] SUCCESS id=806 target=s3/raw_docs/ce-304-building-planning-and-architecture-nov-2022_zJINLrl-ocr.pdf
+[2026-03-04 10:12:11 UTC] SUCCESS id=825 target=s3/raw_docs/ce-403-structural-analysis-1-nov-2022_ZimLGPb-ocr.pdf
+[2026-03-04 10:12:13 UTC] SUCCESS id=835 target=s3/raw_docs/ce-501-fluid-mechanics-1-nov-2023_2rVCRGT-ocr.pdf
+[2026-03-04 10:12:14 UTC] SUCCESS id=810 target=s3/raw_docs/ce-404-transportation-engineering-1-jun-2025_HYgt9nj-ocr.pdf
+[2026-03-04 10:12:14 UTC] Run finished success=200 failed=0 skipped=0 total=200

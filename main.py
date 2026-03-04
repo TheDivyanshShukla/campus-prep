@@ -1,18 +1,29 @@
-import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY", "4vL3yiLuPsnEgb43g5gLpO1lV04UjPQgyZdwEyMTrNsYbSFOVnBBJQQJ99CCACqBBLyXJ3w3AAAAACOGdAYF"),
-    base_url="https://testjk-gwa-agw.openai.azure.com/openai/v1/",
+  base_url="https://openrouter.ai/api/v1",
+  api_key="",
 )
 
 completion = client.chat.completions.create(
-  model="gpt-4.1-mini", # Replace with your model deployment name.
+  extra_body={},
+  model="qwen/qwen3-vl-235b-a22b-thinking",
   messages=[
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "When was Microsoft founded?"}
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "What is in this image?"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "https://live.staticflickr.com/3851/14825276609_098cac593d_b.jpg"
+          }
+        }
+      ]
+    }
   ]
 )
-
-#print(completion.choices[0].message)
-print(completion.model_dump_json(indent=2))
+print(completion.choices[0].message.content)
