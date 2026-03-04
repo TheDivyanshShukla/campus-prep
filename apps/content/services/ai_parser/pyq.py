@@ -24,10 +24,29 @@ Extract exact questions, marks, and units from the source.
 If a question does not have a unit explicitly mentioned, use the SYLLABUS REFERENCE above to determine which module/unit it belongs to based on the topics.
 
 --- SPECIAL RULES FOR PYQS ---
-1. MARKS: Ensure marks are captured accurately.
-2. OR CHOICES: Correctly identify if a question has an 'OR' choice and set `has_or_choice` accordingly.
-3. PARTS: Capture 'a', 'b', 'c' parts accurately in the `part` field.
-4. Total there are 8 questions in the paper. each question may have multiple parts (a, b, c) or just a, b. each 1 question is of 14 marks.
+1. INDIVIDUAL QUESTION GRANULARITY (CRITICAL):
+    - NEVER merge multiple sub-parts into one record.
+    - If a paper shows Q2(a) and Q2(b), output TWO separate `questions[]` entries.
+    - If a line contains both parts (for example "a) ... b) ..."), split into separate entries.
+    - `part` must be filled with "a", "b", "c", "i", "ii" etc when present.
+2. MARKS:
+    - Capture explicit marks exactly when printed.
+    - For the common RGPV 14-mark pattern where one main question is split into two parts (a/b), assign 7 marks to each part unless paper explicitly says otherwise.
+    - For three equal parts under one 14-mark question, distribute as close as possible and keep integer marks (prefer explicit printed marks when available).
+3. QUESTION TEXT QUALITY:
+    - Keep `question_text` in English only.
+    - Ignore Hindi translation lines entirely.
+    - Preserve exact technical wording, symbols, numbering, and constraints.
+    - Remove OCR garbage but do not change meaning.
+4. EXAM LAYOUT AWARENESS:
+    - Papers often appear as: Qn (14 marks) with two subparts a/b.
+    - Extract at subpart level so final output is a list of individual answerable questions.
+5. UNIT MAPPING:
+    - Prefer explicit unit tags (e.g., "Unit 1").
+    - If absent, infer from syllabus topics with best effort.
+6. COUNT SANITY:
+    - Typical paper has 8 main questions; because of subpart splitting, final extracted count can be higher.
+    - Do not force exactly 8 output items.
 """
 
     async def get_extra_context(self, parsed_document_obj, subject) -> dict:
