@@ -2,12 +2,14 @@ import copy
 import json
 import os
 import uuid
+import mimetypes
+from pathlib import PurePosixPath
 
 from django.contrib.auth.decorators import login_required
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.db.models import Count
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse, HttpResponseForbidden, HttpResponseNotFound
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.html import escape
@@ -17,6 +19,44 @@ from apps.academics.data_services import AcademicsDataService
 from apps.academics.models import Subject, Unit
 
 from .models import BaseNote, Note, NoteVersion
+
+
+def _normalize_note_image_path(file_path: str) -> str:
+    normalized = str(PurePosixPath('/' + (file_path or '').replace('\\', '/'))).lstrip('/')
+    return normalized
+
+
+def _is_authorized_note_image_path(user, storage_path: str) -> bool:
+    if not user.is_authenticated:
+        return False
+    user_prefix = f"note_images/{user.id}/"
+    return storage_path.startswith(user_prefix)
+
+
+@login_required
+def serve_note_image(request, file_path):
+    """Serve note images through an authenticated endpoint for all storage backends."""
+    storage_path = _normalize_note_image_path(file_path)
+
+    if '..' in storage_path.split('/'):
+        return HttpResponseForbidden('Invalid path.')
+
+    if not _is_authorized_note_image_path(request.user, storage_path):
+        return HttpResponseForbidden('Unauthorized image access.')
+
+    if not default_storage.exists(storage_path):
+        return HttpResponseNotFound('Image not found.')
+
+    guessed_type, _ = mimetypes.guess_type(storage_path)
+    response = FileResponse(default_storage.open(storage_path, 'rb'), content_type=guessed_type or 'application/octet-stream')
+    response['Cache-Control'] = 'private, max-age=86400'
+    return response
+
+
+@login_required
+def serve_note_image_legacy(request, file_path):
+    """Legacy compatibility route for old /media/note_images/... URLs."""
+    return serve_note_image(request, f"note_images/{file_path}")
 
 
 # ── Pages ──────────────────────────────────────────────────────────────────────
@@ -387,6 +427,6 @@ def api_upload_image(request):
     # The UUID filename is already guaranteed unique so the check is wasteful
     # and fails with 403 when the IAM role lacks s3:GetObject on this prefix.
     path = default_storage._save(filename, ContentFile(image.read()))
-    url = default_storage.url(path)
+    url = reverse('student_notes:serve_note_image', args=[path])
 
     return JsonResponse({'success': True, 'url': url})

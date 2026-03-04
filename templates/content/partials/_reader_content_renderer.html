@@ -525,6 +525,24 @@
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(shot, sx, sy, sw, sh, 0, 0, sw, sh);
 
+                const tintEnabled = document.body.classList.contains('tint-enabled');
+                const isDirectPdfMode = "{{ document.render_mode|escapejs }}" === 'DIRECT_PDF';
+                if (tintEnabled && isDirectPdfMode) {
+                    const tintedCanvas = document.createElement('canvas');
+                    tintedCanvas.width = sw;
+                    tintedCanvas.height = sh;
+                    const tintedCtx = tintedCanvas.getContext('2d');
+                    if (tintedCtx) {
+                        tintedCtx.filter = 'invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(0.88)';
+                        tintedCtx.drawImage(canvas, 0, 0);
+                    }
+                    const finalCtx = canvas.getContext('2d');
+                    if (finalCtx) {
+                        finalCtx.clearRect(0, 0, sw, sh);
+                        finalCtx.drawImage(tintedCanvas, 0, 0);
+                    }
+                }
+
                 const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 0.95));
                 if (!blob) throw new Error('Capture failed');
 
@@ -860,6 +878,15 @@
     // ---------- Decryption + Render Engine ----------
 
     document.addEventListener('DOMContentLoaded', function () {
+        const isDirectPdfMode = "{{ document.render_mode|escapejs }}" === 'DIRECT_PDF';
+        if (isDirectPdfMode) {
+            const pdfContainer = document.getElementById('pdf-container');
+            if (pdfContainer) {
+                initReaderNoteCapture(pdfContainer);
+            }
+            return;
+        }
+
         setTimeout(async function () {
             if (window.__drm_tripped) return;
 
