@@ -17,4 +17,5 @@ urlpatterns = [
     path('api/copy-base/', views.api_copy_base_note, name='api_copy_base_note'),
     path('api/append-from-reader/', views.api_append_from_reader, name='api_append_from_reader'),
     path('api/upload-image/', views.api_upload_image, name='api_upload_image'),
+    path('api/note-image/<path:file_path>/', views.serve_note_image, name='serve_note_image'),
 ]

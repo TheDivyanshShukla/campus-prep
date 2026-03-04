@@ -20,9 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 from apps.notifications import views as views_notifications
+from apps.student_notes import views as views_student_notes
 
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico')),
+    path('media/note_images/<path:file_path>/', views_student_notes.serve_note_image_legacy, name='media_note_image_legacy'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('apps.content.urls')),
