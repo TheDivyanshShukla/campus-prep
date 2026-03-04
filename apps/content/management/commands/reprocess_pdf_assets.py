@@ -10,6 +10,7 @@ from argparse import Namespace
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
+import fitz
 
 from django.conf import settings
 from django.core.files.base import ContentFile
@@ -171,6 +172,32 @@ class Command(BaseCommand):
         new_name = f"{original_path.stem}{suffix}{original_path.suffix}"
         return str(original_path.with_name(new_name)).replace("\\", "/")
 
+    def _optimize_pdf_bytes(self, pdf_bytes: bytes):
+        original_size = len(pdf_bytes)
+        try:
+            with fitz.open(stream=pdf_bytes, filetype="pdf") as src_doc:
+                optimized_bytes = src_doc.tobytes(garbage=4, deflate=True, clean=True)
+
+            optimized_size = len(optimized_bytes)
+            if optimized_size > 0 and optimized_size < original_size:
+                return optimized_bytes, {
+                    "optimized": True,
+                    "before": original_size,
+                    "after": optimized_size,
+                }
+
+            return pdf_bytes, {
+                "optimized": False,
+                "before": original_size,
+                "after": original_size,
+            }
+        except Exception:
+            return pdf_bytes, {
+                "optimized": False,
+                "before": original_size,
+                "after": original_size,
+            }
+
     def _process_one_doc(self, doc_id, source_name, target_name, temp_root, options, get_processor):
         close_old_connections()
         doc_tmp = temp_root / f"doc_{doc_id}"
@@ -195,6 +222,7 @@ class Command(BaseCommand):
                 raise RuntimeError("Converted output PDF not found or empty")
 
             converted_bytes = output_path.read_bytes()
+            converted_bytes, optimize_meta = self._optimize_pdf_bytes(converted_bytes)
 
             if doc.source_file.storage.exists(target_name):
                 doc.source_file.storage.delete(target_name)
@@ -202,7 +230,13 @@ class Command(BaseCommand):
             doc.source_file.save(target_name, ContentFile(converted_bytes), save=False)
             doc.save(update_fields=["source_file", "updated_at"])
 
-            return {"status": "success", "doc_id": doc_id, "source": source_name, "target": target_name}
+            return {
+                "status": "success",
+                "doc_id": doc_id,
+                "source": source_name,
+                "target": target_name,
+                "optimize_meta": optimize_meta,
+            }
         except Exception as exc:
             return {
                 "status": "failed",
@@ -331,6 +365,15 @@ class Command(BaseCommand):
                             if str(doc_id) in state.setdefault("failed", {}):
                                 del state["failed"][str(doc_id)]
                             self._append_log(run_log_file, f"SUCCESS id={doc_id} target={target_name}")
+                            optimize_meta = result.get("optimize_meta") or {}
+                            if optimize_meta.get("optimized"):
+                                before = int(optimize_meta.get("before", 0))
+                                after = int(optimize_meta.get("after", before))
+                                saved = max(0, before - after)
+                                self._append_log(
+                                    run_log_file,
+                                    f"OPTIMIZED id={doc_id} saved_mb={saved / (1024 * 1024):.2f} before_mb={before / (1024 * 1024):.2f} after_mb={after / (1024 * 1024):.2f}",
+                                )
                         else:
                             failed += 1
                             err = result.get("error", "unknown error")
