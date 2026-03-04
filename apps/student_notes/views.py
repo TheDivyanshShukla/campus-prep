@@ -2,7 +2,9 @@ import copy
 import json
 import uuid
 import mimetypes
+from io import BytesIO
 from pathlib import PurePosixPath
+from PIL import Image, UnidentifiedImageError
 
 from django.contrib.auth.decorators import login_required
 from django.core.files.base import ContentFile
@@ -420,11 +422,23 @@ def api_upload_image(request):
     if image.content_type not in allowed_types:
         return JsonResponse({'success': False, 'error': 'Invalid image type. Please upload WebP only.'}, status=400)
 
+    try:
+        source_bytes = image.read()
+        with Image.open(BytesIO(source_bytes)) as img:
+            normalized = img.convert('RGBA') if img.mode in ('RGBA', 'LA', 'P') else img.convert('RGB')
+            out = BytesIO()
+            normalized.save(out, format='WEBP', lossless=True, method=6, exact=True)
+            optimized_bytes = out.getvalue()
+    except (UnidentifiedImageError, OSError, ValueError):
+        return JsonResponse({'success': False, 'error': 'Invalid or corrupted WebP image.'}, status=400)
+    except Exception:
+        return JsonResponse({'success': False, 'error': 'Failed to process image.'}, status=500)
+
     filename = f"note_images/{request.user.id}/{uuid.uuid4().hex}.webp"
     # Use _save() directly to skip the exists()/HeadObject check.
     # The UUID filename is already guaranteed unique so the check is wasteful
     # and fails with 403 when the IAM role lacks s3:GetObject on this prefix.
-    path = default_storage._save(filename, ContentFile(image.read()))
+    path = default_storage._save(filename, ContentFile(optimized_bytes))
     url = reverse('student_notes:serve_note_image', args=[path])
 
     return JsonResponse({'success': True, 'url': url})
