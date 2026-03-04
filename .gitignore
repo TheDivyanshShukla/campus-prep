@@ -8,7 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
-media
+pg/*
 m.py
 staticfiles
 tmp

@@ -1,0 +1,12 @@
+[2026-03-04 09:45:19 UTC] Run started: total=10, dry_run=True, resume=True, workers=1, prefetch_only=True, cache_dir=C:\Users\shukl\Desktop\code\rgpv-live\data\pdf_cache
+[2026-03-04 09:45:19 UTC] PROCESS id=444 source=raw_docs/raw_docs/raw_docs/bt-101-engineering-chemistry-jun-2025_wzxopxR-ocr-ocr.pdf target=bt-101-engineering-chemistry-jun-2025_wzxopxR-ocr-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=445 source=raw_docs/raw_docs/bt-102-mathematics-1-jun-2025_5fxdqo7-ocr.pdf target=bt-102-mathematics-1-jun-2025_5fxdqo7-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=446 source=raw_docs/raw_docs/bt-103-english-for-communication-jun-2025_v6b5QBd-ocr.pdf target=bt-103-english-for-communication-jun-2025_v6b5QBd-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=447 source=raw_docs/raw_docs/bt-104-basic-electrical-and-electronics-engineering-jun-2025_6AJjvaw-ocr.pdf target=bt-104-basic-electrical-and-electronics-engineering-jun-2025_6AJjvaw-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=448 source=raw_docs/raw_docs/bt-105-engineering-graphics-jun-2025_PBqIQc6-ocr.pdf target=bt-105-engineering-graphics-jun-2025_PBqIQc6-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=449 source=raw_docs/raw_docs/bt-201-engineering-physics-jun-2025_gZJkuEW-ocr.pdf target=bt-201-engineering-physics-jun-2025_gZJkuEW-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=450 source=raw_docs/raw_docs/bt-202-mathematics-2-jun-2025_kkV4kgF-ocr.pdf target=bt-202-mathematics-2-jun-2025_kkV4kgF-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=451 source=raw_docs/raw_docs/bt-203-basic-mechanical-engineering-jun-2025_9nzxGTG-ocr.pdf target=bt-203-basic-mechanical-engineering-jun-2025_9nzxGTG-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=452 source=raw_docs/raw_docs/bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2025_COaHMJi-ocr.pdf target=bt-204-basic-civil-engineering-and-engineering-mechanics-jun-2025_COaHMJi-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] PROCESS id=453 source=raw_docs/raw_docs/bt-205-basic-computer-engineering-jun-2025_MKzoPM0-ocr.pdf target=bt-205-basic-computer-engineering-jun-2025_MKzoPM0-ocr-ocr.pdf
+[2026-03-04 09:45:19 UTC] Run finished: success=0, failed=0, skipped=0, total=10

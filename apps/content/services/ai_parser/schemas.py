@@ -33,8 +33,7 @@ class UnsolvedPYQQuestion(BaseModel):
     unit: Optional[int] = Field(None, description="Derived or explicit unit number.")
     marks: int = Field(..., description="Marks for the question.")
     question_text: str = Field(..., description="Pristine question text with LaTeX.")
-    image_strategy: Optional[Literal['SEARCH', 'GEN_PROMPT', 'CANVAS']] = Field(None, description="Strategy for image recreation. NULL if no image.")
-    image_details: Optional[str] = Field(None, description="Prompt or search query for the image.")
+    image_details: Optional[str] = Field(None, description="if the image is given in the question paper itself. Otherwise, NULL.")
     part: Optional[str] = Field(None, description="Question part identifier.")
     has_or_choice: bool = Field(False, description="Whether this question is an OR choice.")
 

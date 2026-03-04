@@ -52,6 +52,7 @@ class BaseDocumentParser:
             openai_api_key="dummy-key",
             default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
             http_async_client=_ai_parser_client,
+            max_retries=5000,
         )
 
     def get_schema(self, doc_type: str):
