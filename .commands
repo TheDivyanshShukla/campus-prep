@@ -24,3 +24,6 @@ uv run manage.py sync_pyq_papers --download
 
 
 uv run manage.py db_snapshot recover snapshot_20260302_034153_full.json --no-input
+
+uv run celery -A config worker -l info -P solo
+uv run manage.py dispatch_ai_parse --rate 100

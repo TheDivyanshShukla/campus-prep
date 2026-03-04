@@ -547,7 +547,7 @@
 {% include "content/partials/_reader_security.html" %}
 {% include "content/partials/_reader_toolbar.html" %}
 {% include "content/partials/_reader_search.html" %}
-{% if document.render_mode == 'DIRECT_PDF' %}
+{% if document.render_mode == 'DIRECT_PDF' and document.source_file %}
 {% include "content/partials/_reader_pdf_viewer.html" %}
 {% else %}
 {% include "content/partials/_reader_content_renderer.html" %}
