@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.db import models
+from django.conf import settings
 import re
 import base64
 import orjson
@@ -246,7 +247,10 @@ def serve_secure_pdf(request, document_id):
     try:
         # Optimization: Redirect to the signed S3/B2 URL directly to offload transfer.
         # Use a very short expiration (30 seconds) to ensure security.
-        if os.getenv('B2_DIRECT_DELIVERY', 'False') == 'True':
+        default_storage_backend = settings.STORAGES.get("default", {}).get("BACKEND", "")
+        is_s3_storage = default_storage_backend == "storages.backends.s3.S3Storage"
+
+        if os.getenv('B2_DIRECT_DELIVERY', 'False') == 'True' and is_s3_storage:
             storage = document.source_file.storage
             # Generate a URL that expires in 5 seconds
             signed_url = storage.url(document.source_file.name, expire=5)

@@ -244,7 +244,9 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Storage Settings (Backblaze B2 S3)
-if not DEBUG or os.getenv('USE_S3', 'False') == 'True':
+USE_S3 = _env_bool('USE_S3', False)
+
+if USE_S3:
     AWS_ACCESS_KEY_ID = os.getenv('B2_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('B2_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('B2_BUCKET_NAME')
