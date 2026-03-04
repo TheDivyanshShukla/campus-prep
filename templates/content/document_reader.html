@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Reader - {{ document.title }} | CampusPrep{% endblock %}
 
@@ -540,12 +541,26 @@
         csrfToken: "{{ csrf_token }}"
     };
 </script>
-{% include "content/partials/_reader_security.html" %}
-{% include "content/partials/_reader_toolbar.html" %}
-{% include "content/partials/_reader_search.html" %}
-{% include "content/partials/_reader_content_renderer.html" %}
+<script type="application/json" id="reader-data">
+{
+    "document_id": {{ document.id }},
+    "document_title": "{{ document.title|escapejs }}",
+    "render_mode": "{{ document.render_mode|escapejs }}",
+    "document_type": "{{ document.document_type|escapejs }}",
+    "encrypted_data": "{{ encrypted_data|escapejs }}",
+    "tamper_nonce": "{{ tamper_nonce|escapejs }}",
+    "csrf_token": "{{ csrf_token }}",
+    "api_document_key_url": "{% url 'api_document_key' document.id %}",
+    "api_secure_pdf_url": "{% url 'api_secure_pdf' document.id %}",
+    "pdf_token": "{{ pdf_token|default:'' }}",
+    "subject_id": {{ current_subject.id|default:'null' }}
+}
+</script>
+<script src="{% static 'js/reader-toolbar.js' %}"></script>
+<script src="{% static 'js/reader-search.js' %}"></script>
+<script src="{% static 'js/reader-content-renderer.js' %}"></script>
 {% if document.render_mode == 'DIRECT_PDF' and document.source_file %}
-{% include "content/partials/_reader_pdf_viewer.html" %}
+<script src="{% static 'js/reader-pdf-viewer.js' %}"></script>
 {% endif %}
-{% include "content/partials/_reader_telemetry.html" %}
+<script src="{% static 'js/reader-telemetry.js' %}"></script>
 {% endblock %}

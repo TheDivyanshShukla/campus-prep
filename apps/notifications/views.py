@@ -1,9 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, FileResponse
 import os
 from django.conf import settings
-from .models import Notification
 from .data_services import NotificationDataService
 
 @login_required
@@ -13,10 +12,7 @@ def notification_list(request):
 
 @login_required
 def mark_as_read(request, pk):
-    notification = get_object_or_404(Notification, pk=pk, user=request.user)
-    notification.is_read = True
-    notification.save()
-    NotificationDataService.clear_user_notification_cache(request.user)
+    NotificationDataService.mark_notification_read(request.user, pk)
     response = HttpResponse("")
     # Signal the navbar to update the unread count badge
     response['HX-Trigger'] = 'notifications-updated'
@@ -24,8 +20,7 @@ def mark_as_read(request, pk):
 
 @login_required
 def mark_all_read(request):
-    Notification.objects.filter(user=request.user, is_read=False).update(is_read=True)
-    NotificationDataService.clear_user_notification_cache(request.user)
+    NotificationDataService.mark_all_read(request.user)
     response = HttpResponse("")
     response['HX-Refresh'] = 'true'
     response['HX-Trigger'] = 'notifications-updated'

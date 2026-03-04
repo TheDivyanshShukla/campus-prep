@@ -112,7 +112,7 @@ class Command(BaseCommand):
     # ------------------------------------------------------------------ #
 
     def handle(self, *args, **options):
-        db_path = os.path.join(settings.BASE_DIR, '.me', 'datamine', 'rgpv_papers.db')
+        db_path = os.path.join(settings.BASE_DIR, 'data', 'rgpv_papers.db')
         if not os.path.exists(db_path):
             self.stdout.write(self.style.ERROR(f"Database not found at {db_path}"))
             return

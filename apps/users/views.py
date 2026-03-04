@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.http import require_http_methods
 from apps.content.data_services import ContentDataService
+from apps.products.data_services import ProductDataService
 from apps.common.turnstile import turnstile_service
 
 
@@ -87,28 +88,11 @@ def user_dashboard(request):
 @login_required
 def user_purchases(request):
     """Displays the user’s unlocked premium content and purchase history."""
-    all_unlocks = (
-        request.user.unlocked_contents
-        .select_related('parsed_document')
-        .prefetch_related('parsed_document__subjects')
-        .all()
-        .order_by('-id')
-    )
-
-    active_unlocks = []
-    expired_unlocks = []
-    today = timezone.now().date()
-
-    for unlock in all_unlocks:
-        if unlock.parsed_document:
-            if unlock.valid_until is None or unlock.valid_until >= today:
-                active_unlocks.append(unlock)
-            else:
-                expired_unlocks.append(unlock)
+    active_unlocks, expired_unlocks = ProductDataService.get_all_unlocks(request.user)
 
     return render(request, 'users/purchases.html', {
         'active_unlocks': active_unlocks,
-        'expired_unlocks': expired_unlocks
+        'expired_unlocks': expired_unlocks,
     })
 
 

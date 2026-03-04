@@ -6,14 +6,27 @@ from dotenv import load_dotenv
 from io import BytesIO
 
 # Load environment variables from .env
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 env_path = BASE_DIR / '.env'
 load_dotenv(dotenv_path=env_path)
 
 def get_db_urls():
-    """Extracts local and remote database URLs."""
-    remote_url = "postgresql://postgres:5kerip7bo4pjiq1g@81.17.97.186:3423/postgres"
-    local_url = "postgresql://postgres:postgres@localhost:5432/mydb"
+    """Reads local and remote database URLs from environment variables.
+
+    Required .env vars:
+        DATABASE_URL          – local PostgreSQL connection string
+        REMOTE_DATABASE_URL   – remote PostgreSQL connection string
+    """
+    local_url = os.getenv('DATABASE_URL')
+    remote_url = os.getenv('REMOTE_DATABASE_URL')
+
+    if not local_url:
+        print("❌ DATABASE_URL not set in .env")
+        sys.exit(1)
+    if not remote_url:
+        print("❌ REMOTE_DATABASE_URL not set in .env")
+        sys.exit(1)
+
     return local_url, remote_url
 
 def get_tables(cursor):

@@ -297,110 +297,15 @@
 
 {% block scripts %}
 <script src="{% static 'js/note-editor.js' %}"></script>
-<script>
-    const editor = new NoteEditor({
-        noteId: {{ note.id }},
-        csrfToken: '{{ csrf_token }}',
-        saveUrl: '{% url "student_notes:api_save" %}',
-        uploadUrl: '{% url "student_notes:api_upload_image" %}',
-        versionsUrl: '{% url "student_notes:api_versions" note.id %}',
-        restoreBaseUrl: '/notes/api/restore/',
-        versionDetailBaseUrl: '/notes/api/version/',
-        initialBlocks: {{ blocks_json|safe }},
-    });
-
-    function collapseEditorToolbar() {
-        const toolbar = document.getElementById('editor-toolbar');
-        const toggleBtn = document.getElementById('editorToolbarToggleBtn');
-        if (!toolbar || !toggleBtn) return;
-
-        toolbar.dataset.collapsed = 'true';
-        stabilizeMobileToolbar();
-
-        toolbar.style.overflow = 'hidden';
-        toolbar.style.height = '0px';
-        toolbar.style.paddingTop = '0px';
-        toolbar.style.paddingBottom = '0px';
-        toolbar.style.marginBottom = '0px';
-        toolbar.style.borderBottomWidth = '0px';
-        toolbar.style.opacity = '0';
-        toolbar.style.pointerEvents = 'none';
-
-        toggleBtn.style.transform = 'translateY(0)';
-        toggleBtn.style.opacity = '1';
-        toggleBtn.style.pointerEvents = 'auto';
-    }
-
-    function expandEditorToolbar() {
-        const toolbar = document.getElementById('editor-toolbar');
-        const toggleBtn = document.getElementById('editorToolbarToggleBtn');
-        if (!toolbar || !toggleBtn) return;
-
-        toolbar.dataset.collapsed = 'false';
-
-        toolbar.style.height = 'auto';
-        toolbar.style.paddingTop = '';
-        toolbar.style.paddingBottom = '';
-        toolbar.style.marginBottom = '';
-        toolbar.style.borderBottomWidth = '';
-        toolbar.style.opacity = '1';
-        toolbar.style.overflow = '';
-        toolbar.style.pointerEvents = '';
-
-        toggleBtn.style.transform = '';
-        toggleBtn.style.opacity = '0';
-        toggleBtn.style.pointerEvents = 'none';
-
-        stabilizeMobileToolbar();
-    }
-
-    function stabilizeMobileToolbar() {
-        const toolbar = document.getElementById('editor-toolbar');
-        const app = document.getElementById('editor-app');
-        if (!toolbar || !app) return;
-
-        const isMobile = window.matchMedia('(max-width: 639px)').matches;
-        const isCollapsed = toolbar.dataset.collapsed === 'true';
-
-        if (!isMobile) {
-            toolbar.classList.remove('toolbar-mobile-fixed');
-            app.classList.remove('has-mobile-toolbar-offset');
-            app.style.paddingTop = '';
-            toolbar.style.transform = '';
-            return;
-        }
-
-        toolbar.classList.add('toolbar-mobile-fixed');
-
-        if (isCollapsed) {
-            app.classList.remove('has-mobile-toolbar-offset');
-            app.style.paddingTop = '0px';
-            return;
-        }
-
-        app.classList.add('has-mobile-toolbar-offset');
-
-        const toolbarHeight = Math.round(toolbar.getBoundingClientRect().height || 56);
-        app.style.paddingTop = `${toolbarHeight}px`;
-
-        const viewportOffsetTop = window.visualViewport ? Math.round(window.visualViewport.offsetTop) : 0;
-        toolbar.style.transform = `translate3d(0, ${viewportOffsetTop}px, 0)`;
-    }
-
-    window.addEventListener('resize', stabilizeMobileToolbar, { passive: true });
-    window.addEventListener('orientationchange', stabilizeMobileToolbar, { passive: true });
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', stabilizeMobileToolbar, { passive: true });
-        window.visualViewport.addEventListener('scroll', stabilizeMobileToolbar, { passive: true });
-    }
-    requestAnimationFrame(stabilizeMobileToolbar);
-
-    /* Quick-revision dropdown toggle */
-    function toggleQRMenu() {
-        document.getElementById('qr-menu').classList.toggle('hidden');
-    }
-    document.addEventListener('click', e => {
-        if (!e.target.closest('#qr-dropdown')) document.getElementById('qr-menu').classList.add('hidden');
-    });
-</script>
+<script type="application/json" id="editor-config">{
+    "noteId": {{ note.id }},
+    "csrfToken": "{{ csrf_token }}",
+    "saveUrl": "{% url 'student_notes:api_save' %}",
+    "uploadUrl": "{% url 'student_notes:api_upload_image' %}",
+    "versionsUrl": "{% url 'student_notes:api_versions' note.id %}",
+    "restoreBaseUrl": "/notes/api/restore/",
+    "versionDetailBaseUrl": "/notes/api/version/",
+    "initialBlocks": {{ blocks_json|safe }}
+}</script>
+<script src="{% static 'js/note-editor-init.js' %}"></script>
 {% endblock %}

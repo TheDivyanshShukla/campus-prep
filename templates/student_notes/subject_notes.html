@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}{{ subject.code }} Notes — CampusPrep{% endblock %}
 
@@ -53,19 +54,6 @@
     {% endif %}
 </div>
 
-<script>
-async function copyBaseNote(baseNoteId) {
-    if (!confirm('This will copy the template into your notes. Continue?')) return;
-    try {
-        const resp = await fetch('{% url "student_notes:api_copy_base_note" %}', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': '{{ csrf_token }}' },
-            body: JSON.stringify({ base_note_id: baseNoteId }),
-        });
-        const data = await resp.json();
-        if (data.success) location.reload();
-        else alert(data.error || 'Failed to copy template');
-    } catch { alert('Network error'); }
-}
-</script>
+<script type="application/json" id="notes-config">{"copyBaseNoteUrl": "{% url 'student_notes:api_copy_base_note' %}", "csrfToken": "{{ csrf_token }}"}</script>
+<script src="{% static 'js/copy-base-note.js' %}"></script>
 {% endblock %}

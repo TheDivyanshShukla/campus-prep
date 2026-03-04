@@ -6,10 +6,10 @@ from django.utils import timezone
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
-from apps.academics.models import Subject, Unit
-from .models import Question, QuestionSet, UserAttempt, UserAnswer
+from .models import Question, UserAnswer
 from .data_services import PracticeDataService
 from apps.academics.data_services import AcademicsDataService
+from apps.content.data_services import ContentDataService
 
 
 # ── Index — subject / unit / type picker ──────────────────────────────────────
@@ -22,10 +22,8 @@ def index(request):
     
     subjects = AcademicsDataService.get_subjects_by_branch_and_semester(branch, semester)
     if not subjects:
-        # Fallback if no preferences
-        subjects = Subject.objects.select_related('branch', 'semester').filter(is_active=True)
+        subjects = AcademicsDataService.get_all_active_subjects()
 
-    # Pre-fetch unit counts and set counts per subject for display
     subject_data = []
     for subj in subjects:
         stats = PracticeDataService.get_subject_practice_stats(subj)
@@ -33,7 +31,7 @@ def index(request):
             'subject': subj,
             'set_count': stats['set_count'],
             'question_count': stats['q_count'],
-            'units': list(subj.units.all()),
+            'units': AcademicsDataService.get_units_for_subject(subj),
         })
 
     return render(request, 'practice/index.html', {
@@ -51,10 +49,7 @@ def question_set_list(request, subject_id):
     unit_id  = request.GET.get('unit')
     unit     = None
     if unit_id:
-        try:
-            unit = Unit.objects.get(id=unit_id, subject=subject)
-        except Unit.DoesNotExist:
-            pass
+        unit = AcademicsDataService.get_unit_by_id(unit_id, subject)
 
     sets_qs = PracticeDataService.get_published_sets_for_subject(subject, unit)
 
@@ -62,7 +57,7 @@ def question_set_list(request, subject_id):
         'subject': subject,
         'unit': unit,
         'sets': sets_qs,
-        'units': subject.units.all(),
+        'units': AcademicsDataService.get_units_for_subject(subject),
     })
 
 
@@ -72,7 +67,7 @@ def quiz(request, set_id):
     question_set = PracticeDataService.get_question_set_by_id(set_id)
     if not question_set:
         return redirect('practice_index')
-    questions    = list(question_set.questions.filter(is_published=True))
+    questions    = PracticeDataService.get_published_questions_for_set(question_set)
 
     # Serialize question data to JSON for JavaScript rendering
     questions_json = json.dumps([{
@@ -100,16 +95,17 @@ def quiz(request, set_id):
 @login_required
 @require_POST
 def submit_quiz(request, set_id):
-    question_set = get_object_or_404(QuestionSet, id=set_id, is_published=True)
-    questions    = list(question_set.questions.filter(is_published=True))
+    question_set = PracticeDataService.get_question_set_by_id(set_id)
+    if not question_set:
+        return redirect('practice_index')
+    questions    = PracticeDataService.get_published_questions_for_set(question_set)
 
-    attempt = UserAttempt.objects.create(
-        user=request.user,
-        question_set=question_set,
-        max_score=len(questions),
+    attempt = PracticeDataService.create_attempt(
+        request.user, question_set, len(questions),
     )
 
     score = 0
+    answers_to_create = []
     for q in questions:
         given = request.POST.get(f'q_{q.id}', '').strip()
         correct = False
@@ -123,12 +119,14 @@ def submit_quiz(request, set_id):
         if correct:
             score += 1
 
-        UserAnswer.objects.create(
+        answers_to_create.append(UserAnswer(
             attempt=attempt,
             question=q,
             given_answer=given,
             is_correct=correct,
-        )
+        ))
+
+    PracticeDataService.bulk_create_answers(answers_to_create)
 
     attempt.score      = score
     attempt.finished_at = timezone.now()
@@ -140,8 +138,10 @@ def submit_quiz(request, set_id):
 # ── Result page ───────────────────────────────────────────────────────────────
 @login_required
 def result(request, attempt_id):
-    attempt  = get_object_or_404(UserAttempt, id=attempt_id, user=request.user)
-    answers  = attempt.answers.select_related('question').order_by('question__id')
+    attempt  = PracticeDataService.get_user_attempt(request.user, attempt_id)
+    if not attempt:
+        return redirect('practice_index')
+    answers  = PracticeDataService.get_answers_for_attempt(attempt)
 
     auto_graded_types = (Question.TYPE_MCQ, Question.TYPE_TF, Question.TYPE_FILL)
     auto_graded = [a for a in answers if a.question.question_type in auto_graded_types]
@@ -167,25 +167,19 @@ def ai_generate(request):
         difficulty = data.get('difficulty', 'MEDIUM')
         count      = min(int(data.get('count', 10)), 20)  # cap at 20
 
-        subject = get_object_or_404(Subject, id=subject_id, is_active=True)
+        subject = AcademicsDataService.get_subject_by_id(subject_id)
+        if not subject:
+            return JsonResponse({'success': False, 'error': 'Subject not found'}, status=404)
         unit    = None
         if unit_id:
-            try:
-                unit = Unit.objects.get(id=unit_id, subject=subject)
-            except Unit.DoesNotExist:
-                pass
+            unit = AcademicsDataService.get_unit_by_id(unit_id, subject)
 
         from .services import PracticeAIService
         service = PracticeAIService()
         
         # Prepare syllabus context for richer generation
         unit_topics = getattr(unit, 'topics', []) if unit else []
-        from apps.content.models import ParsedDocument
-        syllabus_doc = ParsedDocument.objects.filter(
-            subjects=subject, 
-            document_type='SYLLABUS', 
-            parsing_status='COMPLETED'
-        ).first()
+        syllabus_doc = ContentDataService.get_syllabus_for_subject(subject)
         
         syllabus_context = None
         if syllabus_doc and syllabus_doc.structured_data:
@@ -202,9 +196,9 @@ def ai_generate(request):
         )
 
         # Save to DB
-        saved_questions = []
+        questions_data = []
         for g in generated:
-            q = Question(
+            q_data = dict(
                 subject=subject,
                 unit=unit,
                 question_type=g.question_type,
@@ -216,25 +210,24 @@ def ai_generate(request):
                 is_published=True,
             )
             if g.question_type == Question.TYPE_MCQ and g.mcq_options:
-                q.option_a = g.mcq_options.a
-                q.option_b = g.mcq_options.b
-                q.option_c = g.mcq_options.c
-                q.option_d = g.mcq_options.d
-                # Normalise correct_answer from MCQOptions.correct
-                q.correct_answer = g.mcq_options.correct.upper()
-            q.save()
-            saved_questions.append(q)
+                q_data['option_a'] = g.mcq_options.a
+                q_data['option_b'] = g.mcq_options.b
+                q_data['option_c'] = g.mcq_options.c
+                q_data['option_d'] = g.mcq_options.d
+                q_data['correct_answer'] = g.mcq_options.correct.upper()
+            questions_data.append(q_data)
+
+        saved_questions = PracticeDataService.bulk_create_questions(questions_data)
 
         # Create QuestionSet
         unit_label = unit.name if unit else "All Units"
-        qset = QuestionSet.objects.create(
+        qset = PracticeDataService.create_question_set(
             title=f"AI: {subject.name} — {unit_label} ({difficulty})",
             subject=subject,
             unit=unit,
-            is_ai_generated=True,
-            is_published=True,
+            questions=saved_questions,
+            is_ai=True,
         )
-        qset.questions.set(saved_questions)
 
         return JsonResponse({'success': True, 'set_id': qset.id})
 

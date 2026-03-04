@@ -3,6 +3,7 @@ import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAdminUser
 from .services.ai_parser import DocumentParserService
 from .models import ParsedDocument
 from apps.academics.models import Subject
@@ -11,6 +12,7 @@ from django.shortcuts import get_object_or_404
 from .tasks import process_document_ai
 
 class ParseDocumentAPI(APIView):
+    permission_classes = [IsAdminUser]
     """
     Accepts a PDF or Image, creates a pending ParsedDocument,
     and triggers the background AI parsing task.
@@ -55,6 +57,7 @@ class ParseDocumentAPI(APIView):
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class PublishParsedDocumentAPI(APIView):
+    permission_classes = [IsAdminUser]
     """
     Accepts final structured JSON and updates/publishes the document.
     """

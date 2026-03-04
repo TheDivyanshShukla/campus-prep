@@ -4,7 +4,6 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.utils import timezone
-from django.db import models
 from django.conf import settings
 import re
 import base64
@@ -16,7 +15,7 @@ import hashlib
 import uuid
 from apps.content.data_services import ContentDataService
 from apps.users.data_services import UserDataService
-from apps.academics.models import Subject, Branch, Semester
+from apps.academics.data_services import AcademicsDataService
 from apps.content.models import ParsedDocument
 
 GUEST_ALLOWED_DOCUMENT_TYPES = {'UNSOLVED_PYQ', 'SYLLABUS'}
@@ -41,26 +40,13 @@ def home(request):
 
     branches = ContentDataService.get_all_branches()
     semesters = ContentDataService.get_all_semesters()
-    
-    user_branch_id = None
-    user_semester_id = None
-    is_onboarded = False
-    
-    if request.user.is_authenticated:
-        if request.user.preferred_branch:
-            user_branch_id = request.user.preferred_branch.id
-        if request.user.preferred_semester:
-            user_semester_id = request.user.preferred_semester.id
-        
-        if user_branch_id and user_semester_id:
-            is_onboarded = True
 
     return render(request, 'content/home.html', {
         'branches': branches,
         'semesters': semesters,
-        'user_branch_id': user_branch_id,
-        'user_semester_id': user_semester_id,
-        'is_onboarded': is_onboarded
+        'user_branch_id': None,
+        'user_semester_id': None,
+        'is_onboarded': False,
     })
 
 def explore_subjects(request):
@@ -75,9 +61,9 @@ def explore_subjects(request):
     semester = None
 
     if branch_id:
-        branch = Branch.objects.filter(pk=branch_id, is_active=True).first()
+        branch = AcademicsDataService.get_branch_by_id(branch_id)
     if semester_id:
-        semester = Semester.objects.filter(pk=semester_id, is_active=True).first()
+        semester = AcademicsDataService.get_semester_by_id(semester_id)
 
     if not branch and branches:
         branch = branches[0]
@@ -96,9 +82,7 @@ def explore_subjects(request):
 
 @staff_member_required
 def admin_ai_parser(request):
-    # This might not need caching as much, but we could add it if needed.
-    # For now, keeping it simple or using a service method.
-    subjects = Subject.objects.select_related('branch', 'semester').all()
+    subjects = AcademicsDataService.get_all_active_subjects()
     return render(request, 'content/admin_ai_parser.html', {'subjects': subjects})
 
 def subject_dashboard(request, subject_id):
@@ -312,8 +296,10 @@ def get_parsing_status(request, document_id):
     API endpoint to poll for document parsing status and progress.
     Only accessible by staff (admins). Returns results when completed.
     """
+    doc = ContentDataService.get_document_by_id_admin(document_id)
     try:
-        doc = ParsedDocument.objects.get(pk=document_id)
+        if not doc:
+            return JsonResponse({'status': 'ERROR', 'message': 'Document not found'}, status=404)
         response_data = {
             'status': doc.parsing_status,
             'completed_steps': doc.parsing_completed_chunks,
@@ -327,5 +313,5 @@ def get_parsing_status(request, document_id):
             response_data['structured_data'] = doc.structured_data
             
         return JsonResponse(response_data)
-    except ParsedDocument.DoesNotExist:
-        return JsonResponse({'status': 'ERROR', 'message': 'Document not found'}, status=404)
+    except Exception:
+        return JsonResponse({'status': 'ERROR', 'message': 'Failed to retrieve document status'}, status=500)

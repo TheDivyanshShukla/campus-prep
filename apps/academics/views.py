@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+# Academics has no views — all data is accessed via AcademicsDataService.
