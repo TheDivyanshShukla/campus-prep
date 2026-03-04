@@ -9,17 +9,15 @@ from PIL import Image, UnidentifiedImageError
 from django.contrib.auth.decorators import login_required
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-from django.db.models import Count
 from django.http import JsonResponse, FileResponse, HttpResponseForbidden, HttpResponseNotFound
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.html import escape
 from django.views.decorators.http import require_GET, require_POST
 
 from apps.academics.data_services import AcademicsDataService
-from apps.academics.models import Subject, Unit
 
-from .models import BaseNote, Note, NoteVersion
+from .data_services import NotesDataService
 
 
 def _normalize_note_image_path(file_path: str) -> str:
@@ -72,20 +70,14 @@ def index(request):
 
     subjects = AcademicsDataService.get_subjects_by_branch_and_semester(branch, semester)
 
-    # Per-subject note counts for this user
-    note_counts = dict(
-        Note.objects.filter(user=user)
-        .values_list('subject_id')
-        .annotate(c=Count('id'))
-        .values_list('subject_id', 'c')
-    )
+    note_counts = NotesDataService.get_user_note_counts_by_subject(user)
 
     subject_data = []
     for subj in subjects:
-        total_units = subj.units.count()
+        units = AcademicsDataService.get_units_for_subject(subj)
         subject_data.append({
             'subject': subj,
-            'total_units': total_units,
+            'total_units': len(units),
             'notes_count': note_counts.get(subj.id, 0),
         })
 
@@ -101,15 +93,15 @@ def subject_notes(request, subject_id):
     if not subject:
         return redirect('dashboard')
 
-    units = list(subject.units.all())
+    units = AcademicsDataService.get_units_for_subject(subject)
 
     user_notes = {
         n.unit_id: n
-        for n in Note.objects.filter(user=request.user, subject=subject)
+        for n in NotesDataService.get_user_notes_for_subject(request.user, subject)
     }
     base_notes = {
         bn.unit_id: bn
-        for bn in BaseNote.objects.filter(subject=subject, is_published=True)
+        for bn in NotesDataService.get_base_notes_for_subject(subject)
     }
 
     unit_data = []
@@ -139,18 +131,18 @@ def subject_notes(request, subject_id):
 @login_required
 def editor(request, subject_id, unit_id):
     """The Notion-like block editor for a specific unit note."""
-    subject = get_object_or_404(Subject, pk=subject_id, is_active=True)
-    unit = get_object_or_404(Unit, pk=unit_id, subject=subject)
+    subject = AcademicsDataService.get_subject_by_id(subject_id)
+    if not subject:
+        return redirect('dashboard')
+    unit = AcademicsDataService.get_unit_by_id(unit_id, subject)
+    if not unit:
+        return redirect('dashboard')
 
-    note, _created = Note.objects.get_or_create(
-        user=request.user,
-        subject=subject,
-        unit=unit,
+    note, _created = NotesDataService.get_or_create_note(
+        request.user, subject, unit,
     )
 
-    base_note = BaseNote.objects.filter(
-        subject=subject, unit=unit, is_published=True
-    ).first()
+    base_note = NotesDataService.get_base_note_for_unit(subject, unit)
 
     embed_mode = request.GET.get('embed') == '1'
 
@@ -180,21 +172,14 @@ def api_save(request):
         if not note_id or blocks is None:
             return JsonResponse({'success': False, 'error': 'Missing fields'}, status=400)
 
-        note = Note.objects.filter(pk=note_id, user=request.user).first()
+        note = NotesDataService.get_note_by_id(request.user, note_id)
         if not note:
             return JsonResponse({'success': False, 'error': 'Not found'}, status=404)
 
         # Optionally snapshot before saving
         if create_version:
-            NoteVersion.objects.create(note=note, blocks=note.blocks)
-            # Keep only last 50 versions
-            old_ids = list(
-                NoteVersion.objects.filter(note=note)
-                .order_by('-created_at')
-                .values_list('id', flat=True)[50:]
-            )
-            if old_ids:
-                NoteVersion.objects.filter(id__in=old_ids).delete()
+            NotesDataService.create_version_snapshot(note)
+            NotesDataService.prune_versions(note, keep=50)
 
         note.blocks = blocks
         note.save(update_fields=['blocks', 'updated_at'])
@@ -213,11 +198,11 @@ def api_save(request):
 @require_GET
 def api_versions(request, note_id):
     """Returns version history for a note."""
-    note = Note.objects.filter(pk=note_id, user=request.user).first()
+    note = NotesDataService.get_note_by_id(request.user, note_id)
     if not note:
         return JsonResponse({'success': False, 'error': 'Not found'}, status=404)
 
-    versions = NoteVersion.objects.filter(note=note)[:20]
+    versions = NotesDataService.get_version_history(note, limit=20)
     return JsonResponse({
         'success': True,
         'versions': [
@@ -231,11 +216,8 @@ def api_versions(request, note_id):
 @require_GET
 def api_version_detail(request, version_id):
     """Returns full blocks for a specific version."""
-    try:
-        version = NoteVersion.objects.select_related('note').get(
-            pk=version_id, note__user=request.user
-        )
-    except NoteVersion.DoesNotExist:
+    version = NotesDataService.get_version_by_id(request.user, version_id)
+    if not version:
         return JsonResponse({'success': False, 'error': 'Not found'}, status=404)
 
     return JsonResponse({
@@ -249,17 +231,14 @@ def api_version_detail(request, version_id):
 @require_POST
 def api_restore_version(request, version_id):
     """Restores a note to a previous version."""
-    try:
-        version = NoteVersion.objects.select_related('note').get(
-            pk=version_id, note__user=request.user
-        )
-    except NoteVersion.DoesNotExist:
+    version = NotesDataService.get_version_by_id(request.user, version_id)
+    if not version:
         return JsonResponse({'success': False, 'error': 'Not found'}, status=404)
 
     note = version.note
 
     # Save current state before restoring
-    NoteVersion.objects.create(note=note, blocks=note.blocks)
+    NotesDataService.create_version_snapshot(note)
 
     note.blocks = version.blocks
     note.save(update_fields=['blocks', 'updated_at'])
@@ -299,15 +278,13 @@ def api_append_from_reader(request):
     if not selected_text and not image_urls:
         return JsonResponse({'success': False, 'error': 'Nothing to append'}, status=400)
 
-    subject = Subject.objects.filter(pk=subject_id, is_active=True).first()
-    unit = Unit.objects.filter(pk=unit_id, subject_id=subject_id).first()
+    subject = AcademicsDataService.get_subject_by_id(subject_id)
+    unit = AcademicsDataService.get_unit_by_id(unit_id, subject) if subject else None
     if not subject or not unit:
         return JsonResponse({'success': False, 'error': 'Invalid subject or unit'}, status=404)
 
-    note, _created = Note.objects.get_or_create(
-        user=request.user,
-        subject=subject,
-        unit=unit,
+    note, _created = NotesDataService.get_or_create_note(
+        request.user, subject, unit,
     )
 
     # Version-protect current note if it has content
@@ -318,7 +295,7 @@ def api_append_from_reader(request):
 
     has_content = any((b.get('content') or '').strip() for b in block_list)
     if has_content:
-        NoteVersion.objects.create(note=note, blocks=note.blocks)
+        NotesDataService.create_version_snapshot(note)
 
     new_blocks = []
 
@@ -366,14 +343,12 @@ def api_copy_base_note(request):
         data = json.loads(request.body)
         base_note_id = data.get('base_note_id')
 
-        base = BaseNote.objects.filter(pk=base_note_id, is_published=True).first()
+        base = NotesDataService.get_base_note_by_id(base_note_id)
         if not base:
             return JsonResponse({'success': False, 'error': 'Base note not found'}, status=404)
 
-        note, created = Note.objects.get_or_create(
-            user=request.user,
-            subject=base.subject,
-            unit=base.unit,
+        note, created = NotesDataService.get_or_create_note(
+            request.user, base.subject, base.unit,
         )
 
         # Version-protect existing content
@@ -383,7 +358,7 @@ def api_copy_base_note(request):
                 for b in note.blocks['blocks']
             )
             if has_content:
-                NoteVersion.objects.create(note=note, blocks=note.blocks)
+                NotesDataService.create_version_snapshot(note)
 
         # Deep-copy with fresh IDs
         new_blocks = copy.deepcopy(base.blocks)

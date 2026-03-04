@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load practice_tags %}
 {% block title %}{{ question_set.title }} | Practice{% endblock %}
 
@@ -150,53 +151,6 @@
   </div>
 </form>
 
-<script>
-  // ── Markdown + MathJax rendering ─────────────────────────────────────────────
-  window._md = window.markdownit({ html: false, linkify: true, typographer: true });
-
-  document.querySelectorAll('.md-content').forEach(el => {
-    el.innerHTML = _md.render(el.dataset.raw || '');
-  });
-
-  // Re-run MathJax after markdown is rendered
-  if (window.MathJax && MathJax.typesetPromise) {
-    MathJax.typesetPromise();
-  }
-
-  // ── Progress tracking ─────────────────────────────────────────────────────────
-  const total = {{ question_count }};
-  const answered = new Set();
-
-  function onAnswer() {
-    const cards = document.querySelectorAll('.q-card');
-    let count = 0;
-    cards.forEach((card, idx) => {
-      const qid = card.dataset.qid;
-      const radios = card.querySelectorAll('input[type=radio]:checked');
-      const texts  = card.querySelectorAll('textarea, input[type=text]');
-      const hidden = card.querySelectorAll('input[type=hidden]');
-
-      let hasAnswer = radios.length > 0;
-      texts.forEach(t => { if (t.value.trim()) hasAnswer = true; });
-      hidden.forEach(h => { if (h.value) hasAnswer = true; });
-
-      if (hasAnswer) count++;
-    });
-    const pct = total ? Math.round((count / total) * 100) : 0;
-    document.getElementById('progressBar').style.width = pct + '%';
-    document.getElementById('progressLabel').textContent = count + '/' + total;
-  }
-
-  // ── True / False ─────────────────────────────────────────────────────────────
-  function setTF(btn, fieldId, val) {
-    const parent = btn.closest('.flex');
-    parent.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('selected-tf'));
-    btn.classList.add('selected-tf');
-    document.getElementById(fieldId).value = val;
-    onAnswer();
-  }
-
-  // Initial progress check
-  onAnswer();
-</script>
+<script type="application/json" id="quiz-data">{"questionCount": {{ question_count }}}</script>
+<script src="{% static 'js/quiz-engine.js' %}"></script>
 {% endblock %}

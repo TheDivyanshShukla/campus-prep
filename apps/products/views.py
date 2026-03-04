@@ -5,8 +5,6 @@ from django.conf import settings
 from django.utils import timezone
 from datetime import timedelta
 from apps.content.models import ParsedDocument
-from apps.products.models import Purchase, UnlockedContent
-from apps.academics.models import ExamDate, Branch, Semester
 from .data_services import ProductDataService
 from apps.academics.data_services import AcademicsDataService
 from apps.content.data_services import ContentDataService
@@ -45,12 +43,12 @@ def checkout_document(request, document_id):
         return render(request, 'products/payment_error.html', {'error': str(e)})
 
     # Create a pending Purchase record in our database
-    Purchase.objects.create(
-        user=request.user,
-        parsed_document=document,
-        amount_paid=document.price,
+    ProductDataService.create_purchase(
+        request.user,
+        document=document,
+        amount=document.price,
         razorpay_order_id=razorpay_order['id'],
-        status='PENDING'
+        status='PENDING',
     )
 
     context = {
@@ -64,30 +62,23 @@ def checkout_document(request, document_id):
 
 @login_required
 def checkout_gold_pass(request):
-    from apps.academics.models import Branch, Semester
     from apps.products.models import SubscriptionPlan
-    
+
     branch_id = request.GET.get('branch')
     semester_id = request.GET.get('semester')
-    
+
     if not branch_id or not semester_id:
         return redirect('home')
-        
-    branch = AcademicsDataService.get_or_set_cache(
-        f'branch_{branch_id}', 
-        lambda: Branch.objects.get(id=branch_id), 
-        timeout=3600
-    )
-    semester = AcademicsDataService.get_or_set_cache(
-        f'semester_{semester_id}',
-        lambda: Semester.objects.get(id=semester_id),
-        timeout=3600
-    )
-    
+
+    branch = AcademicsDataService.get_branch_by_id(branch_id)
+    semester = AcademicsDataService.get_semester_by_id(semester_id)
+
+    if not branch or not semester:
+        return redirect('home')
+
     # Check if a SEMESTER plan exists
-    try:
-        plan = SubscriptionPlan.objects.get(plan_type='SEMESTER', is_active=True)
-    except SubscriptionPlan.DoesNotExist:
+    plan = ProductDataService.get_active_semester_plan()
+    if not plan:
         return render(request, 'products/payment_error.html', {'error': 'Gold Pass is not currently available.'})
         
     # Check if user already has an active Gold Pass for this exact branch/sem
@@ -108,12 +99,12 @@ def checkout_gold_pass(request):
         return render(request, 'products/payment_error.html', {'error': str(e)})
 
     # Create a pending Purchase record
-    Purchase.objects.create(
-        user=request.user,
+    ProductDataService.create_purchase(
+        request.user,
         subscription=plan,
-        amount_paid=plan.price,
+        amount=plan.price,
         razorpay_order_id=razorpay_order['id'],
-        status='PENDING'
+        status='PENDING',
     )
     
     # Store branch/sem in session for post-payment verification
@@ -145,9 +136,8 @@ def payment_verify(request):
         }
 
         # Find the pending purchase
-        try:
-            purchase = Purchase.objects.get(razorpay_order_id=razorpay_order_id)
-        except Purchase.DoesNotExist:
+        purchase = ProductDataService.get_purchase_by_order_id(razorpay_order_id)
+        if not purchase:
             return render(request, 'products/payment_error.html', {'error': 'Order not found.'})
 
         try:
@@ -173,29 +163,21 @@ def payment_verify(request):
                     valid_until_date = timezone.now().date() + timedelta(days=180)
 
                 # Unlock the content for the user until the exam date
-                unlocked, created = UnlockedContent.objects.get_or_create(
-                    user=purchase.user,
-                    parsed_document=purchase.parsed_document,
-                    defaults={'valid_until': valid_until_date}
+                ProductDataService.unlock_document_for_user(
+                    purchase.user, purchase.parsed_document, valid_until_date
                 )
-                
-                # If they already had it (but it was expired), renew the validity
-                if not created:
-                    unlocked.valid_until = valid_until_date
-                    unlocked.save()
 
                 # Route them right into the document reader they just bought
                 return redirect('read_document', document_id=purchase.parsed_document.id)
                 
             elif purchase.subscription:
                 # Gold Pass purchase
-                from apps.academics.models import Branch, Semester
                 branch_id = request.session.get('pending_gold_pass_branch')
                 semester_id = request.session.get('pending_gold_pass_semester')
                 
                 if branch_id and semester_id:
-                    branch = Branch.objects.get(id=branch_id)
-                    semester = Semester.objects.get(id=semester_id)
+                    branch = AcademicsDataService.get_branch_by_id(branch_id)
+                    semester = AcademicsDataService.get_semester_by_id(semester_id)
                     
                     purchase.user.gold_pass_branch = branch
                     purchase.user.gold_pass_semester = semester
@@ -229,16 +211,14 @@ def payment_verify(request):
 def validate_coupon(request):
     import json
     from django.http import JsonResponse
-    from .models import Coupon
     if request.method == "POST":
         try:
             data = json.loads(request.body)
             code = data.get('code', '').upper().strip()
             original_price = float(data.get('price', 0))
-            
-            try:
-                coupon = Coupon.objects.get(code=code)
-            except Coupon.DoesNotExist:
+
+            coupon = ProductDataService.get_coupon_by_code(code)
+            if not coupon:
                 return JsonResponse({"valid": False, "message": "Invalid coupon code."})
                 
             if not coupon.is_valid():
@@ -264,32 +244,28 @@ def process_free_checkout(request):
     import json
     from django.http import JsonResponse
     from django.urls import reverse
-    from .models import Coupon, SubscriptionPlan, Purchase, UnlockedContent
-    from apps.academics.models import Branch, Semester, ExamDate
+    from .models import SubscriptionPlan
     from apps.content.models import ParsedDocument
-    
+
     if request.method == "POST":
         try:
             data = json.loads(request.body)
             code = data.get('code', '').upper().strip()
             item_type = data.get('item_type') # 'document' or 'gold_pass'
             item_id = data.get('item_id')
-            
+
             # Verify Coupon is valid and actually 100% off
-            try:
-                coupon = Coupon.objects.get(code=code)
-                if not coupon.is_valid() or coupon.discount_percentage != 100:
-                    return JsonResponse({"success": False, "message": "Coupon invalid or not 100% free."})
-            except Coupon.DoesNotExist:
-                return JsonResponse({"success": False, "message": "Invalid coupon code."})
+            coupon = ProductDataService.get_coupon_by_code(code)
+            if not coupon or not coupon.is_valid() or coupon.discount_percentage != 100:
+                return JsonResponse({"success": False, "message": "Coupon invalid or not 100% free."})
                 
             if item_type == 'document':
                 document = get_object_or_404(ParsedDocument, id=item_id)
-                purchase = Purchase.objects.create(
-                    user=request.user,
-                    parsed_document=document,
-                    amount_paid=0.00,
-                    status='SUCCESS'
+                ProductDataService.create_purchase(
+                    request.user,
+                    document=document,
+                    amount=0.00,
+                    status='SUCCESS',
                 )
                 
                 # Check for document.subjects.first() instead of document.subject
@@ -305,10 +281,8 @@ def process_free_checkout(request):
                 else:
                     valid_until_date = timezone.now().date() + timedelta(days=180)
 
-                UnlockedContent.objects.get_or_create(
-                    user=request.user,
-                    parsed_document=document,
-                    defaults={'valid_until': valid_until_date}
+                ProductDataService.unlock_document_for_user(
+                    request.user, document, valid_until_date
                 )
                 coupon.current_uses += 1
                 coupon.save()
@@ -318,14 +292,16 @@ def process_free_checkout(request):
                 branch_id = data.get('branch_id')
                 semester_id = data.get('semester_id')
                 plan = get_object_or_404(SubscriptionPlan, id=item_id)
-                branch = get_object_or_404(Branch, id=branch_id)
-                semester = get_object_or_404(Semester, id=semester_id)
-                
-                purchase = Purchase.objects.create(
-                    user=request.user,
+                branch = AcademicsDataService.get_branch_by_id(branch_id)
+                semester = AcademicsDataService.get_semester_by_id(semester_id)
+                if not branch or not semester:
+                    return JsonResponse({"success": False, "message": "Invalid branch or semester."})
+
+                ProductDataService.create_purchase(
+                    request.user,
                     subscription=plan,
-                    amount_paid=0.00,
-                    status='SUCCESS'
+                    amount=0.00,
+                    status='SUCCESS',
                 )
                 
                 request.user.gold_pass_branch = branch

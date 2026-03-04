@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}{{ subject.code }} - {{ subject.name }} | CampusPrep{% endblock %}
 
@@ -384,47 +385,6 @@
 </div>
 
 <!-- Tab Switcher JS -->
-<script>
-    function switchTab(tabId) {
-        // Remove the Anti-FOUC block once JS takes over
-        const foucStyle = document.getElementById('anti-fouc-tabs');
-        if (foucStyle) {
-            foucStyle.remove();
-        }
-
-        // Hide all tab contents
-        document.querySelectorAll('.tab-content').forEach(el => {
-            el.classList.add('hidden');
-        });
-        
-        // Show the selected tab content
-        const target = document.getElementById(tabId);
-        if(target) {
-            target.classList.remove('hidden');
-        }
-
-        // Reset all buttons
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.classList.remove('bg-primary', 'text-primary-foreground', 'font-bold', 'shadow-md');
-            btn.classList.add('bg-muted', 'text-muted-foreground', 'font-semibold', 'hover:bg-muted/80');
-        });
-
-        // Activate clicked button via its ID which matches `btn-<tabId remainder>`
-        const btnId = tabId.replace('tab-', 'btn-');
-        const activeBtn = document.getElementById(btnId);
-        if(activeBtn) {
-            activeBtn.classList.remove('bg-muted', 'text-muted-foreground', 'font-semibold', 'hover:bg-muted/80');
-            activeBtn.classList.add('bg-primary', 'text-primary-foreground', 'font-bold', 'shadow-md');
-        }
-
-        // Save the active tab memory specifically for this subject
-        localStorage.setItem('rgpv_active_tab_{{ subject.id }}', tabId);
-    }
-
-    // On Initial Load: Restore the last visited tab (default to PYQs if none saved)
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedTab = localStorage.getItem('rgpv_active_tab_{{ subject.id }}') || 'tab-pyqs';
-        switchTab(savedTab);
-    });
-</script>
+<script type="application/json" id="tab-switcher-data">{"subjectId": {{ subject.id }}}</script>
+<script src="{% static 'js/subject-tabs.js' %}"></script>
 {% endblock %}

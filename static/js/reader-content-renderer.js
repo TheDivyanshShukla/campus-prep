@@ -1,0 +1,958 @@
+/**
+ * Reader content renderer: decrypts and renders structured JSON content.
+ * Supports: PYQ, UNSOLVED_PYQ, NOTES, SHORT_NOTES, FORMULA, SYLLABUS, IMPORTANT_Q.
+ * Reads config from <script id="reader-data"> JSON tag.
+ * Requires: marked.js, MathJax.
+ */
+(function() {
+    'use strict';
+
+    var _rdEl = document.getElementById('reader-data');
+    var _RD = _rdEl ? JSON.parse(_rdEl.textContent) : {};
+
+    // ---------- Image Recreation Box ----------
+
+    function renderRecreationBox(strategy, details, url) {
+        if (!strategy || !details) return '';
+        let bgColor = 'bg-blue-50 dark:bg-blue-900/10';
+        let borderColor = 'border-blue-200 dark:border-blue-900';
+        let textColor = 'text-blue-800 dark:text-blue-300';
+        let iconColor = 'text-blue-500';
+        let label = 'DIAGRAM';
+
+        if (strategy === 'SEARCH') {
+            bgColor = 'bg-emerald-50 dark:bg-emerald-900/10';
+            borderColor = 'border-emerald-200 dark:border-emerald-900';
+            textColor = 'text-emerald-800 dark:text-emerald-300';
+            iconColor = 'text-emerald-500';
+            label = 'Search Reference';
+        } else if (strategy === 'CANVAS') {
+            bgColor = 'bg-amber-50 dark:bg-amber-900/10';
+            borderColor = 'border-amber-200 dark:border-amber-900';
+            textColor = 'text-amber-800 dark:text-amber-300';
+            iconColor = 'text-amber-500';
+            label = 'Interactive Logic';
+        }
+
+        const addImageBtn = (window.readerNoteCaptureConfig && window.readerNoteCaptureConfig.enabled && url)
+            ? `<button type="button" data-note-image-url="${url}" class="mt-3 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg border border-border hover:bg-muted">Add image to notes</button>`
+            : '';
+
+        const imageHtml = url ? `<div class="mt-4 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-lg bg-white">
+            <img src="${url}" class="w-full h-auto block" alt="Recreated Academic Diagram" loading="lazy">
+        </div>${addImageBtn}` : '';
+
+        return `
+        <div class="mt-4 p-4 border ${borderColor} ${bgColor} rounded-xl group transition-all duration-300 hover:shadow-md">
+            <div class="flex items-center ${textColor} mb-3">
+                <svg class="w-5 h-5 mr-2 ${iconColor}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span class="font-bold text-xs uppercase tracking-widest">${label} Detected</span>
+            </div>
+            <div class="text-xs font-mono p-3 leading-relaxed bg-white/50 dark:bg-black/20 rounded-lg border border-white/20 dark:border-black/10 overflow-x-auto whitespace-pre-wrap ${textColor}">${details}</div>
+            ${imageHtml}
+            <div class="mt-3 flex justify-end">
+                <span class="text-[9px] font-black uppercase tracking-tighter opacity-40 group-hover:opacity-100 transition-opacity">AI Reconstruction Strategy: ${strategy}</span>
+            </div>
+        </div>`;
+    }
+
+    // ---------- Document-Type Renderers ----------
+
+    function _renderPYQ(container, data) {
+        (data.questions || []).forEach(q => {
+            const unitHtml = q.unit ? `<span class="inline-block bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Unit ${q.unit}</span>` : '';
+            const orChoiceHtml = q.has_or_choice ? `<span class="inline-block ml-2 text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 rounded">OR Choice</span>` : '';
+            const partHtml = q.part ? `<span class="inline-flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded font-bold text-xs mr-2 border border-slate-200 dark:border-slate-700 uppercase">${q.part}</span>` : '';
+            const imgRecreHtml = renderRecreationBox(q.image_strategy, q.image_details, q.recreated_image_url);
+            const aiSolutionHtml = q.latex_answer ? `<div class="mt-6 pt-6 border-t border-border"><h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4><div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body">${q.latex_answer}</div></div>` : '';
+            container.insertAdjacentHTML('beforeend', `
+            <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border overflow-hidden">
+                <div class="bg-muted/30 px-4 py-2 border-b border-border flex justify-between items-center">
+                    <div class="flex items-center">${unitHtml}${orChoiceHtml}</div>
+                    <div class="flex-shrink-0 text-right ml-4">
+                        <span class="text-base font-black">${q.marks || ''}</span>
+                        <span class="text-[9px] text-muted-foreground font-bold uppercase tracking-wider ml-1">Marks</span>
+                    </div>
+                </div>
+                <div class="px-4 py-3">
+                    <div class="text-base leading-relaxed font-medium math-render-target whitespace-pre-line text-foreground/90">${partHtml}${q.question_text || ''}</div>
+                    ${imgRecreHtml}
+                    ${aiSolutionHtml}
+                </div>
+            </div>`);
+        });
+    }
+
+    function _renderNotes(container, data) {
+        if (data.sections) {
+            data.sections.forEach((section, idx) => {
+                let blocksHtml = '';
+                (section.content_blocks || []).forEach(block => {
+                    if (block.type === 'text') {
+                        blocksHtml += `<div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed markdown-body">${marked.parse(block.content || '')}</div>`;
+                    } else if (block.type === 'image') {
+                        blocksHtml += renderRecreationBox(block.image_strategy, block.image_details, block.recreated_image_url);
+                    }
+                });
+                container.insertAdjacentHTML('beforeend', `
+                <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden mb-6">
+                    <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border">
+                        <h2 class="text-xl font-bold text-indigo-900 dark:text-indigo-200">${section.section_title || `Section ${idx + 1}`}</h2>
+                    </div>
+                    <div class="p-6">${blocksHtml}</div>
+                </div>`);
+            });
+        } else {
+            // Legacy single-block content fallback
+            container.insertAdjacentHTML('beforeend', `
+            <div class="bg-card shadow-sm rounded-xl border border-border p-6 markdown-body math-render-target">
+                ${marked.parse(data.content || '')}
+            </div>`);
+        }
+    }
+
+    function _renderFormula(container, data) {
+        if (!data.formulas) return;
+        const formulasHtml = data.formulas.map(f => `
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-muted/20 border border-border rounded-lg hover:border-primary/50 transition-colors">
+                <span class="font-semibold text-foreground mb-2 sm:mb-0">${f.name || ''}</span>
+                <div class="bg-white dark:bg-slate-900 border border-border px-4 py-2 rounded-md overflow-x-auto math-render-target">$$ ${f.latex || ''} $$</div>
+            </div>`).join('');
+        container.insertAdjacentHTML('beforeend', `
+        <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+            <div class="p-6"><div class="grid md:grid-cols-2 gap-4">${formulasHtml}</div></div>
+        </div>`);
+    }
+
+    function _renderSyllabus(container, data) {
+        if (!data.modules) return;
+
+        // 1. Render Modules
+        const modulesHtml = data.modules.map(mod => `
+        <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden relative">
+            <div class="absolute left-0 top-0 bottom-0 w-2 bg-indigo-500"></div>
+            <div class="p-6 pl-8">
+                <div class="flex items-center mb-4">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-black mr-3">${mod.unit || ''}</div>
+                    <div class="flex-1">
+                        <span class="text-[10px] uppercase font-black text-muted-foreground tracking-widest block">Unit ${mod.unit || ''}</span>
+                        <h3 class="text-lg font-bold math-render-target">${mod.title || 'Module Syllabus'}</h3>
+                    </div>
+                </div>
+                <ul class="space-y-3">
+                    ${(mod.topics || []).map(t => `<li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-foreground/80 math-render-target">${t}</span></li>`).join('')}
+                </ul>
+            </div>
+        </div>`).join('');
+
+        container.insertAdjacentHTML('beforeend', `<div class="space-y-6">${modulesHtml}</div>`);
+
+        // 2. Render Experiments
+        if (data.experiments && data.experiments.length > 0) {
+            const experimentsHtml = data.experiments.map(exp => `
+                <li class="flex items-start p-3 bg-muted/20 rounded-lg border border-border/50">
+                    <svg class="w-5 h-5 text-indigo-500 mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    <span class="text-sm font-medium text-foreground/90 math-render-target">${exp}</span>
+                </li>
+            `).join('');
+
+            container.insertAdjacentHTML('beforeend', `
+                <div class="mt-8 bg-card shadow-sm rounded-xl border border-border overflow-hidden">
+                    <div class="bg-muted/30 px-6 py-4 border-b border-border flex items-center">
+                        <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        <h2 class="font-black text-xs uppercase tracking-widest text-muted-foreground">Laboratory Experiments</h2>
+                    </div>
+                    <div class="p-6"><ul class="grid sm:grid-cols-2 gap-3">${experimentsHtml}</ul></div>
+                </div>
+            `);
+        }
+
+        // 3. Render Reference Books
+        if (data.reference_books && data.reference_books.length > 0) {
+            const booksHtml = data.reference_books.map(book => `
+                <li class="flex items-start text-sm text-foreground/80 py-1">
+                    <svg class="w-4 h-4 text-muted-foreground mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    <span class="math-render-target">${book}</span>
+                </li>
+            `).join('');
+
+            container.insertAdjacentHTML('beforeend', `
+                <div class="mt-8 pt-8 border-t border-border">
+                    <h2 class="font-black text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center px-4">
+                        <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        Reference Books
+                    </h2>
+                    <ul class="px-4 space-y-1">${booksHtml}</ul>
+                </div>
+            `);
+        }
+    }
+
+    function _renderImportantQ(container, data) {
+        if (!data.questions) return;
+        const html = data.questions.map(q => {
+            const freqColor = q.frequency === 'High'
+                ? 'text-rose-600 bg-rose-100 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800'
+                : q.frequency === 'Medium'
+                ? 'text-amber-600 bg-amber-100 border-amber-200 dark:bg-amber-900/30 dark:border-amber-800'
+                : 'text-blue-600 bg-blue-100 border-blue-200 dark:bg-blue-900/30 dark:border-blue-800';
+            return `
+            <div class="p-6 border-b border-border last:border-0 hover:bg-muted/10 transition-colors flex items-start gap-4">
+                <div class="shrink-0 mt-1"><svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                <div class="flex-1">
+                    <div class="text-lg font-medium text-foreground/90 leading-relaxed math-render-target">${q.text || ''}</div>
+                    <span class="inline-block mt-2 text-xs font-bold px-2 py-1 rounded-md border ${freqColor}">${q.frequency || ''} Frequency</span>
+                </div>
+            </div>`;
+        }).join('');
+        container.insertAdjacentHTML('beforeend', `<div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden">${html}</div>`);
+    }
+
+    // ---------- Native Reader → Student Notes Capture ----------
+
+    function _readerSetStatus(message, isError = false) {
+        const el = document.getElementById('readerNoteStatus');
+        if (!el) return;
+        el.textContent = message || '';
+        el.classList.toggle('text-red-500', !!isError);
+        el.classList.toggle('text-emerald-500', !isError && !!message);
+        if (message) {
+            setTimeout(() => {
+                if (el.textContent === message) {
+                    el.textContent = '';
+                    el.classList.remove('text-red-500', 'text-emerald-500');
+                }
+            }, 2600);
+        }
+    }
+
+    function _readerRenderImageQueue() {
+        const queue = document.getElementById('readerImageQueue');
+        if (!queue) return;
+
+        const items = Array.isArray(window.__readerQueuedImageUrls) ? window.__readerQueuedImageUrls : [];
+        if (!items.length) {
+            queue.classList.add('hidden');
+            queue.textContent = '';
+            return;
+        }
+
+        queue.classList.remove('hidden');
+        queue.innerHTML = `
+            <div class="flex items-center justify-between gap-2 mb-1">
+                <span>${items.length} image${items.length > 1 ? 's' : ''} queued ✓</span>
+                <button type="button" id="readerClearAllImagesBtn" class="inline-flex items-center justify-center w-6 h-6 rounded-md border border-border hover:bg-muted text-muted-foreground" title="Clear all queued images" aria-label="Clear all queued images">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V4a1 1 0 011-1h4a1 1 0 011 1v3m-7 0h8"/></svg>
+                </button>
+            </div>
+            <div class="space-y-1 max-h-20 overflow-auto" id="readerImageQueueList"></div>
+        `;
+
+        const list = document.getElementById('readerImageQueueList');
+        if (list) {
+            list.innerHTML = items.map((url, idx) => `
+                <div class="flex items-center justify-between gap-2 text-[10px] bg-background/60 border border-border rounded px-1.5 py-1">
+                    <span class="truncate">Capture ${idx + 1}</span>
+                    <button type="button" class="readerRemoveQueuedImg inline-flex items-center justify-center w-5 h-5 rounded hover:bg-muted text-muted-foreground" data-idx="${idx}" title="Remove image">
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            `).join('');
+
+            list.querySelectorAll('.readerRemoveQueuedImg').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    const idx = Number(btn.dataset.idx);
+                    if (Number.isNaN(idx)) return;
+                    window.__readerQueuedImageUrls.splice(idx, 1);
+                    _readerRenderImageQueue();
+                });
+            });
+        }
+
+        const clearAll = document.getElementById('readerClearAllImagesBtn');
+        if (clearAll) {
+            clearAll.addEventListener('click', e => {
+                e.preventDefault();
+                window.__readerQueuedImageUrls = [];
+                _readerRenderImageQueue();
+            }, { once: true });
+        }
+    }
+
+    function _readerQueueImage(url) {
+        const u = (url || '').trim();
+        if (!u) return;
+        if (!Array.isArray(window.__readerQueuedImageUrls)) window.__readerQueuedImageUrls = [];
+        window.__readerQueuedImageUrls.push(u);
+        _readerRenderImageQueue();
+    }
+
+    function _clamp(v, min, max) {
+        return Math.min(max, Math.max(min, v));
+    }
+
+    function _intersectArea(a, b) {
+        const left = Math.max(a.left, b.left);
+        const top = Math.max(a.top, b.top);
+        const right = Math.min(a.right, b.right);
+        const bottom = Math.min(a.bottom, b.bottom);
+        if (right <= left || bottom <= top) return 0;
+        return (right - left) * (bottom - top);
+    }
+
+    function _ensureHtml2Canvas() {
+        if (window.html2canvas) return Promise.resolve(window.html2canvas);
+        if (window.__html2canvasPromise) return window.__html2canvasPromise;
+
+        window.__html2canvasPromise = new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+            s.async = true;
+            s.onload = () => resolve(window.html2canvas);
+            s.onerror = () => reject(new Error('Screenshot library failed to load'));
+            document.head.appendChild(s);
+        });
+
+        return window.__html2canvasPromise;
+    }
+
+    async function _uploadCapturedBlob(blob) {
+        const cfg = window.readerNoteCaptureConfig || {};
+        if (!cfg.uploadImageUrl) throw new Error('Upload endpoint missing');
+
+        const form = new FormData();
+        form.append('image', new File([blob], `capture-${Date.now()}.webp`, { type: 'image/webp' }));
+
+        const r = await fetch(cfg.uploadImageUrl, {
+            method: 'POST',
+            headers: { 'X-CSRFToken': cfg.csrfToken || '' },
+            body: form,
+        });
+        const j = await r.json();
+        if (!r.ok || !j.success || !j.url) {
+            throw new Error(j.error || 'Upload failed');
+        }
+        return j.url;
+    }
+
+    async function startDragCapture(container) {
+        const cfg = window.readerNoteCaptureConfig || {};
+        if (!cfg.enabled) return;
+        if (window.__readerCaptureInProgress) return;
+        window.__readerCaptureInProgress = true;
+
+        const panelEl = document.getElementById('reader-note-capture');
+        const tabEl = document.getElementById('readerNotesToggleBtn');
+        const prevPanelVisibility = panelEl ? panelEl.style.visibility : '';
+        const prevTabVisibility = tabEl ? tabEl.style.visibility : '';
+
+        if (panelEl) panelEl.style.visibility = 'hidden';
+        if (tabEl) tabEl.style.visibility = 'hidden';
+
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.inset = '0';
+        overlay.style.zIndex = '9999';
+        overlay.style.cursor = 'crosshair';
+        overlay.style.background = 'rgba(0,0,0,0.06)';
+        overlay.style.userSelect = 'none';
+        overlay.style.touchAction = 'none';
+
+        const rect = document.createElement('div');
+        rect.style.position = 'fixed';
+        rect.style.border = '2px solid rgba(16,185,129,0.95)';
+        rect.style.background = 'rgba(16,185,129,0.14)';
+        rect.style.pointerEvents = 'none';
+        rect.style.display = 'none';
+
+        const handle = document.createElement('div');
+        handle.style.position = 'fixed';
+        handle.style.width = '20px';
+        handle.style.height = '20px';
+        handle.style.borderRadius = '999px';
+        handle.style.background = 'rgba(16,185,129,0.98)';
+        handle.style.border = '2px solid #ffffff';
+        handle.style.boxShadow = '0 2px 8px rgba(0,0,0,0.35)';
+        handle.style.display = 'none';
+        handle.style.zIndex = '10001';
+        handle.style.cursor = 'nwse-resize';
+        handle.style.pointerEvents = 'auto';
+
+        const controls = document.createElement('div');
+        controls.style.position = 'fixed';
+        controls.style.bottom = '16px';
+        controls.style.left = '50%';
+        controls.style.transform = 'translateX(-50%)';
+        controls.style.display = 'none';
+        controls.style.gap = '8px';
+        controls.style.zIndex = '10002';
+
+        const cancelBtn = document.createElement('button');
+        cancelBtn.type = 'button';
+        cancelBtn.textContent = 'Cancel';
+        cancelBtn.style.padding = '8px 14px';
+        cancelBtn.style.borderRadius = '10px';
+        cancelBtn.style.border = '1px solid rgba(255,255,255,0.35)';
+        cancelBtn.style.background = 'rgba(15,23,42,0.82)';
+        cancelBtn.style.color = '#fff';
+        cancelBtn.style.fontSize = '12px';
+        cancelBtn.style.fontWeight = '700';
+
+        const confirmBtn = document.createElement('button');
+        confirmBtn.type = 'button';
+        confirmBtn.textContent = 'Confirm';
+        confirmBtn.style.padding = '8px 14px';
+        confirmBtn.style.borderRadius = '10px';
+        confirmBtn.style.border = '1px solid rgba(16,185,129,0.55)';
+        confirmBtn.style.background = 'rgba(16,185,129,0.95)';
+        confirmBtn.style.color = '#06281d';
+        confirmBtn.style.fontSize = '12px';
+        confirmBtn.style.fontWeight = '800';
+
+        controls.appendChild(cancelBtn);
+        controls.appendChild(confirmBtn);
+
+        const hint = document.createElement('div');
+        const isMobilePointer = window.matchMedia('(pointer: coarse)').matches || ('ontouchstart' in window);
+        hint.textContent = isMobilePointer
+            ? 'Tap first corner, then opposite corner · Drag handle to adjust · Confirm'
+            : 'Drag to capture image region · Esc to cancel';
+        hint.style.position = 'fixed';
+        hint.style.top = '16px';
+        hint.style.left = '50%';
+        hint.style.transform = 'translateX(-50%)';
+        hint.style.padding = '6px 10px';
+        hint.style.fontSize = '11px';
+        hint.style.fontWeight = '700';
+        hint.style.borderRadius = '8px';
+        hint.style.background = 'rgba(15,23,42,0.92)';
+        hint.style.color = '#fff';
+
+        overlay.appendChild(rect);
+        overlay.appendChild(handle);
+        overlay.appendChild(hint);
+        overlay.appendChild(controls);
+        document.body.appendChild(overlay);
+
+        let dragging = false;
+        let startX = 0;
+        let startY = 0;
+        let endX = 0;
+        let endY = 0;
+        let mobilePhase = 0;
+        let handleDragging = false;
+
+        const getSelectionRect = () => {
+            const x = Math.min(startX, endX);
+            const y = Math.min(startY, endY);
+            const w = Math.abs(endX - startX);
+            const h = Math.abs(endY - startY);
+            return { x, y, w, h, left: x, top: y, right: x + w, bottom: y + h };
+        };
+
+        const restoreCaptureUi = () => {
+            if (panelEl) panelEl.style.visibility = prevPanelVisibility;
+            if (tabEl) tabEl.style.visibility = prevTabVisibility;
+            window.__readerCaptureInProgress = false;
+        };
+
+        const cleanup = () => {
+            window.removeEventListener('keydown', onKeydown);
+            overlay.remove();
+            restoreCaptureUi();
+        };
+
+        const updateRect = () => {
+            const { x, y, w, h } = getSelectionRect();
+            rect.style.display = 'block';
+            rect.style.left = `${x}px`;
+            rect.style.top = `${y}px`;
+            rect.style.width = `${w}px`;
+            rect.style.height = `${h}px`;
+
+            if (isMobilePointer && mobilePhase >= 2) {
+                handle.style.display = 'block';
+                handle.style.left = `${x + w - 10}px`;
+                handle.style.top = `${y + h - 10}px`;
+            } else {
+                handle.style.display = 'none';
+            }
+        };
+
+        const runCaptureFromCurrentRect = async () => {
+            const { x, y, w, h } = getSelectionRect();
+
+            if (w < 12 || h < 12) {
+                cleanup();
+                _readerSetStatus('Selection too small', true);
+                return;
+            }
+
+            cleanup();
+            _readerSetStatus('Capturing...');
+
+            try {
+                const selRect = { left: x, top: y, right: x + w, bottom: y + h };
+                const html2canvas = await _ensureHtml2Canvas();
+
+                const targetRect = container.getBoundingClientRect();
+                const overlap = _intersectArea(selRect, {
+                    left: targetRect.left,
+                    top: targetRect.top,
+                    right: targetRect.right,
+                    bottom: targetRect.bottom,
+                });
+                if (overlap <= 0) throw new Error('Select inside the reader content');
+
+                const scale = window.devicePixelRatio || 1;
+                const shot = await html2canvas(container, {
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: null,
+                    logging: false,
+                    scale,
+                    scrollX: window.scrollX,
+                    scrollY: window.scrollY,
+                    windowWidth: document.documentElement.clientWidth,
+                    windowHeight: document.documentElement.clientHeight,
+                });
+
+                const sx = _clamp((selRect.left - targetRect.left) * scale, 0, shot.width);
+                const sy = _clamp((selRect.top - targetRect.top) * scale, 0, shot.height);
+                const ex = _clamp((selRect.right - targetRect.left) * scale, 0, shot.width);
+                const ey = _clamp((selRect.bottom - targetRect.top) * scale, 0, shot.height);
+                const sw = Math.max(1, Math.round(ex - sx));
+                const sh = Math.max(1, Math.round(ey - sy));
+
+                const canvas = document.createElement('canvas');
+                canvas.width = sw;
+                canvas.height = sh;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(shot, sx, sy, sw, sh, 0, 0, sw, sh);
+
+                const tintEnabled = document.body.classList.contains('tint-enabled');
+                var isDirectPdfMode = _RD.render_mode === 'DIRECT_PDF';
+                if (tintEnabled && isDirectPdfMode) {
+                    const tintedCanvas = document.createElement('canvas');
+                    tintedCanvas.width = sw;
+                    tintedCanvas.height = sh;
+                    const tintedCtx = tintedCanvas.getContext('2d');
+                    if (tintedCtx) {
+                        tintedCtx.filter = 'invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(0.88)';
+                        tintedCtx.drawImage(canvas, 0, 0);
+                    }
+                    const finalCtx = canvas.getContext('2d');
+                    if (finalCtx) {
+                        finalCtx.clearRect(0, 0, sw, sh);
+                        finalCtx.drawImage(tintedCanvas, 0, 0);
+                    }
+                }
+
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.9));
+                if (!blob) throw new Error('Capture failed');
+
+                const url = await _uploadCapturedBlob(blob);
+                _readerQueueImage(url);
+                _readerSetStatus('Capture queued');
+            } catch (err) {
+                _readerSetStatus(err.message || 'Capture failed', true);
+            }
+        };
+
+        const onKeydown = (e) => {
+            if (e.key === 'Escape') {
+                cleanup();
+                _readerSetStatus('Capture cancelled');
+            }
+        };
+
+        window.addEventListener('keydown', onKeydown);
+
+        cancelBtn.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            cleanup();
+            _readerSetStatus('Capture cancelled');
+        });
+
+        confirmBtn.addEventListener('click', async e => {
+            e.preventDefault();
+            e.stopPropagation();
+            await runCaptureFromCurrentRect();
+        });
+
+        if (isMobilePointer) {
+            overlay.addEventListener('click', e => {
+                if (e.target === confirmBtn || e.target === cancelBtn || controls.contains(e.target) || e.target === handle) return;
+
+                const pointX = e.clientX;
+                const pointY = e.clientY;
+
+                if (mobilePhase === 0) {
+                    startX = endX = pointX;
+                    startY = endY = pointY;
+                    mobilePhase = 1;
+                    updateRect();
+                    hint.textContent = 'Tap opposite corner';
+                    return;
+                }
+
+                if (mobilePhase === 1) {
+                    endX = pointX;
+                    endY = pointY;
+                    mobilePhase = 2;
+                    controls.style.display = 'flex';
+                    hint.textContent = 'Move the green handle to resize, then tap Confirm';
+                    updateRect();
+                }
+            });
+
+            handle.addEventListener('pointerdown', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (mobilePhase < 2) return;
+                handleDragging = true;
+                handle.setPointerCapture(e.pointerId);
+            });
+
+            handle.addEventListener('pointermove', e => {
+                if (!handleDragging) return;
+                endX = e.clientX;
+                endY = e.clientY;
+                updateRect();
+            });
+
+            handle.addEventListener('pointerup', e => {
+                handleDragging = false;
+                if (handle.hasPointerCapture(e.pointerId)) {
+                    handle.releasePointerCapture(e.pointerId);
+                }
+            });
+
+            return;
+        }
+
+        overlay.addEventListener('mousedown', e => {
+            if (e.button !== 0) return;
+            dragging = true;
+            startX = endX = e.clientX;
+            startY = endY = e.clientY;
+            updateRect();
+            e.preventDefault();
+        });
+
+        overlay.addEventListener('mousemove', e => {
+            if (!dragging) return;
+            endX = e.clientX;
+            endY = e.clientY;
+            updateRect();
+        });
+
+        overlay.addEventListener('mouseup', async e => {
+            if (e.button !== 0 || !dragging) return;
+            dragging = false;
+            endX = e.clientX;
+            endY = e.clientY;
+            updateRect();
+
+            await runCaptureFromCurrentRect();
+        });
+    }
+
+    function collapseReaderNotesPanel() {
+        const panel = document.getElementById('reader-note-capture');
+        const tab = document.getElementById('readerNotesToggleBtn');
+        if (!panel || !tab) return;
+        panel.style.transform = 'translateX(calc(100% + 1.5rem))';
+        panel.style.opacity = '0';
+        panel.style.pointerEvents = 'none';
+
+        tab.style.transform = 'translateX(0)';
+        tab.style.opacity = '1';
+        tab.style.pointerEvents = 'auto';
+    }
+
+    function expandReaderNotesPanel() {
+        const panel = document.getElementById('reader-note-capture');
+        const tab = document.getElementById('readerNotesToggleBtn');
+        if (!panel || !tab) return;
+        panel.style.transform = '';
+        panel.style.opacity = '';
+        panel.style.pointerEvents = '';
+
+        tab.style.transform = '';
+        tab.style.opacity = '';
+        tab.style.pointerEvents = 'none';
+    }
+
+    window.collapseReaderNotesPanel = collapseReaderNotesPanel;
+    window.expandReaderNotesPanel = expandReaderNotesPanel;
+
+    function initReaderNoteCapture(container) {
+        const cfg = window.readerNoteCaptureConfig || {};
+        if (!cfg.enabled) return;
+
+        const unitEl = document.getElementById('readerUnitSelect');
+        const unitRowEl = document.getElementById('readerUnitRow');
+        const textEl = document.getElementById('readerNoteText');
+        const addSelBtn = document.getElementById('readerAddSelectionBtn');
+        const captureBtn = document.getElementById('readerCaptureRegionBtn');
+        const saveBtn = document.getElementById('readerSaveNoteBtn');
+        const openBtn = document.getElementById('readerOpenNoteBtn');
+        const modeTabBtn = document.getElementById('readerOpenModeTab');
+        const modeInlineBtn = document.getElementById('readerOpenModeInline');
+        const inlinePaneEl = document.getElementById('readerInlineNotePane');
+        const inlineFrameEl = document.getElementById('readerInlineNoteFrame');
+        const inlineCloseBtn = document.getElementById('readerInlineCloseBtn');
+        const panelEl = document.getElementById('reader-note-capture');
+        if (!unitEl || !textEl || !addSelBtn || !saveBtn) return;
+
+        const getEditorUrl = () => {
+            const sid = Number(cfg.subjectId || 0);
+            const uid = Number(unitEl.value || 0);
+            if (!sid || !uid) return '';
+            return `${cfg.editorBasePath || '/notes/editor/'}${sid}/${uid}/`;
+        };
+
+        if (openBtn) {
+            openBtn.href = getEditorUrl() || '#';
+            unitEl.addEventListener('change', () => {
+                openBtn.href = getEditorUrl() || '#';
+            });
+        }
+
+        if (!Array.isArray(window.__readerQueuedImageUrls)) window.__readerQueuedImageUrls = [];
+        _readerRenderImageQueue();
+
+        let openMode = localStorage.getItem('reader.notes.openMode') || 'tab';
+        const applyOpenModeUi = () => {
+            if (!modeTabBtn || !modeInlineBtn) return;
+            const tabActive = openMode === 'tab';
+            modeTabBtn.className = `px-2 py-1 ${tabActive ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`;
+            modeInlineBtn.className = `px-2 py-1 ${!tabActive ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`;
+        };
+        applyOpenModeUi();
+        if (modeTabBtn) {
+            modeTabBtn.addEventListener('click', () => {
+                openMode = 'tab';
+                localStorage.setItem('reader.notes.openMode', openMode);
+                applyOpenModeUi();
+            });
+        }
+        if (modeInlineBtn) {
+            modeInlineBtn.addEventListener('click', () => {
+                openMode = 'inline';
+                localStorage.setItem('reader.notes.openMode', openMode);
+                applyOpenModeUi();
+            });
+        }
+        if (inlineCloseBtn && inlinePaneEl) {
+            inlineCloseBtn.addEventListener('click', () => {
+                inlinePaneEl.classList.add('hidden');
+                if (inlineFrameEl) inlineFrameEl.src = 'about:blank';
+            });
+        }
+
+        if (panelEl) {
+            panelEl.style.transition = 'transform 0.3s ease, opacity 0.25s ease';
+        }
+
+        // Default state: keep quick-add panel hidden until user opens from right tab
+        collapseReaderNotesPanel();
+
+        // Auto-select unit and hide picker when deterministic
+        const preferredUnitNumber = Number(cfg.preferredUnitNumber || 0);
+        let autoMatched = false;
+        if (preferredUnitNumber) {
+            const matchedOpt = [...unitEl.options].find(o => Number(o.dataset.unitNumber || 0) === preferredUnitNumber);
+            if (matchedOpt) {
+                unitEl.value = matchedOpt.value;
+                autoMatched = true;
+            }
+        }
+        if (unitRowEl && (autoMatched || unitEl.options.length <= 1)) {
+            unitRowEl.classList.add('hidden');
+        }
+
+        addSelBtn.addEventListener('click', () => {
+            const sel = window.getSelection();
+            const txt = (sel && sel.toString() || '').trim();
+            if (!txt) {
+                _readerSetStatus('Select text first', true);
+                return;
+            }
+
+            if (!container.contains(sel.anchorNode) || !container.contains(sel.focusNode)) {
+                _readerSetStatus('Selection must be inside content', true);
+                return;
+            }
+
+            textEl.value = textEl.value ? `${textEl.value}\n${txt}` : txt;
+            _readerSetStatus('Selection added');
+        });
+
+        if (captureBtn) {
+            captureBtn.addEventListener('click', () => {
+                startDragCapture(container);
+            });
+        }
+
+        container.addEventListener('click', e => {
+            const addImageBtn = e.target.closest('[data-note-image-url]');
+            if (addImageBtn) {
+                e.preventDefault();
+                _readerQueueImage(addImageBtn.getAttribute('data-note-image-url') || '');
+                _readerSetStatus('Image queued');
+                return;
+            }
+
+            const img = e.target.closest('img');
+            if (img && img.src && container.contains(img)) {
+                _readerQueueImage(img.src);
+                _readerSetStatus('Image queued');
+            }
+        });
+
+        saveBtn.addEventListener('click', async () => {
+            const payload = {
+                subject_id: cfg.subjectId,
+                unit_id: Number(unitEl.value),
+                text: (textEl.value || '').trim(),
+                image_urls: window.__readerQueuedImageUrls || [],
+                source_title: cfg.sourceTitle || ''
+            };
+
+            if (!payload.text && !payload.image_urls.length) {
+                _readerSetStatus('Add text or image first', true);
+                return;
+            }
+
+            saveBtn.disabled = true;
+            _readerSetStatus('Saving...');
+            try {
+                const res = await fetch(cfg.appendUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': cfg.csrfToken || ''
+                    },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (!res.ok || !data.success) {
+                    throw new Error(data.error || 'Save failed');
+                }
+
+                textEl.value = '';
+                window.__readerQueuedImageUrls = [];
+                _readerRenderImageQueue();
+                _readerSetStatus('Added to notes');
+                if (openBtn && data.editor_url) {
+                    openBtn.href = data.editor_url;
+                    window.__readerLastEditorUrl = data.editor_url;
+                }
+            } catch (err) {
+                _readerSetStatus(err.message || 'Save failed', true);
+            } finally {
+                saveBtn.disabled = false;
+            }
+        });
+
+        if (openBtn) {
+            openBtn.addEventListener('click', e => {
+                e.preventDefault();
+                const baseUrl = window.__readerLastEditorUrl || getEditorUrl() || openBtn.getAttribute('href');
+                if (!baseUrl || baseUrl === '#') {
+                    _readerSetStatus('Save once to open notes', true);
+                    return;
+                }
+
+                if (openMode === 'inline') {
+                    const embedUrl = `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}embed=1`;
+                    if (inlineFrameEl && inlinePaneEl) {
+                        inlineFrameEl.src = embedUrl;
+                        inlinePaneEl.classList.remove('hidden');
+                    }
+                } else {
+                    window.open(baseUrl, '_blank', 'noopener');
+                }
+            });
+        }
+    }
+
+    // ---------- Decryption + Render Engine ----------
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var isDirectPdfMode = _RD.render_mode === 'DIRECT_PDF';
+        if (isDirectPdfMode) {
+            const pdfContainer = document.getElementById('pdf-container');
+            if (pdfContainer) {
+                initReaderNoteCapture(pdfContainer);
+            }
+            return;
+        }
+
+        setTimeout(async function () {
+            if (window.__drm_tripped) return;
+
+            const docType = _RD.document_type;
+            const cipher  = _RD.encrypted_data;
+            const nonce   = _RD.tamper_nonce;
+
+            let structuredData = null;
+            try {
+                // 1. Anti-Tamper Challenge Hash
+                const encoder = new TextEncoder();
+                const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(nonce + 'CAMPUS_PREP_SECURE_PAYLOAD'));
+                const challengeHash = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+
+                // 2. Fetch single-use decryption key
+                var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')
+                    ? document.querySelector('[name=csrfmiddlewaretoken]').value
+                    : _RD.csrf_token;
+
+                const response = await fetch(_RD.api_document_key_url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
+                    body: JSON.stringify({ challenge_hash: challengeHash })
+                });
+                if (!response.ok) throw new Error('Integrity check failed.');
+
+                const hexKey = (await response.json()).key;
+
+                // 3. XOR Decrypt
+                const keyBytes = new Uint8Array(hexKey.match(/.{1,2}/g).map(b => parseInt(b, 16)));
+                const decodedB64 = atob(cipher);
+                const decryptedBytes = new Uint8Array(decodedB64.length);
+                for (let i = 0; i < decodedB64.length; i++) {
+                    decryptedBytes[i] = decodedB64.charCodeAt(i) ^ keyBytes[i % keyBytes.length];
+                }
+                structuredData = JSON.parse(new TextDecoder('utf-8').decode(decryptedBytes));
+            } catch (e) {
+                console.error('Decryption failed. Ensure the DOM has not been tampered with.');
+                return;
+            }
+
+            const container = document.getElementById('secure-content-container');
+            if (!container || !structuredData) return;
+            container.innerHTML = '';
+            container.className = 'space-y-6';
+
+            if      (docType === 'PYQ' || docType === 'UNSOLVED_PYQ') _renderPYQ(container, structuredData);
+            else if (docType === 'NOTES' || docType === 'SHORT_NOTES') _renderNotes(container, structuredData);
+            else if (docType === 'FORMULA')     _renderFormula(container, structuredData);
+            else if (docType === 'SYLLABUS')    _renderSyllabus(container, structuredData);
+            else if (docType === 'IMPORTANT_Q') _renderImportantQ(container, structuredData);
+            else container.insertAdjacentHTML('beforeend',
+                `<div class="bg-card shadow-sm rounded-xl border border-border p-6 font-mono text-sm whitespace-pre-wrap overflow-x-auto">${JSON.stringify(structuredData, null, 2)}</div>`);
+
+            // Re-render MathJax
+            if (!window.__drm_tripped && window.MathJax) {
+                MathJax.typesetPromise([document.body]).catch(err => console.error('MathJax error: ' + err.message));
+            }
+
+            initReaderNoteCapture(container);
+        }, 300); // Reduced delay for faster rendering while still allowing DRM sweeps
+    });
+})();

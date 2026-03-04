@@ -1,4 +1,6 @@
 from .models import Notification
+from .data_services import NotificationDataService
+
 
 class NotificationService:
     @staticmethod
@@ -13,6 +15,9 @@ class NotificationService:
             message=message,
             link=link
         )
+        
+        # Invalidate cached notification data for this user
+        NotificationDataService.clear_user_notification_cache(user)
         
         # Send Web Push Notification
         try:
@@ -31,4 +36,5 @@ class NotificationService:
 
     @staticmethod
     def get_unread_count(user):
-        return Notification.objects.filter(user=user, is_read=False).count()
+        """Delegates to cached version in NotificationDataService."""
+        return NotificationDataService.get_unread_count(user)
