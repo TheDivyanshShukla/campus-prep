@@ -1,6 +1,5 @@
 import copy
 import json
-import os
 import uuid
 import mimetypes
 from pathlib import PurePosixPath
@@ -417,12 +416,11 @@ def api_upload_image(request):
     if image.size > max_size:
         return JsonResponse({'success': False, 'error': 'Image too large (max 5 MB)'}, status=400)
 
-    allowed_types = {'image/jpeg', 'image/png', 'image/gif', 'image/webp'}
+    allowed_types = {'image/webp'}
     if image.content_type not in allowed_types:
-        return JsonResponse({'success': False, 'error': 'Invalid image type'}, status=400)
+        return JsonResponse({'success': False, 'error': 'Invalid image type. Please upload WebP only.'}, status=400)
 
-    ext = os.path.splitext(image.name)[1] or '.png'
-    filename = f"note_images/{request.user.id}/{uuid.uuid4().hex}{ext}"
+    filename = f"note_images/{request.user.id}/{uuid.uuid4().hex}.webp"
     # Use _save() directly to skip the exists()/HeadObject check.
     # The UUID filename is already guaranteed unique so the check is wasteful
     # and fails with 403 when the IAM role lacks s3:GetObject on this prefix.
