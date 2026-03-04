@@ -5,7 +5,6 @@ __pycache__
 *.pyc
 *.pyo
 *.pyd
-media/*
 !media/.gitkeep
 staticfiles/*
 !staticfiles/.gitkeep
