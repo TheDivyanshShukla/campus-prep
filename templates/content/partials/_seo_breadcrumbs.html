@@ -1,0 +1,25 @@
+<nav aria-label="Breadcrumb" class="mb-6">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+        {% if c1_label %}
+        <li>
+            {% if c1_url %}<a href="{{ c1_url }}" class="hover:text-foreground transition-colors">{{ c1_label }}</a>{% else %}<span>{{ c1_label }}</span>{% endif %}
+        </li>
+        {% endif %}
+        {% if c2_label %}
+        <li class="opacity-60">/</li>
+        <li>
+            {% if c2_url %}<a href="{{ c2_url }}" class="hover:text-foreground transition-colors">{{ c2_label }}</a>{% else %}<span>{{ c2_label }}</span>{% endif %}
+        </li>
+        {% endif %}
+        {% if c3_label %}
+        <li class="opacity-60">/</li>
+        <li>
+            {% if c3_url %}<a href="{{ c3_url }}" class="hover:text-foreground transition-colors">{{ c3_label }}</a>{% else %}<span>{{ c3_label }}</span>{% endif %}
+        </li>
+        {% endif %}
+        {% if c4_label %}
+        <li class="opacity-60">/</li>
+        <li class="text-foreground font-medium">{{ c4_label }}</li>
+        {% endif %}
+    </ol>
+</nav>
