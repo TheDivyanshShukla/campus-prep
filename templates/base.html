@@ -4,7 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ meta_description|default:'RGPV university notes, syllabus, past question papers, practice tests, and study resources.' }}">
     <meta name="google-site-verification" content="MIhchdZJP7SsIgmeicaj4rSJLVPKidZ3foGeeLd6aC4" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="{{ meta_title|default:'CampusPrep - RGPV Notes & Resources' }}">
+    <meta property="og:description" content="{{ meta_description|default:'RGPV university notes, syllabus, past question papers, practice tests, and study resources.' }}">
+    <meta property="og:type" content="{{ meta_type|default:'website' }}">
+    <meta property="og:url" content="{{ meta_url|default:request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ meta_image_url|default:static('logo-rounded.png') }}">
+    <meta property="og:site_name" content="{{ meta_site_name|default:'CampusPrep' }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta_title|default:'CampusPrep - RGPV Notes & Resources' }}">
+    <meta name="twitter:description" content="{{ meta_description|default:'RGPV university notes, syllabus, past question papers, practice tests, and study resources.' }}">
+    <meta name="twitter:image" content="{{ meta_image_url|default:static('logo-rounded.png') }}">
     <meta name="csrf-token" content="{{ csrf_token }}">
     <title>{% block title %}CampusPrep - Your Ultimate Exam Vault{% endblock %}</title>
     
