@@ -43,14 +43,21 @@ class BaseDocumentParser:
 """
 
     def __init__(self, model_name: Optional[str] = None):
-        if not model_name:
-            model_name = getattr(settings, 'AI_PARSER_DEFAULT_MODEL', 'gemini/gemini-2.5-flash')
+        # if not model_name:
+        #     model_name = getattr(settings, 'AI_PARSER_DEFAULT_MODEL', 'gemini/gemini-2.5-flash')
             
+        # self.llm = ChatOpenAI(
+        #     model="gemini/gemini-3.1-flash-lite-preview",
+        #     openai_api_base="https://bifrost.naravirtual.in/langchain",
+        #     openai_api_key="dummy-key",
+        #     default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
+        #     http_async_client=_ai_parser_client,
+        #     max_retries=5000,
+        # )
         self.llm = ChatOpenAI(
-            model=model_name,
-            openai_api_base="https://bifrost.naravirtual.in/langchain",
+            model="gpt-5-mini",
+            openai_api_base="http://localhost:4141/",
             openai_api_key="dummy-key",
-            default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
             http_async_client=_ai_parser_client,
             max_retries=5000,
         )
@@ -72,7 +79,8 @@ class BaseDocumentParser:
                 pdf_bytes = pdf_file.read()
                 doc = fitz.open(stream=pdf_bytes, filetype="pdf")
                 for page in doc:
-                    pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))
+                    # Use original resolution (no zoom) for OCR
+                    pix = page.get_pixmap(matrix=fitz.Matrix(1, 1))
                     img_bytes = pix.tobytes("jpg")
                     images.append(base64.b64encode(img_bytes).decode('utf-8'))
                 doc.close()

@@ -1,0 +1,3433 @@
+{
+  "dispatched": {
+    "1310": {
+      "title": "ENGINEERING CHEMISTRY - JUN 2025",
+      "at": "2026-03-05T15:33:08.264974Z"
+    },
+    "1311": {
+      "title": "MATHEMATICS 1 - JUN 2025",
+      "at": "2026-03-05T15:33:08.267665Z"
+    },
+    "1312": {
+      "title": "ENGLISH FOR COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:08.283624Z"
+    },
+    "1313": {
+      "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:08.299935Z"
+    },
+    "1314": {
+      "title": "ENGINEERING GRAPHICS - JUN 2025",
+      "at": "2026-03-05T15:33:08.313827Z"
+    },
+    "1315": {
+      "title": "ENGINEERING PHYSICS - JUN 2025",
+      "at": "2026-03-05T15:33:08.329963Z"
+    },
+    "1316": {
+      "title": "MATHEMATICS 2 - JUN 2025",
+      "at": "2026-03-05T15:33:08.345382Z"
+    },
+    "1317": {
+      "title": "BASIC MECHANICAL ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:08.360994Z"
+    },
+    "1318": {
+      "title": "BASIC CIVIL ENGINEERING AND ENGINEERING MECHANICS - JUN 2025",
+      "at": "2026-03-05T15:33:08.376564Z"
+    },
+    "1319": {
+      "title": "BASIC COMPUTER ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:08.391784Z"
+    },
+    "1320": {
+      "title": "ENGINEERING CHEMISTRY - DEC 2024",
+      "at": "2026-03-05T15:33:08.407595Z"
+    },
+    "1321": {
+      "title": "MATHEMATICS 1 - DEC 2024",
+      "at": "2026-03-05T15:33:08.423611Z"
+    },
+    "1322": {
+      "title": "ENGLISH FOR COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:08.438116Z"
+    },
+    "1323": {
+      "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING - DEC 2024",
+      "at": "2026-03-05T15:33:08.454558Z"
+    },
+    "1324": {
+      "title": "ENGINEERING GRAPHICS - DEC 2024",
+      "at": "2026-03-05T15:33:08.469665Z"
+    },
+    "1325": {
+      "title": "ENGINEERING GRAPHICS - JUN 2024",
+      "at": "2026-03-05T15:33:08.485905Z"
+    },
+    "1326": {
+      "title": "ENGINEERING PHYSICS - DEC 2024",
+      "at": "2026-03-05T15:33:08.501493Z"
+    },
+    "1327": {
+      "title": "MATHEMATICS 2 - DEC 2024",
+      "at": "2026-03-05T15:33:08.516173Z"
+    },
+    "1328": {
+      "title": "BASIC MECHANICAL ENGINEERING - DEC 2024",
+      "at": "2026-03-05T15:33:08.530997Z"
+    },
+    "1329": {
+      "title": "BASIC CIVIL ENGINEERING AND ENGINEERING MECHANICS - DEC 2024",
+      "at": "2026-03-05T15:33:08.547422Z"
+    },
+    "1330": {
+      "title": "BASIC COMPUTER ENGINEERING - DEC 2024",
+      "at": "2026-03-05T15:33:08.562613Z"
+    },
+    "1331": {
+      "title": "BASIC COMPUTER ENGINEERING - JUN 2024",
+      "at": "2026-03-05T15:33:08.577690Z"
+    },
+    "1332": {
+      "title": "ENGINEERING CHEMISTRY - DEC 2023",
+      "at": "2026-03-05T15:33:08.593554Z"
+    },
+    "1333": {
+      "title": "ENGINEERING CHEMISTRY - JUN 2023",
+      "at": "2026-03-05T15:33:08.609575Z"
+    },
+    "1334": {
+      "title": "MATHEMATICS 1 - DEC 2023",
+      "at": "2026-03-05T15:33:08.623768Z"
+    },
+    "1335": {
+      "title": "MATHEMATICS 1 - JUN 2023",
+      "at": "2026-03-05T15:33:08.639308Z"
+    },
+    "1336": {
+      "title": "ENGLISH FOR COMMUNICATION - DEC 2023",
+      "at": "2026-03-05T15:33:08.654449Z"
+    },
+    "1337": {
+      "title": "ENGLISH FOR COMMUNICATION - JUN 2023",
+      "at": "2026-03-05T15:33:08.670776Z"
+    },
+    "1338": {
+      "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING - DEC 2023",
+      "at": "2026-03-05T15:33:08.686383Z"
+    },
+    "1339": {
+      "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING - JUN 2023",
+      "at": "2026-03-05T15:33:08.702358Z"
+    },
+    "1340": {
+      "title": "ENGINEERING GRAPHICS - DEC 2023",
+      "at": "2026-03-05T15:33:08.716120Z"
+    },
+    "1341": {
+      "title": "ENGINEERING GRAPHICS - JUN 2023",
+      "at": "2026-03-05T15:33:08.733184Z"
+    },
+    "1342": {
+      "title": "ENGINEERING PHYSICS - DEC 2023",
+      "at": "2026-03-05T15:33:08.748128Z"
+    },
+    "1343": {
+      "title": "ENGINEERING PHYSICS - JUN 2023",
+      "at": "2026-03-05T15:33:08.762937Z"
+    },
+    "1344": {
+      "title": "MATHEMATICS 2 - DEC 2023",
+      "at": "2026-03-05T15:33:08.777743Z"
+    },
+    "1345": {
+      "title": "MATHEMATICS 2 - JUN 2023",
+      "at": "2026-03-05T15:33:08.793994Z"
+    },
+    "1346": {
+      "title": "BASIC MECHANICAL ENGINEERING - DEC 2023",
+      "at": "2026-03-05T15:33:08.809682Z"
+    },
+    "1347": {
+      "title": "BASIC MECHANICAL ENGINEERING - JUN 2023",
+      "at": "2026-03-05T15:33:08.824821Z"
+    },
+    "1348": {
+      "title": "BASIC CIVIL ENGINEERING AND ENGINEERING MECHANICS - DEC 2023",
+      "at": "2026-03-05T15:33:08.839703Z"
+    },
+    "1349": {
+      "title": "BASIC CIVIL ENGINEERING AND ENGINEERING MECHANICS - JUN 2023",
+      "at": "2026-03-05T15:33:08.855962Z"
+    },
+    "1350": {
+      "title": "BASIC COMPUTER ENGINEERING - DEC 2023",
+      "at": "2026-03-05T15:33:08.871248Z"
+    },
+    "1351": {
+      "title": "BASIC COMPUTER ENGINEERING - JUN 2023",
+      "at": "2026-03-05T15:33:08.886332Z"
+    },
+    "1352": {
+      "title": "ENGINEERING CHEMISTRY - JUN 2022",
+      "at": "2026-03-05T15:33:08.887934Z"
+    },
+    "1353": {
+      "title": "ENGINEERING CHEMISTRY - NOV 2022",
+      "at": "2026-03-05T15:33:08.901064Z"
+    },
+    "1354": {
+      "title": "MATHEMATICS 1 - NOV 2022",
+      "at": "2026-03-05T15:33:08.902684Z"
+    },
+    "1355": {
+      "title": "MATHEMATICS - JUN 2022",
+      "at": "2026-03-05T15:33:08.916293Z"
+    },
+    "1356": {
+      "title": "ENGLISH FOR COMMUNICATION - JUN 2022",
+      "at": "2026-03-05T15:33:08.917924Z"
+    },
+    "1357": {
+      "title": "ENGLISH FOR COMMUNICATION - NOV 2022",
+      "at": "2026-03-05T15:33:08.932021Z"
+    },
+    "1358": {
+      "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING - JUN 2022",
+      "at": "2026-03-05T15:33:08.933729Z"
+    },
+    "1359": {
+      "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING - NOV 2022",
+      "at": "2026-03-05T15:33:08.947054Z"
+    },
+    "1360": {
+      "title": "ENGINEERING GRAPHICS - JUN 2022",
+      "at": "2026-03-05T15:33:08.949767Z"
+    },
+    "1361": {
+      "title": "ENGINEERING GRAPHICS - NOV 2022",
+      "at": "2026-03-05T15:33:08.962143Z"
+    },
+    "1362": {
+      "title": "ENGINEERING PHYSICS - JUN 2022",
+      "at": "2026-03-05T15:33:08.978631Z"
+    },
+    "1363": {
+      "title": "ENGINEERING PHYSICS - NOV 2022",
+      "at": "2026-03-05T15:33:08.980263Z"
+    },
+    "1364": {
+      "title": "MATHEMATICS 2 - JUN 2022",
+      "at": "2026-03-05T15:33:08.993691Z"
+    },
+    "1365": {
+      "title": "MATHEMATICS 2 - NOV 2022",
+      "at": "2026-03-05T15:33:09.009717Z"
+    },
+    "1366": {
+      "title": "BASIC MECHANICAL ENGINEERING - JUN 2022",
+      "at": "2026-03-05T15:33:09.024571Z"
+    },
+    "1367": {
+      "title": "BASIC MECHANICAL ENGINEERING - NOV 2022",
+      "at": "2026-03-05T15:33:09.040932Z"
+    },
+    "1368": {
+      "title": "BASIC CIVIL ENGINEERING AND ENGINEERING MECHANICS - JUN 2022",
+      "at": "2026-03-05T15:33:09.056038Z"
+    },
+    "1369": {
+      "title": "BASIC CIVIL ENGINEERING AND ENGINEERING MECHANICS - NOV 2022",
+      "at": "2026-03-05T15:33:09.071452Z"
+    },
+    "1370": {
+      "title": "BASIC COMPUTER ENGINEERING - JUN 2022",
+      "at": "2026-03-05T15:33:09.086456Z"
+    },
+    "1371": {
+      "title": "BASIC COMPUTER ENGINEERING - NOV 2022",
+      "at": "2026-03-05T15:33:09.102439Z"
+    },
+    "1372": {
+      "title": "DISCRETE STRUCTURE - JUN 2025",
+      "at": "2026-03-05T15:33:09.118814Z"
+    },
+    "1373": {
+      "title": "INTRODUCTION TO DISCRETE STRUCTURE AND LINEAR ALGEBRA - DEC 2024",
+      "at": "2026-03-05T15:33:09.134214Z"
+    },
+    "1374": {
+      "title": "INTRODUCTION TO DISCRETE STRUCTURE AND LINEAR ALGEBRA - JUN 2024",
+      "at": "2026-03-05T15:33:09.148698Z"
+    },
+    "1375": {
+      "title": "OBJECT ORIENTED PROGRAMMING AND METHODOLOGY - DEC 2024",
+      "at": "2026-03-05T15:33:09.164275Z"
+    },
+    "1376": {
+      "title": "DATA STRUCTURES - DEC 2024",
+      "at": "2026-03-05T15:33:09.178497Z"
+    },
+    "1377": {
+      "title": "DATA STRUCTURES - JUN 2024",
+      "at": "2026-03-05T15:33:09.194279Z"
+    },
+    "1378": {
+      "title": "DIGITAL SYSTEMS - DEC 2024",
+      "at": "2026-03-05T15:33:09.210590Z"
+    },
+    "1379": {
+      "title": "DISCRETE STRUCTURE - DEC 2024",
+      "at": "2026-03-05T15:33:09.225638Z"
+    },
+    "1380": {
+      "title": "DISCRETE STRUCTURE - JUN 2024",
+      "at": "2026-03-05T15:33:09.241018Z"
+    },
+    "1381": {
+      "title": "INTRODUCTION TO DISCRETE STRUCTURE AND LINEAR ALGEBRA - JUN 2023",
+      "at": "2026-03-05T15:33:09.257443Z"
+    },
+    "1382": {
+      "title": "INTRODUCTION TO DISCRETE STRUCTURE AND LINEAR ALGEBRA - NOV 2023",
+      "at": "2026-03-05T15:33:09.273002Z"
+    },
+    "1383": {
+      "title": "OBJECT ORIENTED PROGRAMMING AND METHODOLOGY - DEC 2023",
+      "at": "2026-03-05T15:33:09.288025Z"
+    },
+    "1384": {
+      "title": "DATA STRUCTURES - DEC 2023",
+      "at": "2026-03-05T15:33:09.302889Z"
+    },
+    "1385": {
+      "title": "DATA STRUCTURES - JUN 2023",
+      "at": "2026-03-05T15:33:09.319251Z"
+    },
+    "1386": {
+      "title": "OBJECT ORIENTED PROGRAMMING AND METHODOLOGY - JUN 2023",
+      "at": "2026-03-05T15:33:09.334675Z"
+    },
+    "1387": {
+      "title": "DIGITAL CIRCUITS AND SYSTEM - JUN 2023",
+      "at": "2026-03-05T15:33:09.349539Z"
+    },
+    "1388": {
+      "title": "DIGITAL SYSTEMS - DEC 2023",
+      "at": "2026-03-05T15:33:09.365123Z"
+    },
+    "1389": {
+      "title": "DISCRETE STRUCTURE - JUN 2023",
+      "at": "2026-03-05T15:33:09.380842Z"
+    },
+    "1390": {
+      "title": "DISCRETE STRUCTURE - DEC 2023",
+      "at": "2026-03-05T15:33:09.396509Z"
+    },
+    "1391": {
+      "title": "INTRODUCTION TO DISCRETE STRUCTURE AND LINEAR - JUN 2022",
+      "at": "2026-03-05T15:33:09.411589Z"
+    },
+    "1392": {
+      "title": "DISCRETE STRUCTURE - NOV 2022",
+      "at": "2026-03-05T15:33:09.427299Z"
+    },
+    "1393": {
+      "title": "DATA STRUCTURES - NOV 2022",
+      "at": "2026-03-05T15:33:09.443026Z"
+    },
+    "1394": {
+      "title": "OBJECT ORIENTED PROGRAMMING AND METHODOLOGY - NOV 2022",
+      "at": "2026-03-05T15:33:09.458432Z"
+    },
+    "1395": {
+      "title": "DIGITAL CIRCUITS AND SYSTEM - NOV 2022",
+      "at": "2026-03-05T15:33:09.474660Z"
+    },
+    "1396": {
+      "title": "DIGITAL SYSTEMS DIGITAL CIRCUITS AND SYSTEM - NOV 2022",
+      "at": "2026-03-05T15:33:09.489600Z"
+    },
+    "1397": {
+      "title": "DIGITAL SYSTEMS - NOV 2022",
+      "at": "2026-03-05T15:33:09.505820Z"
+    },
+    "1398": {
+      "title": "OPERATING SYSTEMS - JUN 2025",
+      "at": "2026-03-05T15:33:09.521889Z"
+    },
+    "1399": {
+      "title": "SOFTWARE ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:09.537614Z"
+    },
+    "1400": {
+      "title": "COMPUTER ORGANIZATION AND ARCHITECTURE - JUN 2025",
+      "at": "2026-03-05T15:33:09.552855Z"
+    },
+    "1401": {
+      "title": "COMPUTER ORGANIZATION - JUN 2025",
+      "at": "2026-03-05T15:33:09.567746Z"
+    },
+    "1402": {
+      "title": "ANALYSIS DESIGN OF ALGORITHM - JUN 2025",
+      "at": "2026-03-05T15:33:09.583352Z"
+    },
+    "1403": {
+      "title": "OPERATING SYSTEMS - JUN 2024",
+      "at": "2026-03-05T15:33:09.598889Z"
+    },
+    "1404": {
+      "title": "SOFTWARE ENGINEERING - DEC 2024",
+      "at": "2026-03-05T15:33:09.614224Z"
+    },
+    "1405": {
+      "title": "SOFTWARE ENGINEERING - JUN 2024",
+      "at": "2026-03-05T15:33:09.629711Z"
+    },
+    "1406": {
+      "title": "COMPUTER ORGANIZATION AND ARCHITECTURE - DEC 2024",
+      "at": "2026-03-05T15:33:09.645672Z"
+    },
+    "1407": {
+      "title": "COMPUTER ORGANIZATION AND ARCHITECTURE - JUN 2024",
+      "at": "2026-03-05T15:33:09.660838Z"
+    },
+    "1408": {
+      "title": "ANALYSIS DESIGN OF ALGORITHM - DEC 2024",
+      "at": "2026-03-05T15:33:09.676842Z"
+    },
+    "1409": {
+      "title": "ANALYSIS DESIGN OF ALGORITHM - JUN 2024",
+      "at": "2026-03-05T15:33:09.691800Z"
+    },
+    "1410": {
+      "title": "OPERATING SYSTEMS - JUN 2023",
+      "at": "2026-03-05T15:33:09.707578Z"
+    },
+    "1411": {
+      "title": "OPERATING SYSTEMS - NOV 2023",
+      "at": "2026-03-05T15:33:09.724023Z"
+    },
+    "1412": {
+      "title": "SOFTWARE ENGINEERING - JUN 2023",
+      "at": "2026-03-05T15:33:09.739491Z"
+    },
+    "1413": {
+      "title": "SOFTWARE ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:09.755459Z"
+    },
+    "1414": {
+      "title": "COMPUTER ORGANIZATION AND ARCHITECTURE - JUN 2023",
+      "at": "2026-03-05T15:33:09.771446Z"
+    },
+    "1415": {
+      "title": "COMPUTER ORGANIZATION AND ARCHITECTURE - NOV 2023",
+      "at": "2026-03-05T15:33:09.787190Z"
+    },
+    "1416": {
+      "title": "ANALYSIS DESIGN OF ALGORITHM - JUN 2023",
+      "at": "2026-03-05T15:33:09.803189Z"
+    },
+    "1417": {
+      "title": "ANALYSIS DESIGN OF ALGORITHM - NOV 2023",
+      "at": "2026-03-05T15:33:09.817926Z"
+    },
+    "1418": {
+      "title": "SOFTWARE ENGINEERING - JUN 2022",
+      "at": "2026-03-05T15:33:09.833547Z"
+    },
+    "1419": {
+      "title": "COMPUTER ORGANIZATION AND ARCHITECTURE - JUN 2022",
+      "at": "2026-03-05T15:33:09.848969Z"
+    },
+    "1420": {
+      "title": "ANALYSIS DESIGN OF ALGORITHM - JUN 2022",
+      "at": "2026-03-05T15:33:09.864373Z"
+    },
+    "1421": {
+      "title": "THEORY OF COMPUTATION - DEC 2025",
+      "at": "2026-03-05T15:33:09.879822Z"
+    },
+    "1422": {
+      "title": "C CYBER SECURITY - DEC 2025",
+      "at": "2026-03-05T15:33:09.896701Z"
+    },
+    "1423": {
+      "title": "DATABASE MANAGEMENT SYSTEMS - DEC 2024",
+      "at": "2026-03-05T15:33:09.911812Z"
+    },
+    "1424": {
+      "title": "C CYBER SECURITY - DEC 2024",
+      "at": "2026-03-05T15:33:09.927021Z"
+    },
+    "1425": {
+      "title": "A INTERNET AND WEB TECHNOLOGY - DEC 2024",
+      "at": "2026-03-05T15:33:09.942503Z"
+    },
+    "1426": {
+      "title": "THEORY OF COMPUTATION - DEC 2024",
+      "at": "2026-03-05T15:33:09.958362Z"
+    },
+    "1427": {
+      "title": "THEORY OF COMPUTATION - MAY 2023",
+      "at": "2026-03-05T15:33:09.972615Z"
+    },
+    "1428": {
+      "title": "THEORY OF COMPUTATION - NOV 2023",
+      "at": "2026-03-05T15:33:09.989229Z"
+    },
+    "1429": {
+      "title": "DATABASE MANAGEMENT SYSTEMS - NOV 2023",
+      "at": "2026-03-05T15:33:10.005263Z"
+    },
+    "1430": {
+      "title": "A DATA ANALYTICS - NOV 2023",
+      "at": "2026-03-05T15:33:10.019494Z"
+    },
+    "1431": {
+      "title": "B PATTERN RECOGNITION - NOV 2023",
+      "at": "2026-03-05T15:33:10.034738Z"
+    },
+    "1432": {
+      "title": "C CYBER SECURITY - NOV 2023",
+      "at": "2026-03-05T15:33:10.050330Z"
+    },
+    "1433": {
+      "title": "A INTERNET AND WEB TECHNOLOGY - NOV 2023",
+      "at": "2026-03-05T15:33:10.066259Z"
+    },
+    "1434": {
+      "title": "THEORY OF COMPUTATION - NOV 2022",
+      "at": "2026-03-05T15:33:10.081028Z"
+    },
+    "1435": {
+      "title": "DATA MANAGEMENT SYSTEMS - NOV 2022",
+      "at": "2026-03-05T15:33:10.096919Z"
+    },
+    "1436": {
+      "title": "C CYBER SECURITY - NOV 2022",
+      "at": "2026-03-05T15:33:10.112026Z"
+    },
+    "1437": {
+      "title": "A INTERNET AND WEB TECHNOLOGY - NOV 2022",
+      "at": "2026-03-05T15:33:10.127679Z"
+    },
+    "1438": {
+      "title": "COMPUTER NETWORKS - JUN 2025",
+      "at": "2026-03-05T15:33:10.144020Z"
+    },
+    "1439": {
+      "title": "MACHINE LEARNING - JUN 2025",
+      "at": "2026-03-05T15:33:10.160075Z"
+    },
+    "1440": {
+      "title": "A ADVANCED COMPUTER ARCHITECTURE - JUN 2025",
+      "at": "2026-03-05T15:33:10.175739Z"
+    },
+    "1441": {
+      "title": "B PROJECT MANAGEMENT - JUN 2025",
+      "at": "2026-03-05T15:33:10.190261Z"
+    },
+    "1442": {
+      "title": "C COMPILER DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:10.206719Z"
+    },
+    "1443": {
+      "title": "COMPUTER NETWORKS - DEC 2024",
+      "at": "2026-03-05T15:33:10.222977Z"
+    },
+    "1444": {
+      "title": "COMPUTER NETWORKS - MAY 2024",
+      "at": "2026-03-05T15:33:10.236508Z"
+    },
+    "1445": {
+      "title": "MACHINE LEARNING - DEC 2024",
+      "at": "2026-03-05T15:33:10.252413Z"
+    },
+    "1446": {
+      "title": "MACHINE LEARNING - MAY 2024",
+      "at": "2026-03-05T15:33:10.267423Z"
+    },
+    "1447": {
+      "title": "A ADVANCED COMPUTER ARCHITECTURE - MAY 2024",
+      "at": "2026-03-05T15:33:10.282416Z"
+    },
+    "1448": {
+      "title": "C COMPILER DESIGN - DEC 2024",
+      "at": "2026-03-05T15:33:10.298794Z"
+    },
+    "1449": {
+      "title": "C COMPILER DESIGN - MAY 2024",
+      "at": "2026-03-05T15:33:10.314868Z"
+    },
+    "1450": {
+      "title": "B PROJECT MANAGEMENT - DEC 2024",
+      "at": "2026-03-05T15:33:10.328309Z"
+    },
+    "1451": {
+      "title": "B PROJECT MANAGEMENT - MAY 2024",
+      "at": "2026-03-05T15:33:10.344519Z"
+    },
+    "1452": {
+      "title": "COMPUTER NETWORKS - MAY 2023",
+      "at": "2026-03-05T15:33:10.359354Z"
+    },
+    "1453": {
+      "title": "MACHINE LEARNING - MAY 2023",
+      "at": "2026-03-05T15:33:10.374509Z"
+    },
+    "1454": {
+      "title": "C COMPILER DESIGN - MAY 2023",
+      "at": "2026-03-05T15:33:10.390384Z"
+    },
+    "1455": {
+      "title": "A KNOWLEDGE MANAGEMENT - MAY 2023",
+      "at": "2026-03-05T15:33:10.406295Z"
+    },
+    "1456": {
+      "title": "B PROJECT MANAGEMENT - MAY 2023",
+      "at": "2026-03-05T15:33:10.421180Z"
+    },
+    "1457": {
+      "title": "MACHINE LEARNING - MAY 2022",
+      "at": "2026-03-05T15:33:10.437236Z"
+    },
+    "1458": {
+      "title": "COMPUTER NETWORKS - MAY 2022",
+      "at": "2026-03-05T15:33:10.452512Z"
+    },
+    "1459": {
+      "title": "B COMPUTER GRAPHICS AND VISUALIZATION - MAY 2022",
+      "at": "2026-03-05T15:33:10.467431Z"
+    },
+    "1460": {
+      "title": "C COMPILER DESIGN - MAY 2022",
+      "at": "2026-03-05T15:33:10.483266Z"
+    },
+    "1461": {
+      "title": "B PROJECT MANAGEMENT - MAY 2022",
+      "at": "2026-03-05T15:33:10.498481Z"
+    },
+    "1462": {
+      "title": "C RURAL TECHNOLOGY AND COMMUNITY DEVELOPMENT - MAY 2022",
+      "at": "2026-03-05T15:33:10.514227Z"
+    },
+    "1463": {
+      "title": "SOFTWARE ARCHITECTURES - DEC 2025",
+      "at": "2026-03-05T15:33:10.529693Z"
+    },
+    "1464": {
+      "title": "SOFTWARE ARCHITECTURES - JUN 2025",
+      "at": "2026-03-05T15:33:10.545587Z"
+    },
+    "1465": {
+      "title": "D AI 702 D BIG DATA - DEC 2025",
+      "at": "2026-03-05T15:33:10.561000Z"
+    },
+    "1466": {
+      "title": "A CRYPTOGRAPHY AND INFORMATION SECURITY - DEC 2025",
+      "at": "2026-03-05T15:33:10.575788Z"
+    },
+    "1467": {
+      "title": "B DATA MINING AND WAREHOUSING - JUN 2025",
+      "at": "2026-03-05T15:33:10.591368Z"
+    },
+    "1468": {
+      "title": "C AL 703 C AGILE SOFTWARE DEVELOPMENT - DEC 2025",
+      "at": "2026-03-05T15:33:10.607530Z"
+    },
+    "1469": {
+      "title": "SOFTWARE ARCHITECTURES - DEC 2024",
+      "at": "2026-03-05T15:33:10.622335Z"
+    },
+    "1470": {
+      "title": "C WIRELESS AND MOBILE COMPUTING - DEC 2024",
+      "at": "2026-03-05T15:33:10.638634Z"
+    },
+    "1471": {
+      "title": "D BIG DATA - DEC 2024",
+      "at": "2026-03-05T15:33:10.654266Z"
+    },
+    "1472": {
+      "title": "B DATA MINING AND WAREHOUSING - DEC 2024",
+      "at": "2026-03-05T15:33:10.670713Z"
+    },
+    "1473": {
+      "title": "SOFTWARE ARCHITECTURES - NOV 2023",
+      "at": "2026-03-05T15:33:10.685453Z"
+    },
+    "1474": {
+      "title": "B DEEP AND REINFORCEMENT LEARNING - NOV 2023",
+      "at": "2026-03-05T15:33:10.701503Z"
+    },
+    "1475": {
+      "title": "D BIG DATA - NOV 2023",
+      "at": "2026-03-05T15:33:10.718257Z"
+    },
+    "1476": {
+      "title": "A CRYPTOGRAPHY AND INFORMATION SECURITY - NOV 2023",
+      "at": "2026-03-05T15:33:10.732940Z"
+    },
+    "1477": {
+      "title": "B DATA MINING AND WAREHOUSING - NOV 2023",
+      "at": "2026-03-05T15:33:10.748314Z"
+    },
+    "1478": {
+      "title": "SOFTWARE ARCHITECTURES - NOV 2022",
+      "at": "2026-03-05T15:33:10.764098Z"
+    },
+    "1479": {
+      "title": "D BIG DATA - NOV 2022",
+      "at": "2026-03-05T15:33:10.779136Z"
+    },
+    "1480": {
+      "title": "A CRYPTOGRAPHY AND INFORMATION SECURITY - NOV 2022",
+      "at": "2026-03-05T15:33:10.794628Z"
+    },
+    "1481": {
+      "title": "INTERNET OF THINGS - JUN 2025",
+      "at": "2026-03-05T15:33:10.810461Z"
+    },
+    "1482": {
+      "title": "B CLOUD COMPUTING - JUN 2025",
+      "at": "2026-03-05T15:33:10.826188Z"
+    },
+    "1483": {
+      "title": "A IMAGE PROCESSING AND COMPUTER VISION - JUN 2025",
+      "at": "2026-03-05T15:33:10.842256Z"
+    },
+    "1484": {
+      "title": "D MANAGING INNOVATION AND ENTREPRENEURSHIP - JUN 2025",
+      "at": "2026-03-05T15:33:10.857592Z"
+    },
+    "1485": {
+      "title": "INTERNET OF THINGS - DEC 2024",
+      "at": "2026-03-05T15:33:10.873733Z"
+    },
+    "1486": {
+      "title": "INTERNET OF THINGS - MAY 2024",
+      "at": "2026-03-05T15:33:10.889084Z"
+    },
+    "1487": {
+      "title": "A BLOCK CHAIN TECHNOLOGIES - MAY 2024",
+      "at": "2026-03-05T15:33:10.904408Z"
+    },
+    "1488": {
+      "title": "B CLOUD COMPUTING - DEC 2024",
+      "at": "2026-03-05T15:33:10.920876Z"
+    },
+    "1489": {
+      "title": "B CLOUD COMPUTING - MAY 2024",
+      "at": "2026-03-05T15:33:10.936240Z"
+    },
+    "1490": {
+      "title": "A IMAGE PROCESSING AND COMPUTER VISION - DEC 2024",
+      "at": "2026-03-05T15:33:10.952150Z"
+    },
+    "1491": {
+      "title": "A IMAGE PROCESSING AND COMPUTER VISION - MAY 2024",
+      "at": "2026-03-05T15:33:10.967165Z"
+    },
+    "1492": {
+      "title": "D MANAGING INNOVATION AND ENTREPRENEURSHIP - MAY 2024",
+      "at": "2026-03-05T15:33:10.984659Z"
+    },
+    "1493": {
+      "title": "INTERNET OF THINGS - MAY 2023",
+      "at": "2026-03-05T15:33:10.999742Z"
+    },
+    "1494": {
+      "title": "B CLOUD COMPUTING - MAY 2023",
+      "at": "2026-03-05T15:33:11.013865Z"
+    },
+    "1495": {
+      "title": "A IMAGE PROCESSING AND COMPUTER VISION - MAY 2023",
+      "at": "2026-03-05T15:33:11.030520Z"
+    },
+    "1496": {
+      "title": "C INTERNET OF THINGS - MAY 2023",
+      "at": "2026-03-05T15:33:11.045454Z"
+    },
+    "1497": {
+      "title": "INTERNET OF THINGS - MAY 2022",
+      "at": "2026-03-05T15:33:11.060696Z"
+    },
+    "1498": {
+      "title": "A BLOCK CHAIN TECHNOLOGIES - MAY 2022",
+      "at": "2026-03-05T15:33:11.076381Z"
+    },
+    "1499": {
+      "title": "B CLOUD COMPUTING - MAY 2022",
+      "at": "2026-03-05T15:33:11.091886Z"
+    },
+    "1500": {
+      "title": "C HIGH PERFORMANCE COMPUTING - MAY 2022",
+      "at": "2026-03-05T15:33:11.108600Z"
+    },
+    "1501": {
+      "title": "D OBJECT ORIENTED SOFTWARE ENGINEERING - MAY 2022",
+      "at": "2026-03-05T15:33:11.122335Z"
+    },
+    "1502": {
+      "title": "A IMAGE PROCESSING AND COMPUTER VISION - MAY 2022",
+      "at": "2026-03-05T15:33:11.138398Z"
+    },
+    "1503": {
+      "title": "D MANAGING INNOVATION AND ENTREPRENEURSHIP - MAY 2022",
+      "at": "2026-03-05T15:33:11.154433Z"
+    },
+    "1504": {
+      "title": "ARTIFICIAL INTELLIGENCE - JUN 2025",
+      "at": "2026-03-05T15:33:11.170494Z"
+    },
+    "1505": {
+      "title": "TECHNICAL COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:11.185396Z"
+    },
+    "1506": {
+      "title": "OBJECT ORIENTED PROGRAMMING AND METHODOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:11.201255Z"
+    },
+    "1507": {
+      "title": "DATA STRUCTURE - DEC 2024",
+      "at": "2026-03-05T15:33:11.216903Z"
+    },
+    "1508": {
+      "title": "DATA STRUCTURE - JUN 2024",
+      "at": "2026-03-05T15:33:11.232674Z"
+    },
+    "1509": {
+      "title": "ARTIFICIAL INTELLIGENCE - DEC 2024",
+      "at": "2026-03-05T15:33:11.246926Z"
+    },
+    "1510": {
+      "title": "ARTIFICIAL INTELLIGENCE - JUN 2024",
+      "at": "2026-03-05T15:33:11.263119Z"
+    },
+    "1511": {
+      "title": "TECHNICAL COMMUNICATION - JUN 2024",
+      "at": "2026-03-05T15:33:11.278818Z"
+    },
+    "1512": {
+      "title": "OBJECT ORIENTED PROGRAMMING AND METHODOLOGY - JUN 2024",
+      "at": "2026-03-05T15:33:11.293556Z"
+    },
+    "1513": {
+      "title": "PROBABILITY AND STATISTICS FOR DATA SCIENCE - DEC 2023",
+      "at": "2026-03-05T15:33:11.308813Z"
+    },
+    "1514": {
+      "title": "PROBABILITY AND STATISTICS FOR DATA SCIENCE - JUN 2023",
+      "at": "2026-03-05T15:33:11.324307Z"
+    },
+    "1515": {
+      "title": "DATA STRUCTURE - DEC 2023",
+      "at": "2026-03-05T15:33:11.326580Z"
+    },
+    "1516": {
+      "title": "DATA STRUCTURE - JUN 2023",
+      "at": "2026-03-05T15:33:11.338805Z"
+    },
+    "1517": {
+      "title": "ARTIFICIAL INTELIGENCE - JUN 2023",
+      "at": "2026-03-05T15:33:11.340702Z"
+    },
+    "1518": {
+      "title": "ARTIFICIAL INTELLIGENCE - DEC 2023",
+      "at": "2026-03-05T15:33:11.355209Z"
+    },
+    "1519": {
+      "title": "TECHNICAL COMMUNICATION - DEC 2023",
+      "at": "2026-03-05T15:33:11.357494Z"
+    },
+    "1520": {
+      "title": "INTRODUCTION TO PROBABILITY AND STATISTICS - DEC 2023",
+      "at": "2026-03-05T15:33:11.371127Z"
+    },
+    "1521": {
+      "title": "TECHNICAL COMMUNICATION - DEC 2022",
+      "at": "2026-03-05T15:33:11.373899Z"
+    },
+    "1522": {
+      "title": "PROBABILITY AND STATISTICS FOR DATA SCIENCE - NOV 2022",
+      "at": "2026-03-05T15:33:11.385882Z"
+    },
+    "1523": {
+      "title": "DATA STRUCTURE - DEC 2022",
+      "at": "2026-03-05T15:33:11.387460Z"
+    },
+    "1524": {
+      "title": "DATA STRUCTURE - NOV 2022",
+      "at": "2026-03-05T15:33:11.401152Z"
+    },
+    "1525": {
+      "title": "ARTIFICIAL INTELLIGENCE - NOV 2022",
+      "at": "2026-03-05T15:33:11.402722Z"
+    },
+    "1526": {
+      "title": "TECHNICAL COMMUNICATION - NOV 2022",
+      "at": "2026-03-05T15:33:11.416371Z"
+    },
+    "1527": {
+      "title": "DATA BASE MANAGEMENT SYSTEM - JUN 2025",
+      "at": "2026-03-05T15:33:11.417976Z"
+    },
+    "1528": {
+      "title": "SOFTWARE ENGINEERING WITH AGILE METHODOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:11.431881Z"
+    },
+    "1529": {
+      "title": "DATA SCIENCE - JUN 2025",
+      "at": "2026-03-05T15:33:11.433461Z"
+    },
+    "1530": {
+      "title": "DATA BASE MANAGEMENT SYSTEM - JUN 2024",
+      "at": "2026-03-05T15:33:11.447791Z"
+    },
+    "1531": {
+      "title": "DATA SCIENCE - JUN 2024",
+      "at": "2026-03-05T15:33:11.449395Z"
+    },
+    "1532": {
+      "title": "DATA BASE MANAGEMENT SYSTEM - JUN 2023",
+      "at": "2026-03-05T15:33:11.463247Z"
+    },
+    "1533": {
+      "title": "SOFTWARE ENGINEERING WITH AGILE METHODOLOGY - JUN 2023",
+      "at": "2026-03-05T15:33:11.465405Z"
+    },
+    "1534": {
+      "title": "DATA SCIENCE - JUN 2023",
+      "at": "2026-03-05T15:33:11.478886Z"
+    },
+    "1535": {
+      "title": "SOFTWARE ENGINEERING WITH AGILE METHODOLOGY - JUN 2024",
+      "at": "2026-03-05T15:33:11.480510Z"
+    },
+    "1536": {
+      "title": "MACHINE LEARNING - NOV 2023",
+      "at": "2026-03-05T15:33:11.494403Z"
+    },
+    "1537": {
+      "title": "A MANAGEMENT INFORMATION SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:11.509983Z"
+    },
+    "1538": {
+      "title": "MACHINE LEARNING - NOV 2022",
+      "at": "2026-03-05T15:33:11.511615Z"
+    },
+    "1539": {
+      "title": "A MANAGEMENT INFORMATION SYSTEM - NOV 2022",
+      "at": "2026-03-05T15:33:11.525041Z"
+    },
+    "1540": {
+      "title": "DEEP LEARNING - JUN 2025",
+      "at": "2026-03-05T15:33:11.539593Z"
+    },
+    "1541": {
+      "title": "A DATA MINING AND WAREHOUSING - JUN 2025",
+      "at": "2026-03-05T15:33:11.555699Z"
+    },
+    "1542": {
+      "title": "DEEP LEARNING - MAY 2024",
+      "at": "2026-03-05T15:33:11.571397Z"
+    },
+    "1543": {
+      "title": "A DATA MINING AND WAREHOUSING - MAY 2024",
+      "at": "2026-03-05T15:33:11.587240Z"
+    },
+    "1544": {
+      "title": "DEEP LEARNING - MAY 2023",
+      "at": "2026-03-05T15:33:11.603902Z"
+    },
+    "1545": {
+      "title": "A DATA MINING AND WAREHOUSING - MAY 2023",
+      "at": "2026-03-05T15:33:11.606123Z"
+    },
+    "1546": {
+      "title": "A INTERNET OF THINGS - MAY 2023",
+      "at": "2026-03-05T15:33:11.619172Z"
+    },
+    "1547": {
+      "title": "C CS 702 A COMPUTATIONAL INTELLIGENCE - NOV 2023",
+      "at": "2026-03-05T15:33:11.620863Z"
+    },
+    "1548": {
+      "title": "AI FOR COMPUTER VISION - DEC 2024",
+      "at": "2026-03-05T15:33:11.634686Z"
+    },
+    "1549": {
+      "title": "A CLOUD COMPUTING - DEC 2024",
+      "at": "2026-03-05T15:33:11.649546Z"
+    },
+    "1550": {
+      "title": "A DATA VISUALIZATION - DEC 2024",
+      "at": "2026-03-05T15:33:11.665797Z"
+    },
+    "1551": {
+      "title": "BIG DATA - JUN 2025",
+      "at": "2026-03-05T15:33:11.680892Z"
+    },
+    "1552": {
+      "title": "B REINFORCEMENT LEARNING - JUN 2025",
+      "at": "2026-03-05T15:33:11.696349Z"
+    },
+    "1553": {
+      "title": "IO IS 803 MANAGING INNOVATION AND ENTREPRENEURSHIP - JUN 2025",
+      "at": "2026-03-05T15:33:11.712027Z"
+    },
+    "1554": {
+      "title": "MANAGING INNOVATION AND ENTREPRENEURSHIP - MAY 2024",
+      "at": "2026-03-05T15:33:11.727941Z"
+    },
+    "1555": {
+      "title": "INTRODUCTION TO PROBABILITY AND STATISTICS - JUN 2025",
+      "at": "2026-03-05T15:33:11.743836Z"
+    },
+    "1556": {
+      "title": "INTRODUCTION TO PROBABILITY AND STATISTICS - JUN 2024",
+      "at": "2026-03-05T15:33:11.760694Z"
+    },
+    "1557": {
+      "title": "INTRODUCTION TO PROBABILITY AND STATISTICS - JUN 2023",
+      "at": "2026-03-05T15:33:11.762943Z"
+    },
+    "1558": {
+      "title": "INTRODUCTION TO PROBABILITY AND STATISTICS - NOV 2022",
+      "at": "2026-03-05T15:33:11.791174Z"
+    },
+    "1559": {
+      "title": "INTRODUCTION TO DISCRETE STRUCTURE - JUN 2025",
+      "at": "2026-03-05T15:33:11.793741Z"
+    },
+    "1560": {
+      "title": "ANALYSIS AND DESIGN OF ALGORITHM - JUN 2025",
+      "at": "2026-03-05T15:33:11.821361Z"
+    },
+    "1561": {
+      "title": "ANALYSIS AND DESIGN OF ALGORITHM - JUN 2024",
+      "at": "2026-03-05T15:33:11.836235Z"
+    },
+    "1562": {
+      "title": "MACHINE LEARNING - JUN 2024",
+      "at": "2026-03-05T15:33:11.852510Z"
+    },
+    "1563": {
+      "title": "MACHINE LEARNING - JUN 2023",
+      "at": "2026-03-05T15:33:11.867682Z"
+    },
+    "1564": {
+      "title": "ANALYSIS AND DESIGN OF ALGORITHM - JUN 2023",
+      "at": "2026-03-05T15:33:11.883373Z"
+    },
+    "1565": {
+      "title": "ANALYSIS AND DESIGN OF ALGORITHM - NOV 2023",
+      "at": "2026-03-05T15:33:11.898620Z"
+    },
+    "1566": {
+      "title": "MACHINE LEARNING - JUN 2022",
+      "at": "2026-03-05T15:33:11.914288Z"
+    },
+    "1567": {
+      "title": "ANALYSIS AND DESIGN OF ALGORITHM - JUN 2022",
+      "at": "2026-03-05T15:33:11.929996Z"
+    },
+    "1568": {
+      "title": "OPERATING SYSTEMS - DEC 2024",
+      "at": "2026-03-05T15:33:11.945649Z"
+    },
+    "1569": {
+      "title": "DEEP SYSTEM - DEC 2024",
+      "at": "2026-03-05T15:33:11.961169Z"
+    },
+    "1570": {
+      "title": "A INFORMATION RETRIEVAL - NOV 2023",
+      "at": "2026-03-05T15:33:11.976789Z"
+    },
+    "1571": {
+      "title": "B DEEP LEARNING - NOV 2023",
+      "at": "2026-03-05T15:33:11.992535Z"
+    },
+    "1572": {
+      "title": "A AI IN HEALTH CARE - NOV 2023",
+      "at": "2026-03-05T15:33:12.009287Z"
+    },
+    "1573": {
+      "title": "B NATURAL LANGUAGE PROCESSING - NOV 2023",
+      "at": "2026-03-05T15:33:12.024157Z"
+    },
+    "1574": {
+      "title": "DATA BASE MANAGEMENT SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:12.040656Z"
+    },
+    "1575": {
+      "title": "OPERATING SYSTEMS - NOV 2022",
+      "at": "2026-03-05T15:33:12.055799Z"
+    },
+    "1576": {
+      "title": "DATABASE MANAGEMENT SYSTEMS - NOV 2022",
+      "at": "2026-03-05T15:33:12.072058Z"
+    },
+    "1577": {
+      "title": "B DEEP LEARNING - NOV 2022",
+      "at": "2026-03-05T15:33:12.074919Z"
+    },
+    "1578": {
+      "title": "B NATURAL LANGUAGE PROCESSING - NOV 2022",
+      "at": "2026-03-05T15:33:12.087276Z"
+    },
+    "1579": {
+      "title": "THEORY OF COMPUTATION - JUN 2025",
+      "at": "2026-03-05T15:33:12.101570Z"
+    },
+    "1580": {
+      "title": "THEORY OF COMPUTATION - MAY 2024",
+      "at": "2026-03-05T15:33:12.117393Z"
+    },
+    "1581": {
+      "title": "B DATA AND VISUAL ANALYTICS - MAY 2024",
+      "at": "2026-03-05T15:33:12.134055Z"
+    },
+    "1582": {
+      "title": "A CLOUD COMPUTING - MAY 2024",
+      "at": "2026-03-05T15:33:12.149760Z"
+    },
+    "1583": {
+      "title": "B DATA AND VISUAL ANALYTICS - MAY 2023",
+      "at": "2026-03-05T15:33:12.164677Z"
+    },
+    "1584": {
+      "title": "A CLOUD COMPUTING - MAY 2023",
+      "at": "2026-03-05T15:33:12.181642Z"
+    },
+    "1585": {
+      "title": "C INTELLIGENT SYSTEMS FOR ROBOTICS - MAY 2023",
+      "at": "2026-03-05T15:33:12.183953Z"
+    },
+    "1586": {
+      "title": "COMPUTER VISION - DEC 2025",
+      "at": "2026-03-05T15:33:12.210663Z"
+    },
+    "1587": {
+      "title": "B ADVANCED MACHINE LEARINING - DEC 2025",
+      "at": "2026-03-05T15:33:12.225690Z"
+    },
+    "1588": {
+      "title": "COMPUTER VISION - NOV 2023",
+      "at": "2026-03-05T15:33:12.241448Z"
+    },
+    "1589": {
+      "title": "A AI IN GAMING - NOV 2023",
+      "at": "2026-03-05T15:33:12.256907Z"
+    },
+    "1590": {
+      "title": "C PREDICTIVE ANALYTICS - NOV 2023",
+      "at": "2026-03-05T15:33:12.272704Z"
+    },
+    "1591": {
+      "title": "D MACHINE LEARNING FOR DATA SCIENCE - NOV 2023",
+      "at": "2026-03-05T15:33:12.288572Z"
+    },
+    "1592": {
+      "title": "B AUGMENTED AND VIRTUAL REALITY - NOV 2023",
+      "at": "2026-03-05T15:33:12.303902Z"
+    },
+    "1593": {
+      "title": "C AGILE SOFTWARE DEVELOPMENT - NOV 2023",
+      "at": "2026-03-05T15:33:12.319457Z"
+    },
+    "1594": {
+      "title": "D INTERNET AND WEB TECHNOLOGY - NOV 2023",
+      "at": "2026-03-05T15:33:12.334194Z"
+    },
+    "1595": {
+      "title": "BUSINESS INTELLIGENCE - MAY 2024",
+      "at": "2026-03-05T15:33:12.349399Z"
+    },
+    "1596": {
+      "title": "A BLOCKCHAIN TECHNOLOGIES - MAY 2024",
+      "at": "2026-03-05T15:33:12.365188Z"
+    },
+    "1597": {
+      "title": "A INTRODUCTION TO IOT - MAY 2024",
+      "at": "2026-03-05T15:33:12.380606Z"
+    },
+    "1598": {
+      "title": "INTRODUCTION TO PROBABILITY AND STATISTICS - DEC 2024",
+      "at": "2026-03-05T15:33:12.394763Z"
+    },
+    "1599": {
+      "title": "ANALYSIS AND DESIGN OF ALGORITHM - DEC 2024",
+      "at": "2026-03-05T15:33:12.411221Z"
+    },
+    "1600": {
+      "title": "THERMODYNAMICS - JUN 2025",
+      "at": "2026-03-05T15:33:12.427268Z"
+    },
+    "1601": {
+      "title": "MATERIALS TECHNOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:12.442380Z"
+    },
+    "1602": {
+      "title": "STRENGTH OF MATERIAL - JUN 2025",
+      "at": "2026-03-05T15:33:12.457756Z"
+    },
+    "1603": {
+      "title": "MANUFACTURING PROCESS - JUN 2025",
+      "at": "2026-03-05T15:33:12.472962Z"
+    },
+    "1604": {
+      "title": "THERMODYNAMICS - DEC 2024",
+      "at": "2026-03-05T15:33:12.488474Z"
+    },
+    "1605": {
+      "title": "MATERIALS TECHNOLOGY - DEC 2024",
+      "at": "2026-03-05T15:33:12.503844Z"
+    },
+    "1606": {
+      "title": "MATERIALS TECHNOLOGY - JUN 2024",
+      "at": "2026-03-05T15:33:12.519869Z"
+    },
+    "1607": {
+      "title": "STRENGTH OF MATERIAL - DEC 2024",
+      "at": "2026-03-05T15:33:12.535444Z"
+    },
+    "1608": {
+      "title": "STRENGTH OF MATERIAL - JUN 2024",
+      "at": "2026-03-05T15:33:12.551128Z"
+    },
+    "1609": {
+      "title": "MANUFACTURING PROCESS - DEC 2024",
+      "at": "2026-03-05T15:33:12.566608Z"
+    },
+    "1610": {
+      "title": "THERMODYNAMICS - DEC 2023",
+      "at": "2026-03-05T15:33:12.581730Z"
+    },
+    "1611": {
+      "title": "THERMODYNAMICS - JUN 2023",
+      "at": "2026-03-05T15:33:12.596974Z"
+    },
+    "1612": {
+      "title": "MATERIALS TECHNOLOGY - DEC 2023",
+      "at": "2026-03-05T15:33:12.614219Z"
+    },
+    "1613": {
+      "title": "MATERIALS TECHNOLOGY - JUN 2023",
+      "at": "2026-03-05T15:33:12.627682Z"
+    },
+    "1614": {
+      "title": "STRENGTH OF MATERIAL - DEC 2023",
+      "at": "2026-03-05T15:33:12.643290Z"
+    },
+    "1615": {
+      "title": "STRENGTH OF MATERIAL - JUN 2023",
+      "at": "2026-03-05T15:33:12.658392Z"
+    },
+    "1616": {
+      "title": "MANUFACTURING PROCESS - DEC 2023",
+      "at": "2026-03-05T15:33:12.674050Z"
+    },
+    "1617": {
+      "title": "MANUFACTURING PROCESS - JUN 2023",
+      "at": "2026-03-05T15:33:12.690322Z"
+    },
+    "1618": {
+      "title": "THERMODYNAMICS - NOV 2022",
+      "at": "2026-03-05T15:33:12.705105Z"
+    },
+    "1619": {
+      "title": "INSTRUMENTATION AND CONTROL - JUN 2025",
+      "at": "2026-03-05T15:33:12.720135Z"
+    },
+    "1620": {
+      "title": "THEORY OF MACHINES - JUN 2025",
+      "at": "2026-03-05T15:33:12.736321Z"
+    },
+    "1621": {
+      "title": "FLUID MECHANICS - JUN 2025",
+      "at": "2026-03-05T15:33:12.751725Z"
+    },
+    "1622": {
+      "title": "MANUFACTURING TECHNOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:12.766372Z"
+    },
+    "1623": {
+      "title": "INSTRUMENTATION AND CONTROL - DEC 2024",
+      "at": "2026-03-05T15:33:12.781833Z"
+    },
+    "1624": {
+      "title": "INSTRUMENTATION AND CONTROL - JUN 2024",
+      "at": "2026-03-05T15:33:12.797492Z"
+    },
+    "1625": {
+      "title": "THEORY OF MACHINES - DEC 2024",
+      "at": "2026-03-05T15:33:12.814225Z"
+    },
+    "1626": {
+      "title": "THEORY OF MACHINES - JUN 2024",
+      "at": "2026-03-05T15:33:12.829395Z"
+    },
+    "1627": {
+      "title": "FLUID MECHANICS - DEC 2024",
+      "at": "2026-03-05T15:33:12.845664Z"
+    },
+    "1628": {
+      "title": "FLUID MECHANICS - JUN 2024",
+      "at": "2026-03-05T15:33:12.861945Z"
+    },
+    "1629": {
+      "title": "MANUFACTURING TECHNOLOGY - DEC 2024",
+      "at": "2026-03-05T15:33:12.877504Z"
+    },
+    "1630": {
+      "title": "MANUFACTURING TECHNOLOGY - JUN 2024",
+      "at": "2026-03-05T15:33:12.892356Z"
+    },
+    "1631": {
+      "title": "INSTRUMENTATION AND CONTROL - JUN 2023",
+      "at": "2026-03-05T15:33:12.907811Z"
+    },
+    "1632": {
+      "title": "INSTRUMENTATION AND CONTROL - NOV 2023",
+      "at": "2026-03-05T15:33:12.924206Z"
+    },
+    "1633": {
+      "title": "THEORY OF MACHINES - JUN 2023",
+      "at": "2026-03-05T15:33:12.939281Z"
+    },
+    "1634": {
+      "title": "THEORY OF MACHINES - NOV 2023",
+      "at": "2026-03-05T15:33:12.954838Z"
+    },
+    "1635": {
+      "title": "FLUID MECHANICS - JUN 2023",
+      "at": "2026-03-05T15:33:12.970312Z"
+    },
+    "1636": {
+      "title": "FLUID MECHANICS - NOV 2023",
+      "at": "2026-03-05T15:33:12.985383Z"
+    },
+    "1637": {
+      "title": "MANUFACTURING TECHNOLOGY - JUN 2023",
+      "at": "2026-03-05T15:33:13.002069Z"
+    },
+    "1638": {
+      "title": "MANUFACTURING TECHNOLOGY - NOV 2023",
+      "at": "2026-03-05T15:33:13.017573Z"
+    },
+    "1639": {
+      "title": "INSTRUMENTATION AND CONTROL - JUN 2022",
+      "at": "2026-03-05T15:33:13.032267Z"
+    },
+    "1640": {
+      "title": "THEORY OF MACHINES - JUN 2022",
+      "at": "2026-03-05T15:33:13.049284Z"
+    },
+    "1641": {
+      "title": "FLUID MECHANICS - JUN 2022",
+      "at": "2026-03-05T15:33:13.065019Z"
+    },
+    "1642": {
+      "title": "MANUFACTURING TECHNOLOGY - JUN 2022",
+      "at": "2026-03-05T15:33:13.080523Z"
+    },
+    "1643": {
+      "title": "C RENEWABLE ENERGY TECHNOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:13.096110Z"
+    },
+    "1644": {
+      "title": "C RENEWABLE ENERGY TECHNOLOGY - DEC 2024",
+      "at": "2026-03-05T15:33:13.112020Z"
+    },
+    "1645": {
+      "title": "C RENEWABLE ENERGY TECHNOLOGY - MAY 2024",
+      "at": "2026-03-05T15:33:13.127100Z"
+    },
+    "1646": {
+      "title": "C RENEWABLE ENERGY TECHNOLOGY - MAY 2023",
+      "at": "2026-03-05T15:33:13.142668Z"
+    },
+    "1647": {
+      "title": "C RENEWABLE ENERGY TECHNOLOGY - MAY 2022",
+      "at": "2026-03-05T15:33:13.157773Z"
+    },
+    "1648": {
+      "title": "STRENGTH OF MATERIAL - NOV 2022",
+      "at": "2026-03-05T15:33:13.173525Z"
+    },
+    "1649": {
+      "title": "MANUFACTURING TECHNOLOGY - NOV 2022",
+      "at": "2026-03-05T15:33:13.189035Z"
+    },
+    "1650": {
+      "title": "MATERIALS TECHNOLOGY - JUN 2022",
+      "at": "2026-03-05T15:33:13.204754Z"
+    },
+    "1651": {
+      "title": "CONSTRUCTION MATERIALS - JUN 2025",
+      "at": "2026-03-05T15:33:13.219873Z"
+    },
+    "1652": {
+      "title": "SURVEYING - JUN 2025",
+      "at": "2026-03-05T15:33:13.236326Z"
+    },
+    "1653": {
+      "title": "BUILDING PLANNING AND ARCHITECTURE - JUN 2025",
+      "at": "2026-03-05T15:33:13.251803Z"
+    },
+    "1654": {
+      "title": "STRENGTH OF MATERIALS - JUN 2025",
+      "at": "2026-03-05T15:33:13.267702Z"
+    },
+    "1655": {
+      "title": "CONSTRUCTION MATERIALS - JUN 2024",
+      "at": "2026-03-05T15:33:13.282142Z"
+    },
+    "1656": {
+      "title": "SURVEYING - DEC 2024",
+      "at": "2026-03-05T15:33:13.298442Z"
+    },
+    "1657": {
+      "title": "SURVEYING - JUN 2024",
+      "at": "2026-03-05T15:33:13.314504Z"
+    },
+    "1658": {
+      "title": "BUILDING PLANNING AND ARCHITECTURE - DEC 2024",
+      "at": "2026-03-05T15:33:13.330723Z"
+    },
+    "1659": {
+      "title": "BUILDING PLANNING AND ARCHITECTURE - JUN 2024",
+      "at": "2026-03-05T15:33:13.346060Z"
+    },
+    "1660": {
+      "title": "STRENGTH OF MATERIALS - DEC 2024",
+      "at": "2026-03-05T15:33:13.362444Z"
+    },
+    "1661": {
+      "title": "STRENGTH OF MATERIALS - JUN 2024",
+      "at": "2026-03-05T15:33:13.377001Z"
+    },
+    "1662": {
+      "title": "CONSTRUCTION MATERIALS - DEC 2023",
+      "at": "2026-03-05T15:33:13.393111Z"
+    },
+    "1663": {
+      "title": "CONSTRUCTION MATERIALS - JUN 2023",
+      "at": "2026-03-05T15:33:13.408561Z"
+    },
+    "1664": {
+      "title": "SURVEYING - DEC 2023",
+      "at": "2026-03-05T15:33:13.424369Z"
+    },
+    "1665": {
+      "title": "SURVEYING - JUN 2023",
+      "at": "2026-03-05T15:33:13.439993Z"
+    },
+    "1666": {
+      "title": "BUILDING PLANNING AND ARCHITECTURE - DEC 2023",
+      "at": "2026-03-05T15:33:13.454761Z"
+    },
+    "1667": {
+      "title": "BUILDING PLANNING AND ARCHITECTURE - JUN 2023",
+      "at": "2026-03-05T15:33:13.469895Z"
+    },
+    "1668": {
+      "title": "STRENGTH OF MATERIALS - DEC 2023",
+      "at": "2026-03-05T15:33:13.485375Z"
+    },
+    "1669": {
+      "title": "STRENGTH OF MATERIALS - JUN 2023",
+      "at": "2026-03-05T15:33:13.501906Z"
+    },
+    "1670": {
+      "title": "CONSTRUCTION MATERIALS - NOV 2022",
+      "at": "2026-03-05T15:33:13.517046Z"
+    },
+    "1671": {
+      "title": "SURVEYING - NOV 2022",
+      "at": "2026-03-05T15:33:13.531757Z"
+    },
+    "1672": {
+      "title": "BUILDING PLANNING AND ARCHITECTURE - NOV 2022",
+      "at": "2026-03-05T15:33:13.546529Z"
+    },
+    "1673": {
+      "title": "STRENGTH OF MATERIALS - NOV 2022",
+      "at": "2026-03-05T15:33:13.562882Z"
+    },
+    "1674": {
+      "title": "CONSTRUCTION TECHNOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:13.578668Z"
+    },
+    "1675": {
+      "title": "STRUCTURAL ANALYSIS 1 - JUN 2025",
+      "at": "2026-03-05T15:33:13.594106Z"
+    },
+    "1676": {
+      "title": "TRANSPORTATION ENGINEERING 1 - JUN 2025",
+      "at": "2026-03-05T15:33:13.610672Z"
+    },
+    "1677": {
+      "title": "ENGINEERING GEOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:13.625809Z"
+    },
+    "1678": {
+      "title": "CONSTRUCTION TECHNOLOGY - JUN 2024",
+      "at": "2026-03-05T15:33:13.641387Z"
+    },
+    "1679": {
+      "title": "STRUCTURAL ANALYSIS 1 - DEC 2024",
+      "at": "2026-03-05T15:33:13.656935Z"
+    },
+    "1680": {
+      "title": "STRUCTURAL ANALYSIS 1 - JUN 2024",
+      "at": "2026-03-05T15:33:13.672992Z"
+    },
+    "1681": {
+      "title": "CONSTRUCTION TECHNOLOGY - JUN 2023",
+      "at": "2026-03-05T15:33:13.688190Z"
+    },
+    "1682": {
+      "title": "CONSTRUCTION TECHNOLOGY - NOV 2023",
+      "at": "2026-03-05T15:33:13.704605Z"
+    },
+    "1683": {
+      "title": "STRUCTURAL ANALYSIS 1 - JUN 2023",
+      "at": "2026-03-05T15:33:13.720492Z"
+    },
+    "1684": {
+      "title": "STRUCTURAL ANALYSIS 1 - NOV 2023",
+      "at": "2026-03-05T15:33:13.736141Z"
+    },
+    "1685": {
+      "title": "TRANSPORTATION ENGINEERING 1 - JUN 2023",
+      "at": "2026-03-05T15:33:13.750910Z"
+    },
+    "1686": {
+      "title": "TRANSPORTATION ENGINEERING 1 - NOV 2023",
+      "at": "2026-03-05T15:33:13.767184Z"
+    },
+    "1687": {
+      "title": "ENGINEERING GEOLOGY AND REMOTE SENSING - JUN 2023",
+      "at": "2026-03-05T15:33:13.782745Z"
+    },
+    "1688": {
+      "title": "ENGINEERING GEOLOGY AND REMOTE SENSING - NOV 2023",
+      "at": "2026-03-05T15:33:13.798829Z"
+    },
+    "1689": {
+      "title": "CONSTRUCTION TECHNOLOGY - JUN 2022",
+      "at": "2026-03-05T15:33:13.814353Z"
+    },
+    "1690": {
+      "title": "STRUCTURAL ANALYSIS 1 - JUN 2022",
+      "at": "2026-03-05T15:33:13.830393Z"
+    },
+    "1691": {
+      "title": "STRUCTURAL ANALYSIS 1 - NOV 2022",
+      "at": "2026-03-05T15:33:13.846439Z"
+    },
+    "1692": {
+      "title": "TRANSPORTATION ENGINEERING 1 - JUN 2022",
+      "at": "2026-03-05T15:33:13.861746Z"
+    },
+    "1693": {
+      "title": "ENGINEERING GEOLOGY AND REMOTE SENSING - JUN 2022",
+      "at": "2026-03-05T15:33:13.877511Z"
+    },
+    "1694": {
+      "title": "FLUID MECHANICS 1 - JUN 2025",
+      "at": "2026-03-05T15:33:13.894039Z"
+    },
+    "1695": {
+      "title": "TRANSPORTATION ENGINEERING 2 - JUN 2025",
+      "at": "2026-03-05T15:33:13.908924Z"
+    },
+    "1696": {
+      "title": "C QUANTITY SURVEYING AND COSTING - JUN 2025",
+      "at": "2026-03-05T15:33:13.925668Z"
+    },
+    "1697": {
+      "title": "FLUID MECHANICS 1 - MAY 2024",
+      "at": "2026-03-05T15:33:13.941147Z"
+    },
+    "1698": {
+      "title": "TRANSPORTATION ENGINEERING 2 - MAY 2024",
+      "at": "2026-03-05T15:33:13.956867Z"
+    },
+    "1699": {
+      "title": "C QUANTITY SURVEYING AND COSTING - DEC 2024",
+      "at": "2026-03-05T15:33:13.971904Z"
+    },
+    "1700": {
+      "title": "B REMOTE SENSING AND GIS - DEC 2024",
+      "at": "2026-03-05T15:33:13.987653Z"
+    },
+    "1701": {
+      "title": "FLUID MECHANICS 1 - NOV 2023",
+      "at": "2026-03-05T15:33:14.003753Z"
+    },
+    "1702": {
+      "title": "TRANSPORTATION ENGINEERING 2 - NOV 2023",
+      "at": "2026-03-05T15:33:14.017900Z"
+    },
+    "1703": {
+      "title": "A STRUCTURAL ANALYSIS 2 - NOV 2023",
+      "at": "2026-03-05T15:33:14.034527Z"
+    },
+    "1704": {
+      "title": "C QUANTITY SURVEYING AND COSTING - NOV 2023",
+      "at": "2026-03-05T15:33:14.049749Z"
+    },
+    "1705": {
+      "title": "B REMOTE SENSING AND GIS - NOV 2023",
+      "at": "2026-03-05T15:33:14.065410Z"
+    },
+    "1706": {
+      "title": "C RENEWABLE ENERGY RESOURCES - NOV 2023",
+      "at": "2026-03-05T15:33:14.080737Z"
+    },
+    "1707": {
+      "title": "A STRUCTURAL ANALYSIS 2 - NOV 2022",
+      "at": "2026-03-05T15:33:14.095918Z"
+    },
+    "1708": {
+      "title": "D MARINE CONSTRUCTION - NOV 2022",
+      "at": "2026-03-05T15:33:14.111098Z"
+    },
+    "1709": {
+      "title": "STRUCTURAL DESIGN AND DRAWING RCC 1 - JUN 2025",
+      "at": "2026-03-05T15:33:14.126993Z"
+    },
+    "1710": {
+      "title": "ENVIRONMENTAL ENGINEERING 1 - JUN 2025",
+      "at": "2026-03-05T15:33:14.142207Z"
+    },
+    "1711": {
+      "title": "A WATER RESOURCES ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:14.158173Z"
+    },
+    "1712": {
+      "title": "C ADVANCE PAVEMENT DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:14.172841Z"
+    },
+    "1713": {
+      "title": "C ENVIRONMENTAL IMPACT ASSESSMENT - JUN 2025",
+      "at": "2026-03-05T15:33:14.188365Z"
+    },
+    "1714": {
+      "title": "STRUCTURAL DESIGN AND DRAWING - JUN 2025",
+      "at": "2026-03-05T15:33:14.204021Z"
+    },
+    "1715": {
+      "title": "STRUCTURAL DESIGN AND DRAWING RCC 1 - MAY 2024",
+      "at": "2026-03-05T15:33:14.219601Z"
+    },
+    "1716": {
+      "title": "ENVIRONMENTAL ENGINEERING 1 - MAY 2024",
+      "at": "2026-03-05T15:33:14.234583Z"
+    },
+    "1717": {
+      "title": "A WATER RESOURCES ENGINEERING - MAY 2024",
+      "at": "2026-03-05T15:33:14.250958Z"
+    },
+    "1718": {
+      "title": "C ADVANCE PAVEMENT DESIGN - MAY 2024",
+      "at": "2026-03-05T15:33:14.266685Z"
+    },
+    "1719": {
+      "title": "A FLUID MECHANICS 2 - MAY 2024",
+      "at": "2026-03-05T15:33:14.282296Z"
+    },
+    "1720": {
+      "title": "C ENVIRONMENTAL IMPACT ASSESSMENT - MAY 2024",
+      "at": "2026-03-05T15:33:14.297653Z"
+    },
+    "1721": {
+      "title": "STRUCTURAL DESIGN AND DRAWING - MAY 2023",
+      "at": "2026-03-05T15:33:14.313280Z"
+    },
+    "1722": {
+      "title": "ENVIRONMENTAL ENGINEERING 1 - MAY 2023",
+      "at": "2026-03-05T15:33:14.329239Z"
+    },
+    "1723": {
+      "title": "A WATER RESOURCE ENGINEERING - MAY 2023",
+      "at": "2026-03-05T15:33:14.345196Z"
+    },
+    "1724": {
+      "title": "B PRECAST AND MODULAR CONSTRUCTION - MAY 2023",
+      "at": "2026-03-05T15:33:14.360896Z"
+    },
+    "1725": {
+      "title": "C ENVIRONMENTAL IMPACT ASSESMENT - MAY 2023",
+      "at": "2026-03-05T15:33:14.376193Z"
+    },
+    "1726": {
+      "title": "D OPERATION RESEARCH - MAY 2023",
+      "at": "2026-03-05T15:33:14.391936Z"
+    },
+    "1727": {
+      "title": "STRUCTURAL DESIGN AND DRAWING RCC 1 - MAY 2022",
+      "at": "2026-03-05T15:33:14.408325Z"
+    },
+    "1728": {
+      "title": "ENVIRONMENTAL ENGINEERING 1 - MAY 2022",
+      "at": "2026-03-05T15:33:14.423587Z"
+    },
+    "1729": {
+      "title": "A WATER RESOURCES ENGINEERING - MAY 2022",
+      "at": "2026-03-05T15:33:14.439478Z"
+    },
+    "1730": {
+      "title": "B PRECAST AND MODULAR CONSTRUCTION - MAY 2022",
+      "at": "2026-03-05T15:33:14.455088Z"
+    },
+    "1731": {
+      "title": "A FLUID MECHANICS 2 - MAY 2022",
+      "at": "2026-03-05T15:33:14.469314Z"
+    },
+    "1732": {
+      "title": "C ENVIRONMENTAL IMPACT ASSESSMENT - MAY 2022",
+      "at": "2026-03-05T15:33:14.485109Z"
+    },
+    "1733": {
+      "title": "D OPERATION RESEARCH - MAY 2022",
+      "at": "2026-03-05T15:33:14.501195Z"
+    },
+    "1734": {
+      "title": "GEOTECHNICAL ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:14.516066Z"
+    },
+    "1735": {
+      "title": "D BUILDING SERVICES - JUN 2025",
+      "at": "2026-03-05T15:33:14.531614Z"
+    },
+    "1736": {
+      "title": "B ENVIRONMENTAL ENGINEERING 2 - DEC 2024",
+      "at": "2026-03-05T15:33:14.547896Z"
+    },
+    "1737": {
+      "title": "C INTEGRATED WASTE MANAGEMENT - DEC 2024",
+      "at": "2026-03-05T15:33:14.562199Z"
+    },
+    "1738": {
+      "title": "D BUILDING SERVICES - DEC 2024",
+      "at": "2026-03-05T15:33:14.578444Z"
+    },
+    "1739": {
+      "title": "GEOTECHNICAL ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:14.594455Z"
+    },
+    "1740": {
+      "title": "B ENVIRONMENTAL ENGINEERING 2 - NOV 2023",
+      "at": "2026-03-05T15:33:14.609625Z"
+    },
+    "1741": {
+      "title": "C STRUCTURAL DYNAMICS - NOV 2023",
+      "at": "2026-03-05T15:33:14.625216Z"
+    },
+    "1742": {
+      "title": "D STRUCTURAL DESIGN AND DRAWING RCC 2 - NOV 2023",
+      "at": "2026-03-05T15:33:14.640175Z"
+    },
+    "1743": {
+      "title": "B PROJECT MANAGEMENT - NOV 2023",
+      "at": "2026-03-05T15:33:14.656746Z"
+    },
+    "1744": {
+      "title": "C INTEGRATED WASTE MANAGEMENT - NOV 2023",
+      "at": "2026-03-05T15:33:14.672161Z"
+    },
+    "1745": {
+      "title": "D BUILDING SERVICES - NOV 2023",
+      "at": "2026-03-05T15:33:14.688213Z"
+    },
+    "1746": {
+      "title": "A PRESTRESSED CONCRETE STRUCTURES - NOV 2022",
+      "at": "2026-03-05T15:33:14.703342Z"
+    },
+    "1747": {
+      "title": "C STRUCTURAL DYNAMICS - NOV 2022",
+      "at": "2026-03-05T15:33:14.719045Z"
+    },
+    "1748": {
+      "title": "B PROJECT MANAGEMENT - NOV 2022",
+      "at": "2026-03-05T15:33:14.734088Z"
+    },
+    "1749": {
+      "title": "D BUILDING SERVICES - NOV 2022",
+      "at": "2026-03-05T15:33:14.750487Z"
+    },
+    "1750": {
+      "title": "DESIGN OF STEEL STRUCTURES - JUN 2025",
+      "at": "2026-03-05T15:33:14.766050Z"
+    },
+    "1751": {
+      "title": "B FOUNDATION ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:14.782994Z"
+    },
+    "1752": {
+      "title": "D INTEGRATED WATER MANAGEMENT - JUN 2025",
+      "at": "2026-03-05T15:33:14.798184Z"
+    },
+    "1753": {
+      "title": "DESIGN OF STEEL STRUCTURES - MAY 2024",
+      "at": "2026-03-05T15:33:14.813051Z"
+    },
+    "1754": {
+      "title": "B FOUNDATION ENGINEERING - MAY 2024",
+      "at": "2026-03-05T15:33:14.828648Z"
+    },
+    "1755": {
+      "title": "D INTEGRATED WATER MANAGEMENT - MAY 2024",
+      "at": "2026-03-05T15:33:14.845384Z"
+    },
+    "1756": {
+      "title": "DESIGN OF STEEL STRUCTURES - MAY 2023",
+      "at": "2026-03-05T15:33:14.859801Z"
+    },
+    "1757": {
+      "title": "DESIGN OF STEEL STRUCTURES - NOV 2023",
+      "at": "2026-03-05T15:33:14.876735Z"
+    },
+    "1758": {
+      "title": "B FOUNDATION ENGINEERING - MAY 2023",
+      "at": "2026-03-05T15:33:14.892389Z"
+    },
+    "1759": {
+      "title": "B FOUNDATION ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:14.908150Z"
+    },
+    "1760": {
+      "title": "B EE 803 D EX 803 D ME 803 A DATA ANALYTICS - MAY 2023",
+      "at": "2026-03-05T15:33:14.922609Z"
+    },
+    "1761": {
+      "title": "C RETROFITTING AND REHABILITATION OF STRUCTURES CE 803 C - NOV 2023",
+      "at": "2026-03-05T15:33:14.938151Z"
+    },
+    "1762": {
+      "title": "D INTEGRATED WATER MANAGEMENT - MAY 2023",
+      "at": "2026-03-05T15:33:14.952991Z"
+    },
+    "1763": {
+      "title": "DESIGN OF STEEL STRUCTURES CE 801 - MAY 2022",
+      "at": "2026-03-05T15:33:14.968255Z"
+    },
+    "1764": {
+      "title": "B FOUNDATION ENGINEERING - MAY 2022",
+      "at": "2026-03-05T15:33:14.984547Z"
+    },
+    "1765": {
+      "title": "C RETROFITTING AND REHABILITATION OF STRUCTURES - MAY 2022",
+      "at": "2026-03-05T15:33:14.999352Z"
+    },
+    "1766": {
+      "title": "D INTEGRATED WATER MANAGEMENT - MAY 2022",
+      "at": "2026-03-05T15:33:15.015462Z"
+    },
+    "1767": {
+      "title": "OBJECT ORIENTED PROGRAMMING - DEC 2023",
+      "at": "2026-03-05T15:33:15.030159Z"
+    },
+    "1768": {
+      "title": "OPERATING SYSTEMS - JUN 2022",
+      "at": "2026-03-05T15:33:15.045367Z"
+    },
+    "1769": {
+      "title": "COMPILER DESIGN - DEC 2024",
+      "at": "2026-03-05T15:33:15.060960Z"
+    },
+    "1770": {
+      "title": "INFORMATION SECURITY - JUN 2025",
+      "at": "2026-03-05T15:33:15.076022Z"
+    },
+    "1771": {
+      "title": "INFORMATION SECURITY - DEC 2024",
+      "at": "2026-03-05T15:33:15.091310Z"
+    },
+    "1772": {
+      "title": "TECHNICAL COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:15.107202Z"
+    },
+    "1773": {
+      "title": "DATABASE MANAGEMENT SYSTEM - DEC 2023",
+      "at": "2026-03-05T15:33:15.122687Z"
+    },
+    "1774": {
+      "title": "DATABASE MANAGEMENT SYSTEM - NOV 2022",
+      "at": "2026-03-05T15:33:15.138518Z"
+    },
+    "1775": {
+      "title": "C COMPUTER ORGANIZATION AND ARCHITECTURE - DEC 2024",
+      "at": "2026-03-05T15:33:15.153808Z"
+    },
+    "1776": {
+      "title": "A COMPUTER GRAPHICS AND VISUALIZATION - NOV 2023",
+      "at": "2026-03-05T15:33:15.170266Z"
+    },
+    "1777": {
+      "title": "C COMPUTER ORGANIZATION AND ARCHITECTURE - NOV 2023",
+      "at": "2026-03-05T15:33:15.185248Z"
+    },
+    "1778": {
+      "title": "DEEP LEARNING - DEC 2024",
+      "at": "2026-03-05T15:33:15.201023Z"
+    },
+    "1779": {
+      "title": "NATURAL LANGUAGE PROCESSING - DEC 2024",
+      "at": "2026-03-05T15:33:15.216123Z"
+    },
+    "1780": {
+      "title": "DATA ENGINEERING - DEC 2024",
+      "at": "2026-03-05T15:33:15.232015Z"
+    },
+    "1781": {
+      "title": "DATA ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:15.246870Z"
+    },
+    "1782": {
+      "title": "COMPILER DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:15.262319Z"
+    },
+    "1783": {
+      "title": "COMPUTER ARECHITECTURE - JUN 2025",
+      "at": "2026-03-05T15:33:15.278357Z"
+    },
+    "1784": {
+      "title": "DATA BASE MANAGEMENT SYSTEM - JUN 2022",
+      "at": "2026-03-05T15:33:15.294124Z"
+    },
+    "1785": {
+      "title": "OPERATING SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:15.309534Z"
+    },
+    "1786": {
+      "title": "A THEORY OF COMPUTATION - NOV 2022",
+      "at": "2026-03-05T15:33:15.323686Z"
+    },
+    "1787": {
+      "title": "B ARTIFICIAL INTELLIGENCE - NOV 2022",
+      "at": "2026-03-05T15:33:15.325305Z"
+    },
+    "1788": {
+      "title": "DATA SCIENCE - MAY 2024",
+      "at": "2026-03-05T15:33:15.339611Z"
+    },
+    "1789": {
+      "title": "DIGITAL CIRCUITS AND SYSTEMS - DEC 2023",
+      "at": "2026-03-05T15:33:15.342027Z"
+    },
+    "1790": {
+      "title": "COMPUTER ARCHITECTURE - JUN 2022",
+      "at": "2026-03-05T15:33:15.355035Z"
+    },
+    "1791": {
+      "title": "ELECTRONIC DEVICES - JUN 2025",
+      "at": "2026-03-05T15:33:15.357143Z"
+    },
+    "1792": {
+      "title": "ELECTRONIC DEVICES - DEC 2024",
+      "at": "2026-03-05T15:33:15.369897Z"
+    },
+    "1793": {
+      "title": "ELECTRONIC DEVICES - JUN 2024",
+      "at": "2026-03-05T15:33:15.370958Z"
+    },
+    "1794": {
+      "title": "NETWORK ANALYSIS - DEC 2024",
+      "at": "2026-03-05T15:33:15.385507Z"
+    },
+    "1795": {
+      "title": "NETWORK ANALYSIS - JUN 2024",
+      "at": "2026-03-05T15:33:15.387206Z"
+    },
+    "1796": {
+      "title": "ELECTRONIC DEVICES - DEC 2023",
+      "at": "2026-03-05T15:33:15.400120Z"
+    },
+    "1797": {
+      "title": "NETWORK ANALYSIS - DEC 2023",
+      "at": "2026-03-05T15:33:15.415560Z"
+    },
+    "1798": {
+      "title": "ARTIFICIAL INTELLIGENCE - MAY 2024",
+      "at": "2026-03-05T15:33:15.431262Z"
+    },
+    "1799": {
+      "title": "COMPUTER NETWORKS - JUN 2023",
+      "at": "2026-03-05T15:33:15.446802Z"
+    },
+    "1800": {
+      "title": "DATABASE MANAGEMENT SYSTEMS - DEC 2025",
+      "at": "2026-03-05T15:33:15.461353Z"
+    },
+    "1801": {
+      "title": "INTERNET AND WEB TECHNOLOGY - MAY 2024",
+      "at": "2026-03-05T15:33:15.477223Z"
+    },
+    "1802": {
+      "title": "INTERNET AND WEB TECHNOLOGY - MAY 2023",
+      "at": "2026-03-05T15:33:15.493116Z"
+    },
+    "1803": {
+      "title": "FUNDAMENTAL OF CRYPTOGRAPHY - DEC 2024",
+      "at": "2026-03-05T15:33:15.508375Z"
+    },
+    "1804": {
+      "title": "FUNDAMENTAL OF CRYPTOGRAPHY - DEC 2023",
+      "at": "2026-03-05T15:33:15.523567Z"
+    },
+    "1805": {
+      "title": "FUNDAMENTAL OF CRYPTOGRAPHY - JUN 2023",
+      "at": "2026-03-05T15:33:15.538552Z"
+    },
+    "1806": {
+      "title": "DIGITAL SYSTEM - JUN 2023",
+      "at": "2026-03-05T15:33:15.554281Z"
+    },
+    "1807": {
+      "title": "INTRODUCTION TO LINEAR ALGEBRA - JUN 2025",
+      "at": "2026-03-05T15:33:15.570158Z"
+    },
+    "1808": {
+      "title": "FUNDAMENTAL OF CYBER SECURITY - JUN 2025",
+      "at": "2026-03-05T15:33:15.586329Z"
+    },
+    "1809": {
+      "title": "INTRODUCTION TO LINEAR ALGEBRA - DEC 2024",
+      "at": "2026-03-05T15:33:15.602168Z"
+    },
+    "1810": {
+      "title": "INTRODUCTION TO LINEAR ALGEBRA - JUN 2024",
+      "at": "2026-03-05T15:33:15.606021Z"
+    },
+    "1811": {
+      "title": "FUNDAMENTAL OF CYBER SECURITY - DEC 2024",
+      "at": "2026-03-05T15:33:15.633704Z"
+    },
+    "1812": {
+      "title": "FUNDAMENTAL OF CYBER SECURITY - JUN 2024",
+      "at": "2026-03-05T15:33:15.649322Z"
+    },
+    "1813": {
+      "title": "COMPUTER NETWORKS - JUN 2024",
+      "at": "2026-03-05T15:33:15.664729Z"
+    },
+    "1814": {
+      "title": "DATABASE MANAGEMENT SYSTEM - DEC 2024",
+      "at": "2026-03-05T15:33:15.680517Z"
+    },
+    "1815": {
+      "title": "DATABASE MANAGEMENT SYSTEM - JUN 2024",
+      "at": "2026-03-05T15:33:15.697224Z"
+    },
+    "1816": {
+      "title": "INTRODUCTION TO LINEAR ALGEBRA - JUN 2023",
+      "at": "2026-03-05T15:33:15.698942Z"
+    },
+    "1817": {
+      "title": "INTRODUCTION TO LINEAR ALGEBRA - NOV 2023",
+      "at": "2026-03-05T15:33:15.726163Z"
+    },
+    "1818": {
+      "title": "FUNDAMENTAL OF CYBER SECURITY - JUN 2023",
+      "at": "2026-03-05T15:33:15.742056Z"
+    },
+    "1819": {
+      "title": "FUNDAMENTAL OF CYBER SECURITY - NOV 2023",
+      "at": "2026-03-05T15:33:15.757792Z"
+    },
+    "1820": {
+      "title": "COMPUTER NETWORKS - NOV 2023",
+      "at": "2026-03-05T15:33:15.774471Z"
+    },
+    "1821": {
+      "title": "DATABASE MANAGEMENT SYSTEM - JUN 2023",
+      "at": "2026-03-05T15:33:15.789321Z"
+    },
+    "1822": {
+      "title": "DATABASE MANAGEMENT SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:15.805467Z"
+    },
+    "1823": {
+      "title": "INTRODUCTION TO LINEAR ALGEBRA - JUN 2022",
+      "at": "2026-03-05T15:33:15.820873Z"
+    },
+    "1824": {
+      "title": "FUNDAMENTAL OF CYBER SECURITY - JUN 2022",
+      "at": "2026-03-05T15:33:15.836361Z"
+    },
+    "1825": {
+      "title": "DATABASE MANAGEMENT SYSTEM - JUN 2022",
+      "at": "2026-03-05T15:33:15.852072Z"
+    },
+    "1826": {
+      "title": "OS INTERNALS FOR SECURITY SUPPORT - DEC 2024",
+      "at": "2026-03-05T15:33:15.868564Z"
+    },
+    "1827": {
+      "title": "DESIGN AND ANALYSIS OF ALGORITHMS - DEC 2024",
+      "at": "2026-03-05T15:33:15.883989Z"
+    },
+    "1828": {
+      "title": "B NETWORK SECURITY - DEC 2024",
+      "at": "2026-03-05T15:33:15.900619Z"
+    },
+    "1829": {
+      "title": "B INTERNET OF THINGS - DEC 2024",
+      "at": "2026-03-05T15:33:15.903399Z"
+    },
+    "1830": {
+      "title": "OS INTERNALS FOR SECURITY SUPPORT - NOV 2023",
+      "at": "2026-03-05T15:33:15.915127Z"
+    },
+    "1831": {
+      "title": "DESIGN AND ANALYSIS OF ALGORITHMS - NOV 2023",
+      "at": "2026-03-05T15:33:15.930984Z"
+    },
+    "1832": {
+      "title": "B NETWORK SECURITY - NOV 2023",
+      "at": "2026-03-05T15:33:15.946678Z"
+    },
+    "1833": {
+      "title": "A CYBER LAW AND INTELLECTUAL PROPERTY RIGHT - NOV 2023",
+      "at": "2026-03-05T15:33:15.961119Z"
+    },
+    "1834": {
+      "title": "OS INTERNALS FOR SECURITY SUPPORT - NOV 2022",
+      "at": "2026-03-05T15:33:15.976730Z"
+    },
+    "1835": {
+      "title": "DESIGN AND ANALYSIS OF ALGORITHMS CY 502 - NOV 2022",
+      "at": "2026-03-05T15:33:15.992913Z"
+    },
+    "1836": {
+      "title": "B NETWORK SECURITY - NOV 2022",
+      "at": "2026-03-05T15:33:16.007141Z"
+    },
+    "1837": {
+      "title": "A CYBER LAW AND INTELLECTUAL PROPERTY RIGHT - NOV 2022",
+      "at": "2026-03-05T15:33:16.022085Z"
+    },
+    "1838": {
+      "title": "B INTERNET OF THINGS - NOV 2022",
+      "at": "2026-03-05T15:33:16.038236Z"
+    },
+    "1839": {
+      "title": "CYBER CRIME INVESTIGATION AND DIGITAL FORENSIC - JUN 2025",
+      "at": "2026-03-05T15:33:16.053314Z"
+    },
+    "1840": {
+      "title": "C DATA WAREHOUSING AND MINING - JUN 2025",
+      "at": "2026-03-05T15:33:16.069600Z"
+    },
+    "1841": {
+      "title": "CYBER CRIME INVESTIGATION AND DIGITAL FORENSIC - DEC 2024",
+      "at": "2026-03-05T15:33:16.084141Z"
+    },
+    "1842": {
+      "title": "B OOAD - DEC 2024",
+      "at": "2026-03-05T15:33:16.100500Z"
+    },
+    "1843": {
+      "title": "CYBER CRIME INVESTIGATION AND DIGITAL FORENSIC - MAY 2023",
+      "at": "2026-03-05T15:33:16.115888Z"
+    },
+    "1844": {
+      "title": "SOFTWARE ENGINEERING - MAY 2023",
+      "at": "2026-03-05T15:33:16.132065Z"
+    },
+    "1845": {
+      "title": "A INTERNET AND WEB TECHNOLOGY - MAY 2023",
+      "at": "2026-03-05T15:33:16.147771Z"
+    },
+    "1846": {
+      "title": "C DATA WAREHOUSING AND MINING - MAY 2023",
+      "at": "2026-03-05T15:33:16.163329Z"
+    },
+    "1847": {
+      "title": "A PENETRATION TESTING AND VULNERABILITY ANALYSIS - DEC 2024",
+      "at": "2026-03-05T15:33:16.179757Z"
+    },
+    "1848": {
+      "title": "D MULTIMEDIA SECURITY AND FORENSICS - NOV 2023",
+      "at": "2026-03-05T15:33:16.194549Z"
+    },
+    "1849": {
+      "title": "C DATA ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:16.211023Z"
+    },
+    "1850": {
+      "title": "HARDWARE SECURITY - MAY 2024",
+      "at": "2026-03-05T15:33:16.225087Z"
+    },
+    "1851": {
+      "title": "C LIGHTWEIGHT CRYPTOGRAPHY - MAY 2024",
+      "at": "2026-03-05T15:33:16.240279Z"
+    },
+    "1852": {
+      "title": "A MOBILE AND WIRELESS SECURITY - MAY 2024",
+      "at": "2026-03-05T15:33:16.255882Z"
+    },
+    "1853": {
+      "title": "ELECTRONIC MEASUREMENTS AND INSTRUMENTATION - JUN 2025",
+      "at": "2026-03-05T15:33:16.271295Z"
+    },
+    "1854": {
+      "title": "DIGITAL SYSTEM DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:16.286924Z"
+    },
+    "1855": {
+      "title": "ELECTRICAL MEASUREMENTS AND MEASURING INSTRUMENTS - JUN 2025",
+      "at": "2026-03-05T15:33:16.302084Z"
+    },
+    "1856": {
+      "title": "SIGNALS AND SYSTEMS - JUN 2025",
+      "at": "2026-03-05T15:33:16.318309Z"
+    },
+    "1857": {
+      "title": "ELECTRONIC MEASUREMENTS AND INSTRUMENTATION - DEC 2024",
+      "at": "2026-03-05T15:33:16.334088Z"
+    },
+    "1858": {
+      "title": "ELECTRONIC MEASUREMENTS AND INSTRUMENTATION - JUN 2024",
+      "at": "2026-03-05T15:33:16.349095Z"
+    },
+    "1859": {
+      "title": "DIGITAL SYSTEM DESIGN - DEC 2024",
+      "at": "2026-03-05T15:33:16.364816Z"
+    },
+    "1860": {
+      "title": "DIGITAL SYSTEM DESIGN - JUN 2024",
+      "at": "2026-03-05T15:33:16.381172Z"
+    },
+    "1861": {
+      "title": "ELECTRICAL MEASUREMENTS AND MEASURING INSTRUMENTS - DEC 2024",
+      "at": "2026-03-05T15:33:16.396821Z"
+    },
+    "1862": {
+      "title": "ELECTRICAL MEASUREMENTS AND MEASURING INSTRUMENTS - JUN 2024",
+      "at": "2026-03-05T15:33:16.412185Z"
+    },
+    "1863": {
+      "title": "SIGNALS AND SYSTEMS - DEC 2024",
+      "at": "2026-03-05T15:33:16.428707Z"
+    },
+    "1864": {
+      "title": "SIGNALS AND SYSTEMS - JUN 2024",
+      "at": "2026-03-05T15:33:16.443845Z"
+    },
+    "1865": {
+      "title": "C RENEWABLE POWER GENERATION - DEC 2024",
+      "at": "2026-03-05T15:33:16.458405Z"
+    },
+    "1866": {
+      "title": "ANALOG ELECTRONICS - DEC 2024",
+      "at": "2026-03-05T15:33:16.474397Z"
+    },
+    "1867": {
+      "title": "ANALOG ELECTRONICS - JUN 2024",
+      "at": "2026-03-05T15:33:16.489694Z"
+    },
+    "1868": {
+      "title": "ELECTRONIC MEASUREMENTS AND INSTRUMENTATION - DEC 2023",
+      "at": "2026-03-05T15:33:16.504773Z"
+    },
+    "1869": {
+      "title": "ELECTRONIC MEASUREMENTS AND INSTRUMENTATION EC 302 - JUN 2023",
+      "at": "2026-03-05T15:33:16.521114Z"
+    },
+    "1870": {
+      "title": "DIGITAL SYSTEM DESIGN - DEC 2023",
+      "at": "2026-03-05T15:33:16.536653Z"
+    },
+    "1871": {
+      "title": "DIGITAL SYSTEM DESIGN - JUN 2023",
+      "at": "2026-03-05T15:33:16.551923Z"
+    },
+    "1872": {
+      "title": "ELECTRONIC DEVICES - JUN 2023",
+      "at": "2026-03-05T15:33:16.567547Z"
+    },
+    "1873": {
+      "title": "NETWORK ANALYSIS - JUN 2023",
+      "at": "2026-03-05T15:33:16.583098Z"
+    },
+    "1874": {
+      "title": "ANALOG ELECTRONICS - DEC 2023",
+      "at": "2026-03-05T15:33:16.598190Z"
+    },
+    "1875": {
+      "title": "ANALOG ELECTRONICS - JUN 2023",
+      "at": "2026-03-05T15:33:16.613727Z"
+    },
+    "1876": {
+      "title": "ELECTRICAL MEASUREMENTS AND MEASURING INSTRUMENTS - DEC 2023",
+      "at": "2026-03-05T15:33:16.629452Z"
+    },
+    "1877": {
+      "title": "ELECTRICAL MEASUREMENTS AND MEASURING INSTRUMENTS - JUN 2023",
+      "at": "2026-03-05T15:33:16.644884Z"
+    },
+    "1878": {
+      "title": "SIGNALS AND SYSTEMS - DEC 2023",
+      "at": "2026-03-05T15:33:16.660556Z"
+    },
+    "1879": {
+      "title": "SIGNALS AND SYSTEMS - JUN 2023",
+      "at": "2026-03-05T15:33:16.675692Z"
+    },
+    "1880": {
+      "title": "ELECTRONIC MEASUREMENTS AND INSTRUMENTATION - NOV 2022",
+      "at": "2026-03-05T15:33:16.690876Z"
+    },
+    "1881": {
+      "title": "DIGITAL SYSTEM DESIGN - NOV 2022",
+      "at": "2026-03-05T15:33:16.706474Z"
+    },
+    "1882": {
+      "title": "ELECTRONIC DEVICES - NOV 2022",
+      "at": "2026-03-05T15:33:16.721799Z"
+    },
+    "1883": {
+      "title": "NETWORK ANALYSIS - NOV 2022",
+      "at": "2026-03-05T15:33:16.736980Z"
+    },
+    "1884": {
+      "title": "SIGNAL AND SYSTEM - JUN 2025",
+      "at": "2026-03-05T15:33:16.752275Z"
+    },
+    "1885": {
+      "title": "ANALOG COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:16.767306Z"
+    },
+    "1886": {
+      "title": "CONTROL SYSTEM - JUN 2025",
+      "at": "2026-03-05T15:33:16.783048Z"
+    },
+    "1887": {
+      "title": "COTROL SYSTEM - JUN 2025",
+      "at": "2026-03-05T15:33:16.799092Z"
+    },
+    "1888": {
+      "title": "ANALOG CIRCUITS - JUN 2025",
+      "at": "2026-03-05T15:33:16.814647Z"
+    },
+    "1889": {
+      "title": "ELECTRICAL MACHINE 1 - JUN 2025",
+      "at": "2026-03-05T15:33:16.829528Z"
+    },
+    "1890": {
+      "title": "DIGITAL ELECTRONICS AND LOGIC DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:16.845919Z"
+    },
+    "1891": {
+      "title": "POWER SYSTEM 1 - JUN 2025",
+      "at": "2026-03-05T15:33:16.860820Z"
+    },
+    "1892": {
+      "title": "SIGNAL AND SYSTEM - DEC 2024",
+      "at": "2026-03-05T15:33:16.877362Z"
+    },
+    "1893": {
+      "title": "SIGNAL AND SYSTEM - JUN 2024",
+      "at": "2026-03-05T15:33:16.892040Z"
+    },
+    "1894": {
+      "title": "ANALOG COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:16.907803Z"
+    },
+    "1895": {
+      "title": "ANALOG COMMUNICATION - JUN 2024",
+      "at": "2026-03-05T15:33:16.924121Z"
+    },
+    "1896": {
+      "title": "CONTROL SYSTEM - DEC 2024",
+      "at": "2026-03-05T15:33:16.938869Z"
+    },
+    "1897": {
+      "title": "CONTROL SYSTEM - JUN 2024",
+      "at": "2026-03-05T15:33:16.954254Z"
+    },
+    "1898": {
+      "title": "ANALOG CIRCUITS - DEC 2024",
+      "at": "2026-03-05T15:33:16.970145Z"
+    },
+    "1899": {
+      "title": "ELECTRICAL MACHINE 1 - DEC 2024",
+      "at": "2026-03-05T15:33:16.985090Z"
+    },
+    "1900": {
+      "title": "ELECTRICAL MACHINE 1 - JUN 2024",
+      "at": "2026-03-05T15:33:17.001559Z"
+    },
+    "1901": {
+      "title": "DIGITAL ELECTRONICS AND LOGIC DESIGN - JUN 2024",
+      "at": "2026-03-05T15:33:17.016626Z"
+    },
+    "1902": {
+      "title": "POWER SYSTEM 1 - DEC 2024",
+      "at": "2026-03-05T15:33:17.032200Z"
+    },
+    "1903": {
+      "title": "POWER SYSTEM 1 - JUN 2024",
+      "at": "2026-03-05T15:33:17.047509Z"
+    },
+    "1904": {
+      "title": "SIGNAL AND SYSTEM - JUN 2023",
+      "at": "2026-03-05T15:33:17.063331Z"
+    },
+    "1905": {
+      "title": "SIGNAL AND SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:17.079127Z"
+    },
+    "1906": {
+      "title": "ANALOG COMMUNICATION - JUN 2023",
+      "at": "2026-03-05T15:33:17.094681Z"
+    },
+    "1907": {
+      "title": "ANALOG COMMUNICATION - NOV 2023",
+      "at": "2026-03-05T15:33:17.109630Z"
+    },
+    "1908": {
+      "title": "CONTROL SYSTEM - JUN 2023",
+      "at": "2026-03-05T15:33:17.125385Z"
+    },
+    "1909": {
+      "title": "CONTROL SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:17.141653Z"
+    },
+    "1910": {
+      "title": "ANALOG CIRCUITS - JUN 2023",
+      "at": "2026-03-05T15:33:17.157351Z"
+    },
+    "1911": {
+      "title": "ANALOG CIRCUITS - NOV 2023",
+      "at": "2026-03-05T15:33:17.173131Z"
+    },
+    "1912": {
+      "title": "ELECTRICAL MACHINE 1 - JUN 2023",
+      "at": "2026-03-05T15:33:17.188721Z"
+    },
+    "1913": {
+      "title": "ELECTRICAL MACHINE 1 - NOV 2023",
+      "at": "2026-03-05T15:33:17.204678Z"
+    },
+    "1914": {
+      "title": "DIGITAL ELECTRONICS AND LOGIC DESIGN - JUN 2023",
+      "at": "2026-03-05T15:33:17.219515Z"
+    },
+    "1915": {
+      "title": "DIGITAL ELECTRONICS AND LOGIC DESIGN - NOV 2023",
+      "at": "2026-03-05T15:33:17.234366Z"
+    },
+    "1916": {
+      "title": "POWER SYSTEM 1 - JUN 2023",
+      "at": "2026-03-05T15:33:17.249445Z"
+    },
+    "1917": {
+      "title": "POWER SYSTEM 1 - NOV 2023",
+      "at": "2026-03-05T15:33:17.265614Z"
+    },
+    "1918": {
+      "title": "SIGNAL AND SYSTEM - JUN 2022",
+      "at": "2026-03-05T15:33:17.281824Z"
+    },
+    "1919": {
+      "title": "ANALOG COMMUNICATION - JUN 2022",
+      "at": "2026-03-05T15:33:17.297573Z"
+    },
+    "1920": {
+      "title": "CONTROL SYSTEM - JUN 2022",
+      "at": "2026-03-05T15:33:17.312560Z"
+    },
+    "1921": {
+      "title": "ANALOG CIRCUITS - JUN 2022",
+      "at": "2026-03-05T15:33:17.327760Z"
+    },
+    "1922": {
+      "title": "ELECTRICAL MACHINE 1 - JUN 2022",
+      "at": "2026-03-05T15:33:17.343183Z"
+    },
+    "1923": {
+      "title": "DIGITAL ELECTRONICS AND LOGIC DESIGN - JUN 2022",
+      "at": "2026-03-05T15:33:17.358610Z"
+    },
+    "1924": {
+      "title": "POWER SYSTEM 1 - JUN 2022",
+      "at": "2026-03-05T15:33:17.374492Z"
+    },
+    "1925": {
+      "title": "MICROPROCESSOR AND ITS APPLICATIONS - JUN 2025",
+      "at": "2026-03-05T15:33:17.390438Z"
+    },
+    "1926": {
+      "title": "DIGITAL COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:17.405655Z"
+    },
+    "1927": {
+      "title": "B MOBILE COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:17.420581Z"
+    },
+    "1928": {
+      "title": "B COMPUTER SYSTEM ORGANIZATION - JUN 2025",
+      "at": "2026-03-05T15:33:17.436340Z"
+    },
+    "1929": {
+      "title": "ELECTRICAL MACHINE 2 - JUN 2025",
+      "at": "2026-03-05T15:33:17.452019Z"
+    },
+    "1930": {
+      "title": "POWER ELECTRONICS - JUN 2025",
+      "at": "2026-03-05T15:33:17.468418Z"
+    },
+    "1931": {
+      "title": "A ELECTRICAL POWER GENERATION AND ECONOMY - JUN 2025",
+      "at": "2026-03-05T15:33:17.482818Z"
+    },
+    "1932": {
+      "title": "A INDUSTRIAL ELECTRONICS - JUN 2025",
+      "at": "2026-03-05T15:33:17.499234Z"
+    },
+    "1933": {
+      "title": "C RENEWABLE POWER GENERATION - JUN 2025",
+      "at": "2026-03-05T15:33:17.514683Z"
+    },
+    "1934": {
+      "title": "C ELECTRICAL AND ELECTRONICS MATERIALS - JUN 2025",
+      "at": "2026-03-05T15:33:17.529455Z"
+    },
+    "1935": {
+      "title": "MICROPROCESSOR AND ITS APPLICATION - MAY 2024",
+      "at": "2026-03-05T15:33:17.545620Z"
+    },
+    "1936": {
+      "title": "MICROPROCESSOR AND ITS APPLICATIONS - DEC 2024",
+      "at": "2026-03-05T15:33:17.560855Z"
+    },
+    "1937": {
+      "title": "DIGITAL COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:17.576522Z"
+    },
+    "1938": {
+      "title": "DIGITAL COMMUNICATION - MAY 2024",
+      "at": "2026-03-05T15:33:17.592727Z"
+    },
+    "1939": {
+      "title": "A COMMUNICATION NETWORK AND TRANSMISSION LINES - DEC 2024",
+      "at": "2026-03-05T15:33:17.607350Z"
+    },
+    "1940": {
+      "title": "B MOBILE COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:17.622902Z"
+    },
+    "1941": {
+      "title": "A ELECTRO MAGNETIC THEORY - DEC 2024",
+      "at": "2026-03-05T15:33:17.638039Z"
+    },
+    "1942": {
+      "title": "B COMPUTER SYSTEM ORGANIZATION - DEC 2024",
+      "at": "2026-03-05T15:33:17.654384Z"
+    },
+    "1943": {
+      "title": "ELECTRICAL MACHINE 2 - DEC 2024",
+      "at": "2026-03-05T15:33:17.669815Z"
+    },
+    "1944": {
+      "title": "ELECTRICAL MACHINE 2 - MAY 2024",
+      "at": "2026-03-05T15:33:17.686257Z"
+    },
+    "1945": {
+      "title": "POWER ELECTRONICS - DEC 2024",
+      "at": "2026-03-05T15:33:17.700748Z"
+    },
+    "1946": {
+      "title": "POWER ELECTRONICS - MAY 2024",
+      "at": "2026-03-05T15:33:17.716521Z"
+    },
+    "1947": {
+      "title": "A ELECTRICAL POWER GENERATION AND ECONOMY - DEC 2024",
+      "at": "2026-03-05T15:33:17.731158Z"
+    },
+    "1948": {
+      "title": "A INDUSTRIAL ELECTRONICS - MAY 2024",
+      "at": "2026-03-05T15:33:17.747399Z"
+    },
+    "1949": {
+      "title": "C RENEWABLE POWER GENERATION - MAY 2024",
+      "at": "2026-03-05T15:33:17.762758Z"
+    },
+    "1950": {
+      "title": "A INDUSTRIAL ELECTRONICS - DEC 2024",
+      "at": "2026-03-05T15:33:17.778544Z"
+    },
+    "1951": {
+      "title": "B ELECTROMAGNETIC THEORY - DEC 2024",
+      "at": "2026-03-05T15:33:17.793981Z"
+    },
+    "1952": {
+      "title": "C ELECTRICAL AND ELECTRONICS MATERIALS - MAY 2024",
+      "at": "2026-03-05T15:33:17.809181Z"
+    },
+    "1953": {
+      "title": "C ELECTRICAL ANDELECTRONICS MATERIALS - DEC 2024",
+      "at": "2026-03-05T15:33:17.824824Z"
+    },
+    "1954": {
+      "title": "MICROPROCESSOR AND ITS APPLICATIONS EC 501 - MAY 2023",
+      "at": "2026-03-05T15:33:17.841118Z"
+    },
+    "1955": {
+      "title": "MICROPROCESSOR AND ITS APPLICATIONS EC 501 - NOV 2023",
+      "at": "2026-03-05T15:33:17.855773Z"
+    },
+    "1956": {
+      "title": "MICROPROCESSOR AND ITS APPLICATIONS - NOV 2023",
+      "at": "2026-03-05T15:33:17.871349Z"
+    },
+    "1957": {
+      "title": "DIGITAL COMMUNICATION - NOV 2023",
+      "at": "2026-03-05T15:33:17.886228Z"
+    },
+    "1958": {
+      "title": "A TRANSMISSION LINES - NOV 2023",
+      "at": "2026-03-05T15:33:17.902561Z"
+    },
+    "1959": {
+      "title": "B MOBILE COMMUNICATION - NOV 2023",
+      "at": "2026-03-05T15:33:17.904329Z"
+    },
+    "1960": {
+      "title": "B COMPUTER SYSTEM ORGANIZATION - NOV 2023",
+      "at": "2026-03-05T15:33:17.932921Z"
+    },
+    "1961": {
+      "title": "ELECTRICAL MACHINE 2 - MAY 2023",
+      "at": "2026-03-05T15:33:17.934634Z"
+    },
+    "1962": {
+      "title": "ELECTRICAL MACHINE 2 - NOV 2023",
+      "at": "2026-03-05T15:33:17.947727Z"
+    },
+    "1963": {
+      "title": "POWER ELECTRONICS - NOV 2023",
+      "at": "2026-03-05T15:33:17.949366Z"
+    },
+    "1964": {
+      "title": "A ELECTRICAL POWER GENERATION AND ECONOMY - NOV 2023",
+      "at": "2026-03-05T15:33:17.963962Z"
+    },
+    "1965": {
+      "title": "B ELECTROMAGNETIC - NOV 2023",
+      "at": "2026-03-05T15:33:17.966258Z"
+    },
+    "1966": {
+      "title": "MICROPROCESSOR AND ITS APPLICATIONS - NOV 2022",
+      "at": "2026-03-05T15:33:17.977744Z"
+    },
+    "1967": {
+      "title": "DIGITAL COMMUNICATION - NOV 2022",
+      "at": "2026-03-05T15:33:17.993602Z"
+    },
+    "1968": {
+      "title": "A COMMUNICATION NETWORK AND TRANSMISSION LINES - NOV 2022",
+      "at": "2026-03-05T15:33:18.008664Z"
+    },
+    "1969": {
+      "title": "B MOBILE COMMUNICATION - NOV 2022",
+      "at": "2026-03-05T15:33:18.023389Z"
+    },
+    "1970": {
+      "title": "B COMPUTER SYSTEM ORGANIZATION - NOV 2022",
+      "at": "2026-03-05T15:33:18.039445Z"
+    },
+    "1971": {
+      "title": "A ELECTRICAL POWER GENERATION AND ECONOMY - NOV 2022",
+      "at": "2026-03-05T15:33:18.056611Z"
+    },
+    "1972": {
+      "title": "DIGITAL SIGNAL PROCESSING - JUN 2025",
+      "at": "2026-03-05T15:33:18.058748Z"
+    },
+    "1973": {
+      "title": "ANTENNA AND WAVE PROPAGATION - JUN 2025",
+      "at": "2026-03-05T15:33:18.086242Z"
+    },
+    "1974": {
+      "title": "A DATA COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:18.101344Z"
+    },
+    "1975": {
+      "title": "C SATELLITE COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:18.117639Z"
+    },
+    "1976": {
+      "title": "A MICROCONTROLLER AND EMBEDDED SYSTEM - JUN 2025",
+      "at": "2026-03-05T15:33:18.133726Z"
+    },
+    "1977": {
+      "title": "C POWER ELECTRONICS - JUN 2025",
+      "at": "2026-03-05T15:33:18.149332Z"
+    },
+    "1978": {
+      "title": "POWER SYSTEM 2 - JUN 2025",
+      "at": "2026-03-05T15:33:18.164665Z"
+    },
+    "1979": {
+      "title": "MICROPROCESSOR AND MICROCONTROLLER - JUN 2025",
+      "at": "2026-03-05T15:33:18.206733Z"
+    },
+    "1980": {
+      "title": "A UTILIZATION OF ELECTRICAL ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:18.210321Z"
+    },
+    "1981": {
+      "title": "B ENERGY CONSERVATION AND MANAGEMENT - JUN 2025",
+      "at": "2026-03-05T15:33:18.225240Z"
+    },
+    "1982": {
+      "title": "A ELECTRONIC INSTRUMENTATION - JUN 2025",
+      "at": "2026-03-05T15:33:18.242816Z"
+    },
+    "1983": {
+      "title": "DIGITAL SIGNAL PROCESSING - DEC 2024",
+      "at": "2026-03-05T15:33:18.257332Z"
+    },
+    "1984": {
+      "title": "DIGITAL SIGNAL PROCESSING - MAY 2024",
+      "at": "2026-03-05T15:33:18.272736Z"
+    },
+    "1985": {
+      "title": "ANTENNA AND WAVE PROPAGATION - DEC 2024",
+      "at": "2026-03-05T15:33:18.287655Z"
+    },
+    "1986": {
+      "title": "ANTENNA AND WAVE PROPAGATION - MAY 2024",
+      "at": "2026-03-05T15:33:18.303347Z"
+    },
+    "1987": {
+      "title": "A DATA COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:18.319486Z"
+    },
+    "1988": {
+      "title": "C SATELLITE COMMUNICATION - MAY 2024",
+      "at": "2026-03-05T15:33:18.334727Z"
+    },
+    "1989": {
+      "title": "A MICROCONTROLLER AND EMBEDDED SYSTEM - DEC 2024",
+      "at": "2026-03-05T15:33:18.350708Z"
+    },
+    "1990": {
+      "title": "C POWER ELECTRONICS - DEC 2024",
+      "at": "2026-03-05T15:33:18.366917Z"
+    },
+    "1991": {
+      "title": "POWER SYSTEM 2 - DEC 2024",
+      "at": "2026-03-05T15:33:18.381931Z"
+    },
+    "1992": {
+      "title": "POWER SYSTEM 2 - MAY 2024",
+      "at": "2026-03-05T15:33:18.397661Z"
+    },
+    "1993": {
+      "title": "MICROPROCESSOR AND MICROCONTROLLER - DEC 2024",
+      "at": "2026-03-05T15:33:18.413609Z"
+    },
+    "1994": {
+      "title": "MICROPROCESSOR AND MICROCONTROLLER - MAY 2024",
+      "at": "2026-03-05T15:33:18.429878Z"
+    },
+    "1995": {
+      "title": "B ENERGY CONSERVATION AND MANAGEMENT - DEC 2024",
+      "at": "2026-03-05T15:33:18.445713Z"
+    },
+    "1996": {
+      "title": "B ENERGY CONSERVATION AND MANAGEMENT - MAY 2024",
+      "at": "2026-03-05T15:33:18.460926Z"
+    },
+    "1997": {
+      "title": "A ELECTRONIC INSTRUMENTATION - DEC 2024",
+      "at": "2026-03-05T15:33:18.476856Z"
+    },
+    "1998": {
+      "title": "A ELECTRONIC INSTRUMENTATION - MAY 2024",
+      "at": "2026-03-05T15:33:18.491805Z"
+    },
+    "1999": {
+      "title": "DIGITAL SIGNAL PROCESSING - MAY 2023",
+      "at": "2026-03-05T15:33:18.506638Z"
+    },
+    "2000": {
+      "title": "ANTENNA AND WAVE PROPAGATION - MAY 2023",
+      "at": "2026-03-05T15:33:18.522116Z"
+    },
+    "2001": {
+      "title": "A DATA COMMUNICATION - MAY 2023",
+      "at": "2026-03-05T15:33:18.538452Z"
+    },
+    "2002": {
+      "title": "B CMOS DESIGN - MAY 2023",
+      "at": "2026-03-05T15:33:18.553947Z"
+    },
+    "2003": {
+      "title": "A MICROCONTROLLER AND EMBEDDED SYSTEM - MAY 2023",
+      "at": "2026-03-05T15:33:18.569675Z"
+    },
+    "2004": {
+      "title": "B BIO MEDICAL ELECTRONICS - MAY 2023",
+      "at": "2026-03-05T15:33:18.585721Z"
+    },
+    "2005": {
+      "title": "C POWER ELECTRONICS - MAY 2023",
+      "at": "2026-03-05T15:33:18.602482Z"
+    },
+    "2006": {
+      "title": "MICROPROCESSOR AND MICROCONTROLLER - MAY 2023",
+      "at": "2026-03-05T15:33:18.617877Z"
+    },
+    "2007": {
+      "title": "B ENERGY CONSERVATION AND MANAGEMENT - MAY 2023",
+      "at": "2026-03-05T15:33:18.633129Z"
+    },
+    "2008": {
+      "title": "A ELECTRONIC INSTRUMENTATION - MAY 2023",
+      "at": "2026-03-05T15:33:18.648327Z"
+    },
+    "2009": {
+      "title": "DIGITAL SIGNAL PROCESSING - MAY 2022",
+      "at": "2026-03-05T15:33:18.664178Z"
+    },
+    "2010": {
+      "title": "ANTENNA AND WAVE PROPAGATION - MAY 2022",
+      "at": "2026-03-05T15:33:18.668505Z"
+    },
+    "2011": {
+      "title": "A DATA COMMUNICATION - MAY 2022",
+      "at": "2026-03-05T15:33:18.695281Z"
+    },
+    "2012": {
+      "title": "A MICROCONTROLLER AND EMBEDDED SYSTEM - MAY 2022",
+      "at": "2026-03-05T15:33:18.710723Z"
+    },
+    "2013": {
+      "title": "B BIO MEDICAL ELECTRONICS - MAY 2022",
+      "at": "2026-03-05T15:33:18.725862Z"
+    },
+    "2014": {
+      "title": "POWER SYSTEM 2 - MAY 2022",
+      "at": "2026-03-05T15:33:18.742702Z"
+    },
+    "2015": {
+      "title": "MICROPROCESSOR AND MICROCONTROLLER - MAY 2022",
+      "at": "2026-03-05T15:33:18.757535Z"
+    },
+    "2016": {
+      "title": "A UTILIZATION OF ELECTRICAL ENGINEERING - MAY 2022",
+      "at": "2026-03-05T15:33:18.772824Z"
+    },
+    "2017": {
+      "title": "A ELECTRONIC INSTRUMENTATION - MAY 2022",
+      "at": "2026-03-05T15:33:18.788203Z"
+    },
+    "2018": {
+      "title": "VLSI DESIGN - DEC 2025",
+      "at": "2026-03-05T15:33:18.803025Z"
+    },
+    "2019": {
+      "title": "VLSI DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:18.819329Z"
+    },
+    "2020": {
+      "title": "A MICROWAVE ENGINEERING - DEC 2025",
+      "at": "2026-03-05T15:33:18.834869Z"
+    },
+    "2021": {
+      "title": "A CELLULAR MOBILE COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:18.850856Z"
+    },
+    "2022": {
+      "title": "B INTERNET OF THINGS IOT - JUN 2025",
+      "at": "2026-03-05T15:33:18.867214Z"
+    },
+    "2023": {
+      "title": "POWAR SYSTEM PROTECTION - DEC 2025",
+      "at": "2026-03-05T15:33:18.881112Z"
+    },
+    "2024": {
+      "title": "POWER SYSTEM PROTECTION - JUN 2025",
+      "at": "2026-03-05T15:33:18.897072Z"
+    },
+    "2025": {
+      "title": "C HIGH VOLTAGE ENGINEERING - DEC 2025",
+      "at": "2026-03-05T15:33:18.913359Z"
+    },
+    "2026": {
+      "title": "B ENERGY AUDIT AND MANAGEMENT - JUN 2025",
+      "at": "2026-03-05T15:33:18.929800Z"
+    },
+    "2027": {
+      "title": "VLSI DESIGN - DEC 2024",
+      "at": "2026-03-05T15:33:18.943488Z"
+    },
+    "2028": {
+      "title": "A MICROWAVE ENGINEERING - DEC 2024",
+      "at": "2026-03-05T15:33:18.958659Z"
+    },
+    "2029": {
+      "title": "A CELLULAR MOBILE COMMUNICATION - DEC 2024",
+      "at": "2026-03-05T15:33:18.975096Z"
+    },
+    "2030": {
+      "title": "B INTERNET OF THINGS IOT - DEC 2024",
+      "at": "2026-03-05T15:33:18.989382Z"
+    },
+    "2031": {
+      "title": "POWER SYSTEM PROTECTION - DEC 2024",
+      "at": "2026-03-05T15:33:19.005550Z"
+    },
+    "2032": {
+      "title": "B HVDC AND FACTS - DEC 2024",
+      "at": "2026-03-05T15:33:19.021223Z"
+    },
+    "2033": {
+      "title": "B ENERGY AUDIT AND MANAGEMENT - DEC 2024",
+      "at": "2026-03-05T15:33:19.036963Z"
+    },
+    "2034": {
+      "title": "VLSI DESIGN - NOV 2023",
+      "at": "2026-03-05T15:33:19.052641Z"
+    },
+    "2035": {
+      "title": "A MICROWAVE ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:19.067680Z"
+    },
+    "2036": {
+      "title": "B INFORMATION THEORY AND CODING - NOV 2023",
+      "at": "2026-03-05T15:33:19.084281Z"
+    },
+    "2037": {
+      "title": "B INTERNET OF THINGS - NOV 2023",
+      "at": "2026-03-05T15:33:19.100157Z"
+    },
+    "2038": {
+      "title": "C PROBABILITY THEORY AND STOCHASTIC PROCESSOR - NOV 2023",
+      "at": "2026-03-05T15:33:19.116298Z"
+    },
+    "2039": {
+      "title": "POWER SYSTEM PROTECTION - NOV 2023",
+      "at": "2026-03-05T15:33:19.131523Z"
+    },
+    "2040": {
+      "title": "C HIGH VOLTAGE ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:19.146470Z"
+    },
+    "2041": {
+      "title": "C DIGITAL SIGNAL PROCESSING - NOV 2023",
+      "at": "2026-03-05T15:33:19.162614Z"
+    },
+    "2042": {
+      "title": "ELECTRICAL DRIVES - NOV 2022",
+      "at": "2026-03-05T15:33:19.177304Z"
+    },
+    "2044": {
+      "title": "ENERGY AUDIT AND MANAGEMENT - NOV 2022",
+      "at": "2026-03-05T15:33:19.194129Z"
+    },
+    "2045": {
+      "title": "OPTICAL FIBER COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:19.208762Z"
+    },
+    "2046": {
+      "title": "B WIRELESS COMMUNICATIONS - JUN 2025",
+      "at": "2026-03-05T15:33:19.223741Z"
+    },
+    "2047": {
+      "title": "A WIRELESS NETWORKS - JUN 2025",
+      "at": "2026-03-05T15:33:19.239951Z"
+    },
+    "2048": {
+      "title": "B SPECIAL MACHINE - JUN 2025",
+      "at": "2026-03-05T15:33:19.255901Z"
+    },
+    "2049": {
+      "title": "ELECTRICAL DRIVES - JUN 2025",
+      "at": "2026-03-05T15:33:19.271421Z"
+    },
+    "2050": {
+      "title": "A POWER QUALITY PROBLEMS AND MITIGATION TECHNIQUES - JUN 2025",
+      "at": "2026-03-05T15:33:19.287810Z"
+    },
+    "2051": {
+      "title": "B ENVIRONMENTAL ISSUES POLICY STANDARDS AND REGULATIONS - JUN 2025",
+      "at": "2026-03-05T15:33:19.302655Z"
+    },
+    "2052": {
+      "title": "OPTICAL FIBER COMMUNICATION - MAY 2024",
+      "at": "2026-03-05T15:33:19.318810Z"
+    },
+    "2053": {
+      "title": "B WIRELESS COMMUNICATIONS - MAY 2024",
+      "at": "2026-03-05T15:33:19.333200Z"
+    },
+    "2054": {
+      "title": "A WIRELESS NETWORKS - MAY 2024",
+      "at": "2026-03-05T15:33:19.348302Z"
+    },
+    "2055": {
+      "title": "B SPECIAL MACHINE - MAY 2024",
+      "at": "2026-03-05T15:33:19.364599Z"
+    },
+    "2056": {
+      "title": "ELECTRICAL DRIVES - MAY 2024",
+      "at": "2026-03-05T15:33:19.379187Z"
+    },
+    "2057": {
+      "title": "OPTICAL FIBER COMMUNICATION - MAY 2023",
+      "at": "2026-03-05T15:33:19.396145Z"
+    },
+    "2058": {
+      "title": "A AI AND SIGNAL PROCESSING - MAY 2023",
+      "at": "2026-03-05T15:33:19.411417Z"
+    },
+    "2059": {
+      "title": "A WIRELESS NETWORKS - MAY 2023",
+      "at": "2026-03-05T15:33:19.427305Z"
+    },
+    "2060": {
+      "title": "B SPECIAL MACHINE - MAY 2023",
+      "at": "2026-03-05T15:33:19.442551Z"
+    },
+    "2061": {
+      "title": "ELECTRICAL DRIVES - MAY 2023",
+      "at": "2026-03-05T15:33:19.459468Z"
+    },
+    "2062": {
+      "title": "A POWER QUALITY PROBLEMS AND MITIGATION TECHNIQUES - MAY 2023",
+      "at": "2026-03-05T15:33:19.473294Z"
+    },
+    "2063": {
+      "title": "D APPLICATION OF AI IN ELECTRICAL - MAY 2023",
+      "at": "2026-03-05T15:33:19.489981Z"
+    },
+    "2064": {
+      "title": "A UTILIZATION OF ELECTRICAL ENGINEERING - MAY 2023",
+      "at": "2026-03-05T15:33:19.504956Z"
+    },
+    "2065": {
+      "title": "B ENVIRONMENTAL ISSUES POLICY STANDARDS AND REGULATIONS - MAY 2023",
+      "at": "2026-03-05T15:33:19.520345Z"
+    },
+    "2066": {
+      "title": "C VLSI CIRCUITS AND SYSTEMS - MAY 2023",
+      "at": "2026-03-05T15:33:19.536645Z"
+    },
+    "2067": {
+      "title": "OPTICAL FIBER COMMUNICATION - MAY 2022",
+      "at": "2026-03-05T15:33:19.552347Z"
+    },
+    "2068": {
+      "title": "B WIRELESS COMMUNICATIONS - MAY 2022",
+      "at": "2026-03-05T15:33:19.567804Z"
+    },
+    "2069": {
+      "title": "A WIRELESS NETWORKS - MAY 2022",
+      "at": "2026-03-05T15:33:19.583517Z"
+    },
+    "2070": {
+      "title": "B SPECIAL MACHINE - MAY 2022",
+      "at": "2026-03-05T15:33:19.599131Z"
+    },
+    "2071": {
+      "title": "ELECTRICAL DRIVES - MAY 2022",
+      "at": "2026-03-05T15:33:19.614604Z"
+    },
+    "2072": {
+      "title": "B ENVIRONMENTAL ISSUES POLICY STANDARDS AND REGULATIONS - MAY 2022",
+      "at": "2026-03-05T15:33:19.630343Z"
+    },
+    "2073": {
+      "title": "DIGITAL CIRCUITS AND SYSTEMS - DEC 2024",
+      "at": "2026-03-05T15:33:19.646541Z"
+    },
+    "2074": {
+      "title": "DIGITAL CIRCUITS AND SYSTEMS - JUN 2023",
+      "at": "2026-03-05T15:33:19.661902Z"
+    },
+    "2075": {
+      "title": "ANALOG AND DIGITAL COMMUNICATION - JUN 2025",
+      "at": "2026-03-05T15:33:19.677369Z"
+    },
+    "2076": {
+      "title": "ANALOG AND DIGITAL COMMUNICATION - JUN 2023",
+      "at": "2026-03-05T15:33:19.692719Z"
+    },
+    "2077": {
+      "title": "ANALOG AND DIGITAL COMMUNICATION - NOV 2023",
+      "at": "2026-03-05T15:33:19.708381Z"
+    },
+    "2078": {
+      "title": "ANALOG AND DIGITAL COMMUNICATION - JUN 2022",
+      "at": "2026-03-05T15:33:19.724276Z"
+    },
+    "2079": {
+      "title": "OPERATING SYSTEM - DEC 2025",
+      "at": "2026-03-05T15:33:19.740127Z"
+    },
+    "2080": {
+      "title": "C OBJECT ORIENTED ANALYSIS AND DESIGN - DEC 2024",
+      "at": "2026-03-05T15:33:19.755679Z"
+    },
+    "2081": {
+      "title": "C JAVA PROGRAMMING - DEC 2024",
+      "at": "2026-03-05T15:33:19.770684Z"
+    },
+    "2082": {
+      "title": "OPERATING SYSTEM - NOV 2022",
+      "at": "2026-03-05T15:33:19.785596Z"
+    },
+    "2083": {
+      "title": "COMPUTER NETWORKS - NOV 2022",
+      "at": "2026-03-05T15:33:19.801826Z"
+    },
+    "2084": {
+      "title": "C JAVA PROGRAMMING - NOV 2022",
+      "at": "2026-03-05T15:33:19.816944Z"
+    },
+    "2085": {
+      "title": "COMPUTER GRAPHICS AND MULTIMEDIA - JUN 2025",
+      "at": "2026-03-05T15:33:19.833634Z"
+    },
+    "2086": {
+      "title": "WIRELESS AND MOBILE COMPUTING - JUN 2025",
+      "at": "2026-03-05T15:33:19.847847Z"
+    },
+    "2087": {
+      "title": "A COMPILER DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:19.863973Z"
+    },
+    "2088": {
+      "title": "B DATA MINING - JUN 2025",
+      "at": "2026-03-05T15:33:19.879269Z"
+    },
+    "2089": {
+      "title": "B SOFTWARE ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:19.894657Z"
+    },
+    "2090": {
+      "title": "COMPUTER GRAPHICS AND MULTIMEDIA - MAY 2024",
+      "at": "2026-03-05T15:33:19.910000Z"
+    },
+    "2091": {
+      "title": "WIRELESS AND MOBILE COMPUTING - MAY 2023",
+      "at": "2026-03-05T15:33:19.925756Z"
+    },
+    "2092": {
+      "title": "A COMPILER DESIGN - MAY 2023",
+      "at": "2026-03-05T15:33:19.941449Z"
+    },
+    "2093": {
+      "title": "B SOFTWARE ENGINEERING - MAY 2022",
+      "at": "2026-03-05T15:33:19.957217Z"
+    },
+    "2094": {
+      "title": "A GRADING SYSTEM - NOV 2023",
+      "at": "2026-03-05T15:33:19.972252Z"
+    },
+    "2095": {
+      "title": "B CLOUD COMPUTING - NOV 2023",
+      "at": "2026-03-05T15:33:19.987675Z"
+    },
+    "2096": {
+      "title": "C SIMULATION AND MODELING - NOV 2023",
+      "at": "2026-03-05T15:33:20.003286Z"
+    },
+    "2097": {
+      "title": "D AUGMENTED AND VIRTUAL REALITY - NOV 2023",
+      "at": "2026-03-05T15:33:20.018912Z"
+    },
+    "2098": {
+      "title": "C SOCIAL NETWORKS - NOV 2023",
+      "at": "2026-03-05T15:33:20.033506Z"
+    },
+    "2099": {
+      "title": "D DIGITAL IMAGE PROCESSING - NOV 2023",
+      "at": "2026-03-05T15:33:20.049161Z"
+    },
+    "2100": {
+      "title": "A MACHINE LEARNING - JUN 2025",
+      "at": "2026-03-05T15:33:20.064541Z"
+    },
+    "2101": {
+      "title": "A BLOCKCHAIN TECHNOLOGY - JUN 2025",
+      "at": "2026-03-05T15:33:20.080088Z"
+    },
+    "2102": {
+      "title": "D PARALLEL COMPUTING - JUN 2025",
+      "at": "2026-03-05T15:33:20.095644Z"
+    },
+    "2103": {
+      "title": "INFORMATION SECURITY - MAY 2024",
+      "at": "2026-03-05T15:33:20.111258Z"
+    },
+    "2104": {
+      "title": "INFORMATION SECURITY - MAY 2023",
+      "at": "2026-03-05T15:33:20.126870Z"
+    },
+    "2105": {
+      "title": "A MACHINE LEARNING - MAY 2023",
+      "at": "2026-03-05T15:33:20.142397Z"
+    },
+    "2106": {
+      "title": "A BLOCKCHAIN TECHNOLOGY - MAY 2023",
+      "at": "2026-03-05T15:33:20.157408Z"
+    },
+    "2107": {
+      "title": "INTERNAL COMBUSTION ENGINES - JUN 2025",
+      "at": "2026-03-05T15:33:20.172655Z"
+    },
+    "2108": {
+      "title": "MECHANICAL VIBRATION - JUN 2025",
+      "at": "2026-03-05T15:33:20.187791Z"
+    },
+    "2109": {
+      "title": "B DYNAMICS OF MACHINE - JUN 2025",
+      "at": "2026-03-05T15:33:20.202395Z"
+    },
+    "2110": {
+      "title": "A INDUSTRIAL ENGINEERING AND ERGONOMICS - JUN 2025",
+      "at": "2026-03-05T15:33:20.218644Z"
+    },
+    "2111": {
+      "title": "INTERNAL COMBUSTION ENGINES - MAY 2024",
+      "at": "2026-03-05T15:33:20.234169Z"
+    },
+    "2112": {
+      "title": "MECHANICAL VIBRATION - MAY 2024",
+      "at": "2026-03-05T15:33:20.249329Z"
+    },
+    "2113": {
+      "title": "B DYNAMICS OF MACHINE - MAY 2024",
+      "at": "2026-03-05T15:33:20.265388Z"
+    },
+    "2114": {
+      "title": "A INDUSTRIAL ENGINEERING AND ERGONOMICS - MAY 2024",
+      "at": "2026-03-05T15:33:20.280049Z"
+    },
+    "2115": {
+      "title": "INTERNAL COMBUSTION ENGINES - NOV 2023",
+      "at": "2026-03-05T15:33:20.296950Z"
+    },
+    "2116": {
+      "title": "MECHANICAL VIBRATION - NOV 2023",
+      "at": "2026-03-05T15:33:20.310239Z"
+    },
+    "2117": {
+      "title": "B DYNAMICS OF MACHINE - NOV 2023",
+      "at": "2026-03-05T15:33:20.326357Z"
+    },
+    "2118": {
+      "title": "A INDUSTRIAL ENGINEERING AND ERGONOMICS - NOV 2023",
+      "at": "2026-03-05T15:33:20.341111Z"
+    },
+    "2119": {
+      "title": "INTERNAL COMBUSTION ENGINES - NOV 2022",
+      "at": "2026-03-05T15:33:20.356141Z"
+    },
+    "2120": {
+      "title": "MECHANICAL VIBRATION - NOV 2022",
+      "at": "2026-03-05T15:33:20.371830Z"
+    },
+    "2121": {
+      "title": "B DYNAMICS OF MACHINE - NOV 2022",
+      "at": "2026-03-05T15:33:20.387111Z"
+    },
+    "2122": {
+      "title": "THERMAL ENGINEERING AND GAS DYNAMICS - JUN 2025",
+      "at": "2026-03-05T15:33:20.402573Z"
+    },
+    "2123": {
+      "title": "MACHINE COMPONENT DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:20.417830Z"
+    },
+    "2124": {
+      "title": "A TURBOMACHINERY - JUN 2025",
+      "at": "2026-03-05T15:33:20.419443Z"
+    },
+    "2125": {
+      "title": "C PRODUCT DESIGN - JUN 2025",
+      "at": "2026-03-05T15:33:20.432282Z"
+    },
+    "2126": {
+      "title": "THERMAL ENGINEERING AND GAS DYNAMICS - MAY 2024",
+      "at": "2026-03-05T15:33:20.434547Z"
+    },
+    "2127": {
+      "title": "MACHINE COMPONENT DESIGN - MAY 2024",
+      "at": "2026-03-05T15:33:20.449053Z"
+    },
+    "2128": {
+      "title": "A TURBO MACHINERY - MAY 2024",
+      "at": "2026-03-05T15:33:20.451198Z"
+    },
+    "2129": {
+      "title": "C PRODUCT DESIGN - MAY 2024",
+      "at": "2026-03-05T15:33:20.478538Z"
+    },
+    "2130": {
+      "title": "THERMAL ENGINEERING AND GAS DYNAMICS - MAY 2023",
+      "at": "2026-03-05T15:33:20.480164Z"
+    },
+    "2131": {
+      "title": "MACHINE COMPONENT DESIGN - MAY 2023",
+      "at": "2026-03-05T15:33:20.493748Z"
+    },
+    "2132": {
+      "title": "A TURBO MACHINERY - MAY 2023",
+      "at": "2026-03-05T15:33:20.509019Z"
+    },
+    "2133": {
+      "title": "C PRODUCT DESIGN - NOV 2023",
+      "at": "2026-03-05T15:33:20.524633Z"
+    },
+    "2134": {
+      "title": "THERMAL ENGINEERING AND GAS DYNAMICS - MAY 2022",
+      "at": "2026-03-05T15:33:20.540438Z"
+    },
+    "2135": {
+      "title": "MACHINE COMPONENT DESIGN - MAY 2022",
+      "at": "2026-03-05T15:33:20.556177Z"
+    },
+    "2136": {
+      "title": "A TURBO MACHINERY - MAY 2022",
+      "at": "2026-03-05T15:33:20.571344Z"
+    },
+    "2137": {
+      "title": "C PRODUCT DESIGN - MAY 2022",
+      "at": "2026-03-05T15:33:20.587017Z"
+    },
+    "2138": {
+      "title": "B OPTIMIZATION TECHNIQUES - MAY 2022",
+      "at": "2026-03-05T15:33:20.602219Z"
+    },
+    "2139": {
+      "title": "HEAT AND MASS TRANSFER - DEC 2025",
+      "at": "2026-03-05T15:33:20.617184Z"
+    },
+    "2140": {
+      "title": "HEAT AND MASS TRANSFER - JUN 2025",
+      "at": "2026-03-05T15:33:20.632104Z"
+    },
+    "2141": {
+      "title": "C POWER PLANT ENGINEERING - DEC 2025",
+      "at": "2026-03-05T15:33:20.648241Z"
+    },
+    "2142": {
+      "title": "A OPERATION RESEARCH AND SUPPLY CHAIN - JUN 2025",
+      "at": "2026-03-05T15:33:20.663675Z"
+    },
+    "2143": {
+      "title": "HEAT AND MASS TRANSFER - MAY 2024",
+      "at": "2026-03-05T15:33:20.678635Z"
+    },
+    "2144": {
+      "title": "A OPERATION RESEARCH AND SUPPLY CHAIN - DEC 2024",
+      "at": "2026-03-05T15:33:20.694890Z"
+    },
+    "2145": {
+      "title": "A OPERATION RESEARCH AND SUPPLY CHAIN - MAY 2024",
+      "at": "2026-03-05T15:33:20.709804Z"
+    },
+    "2146": {
+      "title": "HEAT AND MASS TRANSFER - MAY 2023",
+      "at": "2026-03-05T15:33:20.724630Z"
+    },
+    "2147": {
+      "title": "HEAT AND MASS TRANSFER - NOV 2023",
+      "at": "2026-03-05T15:33:20.740619Z"
+    },
+    "2148": {
+      "title": "A ADVANCE MACHINING PROCESSES - NOV 2023",
+      "at": "2026-03-05T15:33:20.756078Z"
+    },
+    "2149": {
+      "title": "C POWER PLANT ENGINEERING - NOV 2023",
+      "at": "2026-03-05T15:33:20.771685Z"
+    },
+    "2150": {
+      "title": "A OPERATION RESEARCH AND SUPPLY CHAIN - NOV 2023",
+      "at": "2026-03-05T15:33:20.785932Z"
+    },
+    "2151": {
+      "title": "REFRIGERATION AND AIR CONDITIONING - JUN 2025",
+      "at": "2026-03-05T15:33:20.801749Z"
+    },
+    "2152": {
+      "title": "A AUTOMOBILE ENGINEERING - JUN 2025",
+      "at": "2026-03-05T15:33:20.818121Z"
+    },
+    "2153": {
+      "title": "B ENERGY CONSERVATION MANAGEMENT AND AUDIT - JUN 2025",
+      "at": "2026-03-05T15:33:20.832619Z"
+    },
+    "2154": {
+      "title": "REFRIGERATION AND AIR CONDITIONING - MAY 2024",
+      "at": "2026-03-05T15:33:20.847485Z"
+    },
+    "2155": {
+      "title": "A AUTOMOBILE ENGINEERING - MAY 2024",
+      "at": "2026-03-05T15:33:20.862068Z"
+    },
+    "2156": {
+      "title": "D PRODUCTION PLANNING AND CONTROL - MAY 2024",
+      "at": "2026-03-05T15:33:20.878174Z"
+    },
+    "2157": {
+      "title": "B ENERGY CONSERVATION MANAGEMENT AND AUDIT - MAY 2024",
+      "at": "2026-03-05T15:33:20.893554Z"
+    },
+    "2158": {
+      "title": "C ENTREPRENEURSHIP AND MANAGEMENT CONCEPTS - MAY 2024",
+      "at": "2026-03-05T15:33:20.909447Z"
+    },
+    "2159": {
+      "title": "REFRIGERATION AND AIR CONDITIONING - MAY 2023",
+      "at": "2026-03-05T15:33:20.924996Z"
+    },
+    "2160": {
+      "title": "A AUTOMOBILE ENGINEERING - MAY 2023",
+      "at": "2026-03-05T15:33:20.940436Z"
+    },
+    "2161": {
+      "title": "B TRIBOLOGY AND MAINTENANCE ENGINEERING - MAY 2023",
+      "at": "2026-03-05T15:33:20.970298Z"
+    },
+    "2162": {
+      "title": "B ENERGY CONSERVATION MANAGEMENT AND AUDIT - MAY 2023",
+      "at": "2026-03-05T15:33:20.985344Z"
+    },
+    "2163": {
+      "title": "C ENTREPRENEURSHIP AND MANAGEMENT CONCEPTS - MAY 2023",
+      "at": "2026-03-05T15:33:21.001771Z"
+    },
+    "2164": {
+      "title": "REFRIGERATION AND AIR CONDITIONING - MAY 2022",
+      "at": "2026-03-05T15:33:21.016515Z"
+    },
+    "2165": {
+      "title": "A AUTOMOBILE ENGINEERING - MAY 2022",
+      "at": "2026-03-05T15:33:21.031453Z"
+    },
+    "2166": {
+      "title": "C MACHINE TOOL DESIGN - MAY 2022",
+      "at": "2026-03-05T15:33:21.046659Z"
+    },
+    "2167": {
+      "title": "C ENTREPRENEURSHIP AND MANAGEMENT CONCEPTS - MAY 2022",
+      "at": "2026-03-05T15:33:21.061926Z"
+    }
+  },
+  "last_run": "2026-03-05T15:33:21.090744Z"
+}
