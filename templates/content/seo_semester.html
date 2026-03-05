@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}{{ seo_title }} | CampusPrep{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ seo_description }}">
+<meta name="keywords" content="{{ seo_keywords }}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="CampusPrep">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "{{ seo_title|escapejs }}",
+    "description": "{{ seo_description|escapejs }}",
+    "url": "{{ request.build_absolute_uri|escapejs }}",
+    "mainEntity": {
+        "@type": "ItemList",
+        "name": "{{ branch.code|escapejs }} Semester {{ semester.number }} Subjects",
+        "numberOfItems": {{ subject_rows|length }}
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    {% url 'rgpv_branch' branch_slug=branch.code|lower as branch_url %}
+    {% include "content/partials/_seo_breadcrumbs.html" with c1_label="Home" c1_url='/' c2_label="RGPV" c2_url='/rgpv/' c3_label=branch.code c3_url=branch_url c4_label=semester.number %}
+
+    <div class="rounded-3xl border border-border bg-gradient-to-br from-background via-card to-muted/20 p-6 md:p-10 shadow-lg relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-56 h-56 rounded-full bg-primary/10 blur-3xl"></div>
+        <p class="text-sm text-primary font-semibold uppercase tracking-wide">RGPV Semester</p>
+        <h1 class="text-3xl md:text-4xl font-extrabold mt-2">{{ branch.code }} Semester {{ semester.number }}</h1>
+        <p class="mt-3 text-muted-foreground">Subject pages are optimized for subject-code searches like "{{ branch.code|lower }} sem {{ semester.number }} syllabus" and "bt103 notes".</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+            <a href="{{ branch_url }}" class="inline-flex items-center px-4 py-2 rounded-lg border border-border bg-card text-sm font-semibold hover:bg-muted/20 transition-colors">Back to {{ branch.code }}</a>
+            <a href="{% url 'rgpv_subjects' %}" class="inline-flex items-center px-4 py-2 rounded-lg border border-border bg-card text-sm font-semibold hover:bg-muted/20 transition-colors">All Subjects</a>
+        </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for row in subject_rows %}
+        <a href="{% url 'rgpv_subject' branch_slug=branch.code|lower semester_slug=semester_slug subject_slug=row.subject_slug %}" class="rounded-2xl border border-border p-5 bg-card hover:bg-muted/20 transition-colors shadow-sm">
+            <div class="flex items-start justify-between gap-3">
+                <div>
+                    <div class="font-bold text-lg">{{ row.subject.code }} - {{ row.subject.name }}</div>
+                    <div class="text-sm text-muted-foreground mt-1">Syllabus, notes, important questions, PYQs</div>
+                </div>
+                <span class="text-xs rounded-md px-2 py-1 bg-muted text-muted-foreground">{{ semester_slug }}</span>
+            </div>
+        </a>
+        {% empty %}
+        <div class="rounded-xl border border-border p-5 bg-card text-muted-foreground">No active subjects found for this branch and semester.</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

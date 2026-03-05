@@ -31,6 +31,23 @@ class ContentDataService(BaseService):
         )
 
     @classmethod
+    def get_published_documents_by_type(cls, subject, document_type):
+        """
+        Retrieves all published documents of a specific type for a subject.
+        """
+        return cls.get_or_set_cache(
+            f'subject_docs_type_{subject.id}_{document_type}',
+            lambda: list(
+                ParsedDocument.objects.filter(
+                    subjects=subject, 
+                    document_type=document_type,
+                    is_published=True
+                ).order_by('-year', '-created_at')
+            ),
+            timeout=1800,
+        )
+
+    @classmethod
     def get_document_by_id(cls, document_id):
         return cls.get_or_set_cache(
             f'document_{document_id}',

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}{{ seo_title }} | CampusPrep{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ seo_description }}">
+<meta name="keywords" content="{{ seo_keywords }}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="CampusPrep">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "{{ seo_title|escapejs }}",
+    "description": "{{ seo_description|escapejs }}",
+    "url": "{{ request.build_absolute_uri|escapejs }}",
+    "mainEntity": {
+        "@type": "ItemList",
+        "name": "RGPV Subjects",
+        "numberOfItems": {{ subject_rows|length }}
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    {% include "content/partials/_seo_breadcrumbs.html" with c1_label="Home" c1_url='/' c2_label="RGPV" c2_url='/rgpv/' c3_label="Subjects" %}
+
+    <div class="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">RGPV Subject Index</h1>
+        <p class="mt-3 text-muted-foreground">Direct links to branch + semester + subject pages.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full border border-border px-3 py-1">{{ subject_count }} subjects</span>
+            <span class="rounded-full border border-border px-3 py-1">{{ branch_count }} branches</span>
+            <span class="rounded-full border border-border px-3 py-1">{{ semester_count }} semesters</span>
+        </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for row in subject_rows %}
+        <a href="{% url 'rgpv_subject' branch_slug=row.branch_slug semester_slug=row.semester_slug subject_slug=row.subject_slug %}" class="rounded-2xl border border-border p-4 bg-card hover:bg-muted/20 transition-colors shadow-sm">
+            <div class="font-bold">{{ row.subject.code }} - {{ row.subject.name }}</div>
+            <div class="text-sm text-muted-foreground mt-1">{{ row.subject.branch.code }} • Sem {{ row.subject.semester.number }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

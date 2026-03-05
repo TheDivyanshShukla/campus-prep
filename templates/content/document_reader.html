@@ -153,14 +153,14 @@
     <!-- Sticky / Collapsible Header Wrapper -->
     <div id="stickyHeader" class="sticky top-0 z-40 bg-background/95 backdrop-blur-md pt-4 pb-2 mb-0 transition-all duration-300 transform origin-top">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
-            <a href="{% url 'subject_dashboard' current_subject.id %}" class="hidden sm:flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" title="Back to {{ current_subject.code }}">
+            <a href="{{ back_url }}" class="hidden sm:flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" title="Back to {{ current_subject.code|default:'Subject' }}">
                 <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                <span>Back to {{ current_subject.code }}</span>
+                <span>Back</span>
             </a>
             {% if document.render_mode == 'DIRECT_PDF' %}
             <div class="flex items-center gap-1 flex-wrap justify-between">
                 <!-- Back arrow: mobile only, first in the controls row -->
-                <a href="{% url 'subject_dashboard' current_subject.id %}" class="sm:hidden p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Back to {{ current_subject.code }}">
+                <a href="{{ back_url }}" class="sm:hidden p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Back">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </a>
                 <!-- Zoom Controls -->
@@ -276,7 +276,7 @@
             {% else %}
             <div class="flex items-center gap-1 flex-wrap justify-between">
                 <!-- Back arrow: mobile only -->
-                <a href="{% url 'subject_dashboard' current_subject.id %}" class="sm:hidden p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Back to {{ current_subject.code }}">
+                <a href="{{ back_url }}" class="sm:hidden p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Back">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </a>
                 

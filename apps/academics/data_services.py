@@ -32,10 +32,35 @@ class AcademicsDataService(BaseService):
         )
 
     @classmethod
+    def get_branch_by_code(cls, branch_code):
+        branch_code = str(branch_code).lower()
+        return cls.get_or_set_cache(
+            f'branch_code_{branch_code}',
+            lambda: Branch.objects.filter(code__iexact=branch_code, is_active=True).first(),
+            timeout=86400,
+        )
+
+    @classmethod
     def get_semester_by_id(cls, semester_id):
         return cls.get_or_set_cache(
             f'semester_{semester_id}',
             lambda: Semester.objects.filter(pk=semester_id, is_active=True).first(),
+            timeout=86400,
+        )
+
+    @classmethod
+    def get_semester_by_number(cls, semester_number):
+        return cls.get_or_set_cache(
+            f'semester_num_{semester_number}',
+            lambda: Semester.objects.filter(number=semester_number, is_active=True).first(),
+            timeout=86400,
+        )
+
+    @classmethod
+    def get_active_semesters_for_branch(cls, branch):
+        return cls.get_or_set_cache(
+            f'semesters_for_branch_{branch.id}',
+            lambda: list(Semester.objects.filter(is_active=True, subjects__branch=branch).distinct().order_by('number')),
             timeout=86400,
         )
 
@@ -47,6 +72,21 @@ class AcademicsDataService(BaseService):
             .prefetch_related('units')
             .filter(pk=subject_id)
             .first(),
+            timeout=3600,
+        )
+
+    @classmethod
+    def get_subject_by_codes(cls, branch_code, semester_number, subject_code):
+        cache_key = f'subject_codes_{str(branch_code).lower()}_{semester_number}_{str(subject_code).lower()}'
+        return cls.get_or_set_cache(
+            cache_key,
+            lambda: Subject.objects.select_related('branch', 'semester')
+            .filter(
+                code__iexact=subject_code,
+                semester__number=semester_number,
+                branch__code__iexact=branch_code,
+                is_active=True
+            ).first(),
             timeout=3600,
         )
 
