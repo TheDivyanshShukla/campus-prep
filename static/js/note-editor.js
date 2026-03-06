@@ -778,9 +778,30 @@
                 if (item) btn.addEventListener('click', () => { item.action(); this.ctxMenuEl.classList.add('hidden'); });
             });
 
-            this.ctxMenuEl.style.top = e.clientY + 'px';
-            this.ctxMenuEl.style.left = Math.min(e.clientX, window.innerWidth - 220) + 'px';
-            this.ctxMenuEl.classList.remove('hidden');
+            // Make menu vertically scrollable if it would be taller than viewport
+            const menu = this.ctxMenuEl;
+            menu.style.maxHeight = (window.innerHeight - 40) + 'px';
+            menu.style.overflowY = 'auto';
+
+            // Show it first so we can measure its rendered size, then reposition
+            menu.classList.remove('hidden');
+            const rect = menu.getBoundingClientRect();
+
+            // Compute top: prefer below click, but if it would overflow, show above
+            let top = e.clientY;
+            if (rect.bottom > window.innerHeight) {
+                top = e.clientY - rect.height;
+                if (top < 8) top = 8;
+            }
+            // Clamp so menu never overflows bottom
+            if (top + rect.height > window.innerHeight) top = Math.max(8, window.innerHeight - rect.height - 8);
+
+            // Compute left and clamp to viewport with small margin
+            let left = Math.min(e.clientX, window.innerWidth - rect.width - 8);
+            if (left < 8) left = 8;
+
+            menu.style.top = top + 'px';
+            menu.style.left = left + 'px';
         }
 
         // ── Highlight system ──────────────────────────────────────────────
