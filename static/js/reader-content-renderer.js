@@ -4,7 +4,7 @@
  * Reads config from <script id="reader-data"> JSON tag.
  * Requires: marked.js, MathJax.
  */
-(function() {
+(function () {
     'use strict';
 
     var _rdEl = document.getElementById('reader-data');
@@ -124,6 +124,55 @@
         </div>`);
     }
 
+    function _renderShortNotes(container, data) {
+        if (!data.topics) return;
+
+        data.topics.forEach((topic, idx) => {
+            let contentHtml = topic.content || '';
+
+            // Handle [[DIAGRAM: ...]] replacement (simple placeholder or search link for now)
+            contentHtml = contentHtml.replace(/\[\[DIAGRAM:\s*(.*?)\]\]/g, function (match, query) {
+                return `
+                <div class="my-6 p-4 border border-dashed border-primary/30 rounded-xl bg-primary/5 flex flex-col items-center justify-center group hover:border-primary/60 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-1">Visual Reference Requested</span>
+                    <span class="text-xs font-bold text-foreground text-center px-4">${query}</span>
+                    <a href="https://www.google.com/search?q=${encodeURIComponent(query + ' engineering diagram')}&tbm=isch" target="_blank" class="mt-3 text-[9px] font-black uppercase tracking-tighter bg-primary text-primary-foreground px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Search Diagram</a>
+                </div>`;
+            });
+
+            // Convert > [!TIP] to a nice callout using a custom marked renderer or simple regex pre-processing
+            contentHtml = contentHtml.replace(/>\s*\[!TIP\](.*?)(?=\n\n|\n$|$)/gs, function (match, content) {
+                return `
+                <div class="my-4 p-4 rounded-xl border border-amber-200 bg-amber-50 dark:bg-amber-900/10 dark:border-amber-900/50 flex gap-3">
+                    <div class="flex-shrink-0 text-amber-500 mt-0.5">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-1">Exam Tip</span>
+                        <div class="text-sm text-amber-900 dark:text-amber-200 leading-relaxed font-medium">${marked.parse(content.trim())}</div>
+                    </div>
+                </div>`;
+            });
+
+            container.insertAdjacentHTML('beforeend', `
+            <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden mb-8">
+                <div class="bg-indigo-50 dark:bg-indigo-900/10 px-6 py-4 border-b border-border flex items-center justify-between">
+                    <h2 class="text-xl font-bold text-indigo-900 dark:text-indigo-200 math-render-target">
+                        <span class="text-indigo-400 mr-2 opacity-50">${idx + 1}.</span>${topic.title}
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed markdown-body">
+                        ${marked.parse(contentHtml)}
+                    </div>
+                </div>
+            </div>`);
+        });
+    }
+
     function _renderSyllabus(container, data) {
         if (!data.modules) return;
 
@@ -191,17 +240,40 @@
     function _renderImportantQ(container, data) {
         if (!data.questions) return;
         const html = data.questions.map(q => {
-            const freqColor = q.frequency === 'High'
+            const priority = q.priority || 'Medium';
+            const freqColor = priority === 'High'
                 ? 'text-rose-600 bg-rose-100 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800'
-                : q.frequency === 'Medium'
-                ? 'text-amber-600 bg-amber-100 border-amber-200 dark:bg-amber-900/30 dark:border-amber-800'
-                : 'text-blue-600 bg-blue-100 border-blue-200 dark:bg-blue-900/30 dark:border-blue-800';
+                : priority === 'Medium'
+                    ? 'text-amber-600 bg-amber-100 border-amber-200 dark:bg-amber-900/30 dark:border-amber-800'
+                    : 'text-blue-600 bg-blue-100 border-blue-200 dark:bg-blue-900/30 dark:border-blue-800';
+
+            const unitHtml = q.unit ? `<span class="inline-block bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded shadow-sm mr-2">Unit ${q.unit}</span>` : '';
+            const marksHtml = q.marks ? `<span class="inline-block bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 mr-2">${q.marks} Marks</span>` : '';
+            const yearsHtml = (q.years && q.years.length > 0) ? `<span class="text-[10px] text-muted-foreground font-medium ml-2">Asked: ${q.years.join(', ')}</span>` : '';
+            const descHtml = q.description ? `<p class="mt-2 text-xs text-muted-foreground leading-relaxed italic border-l-2 border-border pl-3">${q.description}</p>` : '';
+
+            const text = (q.text || '')
+                .replace(/\\begin\{itemize\}/g, '\n')
+                .replace(/\\end\{itemize\}/g, '\n')
+                .replace(/\\begin\{enumerate\}/g, '\n')
+                .replace(/\\end\{enumerate\}/g, '\n')
+                .replace(/\\item/g, '\n- ');
+
             return `
             <div class="p-6 border-b border-border last:border-0 hover:bg-muted/10 transition-colors flex items-start gap-4">
-                <div class="shrink-0 mt-1"><svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                <div class="shrink-0 mt-1 text-amber-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                    </svg>
+                </div>
                 <div class="flex-1">
-                    <div class="text-lg font-medium text-foreground/90 leading-relaxed math-render-target">${q.text || ''}</div>
-                    <span class="inline-block mt-2 text-xs font-bold px-2 py-1 rounded-md border ${freqColor}">${q.frequency || ''} Frequency</span>
+                    <div class="flex items-center flex-wrap gap-y-2 mb-2">
+                        ${unitHtml}${marksHtml}
+                        <span class="inline-block text-[10px] font-bold px-2 py-0.5 rounded-md border ${freqColor}">${priority} Priority</span>
+                        ${yearsHtml}
+                    </div>
+                    <div class="text-lg font-medium text-foreground/90 leading-relaxed math-render-target markdown-body">${marked.parse(text)}</div>
+                    ${descHtml}
                 </div>
             </div>`;
         }).join('');
@@ -897,8 +969,8 @@
             if (window.__drm_tripped) return;
 
             const docType = _RD.document_type;
-            const cipher  = _RD.encrypted_data;
-            const nonce   = _RD.tamper_nonce;
+            const cipher = _RD.encrypted_data;
+            const nonce = _RD.tamper_nonce;
 
             let structuredData = null;
             try {
@@ -939,10 +1011,11 @@
             container.innerHTML = '';
             container.className = 'space-y-6';
 
-            if      (docType === 'PYQ' || docType === 'UNSOLVED_PYQ') _renderPYQ(container, structuredData);
-            else if (docType === 'NOTES' || docType === 'SHORT_NOTES') _renderNotes(container, structuredData);
-            else if (docType === 'FORMULA')     _renderFormula(container, structuredData);
-            else if (docType === 'SYLLABUS')    _renderSyllabus(container, structuredData);
+            if (docType === 'PYQ' || docType === 'UNSOLVED_PYQ') _renderPYQ(container, structuredData);
+            else if (docType === 'NOTES') _renderNotes(container, structuredData);
+            else if (docType === 'SHORT_NOTES') _renderShortNotes(container, structuredData);
+            else if (docType === 'FORMULA') _renderFormula(container, structuredData);
+            else if (docType === 'SYLLABUS') _renderSyllabus(container, structuredData);
             else if (docType === 'IMPORTANT_Q') _renderImportantQ(container, structuredData);
             else container.insertAdjacentHTML('beforeend',
                 `<div class="bg-card shadow-sm rounded-xl border border-border p-6 font-mono text-sm whitespace-pre-wrap overflow-x-auto">${JSON.stringify(structuredData, null, 2)}</div>`);

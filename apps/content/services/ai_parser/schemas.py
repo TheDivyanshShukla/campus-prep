@@ -98,11 +98,30 @@ class ImportantQuestion(BaseModel):
     """
     A question identified as 'important' based on frequency or importance in the source.
     """
-    text: str = Field(..., description="The question text.")
-    frequency: Literal['High', 'Medium', 'Low'] = Field(..., description="Importance or frequency level.")
+    text: str = Field(..., description="The pristine LaTeX question text.")
+    marks: int = Field(..., description="Typical marks awarded for this question.")
+    description: str = Field(..., description="Contextual explanation of why this question is important.")
+    frequency_count: int = Field(..., description="Number of times this or a very similar question appeared in past papers.")
+    years: List[int] = Field(..., description="List of years this question occurred.")
+    unit: int = Field(..., description="The syllabus unit number (1-5) it belongs to.")
+    priority: Literal['High', 'Medium', 'Low'] = Field(..., description="Student focus level.")
 
 class ParsedImportantQs(BaseModel):
     """
-    A collection of highly important questions.
+    A collection of high-value questions identified for a subject or unit.
     """
     questions: List[ImportantQuestion]
+
+class ShortNoteTopic(BaseModel):
+    """
+    A specific topic within short notes, including exam context.
+    Follows reaching 'naughty-notes' style: all content in one markdown block.
+    """
+    title: str = Field(..., description="The highly specific name of the topic. Use LaTeX for math/symbols.")
+    content: str = Field(..., description="Comprehensive exam-oriented breakdown. Includes: explanation, step-by-step examples, and exam tips. Use PURE Markdown + professional LaTeX. Use [[DIAGRAM: description]] for visuals.")
+
+class ParsedShortNotes(BaseModel):
+    """
+    High-impact, exam-oriented short notes for a unit.
+    """
+    topics: List[ShortNoteTopic]
