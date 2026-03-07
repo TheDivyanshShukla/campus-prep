@@ -1,9 +1,9 @@
 import os
-import json
 from typing import List, Optional
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from langfuse.langchain import CallbackHandler
 
 
 # ── Pydantic schemas for structured AI output ────────────────────────────────
@@ -115,5 +115,12 @@ class PracticeAIService:
             ("user", user_prompt),
         ])
         chain = prompt | self.structured_llm
-        result: PracticeQuestionList = chain.invoke({})
+        langfuse_handler = CallbackHandler()
+        result: PracticeQuestionList = chain.invoke({}, config={
+            "callbacks": [langfuse_handler],
+            "metadata": {
+                "langfuse_session_id": "practice_generation",
+                "langfuse_tags": ["practice_questions", subject_name, difficulty]
+            }
+        })
         return result.questions

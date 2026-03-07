@@ -21,6 +21,7 @@
             document.head.appendChild(style);
         })();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {% endblock %}
     
     <!-- Header -->
@@ -35,17 +36,22 @@
     <!-- Tab Navigation -->
     <div class="mb-10 w-full overflow-x-auto pb-4 scrollbar-hide">
         <div class="flex items-center justify-start md:justify-center space-x-2 md:space-x-4 min-w-max px-2">
-            <button onclick="switchTab('tab-pyqs')" id="btn-pyqs" class="tab-btn active px-5 py-2.5 rounded-full text-sm font-bold bg-primary text-primary-foreground shadow-md transition-all whitespace-nowrap">
-                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                Solved PYQs
+            <button onclick="switchTab('tab-syllabus')" id="btn-syllabus" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
+                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                Curriculum
+            </button>
+            <button onclick="switchTab('tab-analytics')" id="btn-analytics" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap relative overflow-hidden group">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 via-primary/20 to-teal-400/20 translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]"></span>
+                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                Subject Analytics
             </button>
             <button onclick="switchTab('tab-unsolved-pyqs')" id="btn-unsolved-pyqs" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
                 <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 Unsolved PYQs
             </button>
-            <button onclick="switchTab('tab-notes')" id="btn-notes" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
-                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                Detailed Notes
+            <button onclick="switchTab('tab-pyqs')" id="btn-pyqs" class="tab-btn active px-5 py-2.5 rounded-full text-sm font-bold bg-primary text-primary-foreground shadow-md transition-all whitespace-nowrap">
+                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                Solved PYQs
             </button>
             <button onclick="switchTab('tab-short-notes')" id="btn-short-notes" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
                 <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -55,12 +61,441 @@
                 <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 Important Qs
             </button>
-            <button onclick="switchTab('tab-syllabus')" id="btn-syllabus" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-all whitespace-nowrap">
-                <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                Curriculum
-            </button>
         </div>
     </div>
+
+    <!-- Content Area (Tabs) -->
+    <div class="relative min-h-[50vh]">
+        <!-- Subject Analytics Tab -->
+        <div id="tab-analytics" class="tab-content hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+            {% if analytics %}
+            <div class="flex items-center mb-6 border-b border-border pb-2">
+                <svg class="w-6 h-6 mr-2 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <h2 class="text-2xl font-bold">Predictive Intelligence</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Predictability Score (Hero Metric) -->
+                <div class="bg-card text-card-foreground rounded-3xl p-6 border border-border shadow-sm flex flex-col items-center justify-center relative overflow-hidden group col-span-1 lg:col-span-1">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-teal-500/10 blur-3xl rounded-full pointer-events-none group-hover:bg-teal-500/20 transition-all duration-700"></div>
+                    <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-primary/10 blur-2xl rounded-full pointer-events-none group-hover:bg-primary/20 transition-all duration-700"></div>
+                    
+                    <h3 class="text-[10px] font-extrabold text-muted-foreground uppercase tracking-[0.2em] mb-4 z-10 w-full text-center">Predictability Score</h3>
+                    
+                    <div class="relative w-40 h-40 flex items-center justify-center z-10">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                            <path class="text-muted/20" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="currentColor" stroke-width="2" fill="none"></path>
+                            <path class="text-teal-500 transition-all duration-1000 ease-out drop-shadow-md" id="predictability-ring" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span class="text-5xl font-black tabular-nums tracking-tighter">{{ analytics.predictability_score|floatformat:1 }}<span class="text-xl text-muted-foreground ml-1">%</span></span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] font-medium text-muted-foreground mt-4 z-10 text-center max-w-[200px]">Based on analysis of {{ analytics.total_papers_analyzed }} past papers.</p>
+                </div>
+
+                <!-- Unit ROI Bar Chart -->
+                <div class="bg-card text-card-foreground rounded-3xl p-6 border border-border shadow-sm col-span-1 md:col-span-1 lg:col-span-2 relative overflow-hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="font-bold text-lg">Unit ROI Analysis</h3>
+                            <p class="text-xs text-muted-foreground">Average marks asked per unit vs effort required</p>
+                        </div>
+                    </div>
+                    <div class="h-48 w-full">
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Syllabus Heatmap & Complexity -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Complexity Breakdown -->
+                <div class="bg-card text-card-foreground rounded-3xl p-6 border border-border shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Complexity Breakdown</h3>
+                        <p class="text-xs text-muted-foreground mb-6">What type of questions to expect</p>
+                    </div>
+                    <div class="h-48 w-full flex items-center justify-center">
+                        <canvas id="complexityChart"></canvas>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2 justify-center" id="complexityLegend"></div>
+                    
+                </div>
+                
+                <!-- Topic Heatmap -->
+                <div class="bg-card text-card-foreground rounded-3xl p-6 border border-border shadow-sm col-span-1 lg:col-span-2 overflow-hidden flex flex-col">
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Top Repeating Topics</h3>
+                        <p class="text-xs text-muted-foreground mb-6">Historical syllabus coverage matrix</p>
+                    </div>
+                    
+                    <div class="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent space-y-3 max-h-[250px]">
+                        {{ analytics.syllabus_heatmap|json_script:"heatmapData" }}
+                        <div id="heatmapContainer" class="flex flex-col gap-3">
+                            <!-- Heatmap rows injected via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exact Top Repeated Questions -->
+            <div class="bg-card text-card-foreground rounded-3xl p-6 border border-border shadow-sm">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h3 class="font-bold text-lg flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-rose-500 mr-2 animate-pulse"></span>
+                            High Frequency Exact Questions
+                        </h3>
+                        <p class="text-xs text-muted-foreground ml-4">Memorize these. They appear almost exactly as written.</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    {% for q in analytics.top_repeated_questions %}
+                    <div class="flex p-4 rounded-xl bg-background border border-border/50 hover:border-border hover:bg-muted/30 transition-all group">
+                        <div class="flex-shrink-0 mr-5 flex flex-col items-center justify-start mt-0.5">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-rose-500/10 text-rose-500 ring-1 ring-rose-500/20 text-xs font-bold mb-1.5 shadow-sm">
+                                {{ q.occurrences }}x
+                            </span>
+                            <span class="text-[9px] uppercase tracking-widest text-muted-foreground/70 font-black">FREQ</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-foreground mb-3 leading-relaxed group-hover:text-primary transition-colors">{{ q.text }}</p>
+                            <div class="flex gap-1.5 flex-wrap">
+                                {% for year in q.years %}
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-secondary border border-border/50 text-secondary-foreground">{{ year }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                        <div class="text-center py-6">
+                            <p class="text-sm text-muted-foreground">No highly repeated exact questions found during analysis.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {{ analytics.unit_roi_data|json_script:"roiData" }}
+            {{ analytics.complexity_breakdown|json_script:"compData" }}
+            
+            <!-- Complexity Examples Modal -->
+            <div id="complexityModal" class="fixed inset-0 z-[100] hidden bg-background/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+                <div class="bg-card text-card-foreground border border-border shadow-2xl rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col transform scale-95 transition-transform duration-300" id="complexityModalContent">
+                    <div class="flex items-center justify-between p-6 border-b border-border/50 bg-muted/20">
+                        <h3 id="complexityModalTitle" class="text-xl font-bold flex items-center tracking-tight">
+                            <!-- Title injected here -->
+                        </h3>
+                        <button onclick="closeComplexityModal()" class="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
+                    </div>
+                    <div class="p-6 overflow-y-auto flex-1 custom-scrollbar">
+                        <ul id="complexityModalList" class="space-y-4 text-sm text-foreground list-none p-0 m-0">
+                            <!-- List items injected here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MathJax config -->
+            <script>
+                window.MathJax = {
+                    tex: {
+                        inlineMath: [['$', '$'], ['\\(', '\\)']],
+                        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                        processEscapes: true
+                    },
+                    startup: { typeset: false } // We'll manually typeset when elements are shown
+                };
+            </script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+            <script>
+                // Need to initialize charts when this tab becomes visible OR immediately if it's the active tab.
+                // We'll wrap in a function to export to subject-tabs.js or run here.
+                function initAnalytics() {
+                    if (window.analyticsInitialized) return;
+                    
+                    // 1. Animate Predictability Ring
+                    setTimeout(() => {
+                        const ring = document.getElementById('predictability-ring');
+                        if(ring) {
+                            ring.style.strokeDasharray = '{{ analytics.predictability_score|default:"0" }}, 100';
+                        }
+                    }, 500);
+
+                    // 2. ROI Chart
+                    const roiDataRawStr = document.getElementById('roiData').textContent;
+                    const roiDataRaw = JSON.parse(roiDataRawStr);
+                    if(Object.keys(roiDataRaw).length > 0) {
+                        const labels = [];
+                        const data = [];
+                        const colors = [];
+                        
+                        Object.entries(roiDataRaw).forEach(([unitKey, val]) => {
+                            labels.push(`Unit ${unitKey}`);
+                            data.push(val.avg_marks);
+                            colors.push(
+                                val.efficiency === 'High' ? '#10b981' : 
+                                val.efficiency === 'Medium' ? '#3b82f6' : 
+                                '#f43f5e'
+                            );
+                        });
+
+                        new Chart(document.getElementById('roiChart'), {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Avg Marks per Year',
+                                    data: data,
+                                    backgroundColor: colors,
+                                    borderRadius: 8,
+                                    borderWidth: 1,
+                                    borderColor: 'rgba(255,255,255,0.05)',
+                                    barPercentage: 0.6,
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: { display: false },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0,0,0,0.8)',
+                                        titleFont: { family: 'Inter', size: 13 },
+                                        bodyFont: { family: 'Inter', size: 13 },
+                                        padding: 10,
+                                        cornerRadius: 8,
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: { color: 'rgba(156, 163, 175, 0.1)' },
+                                        border: { display: false }
+                                    },
+                                    x: {
+                                        grid: { display: false },
+                                        border: { display: false }
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    // 3. Complexity Chart
+                    const compDataStr = document.getElementById('compData').textContent;
+                    const compData = JSON.parse(compDataStr);
+                    if(Object.keys(compData).length > 0) {
+                        const compLabels = Object.keys(compData);
+                        const compValues = Object.values(compData);
+                        
+                        // Default tailwind colors: softer indigo, teal, rose, amber
+                        const compColors = ['#818cf8', '#2dd4bf', '#fb7185', '#fbbf24'];
+
+                        new Chart(document.getElementById('complexityChart'), {
+                            type: 'doughnut',
+                            data: {
+                                labels: compLabels,
+                                datasets: [{
+                                    data: compValues,
+                                    backgroundColor: compColors,
+                                    borderWidth: 0,
+                                    hoverOffset: 4
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                cutout: '80%',
+                                plugins: {
+                                    legend: { display: false }
+                                },
+                                onClick: (event, elements, chart) => {
+                                    if (elements[0]) {
+                                        const i = elements[0].index;
+                                        const label = chart.data.labels[i];
+                                        
+                                        const modal = document.getElementById('complexityModal');
+                                        const modalContent = document.getElementById('complexityModalContent');
+                                        const title = document.getElementById('complexityModalTitle');
+                                        const list = document.getElementById('complexityModalList');
+                                        
+                                        let examples = [];
+                                        if (label.includes('Theory')) examples = compData.theory_examples || [];
+                                        else if (label.includes('Numerical')) examples = compData.numerical_examples || [];
+                                        else examples = compData.design_examples || [];
+                                        
+                                        if (!examples || examples.length === 0) return;
+                                        
+                                        title.innerHTML = `<span class="inline-block w-4 h-4 rounded-full mr-3 shadow-sm ring-2 ring-background" style="background-color: ${compColors[i]}"></span> Example ${label} Questions`;
+                                        list.innerHTML = examples.map(ex => `
+                                            <li class="relative bg-muted/20 p-5 rounded-xl border border-border/50">
+                                                <div class="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-xl" style="background-color: ${compColors[i]}"></div>
+                                                <div class="pl-2 pr-2 font-medium leading-relaxed text-sm md:text-base overflow-hidden">
+                                                    ${ex}
+                                                </div>
+                                            </li>
+                                        `).join('');
+                                        
+                                        // Show modal
+                                        modal.classList.remove('hidden');
+                                        // Slight delay to allow display:block to apply before animating opacity
+                                        requestAnimationFrame(() => {
+                                            modal.classList.remove('opacity-0');
+                                            modalContent.classList.remove('scale-95');
+                                        });
+                                        
+                                        // Render LaTeX equations in the newly populated list
+                                        if (window.MathJax) {
+                                            MathJax.typesetPromise([list]).catch(err => console.error(err));
+                                        }
+                                    }
+                                }
+                            }
+                        });
+
+                        // Build custom legend
+                        const compLegend = document.getElementById('complexityLegend');
+                        compLabels.forEach((label, i) => {
+                            if(compValues[i] > 0) {
+                                compLegend.innerHTML += `
+                                    <button onclick="document.getElementById('complexityChart').dispatchEvent(new MouseEvent('click', {bubbles:true}));" class="flex flex-col items-center justify-center p-2 rounded-lg bg-background border border-border/50 hover:bg-muted/40 transition-colors flex-1 min-w-[70px]">
+                                        <span class="w-2.5 h-2.5 rounded-full mb-1" style="background-color: ${compColors[i]}"></span>
+                                        <span class="text-[10px] font-bold text-foreground">${compValues[i]}%</span>
+                                        <span class="text-[9px] uppercase tracking-wider text-muted-foreground truncate w-full text-center">${label}</span>
+                                    </button>
+                                `;
+                            }
+                        });
+                    }
+
+                    // 4. Render Topic Heatmap
+                    const heatmapDataStr = document.getElementById('heatmapData').textContent;
+                    try {
+                        const heatmap = JSON.parse(heatmapDataStr);
+                        const container = document.getElementById('heatmapContainer');
+                        
+                        // Sort by frequency descending
+                        const sortedTopics = Object.entries(heatmap).sort((a,b) => b[1].frequency - a[1].frequency);
+                        
+                        if(sortedTopics.length === 0) {
+                            container.innerHTML = '<p class="text-sm text-center text-muted-foreground py-4">Not enough syllabus data mapped yet.</p>';
+                        } else {
+                            // Show top 10
+                            sortedTopics.slice(0, 10).forEach(([topicName, data]) => {
+                                // Hotness calculation: frequency mapped to opacity/color
+                                const intensityClass = 
+                                    data.frequency >= 6 ? 'border-l-4 border-l-rose-500 bg-rose-500/5' :
+                                    data.frequency >= 3 ? 'border-l-4 border-l-amber-500 bg-amber-500/5' : 
+                                    'border-l-4 border-l-teal-500 bg-teal-500/5';
+                                    
+                                const yearTags = data.years.slice(0, 3).map(y => `<span class="text-[10px] px-1.5 py-0.5 rounded font-medium bg-background border border-border/50 text-muted-foreground">${y}</span>`).join('');
+                                const extraYears = data.years.length > 3 ? `<span class="text-[10px] text-muted-foreground font-semibold">+${data.years.length - 3}</span>` : '';
+
+                                container.innerHTML += `
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-card border border-border/60 shadow-sm hover:border-border hover:shadow-md transition-all ${intensityClass}">
+                                        <div class="flex-1 min-w-0 pr-4">
+                                            <p class="text-sm font-medium text-foreground/90 truncate" title="${topicName}">${topicName}</p>
+                                            <p class="text-[10px] font-bold tracking-wider text-muted-foreground uppercase mt-1">Unit ${data.unit}</p>
+                                        </div>
+                                        <div class="flex items-center gap-3 flex-shrink-0">
+                                            <div class="flex gap-1 items-center">${yearTags} ${extraYears}</div>
+                                            <div class="bg-secondary text-secondary-foreground shadow-sm rounded-md px-2.5 py-1 text-xs font-bold w-10 text-center ring-1 ring-border/50">
+                                                ${data.frequency}x
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                        }
+                    } catch(e) { console.error('Error parsing heatmap', e); }
+
+                    window.analyticsInitialized = true;
+                    
+                    // Render initial math equations that might be present in Top Repeated Questions
+                    if (window.MathJax) {
+                        setTimeout(() => {
+                            MathJax.typesetPromise([document.getElementById('tab-analytics')]).catch(err => console.error(err));
+                        }, 500);
+                    }
+                }
+
+                // If this is the active tab on load, initialize immediately
+                if(localStorage.getItem('rgpv_active_tab_{{ subject.id }}') === 'tab-analytics') {
+                    // Small delay to ensure Chart.js is loaded
+                    setTimeout(initAnalytics, 500); 
+                }
+
+                // Monkeypatch switchTab globally if it exists to hook into our initialization
+                document.addEventListener("DOMContentLoaded", () => {
+                    const originalSwitchTab = window.switchTab;
+                    if(originalSwitchTab) {
+                        window.switchTab = function(tabId) {
+                            originalSwitchTab(tabId);
+                            if(tabId === 'tab-analytics') {
+                                setTimeout(initAnalytics, 100);
+                            }
+                        };
+                    } else {
+                        // If it doesn't exist yet, wait for subject-tabs.js to execute
+                        setTimeout(() => {
+                            const originalSwitchTab = window.switchTab;
+                            if(originalSwitchTab) {
+                                window.switchTab = function(tabId) {
+                                    originalSwitchTab(tabId);
+                                    if(tabId === 'tab-analytics') {
+                                        setTimeout(initAnalytics, 100);
+                                    }
+                                };
+                            }
+                        }, 500);
+                    }
+                });
+
+                // Global function to close the modal
+                window.closeComplexityModal = function() {
+                    const modal = document.getElementById('complexityModal');
+                    const modalContent = document.getElementById('complexityModalContent');
+                    modal.classList.add('opacity-0');
+                    modalContent.classList.add('scale-95');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 300); // Wait for transition duration
+                };
+
+                // Close modal when clicking on backdrop
+                document.getElementById('complexityModal').addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        window.closeComplexityModal();
+                    }
+                });
+                
+                // Close modal on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        const modal = document.getElementById('complexityModal');
+                        if (!modal.classList.contains('hidden')) {
+                            window.closeComplexityModal();
+                        }
+                    }
+                });
+            </script>
+            {% else %}
+            <div class="bg-muted/30 border border-dashed border-border rounded-3xl p-12 text-center flex flex-col items-center justify-center min-h-[40vh]">
+                <div class="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Analysis in Progress</h3>
+                <p class="text-muted-foreground mb-6 max-w-md">Our AI is currently crunching the massive dataset of past year question papers for this subject. Check back soon for predictive insights.</p>
+                <button class="px-6 py-2.5 rounded-full bg-primary/10 text-primary font-semibold text-sm cursor-default">
+                    Generating Model...
+                </button>
+            </div>
+            {% endif %}
+        </div>
 
     <!-- Content Area (Tabs) -->
     <div class="relative min-h-[50vh]">

@@ -15,3 +15,4 @@ tmp
 .temp
 data/pg/*
 .env
+.agents

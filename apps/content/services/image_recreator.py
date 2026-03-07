@@ -1,12 +1,11 @@
 import os
 import asyncio
-import hashlib
 import uuid
-from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
+from langfuse.langchain import CallbackHandler
 from playwright.async_api import async_playwright
 import httpx
 from typing import Optional
@@ -131,7 +130,17 @@ Create a professional academic diagram based on the instructions.
 Output ONLY the HTML/Script code. NO markdown backticks."""
             
             messages = [SystemMessage(content=system_prompt), HumanMessage(content=instructions)]
-            res = await self.llm.ainvoke(messages)
+            langfuse_handler = CallbackHandler()
+            res = await self.llm.ainvoke(
+                messages,
+                config={
+                    "callbacks": [langfuse_handler],
+                    "metadata": {
+                        "langfuse_session_id": "image_recreation",
+                        "langfuse_tags": ["canvas_generation"]
+                    }
+                }
+            )
             raw_html = res.content.strip().replace('```html', '').replace('```', '')
             
             # 2. Render with Dynamic Resolution
