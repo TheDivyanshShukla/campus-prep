@@ -117,7 +117,7 @@ class BaseDocumentParser:
                             }
                         }
                     )
-                    return result.dict() if hasattr(result, 'dict') else result
+                    return result.model_dump() if hasattr(result, 'model_dump') else (result.dict() if hasattr(result, 'dict') else result)
                 except Exception as e:
                     print(f"LLM Call failed for Chunk {chunk_idx + 1}: {e}")
                     if attempt < max_retries - 1:
@@ -128,7 +128,7 @@ class BaseDocumentParser:
     def _merge_results(self, doc_type: str, all_results: List[dict]) -> dict:
         raise NotImplementedError("Subclasses must implement _merge_results")
 
-    async def parse(self, parsed_document_obj):
+    async def parse(self, parsed_document_obj, **extra_context_kwargs):
         from apps.content.models import ParsedDocument
         from django.db.models import F
         
@@ -153,7 +153,7 @@ class BaseDocumentParser:
         
         # Subclasses can add more to context
         if hasattr(self, 'get_extra_context'):
-            context.update(await self.get_extra_context(parsed_document_obj, subject))
+            context.update(await self.get_extra_context(parsed_document_obj, subject, **extra_context_kwargs))
             
         system_prompt = self.get_system_prompt(context) + self.CONTENT_GUIDELINES
         
@@ -177,9 +177,20 @@ class BaseDocumentParser:
             img_data = await asyncio.to_thread(self.encode_image, img_name)
             content_blocks.append({"type": "image", "data": img_data})
 
+        # Special Case: If no content blocks but we have context (e.g. IMPORTANT_Q or SHORT_NOTES synthesis)
+        # Add a dummy block to trigger at least one LLM call
+        if not content_blocks and doc_type in ['IMPORTANT_Q', 'SHORT_NOTES']:
+            content_blocks.append({"type": "text", "data": "[SYNTHESIS MODE: USE CONTEXT ONLY]"})
+
         chunk_size = getattr(settings, 'AI_PARSER_CHUNK_SIZE', 5)
         max_concurrency = getattr(settings, 'AI_PARSER_MAX_CONCURRENCY', 5)
         semaphore = asyncio.Semaphore(max_concurrency)
+        
+        if not content_blocks:
+            total_chunks = 0
+            await asyncio.to_thread(ParsedDocument.objects.filter(id=parsed_document_obj.id).update, parsing_total_chunks=0, parsing_status='COMPLETED')
+            return self._merge_results(doc_type, [])
+
         total_chunks = (len(content_blocks) + chunk_size - 1) // chunk_size
         
         await asyncio.to_thread(ParsedDocument.objects.filter(id=parsed_document_obj.id).update, parsing_total_chunks=total_chunks)
