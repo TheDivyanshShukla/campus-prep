@@ -1,9 +1,9 @@
 import os
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 from typing import List, Optional
+from langfuse.langchain import CallbackHandler
 
 # Define the structured output schema for PYQs
 class Question(BaseModel):
@@ -46,7 +46,17 @@ class ContentParserService:
         ])
 
         chain = prompt | self.structured_llm
-        result = chain.invoke({"text": raw_text})
+        langfuse_handler = CallbackHandler()
+        result = chain.invoke(
+            {"text": raw_text},
+            config={
+                "callbacks": [langfuse_handler],
+                "metadata": {
+                    "langfuse_session_id": "pyq_parsing",
+                    "langfuse_tags": ["pyq", "parser"]
+                }
+            }
+        )
         
         # Return as dict to easily save into Django JSONField
         return result.model_dump()

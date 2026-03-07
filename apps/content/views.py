@@ -789,6 +789,7 @@ def subject_dashboard(request, subject_id):
 
     return render(request, 'content/subject_dashboard.html', {
         'subject': subject,
+        'analytics': getattr(subject, 'analytics', None),
         'documents': documents,
         'pyqs': pyqs,
         'unsolved_pyqs': unsolved_pyqs,

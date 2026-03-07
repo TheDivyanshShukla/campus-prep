@@ -3,13 +3,13 @@ import json
 import base64
 import asyncio
 import re
-import hashlib
 import fitz
 from typing import List, Optional, Any, Union, Literal
 from django.conf import settings
 from django.core.files.storage import default_storage
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
+from langfuse.langchain import CallbackHandler
 import httpx
 
 # Shared Async HTTP Client for AI parsing connection pooling
@@ -106,7 +106,17 @@ class BaseDocumentParser:
             for attempt in range(max_retries):
                 try:
                     print(f"Calling Gemini for Chunk {chunk_idx + 1}... (Attempt {attempt + 1})")
-                    result = await structured_llm.ainvoke(messages)
+                    langfuse_handler = CallbackHandler()
+                    result = await structured_llm.ainvoke(
+                        messages,
+                        config={
+                            "callbacks": [langfuse_handler],
+                            "metadata": {
+                                "langfuse_session_id": "pdf_parsing",
+                                "langfuse_tags": ["pdf_parser"]
+                            }
+                        }
+                    )
                     return result.dict() if hasattr(result, 'dict') else result
                 except Exception as e:
                     print(f"LLM Call failed for Chunk {chunk_idx + 1}: {e}")
