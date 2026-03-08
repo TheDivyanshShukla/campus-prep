@@ -24,6 +24,7 @@ class ContentDataService(BaseService):
             f'subject_documents_{subject.id}',
             lambda: list(
                 ParsedDocument.objects.filter(subjects=subject, is_published=True)
+                .exclude(parsing_status__in=['PROCESSING', 'FAILED'])
                 .prefetch_related('subjects')
                 .order_by('-year', '-created_at')
             ),
@@ -42,7 +43,9 @@ class ContentDataService(BaseService):
                     subjects=subject, 
                     document_type=document_type,
                     is_published=True
-                ).order_by('-year', '-created_at')
+                )
+                .exclude(parsing_status__in=['PROCESSING', 'FAILED'])
+                .order_by('-year', '-created_at')
             ),
             timeout=1800,
         )

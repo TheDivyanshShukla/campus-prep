@@ -19,6 +19,11 @@ class PYQQuestion(BaseModel):
     part: Optional[str] = Field(None, description="Sub-part identifier like 'a', 'b', or 'i'.")
     has_or_choice: bool = Field(False, description="True if this specific question is part of an 'OR'/Internal choice pair.")
     latex_answer: str = Field(..., description="Crystal-clear, step-by-step detailed solution. Use professional LaTeX for ALL math. Use double newlines for vertical spacing.")
+    
+    # Enhancement fields
+    topic_name: Optional[str] = Field(None, description="The specific syllabus topic this question covers.")
+    complexity: Optional[Literal['Easy', 'Medium', 'Hard']] = Field(None, description="Cognitive complexity of the question.")
+    blooms_taxonomy: Optional[str] = Field(None, description="Bloom's Taxonomy level (e.g., Remember, Understand, Apply, Analyze, Evaluate, Create).")
 
 class ParsedPYQPaper(BaseModel):
     """
@@ -36,6 +41,11 @@ class UnsolvedPYQQuestion(BaseModel):
     image_details: Optional[str] = Field(None, description="if the image is given in the question paper itself. Otherwise, NULL.")
     part: Optional[str] = Field(None, description="Question part identifier.")
     has_or_choice: bool = Field(False, description="Whether this question is an OR choice.")
+    
+    # Enhancement fields
+    topic_name: Optional[str] = Field(None, description="The specific syllabus topic this question covers.")
+    complexity: Optional[Literal['Easy', 'Medium', 'Hard']] = Field(None, description="Cognitive complexity of the question.")
+    blooms_taxonomy: Optional[str] = Field(None, description="Bloom's Taxonomy level.")
 
 class ParsedUnsolvedPYQPaper(BaseModel):
     """

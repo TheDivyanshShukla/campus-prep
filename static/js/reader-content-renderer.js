@@ -64,7 +64,7 @@
             const orChoiceHtml = q.has_or_choice ? `<span class="inline-block ml-2 text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 rounded">OR Choice</span>` : '';
             const partHtml = q.part ? `<span class="inline-flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded font-bold text-xs mr-2 border border-slate-200 dark:border-slate-700 uppercase">${q.part}</span>` : '';
             const imgRecreHtml = renderRecreationBox(q.image_strategy, q.image_details, q.recreated_image_url);
-            const aiSolutionHtml = q.latex_answer ? `<div class="mt-6 pt-6 border-t border-border"><h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4><div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed whitespace-pre-line markdown-body">${q.latex_answer}</div></div>` : '';
+            const aiSolutionHtml = q.latex_answer ? `<div class="mt-6 pt-6 border-t border-border"><h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-4">AI Solution</h4><div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed markdown-body prose dark:prose-invert">${marked.parse(q.latex_answer)}</div></div>` : '';
             container.insertAdjacentHTML('beforeend', `
             <div class="bg-card text-card-foreground shadow-sm rounded-xl border border-border overflow-hidden">
                 <div class="bg-muted/30 px-4 py-2 border-b border-border flex justify-between items-center">
@@ -128,11 +128,14 @@
         if (!data.topics) return;
 
         data.topics.forEach((topic, idx) => {
-            let contentHtml = topic.content || '';
+            let rawContent = topic.content || '';
+            const placeholders = {};
+            let placeholderIdx = 0;
 
-            // Handle [[DIAGRAM: ...]] replacement (simple placeholder or search link for now)
-            contentHtml = contentHtml.replace(/\[\[DIAGRAM:\s*(.*?)\]\]/g, function (match, query) {
-                return `
+            // 1. Replace [[DIAGRAM: ...]] with placeholders BEFORE markdown parsing
+            rawContent = rawContent.replace(/\[\[DIAGRAM:\s*(.*?)\]\]/g, function (match, query) {
+                const token = `%%PLACEHOLDER_${placeholderIdx++}%%`;
+                placeholders[token] = `
                 <div class="my-6 p-4 border border-dashed border-primary/30 rounded-xl bg-primary/5 flex flex-col items-center justify-center group hover:border-primary/60 transition-colors">
                     <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                         <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -141,21 +144,46 @@
                     <span class="text-xs font-bold text-foreground text-center px-4">${query}</span>
                     <a href="https://www.google.com/search?q=${encodeURIComponent(query + ' engineering diagram')}&tbm=isch" target="_blank" class="mt-3 text-[9px] font-black uppercase tracking-tighter bg-primary text-primary-foreground px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Search Diagram</a>
                 </div>`;
+                return token;
             });
 
-            // Convert > [!TIP] to a nice callout using a custom marked renderer or simple regex pre-processing
-            contentHtml = contentHtml.replace(/>\s*\[!TIP\](.*?)(?=\n\n|\n$|$)/gs, function (match, content) {
-                return `
+            // 2. Replace > [!TIP] blockquotes with placeholders BEFORE markdown parsing
+            //    Format: > [!TIP]\n\n> content (multi-line blockquote with blank line)
+            rawContent = rawContent.replace(/^>\s*\[!TIP\]\s*\n(?:>\s*\n)*(?:>\s*(.+(?:\n>\s*.+)*))/gm, function (match, content) {
+                const tipText = content.replace(/^>\s*/gm, '').trim();
+                const token = `%%PLACEHOLDER_${placeholderIdx++}%%`;
+                placeholders[token] = `
                 <div class="my-4 p-4 rounded-xl border border-amber-200 bg-amber-50 dark:bg-amber-900/10 dark:border-amber-900/50 flex gap-3">
                     <div class="flex-shrink-0 text-amber-500 mt-0.5">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <div>
                         <span class="block text-[10px] font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-1">Exam Tip</span>
-                        <div class="text-sm text-amber-900 dark:text-amber-200 leading-relaxed font-medium">${marked.parse(content.trim())}</div>
+                        <div class="text-sm text-amber-900 dark:text-amber-200 leading-relaxed font-medium">${tipText}</div>
                     </div>
                 </div>`;
+                return token;
             });
+
+            // 2.5: Force a blank line before any Markdown table.
+            const tableRegex = /([^\n])\n([ \t]*\|?(?:[^\n|]+\|)+[^\n|]*\|?[ \t]*\n[ \t]*\|?(?:[-:]+[ \t]*\|)+[-:]*[ \t]*\|?[ \t]*(?:\n|$))/g;
+            rawContent = rawContent.replace(tableRegex, '$1\n\n$2');
+
+            // 2.6: Strip blank lines INSIDE markdown tables.
+            // Some LLMs output \n\n between every table row, which breaks marked.js
+            const tableRowRegex = /(\|[^\n]*\|)\s*\n\s*\n\s*(?=\|)/g;
+            rawContent = rawContent.replace(tableRowRegex, '$1\n');
+            rawContent = rawContent.replace(tableRowRegex, '$1\n'); // Run twice for overlapping lines
+
+            // 3. Parse markdown
+            let contentHtml = marked.parse(rawContent);
+
+            // 4. Swap placeholders back with real HTML
+            for (const [token, html] of Object.entries(placeholders)) {
+                // marked may wrap the placeholder in <p> tags, strip them
+                contentHtml = contentHtml.replace(new RegExp(`<p>${token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</p>`, 'g'), html);
+                contentHtml = contentHtml.replace(token, html);
+            }
 
             container.insertAdjacentHTML('beforeend', `
             <div class="bg-card shadow-sm rounded-xl border border-border overflow-hidden mb-8">
@@ -165,8 +193,8 @@
                     </h2>
                 </div>
                 <div class="p-6">
-                    <div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed markdown-body">
-                        ${marked.parse(contentHtml)}
+                    <div class="text-base text-foreground/90 max-w-none math-render-target leading-relaxed markdown-body prose dark:prose-invert">
+                        ${contentHtml}
                     </div>
                 </div>
             </div>`);
@@ -252,12 +280,21 @@
             const yearsHtml = (q.years && q.years.length > 0) ? `<span class="text-[10px] text-muted-foreground font-medium ml-2">Asked: ${q.years.join(', ')}</span>` : '';
             const descHtml = q.description ? `<p class="mt-2 text-xs text-muted-foreground leading-relaxed italic border-l-2 border-border pl-3">${q.description}</p>` : '';
 
-            const text = (q.text || '')
+            let text = (q.text || '')
                 .replace(/\\begin\{itemize\}/g, '\n')
                 .replace(/\\end\{itemize\}/g, '\n')
                 .replace(/\\begin\{enumerate\}/g, '\n')
                 .replace(/\\end\{enumerate\}/g, '\n')
                 .replace(/\\item/g, '\n- ');
+
+            const tableRegex = /([^\n])\n([ \t]*\|?(?:[^\n|]+\|)+[^\n|]*\|?[ \t]*\n[ \t]*\|?(?:[-:]+[ \t]*\|)+[-:]*[ \t]*\|?[ \t]*(?:\n|$))/g;
+            text = text.replace(tableRegex, '$1\n\n$2');
+
+            // 2.6: Strip blank lines INSIDE markdown tables.
+            const tableRowRegex = /(\|[^\n]*\|)\s*\n\s*\n\s*(?=\|)/g;
+            text = text.replace(tableRowRegex, '$1\n');
+            text = text.replace(tableRowRegex, '$1\n');
+
 
             return `
             <div class="p-6 border-b border-border last:border-0 hover:bg-muted/10 transition-colors flex items-start gap-4">

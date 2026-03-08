@@ -88,7 +88,7 @@ class Command(BaseCommand):
                             document_type='IMPORTANT_Q',
                             title=doc_title,
                             parsing_status='PROCESSING',
-                            is_published=True,
+                            is_published=False,
                             render_mode='NATIVE'
                         )
                         doc.subjects.add(subject)
@@ -104,6 +104,7 @@ class Command(BaseCommand):
                         def save_doc(data):
                             doc_obj.structured_data = data
                             doc_obj.parsing_status = 'COMPLETED'
+                            doc_obj.is_published = True
                             doc_obj.save()
 
                         await save_doc(result)

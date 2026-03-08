@@ -12,8 +12,12 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langfuse.langchain import CallbackHandler
 import httpx
 
-# Shared Async HTTP Client for AI parsing connection pooling
-_ai_parser_client = httpx.AsyncClient(timeout=60.0)
+# Shared Async HTTP Client for AI parsing connection pooling with max limits for high concurrency
+import httpx
+_ai_parser_client = httpx.AsyncClient(
+    timeout=120.0,
+    limits=httpx.Limits(max_connections=5000, max_keepalive_connections=1000)
+)
 
 class BaseDocumentParser:
     CONTENT_GUIDELINES = r"""

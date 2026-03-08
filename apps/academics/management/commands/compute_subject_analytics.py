@@ -50,10 +50,14 @@ class SubjectAnalyticsSchema(BaseModel):
 class Command(BaseCommand):
     help = 'Computes analytics data for specific subjects (bt201, bt102, bt205) using LLM'
 
-    def handle(self, *args, **kwargs):
-        asyncio.run(self.async_handle())
+    def add_arguments(self, parser):
+        parser.add_argument('--force', action='store_true', help='Force re-computation even if analytics exist')
 
-    async def async_handle(self):
+    def handle(self, *args, **options):
+        asyncio.run(self.async_handle(*args, **options))
+
+    async def async_handle(self, *args, **options):
+        force = options.get('force')
         from asgiref.sync import sync_to_async
         
         # Group subjects by cleaned code
@@ -73,18 +77,27 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR("No active subjects found in the database."))
             return
 
+        import os
+        
+        # Build Dedicated Sync Client for High Concurrency Threads
+        _analytics_client = httpx.Client(
+            limits=httpx.Limits(max_connections=5000, max_keepalive_connections=1000)
+        )
+        
         # Build LLM
         llm = ChatOpenAI(
-            model="gpt-5-mini",
-            openai_api_base="http://localhost:4141/",
+            model="openrouter/stepfun/step-3.5-flash:free",
+            openai_api_base="https://bifrost.naravirtual.in/langchain",
             openai_api_key="dummy-key",
-            http_async_client=_ai_parser_client,
-            max_retries=5,
+            default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
+            http_client=_analytics_client,
+            max_retries=0, # Handled manually in thread
+            temperature=0.5,
         )
-        structured_llm = llm.with_structured_output(SubjectAnalyticsSchema)
+        structured_llm = llm.with_structured_output(SubjectAnalyticsSchema, method="json_mode")
         
-        # Concurrency Control: 1000 "threads" (async tasks)
-        semaphore = asyncio.Semaphore(1000)
+        # Concurrency Control
+        semaphore = asyncio.Semaphore(50000)
 
         async def process_subject_group(code, sub_list):
             async with semaphore:
@@ -95,7 +108,7 @@ class Command(BaseCommand):
                 def check_exists():
                     return SubjectAnalytics.objects.filter(subject__in=sub_list).exists()
                 
-                if await check_exists():
+                if not force and await check_exists():
                     # self.stdout.write(f"Analytics already exist for {code}. Skipping...")
                     return
 
@@ -122,6 +135,26 @@ class Command(BaseCommand):
                 # Retry logic for large/problematic subjects
                 max_papers_options = [10, 5, 2, 0] # Gradually reduce papers to avoid 422/Context issues
                 success = False
+                
+                def _sync_llm_call_with_retry(messages, paper_limit):
+                    langfuse_handler = CallbackHandler()
+                    for attempt in range(3):
+                        try:
+                            return structured_llm.invoke(
+                                messages, 
+                                config={
+                                    "callbacks": [langfuse_handler],
+                                    "metadata": {
+                                        "langfuse_session_id": "global_analytics_threads",
+                                        "langfuse_tags": ["bulk_generation", code, f"limit_{paper_limit}"]
+                                    }
+                                }
+                            )
+                        except Exception as e:
+                            import time
+                            time.sleep(1.5)
+                            if attempt == 2:
+                                raise e # Re-raise if all 3 attempts fail
 
                 for paper_limit in max_papers_options:
                     try:
@@ -146,18 +179,14 @@ CRITICAL:
                             SystemMessage(content="You are a senior academic data analyst API. Return valid JSON only."),
                             HumanMessage(content=prompt_text)
                         ]
-
-                        langfuse_handler = CallbackHandler()
-                        parsedResult = await structured_llm.ainvoke(
-                            messages, 
-                            config={
-                                "callbacks": [langfuse_handler],
-                                "metadata": {
-                                    "langfuse_session_id": "global_analytics_run",
-                                    "langfuse_tags": ["bulk_generation", code, f"limit_{paper_limit}"]
-                                }
-                            }
-                        )
+                        
+                        import concurrent.futures
+                        if not hasattr(self, '_executor'):
+                            self._executor = concurrent.futures.ThreadPoolExecutor(max_workers=1000)
+                            
+                        # Execute the synchronous LLM call safely in a separate explicit thread pool
+                        loop = asyncio.get_running_loop()
+                        parsedResult = await loop.run_in_executor(self._executor, _sync_llm_call_with_retry, messages, paper_limit)
 
                         # Transform and Save
                         @sync_to_async

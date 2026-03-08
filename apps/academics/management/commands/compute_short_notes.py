@@ -85,7 +85,7 @@ class Command(BaseCommand):
                             document_type='SHORT_NOTES',
                             title=doc_title,
                             parsing_status='PROCESSING',
-                            is_published=True,
+                            is_published=False,
                             render_mode='NATIVE'
                         )
                         doc.subjects.add(subject)
@@ -95,12 +95,13 @@ class Command(BaseCommand):
 
                     try:
                         parse_kwargs = {"unit_number": unit_number} if unit_number else {}
-                        result = await parser.parse(doc_obj, **parse_kwargs)
+                        result = await parser.generate(doc_obj, subject, **parse_kwargs)
                         
                         @sync_to_async
                         def save_doc(data):
                             doc_obj.structured_data = data
                             doc_obj.parsing_status = 'COMPLETED'
+                            doc_obj.is_published = True
                             doc_obj.save()
 
                         await save_doc(result)
@@ -125,11 +126,22 @@ class Command(BaseCommand):
             if unit_wise:
                 @sync_to_async
                 def get_syllabus():
-                    return ParsedDocument.objects.filter(
+                    # 1. Direct link
+                    doc = ParsedDocument.objects.filter(
                         subjects=s,
                         document_type='SYLLABUS',
-                        parsing_status='COMPLETED'
+                        parsing_status__in=['COMPLETED', 'PENDING'],
+                        structured_data__isnull=False
                     ).first()
+                    if not doc:
+                        # 2. Code fallback (for multi-branch subjects)
+                        doc = ParsedDocument.objects.filter(
+                            subjects__code=s.code,
+                            document_type='SYLLABUS',
+                            parsing_status__in=['COMPLETED', 'PENDING'],
+                            structured_data__isnull=False
+                        ).first()
+                    return doc
                 
                 syllabus = await get_syllabus()
                 if syllabus and syllabus.structured_data and 'modules' in syllabus.structured_data:

@@ -27,7 +27,7 @@
     <link rel="apple-touch-icon" href="{% static 'logo-rounded.png' %}">
     
     <!-- Tailwind CSS (CDN per rules) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
     <!-- HTMX for dynamic updates -->
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
@@ -248,6 +248,30 @@
             scrollbar-width: thin;
             scrollbar-color: hsl(var(--muted-foreground) / 0.2) transparent;
         }
+
+        /* Markdown Body Styling (shadcn-like) */
+        .markdown-body {
+            @apply flex flex-col gap-4;
+        }
+        .markdown-body h1 { @apply text-3xl font-bold mt-6 mb-4; }
+        .markdown-body h2 { @apply text-2xl font-bold mt-5 mb-3; }
+        .markdown-body h3 { @apply text-xl font-bold mt-4 mb-2; }
+        .markdown-body h4 { @apply text-lg font-bold mt-3 mb-1; }
+        .markdown-body p { @apply leading-relaxed; }
+        .markdown-body ul { @apply list-disc pl-6 space-y-2; }
+        .markdown-body ol { @apply list-decimal pl-6 space-y-2; }
+        .markdown-body li { @apply mb-1; }
+        .markdown-body code { @apply bg-muted px-1.5 py-0.5 rounded font-mono text-sm; }
+        .markdown-body pre { @apply bg-muted p-4 rounded-lg overflow-x-auto my-4; }
+        .markdown-body pre code { @apply bg-transparent p-0; }
+        .markdown-body blockquote { @apply border-l-4 border-primary/20 pl-4 italic my-4; }
+        .markdown-body table { @apply w-full border-collapse my-4; }
+        .markdown-body th, .markdown-body td { @apply border border-border p-2 text-left text-sm; }
+        .markdown-body th { @apply bg-muted/50 font-bold; }
+        .markdown-body strong { @apply font-bold text-foreground; }
+        .markdown-body em { @apply italic; }
+        .markdown-body a { @apply text-blue-600 dark:text-blue-400 hover:underline; }
+        .markdown-body hr { @apply border-t border-border my-8; }
     </style>
     
     {% block head %}{% endblock %}

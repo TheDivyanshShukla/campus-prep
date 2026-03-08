@@ -63,6 +63,7 @@ class ParsedDocument(models.Model):
     structured_data = models.JSONField(null=True, blank=True, help_text="Stores the exact LangChain parsed output. Auto-filled by AI.")
     
     is_published = models.BooleanField(default=False)
+    latex_validated = models.BooleanField(default=False, help_text="Whether this document's LaTeX has been validated and fixed by the KaTeX pipeline.")
     
     # Display Settings
     RENDER_MODES = (

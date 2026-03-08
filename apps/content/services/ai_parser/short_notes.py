@@ -1,43 +1,106 @@
+"""
+Short Notes Parser — Direct Markdown Output (no structured output / tool calling).
+Uses StrOutputParser like naughty-notes for raw markdown generation.
+"""
 import asyncio
 import json
+import os
 from typing import List
-from .base import BaseDocumentParser
-from .schemas import ParsedShortNotes
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langfuse.langchain import CallbackHandler
+from .utils import normalize_markdown
+import httpx
 
-class ShortNotesParser(BaseDocumentParser):
-    def get_schema(self, doc_type: str):
-        return ParsedShortNotes
+_short_notes_client = httpx.AsyncClient(timeout=120.0)
 
-    def get_system_prompt(self, context: dict) -> str:
-        unit_focus = ""
-        if 'unit_number' in context:
-            title_str = f": {context['unit_title']}" if context.get('unit_title') else ""
-            unit_focus = f"\nFOCUS: Generate Short Notes ONLY for UNIT {context['unit_number']}{title_str}. Focus on topics appearing in past papers for this unit."
-        
+SUBJECT_PROMPTS = {
+    "Mathematics": "Focus on rigorous definitions, step-by-step proofs, and clear worked examples. Use LaTeX for every equation.",
+    "Physics": "Emphasize physical intuition, derivations of laws, and unit analysis. Include typical numerical problems.",
+    "Computer Science": "Focus on logic, time complexity (Big O), and pseudo-code/algorithms where applicable. Use clear bullet points for features.",
+    "Engineering": "Focus on application, design constraints, and standardized procedures. Emphasize diagrams and practical relevance.",
+    "General": "Provide a balanced overview with clear headings and simplified explanations.",
+}
+
+
+class ShortNotesParser:
+    def __init__(self):
+        self.llm = ChatOpenAI(
+            model="openrouter/stepfun/step-3.5-flash:free",
+            openai_api_base="https://bifrost.naravirtual.in/langchain",
+            openai_api_key="dummy-key",
+            default_headers={"Authorization": f"Basic {os.getenv('BIFROST_API_KEY')}"},
+            http_async_client=_short_notes_client,
+            max_retries=5000,
+            temperature=0.5,
+        )
+
+    def _get_subject_instruction(self, subject_name: str) -> str:
+        if any(kw in subject_name.lower() for kw in ["computer", "it", "software", "data", "algorithm", "programming"]):
+            return SUBJECT_PROMPTS["Computer Science"]
+        elif any(kw in subject_name.lower() for kw in ["math", "calculus", "algebra", "numerical"]):
+            return SUBJECT_PROMPTS["Mathematics"]
+        elif any(kw in subject_name.lower() for kw in ["physics", "quantum", "mechanics", "optics"]):
+            return SUBJECT_PROMPTS["Physics"]
+        elif any(kw in subject_name.lower() for kw in ["engineering", "civil", "mechanical", "electrical"]):
+            return SUBJECT_PROMPTS["Engineering"]
+        return SUBJECT_PROMPTS["General"]
+
+    def _build_planner_system_prompt(self, context: dict) -> str:
         subject_name = context.get('subject_name', 'General Engineering')
-        subject_instruction = "Provide a balanced overview with clear headings and simplified explanations."
-        if any(kw in subject_name.lower() for kw in ["computer", "it", "software", "data", "algorithm"]):
-            subject_instruction = "Focus on logic, time complexity (Big O), and pseudo-code/algorithms where applicable. Use clear bullet points for features."
-        elif any(kw in subject_name.lower() for kw in ["math", "calculus", "algebra"]):
-            subject_instruction = "Focus on rigorous definitions, step-by-step proofs, and clear worked examples. Use LaTeX for every equation."
-        elif any(kw in subject_name.lower() for kw in ["physics", "quantum", "mechanics"]):
-            subject_instruction = "Emphasize physical intuition, derivations of laws, and unit analysis. Include typical numerical problems."
+        unit_focus = f" for UNIT {context.get('unit_number', '')}" if 'unit_number' in context else ""
+        return f"""You are an elite academic curriculum planner for {subject_name}.
+Your task is to analyze the syllabus and past exam questions, and create a comprehensive, logical OUTLINE (Blueprint) for short notes{unit_focus}.
 
-        return f"""You are a Senior Academic Architect specialized in {subject_name}.
-Your mission is to write high-impact, exam-winning study notes for RGPV university students.{unit_focus}
+SYLLABUS & UNIT BOUNDARIES:
+1. AUTHORITY: If the SYLLABUS REFERENCE is provided, it is the absolute source of truth for topic-to-unit mapping.
+2. FILTERING: If the HISTORICAL EXAM CONTEXT contains questions that are NOT in the provided SYLLABUS section for this unit, YOU MUST IGNORE THEM.
+3. MISSING SYLLABUS: If the SYLLABUS REFERENCE is "No syllabus", use the HISTORICAL EXAM CONTEXT to determine relevant topics for UNIT {context.get('unit_number', 'N/A')}.
+4. STRICTNESS: Regardless of syllabus presence, your outline MUST stay strictly within the logical scope of the targeted unit. Do not include content from other units.
 
-CONTEXT:
-Subject: {context.get('subject_code')} - {subject_name}
+CORE PRINCIPLES:
+1. EXHAUSTIVE: Ensure EVERY topic from the syllabus section (or logically related to the unit) is covered.
+2. EXAM-DRIVEN: Prioritize and highlight topics that appear in the past questions for this unit.
+
+OUTPUT FORMAT:
+Provide a cleanly formatted Markdown outline. Use bullet points and sub-bullet points.
+Do NOT write the actual notes. ONLY write the outline structure."""
+
+    def _build_planner_user_prompt(self, context: dict) -> str:
+        unit_focus = f" for UNIT {context['unit_number']}" if 'unit_number' in context else ""
+        return f"""Create the notes blueprint{unit_focus} for: {context.get('subject_code')} - {context.get('subject_name')}
+
 --- SYLLABUS REFERENCE ---
 {context.get('syllabus_context', 'No syllabus context provided.')}
+
 --- HISTORICAL EXAM CONTEXT (PAST QUESTIONS) ---
 {context.get('raw_papers_context', 'No past paper data found.')}
+
+Generate the detailed outline now."""
+
+    def _build_writer_system_prompt(self, context: dict) -> str:
+        subject_name = context.get('subject_name', 'General Engineering')
+        subject_instruction = self._get_subject_instruction(subject_name)
+
+        unit_str = f"UNIT {context.get('unit_number', 'N/A')}"
+        title_str = f" ({context['unit_title']})" if context.get('unit_title') else ""
+        
+        return f"""You are a Senior Academic Architect specialized in {subject_name}.
+Your mission is to write high-impact, exam-winning study notes for RGPV university students.
+
+STRICT UNIT FOCUS:
+- TARGET UNIT: {unit_str}{title_str}
+- GROUND TRUTH: Follow the SYLLABUS section for this unit (if provided) and the provided OUTLINE/BLUEPRINT.
+- UNIT BOUNDARIES: If the provided context or outline contains topics from other units that do not belong to the target unit's scope, YOU MUST IGNORE THEM.
+- Your entire output must be strictly confined to the scope of {unit_str}.
 
 CORE PRINCIPLES:
 1. CLARITY FIRST: Use simple but professional language.
 2. SCHEMATIC: Use tables, bullet points, and numbered lists for readability.
 3. EXAM-READY: Highlight definitions and key formulas clearly.
 4. SUBJECT-SPECIFIC: {subject_instruction}
+5. ADHERE TO PLAN: You MUST strictly follow the provided OUTLINE/BLUEPRINT.
 
 FORMATTING RULES:
 - Use ### for Section Headings.
@@ -45,31 +108,140 @@ FORMATTING RULES:
 - Use > [!TIP] for Exam Tips and Common Pitfalls.
 - Use LaTeX: $...$ for inline, $$...$$ for block math.
 - BOX RESULTS: Use \\boxed{{...}} for final formulas, major theorems, or critical numerical answers.
-- DIAGRAMS: Use [[DIAGRAM: precise description of a technical diagram]] inside the topic content.
+- DIAGRAMS: Use `[[DIAGRAM: SEARCH: precise search keywords]]` for real-life images, or `[[DIAGRAM: CANVAS: detailed description]]` for illustrations.
 
-YOUR TASK:
-Synthesize a set of high-impact "Short Notes" for the topics in the SYLLABUS, prioritized by frequency in HISTORICAL EXAM CONTEXT.
-Generate the COMPLETE unit's notes in this single JSON response. Do not truncate.
+CRITICAL LATEX RULES:
+- Use \\left( ... \\right), \\left[ ... \\right] for delimiters.
+- Use \\frac{{num}}{{den}} for fractions, NEVER slashes.
+- Use $$ ... $$ for standalone formulas, $ ... $ for inline.
+- Add \\n\\n between steps.
 
-FOR EACH TOPIC IN THE 'topics' LIST:
-1. title: Crystal-clear topic name.
-2. content: Comprehensive breakdown including explanation, step-by-step examples, and exam tips.
-"""
+OUTPUT: Write in clean Markdown. No JSON wrapping. No code fences. Just the notes."""
 
-    async def get_extra_context(self, parsed_document_obj, subject, **kwargs) -> dict:
-        from apps.content.models import ParsedDocument
-        if not subject:
-            return {'syllabus_context': "N/A", 'raw_papers_context': "N/A"}
+    def _build_writer_user_prompt(self, context: dict) -> str:
+        return f"""Subject: {context.get('subject_code')} - {context.get('subject_name')}
+
+--- APPROVED OUTLINE / BLUEPRINT ---
+{context.get('plan', 'No plan provided.')}
+
+--- SYLLABUS REFERENCE ---
+{context.get('syllabus_context', 'No syllabus context provided.')}
+
+--- HISTORICAL EXAM CONTEXT (PAST QUESTIONS) ---
+{context.get('raw_papers_context', 'No past paper data found.')}
+
+Generate the comprehensive short notes now. Follow the exact structure of the APPROVED OUTLINE."""
+
+    async def generate(self, parsed_document_obj, subject, **kwargs) -> dict:
+        """Generate short notes as direct markdown, returning structured_data dict."""
+        context = await self._build_context(parsed_document_obj, subject, **kwargs)
+
+        from langchain_core.messages import SystemMessage, HumanMessage
+
+        langfuse_handler = CallbackHandler()
+
+        # STEP 1: PLANNER
+        planner_messages = [
+            SystemMessage(content=self._build_planner_system_prompt(context)),
+            HumanMessage(content=self._build_planner_user_prompt(context)),
+        ]
+        planner_response = await self.llm.ainvoke(
+            planner_messages,
+            config={
+                "callbacks": [langfuse_handler],
+                "metadata": {
+                    "langfuse_session_id": "short_notes_planner",
+                    "langfuse_tags": ["short_notes", "planner"],
+                }
+            }
+        )
+        context['plan'] = planner_response.content
+
+        # STEP 2: WRITER
+        writer_messages = [
+            SystemMessage(content=self._build_writer_system_prompt(context)),
+            HumanMessage(content=self._build_writer_user_prompt(context)),
+        ]
         
+        response = await self.llm.ainvoke(
+            writer_messages,
+            config={
+                "callbacks": [langfuse_handler],
+                "metadata": {
+                    "langfuse_session_id": "short_notes_generation",
+                    "langfuse_tags": ["short_notes", "direct_markdown", "writer"],
+                }
+            }
+        )
+        result = response.content
+
+        # Normalize the markdown
+        md = normalize_markdown(result) if isinstance(result, str) else str(result)
+
+        # Split into topics by ### headings for structured storage
+        topics = self._split_into_topics(md, context)
+
+        return {"topics": topics}
+
+    def _split_into_topics(self, markdown: str, context: dict) -> list:
+        """Split markdown by ### headings into topic entries."""
+        import re
+        # Split by ### headings
+        parts = re.split(r'^(###\s+.+)$', markdown, flags=re.MULTILINE)
+
+        topics = []
+        if len(parts) <= 1:
+            # No ### headings found — store as single topic
+            unit_label = f"Unit {context.get('unit_number', '')}" if 'unit_number' in context else "Complete Notes"
+            topics.append({
+                "title": unit_label,
+                "content": markdown.strip(),
+            })
+        else:
+            # parts[0] is text before first ###, parts[1] is first heading, parts[2] is content, etc.
+            # If there's content before the first heading, include it as intro
+            if parts[0].strip():
+                topics.append({
+                    "title": "Introduction",
+                    "content": parts[0].strip(),
+                })
+            for i in range(1, len(parts), 2):
+                heading = parts[i].replace('###', '').strip()
+                content = parts[i + 1].strip() if i + 1 < len(parts) else ''
+                if heading and content:
+                    topics.append({
+                        "title": heading,
+                        "content": f"### {heading}\n\n{content}",
+                    })
+
+        return topics
+
+    async def _build_context(self, parsed_document_obj, subject, **kwargs) -> dict:
+        """Fetch syllabus and PYQ context."""
+        from apps.content.models import ParsedDocument
+
+        if not subject:
+            return {'syllabus_context': "N/A", 'raw_papers_context': "N/A", 'subject_code': 'N/A', 'subject_name': 'N/A'}
+
         unit_number = kwargs.get('unit_number')
 
         # 1. Get Syllabus
         syllabus = await asyncio.to_thread(lambda: ParsedDocument.objects.filter(
-            subjects=subject, 
-            document_type='SYLLABUS', 
-            parsing_status='COMPLETED'
+            subjects=subject,
+            document_type='SYLLABUS',
+            parsing_status__in=['COMPLETED', 'PENDING'],
+            structured_data__isnull=False
         ).first())
-        
+
+        if not syllabus:
+            # Fallback: find any syllabus for the same subject code
+            syllabus = await asyncio.to_thread(lambda: ParsedDocument.objects.filter(
+                subjects__code=subject.code,
+                document_type='SYLLABUS',
+                parsing_status__in=['COMPLETED', 'PENDING'],
+                structured_data__isnull=False
+            ).first())
+
         syllabus_ctx = "No syllabus."
         unit_title = None
         if syllabus and syllabus.structured_data:
@@ -82,7 +254,7 @@ FOR EACH TOPIC IN THE 'topics' LIST:
             else:
                 syllabus_ctx = json.dumps(syllabus.structured_data, indent=2)
 
-        # 2. Get PYQ Questions for context (to know what's important)
+        # 2. Get PYQ Questions for context
         def _fetch_raw_papers():
             docs = ParsedDocument.objects.filter(
                 subjects=subject,
@@ -90,21 +262,22 @@ FOR EACH TOPIC IN THE 'topics' LIST:
                 parsing_status='COMPLETED',
                 structured_data__isnull=False
             ).values('title', 'structured_data')
-            
+
             raw_data = []
             for doc in docs:
                 questions = doc['structured_data'].get('questions', [])
+                
+                # STRICT UNIT FILTERING
                 if unit_number:
                     questions = [q for q in questions if str(q.get('unit')) == str(unit_number)]
                 
-                # We only need the text and marks to know what the exam looks like
                 formatted_qs = [f"Q: {q.get('question_text')} ({q.get('marks')}m)" for q in questions]
                 if formatted_qs:
                     raw_data.append({"paper": doc['title'], "questions": formatted_qs})
             return raw_data
 
         raw_docs = await asyncio.to_thread(_fetch_raw_papers)
-        raw_papers_ctx = json.dumps(raw_docs, indent=2) if raw_docs else "No historical questions found for this unit."
+        raw_papers_ctx = json.dumps(raw_docs, indent=2) if raw_docs else f"No historical questions found for Unit {unit_number or 'ALL'}."
 
         context = {
             'subject_code': subject.code,
@@ -115,21 +288,5 @@ FOR EACH TOPIC IN THE 'topics' LIST:
         if unit_number:
             context['unit_number'] = unit_number
             context['unit_title'] = unit_title
-            
-        return context
 
-    def _merge_results(self, doc_type: str, all_results: List[dict]) -> dict:
-        from .utils import normalize_markdown
-        if not all_results: return {"topics": []}
-        merged = {"topics": []}
-        seen_titles = set()
-        for res in all_results:
-            if res and 'topics' in res:
-                for t in res['topics']:
-                    norm_title = t.get('title', '').strip().lower()
-                    if norm_title not in seen_titles:
-                        if 'content' in t:
-                            t['content'] = normalize_markdown(t['content'])
-                        merged['topics'].append(t)
-                        seen_titles.add(norm_title)
-        return merged
+        return context
