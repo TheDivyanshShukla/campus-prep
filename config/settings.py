@@ -243,20 +243,29 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Storage Settings (Backblaze B2 S3)
+# Storage Settings (S3-compatible)
 USE_S3 = _env_bool('USE_S3', False)
 
 if USE_S3:
-    AWS_ACCESS_KEY_ID = os.getenv('B2_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('B2_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('B2_BUCKET_NAME')
-    AWS_S3_REGION_NAME = os.getenv('B2_REGION')
-    AWS_S3_ENDPOINT_URL = os.getenv('B2_ENDPOINT')
+    # Use standard AWS-style env var names for S3-compatible services
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+    AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
     
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
     AWS_S3_SIGNATURE_VERSION = 's3v4'
     AWS_QUERYSTRING_AUTH = True
+    # Optional: allow a custom CDN domain (Cloudflare) to front the bucket
+    AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN', '')
+
+    # If a custom domain is configured, serve media from it; otherwise use endpoint/bucket
+    if AWS_S3_CUSTOM_DOMAIN:
+        MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
+    else:
+        MEDIA_URL = f"{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/"
     
     STORAGES = {
         "default": {
