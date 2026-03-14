@@ -1,7 +1,11 @@
 from django.db.models import Count
+from django.db import connection, IntegrityError
+import logging
 
 from apps.common.services import BaseService
 from .models import BaseNote, Note, NoteVersion
+
+_logger = logging.getLogger(__name__)
 
 
 class NotesDataService(BaseService):
@@ -66,8 +70,38 @@ class NotesDataService(BaseService):
     # ── Versions ──────────────────────────────────────────────────────────────
 
     @classmethod
+    def _reset_noteversion_sequence(cls):
+        """Reset the Postgres sequence for NoteVersion.id to max(id).
+
+        This handles cases where rows were inserted/restored bypassing the
+        sequence, causing nextval to produce duplicate primary keys.
+        """
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """
+                SELECT setval(
+                  pg_get_serial_sequence('student_notes_noteversion','id'),
+                  COALESCE((SELECT MAX(id) FROM student_notes_noteversion), 1),
+                  (SELECT MAX(id) FROM student_notes_noteversion) IS NOT NULL
+                );
+                """
+            )
+
+    @classmethod
     def create_version_snapshot(cls, note):
-        return NoteVersion.objects.create(note=note, blocks=note.blocks)
+        try:
+            return NoteVersion.objects.create(note=note, blocks=note.blocks)
+        except IntegrityError as exc:
+            _logger.warning(
+                "NoteVersion create failed with IntegrityError; resetting sequence and retrying (%s)",
+                exc,
+            )
+            try:
+                cls._reset_noteversion_sequence()
+            except Exception:
+                _logger.exception("Failed to reset NoteVersion sequence")
+                raise
+            return NoteVersion.objects.create(note=note, blocks=note.blocks)
 
     @classmethod
     def prune_versions(cls, note, keep=50):

@@ -288,11 +288,53 @@
                 if (block.attrs.uploading) {
                     img.style.opacity = '0.5';
                     img.title = 'Uploading…';
-                    const badge = document.createElement('div');
-                    badge.className = 'text-xs text-muted-foreground mt-1 animate-pulse';
-                    badge.textContent = '⏳ Uploading…';
-                    fig.appendChild(img);
-                    fig.appendChild(badge);
+                    
+                    const progressWrap = document.createElement('div');
+                    progressWrap.className = 'absolute inset-0 flex flex-col items-center justify-center bg-black/20 rounded-lg pointer-events-none transition-all duration-300';
+                    progressWrap.style.zIndex = '10';
+
+                    // Progress Ring
+                    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    svg.setAttribute('class', 'w-16 h-16 transform -rotate-90');
+                    svg.setAttribute('viewBox', '0 0 100 100');
+                    
+                    const circleFull = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circleFull.setAttribute('cx', '50');
+                    circleFull.setAttribute('cy', '50');
+                    circleFull.setAttribute('r', '40');
+                    circleFull.setAttribute('stroke', 'rgba(255,255,255,0.2)');
+                    circleFull.setAttribute('stroke-width', '8');
+                    circleFull.setAttribute('fill', 'transparent');
+                    
+                    const circleProgress = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circleProgress.setAttribute('cx', '50');
+                    circleProgress.setAttribute('cy', '50');
+                    circleProgress.setAttribute('r', '40');
+                    circleProgress.setAttribute('stroke', '#10b981');  // Emerald-500
+                    circleProgress.setAttribute('stroke-width', '8');
+                    circleProgress.setAttribute('fill', 'transparent');
+                    circleProgress.setAttribute('stroke-dasharray', '251.2');
+                    
+                    const progress = block.attrs.progress || 0;
+                    const offset = 251.2 - (progress / 100) * 251.2;
+                    circleProgress.setAttribute('stroke-dashoffset', offset);
+                    circleProgress.style.transition = 'stroke-dashoffset 0.3s ease';
+                    
+                    svg.appendChild(circleFull);
+                    svg.appendChild(circleProgress);
+
+                    const label = document.createElement('div');
+                    label.className = 'text-white text-sm font-bold drop-shadow-md mt-2';
+                    label.textContent = `${Math.round(progress)}%`;
+
+                    progressWrap.appendChild(svg);
+                    progressWrap.appendChild(label);
+                    
+                    const container = document.createElement('div');
+                    container.className = 'relative inline-block';
+                    container.appendChild(img);
+                    container.appendChild(progressWrap);
+                    fig.appendChild(container);
                 } else {
                     fig.appendChild(img);
                 }
@@ -1464,46 +1506,93 @@
         async _handleImageUpload(file, afterIndex) {
             // Show a local blob preview immediately so the user sees the image at once
             const blobUrl = URL.createObjectURL(file);
-            const nb = this._newBlock('image', '', { url: blobUrl, caption: '', align: 'left', uploading: true });
+            const nb = this._newBlock('image', '', { 
+                url: blobUrl, 
+                caption: '', 
+                align: 'left', 
+                uploading: true,
+                progress: 0 
+            });
             this.blocks.splice(afterIndex + 1, 0, nb);
             this._render();
             this._markDirty();
 
             const insertedIdx = afterIndex + 1;
 
-            // Upload in background; when done, swap blob URL for real URL
-            const form = new FormData();
             try {
                 const webpFile = await this._convertImageFileToWebP(file);
-                form.append('image', webpFile);
+                const formData = new FormData();
+                formData.append('image', webpFile);
 
-                const r = await fetch(this.uploadUrl, {
-                    method: 'POST',
-                    headers: { 'X-CSRFToken': this.csrfToken },
-                    body: form,
+                // Use XHR for upload progress tracking
+                const xhr = new XMLHttpRequest();
+                
+                // Track progress
+                xhr.upload.addEventListener('progress', e => {
+                    if (e.lengthComputable) {
+                        const percent = (e.loaded / e.total) * 100;
+                        const idx = this.blocks.findIndex(b => b.attrs?.url === blobUrl);
+                        if (idx !== -1) {
+                            this.blocks[idx].attrs.progress = percent;
+                            // Find the UI element and update it directly for performance
+                            const blockEl = this.editorEl.querySelector(`[data-block-id="${this.blocks[idx].id}"]`);
+                            if (blockEl) {
+                                const circle = blockEl.querySelector('circle[stroke="#10b981"]');
+                                const label = blockEl.querySelector('.text-white.text-sm');
+                                if (circle && label) {
+                                    const offset = 251.2 - (percent / 100) * 251.2;
+                                    circle.setAttribute('stroke-dashoffset', offset);
+                                    label.textContent = `${Math.round(percent)}%`;
+                                }
+                            }
+                        }
+                    }
                 });
-                const j = await r.json();
+
+                const uploadPromise = new Promise((resolve, reject) => {
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status >= 200 && xhr.status < 300) {
+                                try {
+                                    resolve(JSON.parse(xhr.responseText));
+                                } catch (e) {
+                                    reject(new Error('Invalid response'));
+                                }
+                            } else {
+                                try {
+                                    const err = JSON.parse(xhr.responseText);
+                                    reject(new Error(err.error || 'Upload failed'));
+                                } catch (e) {
+                                    reject(new Error(`Upload failed (${xhr.status})`));
+                                }
+                            }
+                        }
+                    };
+                    xhr.onerror = () => reject(new Error('Network error'));
+                });
+
+                xhr.open('POST', this.uploadUrl);
+                xhr.setRequestHeader('X-CSRFToken', this.csrfToken);
+                xhr.send(formData);
+
+                const j = await uploadPromise;
+                
                 if (j.success) {
-                    // Find the block (index may have shifted)
                     const idx = this.blocks.findIndex(b => b.attrs?.url === blobUrl);
                     if (idx !== -1) {
                         this.blocks[idx].attrs.url = j.url;
                         delete this.blocks[idx].attrs.uploading;
+                        delete this.blocks[idx].attrs.progress;
                         this._render();
                         this._markDirty();
                     }
-                } else {
-                    // Remove the preview block on failure
-                    const idx = this.blocks.findIndex(b => b.attrs?.url === blobUrl);
-                    if (idx !== -1) this.blocks.splice(idx, 1);
-                    this._render();
-                    alert(j.error || 'Upload failed');
                 }
-            } catch {
+            } catch (err) {
+                console.error('Image upload error:', err);
                 const idx = this.blocks.findIndex(b => b.attrs?.url === blobUrl);
                 if (idx !== -1) this.blocks.splice(idx, 1);
                 this._render();
-                alert('Image upload failed');
+                alert(err.message || 'Image upload failed');
             } finally {
                 URL.revokeObjectURL(blobUrl);
             }

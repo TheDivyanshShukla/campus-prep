@@ -224,8 +224,12 @@ class Command(BaseCommand):
             converted_bytes = output_path.read_bytes()
             converted_bytes, optimize_meta = self._optimize_pdf_bytes(converted_bytes)
 
-            if doc.source_file.storage.exists(target_name):
+            # Optimization: Skip .exists() check before .delete(). 
+            # S3/Boto3 delete is idempotent (returns 204 if missing) and saves a HEAD operation.
+            try:
                 doc.source_file.storage.delete(target_name)
+            except Exception:
+                pass
 
             doc.source_file.save(target_name, ContentFile(converted_bytes), save=False)
             doc.save(update_fields=["source_file", "updated_at"])

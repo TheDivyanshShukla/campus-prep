@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 from django.urls import reverse
 from django.conf import settings
+from django.core.cache import cache
 import re
 import base64
 import orjson
@@ -957,18 +958,17 @@ def serve_secure_pdf(request, document_id):
     del request.session[session_key]
 
     try:
-        # Optimization: Redirect to the signed S3/B2 URL directly to offload transfer.
-        # Use a very short expiration (30 seconds) to ensure security.
-        default_storage_backend = settings.STORAGES.get("default", {}).get("BACKEND", "")
-        is_s3_storage = default_storage_backend == "storages.backends.s3.S3Storage"
-
-        if os.getenv('B2_DIRECT_DELIVERY', 'False') == 'True' and is_s3_storage:
-            storage = document.source_file.storage
-            # Generate a URL that expires in 5 seconds
-            signed_url = storage.url(document.source_file.name, expire=5)
+        # Optimization: Redirect to the signed S3/R2 URL directly to offload transfer.
+        # This reduces Class B costs (HEAD/GET) by letting the client fetch directly.
+        if settings.USE_S3:
+            cache_key = f"signed_url_pdf_{document.id}"
+            signed_url = cache.get(cache_key)
+            if not signed_url:
+                signed_url = document.source_file.storage.url(document.source_file.name)
+                cache.set(cache_key, signed_url, 300) # 5 minute cache
             return redirect(signed_url)
             
-        # Fallback/Proxy: Stream through Django if CORS is an issue or direct delivery is disabled.
+        # Fallback/Proxy: Stream through Django for local file storage
         response = FileResponse(document.source_file.open('rb'), content_type='application/pdf')
         response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
         return response

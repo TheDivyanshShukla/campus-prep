@@ -7,6 +7,7 @@ from pathlib import PurePosixPath
 from PIL import Image, UnidentifiedImageError
 
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.http import JsonResponse, FileResponse, HttpResponseForbidden, HttpResponseNotFound
@@ -14,6 +15,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.html import escape
 from django.views.decorators.http import require_GET, require_POST
+from django.core.cache import cache
 
 from apps.academics.data_services import AcademicsDataService
 
@@ -43,13 +45,28 @@ def serve_note_image(request, file_path):
     if not _is_authorized_note_image_path(request.user, storage_path):
         return HttpResponseForbidden('Unauthorized image access.')
 
-    if not default_storage.exists(storage_path):
-        return HttpResponseNotFound('Image not found.')
+    if settings.USE_S3:
+        cache_key = f"signed_url_note_img_{storage_path}"
+        url = cache.get(cache_key)
+        if not url:
+            try:
+                url = default_storage.url(storage_path)
+                # Cache for 5 minutes (well within typical 1-hour S3 signature expiry)
+                cache.set(cache_key, url, 300)
+            except Exception:
+                pass
+        
+        if url:
+            return redirect(url)
 
-    guessed_type, _ = mimetypes.guess_type(storage_path)
-    response = FileResponse(default_storage.open(storage_path, 'rb'), content_type=guessed_type or 'application/octet-stream')
-    response['Cache-Control'] = 'private, max-age=86400'
-    return response
+    try:
+        content = default_storage.open(storage_path, 'rb')
+        guessed_type, _ = mimetypes.guess_type(storage_path)
+        response = FileResponse(content, content_type=guessed_type or 'application/octet-stream')
+        response['Cache-Control'] = 'private, max-age=86400'
+        return response
+    except Exception:
+        return HttpResponseNotFound('Image not found.')
 
 
 @login_required
@@ -414,6 +431,10 @@ def api_upload_image(request):
     # The UUID filename is already guaranteed unique so the check is wasteful
     # and fails with 403 when the IAM role lacks s3:GetObject on this prefix.
     path = default_storage._save(filename, ContentFile(optimized_bytes))
+    
+    # Always return the proxy URL (serve_note_image) instead of a direct S3 URL.
+    # This prevents expiring signed URLs from being stored in the note JSON,
+    # while our optimized serve_note_image view handles the direct S3 redirect + caching.
     url = reverse('student_notes:serve_note_image', args=[path])
 
     return JsonResponse({'success': True, 'url': url})
