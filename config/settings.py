@@ -409,6 +409,41 @@ WEBPUSH_SETTINGS = {
     "VAPID_ADMIN_EMAIL": "admin@rgpv.live"
 }
 
+# Logging Configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'allauth': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
 if ENABLE_SILK:
     SILKY_AUTHENTICATION = _env_bool('SILKY_AUTHENTICATION', True)
     SILKY_AUTHORISATION = _env_bool('SILKY_AUTHORISATION', True)

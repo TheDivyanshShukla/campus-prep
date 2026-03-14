@@ -136,13 +136,13 @@
         }
     }
 
-    /* Native mode: allow selecting chunks for quick add-to-notes */
+    /* Native mode: anti-piracy measure to prevent selection */
     #secure-content-container,
     #secure-content-container * {
-        -webkit-user-select: text !important;
-        -moz-user-select: text !important;
-        -ms-user-select: text !important;
-        user-select: text !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
     }
 </style>
 {% endblock %}
@@ -456,53 +456,77 @@
         </div>
     </div>
 
-    <div id="reader-note-capture" class="fixed bottom-6 right-4 z-[70] w-[min(92vw,22rem)] bg-background/95 backdrop-blur-xl border border-border rounded-xl shadow-2xl p-3 space-y-2">
-        <div class="flex items-center justify-between gap-2">
-            <p class="text-xs font-black uppercase tracking-wider text-muted-foreground">Quick Add to Notes</p>
+    <!-- Screen Flash Overlay -->
+    <div id="capture-flash" class="fixed inset-0 z-[100] bg-white pointer-events-none opacity-0 transition-opacity duration-150"></div>
+
+    <div id="reader-note-capture" class="fixed bottom-6 right-4 z-[70] w-[min(92vw,22rem)] bg-background/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-4 space-y-4 transition-all duration-300 transform">
+        <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <span id="readerNoteStatus" class="text-[10px] text-muted-foreground"></span>
-                <button type="button" id="readerNotesHideBtn" onclick="collapseReaderNotesPanel()" class="p-1 rounded-md hover:bg-muted text-muted-foreground" title="Hide notes panel" aria-label="Hide notes panel">
-                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 12H5"/></svg>
+                <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+                <p class="text-[10px] font-black uppercase tracking-[0.15em] text-muted-foreground">Quick Add to Notes</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <!-- Status message will be injected here -->
+                <span id="readerNoteStatus" class="text-[9px] font-bold uppercase tracking-wider transition-all hidden"></span>
+                <button type="button" id="readerNotesHideBtn" onclick="collapseReaderNotesPanel()" class="p-1.5 rounded-lg hover:bg-muted text-muted-foreground transition-colors" title="Hide notes panel">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5"/></svg>
                 </button>
             </div>
         </div>
 
         {% if can_append_to_notes and subject_units %}
-        <div class="space-y-2">
+        <div class="space-y-3">
             <div id="readerUnitRow">
-            <select id="readerUnitSelect" class="w-full text-xs bg-background border border-border rounded-lg px-2 py-1.5">
-                {% for unit in subject_units %}
-                <option value="{{ unit.id }}" data-unit-number="{{ unit.number }}">Unit {{ unit.number }} · {{ unit.name }}</option>
-                {% endfor %}
-            </select>
+                <select id="readerUnitSelect" class="w-full text-xs bg-muted/50 border border-border/50 rounded-xl px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 transition-all appearance-none cursor-pointer font-bold">
+                    {% for unit in subject_units %}
+                    <option value="{{ unit.id }}" data-unit-number="{{ unit.number }}">Unit {{ unit.number }} · {{ unit.name }}</option>
+                    {% endfor %}
+                </select>
             </div>
 
-            <textarea id="readerNoteText" rows="3" placeholder="Type quick note or use Add Selection" class="w-full text-xs bg-background border border-border rounded-lg px-2 py-1.5 outline-none focus:ring-1 focus:ring-ring resize-y"></textarea>
+            <textarea id="readerNoteText" rows="3" placeholder="Quick note or Add Selection..." class="w-full text-xs bg-muted/50 border border-border/50 rounded-xl px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none min-h-[90px]"></textarea>
 
-            <div id="readerImageQueue" class="hidden text-[11px] px-2 py-1.5 bg-muted rounded-lg border border-border"></div>
-
-            <div class="flex items-center gap-1.5">
-                <button id="readerAddSelectionBtn" class="flex-1 px-2 py-1.5 text-[11px] font-bold rounded-lg border border-border hover:bg-muted">Add Selection</button>
-                <button id="readerCaptureRegionBtn" class="px-2 py-1.5 text-[11px] font-bold rounded-lg border border-border hover:bg-muted">Capture</button>
-                <button id="readerSaveNoteBtn" class="flex-1 px-2 py-1.5 text-[11px] font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90">Save</button>
-                <a id="readerOpenNoteBtn" href="#" class="px-2 py-1.5 text-[11px] font-bold rounded-lg border border-border hover:bg-muted">Open</a>
+            <div id="readerImageQueue" class="hidden space-y-2 p-3 bg-muted/40 rounded-xl border border-border/40">
+                <div id="readerImageQueueList" class="space-y-2"></div>
             </div>
-            <div class="flex items-center justify-between gap-2 text-[10px]">
-                <span class="text-muted-foreground">Open in</span>
-                <div class="inline-flex border border-border rounded-md overflow-hidden">
-                    <button id="readerOpenModeTab" type="button" class="px-2 py-1 bg-primary text-primary-foreground">Tab</button>
-                    <button id="readerOpenModeInline" type="button" class="px-2 py-1 hover:bg-muted">Panel</button>
+
+            <div class="grid grid-cols-2 gap-2.5">
+                <input type="file" id="readerCameraInput" class="hidden" accept="image/*" capture="environment">
+                <button id="readerCameraBtn" class="px-3 py-2.5 text-[11px] font-bold rounded-xl border border-primary/20 bg-primary/5 text-primary hover:bg-primary/10 transition-all flex items-center justify-center gap-2">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Camera
+                </button>
+                <button id="readerCaptureRegionBtn" class="px-3 py-2.5 text-[11px] font-bold rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/10 transition-all flex items-center justify-center gap-2">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V5z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m-3-3h6" /></svg>
+                    Shot
+                </button>
+                <button id="readerSaveNoteBtn" class="px-3 py-3 text-[11px] font-black uppercase tracking-wider rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/10 disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed">
+                    Save Note
+                </button>
+                <a id="readerOpenNoteBtn" href="#" class="px-3 py-3 text-[11px] font-bold rounded-xl border border-border hover:bg-muted transition-all text-center flex items-center justify-center">
+                    Open Notes
+                </a>
+            </div>
+
+            <div class="flex items-center justify-between pt-1 border-t border-border/30 mt-2">
+                <div class="flex items-center gap-1.5 bg-muted/60 p-1 rounded-lg border border-border/40">
+                    <button id="readerOpenModeTab" type="button" class="px-2 py-0.5 text-[9px] font-bold rounded-md transition-all">Tab</button>
+                    <button id="readerOpenModeInline" type="button" class="px-2 py-0.5 text-[9px] font-bold rounded-md transition-all">Inline</button>
                 </div>
             </div>
-            <p class="text-[10px] text-muted-foreground">Tip: click any rendered image to queue it for notes.</p>
         </div>
         {% else %}
-        <div class="text-[11px] text-muted-foreground">
-            Sign in to add selected chunks and images to your unit notes.
+        <div class="p-4 bg-muted/20 border border-dashed border-border rounded-2xl text-center space-y-3">
+            <p class="text-[11px] text-muted-foreground leading-relaxed font-medium">
+                Sign in to capture content chunks and images into your personal study notes.
+            </p>
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'login' %}" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/10">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+                Secure Login
+            </a>
+            {% endif %}
         </div>
-        {% if not request.user.is_authenticated %}
-        <a href="{% url 'login' %}" class="inline-flex px-2 py-1.5 text-[11px] font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90">Login</a>
-        {% endif %}
         {% endif %}
     </div>
 

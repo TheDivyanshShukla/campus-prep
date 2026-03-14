@@ -324,77 +324,92 @@
         if (!el) return;
         el.textContent = message || '';
         el.classList.toggle('text-red-500', !!isError);
-        el.classList.toggle('text-emerald-500', !isError && !!message);
+        el.classList.toggle('text-primary', !isError && !!message);
+        el.classList.toggle('hidden', !message);
         if (message) {
             setTimeout(() => {
                 if (el.textContent === message) {
+                    el.classList.add('hidden');
                     el.textContent = '';
-                    el.classList.remove('text-red-500', 'text-emerald-500');
                 }
-            }, 2600);
+            }, 3000);
         }
     }
 
     function _readerRenderImageQueue() {
         const queue = document.getElementById('readerImageQueue');
-        if (!queue) return;
+        const queueList = document.getElementById('readerImageQueueList');
+        if (!queue || !queueList) return;
 
         const items = Array.isArray(window.__readerQueuedImageUrls) ? window.__readerQueuedImageUrls : [];
         if (!items.length) {
             queue.classList.add('hidden');
-            queue.textContent = '';
+            queueList.innerHTML = '';
+            _updateSaveButtonState();
             return;
         }
 
         queue.classList.remove('hidden');
-        queue.innerHTML = `
-            <div class="flex items-center justify-between gap-2 mb-1">
-                <span>${items.length} image${items.length > 1 ? 's' : ''} queued ✓</span>
-                <button type="button" id="readerClearAllImagesBtn" class="inline-flex items-center justify-center w-6 h-6 rounded-md border border-border hover:bg-muted text-muted-foreground" title="Clear all queued images" aria-label="Clear all queued images">
-                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V4a1 1 0 011-1h4a1 1 0 011 1v3m-7 0h8"/></svg>
-                </button>
-            </div>
-            <div class="space-y-1 max-h-20 overflow-auto" id="readerImageQueueList"></div>
-        `;
-
-        const list = document.getElementById('readerImageQueueList');
-        if (list) {
-            list.innerHTML = items.map((url, idx) => `
-                <div class="flex items-center justify-between gap-2 text-[10px] bg-background/60 border border-border rounded px-1.5 py-1">
-                    <span class="truncate">Capture ${idx + 1}</span>
-                    <button type="button" class="readerRemoveQueuedImg inline-flex items-center justify-center w-5 h-5 rounded hover:bg-muted text-muted-foreground" data-idx="${idx}" title="Remove image">
-                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                    </button>
+        
+        // Use a Set of URLs to avoid duplicate UI entries if something glitches
+        queueList.innerHTML = items.map((item, idx) => {
+            const isUploading = item.status === 'uploading';
+            const isProcessing = item.status === 'processing';
+            const progress = item.progress || 0;
+            
+            let label = `Capture ${idx + 1} ✓`;
+            if (isProcessing) label = `Processing...`;
+            else if (isUploading) label = `Uploading ${progress}%`;
+            
+            return `
+                <div class="group relative flex flex-col gap-1.5 p-2 bg-background/40 border border-border/50 rounded-xl transition-all hover:border-primary/30">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2 overflow-hidden">
+                            ${(isUploading || isProcessing) ? `
+                                <svg class="animate-spin h-3 w-3 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                                </svg>
+                            ` : `
+                                <svg class="h-3.5 w-3.5 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            `}
+                            <span class="text-[10px] font-bold text-foreground/80 truncate">${label}</span>
+                        </div>
+                        <button type="button" class="readerRemoveQueuedImg p-1 rounded-md hover:bg-destructive/10 hover:text-destructive text-muted-foreground transition-colors" data-idx="${idx}">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
+                    </div>
+                    
+                    ${isUploading ? `
+                        <div class="w-full bg-muted/50 rounded-full h-1 overflow-hidden">
+                            <div class="bg-primary h-full transition-all duration-300" style="width: ${progress}%"></div>
+                        </div>
+                    ` : ''}
                 </div>
-            `).join('');
+            `;
+        }).join('');
 
-            list.querySelectorAll('.readerRemoveQueuedImg').forEach(btn => {
-                btn.addEventListener('click', e => {
-                    e.preventDefault();
-                    const idx = Number(btn.dataset.idx);
-                    if (Number.isNaN(idx)) return;
-                    window.__readerQueuedImageUrls.splice(idx, 1);
-                    _readerRenderImageQueue();
-                });
-            });
-        }
-
-        const clearAll = document.getElementById('readerClearAllImagesBtn');
-        if (clearAll) {
-            clearAll.addEventListener('click', e => {
-                e.preventDefault();
-                window.__readerQueuedImageUrls = [];
+        queueList.querySelectorAll('.readerRemoveQueuedImg').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const idx = Number(btn.dataset.idx);
+                window.__readerQueuedImageUrls.splice(idx, 1);
                 _readerRenderImageQueue();
-            }, { once: true });
-        }
+            });
+        });
+        _updateSaveButtonState();
     }
 
-    function _readerQueueImage(url) {
-        const u = (url || '').trim();
-        if (!u) return;
+    function _readerQueueImage(data) {
         if (!Array.isArray(window.__readerQueuedImageUrls)) window.__readerQueuedImageUrls = [];
-        window.__readerQueuedImageUrls.push(u);
+        
+        // If data is just a URL string, convert to object
+        const item = typeof data === 'string' ? { url: data, status: 'ready' } : data;
+        
+        window.__readerQueuedImageUrls.push(item);
         _readerRenderImageQueue();
+        return item;
     }
 
     function _clamp(v, min, max) {
@@ -426,23 +441,70 @@
         return window.__html2canvasPromise;
     }
 
-    async function _uploadCapturedBlob(blob) {
-        const cfg = window.readerNoteCaptureConfig || {};
-        if (!cfg.uploadImageUrl) throw new Error('Upload endpoint missing');
+    function _uploadCapturedBlob(blob, onProgress) {
+        return new Promise((resolve, reject) => {
+            const cfg = window.readerNoteCaptureConfig || {};
+            if (!cfg.uploadImageUrl) return reject(new Error('Upload endpoint missing'));
 
-        const form = new FormData();
-        form.append('image', new File([blob], `capture-${Date.now()}.webp`, { type: 'image/webp' }));
+            const xhr = new XMLHttpRequest();
+            const form = new FormData();
+            form.append('image', new File([blob], `capture-${Date.now()}.webp`, { type: 'image/webp' }));
 
-        const r = await fetch(cfg.uploadImageUrl, {
-            method: 'POST',
-            headers: { 'X-CSRFToken': cfg.csrfToken || '' },
-            body: form,
+            xhr.upload.addEventListener('progress', e => {
+                if (e.lengthComputable && onProgress) {
+                    const pct = Math.round((e.loaded / e.total) * 100);
+                    onProgress(pct);
+                }
+            });
+
+            xhr.addEventListener('load', () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    try {
+                        const j = JSON.parse(xhr.responseText);
+                        if (j.success && j.url) resolve(j.url);
+                        else reject(new Error(j.error || 'Upload failed'));
+                    } catch (e) { reject(new Error('Invalid server response')); }
+                } else {
+                    reject(new Error(`Server error: ${xhr.status}`));
+                }
+            });
+
+            xhr.addEventListener('error', () => reject(new Error('Network error')));
+            
+            xhr.open('POST', cfg.uploadImageUrl);
+            xhr.setRequestHeader('X-CSRFToken', cfg.csrfToken || '');
+            xhr.send(form);
         });
-        const j = await r.json();
-        if (!r.ok || !j.success || !j.url) {
-            throw new Error(j.error || 'Upload failed');
+    }
+
+    function _triggerCaptureFlash() {
+        const flash = document.getElementById('capture-flash');
+        if (!flash) return;
+        flash.style.opacity = '1';
+        setTimeout(() => {
+            flash.style.opacity = '0';
+        }, 150);
+    }
+
+    function _updateSaveButtonState() {
+        const saveBtn = document.getElementById('readerSaveNoteBtn');
+        const noteText = document.getElementById('readerNoteText');
+        if (!saveBtn) return;
+
+        const hasText = noteText && noteText.value.trim().length > 0;
+        const queue = Array.isArray(window.__readerQueuedImageUrls) ? window.__readerQueuedImageUrls : [];
+        const hasImages = queue.length > 0;
+        const isAnyUploading = queue.some(item => item.status === 'uploading');
+
+        saveBtn.disabled = (!hasText && !hasImages) || isAnyUploading;
+        
+        // Add visual cues to buttons
+        const addSelBtn = document.getElementById('readerAddSelectionBtn');
+        if (addSelBtn) {
+            const hasSelection = window.getSelection().toString().trim().length > 0;
+            addSelBtn.classList.toggle('border-primary', hasSelection);
+            addSelBtn.classList.toggle('bg-primary/10', hasSelection);
         }
-        return j.url;
     }
 
     async function startDragCapture(container) {
@@ -598,75 +660,102 @@
                 return;
             }
 
+            // 1. Immediate UI update BEFORE heavy processing
             cleanup();
-            _readerSetStatus('Capturing...');
+            _triggerCaptureFlash();
+            _readerSetStatus('Processing...');
 
-            try {
-                const selRect = { left: x, top: y, right: x + w, bottom: y + h };
-                const html2canvas = await _ensureHtml2Canvas();
+            // Pre-queue placeholder in the UI
+            const queueItem = _readerQueueImage({
+                status: 'processing',
+                progress: 0,
+                id: Date.now()
+            });
 
-                const targetRect = container.getBoundingClientRect();
-                const overlap = _intersectArea(selRect, {
-                    left: targetRect.left,
-                    top: targetRect.top,
-                    right: targetRect.right,
-                    bottom: targetRect.bottom,
-                });
-                if (overlap <= 0) throw new Error('Select inside the reader content');
+            // 2. Wrap heavy canvas work in setTimeout to allow the browser to paint the status above
+            setTimeout(async () => {
+                try {
+                    const selRect = { left: x, top: y, right: x + w, bottom: y + h };
+                    const html2canvas = await _ensureHtml2Canvas();
 
-                const scale = window.devicePixelRatio || 1;
-                const shot = await html2canvas(container, {
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: null,
-                    logging: false,
-                    scale,
-                    scrollX: window.scrollX,
-                    scrollY: window.scrollY,
-                    windowWidth: document.documentElement.clientWidth,
-                    windowHeight: document.documentElement.clientHeight,
-                });
+                    const targetRect = container.getBoundingClientRect();
+                    const overlap = _intersectArea(selRect, {
+                        left: targetRect.left,
+                        top: targetRect.top,
+                        right: targetRect.right,
+                        bottom: targetRect.bottom,
+                    });
+                    if (overlap <= 0) throw new Error('Select inside the reader content');
 
-                const sx = _clamp((selRect.left - targetRect.left) * scale, 0, shot.width);
-                const sy = _clamp((selRect.top - targetRect.top) * scale, 0, shot.height);
-                const ex = _clamp((selRect.right - targetRect.left) * scale, 0, shot.width);
-                const ey = _clamp((selRect.bottom - targetRect.top) * scale, 0, shot.height);
-                const sw = Math.max(1, Math.round(ex - sx));
-                const sh = Math.max(1, Math.round(ey - sy));
+                    const scale = window.devicePixelRatio || 1;
+                    const shot = await html2canvas(container, {
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: null,
+                        logging: false,
+                        scale,
+                        scrollX: window.scrollX,
+                        scrollY: window.scrollY,
+                        windowWidth: document.documentElement.clientWidth,
+                        windowHeight: document.documentElement.clientHeight,
+                    });
 
-                const canvas = document.createElement('canvas');
-                canvas.width = sw;
-                canvas.height = sh;
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(shot, sx, sy, sw, sh, 0, 0, sw, sh);
+                    const sx = _clamp((selRect.left - targetRect.left) * scale, 0, shot.width);
+                    const sy = _clamp((selRect.top - targetRect.top) * scale, 0, shot.height);
+                    const ex = _clamp((selRect.right - targetRect.left) * scale, 0, shot.width);
+                    const ey = _clamp((selRect.bottom - targetRect.top) * scale, 0, shot.height);
+                    const sw = Math.max(1, Math.round(ex - sx));
+                    const sh = Math.max(1, Math.round(ey - sy));
 
-                const tintEnabled = document.body.classList.contains('tint-enabled');
-                var isDirectPdfMode = _RD.render_mode === 'DIRECT_PDF';
-                if (tintEnabled && isDirectPdfMode) {
-                    const tintedCanvas = document.createElement('canvas');
-                    tintedCanvas.width = sw;
-                    tintedCanvas.height = sh;
-                    const tintedCtx = tintedCanvas.getContext('2d');
-                    if (tintedCtx) {
-                        tintedCtx.filter = 'invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(0.88)';
-                        tintedCtx.drawImage(canvas, 0, 0);
+                    const canvas = document.createElement('canvas');
+                    canvas.width = sw;
+                    canvas.height = sh;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(shot, sx, sy, sw, sh, 0, 0, sw, sh);
+
+                    const tintEnabled = document.body.classList.contains('tint-enabled');
+                    var isDirectPdfMode = _RD.render_mode === 'DIRECT_PDF';
+                    if (tintEnabled && isDirectPdfMode) {
+                        const tintedCanvas = document.createElement('canvas');
+                        tintedCanvas.width = sw;
+                        tintedCanvas.height = sh;
+                        const tintedCtx = tintedCanvas.getContext('2d');
+                        if (tintedCtx) {
+                            tintedCtx.filter = 'invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(0.88)';
+                            tintedCtx.drawImage(canvas, 0, 0);
+                        }
+                        const finalCtx = canvas.getContext('2d');
+                        if (finalCtx) {
+                            finalCtx.clearRect(0, 0, sw, sh);
+                            finalCtx.drawImage(tintedCanvas, 0, 0);
+                        }
                     }
-                    const finalCtx = canvas.getContext('2d');
-                    if (finalCtx) {
-                        finalCtx.clearRect(0, 0, sw, sh);
-                        finalCtx.drawImage(tintedCanvas, 0, 0);
+
+                    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.9));
+                    if (!blob) throw new Error('Capture failed');
+
+                    // Switch to uploading state
+                    queueItem.status = 'uploading';
+                    _readerRenderImageQueue();
+
+                    const url = await _uploadCapturedBlob(blob, (pct) => {
+                        queueItem.progress = pct;
+                        _readerRenderImageQueue();
+                    });
+
+                    queueItem.url = url;
+                    queueItem.status = 'ready';
+                    _readerRenderImageQueue();
+                    _readerSetStatus('Capture added');
+                } catch (err) {
+                    _readerSetStatus(err.message || 'Capture failed', true);
+                    // Cleanup failed queue item
+                    if (window.__readerQueuedImageUrls) {
+                        window.__readerQueuedImageUrls = window.__readerQueuedImageUrls.filter(item => item.id !== queueItem.id);
+                        _readerRenderImageQueue();
                     }
                 }
-
-                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.9));
-                if (!blob) throw new Error('Capture failed');
-
-                const url = await _uploadCapturedBlob(blob);
-                _readerQueueImage(url);
-                _readerSetStatus('Capture queued');
-            } catch (err) {
-                _readerSetStatus(err.message || 'Capture failed', true);
-            }
+            }, 50);
         };
 
         const onKeydown = (e) => {
@@ -690,6 +779,7 @@
             e.stopPropagation();
             await runCaptureFromCurrentRect();
         });
+
 
         if (isMobilePointer) {
             overlay.addEventListener('click', e => {
@@ -805,7 +895,8 @@
         const unitEl = document.getElementById('readerUnitSelect');
         const unitRowEl = document.getElementById('readerUnitRow');
         const textEl = document.getElementById('readerNoteText');
-        const addSelBtn = document.getElementById('readerAddSelectionBtn');
+        const cameraBtn = document.getElementById('readerCameraBtn');
+        const cameraInput = document.getElementById('readerCameraInput');
         const captureBtn = document.getElementById('readerCaptureRegionBtn');
         const saveBtn = document.getElementById('readerSaveNoteBtn');
         const openBtn = document.getElementById('readerOpenNoteBtn');
@@ -815,7 +906,7 @@
         const inlineFrameEl = document.getElementById('readerInlineNoteFrame');
         const inlineCloseBtn = document.getElementById('readerInlineCloseBtn');
         const panelEl = document.getElementById('reader-note-capture');
-        if (!unitEl || !textEl || !addSelBtn || !saveBtn) return;
+        if (!unitEl || !textEl || !saveBtn) return;
 
         const getEditorUrl = () => {
             const sid = Number(cfg.subjectId || 0);
@@ -834,7 +925,13 @@
         if (!Array.isArray(window.__readerQueuedImageUrls)) window.__readerQueuedImageUrls = [];
         _readerRenderImageQueue();
 
-        let openMode = localStorage.getItem('reader.notes.openMode') || 'tab';
+        let openMode = 'tab';
+        try {
+            openMode = localStorage.getItem('reader.notes.openMode') || 'tab';
+        } catch (e) {
+            console.warn('Storage access denied');
+        }
+
         const applyOpenModeUi = () => {
             if (!modeTabBtn || !modeInlineBtn) return;
             const tabActive = openMode === 'tab';
@@ -842,17 +939,18 @@
             modeInlineBtn.className = `px-2 py-1 ${!tabActive ? 'bg-primary text-primary-foreground' : 'hover:bg-muted'}`;
         };
         applyOpenModeUi();
+
         if (modeTabBtn) {
             modeTabBtn.addEventListener('click', () => {
                 openMode = 'tab';
-                localStorage.setItem('reader.notes.openMode', openMode);
+                try { localStorage.setItem('reader.notes.openMode', openMode); } catch (e) {}
                 applyOpenModeUi();
             });
         }
         if (modeInlineBtn) {
             modeInlineBtn.addEventListener('click', () => {
                 openMode = 'inline';
-                localStorage.setItem('reader.notes.openMode', openMode);
+                try { localStorage.setItem('reader.notes.openMode', openMode); } catch (e) {}
                 applyOpenModeUi();
             });
         }
@@ -884,22 +982,45 @@
             unitRowEl.classList.add('hidden');
         }
 
-        addSelBtn.addEventListener('click', () => {
-            const sel = window.getSelection();
-            const txt = (sel && sel.toString() || '').trim();
-            if (!txt) {
-                _readerSetStatus('Select text first', true);
-                return;
-            }
+        // Initialize reactive button states
+        _updateSaveButtonState();
+        textEl.addEventListener('input', _updateSaveButtonState);
 
-            if (!container.contains(sel.anchorNode) || !container.contains(sel.focusNode)) {
-                _readerSetStatus('Selection must be inside content', true);
-                return;
-            }
+        if (cameraBtn && cameraInput) {
+            cameraBtn.addEventListener('click', () => cameraInput.click());
+            cameraInput.addEventListener('change', async () => {
+                const file = cameraInput.files[0];
+                if (!file) return;
 
-            textEl.value = textEl.value ? `${textEl.value}\n${txt}` : txt;
-            _readerSetStatus('Selection added');
-        });
+                // Reset input travel so same file can be re-selected if needed
+                const currentFiles = cameraInput.files;
+                cameraInput.value = '';
+
+                _readerSetStatus('Uploading...');
+                const queueItem = _readerQueueImage({
+                    status: 'uploading',
+                    progress: 0,
+                    id: Date.now()
+                });
+
+                try {
+                    const url = await _uploadCapturedBlob(file, (pct) => {
+                        queueItem.progress = pct;
+                        _readerRenderImageQueue();
+                    });
+                    queueItem.url = url;
+                    queueItem.status = 'ready';
+                    _readerRenderImageQueue();
+                    _readerSetStatus('Image added');
+                } catch (err) {
+                    _readerSetStatus('File upload failed', true);
+                    if (window.__readerQueuedImageUrls) {
+                        window.__readerQueuedImageUrls = window.__readerQueuedImageUrls.filter(item => item.id !== queueItem.id);
+                        _readerRenderImageQueue();
+                    }
+                }
+            });
+        }
 
         if (captureBtn) {
             captureBtn.addEventListener('click', () => {
@@ -1047,6 +1168,7 @@
             if (!container || !structuredData) return;
             container.innerHTML = '';
             container.className = 'space-y-6';
+            
 
             if (docType === 'PYQ' || docType === 'UNSOLVED_PYQ') _renderPYQ(container, structuredData);
             else if (docType === 'NOTES') _renderNotes(container, structuredData);
@@ -1062,7 +1184,8 @@
                 MathJax.typesetPromise([document.body]).catch(err => console.error('MathJax error: ' + err.message));
             }
 
+            // Initialize note capture one last time after content is in DOM
             initReaderNoteCapture(container);
-        }, 300); // Reduced delay for faster rendering while still allowing DRM sweeps
+        }, 300); 
     });
 })();

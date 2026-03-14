@@ -5,11 +5,16 @@ from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 
 
 def _make_unique_username(base):
-    from allauth.account.utils import filter_users_by_username
+    from apps.users.models import User
+    import re
+    
+    # Standardize base
     base = re.sub(r"[^\w.]", "", base.lower())[:28] or "user"
     candidate = base
     i = 1
-    while filter_users_by_username(candidate).exists():
+    
+    # Use direct User filter for stability
+    while User.objects.filter(username__iexact=candidate).exists():
         candidate = f"{base}{i}"
         i += 1
     return candidate
@@ -44,8 +49,15 @@ class SocialAccountAdapter(DefaultSocialAccountAdapter):
         return bool(email)
 
     def populate_user(self, request, sociallogin, data):
-        user = super().populate_user(request, sociallogin, data)
-        email = data.get("email") or ""
-        local_part = email.split("@")[0] if "@" in email else "user"
-        user.username = _make_unique_username(local_part)
-        return user
+        import logging
+        logger = logging.getLogger('allauth')
+        
+        try:
+            user = super().populate_user(request, sociallogin, data)
+            email = data.get("email") or ""
+            local_part = email.split("@")[0] if "@" in email else "user"
+            user.username = _make_unique_username(local_part)
+            return user
+        except Exception as e:
+            logger.error(f"Error in populate_user for social signup: {str(e)}")
+            raise e
