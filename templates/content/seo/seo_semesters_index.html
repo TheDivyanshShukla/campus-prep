@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ seo_title }} | CampusPrep{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ seo_description }}">
+<meta name="keywords" content="{{ seo_keywords }}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="CampusPrep">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-background">
+
+    <!-- HERO -->
+    <div class="border-b border-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-8">
+                <a href="/" class="hover:text-foreground transition-colors">Home</a>
+                <span class="text-muted-foreground/40">/</span>
+                <a href="/rgpv/" class="hover:text-foreground transition-colors">RGPV</a>
+                <span class="text-muted-foreground/40">/</span>
+                <span class="text-foreground">Semesters</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/50 border border-violet-200 dark:border-violet-800 mb-5">
+                <span class="text-violet-700 dark:text-violet-400 text-xs font-bold uppercase tracking-widest">Academic Timeline</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-foreground tracking-tight">RGPV Semester Portals</h1>
+            <p class="text-muted-foreground mt-3 max-w-xl text-lg">Semester 1 through Semester 8. Pick yours and access all branch resources.</p>
+        </div>
+    </div>
+
+    <!-- JUMP BAR -->
+    <div class="border-b border-border bg-muted/30 sticky top-16 z-30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+            <div class="flex items-center gap-1 py-2.5 min-w-max">
+                {% for row in semester_rows %}
+                <a href="#sem-{{ row.number }}" class="px-4 py-1.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-background transition-all whitespace-nowrap">
+                    Sem {{ row.number }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTIONS -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+        {% for row in semester_rows %}
+        <div id="sem-{{ row.number }}" class="rounded-xl border border-border bg-card overflow-hidden hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap items-center justify-between gap-4 px-5 py-4 border-b border-border bg-muted/20">
+                <div class="flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-xl bg-violet-600 flex items-center justify-center font-black text-white text-xl shadow-sm flex-shrink-0">{{ row.number }}</div>
+                    <div>
+                        <h2 class="font-bold text-foreground text-lg">Semester {{ row.number }}</h2>
+                        <p class="text-xs text-muted-foreground">{{ row.branch_links|length }} branches available</p>
+                    </div>
+                </div>
+            </div>
+            {% if row.branch_links %}
+            <div class="px-5 py-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-3">Select Branch</p>
+                <div class="flex flex-wrap gap-2">
+                    {% for item in row.branch_links %}
+                    <a href="{{ item.url }}" class="px-3.5 py-1.5 rounded-lg border border-border bg-background hover:bg-violet-600 hover:text-white hover:border-violet-600 transition-all text-sm font-semibold text-foreground">
+                        {{ item.code }} <span class="text-muted-foreground text-xs">{{ item.subject_count }}s</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+            <div class="px-5 py-4 text-sm text-muted-foreground italic">Synchronizing data for Semester {{ row.number }}.</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

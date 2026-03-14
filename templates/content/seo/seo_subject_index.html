@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}{{ seo_title }} | CampusPrep{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ seo_description }}">
+<meta name="keywords" content="{{ seo_keywords }}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="CampusPrep">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-background">
+
+    <!-- HERO -->
+    <div class="border-b border-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-8">
+                <a href="/" class="hover:text-foreground transition-colors">Home</a>
+                <span class="text-muted-foreground/40">/</span>
+                <a href="/rgpv/" class="hover:text-foreground transition-colors">RGPV</a>
+                <span class="text-muted-foreground/40">/</span>
+                <span class="text-foreground">All Subjects</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 mb-5">
+                <span class="text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest">Mega Subject Index</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-foreground tracking-tight">Global RGPV Subject Archive</h1>
+            <p class="text-muted-foreground mt-3 max-w-xl text-lg">Every RGPV subject. All branches. All semesters.</p>
+            <!-- Stats -->
+            <div class="flex flex-wrap items-center gap-8 mt-8">
+                <div>
+                    <p class="text-3xl font-black text-foreground">{{ subject_count }}</p>
+                    <p class="text-muted-foreground text-xs font-bold uppercase tracking-widest">Subjects</p>
+                </div>
+                <div class="w-px h-10 bg-border"></div>
+                <div>
+                    <p class="text-3xl font-black text-foreground">{{ branch_count }}</p>
+                    <p class="text-muted-foreground text-xs font-bold uppercase tracking-widest">Branches</p>
+                </div>
+                <div class="w-px h-10 bg-border"></div>
+                <div>
+                    <p class="text-3xl font-black text-foreground">{{ semester_count }}</p>
+                    <p class="text-muted-foreground text-xs font-bold uppercase tracking-widest">Semesters</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {% for row in subject_rows %}
+            <a href="{% url 'rgpv_subject' branch_slug=row.branch_slug semester_slug=row.semester_slug subject_slug=row.subject_slug %}" class="group flex items-start gap-3.5 p-4 rounded-xl border border-border bg-card hover:border-emerald-400 dark:hover:border-emerald-600 hover:shadow-sm transition-all">
+                <div class="w-10 h-10 rounded-lg bg-muted flex items-center justify-center font-black text-xs font-mono text-muted-foreground group-hover:bg-emerald-600 group-hover:text-white transition-all flex-shrink-0">
+                    {{ row.subject.code|slice:"-3:" }}
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors text-sm leading-snug line-clamp-2">{{ row.subject.name }}</p>
+                    <p class="text-xs text-muted-foreground mt-1">{{ row.subject.branch.code }} · Sem {{ row.subject.semester.number }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

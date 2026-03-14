@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}{{ seo_title }} | CampusPrep{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ seo_description }}">
+<meta name="keywords" content="{{ seo_keywords }}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="CampusPrep">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"{{ seo_title|escapejs }}","description":"{{ seo_description|escapejs }}","url":"{{ request.build_absolute_uri|escapejs }}","mainEntity":{"@type":"ItemList","name":"RGPV Branches","numberOfItems":{{ branch_rows|length }}}}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-background">
+
+    <!-- HERO -->
+    <div class="border-b border-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-8">
+                <a href="/" class="hover:text-foreground transition-colors">Home</a>
+                <span class="text-muted-foreground/40">/</span>
+                <a href="/rgpv/" class="hover:text-foreground transition-colors">RGPV</a>
+                <span class="text-muted-foreground/40">/</span>
+                <span class="text-foreground">All Branches</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                <span class="text-blue-700 dark:text-blue-400 text-xs font-bold uppercase tracking-widest">Branch Directory</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-foreground tracking-tight">RGPV Engineering Branches</h1>
+            <p class="text-muted-foreground mt-3 max-w-xl text-lg">All disciplines, all semesters. Pick your branch and dive into curated resources.</p>
+        </div>
+    </div>
+
+    <!-- LIST -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-5">
+        {% for branch in branch_rows %}
+        <div class="rounded-xl border border-border bg-card overflow-hidden hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap items-center justify-between gap-4 px-5 py-4 border-b border-border bg-muted/20">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center font-black text-white text-sm shadow-sm flex-shrink-0">
+                        {{ branch.code|slice:":2" }}
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-foreground text-base leading-tight">{{ branch.code }}{% if branch.name %} — {{ branch.name }}{% endif %}</h2>
+                        <p class="text-xs text-muted-foreground">{{ branch.subject_total }} subjects indexed</p>
+                    </div>
+                </div>
+                <a href="{{ branch.branch_url }}" class="flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition-all active:scale-95">
+                    Open Branch →
+                </a>
+            </div>
+            {% if branch.semester_links %}
+            <div class="px-5 py-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-3">Jump to Semester</p>
+                <div class="flex flex-wrap gap-2">
+                    {% for semester in branch.semester_links %}
+                    <a href="{{ semester.url }}" class="px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all text-sm font-semibold text-foreground">
+                        Sem {{ semester.number }}<span class="text-muted-foreground ml-1 text-xs group-hover:text-white/70">{{ semester.subject_count }}s</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+            <div class="px-5 py-4 text-sm text-muted-foreground italic">Indexing in progress for {{ branch.code }}.</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

@@ -58,9 +58,12 @@ class AcademicsDataService(BaseService):
 
     @classmethod
     def get_active_semesters_for_branch(cls, branch):
+        """
+        Retrieves semesters that have active subjects in the given branch.
+        """
         return cls.get_or_set_cache(
             f'semesters_for_branch_{branch.id}',
-            lambda: list(Semester.objects.filter(is_active=True, subjects__branch=branch).distinct().order_by('number')),
+            lambda: list(Semester.objects.filter(is_active=True, subjects__branch=branch, subjects__is_active=True).distinct().order_by('number')),
             timeout=86400,
         )
 
@@ -68,7 +71,7 @@ class AcademicsDataService(BaseService):
     def get_subject_by_id(cls, subject_id):
         return cls.get_or_set_cache(
             f'subject_{subject_id}',
-            lambda: Subject.objects.select_related('branch', 'semester')
+            lambda: Subject.objects.select_related('branch', 'semester', 'analytics')
             .prefetch_related('units')
             .filter(pk=subject_id)
             .first(),
@@ -109,9 +112,9 @@ class AcademicsDataService(BaseService):
         return cls.get_or_set_cache(
             f'subjects_{branch.id}_{semester.id}',
             lambda: list(
-                Subject.objects.filter(
-                    branch=branch, semester=semester, is_active=True
-                ).order_by('code')
+                Subject.objects.select_related('branch', 'semester', 'analytics')
+                .filter(branch=branch, semester=semester, is_active=True)
+                .order_by('code')
             ),
             timeout=3600,
         )

@@ -1,5 +1,7 @@
+from django.db import models
 from apps.common.services import BaseService
 from apps.content.models import ParsedDocument
+from apps.academics.models import Subject
 from apps.academics.data_services import AcademicsDataService
 
 
@@ -25,7 +27,12 @@ class ContentDataService(BaseService):
             lambda: list(
                 ParsedDocument.objects.filter(subjects=subject, is_published=True)
                 .exclude(parsing_status__in=['PROCESSING', 'FAILED'])
-                .prefetch_related('subjects')
+                .prefetch_related(
+                    models.Prefetch(
+                        'subjects',
+                        queryset=Subject.objects.select_related('branch', 'semester')
+                    )
+                )
                 .order_by('-year', '-created_at')
             ),
             timeout=1800,
@@ -45,6 +52,12 @@ class ContentDataService(BaseService):
                     is_published=True
                 )
                 .exclude(parsing_status__in=['PROCESSING', 'FAILED'])
+                .prefetch_related(
+                    models.Prefetch(
+                        'subjects',
+                        queryset=Subject.objects.select_related('branch', 'semester')
+                    )
+                )
                 .order_by('-year', '-created_at')
             ),
             timeout=1800,
@@ -55,7 +68,12 @@ class ContentDataService(BaseService):
         return cls.get_or_set_cache(
             f'document_{document_id}',
             lambda: ParsedDocument.objects.filter(pk=document_id, is_published=True)
-            .prefetch_related('subjects')
+            .prefetch_related(
+                models.Prefetch(
+                    'subjects',
+                    queryset=Subject.objects.select_related('branch', 'semester')
+                )
+            )
             .first(),
             timeout=3600,
         )

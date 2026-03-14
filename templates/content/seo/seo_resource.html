@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}{{ seo_title }} | CampusPrep{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ seo_description }}">
+<meta name="keywords" content="{{ seo_keywords }}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="CampusPrep">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-background">
+    {% url 'rgpv_subject' branch_slug=branch_slug semester_slug=semester_slug subject_slug=subject_slug as subject_url %}
+
+    <!-- HERO -->
+    <div class="border-b border-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-8 flex-wrap">
+                <a href="/" class="hover:text-foreground transition-colors">Home</a>
+                <span class="text-muted-foreground/40">/</span>
+                <a href="/rgpv/" class="hover:text-foreground transition-colors">RGPV</a>
+                <span class="text-muted-foreground/40">/</span>
+                <a href="{{ subject_url }}" class="hover:text-foreground transition-colors">{{ subject.code }}</a>
+                <span class="text-muted-foreground/40">/</span>
+                <span class="text-foreground">{{ resource_label }}</span>
+            </div>
+            <div class="flex flex-wrap items-start justify-between gap-6">
+                <div class="max-w-2xl">
+                    <div class="flex items-center gap-2.5 mb-4 flex-wrap">
+                        <code class="px-2.5 py-1 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-700 rounded-md font-mono font-black text-sm text-emerald-700 dark:text-emerald-400">{{ subject.code }}</code>
+                        <span class="text-muted-foreground text-sm">{{ resource_label }}</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-black text-foreground tracking-tight">{{ subject.name }} — {{ resource_label }}</h1>
+                    <p class="text-muted-foreground mt-2 text-sm">Official RGPV content verified and indexed. Login for full premium access.</p>
+                </div>
+                <a href="{{ subject_url }}" class="px-4 py-2 bg-background hover:bg-muted text-foreground text-sm font-semibold rounded-lg border border-border transition-all flex items-center gap-2 flex-shrink-0">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    {{ subject.code }} Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <p class="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground mb-5">Available Documents</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            {% for card in cards %}
+            <div class="rounded-xl border border-border bg-card overflow-hidden hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 p-5">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center justify-between gap-2 flex-wrap mb-1">
+                            <h2 class="font-bold text-foreground text-sm leading-snug">{{ card.doc.title }}</h2>
+                            {% if card.doc.year %}<span class="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground font-semibold flex-shrink-0">{{ card.doc.year }}</span>{% endif %}
+                        </div>
+                        <p class="text-xs text-muted-foreground">{{ card.doc.get_document_type_display }}</p>
+                    </div>
+                </div>
+                <div class="border-t border-border px-5 py-3">
+                    {% if card.can_access %}
+                        <a href="{{ card.read_url }}" class="w-full flex items-center justify-center gap-2 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold rounded-lg transition-all active:scale-95">
+                            Open Resource →
+                        </a>
+                    {% elif not request.user.is_authenticated %}
+                        <a href="{{ card.login_url }}" class="w-full flex items-center justify-center gap-2 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-lg transition-all active:scale-95">
+                            Login to Unlock
+                        </a>
+                    {% elif card.checkout_url %}
+                        <a href="{{ card.checkout_url }}" class="w-full flex items-center justify-center gap-2 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold rounded-lg transition-all active:scale-95">
+                            Unlock — ₹{{ card.doc.price }}
+                        </a>
+                    {% else %}
+                        <a href="{{ card.gold_url }}" class="w-full flex items-center justify-center gap-2 py-2 bg-amber-500 hover:bg-amber-600 text-black text-sm font-bold rounded-lg transition-all active:scale-95">
+                            ⚡ Unlock with Gold Pass
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-span-full rounded-xl border border-dashed border-border p-12 text-center text-muted-foreground italic text-sm">
+                Documents for this resource are being added. Check back soon.
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Related nav -->
+        <div class="rounded-xl border border-border bg-card p-5">
+            <p class="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground mb-4">More from {{ subject.code }}</p>
+            <div class="flex flex-wrap gap-2">
+                <a href="{% url 'rgpv_subject' branch_slug=branch_slug semester_slug=semester_slug subject_slug=subject_slug %}" class="px-3.5 py-1.5 rounded-lg border border-border text-sm font-semibold hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all">Subject Hub</a>
+                <a href="{% url 'rgpv_subject_resource' branch_slug=branch_slug semester_slug=semester_slug subject_slug=subject_slug resource_slug='syllabus' %}" class="px-3.5 py-1.5 rounded-lg border border-border text-sm font-semibold hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all">Syllabus</a>
+                <a href="{% url 'rgpv_subject_resource' branch_slug=branch_slug semester_slug=semester_slug subject_slug=subject_slug resource_slug='notes' %}" class="px-3.5 py-1.5 rounded-lg border border-border text-sm font-semibold hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all">Notes</a>
+                <a href="{% url 'rgpv_subject_resource' branch_slug=branch_slug semester_slug=semester_slug subject_slug=subject_slug resource_slug='important-questions' %}" class="px-3.5 py-1.5 rounded-lg border border-border text-sm font-semibold hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all">Imp. Questions</a>
+                <a href="{% url 'rgpv_subject_resource' branch_slug=branch_slug semester_slug=semester_slug subject_slug=subject_slug resource_slug='previous-year-papers' %}" class="px-3.5 py-1.5 rounded-lg border border-border text-sm font-semibold hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all">PYQ Papers</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -16,11 +16,13 @@ import os
 import binascii
 import hashlib
 import uuid
+from collections import defaultdict
 from urllib.parse import urlencode
 from apps.content.data_services import ContentDataService
 from apps.users.data_services import UserDataService
 from apps.academics.data_services import AcademicsDataService
 from apps.content.models import ParsedDocument
+from apps.content.seo_constants import SEO_VALUABLE_CONTENT
 
 GUEST_ALLOWED_DOCUMENT_TYPES = {'UNSOLVED_PYQ', 'SYLLABUS'}
 
@@ -287,7 +289,7 @@ def rgpv_root(request):
     branches = AcademicsDataService.get_all_branches()
     semesters = AcademicsDataService.get_all_semesters()
 
-    return render(request, 'content/seo_hub.html', {
+    return render(request, 'content/seo/seo_hub.html', {
         'seo_title': 'RGPV Notes, Syllabus, Question Papers & Important Questions',
         'seo_description': 'Public RGPV hub with branch-wise, semester-wise, and subject-code-wise pages for syllabus, notes, unit resources, and previous year papers.',
         'seo_keywords': 'rgpv notes, rgpv syllabus, rgpv pyq, bt103 notes, rgpv cse sem 1',
@@ -308,7 +310,9 @@ def rgpv_static_page(request, page_slug):
     branches = AcademicsDataService.get_all_branches()
     semesters = AcademicsDataService.get_all_semesters()
 
-    return render(request, 'content/seo_hub.html', {
+    valuable_content = SEO_VALUABLE_CONTENT.get(page_slug, {})
+
+    return render(request, 'content/seo/seo_hub.html', {
         'seo_title': f"{page['title']} | RGPV",
         'seo_description': page['description'],
         'seo_keywords': page['keywords'],
@@ -318,20 +322,33 @@ def rgpv_static_page(request, page_slug):
         'semesters': semesters,
         'subject_count': len(AcademicsDataService.get_all_active_subjects()),
         'is_nav_page': False,
+        'valuable_sections': valuable_content.get('sections', []),
+        'faqs': valuable_content.get('faqs', []),
+        'cta_text': valuable_content.get('cta'),
     })
 
 
 def rgpv_branches_page(request):
     branches = AcademicsDataService.get_all_branches()
-    branch_rows = []
+    semesters = AcademicsDataService.get_all_semesters()
+    all_subjects = AcademicsDataService.get_all_active_subjects()
 
+    # Group subjects by (branch_id, semester_id)
+    subject_map = defaultdict(list)
+    for s in all_subjects:
+        subject_map[(s.branch_id, s.semester_id)].append(s)
+
+    branch_rows = []
     for branch in branches:
-        semesters = AcademicsDataService.get_active_semesters_for_branch(branch)
         semester_links = []
         subject_total = 0
 
+        # Only show semesters that actually have subjects for this branch
         for semester in semesters:
-            subjects = AcademicsDataService.get_subjects_by_branch_and_semester(branch, semester)
+            subjects = subject_map.get((branch.id, semester.id), [])
+            if not subjects:
+                continue
+
             subject_count = len(subjects)
             subject_total += subject_count
 
@@ -352,7 +369,7 @@ def rgpv_branches_page(request):
             'semester_links': semester_links,
         })
 
-    return render(request, 'content/seo_branches_index.html', {
+    return render(request, 'content/seo/seo_branches_index.html', {
         'seo_title': 'RGPV Branches | CSE, IT, Mechanical, Civil, Electrical',
         'seo_description': 'Branch navigation for RGPV with semester and subject-level public pages.',
         'seo_keywords': 'rgpv branches, rgpv cse, rgpv it, rgpv mechanical',
@@ -364,12 +381,18 @@ def rgpv_branches_page(request):
 def rgpv_semesters_page(request):
     branches = AcademicsDataService.get_all_branches()
     semesters = AcademicsDataService.get_all_semesters()
+    all_subjects = AcademicsDataService.get_all_active_subjects()
+
+    # Group subjects by (semester_id, branch_id)
+    subject_map = defaultdict(list)
+    for s in all_subjects:
+        subject_map[(s.semester_id, s.branch_id)].append(s)
 
     semester_rows = []
     for semester in semesters:
         branch_links = []
         for branch in branches:
-            subjects = AcademicsDataService.get_subjects_by_branch_and_semester(branch, semester)
+            subjects = subject_map.get((semester.id, branch.id), [])
             if not subjects:
                 continue
             branch_links.append({
@@ -387,7 +410,7 @@ def rgpv_semesters_page(request):
             'branch_links': branch_links,
         })
 
-    return render(request, 'content/seo_semesters_index.html', {
+    return render(request, 'content/seo/seo_semesters_index.html', {
         'seo_title': 'RGPV Semesters | Sem 1 to Sem 8',
         'seo_description': 'Semester navigation for RGPV resources across branches and subjects.',
         'seo_keywords': 'rgpv sem 1, rgpv sem 2, rgpv sem 8 syllabus',
@@ -408,7 +431,7 @@ def rgpv_subjects_page(request):
             'subject_slug': slugify(subject.code),
         })
 
-    return render(request, 'content/seo_subject_index.html', {
+    return render(request, 'content/seo/seo_subject_index.html', {
         'seo_title': 'RGPV Subjects by Branch and Semester',
         'seo_description': 'Subject-code index pages for RGPV students. Browse by branch and semester.',
         'seo_keywords': 'rgpv subjects, bt103, cs402, rgpv subject code',
@@ -430,7 +453,7 @@ def rgpv_branch_page(request, branch_slug):
         for semester in semesters
     ]
 
-    return render(request, 'content/seo_branch.html', {
+    return render(request, 'content/seo/seo_branch.html', {
         'seo_title': f'RGPV {branch.code} Notes, Syllabus, Question Papers',
         'seo_description': f'RGPV {branch.name} branch page with semester navigation and subject resources.',
         'seo_keywords': f'rgpv {branch.code.lower()}, {branch.name.lower()} rgpv, rgpv {branch.code.lower()} notes',
@@ -462,7 +485,7 @@ def rgpv_semester_page(request, branch_slug, semester_slug):
         for subject in subjects
     ]
 
-    return render(request, 'content/seo_semester.html', {
+    return render(request, 'content/seo/seo_semester.html', {
         'seo_title': f'RGPV {branch.code} Sem {semester.number} Subjects, Notes & Syllabus',
         'seo_description': f'RGPV {branch.name} semester {semester.number} subjects with syllabus, notes, and previous year paper pages.',
         'seo_keywords': f'rgpv {branch.code.lower()} sem {semester.number}, rgpv sem {semester.number} notes',
@@ -507,7 +530,7 @@ def rgpv_subject_page(request, branch_slug, semester_slug, subject_slug):
         {'slug': 'previous-year-papers', 'label': 'Previous Year Papers'},
     ]
 
-    return render(request, 'content/seo_subject.html', {
+    return render(request, 'content/seo/seo_subject.html', {
         'seo_title': f'{subject.code} {subject.name} (RGPV) | Syllabus, Notes, Unit-wise Resources',
         'seo_description': f'RGPV {subject.code} {subject.name} subject page with syllabus, notes, important questions, and previous year papers.',
         'seo_keywords': f'{subject.code.lower()} syllabus, {subject.code.lower()} notes, {subject.code.lower()} rgpv',
@@ -567,7 +590,7 @@ def rgpv_subject_resource_page(request, branch_slug, semester_slug, subject_slug
         resource_slug=resource_slug,
     )
 
-    return render(request, 'content/seo_resource.html', {
+    return render(request, 'content/seo/seo_resource.html', {
         'seo_title': f'RGPV {subject.code} {page_label}',
         'seo_description': f'{page_label} for {subject.code} {subject.name} (RGPV). Public preview page with login unlock for full features.',
         'seo_keywords': f"{subject.code.lower()} {resource_slug.replace('-', ' ')}, rgpv {subject.code.lower()}",
