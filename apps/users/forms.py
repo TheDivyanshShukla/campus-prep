@@ -53,7 +53,7 @@ class CustomUserChangeForm(UserChangeForm):
 class UserOnboardingForm(forms.ModelForm):
     first_name = forms.CharField(max_length=150, required=True, label="First Name")
     last_name = forms.CharField(max_length=150, required=True, label="Last Name")
-    phone_number = forms.CharField(max_length=15, required=True, label="Phone Number")
+    phone_number = forms.CharField(max_length=20, required=True, label="Phone Number")
     
     branch = forms.ModelChoiceField(
         queryset=Branch.objects.all(),
@@ -69,6 +69,29 @@ class UserOnboardingForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'phone_number']
+
+    def clean_phone_number(self):
+        phone = self.cleaned_data.get('phone_number', '')
+        # Strip whitespace
+        phone = phone.strip().replace(" ", "")
+        
+        if not phone.startswith('+'):
+             if not phone.isdigit():
+                 raise forms.ValidationError("Phone number must contain only digits.")
+        else:
+            # Check if everything after + is digits
+            body = phone[1:]
+            if not body.isdigit():
+                raise forms.ValidationError("Phone number must contain only digits after the country code.")
+            
+            # Specific validation for India (+91)
+            if phone.startswith('+91'):
+                # +91 is 3 chars, body is digits after '+'.
+                # For +91, body should be '91' + 10 digits = 12 chars.
+                if len(body) != 12:
+                     raise forms.ValidationError("Indian phone numbers must be exactly 10 digits.")
+        
+        return phone
 
 
 class ChangeProgramForm(forms.ModelForm):

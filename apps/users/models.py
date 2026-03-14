@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 class User(AbstractUser):
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
     preferred_branch = models.ForeignKey(
         'academics.Branch', 
         on_delete=models.SET_NULL, 

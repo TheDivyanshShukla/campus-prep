@@ -45,8 +45,83 @@
                 </div>
 
                 <div>
-                    <label for="{{ form.phone_number.id_for_label }}" class="block text-sm font-medium text-foreground mb-1">Phone Number</label>
-                    <input type="text" name="phone_number" id="{{ form.phone_number.id_for_label }}" value="{{ form.phone_number.value|default_if_none:'' }}" class="w-full px-3 py-2 border border-border rounded-lg bg-input/50 focus:ring-2 focus:ring-ring outline-none" required>
+                    <label for="phone_display" class="block text-sm font-medium text-foreground mb-1">Phone Number</label>
+                    <div class="flex gap-2">
+                        <!-- Country Code Selector -->
+                        <div class="w-28 shrink-0">
+                            <select id="country_code" class="w-full pl-2 pr-1 py-2 border border-border rounded-lg bg-input/50 focus:ring-2 focus:ring-ring outline-none text-sm">
+                                <option value="+91" selected>+91</option>
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+971">+971</option>
+                                <option value="+61">+61</option>
+                                <option value="+86">+86</option>
+                                <option value="+81">+81</option>
+                                <option value="+49">+49</option>
+                                <option value="+33">+33</option>
+                                <option value="+7">+7</option>
+                            </select>
+                        </div>
+                        <!-- Numeric Input -->
+                        <div class="flex-grow">
+                            <input type="tel" 
+                                   id="phone_display" 
+                                   pattern="[0-9]*" 
+                                   inputmode="numeric"
+                                   placeholder="1234567890"
+                                   class="w-full px-3 py-2 border border-border rounded-lg bg-input/50 focus:ring-2 focus:ring-ring outline-none" 
+                                   required
+                                   oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+                    </div>
+                    <!-- Hidden field for Django Form -->
+                    <input type="hidden" name="phone_number" id="{{ form.phone_number.id_for_label }}" value="{{ form.phone_number.value|default_if_none:'' }}">
+                    
+                    <script>
+                        (function() {
+                            const codeSelect = document.getElementById('country_code');
+                            const phoneInput = document.getElementById('phone_display');
+                            const hiddenInput = document.getElementById('{{ form.phone_number.id_for_label }}');
+
+                            function syncPhone() {
+                                if (codeSelect.value === '+91') {
+                                    // Enforce 10 char limit for India
+                                    if (phoneInput.value.length > 10) {
+                                        phoneInput.value = phoneInput.value.slice(0, 10);
+                                    }
+                                }
+                                if (phoneInput.value) {
+                                    hiddenInput.value = codeSelect.value + phoneInput.value;
+                                } else {
+                                    hiddenInput.value = '';
+                                }
+                            }
+
+                            codeSelect.addEventListener('change', () => {
+                                if (codeSelect.value === '+91' && phoneInput.value.length > 10) {
+                                    phoneInput.value = phoneInput.value.slice(0, 10);
+                                }
+                                syncPhone();
+                            });
+                            phoneInput.addEventListener('input', syncPhone);
+
+                            // Initial sync if value exists
+                            const existing = hiddenInput.value;
+                            if (existing && existing.startsWith('+')) {
+                                // Try to match the code
+                                const codes = Array.from(codeSelect.options).map(o => o.value).sort((a,b) => b.length - a.length);
+                                for (const code of codes) {
+                                    if (existing.startsWith(code)) {
+                                        codeSelect.value = code;
+                                        phoneInput.value = existing.substring(code.length);
+                                        break;
+                                    }
+                                }
+                            } else if (existing) {
+                                phoneInput.value = existing;
+                            }
+                        })();
+                    </script>
                 </div>
 
                 <!-- Academic Info -->

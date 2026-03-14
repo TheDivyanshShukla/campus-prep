@@ -55,7 +55,8 @@ def _env_bool(name: str, default: bool) -> bool:
     return raw_value.strip().lower() in {'1', 'true', 'yes', 'on'}
 
 
-ENABLE_SILK = _env_bool('ENABLE_SILK', DEBUG)
+# ENABLE_SILK = _env_bool('ENABLE_SILK', DEBUG)
+ENABLE_SILK = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
 
