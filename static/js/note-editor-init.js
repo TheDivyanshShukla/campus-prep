@@ -5,8 +5,8 @@
     if (!dataEl) return;
     var config = JSON.parse(dataEl.textContent);
 
-    // Initialize the NoteEditor
-    var editor = new NoteEditor({
+    // Initialize the NoteEditor (exposed globally for inline onclick handlers)
+    var editor = window.editor = new NoteEditor({
         noteId: config.noteId,
         csrfToken: config.csrfToken,
         saveUrl: config.saveUrl,
